@@ -4500,17 +4500,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"compass-vertical-rhythm@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "compass-vertical-rhythm@npm:1.4.5"
-  dependencies:
-    convert-css-length: ^1.0.1
-    object-assign: ^4.1.0
-    parse-unit: ^1.0.1
-  checksum: 2339532a832e749d47a7bcc6ba26f49fbc32777cfac227f00ad494795020b271c7bed4b0e5dad33425208893cb29a88e8708433c9a870ae3c4b33d41de1a0d9b
-  languageName: node
-  linkType: hard
-
 "component-bind@npm:1.0.0":
   version: 1.0.0
   resolution: "component-bind@npm:1.0.0"
@@ -4624,13 +4613,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"console-polyfill@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "console-polyfill@npm:0.1.2"
-  checksum: edc5d901b4113e5c62aca45ee3766d264d51b68c766093e15258c9f07696f192c4425bcc25688a21b971b5418209f4cd8cad45efa637f5633eae3c8c37b10ccf
-  languageName: node
-  linkType: hard
-
 "constants-browserify@npm:^1.0.0":
   version: 1.0.0
   resolution: "constants-browserify@npm:1.0.0"
@@ -4680,16 +4662,6 @@ __metadata:
     lodash: ^4.17.10
     qs: ^6.5.2
   checksum: 83f11a0f8b87848801fb2b2f46ff6174f0c2d9a7746610541125796997e7cede67541037e8337d0209207e83698d3ee9df5a015b2a5102e7af56a0651b562f54
-  languageName: node
-  linkType: hard
-
-"convert-css-length@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "convert-css-length@npm:1.0.2"
-  dependencies:
-    console-polyfill: ^0.1.2
-    parse-unit: ^1.0.1
-  checksum: 1b812aec3f978b2d8e0445495582b371db06e331bca0da561036fb618fc76f0a184c4f1200667836a665547b97151ff977615e5c369298b19e8e9746fa03b38e
   languageName: node
   linkType: hard
 
@@ -7482,6 +7454,18 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-react-helmet@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "gatsby-plugin-react-helmet@npm:3.9.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    gatsby: ^2.0.0
+    react-helmet: ^5.1.3 || ^6.0.0
+  checksum: 71375100115f6e5b2f1544ac81a2d52ae45f29b77cc48695a006b8922ac900ef9c13d8b963b3a1197402c487ca73d2aba1b770e529cb8b7cd8261568474cf5b6
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-styled-components@npm:^3.9.0":
   version: 3.9.0
   resolution: "gatsby-plugin-styled-components@npm:3.9.0"
@@ -7507,21 +7491,6 @@ fsevents@~2.1.2:
     "@babel/runtime": ^7.11.2
     babel-plugin-remove-graphql-queries: ^2.10.0
   checksum: c6e0fd70ac6db8dafb48b5b2e38219c9f3b7fe7b382b7ffa300e0676952e81f2e81eef9e3fead8c77cd57bb45e19d5bc8ea5c8e5c4d7c594e64c697d397389e8
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-typography@npm:^2.11.0":
-  version: 2.11.0
-  resolution: "gatsby-plugin-typography@npm:2.11.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-  peerDependencies:
-    gatsby: ^2.0.0
-    react: ^16.4.2 || ^17.0.0
-    react-dom: ^16.4.2 || ^17.0.0
-    react-typography: ^0.16.1 || ^1.0.0-alpha.0
-    typography: ^0.16.0 || ^1.0.0-alpha.0
-  checksum: 9fd5d316352c7b6ef01135e24eeb338a271e19393c2411754e18649ed9e47d76374d09d1767de62f1d190c6bc1ca21da0ac9df7e66f666c76aa1b64e5cc0dfac
   languageName: node
   linkType: hard
 
@@ -8225,13 +8194,6 @@ fsevents@~2.1.2:
   dependencies:
     iterall: ^1.2.2
   checksum: 3b7d50f98f5c66db36327d6dd331367c6da166d701b5bad669664e8602a180ee50dcb5ae3e1f9874e7fa59c1217f50a52a922fc77b5a1e04276426e67815b0ed
-  languageName: node
-  linkType: hard
-
-"gray-percentage@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "gray-percentage@npm:2.0.0"
-  checksum: 27a998d638a81e66ed4c197fa8a98bda299f9b76a7c58970d5cff13ab2f5426741eb69bc14f2de7b5b250b4d8171394ec5f51cd9340a175a9653bac78d33e197
   languageName: node
   linkType: hard
 
@@ -10206,13 +10168,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"lodash.isnumber@npm:^3.0.0":
-  version: 3.0.3
-  resolution: "lodash.isnumber@npm:3.0.3"
-  checksum: a33b10bf57dd27b32aac0bb4159d3f40db6b294095f42d7ff9f966a004932cdcc12417bf0750a9d3ac0c62690dd020d7d227b05ef486a8c9061963acf2ea3fad
-  languageName: node
-  linkType: hard
-
 "lodash.map@npm:^4.6.0":
   version: 4.6.0
   resolution: "lodash.map@npm:4.6.0"
@@ -10255,7 +10210,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.13.1, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0":
+"lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0":
   version: 4.17.20
   resolution: "lodash@npm:4.17.20"
   checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6
@@ -10917,15 +10872,6 @@ fsevents@~2.1.2:
   bin:
     mkdirp: bin/cmd.js
   checksum: 1aa3a6a2d7514f094a91329ec09994f5d32d2955a4985ecbb3d86f2aaeafc4aa11521f98d606144c1d49cd9835004d9a73342709b8c692c92e59eacf37412468
-  languageName: node
-  linkType: hard
-
-"modularscale@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "modularscale@npm:1.0.2"
-  dependencies:
-    lodash.isnumber: ^3.0.0
-  checksum: a69b23b34c47984fe2b01028129bca7c791bfe400c0618f07065fca6b94c95c7033deec3b55c21adffe05cb3e61da933c68b13f0f0617d85aced6fabd050d24e
   languageName: node
   linkType: hard
 
@@ -11959,13 +11905,6 @@ fsevents@~2.1.2:
     is-ssh: ^1.3.0
     protocols: ^1.4.0
   checksum: b1c8d4752f7b0bf731eb35fd34f724da066f448a9d5ed00b6b63b6e42859a71dc262713f4dca8df4489a03435358e28a082a26dd6397b48e5a683c91dbbae7dd
-  languageName: node
-  linkType: hard
-
-"parse-unit@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "parse-unit@npm:1.0.1"
-  checksum: f756ecf06fa1a592173aee3f970b32c508c97c6d922b8c92ce837d99fabc038a72625baab1973cf3f68731edae6c3508702183884a6e87ee24befaea453ee98d
   languageName: node
   linkType: hard
 
@@ -13226,6 +13165,27 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^3.1.1":
+  version: 3.2.0
+  resolution: "react-fast-compare@npm:3.2.0"
+  checksum: 6fe65c889eb4f326e97769135f97b3d63ac68737866f9c37f9625c9de4f5eaa9abed6f748eb3fd6a66808392118842916309cab7cfa99c67991f0c837433d6d2
+  languageName: node
+  linkType: hard
+
+"react-helmet@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "react-helmet@npm:6.1.0"
+  dependencies:
+    object-assign: ^4.1.1
+    prop-types: ^15.7.2
+    react-fast-compare: ^3.1.1
+    react-side-effect: ^2.1.0
+  peerDependencies:
+    react: ">=16.3.0"
+  checksum: 56fd795b0aecc89bac8d2733268751f0ef463bf6764090f8a801778741d4a6eaf135234cdaa50188bbda29c8e2d3ec43e9a42d1ec06b60092645c8754c7bad81
+  languageName: node
+  linkType: hard
+
 "react-hot-loader@npm:^4.12.21":
   version: 4.13.0
   resolution: "react-hot-loader@npm:4.13.0"
@@ -13270,12 +13230,12 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-typography@npm:^0.16.19":
-  version: 0.16.19
-  resolution: "react-typography@npm:0.16.19"
+"react-side-effect@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "react-side-effect@npm:2.1.1"
   peerDependencies:
-    react: ^0.14.0 || ^15.0.0 || ^16.0.0
-  checksum: 9b31cbca4f914ddec1193a1df826417bc3e5b63c2900af319823d6aae917f9715fe55545cdbafdaf47260b33806b03ce490192dce0260fe60322150ee76727fb
+    react: ^16.3.0 || ^17.0.0
+  checksum: 5896f7c126b9e7147e3ea6cc967dab8e3a2f6c395bd5327d16483adb91177866eec47770500a92fece866ea551f395484f6e6e078796002293bc1b53b7e65b26
   languageName: node
   linkType: hard
 
@@ -15808,28 +15768,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"typography-normalize@npm:^0.16.19":
-  version: 0.16.19
-  resolution: "typography-normalize@npm:0.16.19"
-  checksum: 788fbf61be06c5b196eb32b334d3e1757e783b5f3ff63be9e8f07a612e328db348cb65ea58735526b08542704ac2c34eb401d981a1ceb3dbbaf83f5ced55cd2f
-  languageName: node
-  linkType: hard
-
-"typography@npm:^0.16.19":
-  version: 0.16.19
-  resolution: "typography@npm:0.16.19"
-  dependencies:
-    compass-vertical-rhythm: ^1.4.5
-    decamelize: ^1.2.0
-    gray-percentage: ^2.0.0
-    lodash: ^4.13.1
-    modularscale: ^1.0.2
-    object-assign: ^4.1.0
-    typography-normalize: ^0.16.19
-  checksum: 665f41ba306e7656d5996deaddbec491a72e85bbdc7c9887a68e9f4d13ad531d34f0d8ad8e09d8abb091f9aa7770a3c9435ae5aa3f05b6ffaed5801b5ba940f9
-  languageName: node
-  linkType: hard
-
 "unc-path-regex@npm:^0.1.2":
   version: 0.1.2
   resolution: "unc-path-regex@npm:0.1.2"
@@ -16373,22 +16311,22 @@ fsevents@~2.1.2:
     babel-plugin-styled-components: ^1.12.0
     eslint: ^7.13.0
     eslint-config-airbnb: ^18.2.1
+    eslint-import-resolver-node: ^0.3.4
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-react: ^7.22.0
     eslint-plugin-react-hooks: ^4.2.0
     gatsby: ^2.26.1
+    gatsby-plugin-react-helmet: ^3.9.0
     gatsby-plugin-styled-components: ^3.9.0
-    gatsby-plugin-typography: ^2.11.0
     npm-run-all: ^4.1.5
     prettier: ^2.1.2
     prop-types: ^15.7.2
     react: ^17.0.1
     react-dom: ^17.0.1
-    react-typography: ^0.16.19
+    react-helmet: ^6.1.0
     styled-components: ^5.2.1
     stylelint: ^13.8.0
-    typography: ^0.16.19
   languageName: unknown
   linkType: soft
 
