@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 const paths = [];
-const addPathToSite = path => paths.push(path);
+const addPathToSite = pagePath => paths.push(pagePath);
 
 const writeAllPathsToFile = () => {
   const generated = path.join(__dirname, "src", "__generated__");
@@ -15,6 +15,7 @@ const writeAllPathsToFile = () => {
   }
 
   const allPagesPath = path.join(generated, "all-pages.js");
+
   fs.writeFileSync(
     allPagesPath,
     `// Generated during bootstrapping via gatsby-node.js
@@ -47,6 +48,7 @@ const recursiveReadDirSync = folderPath => {
     .filter(f => !f.endsWith(".DS_Store") && !f.endsWith("README.md"))
     .map(f => {
       const root = path.join(__dirname, "..", "..", "..");
+
       return f.replace(root, "");
     });
 };
@@ -99,19 +101,19 @@ const createRootPages = async createPage => {
       const sitePath = (() => {
         if (originalSitePath === "") {
           return lang === "fi" ? "/" : `/${lang}`;
-        } else {
-          if (
-            originalSitePath in pageSlugs &&
-            lang in pageSlugs[originalSitePath]
-          ) {
-            const slug = pageSlugs[originalSitePath][lang];
-            return lang === "fi" ? `/${slug}` : `/${lang}/${slug}`;
-          } else {
-            return lang === "fi"
-              ? `/${originalSitePath}`
-              : `/${lang}/${originalSitePath}`;
-          }
         }
+        if (
+          originalSitePath in pageSlugs &&
+          lang in pageSlugs[originalSitePath]
+        ) {
+          const slug = pageSlugs[originalSitePath][lang];
+
+          return lang === "fi" ? `/${slug}` : `/${lang}/${slug}`;
+        }
+
+        return lang === "fi"
+          ? `/${originalSitePath}`
+          : `/${lang}/${originalSitePath}`;
       })();
 
       console.log("The new path for the page is", sitePath);
@@ -120,7 +122,7 @@ const createRootPages = async createPage => {
         path: sitePath,
         component: fullpath,
         context: {
-          lang: lang,
+          lang,
           key: originalSitePath,
         },
       };
@@ -133,8 +135,9 @@ const createRootPages = async createPage => {
 
 exports.onCreatePage = ({page, actions}) => {
   const {createPage, deletePage} = actions;
+
   if (page.path === "/404/") {
-    const oldPage = Object.assign({}, page);
+    const oldPage = {...page};
 
     page.path = "/404";
 
