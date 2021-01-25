@@ -6,14 +6,12 @@ module.exports = {
     siteUrl: "https://visiosto.fi",
     title: "Visiosto",
     description: "Sinun visiosi - linssimme läpi",
-    twitterAuthor: "@visiosto_oy"
+    twitterAuthor: "@visiosto_oy",
+    locales: ["fi", "en"],
   },
   plugins: [
     {
       resolve: "gatsby-plugin-styled-components",
-      options: {
-        // Add any options here
-      },
-    }
-  ]
+    },
+  ],
 };
