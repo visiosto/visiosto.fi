@@ -11,7 +11,7 @@
     "format": "prettier --config .prettierrc.json --write \"**/*.{js,jsx,json,md}\"",
     "nit": "prettier --config .prettierrc.json --list-different \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
     "clean": "gatsby clean",
     "start": "yarn dev",
     "serve": "gatsby serve"
