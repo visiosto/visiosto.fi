@@ -3,15 +3,15 @@
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://visiosto.fi",
-    title: "Visiosto",
-    description: "Sinun visiosi - linssimme läpi",
-    twitterAuthor: "@visiosto_oy",
-    locales: ["fi", "en"],
+    siteUrl: 'https://visiosto.fi',
+    title: 'Visiosto',
+    description: 'Sinun visiosi - linssimme läpi',
+    twitterAuthor: '@visiosto_oy',
+    locales: ['fi', 'en'],
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-styled-components",
+      resolve: 'gatsby-plugin-styled-components',
     },
   ],
 };

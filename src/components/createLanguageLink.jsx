@@ -1,22 +1,22 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from "react";
-import {Link} from "gatsby";
+import React from 'react';
+import { Link } from 'gatsby';
 
-import pageSlugs from "../data/page-slugs.json";
+import pageSlugs from '../data/page-slugs.json';
 
-const createLanguageLink = pageKey => {
+const createLanguageLink = (pageKey) => {
   const slugs = pageSlugs;
 
-  return linkProps => {
+  return (linkProps) => {
     const toLang = linkProps.to;
-    let to = toLang === "fi" ? "/" : `/${toLang}`;
+    let to = toLang === 'fi' ? '/' : `/${toLang}`;
 
     if (pageKey in slugs && toLang in slugs[pageKey]) {
       to = `/${toLang}/${slugs[pageKey][toLang]}`;
 
-      if (toLang === "fi") {
+      if (toLang === 'fi') {
         to = `/${slugs[pageKey][toLang]}`;
       }
     }
