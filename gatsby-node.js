@@ -1,10 +1,10 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import pageSlugs from './src/data/page-slugs.json';
+const pageSlugs = require('./src/data/page-slugs.json');
 
 const paths = [];
 const addPathToSite = (pagePath) => paths.push(pagePath);
@@ -22,7 +22,7 @@ const writeAllPathsToFile = () => {
     allPagesPath,
     `// Generated during bootstrapping via gatsby-node.js
 
-export const allFiles = ["${paths.join('", "')}"]
+export default ['${paths.join("', '")}'];
 `,
   );
 };
@@ -66,7 +66,7 @@ const createRootPages = async (createPage) => {
 
     console.log('Processing file', fullpath);
 
-    let originalSitePath = path.relative(rootPagesDir, fullpath).replace(/.js$/g, '');
+    let originalSitePath = path.relative(rootPagesDir, fullpath).replace(/.jsx$/g, '');
 
     console.log('The original path is', originalSitePath);
 
@@ -113,20 +113,20 @@ const createRootPages = async (createPage) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
-  const newPage = { ...page };
 
   if (page.path === '/404/') {
     const oldPage = { ...page };
 
-    newPage.path = '/404';
+    // eslint-disable-next-line no-param-reassign
+    page.path = '/404';
 
     if (page.path !== oldPage.path) {
       deletePage(oldPage);
-      createPage(newPage);
+      createPage(page);
     }
   }
 
-  addPathToSite(newPage.path);
+  addPathToSite(page.path);
 };
 
 exports.onPostBootstrap = () => writeAllPathsToFile();
