@@ -7,7 +7,7 @@ const colors = {
   white: '#f2f0eb',
   orange: '#f2955e',
   red: '#eb5952',
-  black: '#000000',
+  black: '#3b4a57',
 };
 
 const fonts = {
