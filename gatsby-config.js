@@ -13,5 +13,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-styled-components',
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'fi',
+        useLangKeyLayout: true,
+      },
+    },
   ],
 };

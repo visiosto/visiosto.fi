@@ -12,7 +12,7 @@
     "nit": "prettier --config .prettierrc.json --list-different \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint": "eslint .",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean && rm -rf src/__generated__",
     "start": "yarn dev",
     "serve": "gatsby serve"
   },
@@ -29,12 +29,16 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-styled-components": "^3.9.0",
+    "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-intl": "^5.10.17",
+    "react-is": "^17.0.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
