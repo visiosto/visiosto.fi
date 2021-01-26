@@ -7,11 +7,12 @@ const colors = {
   white: '#f2f0eb',
   orange: '#f2955e',
   red: '#eb5952',
+  black: '#000000',
 };
 
 const fonts = {
   heading: 'utopia-std, serif',
-  main: 'montserrat, sans-serif',
+  main: 'montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
 };
 
-export { colors, fonts };
+export default { colors, fonts };

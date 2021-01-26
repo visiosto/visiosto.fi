@@ -4,7 +4,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { allFiles } from '../__generated__/all-pages';
+import allFiles from '../__generated__/all-pages';
 
 import pageSlugs from '../data/page-slugs.json';
 

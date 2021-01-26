@@ -7,8 +7,8 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
-import { createIntl } from '../utils/createIntl';
-import { createLanguageUrl } from '../utils/createLanguageUrl';
+import createIntl from '../utils/createIntl';
+import createLanguageUrl from '../utils/createLanguageUrl';
 
 // TODO Add at least 'og:image'
 const Head = (props) => {
@@ -35,7 +35,7 @@ const Head = (props) => {
 
   const createUrl = createLanguageUrl(baseUrl, props.pageKey);
 
-  const description = props.description || i('meta_description');
+  const description = props.description || i('metaDescription');
 
   return (
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
