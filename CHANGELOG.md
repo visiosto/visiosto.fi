@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Site title from first-level heading to paragraph on pages other than index page.
+- Texts on the site to be placeholder texts while the site is still in development.
 
 ## [0.2.0] - 2021-01-27
 
