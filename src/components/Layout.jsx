@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 import React, { useEffect, useState } from 'react';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import Footer from './Footer';
 import Head from './Head';
@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     font-weight: 400;
     font-smoothing: antialiased;
+    line-height: 1.5;
     color: ${(props) => props.theme.colors.textMain};
   }
 
@@ -48,11 +49,21 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Layout = (props) => {
+  const PageTitle = props.home
+    ? styled.h2`
+        display: none;
+      `
+    : styled.h1`
+        font-size: 3rem;
+        text-align: center;
+      `;
+
   return (
     <>
       <GlobalStyle />
       <Head {...props} />
       <Header {...props} />
+      <PageTitle>{props.title}</PageTitle>
       {props.children}
       <Footer {...props} />
     </>
