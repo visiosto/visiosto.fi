@@ -13,7 +13,8 @@ const colors = {
   // white: '#f2f0eb',
   white: '#ffffff',
   black: '#3b4a57',
-  blackShade: '#1a2126',
+  shade: '#dde1e9',
+  shadeDark: '#2a2a2b',
   gray: '#f6f7f9',
 };
 
@@ -21,6 +22,7 @@ const fonts = {
   heading: 'utopia-std, serif',
   // heading: 'baskerville-display-pt, Garamond, Georgia, serif',
   main: 'montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  code: 'roboto-mono, Menlo, Monaco, Consolas, "Courier New", monospace',
 };
 
 // The maximum sizes of different viewports.
@@ -51,7 +53,11 @@ const devices = {
 const layout = {
   marginPhone: '2em',
   marginTablet: '4em',
-  marginDesktop: '12em',
+  marginDesktop: '16em',
+};
+
+const borders = {
+  commonRadius: '25px',
 };
 
 const common = {
@@ -60,6 +66,7 @@ const common = {
   sizes: { ...sizes },
   devices: { ...devices },
   layout: { ...layout },
+  borders: { ...borders },
 };
 
 const light = {
@@ -69,6 +76,7 @@ const light = {
     textMain: colors.black,
     link: colors.linkBlue,
     linkHover: colors.linkBlueDark,
+    navHover: colors.shade,
     ...common.colors,
   },
 };
@@ -80,6 +88,7 @@ const dark = {
     textMain: colors.white,
     link: colors.linkYellow,
     linkHover: colors.linkYellowDark,
+    navHover: colors.shadeDark,
     ...common.colors,
   },
 };

@@ -109,21 +109,12 @@ export default (props) => {
   const Link = styled(LanguageLink)`
     position: relative;
     margin: 0 auto;
+    border-radius: ${(props) => props.theme.borders.commonRadius};
     padding: 0.5rem 1rem;
+    background: transparent;
     font-weight: 600;
     text-decoration: none;
     color: ${(props) => props.theme.colors.textMain};
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 4px;
-      bottom: 0;
-      left: 0;
-      visibility: hidden;
-      background: ${(props) => props.theme.colors.textMain};
-    }
 
     &:visited {
       color: ${(props) => props.theme.colors.textMain};
@@ -132,12 +123,8 @@ export default (props) => {
     &:hover,
     &:focus,
     &:active {
+      background: ${(props) => props.theme.colors.navHover};
       color: ${(props) => props.theme.colors.textMain};
-
-      &::before {
-        visibility: visible;
-        width: 100%;
-      }
     }
   `;
 
