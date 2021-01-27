@@ -117,3 +117,6 @@ public
 
 # Generated files
 src/__generated__/
+
+# Graphics files
+*.psd
