@@ -1,0 +1,5 @@
+{
+  "extends": ["stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-scss"],
+  "ignoreFiles": ["src/styles/_normalize.scss", "node_modules/*", "public/*"]
+}

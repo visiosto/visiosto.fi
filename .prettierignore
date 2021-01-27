@@ -1,0 +1,11 @@
+# Gatsby files
+.cache/
+public/
+
+# npm
+package.json
+package-lock.json
+
+# Yarn
+.yarn/
+.pnp.*
