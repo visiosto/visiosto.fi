@@ -2,9 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Cover from '../components/Cover';
@@ -13,15 +11,14 @@ import Layout from '../components/Layout';
 
 import createIntl from '../utils/createIntl';
 
-import coverImage from '../assets/front-page-cover.png';
+import coverImageLaptopSmall from '../assets/front-page-cover-laptop-small.png';
+import coverImageDesktopSmall from '../assets/front-page-cover-desktop-small.png';
+import coverImageDesktopMedium from '../assets/front-page-cover-desktop-medium.png';
+
+import storyImageDesktopMedium from '../assets/story-cover-desktop-medium.png';
 
 const IndexPage = (props) => {
   const i = createIntl(useIntl());
-
-  const SectionTitle = styled.h3`
-    margin: 4rem 0 0;
-    font-size: 2.5rem;
-  `;
 
   return (
     <Layout
@@ -30,9 +27,23 @@ const IndexPage = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <Cover title={i('indexCoverTitle')} background={coverImage}>
+      <Cover
+        title={i('indexCoverTitle')}
+        backgrounds={{
+          def: coverImageLaptopSmall,
+          desktopSmall: coverImageDesktopSmall,
+          desktopMedium: coverImageDesktopMedium,
+        }}
+      >
         <p>{i('indexCoverContent')}</p>
-        <SectionTitle>{i('indexStoryTitle')}</SectionTitle>
+      </Cover>
+      <Cover
+        title={i('indexStoryTitle')}
+        backgrounds={{
+          def: storyImageDesktopMedium,
+          desktopMedium: storyImageDesktopMedium,
+        }}
+      >
         <p>{i('indexStoryContent')}</p>
         <Link to="#">Kokeilulinkki</Link>
       </Cover>
@@ -40,15 +51,11 @@ const IndexPage = (props) => {
   );
 };
 
-IndexPage.propTypes = { pageContext: PropTypes.object };
-
 const Index = (props) => (
   <Intl locale={props.pageContext.lang}>
     <IndexPage {...props} />
   </Intl>
 );
-
-Index.propTypes = { pageContext: PropTypes.object };
 
 export default Index;
 

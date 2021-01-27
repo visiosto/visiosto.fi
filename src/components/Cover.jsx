@@ -2,7 +2,6 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Cover = (props) => {
@@ -11,7 +10,22 @@ const Cover = (props) => {
     justify-content: center;
     align-items: center;
     padding: 1em;
-    background: url(${(props) => props.background}) 50% 35% / cover;
+    background: url(${(props) => props.backgrounds.def}) 40% 40% / cover no-repeat;
+
+    ${(props) => {
+      let toRender = '';
+
+      for (let key in props.backgrounds) {
+        const img = props.backgrounds[key];
+        toRender += `
+          @media screen and ${props.theme.devices[key]} {
+            background-image: url(${img});
+          }
+        `;
+      }
+
+      return toRender;
+    }}
   `;
 
   const Inner = styled.div`
@@ -22,7 +36,7 @@ const Cover = (props) => {
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginDesktop};
+      margin: 6em ${(props) => props.theme.layout.marginDesktop};
     }
   `;
 
@@ -33,23 +47,19 @@ const Cover = (props) => {
   `;
 
   const Content = styled.div`
-    margin-bottom: 3rem;
+    margin: 0 0 3rem;
+    font-size: 1.1rem;
     text-align: center;
   `;
 
   return (
-    <Div background={props.background}>
+    <Div backgrounds={{ ...props.backgrounds }}>
       <Inner>
         <Title>{props.title}</Title>
         <Content>{props.children}</Content>
       </Inner>
     </Div>
   );
-};
-
-Cover.propTypes = {
-  background: PropTypes.string,
-  title: PropTypes.string.isRequired,
 };
 
 export default Cover;
