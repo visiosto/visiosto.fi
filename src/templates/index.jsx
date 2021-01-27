@@ -11,6 +11,8 @@ import Layout from '../components/Layout';
 
 import createIntl from '../utils/createIntl';
 
+import coverImagePhoneSmall from '../assets/front-page/cover-phone-small.png';
+import coverImageTablet from '../assets/front-page/cover-tablet.png';
 import coverImageLaptopSmall from '../assets/front-page-cover-laptop-small.png';
 import coverImageDesktopSmall from '../assets/front-page-cover-desktop-small.png';
 import coverImageDesktopMedium from '../assets/front-page-cover-desktop-medium.png';
@@ -30,7 +32,8 @@ const IndexPage = (props) => {
       <Cover
         title={i('indexCoverTitle')}
         backgrounds={{
-          def: coverImageLaptopSmall,
+          default: coverImagePhoneSmall,
+          tablet: coverImageTablet,
           desktopSmall: coverImageDesktopSmall,
           desktopMedium: coverImageDesktopMedium,
         }}
@@ -40,7 +43,7 @@ const IndexPage = (props) => {
       <Cover
         title={i('indexStoryTitle')}
         backgrounds={{
-          def: storyImageDesktopMedium,
+          default: storyImageDesktopMedium,
           desktopMedium: storyImageDesktopMedium,
         }}
       >

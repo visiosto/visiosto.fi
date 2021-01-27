@@ -10,7 +10,7 @@ const Cover = (props) => {
     justify-content: center;
     align-items: center;
     padding: 1em;
-    background: url(${(props) => props.backgrounds.def}) 40% 40% / cover no-repeat;
+    background: url(${(props) => props.backgrounds.default}) 40% 40% / cover no-repeat;
 
     ${(props) => {
       let toRender = '';
