@@ -2,13 +2,13 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Navigation from './Navigation';
 
 export default (props) => {
-  const {site} = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -17,7 +17,7 @@ export default (props) => {
           }
         }
       }
-    `
+    `,
   );
 
   const SiteTitle = styled.h1`
