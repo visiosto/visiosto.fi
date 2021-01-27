@@ -20,11 +20,8 @@ export default (props) => {
     `,
   );
 
-  const SiteTitle = (props.home ? styled.h1 : styled.p)`
+  const Header = styled.header`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
-    font-size: 3rem;
-    font-family: ${(props) => props.theme.fonts.heading};
-    text-align: center;
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
@@ -35,10 +32,16 @@ export default (props) => {
     }
   `;
 
+  const SiteTitle = (props.home ? styled.h1 : styled.p)`
+    font-size: 3rem;
+    font-family: ${(props) => props.theme.fonts.heading};
+    text-align: center;
+  `;
+
   return (
-    <header>
+    <Header>
       <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
       <Navigation {...props} />
-    </header>
+    </Header>
   );
 };
