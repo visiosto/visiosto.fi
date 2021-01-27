@@ -3,10 +3,10 @@
 
 export default {
   indexTitle: 'Etusivu',
-  indexCoverTitle: 'Sinun visiosi – linssimme läpi',
+  indexCoverTitle: 'Jostakin kehitystyö täytyy aina aloittaa',
   indexCoverContent:
-    'Visio on toiminnan veturi, joten miksi tyytyä toteutuksessa keskivertoon sanahelinään, kun todellisuus muovautuu tekojen kautta. Me Visiostossa uskomme rohkeaan ja laadukkaaseen tekemiseen ja persoonalliseen vuorovaikutukseen. Pilvilinnojen maalauksen aika on ohi: me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
-  indexStoryTitle: 'Tarinamme',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula viverra lorem vitae posuere. In eu efficitur ipsum. Proin a justo vel sem pulvinar pharetra sed et est. Etiam eget consectetur velit. Quisque et placerat est, efficitur facilisis erat. Duis tristique tempor dui, at ullamcorper mi consequat eget. Vestibulum vel nisi id nibh pulvinar gravida sed et quam. Integer cursus est.',
+  indexStoryTitle: 'Tarinasi',
   indexStoryContent:
-    'Visiosto on kolmen ystävyksen projekti, joka lähti liikkeelle kyllästymisestä visuaalisesti kammottaviin graafisiin ilmeisiin sekä kasvottomaan asiakastyöhön. Olemme nykyajan viestintätoimisto, joka luo arvoa sekä asiakkaalle että yhteiskunnalle. Olemme olemassa, jotta viestisi koskettaa vastaanottajan sydäntä.',
+    'Me kerromme sen. Olitpa sitten harrastaja, huvittelija tai ammattilainen, äänesi ansaitsee tulla kuuluviin. Siksi me teemme. Jotta kenekään ei tarvitse jäädä varjoon. Kun kaikkien ääni kuuluu, demokratia voi hyvin, elää ja hengittää.',
 };

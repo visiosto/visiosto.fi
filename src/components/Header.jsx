@@ -20,15 +20,24 @@ export default (props) => {
     `,
   );
 
-  const SiteTitle = styled.h1`
+  const SiteTitle = (props.home ? styled.h1 : styled.p)`
+    margin: 2em ${(props) => props.theme.layout.marginPhone};
     font-size: 3rem;
     font-family: ${(props) => props.theme.fonts.heading};
     text-align: center;
+
+    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+      margin: 2em ${(props) => props.theme.layout.marginTablet};
+    }
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 2em ${(props) => props.theme.layout.marginDesktop};
+    }
   `;
 
   return (
     <header>
-      <SiteTitle>{site.siteMetadata.title}</SiteTitle>
+      <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
       <Navigation {...props} />
     </header>
   );

@@ -6,8 +6,8 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://visiosto.fi',
-    title: 'Proof of Concept',
-    description: 'Sinun visiosi - linssimme läpi',
+    title: 'Concept Site',
+    description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
     twitterAuthor: '@visiosto_oy',
     locales: ['fi', 'en'],
   },
