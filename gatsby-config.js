@@ -28,5 +28,16 @@ module.exports = {
         path: path.join(__dirname, 'src', 'assets'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Proof of Concept',
+        short_name: 'Concept',
+        icon: 'src/assets/favicon.png',
+        theme_color: '#eb5952',
+        background_color: '#ffffff',
+        display: 'browser',
+      },
+    },
   ],
 };
