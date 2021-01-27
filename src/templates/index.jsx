@@ -3,16 +3,25 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import Cover from '../components/Cover';
 import Intl from '../components/Intl';
 import Layout from '../components/Layout';
 
 import createIntl from '../utils/createIntl';
 
+import coverImage from '../assets/front-page-cover.png';
+
 const IndexPage = (props) => {
   const i = createIntl(useIntl());
+
+  const SectionTitle = styled.h3`
+    margin: 4rem 0 0;
+    font-size: 2.5rem;
+  `;
 
   return (
     <Layout
@@ -21,7 +30,12 @@ const IndexPage = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <div>Sinun visiosi</div>
+      <Cover title={i('indexCoverTitle')} background={coverImage}>
+        <p>{i('indexCoverContent')}</p>
+        <SectionTitle>{i('indexStoryTitle')}</SectionTitle>
+        <p>{i('indexStoryContent')}</p>
+        <Link to="#">Kokeilulinkki</Link>
+      </Cover>
     </Layout>
   );
 };
