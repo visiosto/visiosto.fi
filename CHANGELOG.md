@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+###
+
+- Temporary `robots.txt` for disallowing all robots to index the site.
+
 ### Changed
 
 - Site title from first-level heading to paragraph on pages other than index page.
