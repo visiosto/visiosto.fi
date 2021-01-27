@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      LOCAL_VERSION_NUMBER_FILE: build_version.txt
+
+    steps:
+      - name: Check out the repository 
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: main
+
+      - name: Determine the project’s version
+        id: version
+        uses: anttikivi/maintain-revision@v0.10.1
+        with:
+          type: npm
+          download: false
+          upload: false
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: site/production
+          allow_empty_commit: true
+          commit_message: Deploy v${{ steps.version.outputs.version }} of the site
