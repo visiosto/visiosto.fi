@@ -33,6 +33,8 @@ const IndexPage = (props) => {
         title={i('indexCoverTitle')}
         backgrounds={{
           default: coverImagePhoneSmall,
+          phoneSmall: coverImagePhoneSmall,
+          // TODO The images below must still be fixed.
           tablet: coverImageTablet,
           desktopSmall: coverImageDesktopSmall,
           desktopMedium: coverImageDesktopMedium,
