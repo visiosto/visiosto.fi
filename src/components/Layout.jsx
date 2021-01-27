@@ -1,9 +1,10 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
+import Footer from './Footer';
 import Head from './Head';
 import Header from './Header';
 
@@ -19,15 +20,47 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) =>
-      props.colorScheme === 'dark' ? props.theme.colors.black : props.theme.colors.white};
+    background: ${(props) => props.theme.colors.background};
     font-family: ${(props) => props.theme.fonts.main};
-    color: ${(props) =>
-      props.colorScheme === 'dark' ? props.theme.colors.white : props.theme.colors.dark}
+    font-size: 1rem;
+    font-weight: 400;
+    font-smoothing: antialiased;
+    color: ${(props) => props.theme.colors.textMain};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: ${(props) => props.theme.fonts.heading};
+    font-weight: 700;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.link};
+
+    &:visited {
+      color: ${(props) => props.theme.colors.link};
+    }
+
+    &:hover, &:focus, &:active {
+      color: ${(props) => props.theme.colors.linkHover};
+    }
   }
 `;
 
 const Layout = (props) => {
+  return (
+    <>
+      <GlobalStyle />
+      <Head {...props} />
+      <Header {...props} />
+      {props.children}
+      <Footer {...props} />
+    </>
+  );
+};
+
+export default (props) => {
+  const [hasMounted, setHasMounted] = useState(false);
   const [colorScheme, setColorScheme] = useState(
     typeof window !== 'undefined' &&
       window.matchMedia &&
@@ -36,6 +69,14 @@ const Layout = (props) => {
       : 'light',
   );
 
+  useEffect(() => {
+    setHasMounted(true);
+  });
+
+  if (!hasMounted) {
+    return null;
+  }
+
   if (typeof window !== 'undefined') {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       setColorScheme(e.matches ? 'dark' : 'light');
@@ -43,17 +84,8 @@ const Layout = (props) => {
   }
 
   return (
-    <>
-      <GlobalStyle colorScheme={colorScheme} />
-      <Head {...props} />
-      <Header {...props} />
-      {props.children}
-    </>
+    <ThemeProvider theme={colorScheme === 'dark' ? theme.dark : theme.light}>
+      <Layout {...props} />
+    </ThemeProvider>
   );
 };
-
-export default (props) => (
-  <ThemeProvider theme={theme}>
-    <Layout {...props} />
-  </ThemeProvider>
-);
