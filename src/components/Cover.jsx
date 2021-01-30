@@ -4,7 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Cover = (props) => {
+export default (props) => {
   const Div = styled.div`
     overflow: hidden;
     display: inline-block;
@@ -53,5 +53,3 @@ const Cover = (props) => {
     </Div>
   );
 };
-
-export default Cover;
