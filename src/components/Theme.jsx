@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
 
 export default (props) => {
-  const [hasMounted, setHasMounted] = useState(false);
+  // const [hasMounted, setHasMounted] = useState(false);
   const [colorScheme, setColorScheme] = useState(
     typeof window !== 'undefined' &&
       window.matchMedia &&
@@ -16,13 +16,13 @@ export default (props) => {
       : 'light',
   );
 
-  useEffect(() => {
-    setHasMounted(true);
-  });
+  // useEffect(() => {
+  //   setHasMounted(true);
+  // });
 
-  if (!hasMounted) {
-    return null;
-  }
+  // if (!hasMounted) {
+    // return null;
+  // }
 
   if (typeof window !== 'undefined') {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {

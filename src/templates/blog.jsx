@@ -8,6 +8,7 @@ import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/Layout';
+import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
@@ -27,7 +28,9 @@ const BlogPage = (props) => {
 
 const Blog = (props) => (
   <Intl locale={props.pageContext.lang}>
-    <BlogPage {...props} />
+    <Theme>
+      <BlogPage {...props} />
+    </Theme>
   </Intl>
 );
 
