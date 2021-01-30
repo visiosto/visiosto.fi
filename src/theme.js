@@ -77,6 +77,7 @@ const light = {
     link: colors.linkBlue,
     linkHover: colors.linkBlueDark,
     navHover: colors.shade,
+    textButton: colors.white,
     ...common.colors,
   },
 };
@@ -89,6 +90,7 @@ const dark = {
     link: colors.linkYellow,
     linkHover: colors.linkYellowDark,
     navHover: colors.shadeDark,
+    textButton: colors.black,
     ...common.colors,
   },
 };

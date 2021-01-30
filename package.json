@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/visiosto/visiosto.github.io#readme",
   "dependencies": {
+    "@primer/octicons-react": "^11.2.0",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.10.0",

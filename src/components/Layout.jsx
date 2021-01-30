@@ -7,7 +7,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Footer from './Footer';
 import Head from './Head';
 import Header from './Header';
-import Theme from './Theme';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -47,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = (props) => {
+export default (props) => {
   const PageTitle = props.home
     ? styled.h2`
         display: none;
@@ -66,13 +65,5 @@ const Layout = (props) => {
       {props.children}
       <Footer {...props} />
     </>
-  );
-};
-
-export default (props) => {
-  return (
-    <Theme>
-      <Layout {...props} />
-    </Theme>
   );
 };

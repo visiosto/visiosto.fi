@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default (props) => {
-  const Div = styled.div`
+  const Section = styled.section`
     overflow: hidden;
     position: relative;
     min-width: 100%;
@@ -42,13 +42,13 @@ export default (props) => {
   `;
 
   return (
-    <Div>
+    <Section>
       {props.imgTop}
       <Inner>
         <Title>{props.title}</Title>
         <Content>{props.children}</Content>
       </Inner>
       {props.imgBottom}
-    </Div>
+    </Section>
   );
 };

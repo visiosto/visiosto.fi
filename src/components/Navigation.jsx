@@ -108,9 +108,9 @@ export default (props) => {
 
   const Link = styled(LanguageLink)`
     position: relative;
-    margin: 0 auto;
+    margin: 1rem auto 0;
     border-radius: ${(props) => props.theme.borders.commonRadius};
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     background: transparent;
     font-weight: 600;
     text-decoration: none;
