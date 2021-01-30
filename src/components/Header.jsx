@@ -33,6 +33,7 @@ export default (props) => {
   `;
 
   const SiteTitle = (props.home ? styled.h1 : styled.p)`
+    margin: 0;
     font-size: 3rem;
     font-family: ${(props) => props.theme.fonts.heading};
     font-weight: 700;

@@ -1,7 +1,7 @@
 {
   "name": "visiosto.github.io",
   "private": true,
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "The shared source for the website of Visiosto",
   "scripts": {
     "build": "yarn clean && gatsby build",
@@ -29,11 +29,14 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",
+    "gatsby-image": "^2.10.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-plugin-sharp": "^2.13.4",
     "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-transformer-sharp": "^2.11.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

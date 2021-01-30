@@ -7,25 +7,26 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://visiosto.fi',
     title: 'Concept Site',
-    description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
+    description:
+      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
     twitterAuthor: '@visiosto_oy',
     locales: ['fi', 'en'],
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-styled-components',
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'assets'),
+      },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'fi',
         useLangKeyLayout: true,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: path.join(__dirname, 'src', 'assets'),
       },
     },
     {
@@ -39,5 +40,6 @@ module.exports = {
         display: 'browser',
       },
     },
+    'gatsby-plugin-styled-components',
   ],
 };
