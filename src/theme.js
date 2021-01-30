@@ -96,4 +96,5 @@ const dark = {
 export default {
   light,
   dark,
+  devices,
 };

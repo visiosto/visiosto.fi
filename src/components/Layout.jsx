@@ -1,14 +1,13 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useEffect, useState } from 'react';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Footer from './Footer';
 import Head from './Head';
 import Header from './Header';
-
-import theme from '../theme';
+import Theme from './Theme';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -71,32 +70,9 @@ const Layout = (props) => {
 };
 
 export default (props) => {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [colorScheme, setColorScheme] = useState(
-    typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light',
-  );
-
-  useEffect(() => {
-    setHasMounted(true);
-  });
-
-  if (!hasMounted) {
-    return null;
-  }
-
-  if (typeof window !== 'undefined') {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      setColorScheme(e.matches ? 'dark' : 'light');
-    });
-  }
-
   return (
-    <ThemeProvider theme={colorScheme === 'dark' ? theme.dark : theme.light}>
+    <Theme>
       <Layout {...props} />
-    </ThemeProvider>
+    </Theme>
   );
 };
