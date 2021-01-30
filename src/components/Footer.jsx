@@ -16,21 +16,22 @@ export default (props) => {
   `;
 
   const Div = styled.div`
-    padding: 2em ${(props) => props.theme.layout.marginPhone};
+    margin: 1em ${(props) => props.theme.layout.marginPhone};
     text-align: center;
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
-      padding: 2em ${(props) => props.theme.layout.marginTablet};
+      margin: 1em ${(props) => props.theme.layout.marginTablet};
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      padding: 2em ${(props) => props.theme.layout.marginDesktop};
+      margin: 1em ${(props) => props.theme.layout.marginDesktop};
     }
   `;
 
   return (
     <Footer>
-      <Div>Copyright&nbsp;&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy</Div>
+      <Div>Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.</Div>
+      <Div>&nbsp;&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy</Div>
     </Footer>
   );
 };
