@@ -7,8 +7,6 @@ import styled from 'styled-components';
 export default (props) => {
   const Div = styled.div`
     overflow: hidden;
-    display: inline-block;
-    position: relative;
     min-width: 100%;
     min-height: 100%;
     margin: 2em 0;
