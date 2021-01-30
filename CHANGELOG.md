@@ -6,9 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
-### Fixed
+### Changed
 
-- Small phone cover background image on the front page.
+- Background images to use `gatsby-image`.
 
 ## [0.3.2] - 2021-01-27
 
