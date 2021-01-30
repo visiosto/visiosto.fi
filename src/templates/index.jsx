@@ -74,15 +74,23 @@ const IndexPage = (props) => {
       >
         <p>{i('indexCoverContent')}</p>
       </Cover>
-      <Cover title={i('indexStoryTitle')}
-        imgTop={<Img fixed={sourcesStoryTop} style={{ top: 0, right: 0, ...imgStyles }} objectFit="cover" />}
+      <Cover
+        title={i('indexStoryTitle')}
+        imgTop={
+          <Img
+            fixed={sourcesStoryTop}
+            style={{ top: 0, right: 0, ...imgStyles }}
+            objectFit="cover"
+          />
+        }
         imgBottom={
           <Img
             fixed={sourcesStoryBottom}
             style={{ bottom: 0, left: 0, ...imgStyles }}
             objectFit="cover"
           />
-        }>
+        }
+      >
         <p>{i('indexStoryContent')}</p>
         <Link to="#">Kokeilulinkki</Link>
       </Cover>
