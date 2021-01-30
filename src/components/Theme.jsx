@@ -21,7 +21,7 @@ export default (props) => {
   // });
 
   // if (!hasMounted) {
-    // return null;
+  // return null;
   // }
 
   if (typeof window !== 'undefined') {
