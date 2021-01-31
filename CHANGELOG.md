@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Cards containing services of the company.
 - Anchor link for smoothly scrolling to an `id` on a page.
 
+### Fixed
+
+- Flickering of the site when switching page.
+
 ## [0.4.1] - 2021-01-30
 
 ### Fixed
