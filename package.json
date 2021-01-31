@@ -45,6 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-intl": "^5.10.17",
     "react-is": "^17.0.1",
+    "scroll-to-element": "^2.0.3",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

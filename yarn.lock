@@ -15119,6 +15119,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.4.0":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 567b0160be46ed20b124a05ace6e653f4ad3c047c48d02ac76161e9ac624488c0fdf622b2f4fb9c35c0c828a13dfa549044ad1db89c7af075cb0f99403b88c4b
+  languageName: node
+  linkType: hard
+
 "ramda@npm:^0.24.1":
   version: 0.24.1
   resolution: "ramda@npm:0.24.1"
@@ -16211,6 +16220,15 @@ fsevents@~2.1.2:
     ajv: ^6.12.4
     ajv-keywords: ^3.5.2
   checksum: 3851bcc7e44a3f35d3ca96e460c598aa24cec9fe395b196395316a043dc111d25735a9a49b1a115e4b52d5ed0d8bbcfb9fe1bfd077610f192b613e020d3f3ef2
+  languageName: node
+  linkType: hard
+
+"scroll-to-element@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "scroll-to-element@npm:2.0.3"
+  dependencies:
+    raf: ^3.4.0
+  checksum: 6e133beaf1f31517b0b38451b2de26303c01cbcb12e1269bb6569307019ed82ca69db4f2b86824c906f57aa426ab1e707d81bbd6b55cb02c186aebdeb217a65a
   languageName: node
   linkType: hard
 
@@ -18839,6 +18857,7 @@ fsevents@~2.1.2:
     react-helmet: ^6.1.0
     react-intl: ^5.10.17
     react-is: ^17.0.1
+    scroll-to-element: ^2.0.3
     styled-components: ^5.2.1
     stylelint: ^13.8.0
   languageName: unknown
