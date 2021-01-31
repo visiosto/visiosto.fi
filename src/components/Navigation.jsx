@@ -140,6 +140,12 @@ export default (props) => {
           <Link to="/">{i('indexTitle')}</Link>
         </Li>
         <Li>
+          <Link to="/#services">{i('indexServicesTitle')}</Link>
+        </Li>
+        <Li>
+          <Link to="/#portfolio">{i('indexPortfolioTitle')}</Link>
+        </Li>
+        <Li>
           <Link to="/blog">{i('blogTitle')}</Link>
         </Li>
       </Ul>

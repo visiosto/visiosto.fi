@@ -145,7 +145,7 @@ const IndexPage = (props) => {
       </Cover>
       <Break color={'orange'} />
       <Section lesserMargin={true}>
-        <H2>{i('indexServicesTitle')}</H2>
+        <H2 id="services">{i('indexServicesTitle')}</H2>
         <Cards>
           <Card title={i('indexServicesWebTitle')} icon={<DeviceDesktopIcon size={'large'} />}>
             <p>{i('indexServicesWebContent')}</p>
@@ -164,7 +164,7 @@ const IndexPage = (props) => {
         <Icon>
           <NorthStarIcon size={'large'} />
         </Icon>
-        <H2>{i('indexReferencesTitle')}</H2>
+        <H2 id="portfolio">{i('indexPortfolioTitle')}</H2>
       </Section>
     </Layout>
   );

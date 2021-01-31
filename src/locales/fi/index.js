@@ -19,5 +19,5 @@ export default {
   indexServicesEventsTitle: 'Tapahtumat',
   indexServicesEventsContent:
     'Suunnittelemme ja toteutamme visiosi niin pienistä kuin isoistakin tapahtumista. Oli kyseessä sitten asiakastilaisuus, ”kick-off”, seminaari, vuosikokous tai lehdistötilaisuus – me hoidamme sen toiveesi mukaisesti.',
-  indexReferencesTitle: 'Mitä olemme tehneet?',
+  indexPortfolioTitle: 'Portfolio',
 };
