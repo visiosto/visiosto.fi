@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import createAnchorLink from './createAnchorLink';
@@ -92,15 +92,24 @@ export default (props) => {
   `;
 
   const Ul = styled.ul`
-    display: ${(props) => (props.toggled ? 'block' : 'none')};
-    list-style: none;
+    overflow: hidden;
+    display: block;
+    max-height: 0;
     margin: 0;
     padding-left: 0;
+    list-style: none;
     text-align: center;
 
+    ${(props) => props.toggled && css`
+      overflow: visible;
+      max-height: none;
+    `};
+
     @media screen and ${(props) => props.theme.devices.laptopSmall} {
+      overflow: visible;
       display: flex;
       justify-content: center;
+      max-height: none;
     }
   `;
 
