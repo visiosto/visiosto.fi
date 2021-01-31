@@ -1,0 +1,12 @@
+{
+  "index": {
+    "services": {
+      "fi": "palvelut",
+      "en": "services"
+    },
+    "portfolio": {
+      "fi": "portfolio",
+      "en": "portfolio"
+    }
+  }
+}

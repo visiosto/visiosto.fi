@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Horizontal rule component.
 - Cards containing services of the company.
 - Anchor link for smoothly scrolling to an `id` on a page.
+- Internationalization of the ID anchor links.
 - Query string `colorscheme` for setting the colour scheme on landing.
 
 ### Fixed

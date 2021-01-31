@@ -9,6 +9,7 @@ export default {
   indexStoryTitle: 'Tarinasi',
   indexStoryContent:
     'Me kerromme sen. Olitpa sitten harrastaja, huvittelija tai ammattilainen, äänesi ansaitsee tulla kuuluviin. Siksi me teemme. Jotta kenekään ei tarvitse jäädä varjoon. Kun kaikkien ääni kuuluu, demokratia voi hyvin, elää ja hengittää.',
+  indexServicesId: 'palvelut',
   indexServicesTitle: 'Palvelumme',
   indexServicesWebTitle: 'Verkkosivustot',
   indexServicesWebContent:
@@ -19,5 +20,6 @@ export default {
   indexServicesEventsTitle: 'Tapahtumat',
   indexServicesEventsContent:
     'Suunnittelemme ja toteutamme visiosi niin pienistä kuin isoistakin tapahtumista. Oli kyseessä sitten asiakastilaisuus, ”kick-off”, seminaari, vuosikokous tai lehdistötilaisuus – me hoidamme sen toiveesi mukaisesti.',
+  indexPortfolioId: 'portfolio',
   indexPortfolioTitle: 'Portfolio',
 };

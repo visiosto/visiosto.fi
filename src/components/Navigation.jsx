@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import AnchorLink from './AnchorLink';
-
+import createAnchorLink from './createAnchorLink';
 import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
@@ -14,6 +13,7 @@ import createIntl from '../utils/createIntl';
 export default (props) => {
   const i = createIntl(useIntl());
   const LanguageLink = createLink(props.lang);
+  const LanguageAnchorLink = createAnchorLink(props.lang);
 
   const [toggled, setToggled] = useState(false);
 
@@ -109,6 +109,28 @@ export default (props) => {
   `;
 
   const Link = styled(LanguageLink)`
+    position: relative;
+    margin: 1rem auto 0;
+    border-radius: ${(props) => props.theme.borders.commonRadius};
+    padding: 0.7rem 1rem;
+    background: transparent;
+    font-weight: 600;
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.textMain};
+
+    &:visited {
+      color: ${(props) => props.theme.colors.textMain};
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: ${(props) => props.theme.colors.navHover};
+      color: ${(props) => props.theme.colors.textMain};
+    }
+  `;
+
+  const AnchorLink = styled(LanguageAnchorLink)`
     position: relative;
     margin: 1rem auto 0;
     border-radius: ${(props) => props.theme.borders.commonRadius};
