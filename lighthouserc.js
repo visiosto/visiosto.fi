@@ -7,7 +7,6 @@ module.exports = {
       target: 'temporary-public-storage',
     },
     assert: {
-      preset: 'lighthouse:recommended',
       assertions: {
         'first-contentful-paint': 'warn',
       },
