@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import AnchorLink from './AnchorLink';
+
 import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
@@ -140,10 +142,10 @@ export default (props) => {
           <Link to="/">{i('indexTitle')}</Link>
         </Li>
         <Li>
-          <Link to="/#services">{i('indexServicesTitle')}</Link>
+          <AnchorLink to="/#services">{i('indexServicesTitle')}</AnchorLink>
         </Li>
         <Li>
-          <Link to="/#portfolio">{i('indexPortfolioTitle')}</Link>
+          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
         </Li>
         <Li>
           <Link to="/blog">{i('blogTitle')}</Link>
