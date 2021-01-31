@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Thematic break component.
 - Horizontal rule component.
 - Cards containing services of the company.
+- Anchor link for smoothly scrolling to an `id` on a page.
 
 ## [0.4.1] - 2021-01-30
 
