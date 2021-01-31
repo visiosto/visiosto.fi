@@ -35,7 +35,11 @@ export default (currentLocale) => {
 
     const pageKeyFull = pageKey === '' ? 'index' : pageKey;
 
-    if (pageKeyFull in ids && hashedLocation in ids[pageKeyFull] && currentLocale in ids[pageKeyFull][hashedLocation]) {
+    if (
+      pageKeyFull in ids &&
+      hashedLocation in ids[pageKeyFull] &&
+      currentLocale in ids[pageKeyFull][hashedLocation]
+    ) {
       if (currentLocale === 'fi' && pageKeyFull === 'index') {
         to = `/#${ids[pageKeyFull][hashedLocation][currentLocale]}`;
       } else {
