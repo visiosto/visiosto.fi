@@ -1,28 +1,43 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useLocation } from '@reach/router';
+import queryString from 'query-string';
 import { ThemeProvider } from 'styled-components';
 
 import theme from '../theme';
 
+const getDefaultUserTheme = () => {
+  return typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+};
+
+const getQueryTheme = (query) => {
+  const fallback = getDefaultUserTheme();
+
+  if (query) {
+    const queried = queryString.parse(query);
+    const { colorscheme } = queried;
+
+    // Ensure a valid expected value is passed
+    if (['light', 'dark'].includes(colorscheme)) {
+      return colorscheme;
+    }
+
+    return fallback;
+  }
+
+  return fallback;
+};
+
 export default (props) => {
-  // const [hasMounted, setHasMounted] = useState(false);
-  const [colorScheme, setColorScheme] = useState(
-    typeof window !== 'undefined' &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light',
-  );
-
-  // useEffect(() => {
-  //   setHasMounted(true);
-  // });
-
-  // if (!hasMounted) {
-  // return null;
-  // }
+  const location = useLocation();
+  const defaultTheme = (location.search && getQueryTheme(location.search)) || getDefaultUserTheme();
+  const [colorScheme, setColorScheme] = useState(defaultTheme);
 
   if (typeof window !== 'undefined') {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
