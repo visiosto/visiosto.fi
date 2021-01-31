@@ -33,5 +33,5 @@ export default (props) => {
     linkProps.className = props.className;
   }
 
-  return <Link {...linkProps}>{children ? children : title}</Link>;
+  return <Link {...linkProps}>{props.children ? props.children : props.title}</Link>;
 };
