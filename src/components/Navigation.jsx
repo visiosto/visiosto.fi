@@ -100,10 +100,12 @@ export default (props) => {
     list-style: none;
     text-align: center;
 
-    ${(props) => props.toggled && css`
-      overflow: visible;
-      max-height: none;
-    `};
+    ${(props) =>
+      props.toggled &&
+      css`
+        overflow: visible;
+        max-height: none;
+      `};
 
     @media screen and ${(props) => props.theme.devices.laptopSmall} {
       overflow: visible;
