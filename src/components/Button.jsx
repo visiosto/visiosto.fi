@@ -23,14 +23,14 @@ export default (props) => {
     cursor: pointer;
     transition: all 100ms ease-in;
     background-clip: padding-box;
-    background-color: ${(props) => props.theme.colors.link};
-    color: ${(props) => props.theme.colors.textButton};
+    background-color: var(--color-link);
+    color: var(--color-text-button);
     font-weight: 600;
     text-align: center;
     text-decoration: none;
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.linkHover};
+      background-color: var(--color-link-hover);
     }
   `;
 

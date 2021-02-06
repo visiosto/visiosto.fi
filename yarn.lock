@@ -16844,7 +16844,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.17, source-map-support@npm:~0.5.12":
+"source-map-support@npm:^0.5.17, source-map-support@npm:~0.5.12, source-map-support@npm:~0.5.19":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -16861,7 +16861,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"source-map@npm:0.7.3, source-map@npm:^0.7.3":
+"source-map@npm:0.7.3, source-map@npm:^0.7.3, source-map@npm:~0.7.2":
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
   checksum: 351ce26ffa1ebf203660c0d70d7566c81e65d2d994d1c2d94da140808e02da34961673ce12ecea9b40797b96fbeb8c70bf71a4ad9f779f1a4fdbba75530bb386
@@ -17818,6 +17818,19 @@ fsevents@~2.1.2:
   bin:
     terser: bin/terser
   checksum: d7ab95898b40e2aa3513b02fc74f520f8e65072a19d7f687b8224af01512ad4d2227bc1375c22cd050f67eb1ca3e440b4f09652c5f48f13ed9ee81c0c26015a3
+  languageName: node
+  linkType: hard
+
+"terser@npm:^5.6.0-beta":
+  version: 5.6.0-beta
+  resolution: "terser@npm:5.6.0-beta"
+  dependencies:
+    commander: ^2.20.0
+    source-map: ~0.7.2
+    source-map-support: ~0.5.19
+  bin:
+    terser: bin/terser
+  checksum: 68c263a113edc0a7e9b05d151e62720e25298183be3b3e9d6ea143c653ad93dfdbad1455b7b7265d7df4c199a998feb0146045d009d652fc33fc082ee9e65bcc
   languageName: node
   linkType: hard
 
@@ -18873,6 +18886,7 @@ fsevents@~2.1.2:
     scroll-to-element: ^2.0.3
     styled-components: ^5.2.1
     stylelint: ^13.8.0
+    terser: ^5.6.0-beta
   languageName: unknown
   linkType: soft
 

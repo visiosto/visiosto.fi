@@ -50,7 +50,7 @@ export default (props) => {
     z-index: 1;
     transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
       background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.25s ease;
-    background: ${(props) => props.theme.colors.textMain};
+    background: var(--color-text);
 
     ${(props) => {
       if (props.toggled) {
@@ -127,17 +127,17 @@ export default (props) => {
     background: transparent;
     font-weight: 600;
     text-decoration: none;
-    color: ${(props) => props.theme.colors.textMain};
+    color: var(--color-text);
 
     &:visited {
-      color: ${(props) => props.theme.colors.textMain};
+      color: var(--color-text);
     }
 
     &:hover,
     &:focus,
     &:active {
-      background: ${(props) => props.theme.colors.navHover};
-      color: ${(props) => props.theme.colors.textMain};
+      background: var(--color-background-hover);
+      color: var(--color-text);
     }
   `;
 
@@ -149,17 +149,17 @@ export default (props) => {
     background: transparent;
     font-weight: 600;
     text-decoration: none;
-    color: ${(props) => props.theme.colors.textMain};
+    color: var(--color-text);
 
     &:visited {
-      color: ${(props) => props.theme.colors.textMain};
+      color: var(--color-text);
     }
 
     &:hover,
     &:focus,
     &:active {
-      background: ${(props) => props.theme.colors.navHover};
-      color: ${(props) => props.theme.colors.textMain};
+      background: var(--color-background-hover);
+      color: var(--color-text);
     }
   `;
 

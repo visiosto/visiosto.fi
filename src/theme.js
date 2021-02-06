@@ -1,21 +1,60 @@
 // Coypright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const colors = {
-  blue: '#91d7f2',
-  turquoise: '#5196a6',
-  orange: '#f2955e',
-  red: '#eb5952',
+const themeColors = {
+  blue: '#23297a',
+  lightBlue: '#6dcff6',
+  peach: '#fbb496',
+  cream: '#ffffe4',
+  black: '#3b4a57',
+  white: '#ffffff',
   linkBlue: '#0051c2',
   linkBlueDark: '#004099',
   linkYellow: '#fabd46',
   linkYellowDark: '#ba8d34',
   // white: '#f2f0eb',
-  white: '#ffffff',
-  black: '#3b4a57',
   shade: '#dde1e9',
   shadeDark: '#2a2a2b',
   gray: '#f6f7f9',
+};
+
+export const colors = {
+  background: {
+    light: themeColors.white,
+    dark: themeColors.black,
+  },
+  text: {
+    light: themeColors.black,
+    dark: themeColors.white,
+  },
+  'text-button': {
+    light: themeColors.white,
+    dark: themeColors.black,
+  },
+  link: {
+    light: themeColors.linkBlue,
+    dark: themeColors.linkYellow,
+  },
+  'link-hover': {
+    light: themeColors.linkBlueDark,
+    dark: themeColors.linkYellowDark,
+  },
+  primary: {
+    light: themeColors.blue,
+    dark: themeColors.lightBlue,
+  },
+  secondary: {
+    light: themeColors.peach,
+    dark: themeColors.cream,
+  },
+  'background-hover': {
+    light: themeColors.shade,
+    dark: themeColors.shadeDark,
+  },
+  empty: {
+    light: '#',
+    dark: '#',
+  },
 };
 
 const fonts = {
@@ -60,8 +99,8 @@ const borders = {
   commonRadius: '25px',
 };
 
-const common = {
-  colors: { ...colors },
+const theme = {
+  colors: { ...themeColors },
   fonts: { ...fonts },
   sizes: { ...sizes },
   devices: { ...devices },
@@ -69,34 +108,4 @@ const common = {
   borders: { ...borders },
 };
 
-const light = {
-  ...common,
-  colors: {
-    background: colors.white,
-    textMain: colors.black,
-    link: colors.linkBlue,
-    linkHover: colors.linkBlueDark,
-    navHover: colors.shade,
-    textButton: colors.white,
-    ...common.colors,
-  },
-};
-
-const dark = {
-  ...common,
-  colors: {
-    background: colors.black,
-    textMain: colors.white,
-    link: colors.linkYellow,
-    linkHover: colors.linkYellowDark,
-    navHover: colors.shadeDark,
-    textButton: colors.black,
-    ...common.colors,
-  },
-};
-
-export default {
-  light,
-  dark,
-  devices,
-};
+export default theme;

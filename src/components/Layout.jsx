@@ -18,13 +18,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors.background};
+    background: var(--color-background);
     font-family: ${(props) => props.theme.fonts.main};
     font-size: 1rem;
     font-weight: 400;
     font-smoothing: antialiased;
     line-height: 1.5;
-    color: ${(props) => props.theme.colors.textMain};
+    color: var(--color-text);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -34,14 +34,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${(props) => props.theme.colors.link};
+    color: var(--color-link);
 
     &:visited {
-      color: ${(props) => props.theme.colors.link};
+      color: var(--color-link);
     }
 
     &:hover, &:focus, &:active {
-      color: ${(props) => props.theme.colors.linkHover};
+      color: var(--color-link-hover);
     }
   }
 `;

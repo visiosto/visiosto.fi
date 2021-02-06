@@ -11,8 +11,8 @@ export default (props) => {
   const i = createIntl(useIntl());
 
   const Footer = styled.footer`
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.textMain};
+    background: var(--color-background);
+    color: var(--color-text);
   `;
 
   const Div = styled.div`
