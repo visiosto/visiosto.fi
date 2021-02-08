@@ -13,7 +13,7 @@ import scroller from './src/utils/anchor-link/scroller';
 // Based on code by Chase Ohlson.
 // Original code is available at https://github.com/brohlson/gatsby-plugin-anchor-links.
 
-const onRouteUpdate = ({ location }, { offset = 0, duration = 1000 }) => {
+export const onRouteUpdate = ({ location }, { offset = 0, duration = 1000 }) => {
   const isBrowser = typeof window !== 'undefined';
 
   const windowHash = isBrowser ? window.visiostoScrollHash : undefined;
@@ -38,6 +38,4 @@ const onRouteUpdate = ({ location }, { offset = 0, duration = 1000 }) => {
 // https://github.com/joshwcomeau/dark-mode-minimal
 
 // eslint-disable-next-line react/jsx-filename-extension
-const wrapRootElement = ({ element }) => <App>{element}</App>;
-
-export default { onRouteUpdate, wrapRootElement };
+export const wrapRootElement = ({ element }) => <App>{element}</App>;

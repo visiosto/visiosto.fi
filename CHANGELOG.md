@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Anchor link for smoothly scrolling to an `id` on a page.
 - Internationalization of the ID anchor links.
 - Query string `colorscheme` for setting the colour scheme on landing.
+- Support for dark mode that is based on the use of CSS variables and React context.
 
 ### Fixed
 

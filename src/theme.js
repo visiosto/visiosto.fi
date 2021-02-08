@@ -1,7 +1,7 @@
 // Coypright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const themeColors = {
+const colors = {
   blue: '#23297a',
   lightBlue: '#6dcff6',
   peach: '#fbb496',
@@ -18,42 +18,38 @@ const themeColors = {
   gray: '#f6f7f9',
 };
 
-export const colors = {
+export const COLORS = {
   background: {
-    light: themeColors.white,
-    dark: themeColors.black,
+    light: colors.white,
+    dark: colors.black,
   },
   text: {
-    light: themeColors.black,
-    dark: themeColors.white,
+    light: colors.black,
+    dark: colors.white,
   },
   'text-button': {
-    light: themeColors.white,
-    dark: themeColors.black,
+    light: colors.white,
+    dark: colors.black,
   },
   link: {
-    light: themeColors.linkBlue,
-    dark: themeColors.linkYellow,
+    light: colors.linkBlue,
+    dark: colors.linkYellow,
   },
   'link-hover': {
-    light: themeColors.linkBlueDark,
-    dark: themeColors.linkYellowDark,
+    light: colors.linkBlueDark,
+    dark: colors.linkYellowDark,
   },
   primary: {
-    light: themeColors.blue,
-    dark: themeColors.lightBlue,
+    light: colors.blue,
+    dark: colors.lightBlue,
   },
   secondary: {
-    light: themeColors.peach,
-    dark: themeColors.cream,
+    light: colors.peach,
+    dark: colors.cream,
   },
   'background-hover': {
-    light: themeColors.shade,
-    dark: themeColors.shadeDark,
-  },
-  empty: {
-    light: '#',
-    dark: '#',
+    light: colors.shade,
+    dark: colors.shadeDark,
   },
 };
 
@@ -99,13 +95,10 @@ const borders = {
   commonRadius: '25px',
 };
 
-const theme = {
-  colors: { ...themeColors },
+export default {
   fonts: { ...fonts },
   sizes: { ...sizes },
   devices: { ...devices },
   layout: { ...layout },
   borders: { ...borders },
 };
-
-export default theme;

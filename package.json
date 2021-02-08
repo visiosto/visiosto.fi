@@ -49,7 +49,7 @@
     "react-is": "^17.0.1",
     "scroll-to-element": "^2.0.3",
     "styled-components": "^5.2.1",
-    "terser": "^5.6.0-beta"
+    "terser": "^4.6.13"
   },
   "devDependencies": {
     "eslint": "^7.13.0",

@@ -4,41 +4,47 @@
 // Thanks to Joshua Comeau for the original code, licensed under MIT License:
 // https://github.com/joshwcomeau/dark-mode-minimal
 
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+
+import ThemeContext from './ThemeContext';
 
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../constants';
-import { colors } from '../theme';
+import { COLORS } from '../theme';
 
-export const ThemeContext = createContext();
-
-export default (props) => {
-  const [colorScheme, setColorScheme] = useState(undefined);
+export default ({ children }) => {
+  const [colorMode, rawSetColorMode] = useState(undefined);
 
   useEffect(() => {
     const root = window.document.documentElement;
 
+    // Because colours matter so much for the initial page view, we're
+    // doing a lot of the work in gatsby-ssr. That way it can happen before
+    // the React component tree mounts.
     const initialColorValue = root.style.getPropertyValue(INITIAL_COLOR_MODE_CSS_PROP);
 
-    setColorScheme(initialColorValue);
+    rawSetColorMode(initialColorValue);
   }, []);
 
   const contextValue = useMemo(() => {
-    const setColorTheme = (newValue) => {
+    function setColorMode(newValue) {
       const root = window.document.documentElement;
 
       localStorage.setItem(COLOR_MODE_KEY, newValue);
 
-      Object.entries(colors).forEach(([name, colorByTheme]) => {
+      Object.entries(COLORS).forEach(([name, colorByTheme]) => {
         const cssVarName = `--color-${name}`;
 
         root.style.setProperty(cssVarName, colorByTheme[newValue]);
       });
 
-      setColorScheme(newValue);
+      rawSetColorMode(newValue);
+    }
+
+    return {
+      colorMode,
+      setColorMode,
     };
+  }, [colorMode, rawSetColorMode]);
 
-    return { colorScheme, setColorTheme };
-  }, [colorScheme, setColorScheme]);
-
-  return <ThemeContext.Provider value={contextValue}>{props.children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };
