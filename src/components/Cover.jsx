@@ -1,8 +1,10 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+
+import ThemeContext from './ThemeContext';
 
 export default (props) => {
   const Section = styled.section`
@@ -41,14 +43,16 @@ export default (props) => {
     text-align: center;
   `;
 
+  const { colorMode } = useContext(ThemeContext);
+
   return (
     <Section>
-      {props.imgTop}
+      {colorMode === 'dark' ? props.imgTopDark : props.imgTopLight}
       <Inner>
         <Title>{props.title}</Title>
         <Content>{props.children}</Content>
       </Inner>
-      {props.imgBottom}
+      {colorMode === 'dark' ? props.imgBottomDark : props.imgBottomLight}
     </Section>
   );
 };

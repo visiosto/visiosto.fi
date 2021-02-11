@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -12,6 +12,7 @@ import Break from '../components/Break';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Cover from '../components/Cover';
+import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import Layout from '../components/Layout';
 import Theme from '../components/Theme';
@@ -71,22 +72,6 @@ const IndexPage = (props) => {
     zIndex: -1,
   };
 
-  const sourcesCoverTop = [
-    props.data.topCoverPhoneSmall.childImageSharp.fixed,
-    {
-      ...props.data.topCoverTablet.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const sourcesCoverBottom = [
-    props.data.bottomCoverPhoneSmall.childImageSharp.fixed,
-    {
-      ...props.data.bottomCoverTablet.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
   const sourcesStoryTop = [
     props.data.topStoryPhoneSmall.childImageSharp.fixed,
     {
@@ -110,19 +95,9 @@ const IndexPage = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <Cover
-        title={i('indexCoverTitle')}
-        imgTop={<Img fixed={sourcesCoverTop} style={imgStyles} objectFit="cover" />}
-        imgBottom={
-          <Img
-            fixed={sourcesCoverBottom}
-            style={{ bottom: 0, right: 0, ...imgStyles }}
-            objectFit="cover"
-          />
-        }
-      >
+      <IndexCover title={i('indexCoverTitle')}>
         <p>{i('indexCoverContent')}</p>
-      </Cover>
+      </IndexCover>
       <Cover
         title={i('indexStoryTitle')}
         imgTop={
@@ -186,36 +161,6 @@ export const query = graphql`
       edges {
         node {
           id
-        }
-      }
-    }
-    topCoverPhoneSmall: file(relativePath: { eq: "front-page/cover-phone-small-up-left.png" }) {
-      childImageSharp {
-        fixed(width: 300, height: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    bottomCoverPhoneSmall: file(
-      relativePath: { eq: "front-page/cover-phone-small-down-right.png" }
-    ) {
-      childImageSharp {
-        fixed(width: 300, height: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    topCoverTablet: file(relativePath: { eq: "front-page/cover-tablet-up-left.png" }) {
-      childImageSharp {
-        fixed(width: 400, height: 400) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    bottomCoverTablet: file(relativePath: { eq: "front-page/cover-tablet-down-right.png" }) {
-      childImageSharp {
-        fixed(width: 400, height: 400) {
-          ...GatsbyImageSharpFixed
         }
       }
     }
