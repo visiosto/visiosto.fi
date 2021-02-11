@@ -54,10 +54,9 @@ export const COLORS = {
 };
 
 const fonts = {
-  heading: 'utopia-std, serif',
-  // heading: 'baskerville-display-pt, Garamond, Georgia, serif',
-  main: 'montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
-  code: 'roboto-mono, Menlo, Monaco, Consolas, "Courier New", monospace',
+  heading: 'utopia-std, Times, "Times New Roman", serif',
+  main: 'source-sans-pro, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  code: 'source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace',
 };
 
 // The maximum sizes of different viewports.
