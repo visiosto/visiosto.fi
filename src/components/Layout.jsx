@@ -29,9 +29,15 @@ const GlobalStyle = createGlobalStyle`
     color: var(--color-text);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
     clear: both;
     font-family: ${(props) => props.theme.fonts.heading};
+    font-weight: 700;
+  }
+
+  h3, h4, h5, h6 {
+    clear: both;
+    font-family: ${(props) => props.theme.fonts.main};
     font-weight: 700;
   }
 
