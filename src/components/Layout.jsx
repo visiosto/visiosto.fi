@@ -8,6 +8,8 @@ import Footer from './Footer';
 import Head from './Head';
 import Header from './Header';
 
+import listenColorScheme from '../utils/listenColorScheme';
+
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
@@ -47,6 +49,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default (props) => {
+  listenColorScheme();
+
   const PageTitle = props.home
     ? styled.h2`
         display: none;

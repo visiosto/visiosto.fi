@@ -1,11 +1,12 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Navigation from './Navigation';
+import ThemeContext from './ThemeContext';
 
 export default (props) => {
   const { site } = useStaticQuery(
