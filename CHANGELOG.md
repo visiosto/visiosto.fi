@@ -17,6 +17,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Internationalization of the ID anchor links.
 - Query string `colorscheme` for setting the colour scheme on landing.
 - Support for dark mode that is based on the use of CSS variables and React context.
+- Own components for all of the different covers on the index page.
+
+### Changed
+
+- Colours of the site to the brand colours.
+- Font family of heading 3 and below to the main paragraph font family.
 
 ### Fixed
 
