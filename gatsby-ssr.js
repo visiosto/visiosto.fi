@@ -8,7 +8,7 @@ import Terser from 'terser';
 
 import App from './src/components/App';
 
-import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP, ENABLE_LOCAL_STORAGE } from './src/constants';
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from './src/constants';
 import { COLORS } from './src/theme';
 
 // Thanks to Joshua Comeau for the original code, licensed under MIT License:
@@ -54,7 +54,7 @@ const MagicScriptTag = () => {
 
   calledFunction = Terser.minify(calledFunction).code;
 
-  // eslint-disable-next-line react/no-danger
+  // eslint-disable-next-line react/no-danger, react/jsx-filename-extension
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
 };
 
@@ -73,12 +73,14 @@ const FallbackStyles = () => {
     --color-background: white;`
   */
 
-  const cssVariableString = Object.entries(COLORS).reduce((acc, [name, colorByTheme]) => {
-    return `${acc}\n--color-${name}: ${colorByTheme.light};`;
-  }, '');
+  const cssVariableString = Object.entries(COLORS).reduce(
+    (acc, [name, colorByTheme]) => `${acc}\n--color-${name}: ${colorByTheme.light};`,
+    '',
+  );
 
   const wrappedInSelector = `html { ${cssVariableString} }`;
 
+  // eslint-disable-next-line react/jsx-filename-extension
   return <style>{wrappedInSelector}</style>;
 };
 
@@ -87,6 +89,4 @@ export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
   setPreBodyComponents(<MagicScriptTag />);
 };
 
-export const wrapPageElement = ({ element }) => {
-  return <App>{element}</App>;
-};
+export const wrapPageElement = ({ element }) => <App>{element}</App>;
