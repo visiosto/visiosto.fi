@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Cover from './Cover';
+import SchemedImg from './SchemedImg';
 
 import theme from '../theme';
 
@@ -22,8 +23,8 @@ export default (props) => {
             }
           }
         }
-        bottomPhoneSmallLight: file(
-          relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
+        topPhoneSmallDark: file(
+          relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -31,8 +32,22 @@ export default (props) => {
             }
           }
         }
-        topPhoneSmallDark: file(
-          relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
+        topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
+          childImageSharp {
+            fixed(width: 400, height: 400) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
+          childImageSharp {
+            fixed(width: 400, height: 400) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        bottomPhoneSmallLight: file(
+          relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -49,23 +64,9 @@ export default (props) => {
             }
           }
         }
-        topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
-          childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
         bottomTabletLight: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
         ) {
-          childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
           childImageSharp {
             fixed(width: 400, height: 400) {
               ...GatsbyImageSharpFixed
@@ -98,14 +99,13 @@ export default (props) => {
     },
   ];
 
-  /*
   const sourcesTopDark = [
     data.topPhoneSmallDark.childImageSharp.fixed,
     {
       ...data.topTabletDark.childImageSharp.fixed,
       media: theme.devices.tablet,
     },
-  ];*/
+  ];
 
   const sourcesBottomLight = [
     data.bottomPhoneSmallLight.childImageSharp.fixed,
@@ -115,30 +115,29 @@ export default (props) => {
     },
   ];
 
-  /*
   const sourcesBottomDark = [
     data.bottomPhoneSmallDark.childImageSharp.fixed,
     {
       ...data.bottomTabletDark.childImageSharp.fixed,
       media: theme.devices.tablet,
     },
-  ];*/
+  ];
 
   return (
     <Cover
       title={props.title}
-      imgTopLight={<Img fixed={sourcesTopLight} style={imgStyles} objectFit="cover" />}
-      imgTopDark={<Img fixed={sourcesTopLight} style={imgStyles} objectFit="cover" />}
-      imgBottomLight={
-        <Img
-          fixed={sourcesBottomLight}
-          style={{ bottom: 0, right: 0, ...imgStyles }}
+      imgTop={
+        <SchemedImg
+          fixedLight={sourcesTopLight}
+          fixedDark={sourcesTopDark}
+          style={imgStyles}
           objectFit="cover"
         />
       }
-      imgBottomDark={
-        <Img
-          fixed={sourcesBottomLight}
+      imgBottom={
+        <SchemedImg
+          fixedLight={sourcesBottomLight}
+          fixedDark={sourcesBottomDark}
           style={{ bottom: 0, right: 0, ...imgStyles }}
           objectFit="cover"
         />
