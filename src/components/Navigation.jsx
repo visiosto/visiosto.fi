@@ -125,7 +125,8 @@ export default (props) => {
     border-radius: ${(props) => props.theme.borders.commonRadius};
     padding: 0.7rem 1rem;
     background: transparent;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 400;
     text-decoration: none;
     color: var(--color-text);
 
@@ -147,7 +148,8 @@ export default (props) => {
     border-radius: ${(props) => props.theme.borders.commonRadius};
     padding: 0.7rem 1rem;
     background: transparent;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 400;
     text-decoration: none;
     color: var(--color-text);
 
