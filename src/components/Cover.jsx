@@ -4,8 +4,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import ThemeContext from './ThemeContext';
-
 export default (props) => {
   const Section = styled.section`
     overflow: hidden;
@@ -43,16 +41,17 @@ export default (props) => {
     text-align: center;
   `;
 
-  const { colorMode } = useContext(ThemeContext);
+  const ImgTop = () => props.imgTop;
+  const ImgBottom = () => props.imgBottom;
 
   return (
     <Section>
-      {colorMode === 'dark' ? props.imgTopDark : props.imgTopLight}
+      <ImgTop />
       <Inner>
         <Title>{props.title}</Title>
         <Content>{props.children}</Content>
       </Inner>
-      {colorMode === 'dark' ? props.imgBottomDark : props.imgBottomLight}
+      <ImgBottom />
     </Section>
   );
 };
