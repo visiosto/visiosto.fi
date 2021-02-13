@@ -57,23 +57,48 @@ const GlobalStyle = createGlobalStyle`
 export default (props) => {
   listenColorScheme();
 
-  const PageTitle = props.home
-    ? styled.h2`
-        display: none;
-      `
-    : styled.h1`
-        font-size: 3rem;
-        text-align: center;
-      `;
+  if (props.errorPage) {
+    const ErrorCode = styled.h1`
+      font-size: 3rem;
+      font-family: ${(props) => props.theme.fonts.code};
+      text-align: center;
+    `;
 
-  return (
-    <>
-      <GlobalStyle />
-      <Head {...props} />
-      <Header {...props} />
-      <PageTitle>{props.title}</PageTitle>
-      {props.children}
-      <Footer {...props} />
-    </>
-  );
+    const PageTitle = styled.h2`
+      font-size: 2rem;
+      text-align: center;
+    `;
+
+    return (
+      <>
+        <GlobalStyle />
+        <Head {...props} />
+        <Header {...props} />
+        <ErrorCode>{props.errorCode}</ErrorCode>
+        <PageTitle>{props.title}</PageTitle>
+        {props.children}
+        <Footer {...props} />
+      </>
+    );
+  } else {
+    const PageTitle = props.home
+      ? styled.h2`
+          display: none;
+        `
+      : styled.h1`
+          font-size: 3rem;
+          text-align: center;
+        `;
+
+    return (
+      <>
+        <GlobalStyle />
+        <Head {...props} />
+        <Header {...props} />
+        <PageTitle>{props.title}</PageTitle>
+        {props.children}
+        <Footer {...props} />
+      </>
+    );
+  }
 };

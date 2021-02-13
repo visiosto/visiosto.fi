@@ -9,6 +9,7 @@ import headerMessages from './fi/header';
 import indexMessages from './fi/index';
 import metaMessages from './fi/meta';
 import navigationMessages from './fi/navigation';
+import notFoundMessages from './fi/not-found';
 
 export const messages = {
   ...blogMessages,
@@ -17,6 +18,7 @@ export const messages = {
   ...indexMessages,
   ...metaMessages,
   ...navigationMessages,
+  ...notFoundMessages,
 };
 
 export const lang = defineMessages(messages);
