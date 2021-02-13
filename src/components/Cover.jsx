@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export default (props) => {
@@ -10,8 +10,7 @@ export default (props) => {
     position: relative;
     min-width: 100%;
     min-height: 100%;
-    margin: 2em 0;
-    padding: 1em;
+    margin: 0 0 2em;
   `;
 
   const Inner = styled.div`
@@ -24,7 +23,7 @@ export default (props) => {
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 6em ${(props) => props.theme.layout.marginDesktop};
+      margin: 2em ${(props) => props.theme.layout.marginDesktop};
       padding: 2em 0;
     }
   `;

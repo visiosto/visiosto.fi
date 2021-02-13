@@ -157,13 +157,6 @@ export default Index;
 
 export const query = graphql`
   query IndexPage {
-    allSitePage {
-      edges {
-        node {
-          id
-        }
-      }
-    }
     topStoryPhoneSmall: file(relativePath: { eq: "front-page/story-phone-small-up-right.png" }) {
       childImageSharp {
         fixed(width: 300, height: 90) {

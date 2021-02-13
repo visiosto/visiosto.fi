@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 import Cover from './Cover';
 import SchemedImg from './SchemedImg';
@@ -86,11 +86,6 @@ export default (props) => {
     `,
   );
 
-  const imgStyles = {
-    position: 'absolute',
-    zIndex: -1,
-  };
-
   const sourcesTopLight = [
     data.topPhoneSmallLight.childImageSharp.fixed,
     {
@@ -123,11 +118,24 @@ export default (props) => {
     },
   ];
 
+  const Img = styled(SchemedImg)`
+    margin: 0;
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 0 4em;
+    }
+  `;
+
+  const imgStyles = {
+    position: 'absolute',
+    zIndex: -1,
+  };
+
   return (
     <Cover
       title={props.title}
       imgTop={
-        <SchemedImg
+        <Img
           fixedLight={sourcesTopLight}
           fixedDark={sourcesTopDark}
           style={imgStyles}
@@ -135,7 +143,7 @@ export default (props) => {
         />
       }
       imgBottom={
-        <SchemedImg
+        <Img
           fixedLight={sourcesBottomLight}
           fixedDark={sourcesBottomDark}
           style={{ bottom: 0, right: 0, ...imgStyles }}
