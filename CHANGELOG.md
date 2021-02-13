@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Query string `colorscheme` for setting the colour scheme on landing.
 - Support for dark mode that is based on the use of CSS variables and React context.
 - Own components for all of the different covers on the index page.
+- Copyright to the generated files.
 
 ### Changed
 
