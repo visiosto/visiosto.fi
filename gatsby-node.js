@@ -20,7 +20,10 @@ const writeAllPathsToFile = () => {
 
   fs.writeFileSync(
     allPagesPath,
-    `// Generated during bootstrapping via gatsby-node.js
+    `// Copyright (c) 2021 Visiosto oy
+// Licensed under the MIT License
+
+// Generated during bootstrapping via gatsby-node.js
 
 export default ['${paths.join("', '")}'];
 `,
