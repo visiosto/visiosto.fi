@@ -3,13 +3,10 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 
-import createIntl from '../utils/createIntl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default (props) => {
-  const i = createIntl(useIntl());
-
   const Footer = styled.footer`
     background: var(--color-background);
     color: var(--color-text);
@@ -30,6 +27,9 @@ export default (props) => {
 
   return (
     <Footer>
+      <Div>
+        <LanguageSwitcher {...props} />
+      </Div>
       <Div>Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.</Div>
       <Div>&nbsp;&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy</Div>
     </Footer>
