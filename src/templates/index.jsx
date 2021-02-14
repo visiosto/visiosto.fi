@@ -155,7 +155,7 @@ const Index = (props) => (
 
 export default Index;
 
-export const query = graphql`
+export const pageQuery = graphql`
   query IndexPage {
     topStoryPhoneSmall: file(relativePath: { eq: "front-page/story-phone-small-up-right.png" }) {
       childImageSharp {
