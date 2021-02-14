@@ -12,7 +12,7 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
-const BlogPage = (props) => {
+const BlogPostPage = (props) => {
   const i = createIntl(useIntl());
 
   const P = styled.p`
@@ -26,12 +26,12 @@ const BlogPage = (props) => {
   );
 };
 
-const Blog = (props) => (
+const BlogPost = (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
-      <BlogPage {...props} />
+      <BlogPostPage {...props} />
     </Theme>
   </Intl>
 );
 
-export default Blog;
+export default BlogPost;

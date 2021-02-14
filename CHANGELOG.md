@@ -20,6 +20,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Own components for all of the different covers on the index page.
 - Copyright to the generated files.
 - Page for 404 error.
+- Localized paths for blog posts.
+- Language switcher to the footer of the site.
+- Support for English site.
 
 ### Changed
 
