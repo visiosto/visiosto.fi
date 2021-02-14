@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -156,7 +156,7 @@ const Index = (props) => (
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexPage {
+  query IndexQuery {
     topStoryPhoneSmall: file(relativePath: { eq: "front-page/story-phone-small-up-right.png" }) {
       childImageSharp {
         fixed(width: 300, height: 90) {
