@@ -41,10 +41,10 @@ module.exports = async (actions, graphql, reporter) => {
 
     const postLocale = node.frontmatter.locale;
 
-    const blogPath =
-      postLocale === defaultLanguage
-        ? `${pageSlugs['blog'][postLocale]}`
-        : `${postLocale}/${pageSlugs['blog'][postLocale]}`;
+    // prettier-ignore
+    const blogPath = postLocale === defaultLanguage
+      ? `${pageSlugs.blog[postLocale]}`
+      : `${postLocale}/${pageSlugs.blog[postLocale]}`;
 
     console.log('Set the blog path to', blogPath);
 
@@ -56,10 +56,17 @@ module.exports = async (actions, graphql, reporter) => {
 
     addPathToSite(sitePath);
 
+    const keySlug = `blog:${node.frontmatter.date}`;
+
+    console.log('The key slug is set to', keySlug);
+
     createPage({
       path: sitePath,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        lang: postLocale,
+        key: keySlug,
+      },
     });
   });
 };
