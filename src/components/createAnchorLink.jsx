@@ -8,6 +8,7 @@ import AnchorLink from './AnchorLink';
 import allFiles from '../__generated__/all-pages';
 import pageIds from '../data/page-ids.json';
 import pageSlugs from '../data/page-slugs.json';
+import { DEFAULT_LANGUAGE } from '../constants';
 
 import stripHashedLocation from '../utils/anchor-link/stripHashedLocation';
 
@@ -29,7 +30,7 @@ export default (currentLocale) => {
 
     const localeVersion = pageKey === '' ? `/${currentLocale}` : `/${currentLocale}${to}`;
 
-    if (currentLocale !== 'fi' && paths.includes(localeVersion)) {
+    if (currentLocale !== DEFAULT_LANGUAGE && paths.includes(localeVersion)) {
       to = localeVersion;
     }
 
@@ -40,7 +41,7 @@ export default (currentLocale) => {
       hashedLocation in ids[pageKeyFull] &&
       currentLocale in ids[pageKeyFull][hashedLocation]
     ) {
-      if (currentLocale === 'fi' && pageKeyFull === 'index') {
+      if (currentLocale === DEFAULT_LANGUAGE && pageKeyFull === 'index') {
         to = `/#${ids[pageKeyFull][hashedLocation][currentLocale]}`;
       } else {
         to = `${to}#${ids[pageKeyFull][hashedLocation][currentLocale]}`;

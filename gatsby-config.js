@@ -3,6 +3,8 @@
 
 const path = require('path');
 
+const { DEFAULT_LANGUAGE, LANGUAGES } = require('./src/constants');
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://visiosto.github.io',
@@ -10,7 +12,7 @@ module.exports = {
     description:
       'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
     twitterAuthor: '@visiosto_oy',
-    locales: ['fi', 'en'],
+    locales: LANGUAGES,
   },
   plugins: [
     {
@@ -35,7 +37,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
-        langKeyDefault: 'fi',
+        langKeyDefault: DEFAULT_LANGUAGE,
         useLangKeyLayout: true,
       },
     },

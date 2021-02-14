@@ -5,18 +5,19 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import pageSlugs from '../data/page-slugs.json';
+import { DEFAULT_LANGUAGE } from '../constants';
 
 const createLanguageLink = (pageKey) => {
   const slugs = pageSlugs;
 
   return (linkProps) => {
     const toLang = linkProps.to;
-    let to = toLang === 'fi' ? '/' : `/${toLang}`;
+    let to = toLang === DEFAULT_LANGUAGE ? '/' : `/${toLang}`;
 
     if (pageKey in slugs && toLang in slugs[pageKey]) {
       to = `/${toLang}/${slugs[pageKey][toLang]}`;
 
-      if (toLang === 'fi') {
+      if (toLang === DEFAULT_LANGUAGE) {
         to = `/${slugs[pageKey][toLang]}`;
       }
     }
