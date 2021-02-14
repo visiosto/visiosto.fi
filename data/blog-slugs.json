@@ -1,10 +1,14 @@
 {
   "2020-01-01": {
-    "fi": "moderni-markkinointitoimisto-visiosto-taittaa-sinun-visiosi",
-    "en": "modern-marketing-agency-visiosto-makes-your-vision-come-true"
+    "modern-marketing-agency-visiosto-makes-your-vision-come-true": {
+      "fi": "moderni-markkinointitoimisto-visiosto-taittaa-sinun-visiosi",
+      "en": "modern-marketing-agency-visiosto-makes-your-vision-come-true"
+    }
   },
   "2020-07-01": {
-    "fi": "visiosto-juhlii-ensimmaista-syntymapaivaansa",
-    "en": "visiosto-celebrates-its-first-birthday"
+    "visiosto-celebrates-its-first-birthday": {
+      "fi": "visiosto-juhlii-ensimmaista-syntymapaivaansa",
+      "en": "visiosto-celebrates-its-first-birthday"
+    }
   }
 }

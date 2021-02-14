@@ -15,19 +15,16 @@ import createIntl from '../utils/createIntl';
 const BlogPostPage = (props) => {
   const i = createIntl(useIntl());
 
-  const { markdownRemark: post } = props.data;
-
   const P = styled.p`
     text-align: center;
   `;
 
   return (
     <Layout
-      title={post.frontmatter.title}
+      title={''}
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   );
 };
@@ -39,18 +36,5 @@ const BlogPost = (props) => (
     </Theme>
   </Intl>
 );
-
-export const pageQuery = graphql`
-  query BlogPostMarkdown($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt(pruneLength: 500)
-      frontmatter {
-        title
-        author
-      }
-    }
-  }
-`;
 
 export default BlogPost;

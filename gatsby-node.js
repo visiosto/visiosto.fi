@@ -2,5 +2,6 @@
 // Licensed under the MIT License
 
 exports.createPages = require('./util/gatsby/createPages');
+exports.onCreateNode = require('./util/gatsby/onCreateNode');
 exports.onCreatePage = require('./util/gatsby/onCreatePage');
 exports.onPostBootstrap = require('./util/gatsby/onPostBootstrap');

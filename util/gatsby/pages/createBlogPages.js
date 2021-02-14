@@ -7,6 +7,7 @@ const config = require('../../../gatsby-config');
 const pageSlugs = require('../../../src/data/page-slugs.json');
 const blogSlugs = require('../../../data/blog-slugs.json');
 const { addPathToSite } = require('../../sitePaths');
+const createBlogPostSlug = require('./createBlogPostSlug');
 
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
@@ -20,6 +21,9 @@ module.exports = async (actions, graphql, reporter) => {
               frontmatter {
                 date
                 locale
+              }
+              fields {
+                slug
               }
             }
           }
@@ -37,31 +41,20 @@ module.exports = async (actions, graphql, reporter) => {
   const defaultLanguage = config.siteMetadata.defaultLocale;
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log('Processing blog post', node.frontmatter.slug);
-
     const postLocale = node.frontmatter.locale;
 
-    // prettier-ignore
-    const blogPath = postLocale === defaultLanguage
-      ? `${pageSlugs.blog[postLocale]}`
-      : `${postLocale}/${pageSlugs.blog[postLocale]}`;
+    const slug = node.fields.slug;
 
-    console.log('Set the blog path to', blogPath);
+    console.log('The path for the blog post page is', slug);
 
-    const slug = blogSlugs[node.frontmatter.date][postLocale];
-
-    const sitePath = `/${blogPath}/${slug}`;
-
-    console.log('The new path for the blog post page is', sitePath);
-
-    addPathToSite(sitePath);
+    addPathToSite(slug);
 
     const keySlug = `blog:${node.frontmatter.date}`;
 
     console.log('The key slug is set to', keySlug);
 
     createPage({
-      path: sitePath,
+      path: slug,
       component: blogPostTemplate,
       context: {
         lang: postLocale,
