@@ -19,14 +19,7 @@ const BlogPostPage = (props) => {
     text-align: center;
   `;
 
-  return (
-    <Layout
-      title={''}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-    </Layout>
-  );
+  return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
 };
 
 const BlogPost = (props) => (

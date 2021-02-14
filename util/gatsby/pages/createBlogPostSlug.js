@@ -15,7 +15,9 @@ module.exports = (locale, date, filename) => {
 
   console.log('Set the blog path to', blogPath);
 
-  const slug = `/${blogPath}/${date.replace('-', '/').replace('-', '/')}/${blogSlugs[date][filename][locale]}`;
+  const slug = `/${blogPath}/${date.replace('-', '/').replace('-', '/')}/${
+    blogSlugs[date][filename][locale]
+  }`;
 
   console.log('The slug path for the blog post page is', slug);
 

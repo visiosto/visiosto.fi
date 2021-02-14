@@ -4,13 +4,13 @@
 const createBlogPostSlug = require('./pages/createBlogPostSlug');
 
 // Parse date information out of blog post filename.
-const BLOG_POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)\.md$/;
+const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 module.exports = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   switch (node.internal.type) {
-    case 'MarkdownRemark':
+    case 'MarkdownRemark': {
       const { permalink, locale } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
@@ -46,7 +46,7 @@ module.exports = ({ node, actions, getNode }) => {
             node,
             name: 'filename',
             value: filename,
-          })
+          });
         }
       }
 
@@ -61,6 +61,10 @@ module.exports = ({ node, actions, getNode }) => {
         value: slug,
       });
 
-      return;
+      break;
+    }
+
+    default:
+      break;
   }
 };
