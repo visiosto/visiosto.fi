@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Language switcher to the footer of the site.
 - Support for English site.
 - Use of semantic HTML elements to the site.
+- Support for language switcher on the blog pages.
 
 ### Changed
 
