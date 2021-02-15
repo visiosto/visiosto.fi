@@ -1,7 +1,7 @@
 ---
 title: 'Moderni markkinointitoimisto Visiosto taittaa sinun visiosi'
 author: 'Antti Kivi'
-date: '2020-01-01'
+date: '2020-01-01T19:29:01+02:00'
 locale: 'fi'
 ---
 

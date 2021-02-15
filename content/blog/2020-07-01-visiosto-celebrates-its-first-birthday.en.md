@@ -1,7 +1,7 @@
 ---
 title: 'Visiosto Celebrates Its First Birthday'
 author: 'Gurmann Saini'
-date: '2020-07-01'
+date: '2020-07-01T21:08:22+03:00'
 locale: 'en'
 ---
 
