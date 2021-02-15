@@ -12,8 +12,6 @@ const pageKeySlashIndex = 1;
 module.exports = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  console.log('Creating node');
-
   switch (node.internal.type) {
     case 'MarkdownRemark': {
       const { permalink, locale } = node.frontmatter;
