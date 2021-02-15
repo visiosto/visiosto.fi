@@ -37,7 +37,7 @@ const createLocalizedSlug = (toLang, slug) => {
   return localized;
 };
 
-const createLanguageLink = (pageKey) => {
+export default (pageKey) => {
   return (linkProps) => {
     const toLang = linkProps.to;
     if (pageKey.startsWith('/blog/')) {
@@ -55,5 +55,3 @@ const createLanguageLink = (pageKey) => {
     }
   };
 };
-
-export default createLanguageLink;

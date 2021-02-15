@@ -41,7 +41,7 @@ const createLocalizedSlug = (locale, slug) => {
   return localized;
 };
 
-const createLink = (currentLocale) => {
+export default (currentLocale) => {
   return (linkProps) => {
     if (linkProps.to.startsWith('/blog/')) {
       const page = createLocalizedSlug(currentLocale, '/blog');
@@ -68,5 +68,3 @@ const createLink = (currentLocale) => {
     }
   };
 };
-
-export default createLink;

@@ -17,7 +17,7 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
-const IndexPage = (props) => {
+const Index = (props) => {
   const i = createIntl(useIntl());
 
   const H2 = styled.h2`
@@ -102,12 +102,10 @@ const IndexPage = (props) => {
   );
 };
 
-const Index = (props) => (
+export default (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
-      <IndexPage {...props} />
+      <Index {...props} />
     </Theme>
   </Intl>
 );
-
-export default Index;

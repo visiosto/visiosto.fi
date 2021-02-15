@@ -12,7 +12,7 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
-const AuthorPage = (props) => {
+const Author = (props) => {
   const i = createIntl(useIntl());
 
   const P = styled.p`
@@ -22,12 +22,10 @@ const AuthorPage = (props) => {
   return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
 };
 
-const Author = (props) => (
+export default (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
-      <AuthorPage {...props} />
+      <Author {...props} />
     </Theme>
   </Intl>
 );
-
-export default Author;
