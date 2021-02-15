@@ -2,19 +2,17 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 import { useIntl } from 'react-intl';
 import { CalendarIcon, DeviceDesktopIcon, NorthStarIcon, PencilIcon } from '@primer/octicons-react';
 
 import Break from '../components/Break';
 import Button from '../components/Button';
 import Card from '../components/Card';
-import Cover from '../components/Cover';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import Layout from '../components/Layout';
+import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
@@ -67,27 +65,6 @@ const IndexPage = (props) => {
     text-align: center;
   `;
 
-  const imgStyles = {
-    position: 'absolute',
-    zIndex: -1,
-  };
-
-  const sourcesStoryTop = [
-    props.data.topStoryPhoneSmall.childImageSharp.fixed,
-    {
-      ...props.data.topStoryTablet.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const sourcesStoryBottom = [
-    props.data.bottomStoryPhoneSmall.childImageSharp.fixed,
-    {
-      ...props.data.bottomStoryTablet.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
   return (
     <Layout
       title={i('indexTitle')}
@@ -98,26 +75,9 @@ const IndexPage = (props) => {
       <IndexCover title={i('indexCoverTitle')}>
         <p>{i('indexCoverContent')}</p>
       </IndexCover>
-      <Cover
-        title={i('indexStoryTitle')}
-        imgTop={
-          <Img
-            fixed={sourcesStoryTop}
-            style={{ top: 0, right: 0, ...imgStyles }}
-            objectFit="cover"
-          />
-        }
-        imgBottom={
-          <Img
-            fixed={sourcesStoryBottom}
-            style={{ bottom: 0, left: 0, ...imgStyles }}
-            objectFit="cover"
-          />
-        }
-      >
+      <StoryCover title={i('indexStoryTitle')}>
         <p>{i('indexStoryContent')}</p>
-        <Link to="#">Kokeilulinkki</Link>
-      </Cover>
+      </StoryCover>
       <Break color={'orange'} />
       <Section lesserMargin={true}>
         <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
@@ -154,45 +114,3 @@ const Index = (props) => (
 );
 
 export default Index;
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    topStoryPhoneSmall: file(relativePath: { eq: "front-page/story-phone-small-up-right.png" }) {
-      childImageSharp {
-        fixed(width: 300, height: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    bottomStoryPhoneSmall: file(
-      relativePath: { eq: "front-page/story-phone-small-down-left.png" }
-    ) {
-      childImageSharp {
-        fixed(width: 300, height: 90) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    topStoryTablet: file(relativePath: { eq: "front-page/story-tablet-up-right.png" }) {
-      childImageSharp {
-        fixed(width: 400, height: 400) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    bottomStoryTablet: file(relativePath: { eq: "front-page/story-tablet-down-left.png" }) {
-      childImageSharp {
-        fixed(width: 400, height: 400) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    orangeLine: file(relativePath: { eq: "orange-line.png" }) {
-      childImageSharp {
-        fixed(width: 250, height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`;

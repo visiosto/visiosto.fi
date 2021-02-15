@@ -15,7 +15,7 @@ export default (props) => {
 
   const Inner = styled.div`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
-    padding: 0.5em 0 0;
+    padding: 0.5em 0 1em;
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};

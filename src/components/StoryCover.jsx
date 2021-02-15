@@ -15,7 +15,7 @@ export default (props) => {
     graphql`
       query {
         topPhoneSmallLight: file(
-          relativePath: { eq: "front-page/cover/phone-small-up-left-light.png" }
+          relativePath: { eq: "front-page/story/phone-small-up-right-light.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -24,7 +24,7 @@ export default (props) => {
           }
         }
         topPhoneSmallDark: file(
-          relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
+          relativePath: { eq: "front-page/story/phone-small-up-right-dark.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -32,14 +32,14 @@ export default (props) => {
             }
           }
         }
-        topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
+        topTabletLight: file(relativePath: { eq: "front-page/story/tablet-up-right-light.png" }) {
           childImageSharp {
             fixed(width: 400, height: 400) {
               ...GatsbyImageSharpFixed
             }
           }
         }
-        topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
+        topTabletDark: file(relativePath: { eq: "front-page/story/tablet-up-right-dark.png" }) {
           childImageSharp {
             fixed(width: 400, height: 400) {
               ...GatsbyImageSharpFixed
@@ -47,7 +47,7 @@ export default (props) => {
           }
         }
         bottomPhoneSmallLight: file(
-          relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
+          relativePath: { eq: "front-page/story/phone-small-down-left-light.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -56,7 +56,7 @@ export default (props) => {
           }
         }
         bottomPhoneSmallDark: file(
-          relativePath: { eq: "front-page/cover/phone-small-down-right-dark.png" }
+          relativePath: { eq: "front-page/story/phone-small-down-left-dark.png" }
         ) {
           childImageSharp {
             fixed(width: 300, height: 90) {
@@ -65,7 +65,7 @@ export default (props) => {
           }
         }
         bottomTabletLight: file(
-          relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
+          relativePath: { eq: "front-page/story/tablet-down-left-light.png" }
         ) {
           childImageSharp {
             fixed(width: 400, height: 400) {
@@ -73,9 +73,7 @@ export default (props) => {
             }
           }
         }
-        bottomTabletDark: file(
-          relativePath: { eq: "front-page/cover/tablet-down-right-dark.png" }
-        ) {
+        bottomTabletDark: file(relativePath: { eq: "front-page/story/tablet-down-left-dark.png" }) {
           childImageSharp {
             fixed(width: 400, height: 400) {
               ...GatsbyImageSharpFixed
@@ -142,7 +140,7 @@ export default (props) => {
         <TopImg
           fixedLight={sourcesTopLight}
           fixedDark={sourcesTopDark}
-          style={imgStyles}
+          style={{ top: 0, right: 0, ...imgStyles }}
           objectFit="cover"
         />
       }
@@ -150,7 +148,7 @@ export default (props) => {
         <BottomImg
           fixedLight={sourcesBottomLight}
           fixedDark={sourcesBottomDark}
-          style={{ bottom: 0, right: 0, ...imgStyles }}
+          style={{ bottom: 0, left: 0, ...imgStyles }}
           objectFit="cover"
         />
       }
