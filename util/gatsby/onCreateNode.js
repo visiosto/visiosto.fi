@@ -7,18 +7,17 @@ const createBlogPostSlug = require('./pages/createBlogPostSlug');
 // Parse information out of blog post filename.
 const blogPostFilenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
 
-const pageKeySlashIndex = 1;
-
 module.exports = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, locale } = node.frontmatter;
+      const { permalink, frontmatterLocale } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
       let keySlug = permalink;
+      let locale = frontmatterLocale;
 
       // TODO Have separate handling for the key slugs.
       if (!slug) {
@@ -29,8 +28,9 @@ module.exports = ({ node, actions, getNode }) => {
           // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
           // The date portion comes from the file name: <date>-<title>.md
           const match = blogPostFilenameRegex.exec(relativePath);
-          const filename = match[2];
-          const locale = match[3];
+          const [, , filename] = match;
+
+          [, , , locale] = match;
 
           console.log('The filename is', filename);
           console.log('The locale is', locale);
@@ -38,26 +38,20 @@ module.exports = ({ node, actions, getNode }) => {
           slug = createBlogPostSlug(locale, filename);
 
           keySlug = `/blog/${filename}`;
-
-          createNodeField({
-            node,
-            name: 'locale',
-            value: locale,
-          });
         } else if (relativePath.includes('author')) {
           console.log(`Creating node for '${relativePath}'`);
 
-          const filename = relativePath.substr(pageKeySlashIndex).split('/')[1].split('.')[0];
+          const match = blogPostFilenameRegex.exec(relativePath);
+          const [, , filename] = match;
+
+          [, , , locale] = match;
+
+          console.log('The filename is', filename);
+          console.log('The locale is', locale);
 
           slug = createAuthorSlug(locale, filename);
 
           keySlug = `/author/${filename}`;
-
-          createNodeField({
-            node,
-            name: 'filename',
-            value: filename,
-          });
         }
       }
 
@@ -85,6 +79,12 @@ module.exports = ({ node, actions, getNode }) => {
         node,
         name: 'keySlug',
         value: keySlug,
+      });
+
+      createNodeField({
+        node,
+        name: 'locale',
+        value: locale,
       });
 
       break;

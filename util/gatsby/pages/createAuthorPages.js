@@ -18,13 +18,10 @@ module.exports = async (actions, graphql, reporter) => {
         ) {
           edges {
             node {
-              frontmatter {
-                title
-                locale
-              }
               fields {
                 slug
                 keySlug
+                locale
               }
             }
           }
@@ -41,9 +38,7 @@ module.exports = async (actions, graphql, reporter) => {
   const authorTemplate = path.resolve('src', 'templates', 'author.jsx');
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const authorLocale = node.frontmatter.locale;
-
-    const { slug } = node.fields;
+    const { slug, locale } = node.fields;
 
     console.log('The path for the author page is', slug);
 
@@ -53,7 +48,7 @@ module.exports = async (actions, graphql, reporter) => {
       path: slug,
       component: authorTemplate,
       context: {
-        lang: authorLocale,
+        lang: locale,
         key: node.fields.keySlug,
       },
     });
