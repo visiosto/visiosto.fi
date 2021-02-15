@@ -35,25 +35,18 @@ const createLink = (currentLocale) => {
 
       let { to } = linkProps;
 
-      const blogPostFilenameRegex = /([0-9]+)\/([0-9]+)\/([0-9]+)\/(.+)/;
+      const blogPostFilenameRegex = /(.+)\/(.+)/;
 
       // Blog posts don't have embedded permalinks.
       // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
       // The date portion comes from the file name: <date>-<title>.md
-      const match = blogPostFilenameRegex.exec(linkProps.to.substring(pageKeySlashIndex));
-      const year = match[1];
-      const month = match[2];
-      const day = match[3];
-      const filename = match[4];
+      const filename = blogPostFilenameRegex.exec(linkProps.to.substring(pageKeySlashIndex))[2];
 
-      const date = `${year}-${month}-${day}`;
-
-      const linkPath = `${page}/${year}/${month}/${day}/${blogSlugs[date][filename][currentLocale]}`;
+      const linkPath = `${page}/${blogSlugs[filename][currentLocale]}`;
 
       if (
-        date in blogSlugs &&
-        filename in blogSlugs[date] &&
-        currentLocale in blogSlugs[date][filename] &&
+        filename in blogSlugs &&
+        currentLocale in blogSlugs[filename] &&
         allFiles.includes(linkPath)
       ) {
         to = linkPath;

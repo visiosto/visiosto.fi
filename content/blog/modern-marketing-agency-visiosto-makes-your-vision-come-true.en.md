@@ -2,7 +2,6 @@
 title: 'Modern Marketing Agency Visiosto Makes Your Vision Come True'
 author: 'Antti Kivi'
 date: '2020-01-01T19:29:01+02:00'
-locale: 'en'
 ---
 
 Good news is the best possible way to start a new decade! Visiosto is a new marketing and communications agency founded last July as the founders of the company were fed up of horrendous visual appearances and faceless work with clients. Too often communication and marketing is built with quick hacks, which is good for nobody. Thus, we founded Visiosto so communication doesn’t have to be fuzzy but your message can be concentrated into an impressive whole that doesn’t only create value for you but also for society.

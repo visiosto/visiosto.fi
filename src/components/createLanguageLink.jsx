@@ -30,20 +30,14 @@ const createLanguageLink = (pageKey) => {
     if (pageKey.startsWith('/blog/')) {
       const page = createLocalizedSlug(toLang, 'blog');
 
-      const blogPostFilenameRegex = /([0-9]+)\/([0-9]+)\/([0-9]+)\/(.+)/;
+      const blogPostFilenameRegex = /(.+)\/(.+)/;
 
       // Blog posts don't have embedded permalinks.
       // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
       // The date portion comes from the file name: <date>-<title>.md
-      const match = blogPostFilenameRegex.exec(pageKey.substring(pageKeySlashIndex));
-      const year = match[1];
-      const month = match[2];
-      const day = match[3];
-      const filename = match[4];
+      const filename = blogPostFilenameRegex.exec(pageKey.substring(pageKeySlashIndex))[2];
 
-      const date = `${year}-${month}-${day}`;
-
-      const linkPath = `${page}/${year}/${month}/${day}/${blogSlugs[date][filename][toLang]}`;
+      const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
 
       return <Link {...linkProps} to={linkPath} />;
     } else {

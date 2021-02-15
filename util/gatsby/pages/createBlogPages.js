@@ -20,11 +20,11 @@ module.exports = async (actions, graphql, reporter) => {
             node {
               frontmatter {
                 date
-                locale
               }
               fields {
                 slug
                 keySlug
+                locale
               }
             }
           }
@@ -41,15 +41,13 @@ module.exports = async (actions, graphql, reporter) => {
   const blogPostTemplate = path.resolve('src', 'templates', 'blog-post.jsx');
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const postLocale = node.frontmatter.locale;
-
-    const { slug } = node.fields;
+    const { locale, slug } = node.fields;
 
     console.log('The path for the blog post page is', slug);
 
     addPathToSite(slug);
 
-    const momentJsLocale = postLocale === 'en' ? 'en-gb' : postLocale;
+    const momentJsLocale = locale === 'en' ? 'en-gb' : locale;
 
     console.log('The Moment.js locale to', momentJsLocale);
 
@@ -57,7 +55,7 @@ module.exports = async (actions, graphql, reporter) => {
       path: slug,
       component: blogPostTemplate,
       context: {
-        lang: postLocale,
+        lang: locale,
         momentJsLocale,
         key: node.fields.keySlug,
       },

@@ -4,8 +4,8 @@
 const createAuthorSlug = require('./pages/createAuthorSlug');
 const createBlogPostSlug = require('./pages/createBlogPostSlug');
 
-// Parse date information out of blog post filename.
-const blogPostFilenameRegex = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
+// Parse information out of blog post filename.
+const blogPostFilenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
 
 const pageKeySlashIndex = 1;
 
@@ -29,30 +29,20 @@ module.exports = ({ node, actions, getNode }) => {
           // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
           // The date portion comes from the file name: <date>-<title>.md
           const match = blogPostFilenameRegex.exec(relativePath);
-          const year = match[1];
-          const month = match[2];
-          const day = match[3];
-          const filename = match[4].replace(`.${locale}`, '');
+          const filename = match[2];
+          const locale = match[3];
 
-          slug = createBlogPostSlug(locale, `${year}-${month}-${day}`, filename);
+          console.log('The filename is', filename);
+          console.log('The locale is', locale);
 
-          console.log('The slug created is', slug);
+          slug = createBlogPostSlug(locale, filename);
 
-          keySlug = `/blog/${year}/${month}/${day}/${filename}`;
-
-          const date = new Date(year, month, day);
-
-          // Blog posts are sorted by date and display the date in their header.
-          createNodeField({
-            node,
-            name: 'date',
-            value: date.toJSON(),
-          });
+          keySlug = `/blog/${filename}`;
 
           createNodeField({
             node,
-            name: 'filename',
-            value: filename,
+            name: 'locale',
+            value: locale,
           });
         } else if (relativePath.includes('author')) {
           console.log(`Creating node for '${relativePath}'`);
@@ -60,8 +50,6 @@ module.exports = ({ node, actions, getNode }) => {
           const filename = relativePath.substr(pageKeySlashIndex).split('/')[1].split('.')[0];
 
           slug = createAuthorSlug(locale, filename);
-
-          console.log('The slug created is', slug);
 
           keySlug = `/author/${filename}`;
 

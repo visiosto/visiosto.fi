@@ -2,7 +2,6 @@
 title: 'Visiosto juhlii ensimmäistä syntymäpäiväänsä'
 author: 'Gurmann Saini'
 date: '2020-07-01T21:08:22+03:00'
-locale: 'fi'
 ---
 
 Siitä on nyt tasan vuosi, kun veimme firman perustamispaperit Patentti- ja rekisterihallituksen toimistoon Hakaniemen kupeeseen. Vuosi sitten lähdimme luomaan vaihtoehtoa kammottaville graafisille ilmeille sekä kasvottomalle asiakastyölle. Siksi perustimme Visioston, nykyajan viestintätoimiston, jotta voisimme luoda alalle todellisen sydäntä koskettavan kokemuksen ja visuaalisesti miellyttäviä tuotoksia.
