@@ -2,13 +2,13 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import AnchorLink from './AnchorLink';
 
 import allFiles from '../__generated__/all-pages';
 import pageIds from '../data/page-ids.json';
 import pageSlugs from '../data/page-slugs.json';
-import { DEFAULT_LANGUAGE } from '../constants';
 
 import stripHashedLocation from '../utils/anchor-link/stripHashedLocation';
 
@@ -20,6 +20,20 @@ export default (currentLocale) => {
   const slugs = pageSlugs;
 
   return (linkProps) => {
+    const { site } = useStaticQuery(
+      graphql`
+        query {
+          site {
+            siteMetadata {
+              defaultLocale
+            }
+          }
+        }
+      `,
+    );
+
+    const { defaultLocale } = site.siteMetadata;
+
     const hashedLocation = linkProps.to.split('#')[1];
     const pageKey = stripHashedLocation(linkProps.to).substring(pageKeySlashIndex);
     let { to } = linkProps;
@@ -30,7 +44,7 @@ export default (currentLocale) => {
 
     const localeVersion = pageKey === '' ? `/${currentLocale}` : `/${currentLocale}${to}`;
 
-    if (currentLocale !== DEFAULT_LANGUAGE && paths.includes(localeVersion)) {
+    if (currentLocale !== defaultLocale && paths.includes(localeVersion)) {
       to = localeVersion;
     }
 
@@ -41,7 +55,7 @@ export default (currentLocale) => {
       hashedLocation in ids[pageKeyFull] &&
       currentLocale in ids[pageKeyFull][hashedLocation]
     ) {
-      if (currentLocale === DEFAULT_LANGUAGE && pageKeyFull === 'index') {
+      if (currentLocale === defaultLocale && pageKeyFull === 'index') {
         to = `/#${ids[pageKeyFull][hashedLocation][currentLocale]}`;
       } else {
         to = `${to}#${ids[pageKeyFull][hashedLocation][currentLocale]}`;

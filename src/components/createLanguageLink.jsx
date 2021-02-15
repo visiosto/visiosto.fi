@@ -2,21 +2,34 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import blogSlugs from '../../data/blog-slugs.json';
 import pageSlugs from '../data/page-slugs.json';
-import { DEFAULT_LANGUAGE } from '../constants';
 
 const pageKeySlashIndex = 1;
 
 const createLocalizedSlug = (toLang, slug) => {
-  let localized = toLang === DEFAULT_LANGUAGE ? '/' : `/${toLang}`;
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+      }
+    `,
+  );
+
+  const { defaultLocale } = site.siteMetadata;
+
+  let localized = toLang === defaultLocale ? '/' : `/${toLang}`;
 
   if (slug in pageSlugs && toLang in pageSlugs[slug]) {
     localized = `/${toLang}/${pageSlugs[slug][toLang]}`;
 
-    if (toLang === DEFAULT_LANGUAGE) {
+    if (toLang === defaultLocale) {
       localized = `/${pageSlugs[slug][toLang]}`;
     }
   }
@@ -32,9 +45,6 @@ const createLanguageLink = (pageKey) => {
 
       const blogPostFilenameRegex = /(.+)\/(.+)/;
 
-      // Blog posts don't have embedded permalinks.
-      // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
-      // The date portion comes from the file name: <date>-<title>.md
       const filename = blogPostFilenameRegex.exec(pageKey.substring(pageKeySlashIndex))[2];
 
       const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
