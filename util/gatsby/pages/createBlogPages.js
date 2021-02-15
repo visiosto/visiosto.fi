@@ -49,13 +49,20 @@ module.exports = async (actions, graphql, reporter) => {
 
     addPathToSite(slug);
 
-    createPage({
+    const momentJsLocale = postLocale === 'en' ? 'en-gb' : postLocale;
+
+    console.log('The Moment.js locale to', momentJsLocale);
+
+    const pageOpts = {
       path: slug,
       component: blogPostTemplate,
       context: {
         lang: postLocale,
+        momentJsLocale: momentJsLocale,
         key: node.fields.keySlug,
       },
-    });
+    };
+
+    createPage(pageOpts);
   });
 };

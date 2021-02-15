@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Card component.
 - Button component.
 - Thematic break component.
-- Horizontal rule component.
+- Horizontal rule component with multiple different alternative images.
 - Cards containing services of the company.
 - Anchor link for smoothly scrolling to an `id` on a page.
 - Internationalization of the ID anchor links.
@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Localized paths for blog posts.
 - Language switcher to the footer of the site.
 - Support for English site.
+- Use of semantic HTML elements to the site.
 
 ### Changed
 

@@ -47,7 +47,9 @@ export default (props) => {
     <Section>
       <ImgTop />
       <Inner>
-        <Title>{props.title}</Title>
+        <header>
+          <Title>{props.title}</Title>
+        </header>
         <Content>{props.children}</Content>
       </Inner>
       <ImgBottom />

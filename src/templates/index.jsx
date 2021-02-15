@@ -11,13 +11,11 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import LayoutIndex from '../components/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
-
-import theme from '../theme';
 
 const IndexPage = (props) => {
   const i = createIntl(useIntl());
@@ -27,7 +25,7 @@ const IndexPage = (props) => {
     text-align: center;
   `;
 
-  const Section = styled.section`
+  const Section = styled.div`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
@@ -66,9 +64,8 @@ const IndexPage = (props) => {
   `;
 
   return (
-    <Layout
+    <LayoutIndex
       title={i('indexTitle')}
-      home
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
@@ -101,7 +98,7 @@ const IndexPage = (props) => {
         </Icon>
         <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
       </Section>
-    </Layout>
+    </LayoutIndex>
   );
 };
 

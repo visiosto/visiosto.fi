@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default (props) => {
-  const Div = styled.div`
+  const Article = styled.article`
     border-radius: 0.25rem;
     padding: 2rem;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08),
@@ -30,11 +30,11 @@ export default (props) => {
   `;
 
   return (
-    <Div>
+    <Article>
       <Icon>{props.icon}</Icon>
       <H3>{props.title}</H3>
       {props.children}
       {props.button}
-    </Div>
+    </Article>
   );
 };

@@ -94,6 +94,7 @@ const BlogPage = (props) => {
             <PostContent>
               <p>{post.excerpt}</p>
             </PostContent>
+            <Rule color="blue" mode={2} />
           </Post>
         );
       })}
@@ -121,7 +122,6 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt(pruneLength: 500)
-          id
           frontmatter {
             title
             author

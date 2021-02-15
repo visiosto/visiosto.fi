@@ -14,18 +14,15 @@ import listenColorScheme from '../utils/listenColorScheme';
 export default (props) => {
   listenColorScheme();
 
-  const PageTitle = styled.h1`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
+  const ErrorCode = styled.h1`
     font-size: 3rem;
+    font-family: ${(props) => props.theme.fonts.code};
     text-align: center;
+  `;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-    }
+  const PageTitle = styled.h2`
+    font-size: 2rem;
+    text-align: center;
   `;
 
   return (
@@ -36,6 +33,7 @@ export default (props) => {
       <main>
         <section>
           <header>
+            <ErrorCode>{props.errorCode}</ErrorCode>
             <PageTitle>{props.title}</PageTitle>
           </header>
           <div>

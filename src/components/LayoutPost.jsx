@@ -28,6 +28,24 @@ export default (props) => {
     }
   `;
 
+  const PostMeta = styled.div`
+    margin: 2em 0;
+    text-align: center;
+
+    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+      margin: 2em 0;
+    }
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 2em 0;
+    }
+  `;
+
+  const PostAuthor = styled.span`
+    clear: both;
+    display: block;
+  `;
+
   return (
     <>
       <GlobalStyle />
@@ -37,6 +55,10 @@ export default (props) => {
         <section>
           <header>
             <PageTitle>{props.title}</PageTitle>
+            <PostMeta>
+                <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
+                <PostAuthor>{props.frontmatter.author}</PostAuthor>
+              </PostMeta>
           </header>
           <div>
             {props.children}

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import LayoutError from '../components/LayoutError';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
@@ -20,15 +20,14 @@ const NotFoundPage = (props) => {
   `;
 
   return (
-    <Layout
+    <LayoutError
       errorCode="404"
       title={i('notFoundTitle')}
       lang="fi"
       pageKey={props.pageContext.key}
-      errorPage
     >
       <P>{i('notFoundContent')}</P>
-    </Layout>
+    </LayoutError>
   );
 };
 

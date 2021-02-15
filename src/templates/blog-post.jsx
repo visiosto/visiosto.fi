@@ -7,19 +7,49 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import LayoutPost from '../components/LayoutPost';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
 const BlogPostPage = (props) => {
-  const i = createIntl(useIntl());
+  const { markdownRemark: post } = props.data;
 
-  const P = styled.p`
+  const PostMeta = styled.div`
+    margin: 2em 0;
     text-align: center;
+
+    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+      margin: 2em 0;
+    }
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 2em 0;
+    }
   `;
 
-  return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
+  const PostDiv = styled.div`
+    margin: 1em ${(props) => props.theme.layout.marginPhone};
+
+    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+      margin: 1em ${(props) => props.theme.layout.marginTablet};
+    }
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 1em ${(props) => props.theme.layout.marginDesktop};
+    }
+  `;
+
+  return (
+    <LayoutPost
+      title={post.frontmatter.title}
+      frontmatter={post.frontmatter}
+      lang={props.pageContext.lang}
+      pageKey={props.pageContext.key}
+    >
+      <PostDiv dangerouslySetInnerHTML={{__html: post.html}} />
+    </LayoutPost>
+  );
 };
 
 const BlogPost = (props) => (
@@ -29,5 +59,19 @@ const BlogPost = (props) => (
     </Theme>
   </Intl>
 );
+
+export const pageQuery = graphql`
+  query BlogPostQuery($path: String, $momentJsLocale: String) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
+      html
+      frontmatter {
+        title
+        author
+        datetime: date
+        date: date(formatString: "LL", locale: $momentJsLocale)
+      }
+    }
+  }
+`;
 
 export default BlogPost;
