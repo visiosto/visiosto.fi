@@ -12,8 +12,8 @@ import createIntl from '../utils/createIntl';
 
 export default (props) => {
   const i = createIntl(useIntl());
-  const LanguageLink = createLink(props.lang);
-  const LanguageAnchorLink = createAnchorLink(props.lang);
+  const LocalizedLink = createLink(props.lang);
+  const LocalizedAnchorLink = createAnchorLink(props.lang);
 
   const [toggled, setToggled] = useState(false);
 
@@ -119,7 +119,7 @@ export default (props) => {
     margin: 1em;
   `;
 
-  const Link = styled(LanguageLink)`
+  const Link = styled(LocalizedLink)`
     position: relative;
     margin: 1rem auto 0;
     border-radius: ${(props) => props.theme.borders.commonRadius};
@@ -142,7 +142,7 @@ export default (props) => {
     }
   `;
 
-  const AnchorLink = styled(LanguageAnchorLink)`
+  const AnchorLink = styled(LocalizedAnchorLink)`
     position: relative;
     margin: 1rem auto 0;
     border-radius: ${(props) => props.theme.borders.commonRadius};
