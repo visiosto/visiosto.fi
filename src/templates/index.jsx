@@ -78,7 +78,7 @@ const IndexPage = (props) => {
       <StoryCover title={i('indexStoryTitle')}>
         <p>{i('indexStoryContent')}</p>
       </StoryCover>
-      <Break color={'peach'} />
+      <Break color={'peach'} mode={1} />
       <Section lesserMargin={true}>
         <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
         <Cards>
@@ -94,7 +94,7 @@ const IndexPage = (props) => {
           </Card>
         </Cards>
       </Section>
-      <Break color={'blue'} />
+      <Break color={'blue'} mode={1} />
       <Section>
         <Icon>
           <NorthStarIcon size={'large'} />

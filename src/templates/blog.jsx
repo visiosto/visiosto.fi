@@ -8,6 +8,7 @@ import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/Layout';
+import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
 import createLink from '../components/createLink';
@@ -77,6 +78,7 @@ const BlogPage = (props) => {
 
   return (
     <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <Rule color="peach" mode={2} />
       {posts.map(({ node: post }) => {
         return (
           <Post>
