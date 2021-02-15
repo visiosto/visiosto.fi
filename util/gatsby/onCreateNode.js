@@ -1,13 +1,18 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
+const createAuthorSlug = require('./pages/createAuthorSlug');
 const createBlogPostSlug = require('./pages/createBlogPostSlug');
 
 // Parse date information out of blog post filename.
 const blogPostFilenameRegex = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
+const pageKeySlashIndex = 1;
+
 module.exports = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+
+  console.log('Creating node');
 
   switch (node.internal.type) {
     case 'MarkdownRemark': {
@@ -15,7 +20,9 @@ module.exports = ({ node, actions, getNode }) => {
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
+      let keySlug = permalink;
 
+      // TODO Have separate handling for the key slugs.
       if (!slug) {
         if (relativePath.includes('blog')) {
           console.log(`Creating node for '${relativePath}'`);
@@ -33,7 +40,9 @@ module.exports = ({ node, actions, getNode }) => {
 
           console.log('The slug created is', slug);
 
-          const date = new Date(year, month - 1, day);
+          keySlug = `/blog/${year}/${month}/${day}/${filename}`;
+
+          const date = new Date(year, month, day);
 
           // Blog posts are sorted by date and display the date in their header.
           createNodeField({
@@ -47,15 +56,21 @@ module.exports = ({ node, actions, getNode }) => {
             name: 'filename',
             value: filename,
           });
+        } else if (relativePath.includes('author')) {
+          console.log(`Creating node for '${relativePath}'`);
 
-          const path = `/blog/${year}/${month}/${day}/${filename}`;
+          const filename = relativePath.substr(pageKeySlashIndex).split('/')[1].split('.')[0];
 
-          console.log('The link path is', path);
+          slug = createAuthorSlug(locale, filename);
+
+          console.log('The slug created is', slug);
+
+          keySlug = `/author/${filename}`;
 
           createNodeField({
             node,
-            name: 'linkPath',
-            value: path,
+            name: 'filename',
+            value: filename,
           });
         }
       }
@@ -64,11 +79,26 @@ module.exports = ({ node, actions, getNode }) => {
         slug = `/${relativePath.replace('.md', '')}`;
       }
 
+      if (!keySlug) {
+        keySlug = `/${relativePath.replace('.md', '')}`;
+      }
+
+      console.log('The slug is', slug);
+
       // Used to generate URL to view this content.
       createNodeField({
         node,
         name: 'slug',
         value: slug,
+      });
+
+      console.log('The key slug is', keySlug);
+
+      // Used to generate the key slug that is used to create localized links to the content.
+      createNodeField({
+        node,
+        name: 'keySlug',
+        value: keySlug,
       });
 
       break;

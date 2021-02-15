@@ -73,6 +73,7 @@ module.exports = async (actions) => {
         component: fullpath,
         context: {
           lang,
+          momentJsLocale: lang === 'en' ? 'en-gb' : lang,
           key: originalSitePath,
         },
       };

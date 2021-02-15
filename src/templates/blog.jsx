@@ -77,28 +77,24 @@ const BlogPage = (props) => {
 
   return (
     <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
-      {posts
-        .filter((post) => post.node.frontmatter.locale === props.pageContext.lang)
-        .map(({ node: post }) => {
-          return (
-            <Post>
-              <PostHeader>
-                <H2>
-                  <Link to={post.fields.linkPath}>{post.frontmatter.title}</Link>
-                </H2>
-                <PostMeta>
-                  <time datetime={post.frontmatter.date}>
-                    {post.frontmatter[`${post.frontmatter.locale}Date`]}
-                  </time>
-                  <PostAuthor>{post.frontmatter.author}</PostAuthor>
-                </PostMeta>
-              </PostHeader>
-              <PostContent>
-                <p>{post.excerpt}</p>
-              </PostContent>
-            </Post>
-          );
-        })}
+      {posts.map(({ node: post }) => {
+        return (
+          <Post>
+            <PostHeader>
+              <H2>
+                <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
+              </H2>
+              <PostMeta>
+                <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+                <PostAuthor>{post.frontmatter.author}</PostAuthor>
+              </PostMeta>
+            </PostHeader>
+            <PostContent>
+              <p>{post.excerpt}</p>
+            </PostContent>
+          </Post>
+        );
+      })}
     </Layout>
   );
 };
@@ -112,23 +108,26 @@ const Blog = (props) => (
 );
 
 export const pageQuery = graphql`
-  query BlogQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  query BlogQuery($lang: String, $momentJsLocale: String) {
+    allMarkdownRemark(
+      filter: {
+        fields: { keySlug: { glob: "**/blog/**" } }
+        frontmatter: { locale: { eq: $lang } }
+      }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 500)
           id
           frontmatter {
             title
             author
-            date
-            fiDate: date(formatString: "LL", locale: "fi")
-            enDate: date(formatString: "LL", locale: "en-gb")
-            locale
+            datetime: date
+            date: date(formatString: "LL", locale: $momentJsLocale)
           }
           fields {
-            slug
-            linkPath
+            keySlug
           }
         }
       }

@@ -12,14 +12,14 @@ module.exports = async (actions, graphql, reporter) => {
     `
       {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { order: DESC, fields: [frontmatter___title] }
           limit: 1000
-          filter: { fields: { keySlug: { glob: "**/blog/**" } } }
+          filter: { fields: { keySlug: { glob: "**/author/**" } } }
         ) {
           edges {
             node {
               frontmatter {
-                date
+                title
                 locale
               }
               fields {
@@ -38,22 +38,22 @@ module.exports = async (actions, graphql, reporter) => {
     return;
   }
 
-  const blogPostTemplate = path.resolve('src', 'templates', 'blog-post.jsx');
+  const authorTemplate = path.resolve('src', 'templates', 'author.jsx');
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const postLocale = node.frontmatter.locale;
+    const authorLocale = node.frontmatter.locale;
 
     const { slug } = node.fields;
 
-    console.log('The path for the blog post page is', slug);
+    console.log('The path for the author page is', slug);
 
     addPathToSite(slug);
 
     createPage({
       path: slug,
-      component: blogPostTemplate,
+      component: authorTemplate,
       context: {
-        lang: postLocale,
+        lang: authorLocale,
         key: node.fields.keySlug,
       },
     });
