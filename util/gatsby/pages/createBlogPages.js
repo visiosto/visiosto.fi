@@ -20,6 +20,7 @@ module.exports = async (actions, graphql, reporter) => {
               }
               fields {
                 slug
+                filename
               }
             }
           }
@@ -44,7 +45,9 @@ module.exports = async (actions, graphql, reporter) => {
 
     addPathToSite(slug);
 
-    const keySlug = `blog:${node.frontmatter.date}`;
+    const keySlug = `/blog/${node.frontmatter.date.replace('-', '/').replace('-', '/')}/${
+      node.fields.filename
+    }`;
 
     console.log('The key slug is set to', keySlug);
 

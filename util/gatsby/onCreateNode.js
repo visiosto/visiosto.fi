@@ -4,7 +4,7 @@
 const createBlogPostSlug = require('./pages/createBlogPostSlug');
 
 // Parse date information out of blog post filename.
-const BLOG_POST_FILENAME_REGEX = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
+const blogPostFilenameRegex = /([0-9]+)-([0-9]+)-([0-9]+)-(.+)\.md$/;
 
 module.exports = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -18,12 +18,12 @@ module.exports = ({ node, actions, getNode }) => {
 
       if (!slug) {
         if (relativePath.includes('blog')) {
-          console.log(`Creating node for '${node.frontmatter.title}'`);
+          console.log(`Creating node for '${relativePath}'`);
 
           // Blog posts don't have embedded permalinks.
           // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
           // The date portion comes from the file name: <date>-<title>.md
-          const match = BLOG_POST_FILENAME_REGEX.exec(relativePath);
+          const match = blogPostFilenameRegex.exec(relativePath);
           const year = match[1];
           const month = match[2];
           const day = match[3];
@@ -46,6 +46,16 @@ module.exports = ({ node, actions, getNode }) => {
             node,
             name: 'filename',
             value: filename,
+          });
+
+          const path = `/blog/${year}/${month}/${day}/${filename}`;
+
+          console.log('The link path is', path);
+
+          createNodeField({
+            node,
+            name: 'linkPath',
+            value: path,
           });
         }
       }
