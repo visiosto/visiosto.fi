@@ -58,7 +58,7 @@ module.exports = async (actions, graphql, reporter) => {
       component: blogPostTemplate,
       context: {
         lang: postLocale,
-        momentJsLocale: momentJsLocale,
+        momentJsLocale,
         key: node.fields.keySlug,
       },
     };

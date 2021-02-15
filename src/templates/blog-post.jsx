@@ -47,7 +47,7 @@ const BlogPostPage = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <PostDiv dangerouslySetInnerHTML={{__html: post.html}} />
+      <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
     </LayoutPost>
   );
 };

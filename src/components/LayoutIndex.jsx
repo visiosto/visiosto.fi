@@ -28,9 +28,7 @@ export default (props) => {
           <header>
             <PageTitle>{props.title}</PageTitle>
           </header>
-          <div>
-            {props.children}
-          </div>
+          <div>{props.children}</div>
         </section>
       </main>
       <Footer {...props} />

@@ -56,13 +56,11 @@ export default (props) => {
           <header>
             <PageTitle>{props.title}</PageTitle>
             <PostMeta>
-                <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
-                <PostAuthor>{props.frontmatter.author}</PostAuthor>
-              </PostMeta>
+              <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
+              <PostAuthor>{props.frontmatter.author}</PostAuthor>
+            </PostMeta>
           </header>
-          <div>
-            {props.children}
-          </div>
+          <div>{props.children}</div>
         </section>
       </main>
       <Footer {...props} />
