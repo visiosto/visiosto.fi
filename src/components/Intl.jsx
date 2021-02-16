@@ -2,21 +2,38 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import { IntlProvider } from 'react-intl';
 
 const Intl = ({ children, locale }) => {
-  let messages = require('../locales/fi').lang; // eslint-disable-line global-require, no-undef
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+      }
+    `,
+  );
+
+  const { defaultLocale } = site.siteMetadata;
+
+  // eslint-disable-next-line global-require, no-undef
+  let messages = require(`../locales/${defaultLocale}`).lang;
 
   try {
-    messages = require(`../locales/${locale}`).lang; // eslint-disable-line global-require, no-undef
+    // eslint-disable-next-line global-require, no-undef
+    messages = require(`../locales/${locale}`).lang;
   } catch (error) {
     // Do nothing and use the default.
   }
 
   return (
-    <IntlProvider locale={locale || 'fi'} messages={messages}>
+    <IntlProvider locale={locale || defaultLocale} messages={messages}>
       {children}
     </IntlProvider>
   );

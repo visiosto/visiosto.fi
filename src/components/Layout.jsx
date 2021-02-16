@@ -5,74 +5,43 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Footer from './Footer';
+import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
-import Theme from './Theme';
 
-const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
+import listenColorScheme from '../utils/listenColorScheme';
 
-  html {
-    box-sizing: border-box;
-  }
+export default (props) => {
+  listenColorScheme();
 
-  body {
-    background: ${(props) => props.theme.colors.background};
-    font-family: ${(props) => props.theme.fonts.main};
-    font-size: 1rem;
-    font-weight: 400;
-    font-smoothing: antialiased;
-    line-height: 1.5;
-    color: ${(props) => props.theme.colors.textMain};
-  }
+  const PageTitle = styled.h1`
+    margin: 2em ${(props) => props.theme.layout.marginPhone};
+    font-size: 3rem;
+    text-align: center;
 
-  h1, h2, h3, h4, h5, h6 {
-    clear: both;
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-weight: 700;
-  }
-
-  a {
-    color: ${(props) => props.theme.colors.link};
-
-    &:visited {
-      color: ${(props) => props.theme.colors.link};
+    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+      margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
 
-    &:hover, &:focus, &:active {
-      color: ${(props) => props.theme.colors.linkHover};
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
-  }
-`;
-
-const Layout = (props) => {
-  const PageTitle = props.home
-    ? styled.h2`
-        display: none;
-      `
-    : styled.h1`
-        font-size: 3rem;
-        text-align: center;
-      `;
+  `;
 
   return (
     <>
       <GlobalStyle />
       <Head {...props} />
       <Header {...props} />
-      <PageTitle>{props.title}</PageTitle>
-      {props.children}
+      <main>
+        <section>
+          <header>
+            <PageTitle>{props.title}</PageTitle>
+          </header>
+          <div>{props.children}</div>
+        </section>
+      </main>
       <Footer {...props} />
     </>
-  );
-};
-
-export default (props) => {
-  return (
-    <Theme>
-      <Layout {...props} />
-    </Theme>
   );
 };

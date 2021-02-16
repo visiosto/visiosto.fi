@@ -2,34 +2,69 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import blogSlugs from '../../data/blog-slugs.json';
 import allFiles from '../__generated__/all-pages';
-
 import pageSlugs from '../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
 
-const createLink = (currentLocale) => {
-  const paths = allFiles;
-  const slugs = pageSlugs;
+const createLocalizedSlug = (locale, slug) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+      }
+    `,
+  );
 
-  return (linkProps) => {
-    const pageKey = linkProps.to.substring(pageKeySlashIndex);
-    let { to } = linkProps;
+  const { defaultLocale } = site.siteMetadata;
 
-    if (pageKey in slugs && currentLocale in slugs[pageKey]) {
-      to = `/${slugs[pageKey][currentLocale]}`;
-    }
+  const pageKey = slug.substring(pageKeySlashIndex);
+  let localized = slug;
 
-    const localeVersion = pageKey === '' ? `/${currentLocale}` : `/${currentLocale}${to}`;
+  if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
+    localized = `/${pageSlugs[pageKey][locale]}`;
+  }
 
-    if (currentLocale !== 'fi' && paths.includes(localeVersion)) {
-      to = localeVersion;
-    }
+  const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
 
-    return <Link {...linkProps} to={to} />;
-  };
+  if (locale !== defaultLocale && allFiles.includes(localeVersion)) {
+    localized = localeVersion;
+  }
+
+  return localized;
 };
 
-export default createLink;
+export default (currentLocale) => {
+  return (linkProps) => {
+    if (linkProps.to.startsWith('/blog/')) {
+      const page = createLocalizedSlug(currentLocale, '/blog');
+
+      let { to } = linkProps;
+
+      const blogPostFilenameRegex = /(.+)\/(.+)/;
+
+      const filename = blogPostFilenameRegex.exec(linkProps.to.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${blogSlugs[filename][currentLocale]}`;
+
+      if (
+        filename in blogSlugs &&
+        currentLocale in blogSlugs[filename] &&
+        allFiles.includes(linkPath)
+      ) {
+        to = linkPath;
+      }
+
+      return <Link {...linkProps} to={to} />;
+    } else {
+      return <Link {...linkProps} to={createLocalizedSlug(currentLocale, linkProps.to)} />;
+    }
+  };
+};

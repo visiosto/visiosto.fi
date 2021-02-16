@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest/globals": true
   },
   "extends": ["plugin:prettier/recommended", "prettier/react", "airbnb", "airbnb/hooks"],
   "parserOptions": {
@@ -11,7 +12,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "jest"],
   "settings": {
     "react": {
       "version": "detect"
@@ -20,6 +21,7 @@
   "rules": {
     "no-sync": "off",
     "prettier/prettier": "error",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   }
 }

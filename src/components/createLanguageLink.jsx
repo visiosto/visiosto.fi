@@ -2,27 +2,59 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import blogSlugs from '../../data/blog-slugs.json';
+import markdownPageSlugs from '../../data/markdown-page-slugs.json';
 import pageSlugs from '../data/page-slugs.json';
 
-const createLanguageLink = (pageKey) => {
-  const slugs = pageSlugs;
+const pageKeySlashIndex = 1;
 
-  return (linkProps) => {
-    const toLang = linkProps.to;
-    let to = toLang === 'fi' ? '/' : `/${toLang}`;
-
-    if (pageKey in slugs && toLang in slugs[pageKey]) {
-      to = `/${toLang}/${slugs[pageKey][toLang]}`;
-
-      if (toLang === 'fi') {
-        to = `/${slugs[pageKey][toLang]}`;
+const createLocalizedSlug = (toLang, slug) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
       }
-    }
+    `,
+  );
 
-    return <Link {...linkProps} to={to} />;
-  };
+  const { defaultLocale } = site.siteMetadata;
+
+  let localized = toLang === defaultLocale ? '/' : `/${toLang}`;
+
+  let slugs = slug in pageSlugs ? pageSlugs : markdownPageSlugs;
+
+  if (slug in slugs && toLang in slugs[slug]) {
+    localized = `/${toLang}/${slugs[slug][toLang]}`;
+
+    if (toLang === defaultLocale) {
+      localized = `/${slugs[slug][toLang]}`;
+    }
+  }
+
+  return localized;
 };
 
-export default createLanguageLink;
+export default (pageKey) => {
+  return (linkProps) => {
+    const toLang = linkProps.to;
+    if (pageKey.startsWith('/blog/')) {
+      const page = createLocalizedSlug(toLang, 'blog');
+
+      const blogPostFilenameRegex = /(.+)\/(.+)/;
+
+      const filename = blogPostFilenameRegex.exec(pageKey.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
+
+      return <Link {...linkProps} to={linkPath} />;
+    } else {
+      return <Link {...linkProps} to={createLocalizedSlug(toLang, pageKey)} />;
+    }
+  };
+};

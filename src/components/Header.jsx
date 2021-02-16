@@ -1,24 +1,15 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Navigation from './Navigation';
+import ThemeContext from './ThemeContext';
 
-export default (props) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `,
-  );
+export const PureHeader = (props) => {
+  const { site } = props.data;
 
   const Header = styled.header`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
@@ -46,4 +37,20 @@ export default (props) => {
       <Navigation {...props} />
     </Header>
   );
+};
+
+export default (props) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `,
+  );
+
+  return <PureHeader data={data} {...props} />;
 };

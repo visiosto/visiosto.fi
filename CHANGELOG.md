@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.5.0] - 2021-02-16
+
+### Added
+
+- Card component.
+- Button component.
+- Thematic break component.
+- Horizontal rule component with multiple different alternative images.
+- Cards containing services of the company.
+- Anchor link for smoothly scrolling to an `id` on a page.
+- Internationalization of the ID anchor links.
+- Query string `colorscheme` for setting the colour scheme on landing.
+- Support for dark mode that is based on the use of CSS variables and React context.
+- Own components for all of the different covers on the index page.
+- Copyright to the generated files.
+- Page for 404 error.
+- Blog posts page.
+- Localized paths for blog posts.
+- Language switcher to the footer of the site.
+- Support for English site.
+- Use of semantic HTML elements to the site.
+- Support for language switcher on the blog pages.
+- Support for adding simple pages using Markdown.
+- Required files and dependencies for implementing unit tests.
+
+### Changed
+
+- Colours of the site to the brand colours.
+- Font family of heading 3 and below to the main paragraph font family.
+
+### Fixed
+
+- Flickering of the site when switching page.
+
 ## [0.4.1] - 2021-01-30
 
 ### Fixed
@@ -60,7 +94,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.4.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/visiosto/visiosto.github.io/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/visiosto/visiosto.github.io/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/visiosto/visiosto.github.io/compare/v0.3.2...v0.4.0
 [0.3.2]: https://github.com/visiosto/visiosto.github.io/compare/v0.3.1...v0.3.2

@@ -4,20 +4,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Cover = (props) => {
-  const Div = styled.div`
+export default (props) => {
+  const Section = styled.section`
     overflow: hidden;
-    display: inline-block;
     position: relative;
     min-width: 100%;
     min-height: 100%;
-    margin: 2em 0;
-    padding: 1em;
+    margin: 0 0 2em;
   `;
 
   const Inner = styled.div`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
-    padding: 0.5em 0 0;
+    padding: 0.5em 0 1em;
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
@@ -25,7 +23,7 @@ const Cover = (props) => {
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 6em ${(props) => props.theme.layout.marginDesktop};
+      margin: 2em ${(props) => props.theme.layout.marginDesktop};
       padding: 2em 0;
     }
   `;
@@ -42,16 +40,19 @@ const Cover = (props) => {
     text-align: center;
   `;
 
+  const ImgTop = () => props.imgTop;
+  const ImgBottom = () => props.imgBottom;
+
   return (
-    <Div>
-      {props.imgTop}
+    <Section>
+      <ImgTop />
       <Inner>
-        <Title>{props.title}</Title>
+        <header>
+          <Title>{props.title}</Title>
+        </header>
         <Content>{props.children}</Content>
       </Inner>
-      {props.imgBottom}
-    </Div>
+      <ImgBottom />
+    </Section>
   );
 };
-
-export default Cover;

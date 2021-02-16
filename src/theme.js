@@ -2,27 +2,61 @@
 // Licensed under the MIT License
 
 const colors = {
-  blue: '#91d7f2',
-  turquoise: '#5196a6',
-  orange: '#f2955e',
-  red: '#eb5952',
+  blue: '#23297a',
+  lightBlue: '#6dcff6',
+  peach: '#fbb496',
+  cream: '#ffffe4',
+  black: '#3b4a57',
+  white: '#ffffff',
   linkBlue: '#0051c2',
   linkBlueDark: '#004099',
   linkYellow: '#fabd46',
   linkYellowDark: '#ba8d34',
   // white: '#f2f0eb',
-  white: '#ffffff',
-  black: '#3b4a57',
   shade: '#dde1e9',
   shadeDark: '#2a2a2b',
   gray: '#f6f7f9',
 };
 
+export const COLORS = {
+  background: {
+    light: colors.white,
+    dark: colors.black,
+  },
+  text: {
+    light: colors.black,
+    dark: colors.white,
+  },
+  'text-button': {
+    light: colors.white,
+    dark: colors.black,
+  },
+  link: {
+    light: colors.linkBlue,
+    dark: colors.linkYellow,
+  },
+  'link-hover': {
+    light: colors.linkBlueDark,
+    dark: colors.linkYellowDark,
+  },
+  primary: {
+    light: colors.blue,
+    dark: colors.lightBlue,
+  },
+  secondary: {
+    light: colors.peach,
+    dark: colors.cream,
+  },
+  'background-hover': {
+    light: colors.shade,
+    dark: colors.shadeDark,
+  },
+};
+
 const fonts = {
-  heading: 'utopia-std, serif',
-  // heading: 'baskerville-display-pt, Garamond, Georgia, serif',
-  main: 'montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif',
-  code: 'roboto-mono, Menlo, Monaco, Consolas, "Courier New", monospace',
+  heading: 'utopia-std, Times, "Times New Roman", serif',
+  main: 'source-sans-pro, "Helvetica Neue", Helvetica, Arial, sans-serif',
+  code: 'source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace',
 };
 
 // The maximum sizes of different viewports.
@@ -60,41 +94,10 @@ const borders = {
   commonRadius: '25px',
 };
 
-const common = {
-  colors: { ...colors },
+export default {
   fonts: { ...fonts },
   sizes: { ...sizes },
   devices: { ...devices },
   layout: { ...layout },
   borders: { ...borders },
-};
-
-const light = {
-  ...common,
-  colors: {
-    background: colors.white,
-    textMain: colors.black,
-    link: colors.linkBlue,
-    linkHover: colors.linkBlueDark,
-    navHover: colors.shade,
-    ...common.colors,
-  },
-};
-
-const dark = {
-  ...common,
-  colors: {
-    background: colors.black,
-    textMain: colors.white,
-    link: colors.linkYellow,
-    linkHover: colors.linkYellowDark,
-    navHover: colors.shadeDark,
-    ...common.colors,
-  },
-};
-
-export default {
-  light,
-  dark,
-  devices,
 };
