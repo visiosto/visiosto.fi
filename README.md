@@ -1,5 +1,7 @@
 # Visiosto’s website
 
+![Main workflow](https://github.com/visiosto/visiosto.github.io/workflows/Main%20workflow/badge.svg)
+
 This is the source code and production code of [Visiosto’s](https://github.com/visiosto) website.
 
 The site is deployed to [GitHub Pages](https://pages.github.com) from the [`site/production`](https://github.com/visiosto/visiosto.github.io/tree/site/production) branch. The website, when ready, will be available at [visiosto.fi](#).
