@@ -1,10 +1,10 @@
 {
-  "blog": {
-    "fi": "blogi",
-    "en": "blog"
-  },
   "author": {
     "fi": "henkilo",
     "en": "author"
+  },
+  "blog": {
+    "fi": "blogi",
+    "en": "blog"
   }
 }

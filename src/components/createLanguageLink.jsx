@@ -5,6 +5,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import blogSlugs from '../../data/blog-slugs.json';
+import markdownPageSlugs from '../../data/markdown-page-slugs.json';
 import pageSlugs from '../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
@@ -26,11 +27,13 @@ const createLocalizedSlug = (toLang, slug) => {
 
   let localized = toLang === defaultLocale ? '/' : `/${toLang}`;
 
-  if (slug in pageSlugs && toLang in pageSlugs[slug]) {
-    localized = `/${toLang}/${pageSlugs[slug][toLang]}`;
+  let slugs = slug in pageSlugs ? pageSlugs : markdownPageSlugs;
+
+  if (slug in slugs && toLang in slugs[slug]) {
+    localized = `/${toLang}/${slugs[slug][toLang]}`;
 
     if (toLang === defaultLocale) {
-      localized = `/${pageSlugs[slug][toLang]}`;
+      localized = `/${slugs[slug][toLang]}`;
     }
   }
 

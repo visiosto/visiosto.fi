@@ -6,7 +6,7 @@ const createBlogPages = require('./pages/createBlogPages');
 const createRootPages = require('./pages/createRootPages');
 
 module.exports = async ({ actions, graphql, reporter }) => {
-  await createRootPages(actions);
+  await createRootPages(actions, graphql, reporter);
   await createBlogPages(actions, graphql, reporter);
   await createAuthorPages(actions, graphql, reporter);
 };

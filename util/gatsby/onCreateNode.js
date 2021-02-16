@@ -3,6 +3,7 @@
 
 const createAuthorSlug = require('./pages/createAuthorSlug');
 const createBlogPostSlug = require('./pages/createBlogPostSlug');
+const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
 const blogPostFilenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
@@ -56,11 +57,17 @@ module.exports = ({ node, actions, getNode }) => {
       }
 
       if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}`;
-      }
+        const match = /(.+)\.(.{2})\.md$/.exec(relativePath);
+        const [, filename] = match;
 
-      if (!keySlug) {
-        keySlug = `/${relativePath.replace('.md', '')}`;
+        [, , locale] = match;
+
+        console.log('The filename is', filename);
+        console.log('The locale is', locale);
+
+        slug = createSlug(locale, filename);
+
+        keySlug = `/${filename}`;
       }
 
       console.log('The slug is', slug);

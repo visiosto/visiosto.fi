@@ -15,10 +15,13 @@ import LayoutIndex from '../components/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
 
+import createLink from '../components/createLink';
+
 import createIntl from '../utils/createIntl';
 
 const Index = (props) => {
   const i = createIntl(useIntl());
+  const Link = createLink(props.pageContext.lang);
 
   const H2 = styled.h2`
     font-size: 2.2rem;
@@ -74,6 +77,7 @@ const Index = (props) => {
       </IndexCover>
       <StoryCover title={i('indexStoryTitle')}>
         <p>{i('indexStoryContent')}</p>
+        <Link to={'/pricing'}>Linkki</Link>
       </StoryCover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin={true}>

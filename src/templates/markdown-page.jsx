@@ -6,13 +6,15 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Intl from '../components/Intl';
-import LayoutPost from '../components/LayoutPost';
+import Layout from '../components/Layout';
 import Theme from '../components/Theme';
 
-const BlogPost = (props) => {
-  const { markdownRemark: post } = props.data;
+const MarkdownPage = (props) => {
+  const { markdownRemark: page } = props.data;
 
-  const PostDiv = styled.div`
+  console.log(props.data.markdownRemark);
+
+  const Div = styled.div`
     margin: 1em ${(props) => props.theme.layout.marginPhone};
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
@@ -25,26 +27,22 @@ const BlogPost = (props) => {
   `;
 
   return (
-    <LayoutPost
-      title={post.frontmatter.title}
-      frontmatter={post.frontmatter}
+    <Layout
+      title={page.frontmatter.title}
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
-    </LayoutPost>
+      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+    </Layout>
   );
 };
 
 export const pageQuery = graphql`
-  query BlogPostQuery($path: String, $momentJsLocale: String) {
+  query MarkdownPageQuery($path: String) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
         title
-        author
-        datetime: date
-        date: date(formatString: "LL", locale: $momentJsLocale)
       }
     }
   }
@@ -53,7 +51,7 @@ export const pageQuery = graphql`
 export default (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
-      <BlogPost {...props} />
+      <MarkdownPage {...props} />
     </Theme>
   </Intl>
 );

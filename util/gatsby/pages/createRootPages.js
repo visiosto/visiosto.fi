@@ -10,8 +10,10 @@ const pageSlugs = require('../../../src/data/page-slugs.json');
 const recursiveReadDirSync = require('../../recursiveReadDirSync');
 const { addPathToSite } = require('../../sitePaths');
 
+const pageKeySlashIndex = 1;
+
 // This function creates the pages for each root-level page.
-module.exports = async (actions) => {
+module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
   const defaultLanguage = config.siteMetadata.defaultLocale;
@@ -29,7 +31,8 @@ module.exports = async (actions) => {
   const files = recursiveReadDirSync(rootPagesDir)
     .filter((f) => !f.startsWith('.'))
     .filter((f) => !f.includes('.scss'))
-    .filter((f) => !f.includes('blog-post.jsx'));
+    .filter((f) => !f.includes('blog-post.jsx'))
+    .filter((f) => !f.includes('markdown-page.jsx'));
 
   console.log('The languages found are', langs);
 
@@ -80,6 +83,52 @@ module.exports = async (actions) => {
 
       addPathToSite(sitePath);
       createPage(pageOpts);
+    });
+  });
+  const query = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___title] }
+          limit: 1000
+          filter: { fields: { keySlug: { regex: "/^(/(?!blog|author))/" } } }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+                keySlug
+                locale
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  if (query.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query');
+    return;
+  }
+
+  const template = path.resolve('src', 'templates', 'markdown-page.jsx');
+
+  query.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const { slug, locale } = node.fields;
+
+    addPathToSite(slug);
+
+    createPage({
+      path: slug,
+      component: template,
+      context: {
+        lang: locale,
+        key: node.fields.keySlug.substring(pageKeySlashIndex),
+      },
     });
   });
 };
