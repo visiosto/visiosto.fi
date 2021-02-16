@@ -15,12 +15,13 @@ export default (props) => {
   listenColorScheme();
 
   const PageTitle = styled.h1`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-    font-size: 3rem;
+    margin: 2em 0.1em;
+    font-size: 2rem;
     text-align: center;
 
     @media screen and ${(props) => props.theme.devices.phoneLarge} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
+      font-size: 3rem;
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {

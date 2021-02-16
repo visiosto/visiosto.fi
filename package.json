@@ -1,7 +1,7 @@
 {
   "name": "visiosto.github.io",
   "private": true,
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "The shared source for the website of Visiosto",
   "scripts": {
     "build": "yarn clean && gatsby build",
