@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 const React = require('react');
+
 const gatsby = jest.requireActual('gatsby');
 
 module.exports = {
@@ -19,11 +20,7 @@ module.exports = {
       replace,
       to,
       ...rest
-    }) =>
-      React.createElement('a', {
-        ...rest,
-        href: to,
-      }),
+    }) => React.createElement('a', { ...rest, href: to }),
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn(),
