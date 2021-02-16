@@ -724,7 +724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.13, @babel/parser@npm:^7.12.16":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.13, @babel/parser@npm:^7.12.16, @babel/parser@npm:^7.8.3":
   version: 7.12.16
   resolution: "@babel/parser@npm:7.12.16"
   bin:
@@ -2484,7 +2484,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.1.0, @babel/traverse@npm:^7.12.13":
+"@babel/traverse@npm:^7.1.0, @babel/traverse@npm:^7.12.13, @babel/traverse@npm:^7.8.3":
   version: 7.12.13
   resolution: "@babel/traverse@npm:7.12.13"
   dependencies:
@@ -7928,7 +7928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^4.0.0, debug@npm:^4.2.0":
+"debug@npm:^4.0.0":
   version: 4.3.1
   resolution: "debug@npm:4.3.1"
   dependencies:
@@ -7946,6 +7946,18 @@ __metadata:
   dependencies:
     ms: ^2.1.1
   checksum: 3601a6ce96e4698ed3edf0ee6e67ef0317adfcdae2f66a43b23d1b14e8888b422337429b16dbbcba6801e7bfa6cbb8de3128fbacfb8ae1cd9bd7615ea6baf970
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.1":
+  version: 4.3.2
+  resolution: "debug@npm:4.3.2"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 5543570879e2274f6725d4285a034d6e0822d35faefc6f55965933fb440e8c21eb3a0bef934e66f4b6b491f898ee2de37cab980e9d4fd61372136c19d3ce4527
   languageName: node
   linkType: hard
 
@@ -9912,7 +9924,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.4":
+"fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1":
   version: 3.2.4
   resolution: "fast-glob@npm:3.2.4"
   dependencies:
@@ -9923,6 +9935,20 @@ __metadata:
     micromatch: ^4.0.2
     picomatch: ^2.2.1
   checksum: 18f9eca898bc3be71b717cb59cb424e937bb9f5629449ba4e93e498dca9db921a9fd3cbdc3389d3f94aec3074bbe2ff6a74f779627a93e81ba0262b795ec44e4
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "fast-glob@npm:3.2.5"
+  dependencies:
+    "@nodelib/fs.stat": ^2.0.2
+    "@nodelib/fs.walk": ^1.2.3
+    glob-parent: ^5.1.0
+    merge2: ^1.3.0
+    micromatch: ^4.0.2
+    picomatch: ^2.2.1
+  checksum: 1a33c4a68d14cb2314c07a451689bc311bde87b09c525dd2064321165127a38a553457d121e2d3ecdd022374e3d53afb82cbb57f5694414d3406ce14ed6c0a1f
   languageName: node
   linkType: hard
 
@@ -11540,6 +11566,20 @@ fsevents@~2.1.2:
     merge2: ^1.2.3
     slash: ^3.0.0
   checksum: 53924c2b46f104d99a6b15da92b9f9f1e9f004bce745fdf56cf985afd615897bd6fd8fe01303f5758943e643c0885e8abaae0b5a596c13523c9431bf071c3f23
+  languageName: node
+  linkType: hard
+
+"globby@npm:^11.0.2":
+  version: 11.0.2
+  resolution: "globby@npm:11.0.2"
+  dependencies:
+    array-union: ^2.1.0
+    dir-glob: ^3.0.1
+    fast-glob: ^3.1.1
+    ignore: ^5.1.4
+    merge2: ^1.3.0
+    slash: ^3.0.0
+  checksum: d23f2a6b8897b97fb27422cde243e0fd406ebbaa821929293b27c977d169884f8112494cda4f456a51d0ec1e133e3ac703ec24bfed484e327305ea34a665eb06
   languageName: node
   linkType: hard
 
@@ -14460,10 +14500,10 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"known-css-properties@npm:^0.20.0":
-  version: 0.20.0
-  resolution: "known-css-properties@npm:0.20.0"
-  checksum: 8ab4acd7cf34df8413ff466a24e9d7c802513ac32fd48ec1e799af409b0e45f65f383bdc40633f346bc853fb43899630cdb44e91f1945e94354cc49b34fb4fce
+"known-css-properties@npm:^0.21.0":
+  version: 0.21.0
+  resolution: "known-css-properties@npm:0.21.0"
+  checksum: b5f0afd2aaab2cc3249f3bba2e92b227bb7d6b0f7ec447f8655ee719b3140641133a19aab926e5f12718a201ee40f39181fed01632fcf58d919d5d7d2b55b9fd
   languageName: node
   linkType: hard
 
@@ -15246,12 +15286,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"meow@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "meow@npm:8.0.0"
+"meow@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "meow@npm:9.0.0"
   dependencies:
     "@types/minimist": ^1.2.0
     camelcase-keys: ^6.2.2
+    decamelize: ^1.2.0
     decamelize-keys: ^1.1.0
     hard-rejection: ^2.1.0
     minimist-options: 4.1.0
@@ -15261,7 +15302,7 @@ fsevents@~2.1.2:
     trim-newlines: ^3.0.0
     type-fest: ^0.18.0
     yargs-parser: ^20.2.3
-  checksum: 536b8cdff381d619ba4d2647bd15bde3ebbcb289e0c6a5e618d23e6e6d922f6a2febc722a12dee7c6c426f3f37a9a3e7e7b09bf9c217e2eb178e276f9665697d
+  checksum: d1573809d6e3df55ab7b8c49f2ecfb8006664856700b556c794013ef887e47991bf1fef8ba9de60bb4afda9b62136823e4008c7f2cc459a7c036b7b649a42c0d
   languageName: node
   linkType: hard
 
@@ -20905,9 +20946,37 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.8.0":
-  version: 13.8.0
-  resolution: "stylelint@npm:13.8.0"
+"stylelint-config-recommended@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "stylelint-config-recommended@npm:3.0.0"
+  peerDependencies:
+    stylelint: ">=10.1.0"
+  checksum: 455fcb427786528495f66c2de1fbcb7cc7e8007aca303d21ad8f34b7150a3f4b7669a46d2b1c69ea7ac7f4f446c43b94c0920a3619b4a8d4dc5f3eee9df7cfa2
+  languageName: node
+  linkType: hard
+
+"stylelint-config-styled-components@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "stylelint-config-styled-components@npm:0.1.1"
+  checksum: 174eb36c0ddfee5aae5938677efbb2406f6492450d231d1eeee9e828090a396601de317abaf02c9e9c93d704ee6410444230548f9e6f2e726a6ef31eea03a33b
+  languageName: node
+  linkType: hard
+
+"stylelint-processor-styled-components@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "stylelint-processor-styled-components@npm:1.10.0"
+  dependencies:
+    "@babel/parser": ^7.8.3
+    "@babel/traverse": ^7.8.3
+    micromatch: ^4.0.2
+    postcss: ^7.0.26
+  checksum: 9ff9a43666dda4459b94d5acea415afee4cccc6ea1967a67d96777456d9680828d80f0daad191dec9b0763b74041569ee159b6ff296b8f4ed8350680488f41a4
+  languageName: node
+  linkType: hard
+
+"stylelint@npm:^13.10.0":
+  version: 13.10.0
+  resolution: "stylelint@npm:13.10.0"
   dependencies:
     "@stylelint/postcss-css-in-js": ^0.37.2
     "@stylelint/postcss-markdown": ^0.36.2
@@ -20915,24 +20984,24 @@ fsevents@~2.1.2:
     balanced-match: ^1.0.0
     chalk: ^4.1.0
     cosmiconfig: ^7.0.0
-    debug: ^4.2.0
+    debug: ^4.3.1
     execall: ^2.0.0
-    fast-glob: ^3.2.4
+    fast-glob: ^3.2.5
     fastest-levenshtein: ^1.0.12
     file-entry-cache: ^6.0.0
     get-stdin: ^8.0.0
     global-modules: ^2.0.0
-    globby: ^11.0.1
+    globby: ^11.0.2
     globjoin: ^0.1.4
     html-tags: ^3.1.0
     ignore: ^5.1.8
     import-lazy: ^4.0.0
     imurmurhash: ^0.1.4
-    known-css-properties: ^0.20.0
+    known-css-properties: ^0.21.0
     lodash: ^4.17.20
     log-symbols: ^4.0.0
     mathml-tag-names: ^2.1.3
-    meow: ^8.0.0
+    meow: ^9.0.0
     micromatch: ^4.0.2
     normalize-selector: ^0.2.0
     postcss: ^7.0.35
@@ -20954,12 +21023,12 @@ fsevents@~2.1.2:
     style-search: ^0.1.0
     sugarss: ^2.0.0
     svg-tags: ^1.0.0
-    table: ^6.0.3
+    table: ^6.0.7
     v8-compile-cache: ^2.2.0
     write-file-atomic: ^3.0.3
   bin:
     stylelint: bin/stylelint.js
-  checksum: a9234552255082eb57c25952f044c3ea5f1462bef66130c5f566cf91ec3c87e05838568394253827a1717e3c99d231e4874f00ec0e4c8e65328e461c988e93d5
+  checksum: 311de30f0f0b0161abfe9ef3298c7601c53943a5cba198f401bc575986f99c336d15dfc81c2f34bc68f275dd01389d4763c5f887760346d4c385e3e478def287
   languageName: node
   linkType: hard
 
@@ -21104,19 +21173,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"table@npm:^6.0.3":
-  version: 6.0.3
-  resolution: "table@npm:6.0.3"
-  dependencies:
-    ajv: ^6.12.4
-    lodash: ^4.17.20
-    slice-ansi: ^4.0.0
-    string-width: ^4.2.0
-  checksum: 7fa8079f9666d71936a6189e475730fb7cb7db2c4df85755b91a0bad8a650f2abfe93236a1dde2a77f6b56e37786f1f287880a194a76e4c8a80a2752ea74bea3
-  languageName: node
-  linkType: hard
-
-"table@npm:^6.0.4":
+"table@npm:^6.0.4, table@npm:^6.0.7":
   version: 6.0.7
   resolution: "table@npm:6.0.7"
   dependencies:
@@ -22553,7 +22610,10 @@ fsevents@~2.1.2:
     react-test-renderer: ^17.0.1
     scroll-to-element: ^2.0.3
     styled-components: ^5.2.1
-    stylelint: ^13.8.0
+    stylelint: ^13.10.0
+    stylelint-config-recommended: ^3.0.0
+    stylelint-config-styled-components: ^0.1.1
+    stylelint-processor-styled-components: ^1.10.0
     terser: ^4.6.13
   languageName: unknown
   linkType: soft

@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Workflow status badge to the README.
+- Lint for CSS-in-JS.
 
 ## [0.5.1] - 2021-02-16
 
