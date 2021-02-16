@@ -17,7 +17,6 @@ export default createGlobalStyle`
     font-family: ${(props) => props.theme.fonts.main};
     font-size: 1rem;
     font-weight: 400;
-    font-smoothing: antialiased;
     line-height: 1.5;
     color: var(--color-text);
   }
