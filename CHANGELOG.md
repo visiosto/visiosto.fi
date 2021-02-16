@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Use of semantic HTML elements to the site.
 - Support for language switcher on the blog pages.
 - Support for adding simple pages using Markdown.
+- Required files and dependencies for implementing unit tests.
 
 ### Changed
 
