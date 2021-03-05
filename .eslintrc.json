@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "prettier"],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
