@@ -35,6 +35,7 @@
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
@@ -55,7 +56,6 @@
     "terser": "^4.6.13"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
     "eslint": "^7.21.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
