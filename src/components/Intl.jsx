@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import { IntlProvider } from 'react-intl';
 
@@ -37,11 +36,6 @@ const Intl = ({ children, locale }) => {
       {children}
     </IntlProvider>
   );
-};
-
-Intl.propTypes = {
-  children: PropTypes.node,
-  locale: PropTypes.string,
 };
 
 export default Intl;
