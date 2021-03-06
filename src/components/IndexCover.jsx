@@ -13,73 +13,57 @@ import theme from '../theme';
 export default (props) => {
   const data = useStaticQuery(
     graphql`
-      query {
+      {
         topPhoneSmallLight: file(
           relativePath: { eq: "front-page/cover/phone-small-up-left-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300, height: 90, layout: FIXED)
           }
         }
         topPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300, height: 90, layout: FIXED)
           }
         }
         topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400, height: 400, layout: FIXED)
           }
         }
         topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400, height: 400, layout: FIXED)
           }
         }
         bottomPhoneSmallLight: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300, height: 90, layout: FIXED)
           }
         }
         bottomPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-dark.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300, height: 90, layout: FIXED)
           }
         }
         bottomTabletLight: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400, height: 400, layout: FIXED)
           }
         }
         bottomTabletDark: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-dark.png" }
         ) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400, height: 400, layout: FIXED)
           }
         }
       }
@@ -87,33 +71,33 @@ export default (props) => {
   );
 
   const sourcesTopLight = [
-    data.topPhoneSmallLight.childImageSharp.fixed,
+    data.topPhoneSmallLight.childImageSharp.gatsbyImageData,
     {
-      ...data.topTabletLight.childImageSharp.fixed,
+      ...data.topTabletLight.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
     },
   ];
 
   const sourcesTopDark = [
-    data.topPhoneSmallDark.childImageSharp.fixed,
+    data.topPhoneSmallDark.childImageSharp.gatsbyImageData,
     {
-      ...data.topTabletDark.childImageSharp.fixed,
+      ...data.topTabletDark.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
     },
   ];
 
   const sourcesBottomLight = [
-    data.bottomPhoneSmallLight.childImageSharp.fixed,
+    data.bottomPhoneSmallLight.childImageSharp.gatsbyImageData,
     {
-      ...data.bottomTabletLight.childImageSharp.fixed,
+      ...data.bottomTabletLight.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
     },
   ];
 
   const sourcesBottomDark = [
-    data.bottomPhoneSmallDark.childImageSharp.fixed,
+    data.bottomPhoneSmallDark.childImageSharp.gatsbyImageData,
     {
-      ...data.bottomTabletDark.childImageSharp.fixed,
+      ...data.bottomTabletDark.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
     },
   ];

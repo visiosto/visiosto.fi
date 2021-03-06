@@ -10,89 +10,65 @@ import SchemedImg from './SchemedImg';
 const getRules = (ruleType) => {
   const data = useStaticQuery(
     graphql`
-      query {
+      {
         blueRule1: file(relativePath: { eq: "blue-rule-1.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         lightBlueRule1: file(relativePath: { eq: "light-blue-rule-1.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         peachRule1: file(relativePath: { eq: "peach-rule-1.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         creamRule1: file(relativePath: { eq: "cream-rule-1.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         blueRule2: file(relativePath: { eq: "blue-rule-2.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         lightBlueRule2: file(relativePath: { eq: "light-blue-rule-2.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         peachRule2: file(relativePath: { eq: "peach-rule-2.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         creamRule2: file(relativePath: { eq: "cream-rule-2.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         blueRule3: file(relativePath: { eq: "blue-rule-3.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         lightBlueRule3: file(relativePath: { eq: "light-blue-rule-3.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         peachRule3: file(relativePath: { eq: "peach-rule-3.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
         creamRule3: file(relativePath: { eq: "cream-rule-3.png" }) {
           childImageSharp {
-            fixed(width: 250, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 250, height: 50, layout: FIXED)
           }
         }
       }
@@ -136,15 +112,15 @@ export default (props) => {
     if (props.color === 'peach') {
       return (
         <SchemedImg
-          fixedLight={peachRule.childImageSharp.fixed}
-          fixedDark={creamRule.childImageSharp.fixed}
+          fixedLight={peachRule.childImageSharp.gatsbyImageData}
+          fixedDark={creamRule.childImageSharp.gatsbyImageData}
         />
       );
     } else if (props.color === 'blue') {
       return (
         <SchemedImg
-          fixedLight={blueRule.childImageSharp.fixed}
-          fixedDark={lightBlueRule.childImageSharp.fixed}
+          fixedLight={blueRule.childImageSharp.gatsbyImageData}
+          fixedDark={lightBlueRule.childImageSharp.gatsbyImageData}
         />
       );
     }
