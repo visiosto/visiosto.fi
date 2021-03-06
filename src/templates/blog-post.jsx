@@ -25,16 +25,22 @@ const BlogPost = (props) => {
   `;
 
   return (
-    <LayoutPost
-      title={post.frontmatter.title}
-      frontmatter={post.frontmatter}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-      <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
-    </LayoutPost>
+    <Intl locale={props.pageContext.lang}>
+      <Theme>
+        <LayoutPost
+          title={post.frontmatter.title}
+          frontmatter={post.frontmatter}
+          lang={props.pageContext.lang}
+          pageKey={props.pageContext.key}
+        >
+          <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
+        </LayoutPost>
+      </Theme>
+    </Intl>
   );
 };
+
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostQuery($path: String, $momentJsLocale: String) {
@@ -49,11 +55,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <BlogPost {...props} />
-    </Theme>
-  </Intl>
-);

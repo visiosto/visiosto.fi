@@ -77,30 +77,40 @@ const Blog = (props) => {
   const PostContent = styled.div``;
 
   return (
-    <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
-      <Rule color="peach" mode={2} />
-      {posts.map(({ node: post }) => {
-        return (
-          <Post>
-            <PostHeader>
-              <H2>
-                <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
-              </H2>
-              <PostMeta>
-                <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
-                <PostAuthor>{post.frontmatter.author}</PostAuthor>
-              </PostMeta>
-            </PostHeader>
-            <PostContent>
-              <p>{post.excerpt}</p>
-            </PostContent>
-            <Rule color="blue" mode={2} />
-          </Post>
-        );
-      })}
-    </Layout>
+    <Intl locale={props.pageContext.lang}>
+      <Theme>
+        <Layout
+          title={i('blogTitle')}
+          lang={props.pageContext.lang}
+          pageKey={props.pageContext.key}
+        >
+          <Rule color="peach" mode={2} />
+          {posts.map(({ node: post }) => {
+            return (
+              <Post>
+                <PostHeader>
+                  <H2>
+                    <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
+                  </H2>
+                  <PostMeta>
+                    <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+                    <PostAuthor>{post.frontmatter.author}</PostAuthor>
+                  </PostMeta>
+                </PostHeader>
+                <PostContent>
+                  <p>{post.excerpt}</p>
+                </PostContent>
+                <Rule color="blue" mode={2} />
+              </Post>
+            );
+          })}
+        </Layout>
+      </Theme>
+    </Intl>
   );
 };
+
+export default Blog;
 
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
@@ -125,11 +135,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <Blog {...props} />
-    </Theme>
-  </Intl>
-);

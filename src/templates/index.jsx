@@ -67,49 +67,47 @@ const Index = (props) => {
   `;
 
   return (
-    <LayoutIndex
-      title={i('indexTitle')}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-      <IndexCover title={i('indexCoverTitle')}>
-        <p>{i('indexCoverContent')}</p>
-      </IndexCover>
-      <StoryCover title={i('indexStoryTitle')}>
-        <p>{i('indexStoryContent')}</p>
-        <Link to={'/pricing'}>Linkki</Link>
-      </StoryCover>
-      <Break color={'peach'} mode={1} />
-      <Section lesserMargin={true}>
-        <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
-        <Cards>
-          <Card title={i('indexServicesWebTitle')} icon={<DeviceDesktopIcon size={'large'} />}>
-            <p>{i('indexServicesWebContent')}</p>
-            <Button to="#">Lue lisää</Button>
-          </Card>
-          <Card title={i('indexServicesDesignTitle')} icon={<PencilIcon size={'large'} />}>
-            <p>{i('indexServicesDesignContent')}</p>
-          </Card>
-          <Card title={i('indexServicesEventsTitle')} icon={<CalendarIcon size={'large'} />}>
-            <p>{i('indexServicesEventsContent')}</p>
-          </Card>
-        </Cards>
-      </Section>
-      <Break color={'blue'} mode={1} />
-      <Section>
-        <Icon>
-          <NorthStarIcon size={'large'} />
-        </Icon>
-        <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
-      </Section>
-    </LayoutIndex>
+    <Intl locale={props.pageContext.lang}>
+      <Theme>
+        <LayoutIndex
+          title={i('indexTitle')}
+          lang={props.pageContext.lang}
+          pageKey={props.pageContext.key}
+        >
+          <IndexCover title={i('indexCoverTitle')}>
+            <p>{i('indexCoverContent')}</p>
+          </IndexCover>
+          <StoryCover title={i('indexStoryTitle')}>
+            <p>{i('indexStoryContent')}</p>
+            <Link to={'/pricing'}>Linkki</Link>
+          </StoryCover>
+          <Break color={'peach'} mode={1} />
+          <Section lesserMargin={true}>
+            <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
+            <Cards>
+              <Card title={i('indexServicesWebTitle')} icon={<DeviceDesktopIcon size={'large'} />}>
+                <p>{i('indexServicesWebContent')}</p>
+                <Button to="#">Lue lisää</Button>
+              </Card>
+              <Card title={i('indexServicesDesignTitle')} icon={<PencilIcon size={'large'} />}>
+                <p>{i('indexServicesDesignContent')}</p>
+              </Card>
+              <Card title={i('indexServicesEventsTitle')} icon={<CalendarIcon size={'large'} />}>
+                <p>{i('indexServicesEventsContent')}</p>
+              </Card>
+            </Cards>
+          </Section>
+          <Break color={'blue'} mode={1} />
+          <Section>
+            <Icon>
+              <NorthStarIcon size={'large'} />
+            </Icon>
+            <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
+          </Section>
+        </LayoutIndex>
+      </Theme>
+    </Intl>
   );
 };
 
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <Index {...props} />
-    </Theme>
-  </Intl>
-);
+export default Index;

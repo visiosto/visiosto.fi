@@ -27,15 +27,21 @@ const MarkdownPage = (props) => {
   `;
 
   return (
-    <Layout
-      title={page.frontmatter.title}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
-    </Layout>
+    <Intl locale={props.pageContext.lang}>
+      <Theme>
+        <Layout
+          title={page.frontmatter.title}
+          lang={props.pageContext.lang}
+          pageKey={props.pageContext.key}
+        >
+          <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+        </Layout>
+      </Theme>
+    </Intl>
   );
 };
+
+export default MarkdownPage;
 
 export const pageQuery = graphql`
   query MarkdownPageQuery($path: String) {
@@ -47,11 +53,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <MarkdownPage {...props} />
-    </Theme>
-  </Intl>
-);
