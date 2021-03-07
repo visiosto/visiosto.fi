@@ -24,7 +24,7 @@ export default (props) => {
   const Header = styled.header`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
 

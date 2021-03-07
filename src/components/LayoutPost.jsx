@@ -19,7 +19,7 @@ export default (props) => {
     font-size: 2rem;
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
       font-size: 3rem;
     }
@@ -33,7 +33,7 @@ export default (props) => {
     margin: 2em 0;
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em 0;
     }
 

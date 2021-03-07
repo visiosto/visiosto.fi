@@ -13,13 +13,19 @@ import Theme from '../components/Theme';
 import createIntl from '../utils/createIntl';
 
 const Author = (props) => {
-  return (
-    <Intl locale={props.pageContext.lang}>
-      <Theme>
-        <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key} />
-      </Theme>
-    </Intl>
-  );
+  const i = createIntl(useIntl());
+
+  const P = styled.p`
+    text-align: center;
+  `;
+
+  return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
 };
 
-export default Author;
+export default (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Author {...props} />
+    </Theme>
+  </Intl>
+);

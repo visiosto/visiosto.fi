@@ -17,7 +17,7 @@ export default (props) => {
     margin: 2em ${(props) => props.theme.layout.marginPhone};
     padding: 0.5em 0 1em;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
       padding: 2em 0;
     }

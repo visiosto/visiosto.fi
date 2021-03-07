@@ -17,7 +17,7 @@ const MarkdownPage = (props) => {
   const Div = styled.div`
     margin: 1em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 1em ${(props) => props.theme.layout.marginTablet};
     }
 
@@ -27,21 +27,15 @@ const MarkdownPage = (props) => {
   `;
 
   return (
-    <Intl locale={props.pageContext.lang}>
-      <Theme>
-        <Layout
-          title={page.frontmatter.title}
-          lang={props.pageContext.lang}
-          pageKey={props.pageContext.key}
-        >
-          <Div dangerouslySetInnerHTML={{ __html: page.html }} />
-        </Layout>
-      </Theme>
-    </Intl>
+    <Layout
+      title={page.frontmatter.title}
+      lang={props.pageContext.lang}
+      pageKey={props.pageContext.key}
+    >
+      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+    </Layout>
   );
 };
-
-export default MarkdownPage;
 
 export const pageQuery = graphql`
   query MarkdownPageQuery($path: String) {
@@ -53,3 +47,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <MarkdownPage {...props} />
+    </Theme>
+  </Intl>
+);

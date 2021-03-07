@@ -15,7 +15,7 @@ const BlogPost = (props) => {
   const PostDiv = styled.div`
     margin: 1em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 1em ${(props) => props.theme.layout.marginTablet};
     }
 
@@ -25,22 +25,16 @@ const BlogPost = (props) => {
   `;
 
   return (
-    <Intl locale={props.pageContext.lang}>
-      <Theme>
-        <LayoutPost
-          title={post.frontmatter.title}
-          frontmatter={post.frontmatter}
-          lang={props.pageContext.lang}
-          pageKey={props.pageContext.key}
-        >
-          <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
-        </LayoutPost>
-      </Theme>
-    </Intl>
+    <LayoutPost
+      title={post.frontmatter.title}
+      frontmatter={post.frontmatter}
+      lang={props.pageContext.lang}
+      pageKey={props.pageContext.key}
+    >
+      <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
+    </LayoutPost>
   );
 };
-
-export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostQuery($path: String, $momentJsLocale: String) {
@@ -55,3 +49,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <BlogPost {...props} />
+    </Theme>
+  </Intl>
+);

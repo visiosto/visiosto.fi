@@ -35,7 +35,7 @@ export default (props) => {
     cursor: pointer;
     user-select: none;
 
-    @media screen and ${(props) => props.theme.devices.laptopSmall} {
+    @media screen and ${(props) => props.theme.devices.laptop} {
       display: none;
     }
   `;
@@ -107,7 +107,7 @@ export default (props) => {
         max-height: none;
       `};
 
-    @media screen and ${(props) => props.theme.devices.laptopSmall} {
+    @media screen and ${(props) => props.theme.devices.laptop} {
       overflow: visible;
       display: flex;
       justify-content: center;

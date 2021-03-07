@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import Cover from './Cover';
@@ -68,37 +69,31 @@ export default (props) => {
     `,
   );
 
-  const sourcesTopLight = [
-    data.topPhoneSmallLight.childImageSharp.gatsbyImageData,
+  const imagesTopLight = withArtDirection(getImage(data.topPhoneSmallLight), [
     {
-      ...data.topTabletLight.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
+      image: getImage(data.topTabletLight),
     },
-  ];
+  ]);
+  const imagesTopDark = withArtDirection(getImage(data.topPhoneSmallDark), [
+    {
+      media: theme.devices.tablet,
+      image: getImage(data.topTabletDark),
+    },
+  ]);
 
-  const sourcesTopDark = [
-    data.topPhoneSmallDark.childImageSharp.gatsbyImageData,
+  const imagesBottomLight = withArtDirection(getImage(data.bottomPhoneSmallLight), [
     {
-      ...data.topTabletDark.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
+      image: getImage(data.bottomTabletLight),
     },
-  ];
-
-  const sourcesBottomLight = [
-    data.bottomPhoneSmallLight.childImageSharp.gatsbyImageData,
+  ]);
+  const imagesBottomDark = withArtDirection(getImage(data.bottomPhoneSmallDark), [
     {
-      ...data.bottomTabletLight.childImageSharp.gatsbyImageData,
       media: theme.devices.tablet,
+      image: getImage(data.bottomTabletDark),
     },
-  ];
-
-  const sourcesBottomDark = [
-    data.bottomPhoneSmallDark.childImageSharp.gatsbyImageData,
-    {
-      ...data.bottomTabletDark.childImageSharp.gatsbyImageData,
-      media: theme.devices.tablet,
-    },
-  ];
+  ]);
 
   const Img = styled(SchemedImg)`
     margin: 0;
@@ -108,9 +103,19 @@ export default (props) => {
     }
   `;
 
-  const TopImg = styled(Img)``;
+  const TopImg = styled(Img)`
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      width: 400px;
+      height: 400px;
+    }
+  `;
 
-  const BottomImg = styled(Img)``;
+  const BottomImg = styled(Img)`
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      width: 400px;
+      height: 400px;
+    }
+  `;
 
   const imgStyles = {
     position: 'absolute',
@@ -122,16 +127,16 @@ export default (props) => {
       title={props.title}
       imgTop={
         <TopImg
-          fixedLight={sourcesTopLight}
-          fixedDark={sourcesTopDark}
+          imageLight={imagesTopLight}
+          imageDark={imagesTopDark}
           style={{ top: 0, right: 0, ...imgStyles }}
           objectFit="cover"
         />
       }
       imgBottom={
         <BottomImg
-          fixedLight={sourcesBottomLight}
-          fixedDark={sourcesBottomDark}
+          imageLight={imagesBottomLight}
+          imageDark={imagesBottomDark}
           style={{ bottom: 0, left: 0, ...imgStyles }}
           objectFit="cover"
         />

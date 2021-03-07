@@ -16,7 +16,7 @@ export default (props) => {
     margin: 1em ${(props) => props.theme.layout.marginPhone};
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 1em ${(props) => props.theme.layout.marginTablet};
     }
 

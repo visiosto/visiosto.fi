@@ -24,7 +24,7 @@ const Blog = (props) => {
   const Post = styled.article`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
 
@@ -60,7 +60,7 @@ const Blog = (props) => {
     margin: 2em 0;
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em 0;
     }
 
@@ -77,40 +77,30 @@ const Blog = (props) => {
   const PostContent = styled.div``;
 
   return (
-    <Intl locale={props.pageContext.lang}>
-      <Theme>
-        <Layout
-          title={i('blogTitle')}
-          lang={props.pageContext.lang}
-          pageKey={props.pageContext.key}
-        >
-          <Rule color="peach" mode={2} />
-          {posts.map(({ node: post }) => {
-            return (
-              <Post>
-                <PostHeader>
-                  <H2>
-                    <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
-                  </H2>
-                  <PostMeta>
-                    <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
-                    <PostAuthor>{post.frontmatter.author}</PostAuthor>
-                  </PostMeta>
-                </PostHeader>
-                <PostContent>
-                  <p>{post.excerpt}</p>
-                </PostContent>
-                <Rule color="blue" mode={2} />
-              </Post>
-            );
-          })}
-        </Layout>
-      </Theme>
-    </Intl>
+    <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <Rule color="peach" mode={2} />
+      {posts.map(({ node: post }) => {
+        return (
+          <Post>
+            <PostHeader>
+              <H2>
+                <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
+              </H2>
+              <PostMeta>
+                <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+                <PostAuthor>{post.frontmatter.author}</PostAuthor>
+              </PostMeta>
+            </PostHeader>
+            <PostContent>
+              <p>{post.excerpt}</p>
+            </PostContent>
+            <Rule color="blue" mode={2} />
+          </Post>
+        );
+      })}
+    </Layout>
   );
 };
-
-export default Blog;
 
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
@@ -135,3 +125,11 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Blog {...props} />
+    </Theme>
+  </Intl>
+);

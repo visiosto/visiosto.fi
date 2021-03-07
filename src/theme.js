@@ -61,27 +61,23 @@ const fonts = {
 
 // The maximum sizes of different viewports.
 const sizes = {
-  xxsmall: '20em', // 320px
-  xsmall: '30em', // 480px
-  small: '37.5em', // 600px
-  medium: '48em', // 768px
-  large: '56.25em', // 900px
-  xlarge: '64em', // 1024px
-  xxlarge: '75em', // 1200px
-  larger: '90em', // 1440px
-  xlarger: '160em', // 2560px
+  mobileS: '20em', // 320px
+  mobileM: '23.4375em', // 375px
+  mobileL: '26.5625em', // 425px
+  tablet: '48em', // 768px
+  laptop: '64em', // 1024px
+  laptopL: '90em', // 1440px
+  fourK: '160em', // 2560px
 };
 
 const devices = {
-  phoneSmall: `(min-width: ${sizes.xxsmall})`,
-  phoneMedium: `(min-width: ${sizes.xsmall})`,
-  phoneLarge: `(min-width: ${sizes.small})`,
-  tablet: `(min-width: ${sizes.medium})`,
-  laptopSmall: `(min-width: ${sizes.large})`,
-  laptopMedium: `(min-width: ${sizes.xlarge})`,
-  desktopSmall: `(min-width: ${sizes.xxlarge})`,
-  desktopMedium: `(min-width: ${sizes.larger})`,
-  desktopLarge: `(min-width: ${sizes.xlarger})`,
+  mobileS: `(min-width: ${sizes.mobileS})`,
+  mobileM: `(min-width: ${sizes.mobileM})`,
+  mobileL: `(min-width: ${sizes.mobileL})`,
+  tablet: `(min-width: ${sizes.tablet})`,
+  laptop: `(min-width: ${sizes.laptop})`,
+  laptopL: `(min-width: ${sizes.laptopL})`,
+  fourK: `(min-width: ${sizes.fourK})`,
 };
 
 const layout = {
