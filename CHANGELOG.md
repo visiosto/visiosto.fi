@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Workflow status badge to the README.
 - Lint for CSS-in-JS.
 
+### Changed
+
+- Gatsby to v3.
+
 ## [0.5.1] - 2021-02-16
 
 ### Fixed
