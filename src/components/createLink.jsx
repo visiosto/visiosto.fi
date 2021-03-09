@@ -26,8 +26,6 @@ const createLocalizedSlug = (locale, slug) => {
 
   const { defaultLocale } = site.siteMetadata;
 
-  console.log("The default locale for the link is", defaultLocale);
-
   const pageKey = slug.substring(pageKeySlashIndex);
   let localized = slug;
 
@@ -42,8 +40,6 @@ const createLocalizedSlug = (locale, slug) => {
   if (locale !== defaultLocale && allFiles.includes(localeVersion)) {
     localized = localeVersion;
   }
-
-  console.log("The path created for the link is", localized);
 
   return localized;
 };
