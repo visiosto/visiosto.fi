@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
 import SchemedImage from './SchemedImage';
 
@@ -112,15 +113,15 @@ export default (props) => {
     if (props.color === 'peach') {
       return (
         <SchemedImage
-          light={peachRule.childImageSharp.gatsbyImageData}
-          dark={creamRule.childImageSharp.gatsbyImageData}
+          light={getImage(peachRule)}
+          dark={getImage(creamRule)}
         />
       );
     } else if (props.color === 'blue') {
       return (
         <SchemedImage
-          light={blueRule.childImageSharp.gatsbyImageData}
-          dark={lightBlueRule.childImageSharp.gatsbyImageData}
+          light={getImage(blueRule)}
+          dark={getImage(lightBlueRule)}
         />
       );
     }
