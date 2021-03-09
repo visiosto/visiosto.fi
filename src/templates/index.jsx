@@ -19,7 +19,7 @@ import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
-const Index = (props) => {
+const Page = (props) => {
   const i = createIntl(useIntl());
   const Link = createLink(props.pageContext.lang);
 
@@ -106,10 +106,12 @@ const Index = (props) => {
   );
 };
 
-export default (props) => (
+const Index = (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
-      <Index {...props} />
+      <Page {...props} />
     </Theme>
   </Intl>
 );
+
+export default Index;

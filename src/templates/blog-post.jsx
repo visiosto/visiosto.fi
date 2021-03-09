@@ -9,7 +9,7 @@ import Intl from '../components/Intl';
 import LayoutPost from '../components/LayoutPost';
 import Theme from '../components/Theme';
 
-const BlogPost = (props) => {
+const Page = (props) => {
   const { markdownRemark: post } = props.data;
 
   const PostDiv = styled.div`
@@ -36,6 +36,16 @@ const BlogPost = (props) => {
   );
 };
 
+const BlogPost = (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Page {...props} />
+    </Theme>
+  </Intl>
+);
+
+export default BlogPost;
+
 export const pageQuery = graphql`
   query BlogPostQuery($path: String, $momentJsLocale: String) {
     markdownRemark(fields: { slug: { eq: $path } }) {
@@ -49,11 +59,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <BlogPost {...props} />
-    </Theme>
-  </Intl>
-);

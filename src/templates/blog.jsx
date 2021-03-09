@@ -15,7 +15,7 @@ import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
-const Blog = (props) => {
+const Page = (props) => {
   const i = createIntl(useIntl());
   const LocalizedLink = createLink(props.pageContext.lang);
 
@@ -102,6 +102,16 @@ const Blog = (props) => {
   );
 };
 
+const Blog = (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Page {...props} />
+    </Theme>
+  </Intl>
+);
+
+export default Blog;
+
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
     allMarkdownRemark(
@@ -125,11 +135,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <Blog {...props} />
-    </Theme>
-  </Intl>
-);
