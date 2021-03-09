@@ -19,52 +19,52 @@ export default (props) => {
           relativePath: { eq: "front-page/cover/phone-small-up-left-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300, height: 90, layout: FIXED)
+            gatsbyImageData(width: 300)
           }
         }
         topPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300, height: 90, layout: FIXED)
+            gatsbyImageData(width: 300)
           }
         }
         topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 400, height: 400, layout: FIXED)
+            gatsbyImageData(width: 400)
           }
         }
         topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 400, height: 400, layout: FIXED)
+            gatsbyImageData(width: 400)
           }
         }
         bottomPhoneSmallLight: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300, height: 90, layout: FIXED)
+            gatsbyImageData(width: 300)
           }
         }
         bottomPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300, height: 90, layout: FIXED)
+            gatsbyImageData(width: 300)
           }
         }
         bottomTabletLight: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 400, height: 400, layout: FIXED)
+            gatsbyImageData(width: 400)
           }
         }
         bottomTabletDark: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 400, height: 400, layout: FIXED)
+            gatsbyImageData(width: 400)
           }
         }
       }
