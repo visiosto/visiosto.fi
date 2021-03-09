@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import AnchorLink from './AnchorLink';
 
-import allFiles from '../__generated__/all-pages';
 import pageIds from '../data/page-ids.json';
 import pageSlugs from '../data/page-slugs.json';
 
@@ -15,7 +14,6 @@ import stripHashedLocation from '../utils/anchor-link/stripHashedLocation';
 const pageKeySlashIndex = 1;
 
 export default (currentLocale) => {
-  const paths = allFiles;
   const ids = pageIds;
   const slugs = pageSlugs;
 
@@ -44,7 +42,7 @@ export default (currentLocale) => {
 
     const localeVersion = pageKey === '' ? `/${currentLocale}` : `/${currentLocale}${to}`;
 
-    if (currentLocale !== defaultLocale && paths.includes(localeVersion)) {
+    if (currentLocale !== defaultLocale) {
       to = localeVersion;
     }
 

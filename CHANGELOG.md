@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Removed
 
 - Query string `colorscheme` for setting the colour scheme on landing.
+- Generated list of the pages.
 
 ## [0.5.1] - 2021-02-16
 
