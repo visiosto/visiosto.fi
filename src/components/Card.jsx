@@ -32,7 +32,13 @@ export default (props) => {
   return (
     <Article>
       <Icon>{props.icon}</Icon>
-      <H3>{props.title}</H3>
+      {(() => {
+        if (props.htmlTitle) {
+          return <H3 dangerouslySetInnerHTML={{ __html: props.title }} />;
+        } else {
+          return <H3>{props.title}</H3>;
+        }
+      })()}
       {props.children}
       {props.button}
     </Article>

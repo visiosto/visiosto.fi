@@ -12,6 +12,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Lint for CSS-in-JS.
 - Internationalization of the markdown page links.
 - Company logo to the header of the site.
+- Localizations of the footer.
+- Support for giving page sections in markdown.
+- Support for using HTML for titles of Covers and Cards.
 
 ### Changed
 

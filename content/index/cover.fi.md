@@ -1,5 +1,5 @@
 ---
-title: 'Jostakin kehitystyö täytyy aina aloittaa'
+title: 'Sinun visiosi &ndash; linssimme läpi'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula viverra lorem vitae posuere. In eu efficitur ipsum. Proin a justo vel sem pulvinar pharetra sed et est. Etiam eget consectetur velit. Quisque et placerat est, efficitur facilisis erat. Duis tristique tempor dui, at ullamcorper mi consequat eget. Vestibulum vel nisi id nibh pulvinar gravida sed et quam. Integer cursus est.
+Visio on toiminnan suunta, joten miksi tyytyä toteutuksessa keskivertoon sanahelinään, kun todellisuus muovautuu tekojen kautta. Me Visiostossa uskomme rohkeaan ja laadukkaaseen tekemiseen ja persoonalliseen vuorovaikutukseen. Pilvilinnojen maalauksen aika on ohi: me rakennamme sen, mitä toivot. Taitamme sinun visiosi &ndash; linssimme läpi.

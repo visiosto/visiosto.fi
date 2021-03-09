@@ -24,7 +24,12 @@ const Page = (props) => {
   const i = createIntl(useIntl());
   const Link = createLink(props.pageContext.lang);
 
-  const { coverMarkdownRemark: cover } = props.data;
+  const {
+    coverMarkdownRemark: cover,
+    websitesMarkdownRemark: websites,
+    designMarkdownRemark: design,
+    eventsMarkdownRemark: events,
+  } = props.data;
 
   const H2 = styled.h2`
     font-size: 2.2rem;
@@ -75,7 +80,7 @@ const Page = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <IndexCover title={cover.frontmatter.title}>
+      <IndexCover title={cover.frontmatter.title} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: cover.html }} />
       </IndexCover>
       <StoryCover title={i('indexStoryTitle')}>
@@ -86,15 +91,15 @@ const Page = (props) => {
       <Section lesserMargin={true}>
         <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
         <Cards>
-          <Card title={i('indexServicesWebTitle')} icon={<DeviceDesktopIcon size={'large'} />}>
-            <p>{i('indexServicesWebContent')}</p>
+          <Card title={websites.frontmatter.title} icon={<DeviceDesktopIcon size={'large'} />}>
+            <div dangerouslySetInnerHTML={{ __html: websites.html }} />
             <Button to="#">Lue lisää</Button>
           </Card>
-          <Card title={i('indexServicesDesignTitle')} icon={<PencilIcon size={'large'} />}>
-            <p>{i('indexServicesDesignContent')}</p>
+          <Card title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
+            <div dangerouslySetInnerHTML={{ __html: design.html }} />
           </Card>
-          <Card title={i('indexServicesEventsTitle')} icon={<CalendarIcon size={'large'} />}>
-            <p>{i('indexServicesEventsContent')}</p>
+          <Card title={events.frontmatter.title} icon={<CalendarIcon size={'large'} />}>
+            <div dangerouslySetInnerHTML={{ __html: events.html }} />
           </Card>
         </Cards>
       </Section>
@@ -123,6 +128,30 @@ export const pageQuery = graphql`
   query IndexQuery($lang: String) {
     coverMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }
+    ) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    websitesMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/websites" }, locale: { eq: $lang } }
+    ) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    designMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/design" }, locale: { eq: $lang } }
+    ) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    eventsMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/events" }, locale: { eq: $lang } }
     ) {
       html
       frontmatter {
