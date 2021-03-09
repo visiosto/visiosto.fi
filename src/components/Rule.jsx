@@ -112,15 +112,15 @@ export default (props) => {
     if (props.color === 'peach') {
       return (
         <SchemedImg
-          fixedLight={peachRule.childImageSharp.gatsbyImageData}
-          fixedDark={creamRule.childImageSharp.gatsbyImageData}
+          light={peachRule.childImageSharp.gatsbyImageData}
+          dark={creamRule.childImageSharp.gatsbyImageData}
         />
       );
     } else if (props.color === 'blue') {
       return (
         <SchemedImg
-          fixedLight={blueRule.childImageSharp.gatsbyImageData}
-          fixedDark={lightBlueRule.childImageSharp.gatsbyImageData}
+          light={blueRule.childImageSharp.gatsbyImageData}
+          dark={lightBlueRule.childImageSharp.gatsbyImageData}
         />
       );
     }
