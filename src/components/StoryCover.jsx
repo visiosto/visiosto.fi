@@ -55,9 +55,7 @@ export default (props) => {
             gatsbyImageData(width: 400)
           }
         }
-        bottomTabletDark: file(
-          relativePath: { eq: "front-page/story/tablet-down-left-dark.png" }
-        ) {
+        bottomTabletDark: file(relativePath: { eq: "front-page/story/tablet-down-left-dark.png" }) {
           childImageSharp {
             gatsbyImageData(width: 400)
           }
@@ -70,7 +68,7 @@ export default (props) => {
     <Cover
       data={data}
       tablet={{ width: '400px', height: '400px' }}
-      style={{ top: {top: 0, right: 0}, bottom: { bottom: 0, left: 0 } }}
+      style={{ top: { top: 0, right: 0 }, bottom: { bottom: 0, left: 0 } }}
       {...props}
     />
   );
