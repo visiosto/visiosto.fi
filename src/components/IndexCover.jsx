@@ -3,13 +3,8 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, withArtDirection } from 'gatsby-plugin-image';
-import styled from 'styled-components';
 
 import Cover from './Cover';
-import SchemedImg from './SchemedImg';
-
-import theme from '../theme';
 
 export default (props) => {
   const data = useStaticQuery(
@@ -71,80 +66,12 @@ export default (props) => {
     `,
   );
 
-  const imagesTopLight = withArtDirection(getImage(data.topPhoneSmallLight), [
-    {
-      media: theme.devices.tablet,
-      image: getImage(data.topTabletLight),
-    },
-  ]);
-  const imagesTopDark = withArtDirection(getImage(data.topPhoneSmallDark), [
-    {
-      media: theme.devices.tablet,
-      image: getImage(data.topTabletDark),
-    },
-  ]);
-
-  const imagesBottomLight = withArtDirection(getImage(data.bottomPhoneSmallLight), [
-    {
-      media: theme.devices.tablet,
-      image: getImage(data.bottomTabletLight),
-    },
-  ]);
-  const imagesBottomDark = withArtDirection(getImage(data.bottomPhoneSmallDark), [
-    {
-      media: theme.devices.tablet,
-      image: getImage(data.bottomTabletDark),
-    },
-  ]);
-
-  const Img = styled(SchemedImg)`
-    margin: 0;
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 0 4em;
-    }
-  `;
-
-  const TopImg = styled(Img)`
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      width: 400px;
-      height: 400px;
-    }
-  `;
-
-  const BottomImg = styled(Img)`
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      width: 400px;
-      height: 400px;
-    }
-  `;
-
-  const imageStyles = {
-    position: 'absolute',
-    zIndex: -1,
-  };
-
   return (
     <Cover
-      title={props.title}
-      imgTop={
-        <TopImg
-          imageLight={imagesTopLight}
-          imageDark={imagesTopDark}
-          style={imageStyles}
-          objectFit="cover"
-        />
-      }
-      imgBottom={
-        <BottomImg
-          imageLight={imagesBottomLight}
-          imageDark={imagesBottomDark}
-          style={{ bottom: 0, right: 0, ...imageStyles }}
-          objectFit="cover"
-        />
-      }
-    >
-      {props.children}
-    </Cover>
+      data={data}
+      tablet={{ width: '400px', height: '400px' }}
+      style={{ top: {}, bottom: { bottom: 0, right: 0 } }}
+      {...props}
+    />
   );
 };

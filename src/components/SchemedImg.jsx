@@ -9,8 +9,8 @@ import ThemeContext from './ThemeContext';
 export default (props) => {
   const { colorMode } = useContext(ThemeContext);
 
-  const LightImg = () => <GatsbyImage image={props.imageLight} {...props} />;
-  const DarkImg = () => <GatsbyImage image={props.imageDark} {...props} />;
+  const LightImg = () => <GatsbyImage image={props.light} {...props} />;
+  const DarkImg = () => <GatsbyImage image={props.dark} {...props} />;
 
   return colorMode === 'dark' ? <DarkImg /> : <LightImg />;
 };

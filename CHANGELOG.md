@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Gatsby to v3.
+- Cover component to handle the functionality of the index page cover elements.
 
 ## [0.5.1] - 2021-02-16
 
