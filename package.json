@@ -4,7 +4,7 @@
   "version": "0.6.0-dev",
   "description": "The shared source for the website of Visiosto",
   "scripts": {
-    "build": "yarn clean && gatsby build",
+    "build": "gatsby build",
     "check-all": "npm-run-all format --parallel lint:js lint:css",
     "ci-check": "npm-run-all nit --parallel lint:js lint:css",
     "dev": "gatsby develop",
@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lint:js": "eslint .",
     "lint:css": "stylelint './src/**/*{.js,jsx}'",
-    "clean": "gatsby clean && rm -rf src/__generated__",
+    "clean": "gatsby clean",
     "start": "yarn dev",
     "serve": "gatsby serve"
   },
