@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 import { CalendarIcon, DeviceDesktopIcon, NorthStarIcon, PencilIcon } from '@primer/octicons-react';
@@ -22,6 +23,8 @@ import createIntl from '../utils/createIntl';
 const Page = (props) => {
   const i = createIntl(useIntl());
   const Link = createLink(props.pageContext.lang);
+
+  const { coverMarkdownRemark: cover } = props.data;
 
   const H2 = styled.h2`
     font-size: 2.2rem;
@@ -72,8 +75,8 @@ const Page = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <IndexCover title={i('indexCoverTitle')}>
-        <p>{i('indexCoverContent')}</p>
+      <IndexCover title={cover.frontmatter.title}>
+        <div dangerouslySetInnerHTML={{ __html: cover.html }} />
       </IndexCover>
       <StoryCover title={i('indexStoryTitle')}>
         <p>{i('indexStoryContent')}</p>
@@ -115,3 +118,14 @@ const Index = (props) => (
 );
 
 export default Index;
+
+export const pageQuery = graphql`
+  query IndexQuery($lang: String) {
+    coverMarkdownRemark: markdownRemark(fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }) {
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`;

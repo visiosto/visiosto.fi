@@ -53,6 +53,20 @@ module.exports = ({ node, actions, getNode }) => {
           slug = createAuthorSlug(locale, filename);
 
           keySlug = `/author/${filename}`;
+        } else if (relativePath.includes('index')) {
+          console.log(`Creating node for '${relativePath}'`);
+
+          const match = blogPostFilenameRegex.exec(relativePath);
+          const [, , filename] = match;
+
+          [, , , locale] = match;
+
+          console.log('The filename is', filename);
+          console.log('The locale is', locale);
+
+          slug = `index/${filename}`;
+
+          keySlug = `/index/${filename}`;
         }
       }
 
