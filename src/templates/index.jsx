@@ -26,6 +26,7 @@ const Page = (props) => {
 
   const {
     coverMarkdownRemark: cover,
+    storyMarkdownRemark: story,
     websitesMarkdownRemark: websites,
     designMarkdownRemark: design,
     eventsMarkdownRemark: events,
@@ -83,8 +84,8 @@ const Page = (props) => {
       <IndexCover title={cover.frontmatter.title} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: cover.html }} />
       </IndexCover>
-      <StoryCover title={i('indexStoryTitle')}>
-        <p>{i('indexStoryContent')}</p>
+      <StoryCover title={story.frontmatter.title}>
+        <div dangerouslySetInnerHTML={{ __html: story.html }} />
         <Link to={'/pricing'}>Linkki</Link>
       </StoryCover>
       <Break color={'peach'} mode={1} />
@@ -128,6 +129,14 @@ export const pageQuery = graphql`
   query IndexQuery($lang: String) {
     coverMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }
+    ) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    storyMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/story" }, locale: { eq: $lang } }
     ) {
       html
       frontmatter {
