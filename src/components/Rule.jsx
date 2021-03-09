@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import SchemedImg from './SchemedImg';
+import SchemedImage from './SchemedImage';
 
 const getRules = (ruleType) => {
   const data = useStaticQuery(
@@ -111,14 +111,14 @@ export default (props) => {
   const Img = () => {
     if (props.color === 'peach') {
       return (
-        <SchemedImg
+        <SchemedImage
           light={peachRule.childImageSharp.gatsbyImageData}
           dark={creamRule.childImageSharp.gatsbyImageData}
         />
       );
     } else if (props.color === 'blue') {
       return (
-        <SchemedImg
+        <SchemedImage
           light={blueRule.childImageSharp.gatsbyImageData}
           dark={lightBlueRule.childImageSharp.gatsbyImageData}
         />

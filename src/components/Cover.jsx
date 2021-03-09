@@ -5,7 +5,7 @@ import React from 'react';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
-import SchemedImg from './SchemedImg';
+import SchemedImage from './SchemedImage';
 
 import theme from '../theme';
 
@@ -73,7 +73,7 @@ const Cover = (props) => {
     text-align: center;
   `;
 
-  const Image = styled(SchemedImg)`
+  const Image = styled(SchemedImage)`
     @media screen and ${(props) => props.theme.devices.tablet} {
       width: ${(props) => props.tablet.width};
       height: ${(props) => props.tablet.height};
