@@ -3,10 +3,15 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
 
+import createIntl from '../utils/createIntl';
+
 export default (props) => {
+  const i = createIntl(useIntl());
+
   const Footer = styled.footer`
     background: var(--color-background);
     color: var(--color-text);
@@ -36,8 +41,8 @@ export default (props) => {
           );
         }
       })()}
-      <Div>Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.</Div>
-      <Div>&nbsp;&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy</Div>
+      <Div dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />
+      <Div dangerouslySetInnerHTML={{ __html: i('footerCopyright') }} />
     </Footer>
   );
 };
