@@ -9,9 +9,13 @@ import styled from 'styled-components';
 import Navigation from './Navigation';
 import SchemedImage from './SchemedImage';
 
+import createLink from './createLink';
+
 import theme from '../theme';
 
 export default (props) => {
+  const LocalizedLink = createLink(props.lang);
+
   const { site, logoPhoneSLight, logoPhoneSDark, logoTabletLight, logoTabletDark } = useStaticQuery(
     graphql`
       query {
@@ -99,7 +103,9 @@ export default (props) => {
     <Header>
       <SiteBranding>
         <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
-        <Image light={logosLight} dark={logosDark} />
+        <LocalizedLink to="/">
+          <Image light={logosLight} dark={logosDark} />
+        </LocalizedLink>
       </SiteBranding>
       <Navigation {...props} />
     </Header>
