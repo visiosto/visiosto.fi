@@ -108,7 +108,7 @@ export default (props) => {
     justify-content: center;
   `;
 
-  const Img = () => {
+  const Image = () => {
     if (props.color === 'peach') {
       return (
         <SchemedImage
@@ -128,7 +128,7 @@ export default (props) => {
 
   return (
     <Div>
-      <Img />
+      <Image />
     </Div>
   );
 };
