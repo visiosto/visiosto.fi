@@ -96,7 +96,13 @@ const Cover = (props) => {
       />
       <Inner>
         <header>
-          <Title>{props.title}</Title>
+          {(() => {
+            if (props.htmlTitle) {
+              return <Title dangerouslySetInnerHTML={{ __html: props.title }} />;
+            } else {
+              return <Title>{props.title}</Title>;
+            }
+          })()}
         </header>
         <Content>{props.children}</Content>
       </Inner>
