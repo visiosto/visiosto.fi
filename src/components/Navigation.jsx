@@ -35,7 +35,7 @@ export default (props) => {
     cursor: pointer;
     user-select: none;
 
-    @media screen and ${(props) => props.theme.devices.laptop} {
+    @media screen and ${(props) => props.theme.devices.tablet} {
       display: none;
     }
   `;
@@ -107,7 +107,7 @@ export default (props) => {
         max-height: none;
       `};
 
-    @media screen and ${(props) => props.theme.devices.laptop} {
+    @media screen and ${(props) => props.theme.devices.tablet} {
       overflow: visible;
       display: flex;
       justify-content: center;
@@ -116,7 +116,11 @@ export default (props) => {
   `;
 
   const Li = styled.li`
-    margin: 1em;
+    margin: 2rem 1em;
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 1em;
+    }
   `;
 
   const Link = styled(LocalizedLink)`
