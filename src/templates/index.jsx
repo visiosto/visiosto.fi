@@ -121,7 +121,9 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery($lang: String) {
-    coverMarkdownRemark: markdownRemark(fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }) {
+    coverMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }
+    ) {
       html
       frontmatter {
         title

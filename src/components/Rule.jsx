@@ -111,19 +111,9 @@ export default (props) => {
 
   const Image = () => {
     if (props.color === 'peach') {
-      return (
-        <SchemedImage
-          light={getImage(peachRule)}
-          dark={getImage(creamRule)}
-        />
-      );
+      return <SchemedImage light={getImage(peachRule)} dark={getImage(creamRule)} />;
     } else if (props.color === 'blue') {
-      return (
-        <SchemedImage
-          light={getImage(blueRule)}
-          dark={getImage(lightBlueRule)}
-        />
-      );
+      return <SchemedImage light={getImage(blueRule)} dark={getImage(lightBlueRule)} />;
     }
   };
 
