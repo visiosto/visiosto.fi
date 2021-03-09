@@ -119,7 +119,7 @@ export default (props) => {
     }
   `;
 
-  const imgStyles = {
+  const imageStyles = {
     position: 'absolute',
     zIndex: -1,
   };
@@ -131,7 +131,7 @@ export default (props) => {
         <TopImg
           imageLight={imagesTopLight}
           imageDark={imagesTopDark}
-          style={imgStyles}
+          style={imageStyles}
           objectFit="cover"
         />
       }
@@ -139,7 +139,7 @@ export default (props) => {
         <BottomImg
           imageLight={imagesBottomLight}
           imageDark={imagesBottomDark}
-          style={{ bottom: 0, right: 0, ...imgStyles }}
+          style={{ bottom: 0, right: 0, ...imageStyles }}
           objectFit="cover"
         />
       }
