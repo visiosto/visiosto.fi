@@ -29,7 +29,8 @@ export default ({ children }) => {
     function setColorMode(newValue) {
       const root = window.document.documentElement;
 
-      localStorage.setItem(COLOR_MODE_KEY, newValue);
+      // TODO Uncomment the line if a dark mode toggle is added
+      // localStorage.setItem(COLOR_MODE_KEY, newValue);
 
       Object.entries(COLORS).forEach(([name, colorByTheme]) => {
         const cssVarName = `--color-${name}`;
