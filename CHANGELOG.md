@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Workflow status badge to the README.
 - Lint for CSS-in-JS.
+- Internationalization of the markdown page links.
 
 ### Changed
 

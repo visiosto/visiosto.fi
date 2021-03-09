@@ -5,6 +5,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import blogSlugs from '../../data/blog-slugs.json';
+import markdownPageSlugs from '../../data/markdown-page-slugs.json';
 import allFiles from '../__generated__/all-pages';
 import pageSlugs from '../data/page-slugs.json';
 
@@ -25,11 +26,15 @@ const createLocalizedSlug = (locale, slug) => {
 
   const { defaultLocale } = site.siteMetadata;
 
+  console.log("The default locale for the link is", defaultLocale);
+
   const pageKey = slug.substring(pageKeySlashIndex);
   let localized = slug;
 
   if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
     localized = `/${pageSlugs[pageKey][locale]}`;
+  } else if (pageKey in markdownPageSlugs && locale in markdownPageSlugs[pageKey]) {
+    localized = `/${markdownPageSlugs[pageKey][locale]}`;
   }
 
   const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
@@ -37,6 +42,8 @@ const createLocalizedSlug = (locale, slug) => {
   if (locale !== defaultLocale && allFiles.includes(localeVersion)) {
     localized = localeVersion;
   }
+
+  console.log("The path created for the link is", localized);
 
   return localized;
 };
