@@ -97,15 +97,15 @@ export default (props) => {
   const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
 
   const Footer = styled.footer`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
+    margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
     text-align: center;
 
     @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
+      margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginDesktop};
+      margin: 4em ${(props) => props.theme.layout.marginDesktop} 2em;
     }
   `;
 
