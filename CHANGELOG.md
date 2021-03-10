@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - All three of the company’s people to the contact details.
 - Social media links to the footer of the site.
 - Logo and company information to the footer of the site.
+- Missing blog post to the site.
 
 ### Changed
 
