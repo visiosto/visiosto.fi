@@ -12,12 +12,29 @@ module.exports = {
     twitterAuthor: '@visiosto_oy',
     locales: ['fi', 'en'],
     defaultLocale: 'fi',
+    defaultEmail: 'info@visiosto.fi',
+    businessId: '3010084-6',
+    vatNumber: 'FI30100846',
+    socialMedia: {
+      facebook: 'https://facebook.com/visiosto',
+      github: 'https://github.com/visiosto',
+      instagram: 'https://instagram.com/visiosto',
+      linkedin: 'https://linkedin.com/company/visiosto',
+      twitter: 'https://twitter.com/visiosto_oy',
+    },
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
         path: path.join(__dirname, 'src', 'assets'),
       },
     },
@@ -31,6 +48,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
     },
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

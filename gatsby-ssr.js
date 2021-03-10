@@ -19,18 +19,20 @@ function setColorsByTheme() {
   const colorModeKey = '🔑';
   const colorModeCssProp = '⚡️';
 
-  const mql = window.matchMedia('(prefers-color-scheme: dark)');
-  const prefersDarkFromMQ = mql.matches;
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersDarkScheme = mediaQuery.matches;
   const persistedPreference = localStorage.getItem(colorModeKey);
 
   let colorMode = 'light';
 
-  const hasUsedToggle = typeof persistedPreference === 'string';
+  // TODO Uncomment the line if a dark mode toggle is added
+  // const hasUsedToggle = typeof persistedPreference === 'string';
+  const hasUsedToggle = false;
 
   if (hasUsedToggle) {
     colorMode = persistedPreference;
   } else {
-    colorMode = prefersDarkFromMQ ? 'dark' : 'light';
+    colorMode = prefersDarkScheme ? 'dark' : 'light';
   }
 
   const root = document.documentElement;

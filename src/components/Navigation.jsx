@@ -35,7 +35,7 @@ export default (props) => {
     cursor: pointer;
     user-select: none;
 
-    @media screen and ${(props) => props.theme.devices.laptopSmall} {
+    @media screen and ${(props) => props.theme.devices.tablet} {
       display: none;
     }
   `;
@@ -107,7 +107,7 @@ export default (props) => {
         max-height: none;
       `};
 
-    @media screen and ${(props) => props.theme.devices.laptopSmall} {
+    @media screen and ${(props) => props.theme.devices.tablet} {
       overflow: visible;
       display: flex;
       justify-content: center;
@@ -116,7 +116,11 @@ export default (props) => {
   `;
 
   const Li = styled.li`
-    margin: 1em;
+    margin: 2rem 1em;
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 1em;
+    }
   `;
 
   const Link = styled(LocalizedLink)`
@@ -177,10 +181,10 @@ export default (props) => {
           <Link to="/">{i('indexTitle')}</Link>
         </Li>
         <Li>
-          <AnchorLink to="/#services">{i('indexServicesTitle')}</AnchorLink>
+          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
         </Li>
         <Li>
-          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
+          <AnchorLink to="/#contact">{i('indexContactTitle')}</AnchorLink>
         </Li>
         <Li>
           <Link to="/blog">{i('blogTitle')}</Link>

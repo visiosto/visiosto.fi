@@ -2,18 +2,13 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import styled from 'styled-components';
+
+import Button from './Button';
 
 import createLanguageLink from './createLanguageLink';
 
 export default (props) => {
   const LanguageLink = createLanguageLink(props.pageKey);
-
-  const Link = styled(LanguageLink)`
-    clear: both;
-    margin: 0 1rem;
-    text-align: center;
-  `;
 
   return (
     <>
@@ -21,7 +16,9 @@ export default (props) => {
         if (props.lang !== 'fi') {
           return (
             <>
-              <Link to="fi">Suomeksi</Link>
+              <Button to="fi" link={LanguageLink}>
+                Suomeksi
+              </Button>
               <br />
             </>
           );
@@ -33,7 +30,9 @@ export default (props) => {
         if (props.lang !== 'en') {
           return (
             <>
-              <Link to="en">In English</Link>
+              <Button to="en" link={LanguageLink}>
+                In English
+              </Button>
             </>
           );
         }

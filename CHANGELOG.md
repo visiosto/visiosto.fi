@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.6.0] - 2021-03-10
+
+### Added
+
+- Workflow status badge to the README.
+- Lint for CSS-in-JS.
+- Internationalization of the markdown page links.
+- Company logo to the header of the site.
+- Localizations of the footer.
+- Support for giving page sections in markdown.
+- Support for using HTML for titles of Covers and Cards.
+- Content for the front page.
+- Page for the client register privacy policy.
+- Contact details to the front page.
+- All three of the company’s people to the contact details.
+- Social media links to the footer of the site.
+- Logo and company information to the footer of the site.
+- Missing blog post to the site.
+
+### Changed
+
+- Gatsby to v3.
+- Cover component to handle the functionality of the index page cover elements.
+- Language switcher to use a button that can be spotted more easily.
+
+### Removed
+
+- Query string `colorscheme` for setting the colour scheme on landing.
+- Generated list of the pages.
+- Checking the colour scheme from the local storage.
+
 ## [0.5.1] - 2021-02-16
 
 ### Fixed
@@ -100,7 +131,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/visiosto/visiosto.github.io/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/visiosto/visiosto.github.io/compare/v0.4.0...v0.4.1

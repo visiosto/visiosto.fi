@@ -15,7 +15,7 @@ import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
-const Blog = (props) => {
+const Page = (props) => {
   const i = createIntl(useIntl());
   const LocalizedLink = createLink(props.pageContext.lang);
 
@@ -24,7 +24,7 @@ const Blog = (props) => {
   const Post = styled.article`
     margin: 2em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
 
@@ -60,7 +60,7 @@ const Blog = (props) => {
     margin: 2em 0;
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 2em 0;
     }
 
@@ -102,6 +102,16 @@ const Blog = (props) => {
   );
 };
 
+const Blog = (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Page {...props} />
+    </Theme>
+  </Intl>
+);
+
+export default Blog;
+
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
     allMarkdownRemark(
@@ -125,11 +135,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <Blog {...props} />
-    </Theme>
-  </Intl>
-);

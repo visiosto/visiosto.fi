@@ -2,26 +2,26 @@
 title: 'Pricing'
 ---
 
-## Kuluttajahinnasto
+## Consumer Prices
 
-Kaikki hinnat sisältävät yleisen arvonlisäverokannan mukaisen arvonlisäveron (24 %).
+All of the prices include the value added tax according to the general VAT rate of 24&nbsp;%.
 
-**Palvelin ja verkkotunnus**: 13,50 €/kk (palvelin: 10,50 €/kk; verkkotunnus: 3,00 €/kk.)
+**Server and damoin**: 13.50&nbsp;€/mth (server: 10.50&nbsp;€/mth; domain: 3.00&nbsp;€/mth)
 
-### Lisätyön hinnasto
+### Hourly Rates for Additional Work
 
-**Ohjelmointilisätyö**: 15,00 € alkavaa tuntia kohden
+**Programming work**: 15.00&nbsp;€/h
 
-**Sisällönhallintalisätyö**: 15,00 € alkavaa tuntia kohden
+**Content management work**: 15.00&nbsp;€/h
 
-**Sisällöntuotantolisätyö**: 15,00 € alkavaa tuntia kohden
+**Content creation work**: 15.00&nbsp;€/h
 
-**Muu lisätyö**: 15,00 € alkavaa tuntia kohden
+**Other work**: 15.00&nbsp;€/h
 
-### Lisämaksut
+### Additional Fees
 
-**Lasku postitse**: 2,00 €/lasku
+**Paper invoice**: 2.00&nbsp;€/invoice
 
-**Maksumuistutus**: 2,00 €/muistutus
+**Invoice reminder**: 2.00&nbsp;€/reminder
 
-**Maksuhuomautus**: 3,00 €/huomautus (maksumuistutuksen lisämaksun lisäksi)
+**Invoice note**: 3.00&nbsp;€/note (in addition to the collection fees of the reminder)

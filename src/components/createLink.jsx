@@ -5,7 +5,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import blogSlugs from '../../data/blog-slugs.json';
-import allFiles from '../__generated__/all-pages';
+import markdownPageSlugs from '../../data/markdown-page-slugs.json';
 import pageSlugs from '../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
@@ -30,11 +30,13 @@ const createLocalizedSlug = (locale, slug) => {
 
   if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
     localized = `/${pageSlugs[pageKey][locale]}`;
+  } else if (pageKey in markdownPageSlugs && locale in markdownPageSlugs[pageKey]) {
+    localized = `/${markdownPageSlugs[pageKey][locale]}`;
   }
 
   const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
 
-  if (locale !== defaultLocale && allFiles.includes(localeVersion)) {
+  if (locale !== defaultLocale) {
     localized = localeVersion;
   }
 
@@ -54,11 +56,7 @@ export default (currentLocale) => {
 
       const linkPath = `${page}/${blogSlugs[filename][currentLocale]}`;
 
-      if (
-        filename in blogSlugs &&
-        currentLocale in blogSlugs[filename] &&
-        allFiles.includes(linkPath)
-      ) {
+      if (filename in blogSlugs && currentLocale in blogSlugs[filename]) {
         to = linkPath;
       }
 

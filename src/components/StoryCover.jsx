@@ -3,157 +3,73 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
 
 import Cover from './Cover';
-import SchemedImg from './SchemedImg';
-
-import theme from '../theme';
 
 export default (props) => {
   const data = useStaticQuery(
     graphql`
-      query {
+      {
         topPhoneSmallLight: file(
           relativePath: { eq: "front-page/story/phone-small-up-right-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300)
           }
         }
         topPhoneSmallDark: file(
           relativePath: { eq: "front-page/story/phone-small-up-right-dark.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300)
           }
         }
         topTabletLight: file(relativePath: { eq: "front-page/story/tablet-up-right-light.png" }) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400)
           }
         }
         topTabletDark: file(relativePath: { eq: "front-page/story/tablet-up-right-dark.png" }) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400)
           }
         }
         bottomPhoneSmallLight: file(
           relativePath: { eq: "front-page/story/phone-small-down-left-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300)
           }
         }
         bottomPhoneSmallDark: file(
           relativePath: { eq: "front-page/story/phone-small-down-left-dark.png" }
         ) {
           childImageSharp {
-            fixed(width: 300, height: 90) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 300)
           }
         }
         bottomTabletLight: file(
           relativePath: { eq: "front-page/story/tablet-down-left-light.png" }
         ) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400)
           }
         }
         bottomTabletDark: file(relativePath: { eq: "front-page/story/tablet-down-left-dark.png" }) {
           childImageSharp {
-            fixed(width: 400, height: 400) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 400)
           }
         }
       }
     `,
   );
 
-  const sourcesTopLight = [
-    data.topPhoneSmallLight.childImageSharp.fixed,
-    {
-      ...data.topTabletLight.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const sourcesTopDark = [
-    data.topPhoneSmallDark.childImageSharp.fixed,
-    {
-      ...data.topTabletDark.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const sourcesBottomLight = [
-    data.bottomPhoneSmallLight.childImageSharp.fixed,
-    {
-      ...data.bottomTabletLight.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const sourcesBottomDark = [
-    data.bottomPhoneSmallDark.childImageSharp.fixed,
-    {
-      ...data.bottomTabletDark.childImageSharp.fixed,
-      media: theme.devices.tablet,
-    },
-  ];
-
-  const Img = styled(SchemedImg)`
-    margin: 0;
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 0 4em;
-    }
-  `;
-
-  const TopImg = styled(Img)``;
-
-  const BottomImg = styled(Img)``;
-
-  const imgStyles = {
-    position: 'absolute',
-    zIndex: -1,
-  };
-
   return (
     <Cover
-      title={props.title}
-      imgTop={
-        <TopImg
-          fixedLight={sourcesTopLight}
-          fixedDark={sourcesTopDark}
-          style={{ top: 0, right: 0, ...imgStyles }}
-          objectFit="cover"
-        />
-      }
-      imgBottom={
-        <BottomImg
-          fixedLight={sourcesBottomLight}
-          fixedDark={sourcesBottomDark}
-          style={{ bottom: 0, left: 0, ...imgStyles }}
-          objectFit="cover"
-        />
-      }
-    >
-      {props.children}
-    </Cover>
+      data={data}
+      tablet={{ width: '400px', height: '400px' }}
+      style={{ top: { top: 0, right: 0 }, bottom: { bottom: 0, left: 0 } }}
+      {...props}
+    />
   );
 };

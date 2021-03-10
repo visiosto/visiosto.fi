@@ -6,9 +6,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 export default (props) => {
-  const Div = styled.div``;
-
-  const ButtonLink = styled(Link)`
+  const ButtonLink = (props.link ? styled(props.link) : styled(Link))`
     text-decoration: none;
   `;
 
@@ -35,10 +33,10 @@ export default (props) => {
   `;
 
   return (
-    <Div>
+    <div>
       <ButtonLink to={props.to}>
         <Span>{props.children}</Span>
       </ButtonLink>
-    </Div>
+    </div>
   );
 };

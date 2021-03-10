@@ -9,15 +9,13 @@ import Intl from '../components/Intl';
 import Layout from '../components/Layout';
 import Theme from '../components/Theme';
 
-const MarkdownPage = (props) => {
+const Page = (props) => {
   const { markdownRemark: page } = props.data;
-
-  console.log(props.data.markdownRemark);
 
   const Div = styled.div`
     margin: 1em ${(props) => props.theme.layout.marginPhone};
 
-    @media screen and ${(props) => props.theme.devices.phoneLarge} {
+    @media screen and ${(props) => props.theme.devices.phoneL} {
       margin: 1em ${(props) => props.theme.layout.marginTablet};
     }
 
@@ -37,6 +35,16 @@ const MarkdownPage = (props) => {
   );
 };
 
+const MarkdownPage = (props) => (
+  <Intl locale={props.pageContext.lang}>
+    <Theme>
+      <Page {...props} />
+    </Theme>
+  </Intl>
+);
+
+export default MarkdownPage;
+
 export const pageQuery = graphql`
   query MarkdownPageQuery($path: String) {
     markdownRemark(fields: { slug: { eq: $path } }) {
@@ -47,11 +55,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-export default (props) => (
-  <Intl locale={props.pageContext.lang}>
-    <Theme>
-      <MarkdownPage {...props} />
-    </Theme>
-  </Intl>
-);
