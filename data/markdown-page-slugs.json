@@ -3,6 +3,10 @@
     "fi": "asiakasrekisterin-tietosuojaseloste",
     "en": "client-register-privacy-policy"
   },
+  "management": {
+    "fi": "hallinto",
+    "en": "management"
+  },
   "pricing": {
     "fi": "hinnasto",
     "en": "pricing"

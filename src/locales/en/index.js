@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 export default {
-  indexTitle: 'Etusivu',
+  indexTitle: 'Front Page',
   indexServicesId: 'services',
   indexServicesTitle: 'What Do We Refract?',
   indexReadMore: 'Read more',

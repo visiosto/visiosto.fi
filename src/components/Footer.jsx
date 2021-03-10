@@ -10,10 +10,13 @@ import { useIntl } from 'react-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import SchemedImage from './SchemedImage';
 
+import createLink from './createLink';
+
 import createIntl from '../utils/createIntl';
 
 export default (props) => {
   const i = createIntl(useIntl());
+  const LocalizedLink = createLink(props.lang);
 
   const data = useStaticQuery(
     graphql`
@@ -126,6 +129,10 @@ export default (props) => {
     margin: 0;
   `;
 
+  const ManagementP = styled.p`
+    margin: 2rem 0 0;
+  `;
+
   const SocialMediaTitle = styled.h3`
     margin: 2rem 0 0;
 
@@ -188,6 +195,9 @@ export default (props) => {
         <CompanyP>
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
+        <ManagementP>
+          <LocalizedLink to="/management">{i('footerManagement')}</LocalizedLink>
+        </ManagementP>
       </CompanyDiv>
       {(() => {
         if (!props.noLanguageSwitcher) {
