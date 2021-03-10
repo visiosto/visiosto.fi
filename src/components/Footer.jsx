@@ -20,6 +20,9 @@ export default (props) => {
       {
         site {
           siteMetadata {
+            defaultEmail
+            businessId
+            vatNumber
             socialMedia {
               facebook
               github
@@ -27,6 +30,16 @@ export default (props) => {
               linkedin
               twitter
             }
+          }
+        }
+        logoLight: file(relativePath: { eq: "footer/logo-light.png" }) {
+          childImageSharp {
+            gatsbyImageData(width: 160)
+          }
+        }
+        logoDark: file(relativePath: { eq: "footer/logo-dark-2.png" }) {
+          childImageSharp {
+            gatsbyImageData(width: 160)
           }
         }
         facebook: file(relativePath: { eq: "footer/facebook.png" }) {
@@ -78,7 +91,7 @@ export default (props) => {
     `,
   );
 
-  const { socialMedia } = data.site.siteMetadata;
+  const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
 
   const Footer = styled.footer`
     margin: 2em 0;
@@ -99,7 +112,23 @@ export default (props) => {
     }
   `;
 
-  const SocialMediaDiv = styled.div`
+  const CompanyDiv = styled(Div)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+  `;
+
+  const LogoImage = styled(SchemedImage)`
+    margin: 1rem;
+  `;
+
+  const CompanyP = styled.p`
+    margin: 0;
+  `;
+
+  const SocialMediaDiv = styled(Div)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,6 +166,19 @@ export default (props) => {
 
   return (
     <Footer>
+      <CompanyDiv>
+        <LogoImage light={getImage(data.logoLight)} dark={getImage(data.logoDark)} />
+        <h2>{i('footerCompanyName')}</h2>
+        <CompanyP>
+          {i('footerBusinessId')} {businessId}
+        </CompanyP>
+        <CompanyP>
+          {i('footerVatNumber')} {vatNumber}
+        </CompanyP>
+        <CompanyP>
+          <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
+        </CompanyP>
+      </CompanyDiv>
       {(() => {
         if (!props.noLanguageSwitcher) {
           return (

@@ -12,6 +12,9 @@ module.exports = {
     twitterAuthor: '@visiosto_oy',
     locales: ['fi', 'en'],
     defaultLocale: 'fi',
+    defaultEmail: 'info@visiosto.fi',
+    businessId: '3010084-6',
+    vatNumber: 'FI30100846',
     socialMedia: {
       facebook: 'https://facebook.com/visiosto',
       github: 'https://github.com/visiosto',
