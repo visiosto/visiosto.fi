@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Removed
+
+- Transitions from the navigation as they don't work.
+
 ### Fixed
 
 - Colour filter of the GitHub footer icon as it wasn't completely black.

@@ -48,8 +48,6 @@ export default (props) => {
     border-radius: 3px;
     transform-origin: 4px 0;
     z-index: 1;
-    transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-      background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.25s ease;
     background: var(--color-text);
 
     ${(props) => {
