@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.6.2] - 2021-03-10
+
+### Removed
+
+- Placeholder button from the website design card.
+
+### Fixed
+
+- Border radii of the author images on the front page.
+
 ## [0.6.1] - 2021-03-10
 
 ### Changed
@@ -139,7 +149,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.6.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.github.io/compare/v0.6.2...HEAD
+[0.6.2]: https://github.com/visiosto/visiosto.github.io/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/visiosto/visiosto.github.io/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/visiosto/visiosto.github.io/compare/v0.5.0...v0.5.1
