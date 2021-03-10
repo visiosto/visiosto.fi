@@ -16,7 +16,9 @@ export default (props) => {
         if (props.lang !== 'fi') {
           return (
             <>
-              <Button to="fi" link={LanguageLink}>Suomeksi</Button>
+              <Button to="fi" link={LanguageLink}>
+                Suomeksi
+              </Button>
               <br />
             </>
           );
@@ -28,7 +30,9 @@ export default (props) => {
         if (props.lang !== 'en') {
           return (
             <>
-              <Button to="en" link={LanguageLink}>In English</Button>
+              <Button to="en" link={LanguageLink}>
+                In English
+              </Button>
             </>
           );
         }
