@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for using HTML for titles of Covers and Cards.
 - Content for the front page.
 - Page for the client register privacy policy.
+- Contact details to the front page.
 
 ### Changed
 
