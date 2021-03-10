@@ -3,5 +3,5 @@
 
 export default {
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
-  footerCopyright: '&nbsp;&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
+  footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
 };
