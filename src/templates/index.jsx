@@ -86,7 +86,6 @@ const Page = (props) => {
       </IndexCover>
       <StoryCover title={story.frontmatter.title}>
         <div dangerouslySetInnerHTML={{ __html: story.html }} />
-        <Link to={'/pricing'}>Linkki</Link>
       </StoryCover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin={true}>
