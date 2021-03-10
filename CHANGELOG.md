@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Localizations of the footer.
 - Support for giving page sections in markdown.
 - Support for using HTML for titles of Covers and Cards.
+- Content for the front page.
+- Page for the client register privacy policy.
 
 ### Changed
 
