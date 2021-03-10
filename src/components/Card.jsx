@@ -18,29 +18,5 @@ export default (props) => {
     }
   `;
 
-  const Icon = styled.div`
-    text-align: center;
-  `;
-
-  const H3 = styled.h3`
-    clear: none;
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    text-align: center;
-  `;
-
-  return (
-    <Article>
-      <Icon>{props.icon}</Icon>
-      {(() => {
-        if (props.htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: props.title }} />;
-        } else {
-          return <H3>{props.title}</H3>;
-        }
-      })()}
-      {props.children}
-      {props.button}
-    </Article>
-  );
+  return <Article>{props.children}</Article>;
 };

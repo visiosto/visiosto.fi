@@ -13,9 +13,10 @@ import {
   PencilIcon,
 } from '@primer/octicons-react';
 
+import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
 import Button from '../components/Button';
-import Card from '../components/Card';
+import FeatureCard from '../components/FeatureCard';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/LayoutIndex';
@@ -37,6 +38,9 @@ const Page = (props) => {
     serviceDesignMarkdownRemark: design,
     serviceEventsMarkdownRemark: events,
     sectionContactMarkdownRemark: contact,
+    authorAnttiKiviMarkdownRemark: anttiKivi,
+    authorGurmannSainiMarkdownRemark: gurmannSaini,
+    authorAnssiMoilanenMarkdownRemark: anssiMoilanen,
   } = props.data;
 
   const H2 = styled.h2`
@@ -61,20 +65,19 @@ const Page = (props) => {
   const Cards = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 2em;
-    justify-items: center;
+    gap: 2em;
     align-items: center;
     justify-content: space-evenly;
     align-content: center;
 
     @media screen and ${(props) => props.theme.devices.phoneL} {
       grid-template-columns: repeat(2, 1fr);
-      column-gap: 2em;
+      gap: 2em;
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
       grid-template-columns: repeat(3, 1fr);
-      column-gap: 2em;
+      gap: 2em;
     }
   `;
 
@@ -102,16 +105,19 @@ const Page = (props) => {
       <Section lesserMargin>
         <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
         <Cards>
-          <Card title={websites.frontmatter.title} icon={<DeviceDesktopIcon size={'large'} />}>
+          <FeatureCard
+            title={websites.frontmatter.title}
+            icon={<DeviceDesktopIcon size={'large'} />}
+          >
             <div dangerouslySetInnerHTML={{ __html: websites.html }} />
             <Button to="#">{i('indexReadMore')}</Button>
-          </Card>
-          <Card title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
+          </FeatureCard>
+          <FeatureCard title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
             <div dangerouslySetInnerHTML={{ __html: design.html }} />
-          </Card>
-          <Card title={events.frontmatter.title} icon={<CalendarIcon size={'large'} />}>
+          </FeatureCard>
+          <FeatureCard title={events.frontmatter.title} icon={<CalendarIcon size={'large'} />}>
             <div dangerouslySetInnerHTML={{ __html: events.html }} />
-          </Card>
+          </FeatureCard>
         </Cards>
       </Section>
       <Break color={'blue'} mode={1} />
@@ -128,6 +134,23 @@ const Page = (props) => {
         </Icon>
         <H2 id={i('indexContactId')}>{contact.frontmatter.title}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: contact.html }} />
+        <Cards>
+          <AuthorContactCard
+            name={anttiKivi.frontmatter.title}
+            job={anttiKivi.frontmatter.job}
+            email={anttiKivi.frontmatter.email}
+          />
+          <AuthorContactCard
+            name={gurmannSaini.frontmatter.title}
+            job={gurmannSaini.frontmatter.job}
+            email={gurmannSaini.frontmatter.email}
+          />
+          <AuthorContactCard
+            name={anssiMoilanen.frontmatter.title}
+            job={anssiMoilanen.frontmatter.job}
+            email={anssiMoilanen.frontmatter.email}
+          />
+        </Cards>
       </Section>
     </LayoutIndex>
   );
@@ -191,6 +214,33 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    authorAnttiKiviMarkdownRemark: markdownRemark(
+      fields: { keySlug: { eq: "/author/antti-kivi" }, locale: { eq: $lang } }
+    ) {
+      frontmatter {
+        title
+        job
+        email
+      }
+    }
+    authorGurmannSainiMarkdownRemark: markdownRemark(
+      fields: { keySlug: { eq: "/author/gurmann-saini" }, locale: { eq: $lang } }
+    ) {
+      frontmatter {
+        title
+        job
+        email
+      }
+    }
+    authorAnssiMoilanenMarkdownRemark: markdownRemark(
+      fields: { keySlug: { eq: "/author/anssi-moilanen" }, locale: { eq: $lang } }
+    ) {
+      frontmatter {
+        title
+        job
+        email
       }
     }
   }
