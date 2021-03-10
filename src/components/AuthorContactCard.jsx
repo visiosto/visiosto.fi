@@ -14,7 +14,9 @@ export default (props) => {
   `;
 
   const Image = styled(GatsbyImage)`
-    border-radius: 50%;
+    > * {
+      border-radius: 50%;
+    }
   `;
 
   const H3 = styled.h3`
