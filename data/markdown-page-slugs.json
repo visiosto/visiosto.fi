@@ -1,4 +1,8 @@
 {
+  "client-register-privacy-policy": {
+    "fi": "asiakasrekisterin-tietosuojaseloste",
+    "en": "client-register-privacy-policy"
+  },
   "pricing": {
     "fi": "hinnasto",
     "en": "pricing"
