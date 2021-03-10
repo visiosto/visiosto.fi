@@ -115,7 +115,6 @@ const Page = (props) => {
             icon={<DeviceDesktopIcon size={'large'} />}
           >
             <div dangerouslySetInnerHTML={{ __html: websites.html }} />
-            <Button to="#">{i('indexReadMore')}</Button>
           </FeatureCard>
           <FeatureCard title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
             <div dangerouslySetInnerHTML={{ __html: design.html }} />
