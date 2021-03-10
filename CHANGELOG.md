@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Gatsby to v3.
 - Cover component to handle the functionality of the index page cover elements.
+- Language switcher to use a button that can be spotted more easily.
 
 ### Removed
 
