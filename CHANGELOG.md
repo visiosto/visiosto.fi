@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Content for the front page.
 - Page for the client register privacy policy.
 - Contact details to the front page.
+- All three of the company’s people to the contact details.
 - Social media links to the site.
 
 ### Changed

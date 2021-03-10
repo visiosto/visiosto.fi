@@ -2,11 +2,21 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import Card from './Card';
 
 export default (props) => {
+  const ImageDiv = styled.div`
+    display: flex;
+    justify-content: center;
+  `;
+
+  const Image = styled(GatsbyImage)`
+    border-radius: 50%;
+  `;
+
   const H3 = styled.h3`
     clear: none;
     margin: 2rem 0;
@@ -21,6 +31,9 @@ export default (props) => {
   // TODO Add the image and a 'read more' button
   return (
     <Card>
+      <ImageDiv>
+        <Image image={props.image} />
+      </ImageDiv>
       {(() => {
         if (props.htmlTitle) {
           return <H3 dangerouslySetInnerHTML={{ __html: props.name }} />;

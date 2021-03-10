@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 import {
@@ -41,6 +42,9 @@ const Page = (props) => {
     authorAnttiKiviMarkdownRemark: anttiKivi,
     authorGurmannSainiMarkdownRemark: gurmannSaini,
     authorAnssiMoilanenMarkdownRemark: anssiMoilanen,
+    imageAnttiKivi,
+    imageGurmannSaini,
+    imageAnssiMoilanen,
   } = props.data;
 
   const H2 = styled.h2`
@@ -52,11 +56,11 @@ const Page = (props) => {
     margin: 2em ${(props) => props.theme.layout.marginPhone};
 
     @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
+      margin: 3em ${(props) => props.theme.layout.marginTablet};
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em
+      margin: 4em
         ${(props) =>
           props.lesserMargin ? props.theme.layout.marginTablet : props.theme.layout.marginDesktop};
     }
@@ -69,6 +73,7 @@ const Page = (props) => {
     align-items: center;
     justify-content: space-evenly;
     align-content: center;
+    margin: 2em 0;
 
     @media screen and ${(props) => props.theme.devices.phoneL} {
       grid-template-columns: repeat(2, 1fr);
@@ -139,16 +144,19 @@ const Page = (props) => {
             name={anttiKivi.frontmatter.title}
             job={anttiKivi.frontmatter.job}
             email={anttiKivi.frontmatter.email}
+            image={getImage(imageAnttiKivi)}
           />
           <AuthorContactCard
             name={gurmannSaini.frontmatter.title}
             job={gurmannSaini.frontmatter.job}
             email={gurmannSaini.frontmatter.email}
+            image={getImage(imageGurmannSaini)}
           />
           <AuthorContactCard
             name={anssiMoilanen.frontmatter.title}
             job={anssiMoilanen.frontmatter.job}
             email={anssiMoilanen.frontmatter.email}
+            image={getImage(imageAnssiMoilanen)}
           />
         </Cards>
       </Section>
@@ -241,6 +249,21 @@ export const pageQuery = graphql`
         title
         job
         email
+      }
+    }
+    imageAnttiKivi: file(relativePath: { eq: "author/antti-kivi.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 200)
+      }
+    }
+    imageGurmannSaini: file(relativePath: { eq: "author/gurmann-saini.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 200)
+      }
+    }
+    imageAnssiMoilanen: file(relativePath: { eq: "author/anssi-moilanen.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 200)
       }
     }
   }
