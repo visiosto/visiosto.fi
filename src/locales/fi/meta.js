@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  metaSlogan: 'Sinun visiosi - linssimme läpi',
   metaDescription:
-    'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
+    'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
 };
