@@ -156,10 +156,11 @@ export default (props) => {
   `;
 
   const GithubImage = styled(SocialMediaImage)`
-    filter: invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg) brightness(93%) contrast(88%);
+    filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg)
+      brightness(93%) contrast(88%);
 
     @media screen and (prefers-color-scheme: dark) {
-      filter: invert(100%);
+      filter: brightness(0) saturate(100%) invert(100%);
     }
   `;
 

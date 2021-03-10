@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Fixed
+
+- Colour filter of the GitHub footer icon as it wasn't completely black.
+
 ## [0.6.2] - 2021-03-10
 
 ### Removed
