@@ -12,6 +12,13 @@ module.exports = {
     twitterAuthor: '@visiosto_oy',
     locales: ['fi', 'en'],
     defaultLocale: 'fi',
+    socialMedia: {
+      facebook: 'https://facebook.com/visiosto',
+      github: 'https://github.com/visiosto',
+      instagram: 'https://instagram.com/visiosto',
+      linkedin: 'https://linkedin.com/company/visiosto',
+      twitter: 'https://twitter.com/visiosto_oy',
+    },
   },
   plugins: [
     {
@@ -19,6 +26,13 @@ module.exports = {
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: path.join(__dirname, 'src', 'assets'),
       },
     },
     {
