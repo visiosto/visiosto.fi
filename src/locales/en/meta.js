@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  metaSlogan: 'Your vision - through our lens',
   metaDescription:
-    'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
+    'It’s time to stop building castles in the air: we construct what you want. We refract a picture from your vision – through our lens.',
 };

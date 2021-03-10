@@ -2,7 +2,6 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
@@ -35,16 +34,22 @@ const Head = (props) => {
 
   const createUrl = createLanguageUrl(baseUrl, props.pageKey);
 
-  const description = props.description || i('metaDescription');
+  const titleTemplate = props.home
+    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${site.siteMetadata.title}`;
+  const title = props.home
+    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${site.siteMetadata.title}`;
+  const description = i('metaDescription') || props.description;
 
   return (
-    <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+    <Helmet titleTemplate={titleTemplate}>
       <html lang={`${props.lang}`} />
       <title>{props.title}</title>
 
       <meta name="description" content={description} />
 
-      <meta property="og:title" content={`${props.title} - ${site.siteMetadata.title}`} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={createUrl(props.lang)} />
@@ -60,13 +65,6 @@ const Head = (props) => {
       ))}
     </Helmet>
   );
-};
-
-Head.propTypes = {
-  lang: PropTypes.string.isRequired,
-  pageKey: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
 };
 
 export default Head;
