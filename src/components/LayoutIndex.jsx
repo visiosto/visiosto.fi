@@ -21,7 +21,7 @@ export default (props) => {
   return (
     <>
       <GlobalStyle />
-      <Head {...props} />
+      <Head home {...props} />
       <Header {...props} />
       <main>
         <section>
