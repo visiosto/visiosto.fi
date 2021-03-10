@@ -4,7 +4,7 @@
 const pageSlugs = require('../../../data/markdown-page-slugs.json');
 const config = require('../../../gatsby-config');
 
-module.exports = (locale, filename) => {
+module.exports = (locale, filename, reporter) => {
   const defaultLanguage = config.siteMetadata.defaultLocale;
 
   // prettier-ignore
@@ -12,7 +12,7 @@ module.exports = (locale, filename) => {
     ? `/${pageSlugs[filename][locale]}`
     : `/${locale}/${pageSlugs[filename][locale]}`;
 
-  console.log('Set the path to', path);
+  reporter.verbose('Set the path to', path);
 
   return path;
 };

@@ -12,8 +12,6 @@ import Theme from '../components/Theme';
 const Page = (props) => {
   const { markdownRemark: page } = props.data;
 
-  console.log(props.data.markdownRemark);
-
   const Div = styled.div`
     margin: 1em ${(props) => props.theme.layout.marginPhone};
 

@@ -5,7 +5,7 @@ const config = require('../../../gatsby-config');
 const pageSlugs = require('../../../src/data/page-slugs.json');
 const blogSlugs = require('../../../data/blog-slugs.json');
 
-module.exports = (locale, filename) => {
+module.exports = (locale, filename, reporter) => {
   const defaultLanguage = config.siteMetadata.defaultLocale;
 
   // prettier-ignore
@@ -13,11 +13,11 @@ module.exports = (locale, filename) => {
     ? `${pageSlugs.blog[locale]}`
     : `${locale}/${pageSlugs.blog[locale]}`;
 
-  console.log('Set the blog path to', blogPath);
+  reporter.verbose('Set the blog path to', blogPath);
 
   const slug = `/${blogPath}/${blogSlugs[filename][locale]}`;
 
-  console.log('The slug path for the blog post page is', slug);
+  reporter.verbose('The slug path for the blog post page is', slug);
 
   return slug;
 };
