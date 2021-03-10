@@ -22,7 +22,7 @@ Gurmann Saini
 
 Privacy Policy for the Client Register of Visiosto oy
 
-## 4. Registered Persons
+## 4. Data Subjects
 
 The register may contain personal data of the controller&rsquo;s clients and potential clients and their representatives.
 
