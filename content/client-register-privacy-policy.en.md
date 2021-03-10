@@ -14,9 +14,9 @@ c/o Antti Kivi, Sammonkatu 12 B 28, 00100 HELSINKI
 
 Gurmann Saini
 
-gurmann.saini17@gmail.com
+<gurmann.saini17@gmail.com>
 
-+358 44 041 1997
+[+358 44 041 1997](tel:0440411997)
 
 ## 3. The Name of the Register
 
@@ -74,6 +74,7 @@ The personal data is stored as long as is necessary to fulfill contracts between
 ## 13. Rights of the Data Subject
 
 The data subject has the right:
+
 - To obtain information on the processing of their personal data
 - Of access to their data
 - To rectification and complementing of their data

@@ -14,9 +14,9 @@ c/o Antti Kivi, Sammonkatu 12 B 28, 00100 HELSINKI
 
 Gurmann Saini
 
-gurmann.saini17@gmail.com
+<gurmann.saini17@gmail.com>
 
-+358 44 041 1997
+[+358 44 041 1997](tel:0440411997)
 
 ## 3. Rekisterin nimi
 
