@@ -34,8 +34,12 @@ const Head = (props) => {
 
   const createUrl = createLanguageUrl(baseUrl, props.pageKey);
 
-  const titleTemplate = props.home ? `${site.siteMetadata.title} - ${i('metaSlogan')}` : `%s - ${site.siteMetadata.title}`;
-  const title = props.home ? `${site.siteMetadata.title} - ${i('metaSlogan')}` : `%s - ${site.siteMetadata.title}`;
+  const titleTemplate = props.home
+    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${site.siteMetadata.title}`;
+  const title = props.home
+    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${site.siteMetadata.title}`;
   const description = i('metaDescription') || props.description;
 
   return (
