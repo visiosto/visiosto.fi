@@ -94,22 +94,20 @@ export default (props) => {
   const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
 
   const Footer = styled.footer`
-    margin: 2em 0;
-    background: var(--color-background);
-    color: var(--color-text);
-  `;
-
-  const Div = styled.div`
-    margin: 1em ${(props) => props.theme.layout.marginPhone};
+    margin: 2em ${(props) => props.theme.layout.marginPhone};
     text-align: center;
 
     @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 1em ${(props) => props.theme.layout.marginTablet};
+      margin: 2em ${(props) => props.theme.layout.marginTablet};
     }
 
     @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 1em ${(props) => props.theme.layout.marginDesktop};
+      margin: 2em ${(props) => props.theme.layout.marginDesktop};
     }
+  `;
+
+  const Div = styled.div`
+    margin: 2em 0;
   `;
 
   const CompanyDiv = styled(Div)`
@@ -126,6 +124,18 @@ export default (props) => {
 
   const CompanyP = styled.p`
     margin: 0;
+  `;
+
+  const SocialMediaTitle = styled.h3`
+    margin: 2rem 0 0;
+
+    @media screen and ${(props) => props.theme.devices.phoneL} {
+      margin: 3rem 0 0;
+    }
+
+    @media screen and ${(props) => props.theme.devices.tablet} {
+      margin: 4rem 0 0;
+    }
   `;
 
   const SocialMediaDiv = styled(Div)`
@@ -188,6 +198,7 @@ export default (props) => {
           );
         }
       })()}
+      <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <SocialMediaDiv>
         <a href={socialMedia.instagram} rel="noopener noreferrer" target="_blank">
           <InstagramImage light={getImage(data.instagramColor)} dark={getImage(data.instagram)} />
