@@ -181,10 +181,10 @@ export default (props) => {
           <Link to="/">{i('indexTitle')}</Link>
         </Li>
         <Li>
-          <AnchorLink to="/#services">{i('indexServicesTitle')}</AnchorLink>
+          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
         </Li>
         <Li>
-          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
+          <AnchorLink to="/#contact">{i('indexContactTitle')}</AnchorLink>
         </Li>
         <Li>
           <Link to="/blog">{i('blogTitle')}</Link>

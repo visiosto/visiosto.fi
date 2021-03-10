@@ -5,7 +5,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
-import { CalendarIcon, DeviceDesktopIcon, NorthStarIcon, PencilIcon } from '@primer/octicons-react';
+import {
+  CalendarIcon,
+  DeviceDesktopIcon,
+  NorthStarIcon,
+  PaperAirplaneIcon,
+  PencilIcon,
+} from '@primer/octicons-react';
 
 import Break from '../components/Break';
 import Button from '../components/Button';
@@ -93,7 +99,7 @@ const Page = (props) => {
         <Cards>
           <Card title={websites.frontmatter.title} icon={<DeviceDesktopIcon size={'large'} />}>
             <div dangerouslySetInnerHTML={{ __html: websites.html }} />
-            <Button to="#">Lue lisää</Button>
+            <Button to="#">{i('indexReadMore')}</Button>
           </Card>
           <Card title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
             <div dangerouslySetInnerHTML={{ __html: design.html }} />
@@ -109,6 +115,13 @@ const Page = (props) => {
           <NorthStarIcon size={'large'} />
         </Icon>
         <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
+      </Section>
+      <Break color={'peach'} mode={3} />
+      <Section>
+        <Icon>
+          <PaperAirplaneIcon size={'large'} />
+        </Icon>
+        <H2 id={i('indexContactId')}>{i('indexContactTitle')}</H2>
       </Section>
     </LayoutIndex>
   );

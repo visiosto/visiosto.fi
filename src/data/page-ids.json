@@ -1,12 +1,16 @@
 {
   "index": {
-    "services": {
-      "fi": "palvelut",
-      "en": "services"
+    "contact": {
+      "fi": "yhteystiedot",
+      "en": "contact"
     },
     "portfolio": {
       "fi": "portfolio",
       "en": "portfolio"
+    },
+    "services": {
+      "fi": "palvelut",
+      "en": "services"
     }
   }
 }

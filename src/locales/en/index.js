@@ -5,6 +5,9 @@ export default {
   indexTitle: 'Etusivu',
   indexServicesId: 'services',
   indexServicesTitle: 'What Do We Refract?',
+  indexReadMore: 'Read more',
   indexPortfolioId: 'portfolio',
   indexPortfolioTitle: 'Portfolio',
+  indexContactId: 'contact',
+  indexContactTitle: 'Contact Details',
 };
