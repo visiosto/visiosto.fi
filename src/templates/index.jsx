@@ -33,9 +33,9 @@ const Page = (props) => {
   const {
     coverMarkdownRemark: cover,
     storyMarkdownRemark: story,
-    websitesMarkdownRemark: websites,
-    designMarkdownRemark: design,
-    eventsMarkdownRemark: events,
+    serviceWebsitesMarkdownRemark: websites,
+    serviceDesignMarkdownRemark: design,
+    serviceEventsMarkdownRemark: events,
   } = props.data;
 
   const H2 = styled.h2`
@@ -155,7 +155,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    websitesMarkdownRemark: markdownRemark(
+    serviceWebsitesMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/websites" }, locale: { eq: $lang } }
     ) {
       html
@@ -163,7 +163,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    designMarkdownRemark: markdownRemark(
+    serviceDesignMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/design" }, locale: { eq: $lang } }
     ) {
       html
@@ -171,7 +171,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    eventsMarkdownRemark: markdownRemark(
+    serviceEventsMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/events" }, locale: { eq: $lang } }
     ) {
       html
