@@ -36,6 +36,7 @@ const Page = (props) => {
     serviceWebsitesMarkdownRemark: websites,
     serviceDesignMarkdownRemark: design,
     serviceEventsMarkdownRemark: events,
+    sectionContactMarkdownRemark: contact,
   } = props.data;
 
   const H2 = styled.h2`
@@ -81,6 +82,10 @@ const Page = (props) => {
     text-align: center;
   `;
 
+  const Centered = styled.div`
+    text-align: center;
+  `;
+
   return (
     <LayoutIndex
       title={i('indexTitle')}
@@ -94,7 +99,7 @@ const Page = (props) => {
         <div dangerouslySetInnerHTML={{ __html: story.html }} />
       </StoryCover>
       <Break color={'peach'} mode={1} />
-      <Section lesserMargin={true}>
+      <Section lesserMargin>
         <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
         <Cards>
           <Card title={websites.frontmatter.title} icon={<DeviceDesktopIcon size={'large'} />}>
@@ -117,11 +122,12 @@ const Page = (props) => {
         <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
       </Section>
       <Break color={'peach'} mode={3} />
-      <Section>
+      <Section lesserMargin>
         <Icon>
           <PaperAirplaneIcon size={'large'} />
         </Icon>
-        <H2 id={i('indexContactId')}>{i('indexContactTitle')}</H2>
+        <H2 id={i('indexContactId')}>{contact.frontmatter.title}</H2>
+        <Centered dangerouslySetInnerHTML={{ __html: contact.html }} />
       </Section>
     </LayoutIndex>
   );
@@ -173,6 +179,14 @@ export const pageQuery = graphql`
     }
     serviceEventsMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/events" }, locale: { eq: $lang } }
+    ) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    sectionContactMarkdownRemark: markdownRemark(
+      fields: { slug: { eq: "index/contact" }, locale: { eq: $lang } }
     ) {
       html
       frontmatter {

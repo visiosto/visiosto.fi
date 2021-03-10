@@ -9,5 +9,5 @@ export default {
   indexPortfolioId: 'portfolio',
   indexPortfolioTitle: 'Portfolio',
   indexContactId: 'contact',
-  indexContactTitle: 'Contact Details',
+  indexContactTitle: 'Contact',
 };
