@@ -34,7 +34,7 @@ export default (props) => {
   return (
     <Card>
       <ImageDiv>
-        <Image image={props.image} />
+        <Image alt={props.name} image={props.image} />
       </ImageDiv>
       {(() => {
         if (props.htmlTitle) {
