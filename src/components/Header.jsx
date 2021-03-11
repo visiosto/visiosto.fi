@@ -5,15 +5,19 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 
 import Navigation from './Navigation';
 import SchemedImage from './SchemedImage';
 
 import createLink from './createLink';
 
+import createIntl from '../utils/createIntl';
+
 import theme from '../theme';
 
 export default (props) => {
+  const i = createIntl(useIntl());
   const LocalizedLink = createLink(props.lang);
 
   const { site, logoPhoneSLight, logoPhoneSDark, logoTabletLight, logoTabletDark } = useStaticQuery(
@@ -104,7 +108,7 @@ export default (props) => {
       <SiteBranding>
         <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
         <LocalizedLink to="/">
-          <Image light={logosLight} dark={logosDark} />
+          <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>
       <Navigation {...props} />

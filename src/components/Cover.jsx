@@ -88,6 +88,7 @@ const Cover = (props) => {
   return (
     <Section>
       <Image
+        alt=""
         light={imagesTopLight}
         dark={imagesTopDark}
         style={{ ...props.style.top, ...imageStyles }}
@@ -107,6 +108,7 @@ const Cover = (props) => {
         <Content>{props.children}</Content>
       </Inner>
       <Image
+        alt=""
         light={imagesBottomLight}
         dark={imagesBottomDark}
         style={{ ...props.style.bottom, ...imageStyles }}

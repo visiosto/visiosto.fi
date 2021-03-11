@@ -185,7 +185,11 @@ export default (props) => {
   return (
     <Footer>
       <CompanyDiv>
-        <LogoImage light={getImage(data.logoLight)} dark={getImage(data.logoDark)} />
+        <LogoImage
+          alt={i('footerLogoAlt')}
+          light={getImage(data.logoLight)}
+          dark={getImage(data.logoDark)}
+        />
         <h2>{i('footerCompanyName')}</h2>
         <CompanyP>
           {i('footerBusinessId')} {businessId}
@@ -212,19 +216,39 @@ export default (props) => {
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <SocialMediaDiv>
         <a href={socialMedia.instagram} rel="noopener noreferrer" target="_blank">
-          <InstagramImage light={getImage(data.instagramColor)} dark={getImage(data.instagram)} />
+          <InstagramImage
+            alt={i('footerInstagramAlt')}
+            light={getImage(data.instagramColor)}
+            dark={getImage(data.instagram)}
+          />
         </a>
         <a href={socialMedia.facebook} rel="noopener noreferrer" target="_blank">
-          <SocialMediaImage light={getImage(data.facebookColor)} dark={getImage(data.facebook)} />
+          <SocialMediaImage
+            alt={i('footerFacebookAlt')}
+            light={getImage(data.facebookColor)}
+            dark={getImage(data.facebook)}
+          />
         </a>
         <a href={socialMedia.twitter} rel="noopener noreferrer" target="_blank">
-          <TwitterImage light={getImage(data.twitterColor)} dark={getImage(data.twitter)} />
+          <TwitterImage
+            alt={i('footerTwitterAlt')}
+            light={getImage(data.twitterColor)}
+            dark={getImage(data.twitter)}
+          />
         </a>
         <a href={socialMedia.linkedin} rel="noopener noreferrer" target="_blank">
-          <LinkedinImage light={getImage(data.linkedinColor)} dark={getImage(data.linkedin)} />
+          <LinkedinImage
+            alt={i('footerLinkedinAlt')}
+            light={getImage(data.linkedinColor)}
+            dark={getImage(data.linkedin)}
+          />
         </a>
         <a href={socialMedia.github} rel="noopener noreferrer" target="_blank">
-          <GithubImage light={getImage(data.github)} dark={getImage(data.github)} />
+          <GithubImage
+            alt={i('footerGithubAlt')}
+            light={getImage(data.github)}
+            dark={getImage(data.github)}
+          />
         </a>
       </SocialMediaDiv>
       <Div dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />

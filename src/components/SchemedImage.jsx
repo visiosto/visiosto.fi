@@ -2,20 +2,9 @@
 // Licensed under the MIT License
 
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import ThemeContext from './ThemeContext';
-
-const propTypes = {
-  light: PropTypes.object.isRequired,
-  dark: PropTypes.object.isRequired,
-  alt: PropTypes.string,
-};
-
-const defaultProps = {
-  alt: '',
-};
 
 const SchemedImage = (props) => {
   const { colorMode } = useContext(ThemeContext);
@@ -32,8 +21,5 @@ const SchemedImage = (props) => {
 
   return colorMode === 'dark' ? <DarkImage /> : <LightImage />;
 };
-
-SchemedImage.propTypes = propTypes;
-SchemedImage.defaultProps = defaultProps;
 
 export default SchemedImage;
