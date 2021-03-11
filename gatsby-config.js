@@ -1,7 +1,11 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
+require('dotenv').config();
+
 const path = require('path');
+
+const queries = require('./util/algolia/queries');
 
 module.exports = {
   siteMetadata: {
@@ -74,5 +78,15 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-algolia',
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        skipIndexing: process.env.CI,
+      },
+    },
   ],
 };

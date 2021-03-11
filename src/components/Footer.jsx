@@ -9,10 +9,13 @@ import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import SchemedImage from './SchemedImage';
+import Search from './search/Search';
 
 import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
+
+const searchIndices = (i) => [{ name: 'VISIOSTO_FI', title: i('searchPagesTitle') }];
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
@@ -184,6 +187,7 @@ export default (props) => {
 
   return (
     <Footer>
+      <Search indices={searchIndices(i)} />
       <CompanyDiv>
         <LogoImage
           alt={i('footerLogoAlt')}
