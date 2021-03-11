@@ -109,7 +109,7 @@ const Li = styled.li`
   }
 `;
 
-const createStyledLink = (element) => styled(element)`
+const createStyledLink = (lang) => styled(createLink(lang))`
   position: relative;
   margin: 1rem auto 0;
   border-radius: ${(props) => props.theme.borders.commonRadius};
@@ -132,7 +132,7 @@ const createStyledLink = (element) => styled(element)`
   }
 `;
 
-const createStyledAnchorLink = (element) => styled(element)`
+const createStyledAnchorLink = (lang) => styled(createAnchorLink(lang))`
   position: relative;
   margin: 1rem auto 0;
   border-radius: ${(props) => props.theme.borders.commonRadius};
@@ -157,8 +157,8 @@ const createStyledAnchorLink = (element) => styled(element)`
 
 export default (props) => {
   const i = createIntl(useIntl());
-  const Link = createStyledLink(createLink(props.lang));
-  const AnchorLink = createStyledAnchorLink(createAnchorLink(props.lang));
+  const Link = createStyledLink(props.lang);
+  const AnchorLink = createStyledAnchorLink(props.lang);
 
   const [toggled, setToggled] = useState(false);
 
