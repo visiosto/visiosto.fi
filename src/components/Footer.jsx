@@ -15,7 +15,9 @@ import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
 
-const searchIndices = (i) => [{ name: 'VISIOSTO_FI', title: i('searchPagesTitle') }];
+const searchIndices = (i) => [
+  { name: process.env.ALGOLIA_INDEX_NAME, title: i('searchPagesTitle') },
+];
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
