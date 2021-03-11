@@ -9,20 +9,20 @@ import Intl from '../components/Intl';
 import Layout from '../components/Layout';
 import Theme from '../components/Theme';
 
+const Div = styled.div`
+  margin: 1em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 1em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 1em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
 const Page = (props) => {
   const { markdownRemark: page } = props.data;
-
-  const Div = styled.div`
-    margin: 1em ${(props) => props.theme.layout.marginPhone};
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 1em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 1em ${(props) => props.theme.layout.marginDesktop};
-    }
-  `;
 
   return (
     <Layout

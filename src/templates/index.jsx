@@ -28,9 +28,55 @@ import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
+const H2 = styled.h2`
+  font-size: 2.2rem;
+  text-align: center;
+`;
+
+const Section = styled.div`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 4em
+      ${(props) =>
+        props.lesserMargin ? props.theme.layout.marginTablet : props.theme.layout.marginDesktop};
+  }
+`;
+
+const Cards = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 2em 0;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+  }
+`;
+
+const Icon = styled.div`
+  text-align: center;
+`;
+
+const Centered = styled.div`
+  text-align: center;
+`;
+
 const Page = (props) => {
   const i = createIntl(useIntl());
-  const Link = createLink(props.pageContext.lang);
 
   const {
     coverMarkdownRemark: cover,
@@ -46,53 +92,6 @@ const Page = (props) => {
     imageGurmannSaini,
     imageAnssiMoilanen,
   } = props.data;
-
-  const H2 = styled.h2`
-    font-size: 2.2rem;
-    text-align: center;
-  `;
-
-  const Section = styled.div`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 3em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 4em
-        ${(props) =>
-          props.lesserMargin ? props.theme.layout.marginTablet : props.theme.layout.marginDesktop};
-    }
-  `;
-
-  const Cards = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2em;
-    align-items: center;
-    justify-content: space-evenly;
-    align-content: center;
-    margin: 2em 0;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2em;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2em;
-    }
-  `;
-
-  const Icon = styled.div`
-    text-align: center;
-  `;
-
-  const Centered = styled.div`
-    text-align: center;
-  `;
 
   return (
     <LayoutIndex

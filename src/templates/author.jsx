@@ -12,12 +12,12 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
+const P = styled.p`
+  text-align: center;
+`;
+
 const Page = (props) => {
   const i = createIntl(useIntl());
-
-  const P = styled.p`
-    text-align: center;
-  `;
 
   return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
 };

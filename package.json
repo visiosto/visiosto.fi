@@ -1,7 +1,7 @@
 {
-  "name": "visiosto.github.io",
+  "name": "visiosto.fi",
   "private": true,
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "The shared source for the website of Visiosto",
   "scripts": {
     "build": "gatsby build",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visiosto/visiosto.github.io.git"
+    "url": "git+https://github.com/visiosto/visiosto.fi.git"
   },
   "author": "Antti Kivi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/visiosto/visiosto.github.io/issues"
+    "url": "https://github.com/visiosto/visiosto.fi/issues"
   },
-  "homepage": "https://github.com/visiosto/visiosto.github.io#readme",
+  "homepage": "https://github.com/visiosto/visiosto.fi#readme",
   "dependencies": {
     "@primer/octicons-react": "^12.1.0",
     "@reach/router": "^1.3.4",
@@ -45,7 +45,6 @@
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
     "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

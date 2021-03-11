@@ -101,19 +101,19 @@ const getRules = (ruleType) => {
   }
 };
 
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export default (props) => {
   const { blueRule, lightBlueRule, peachRule, creamRule } = getRules(props.mode);
 
-  const Div = styled.div`
-    display: flex;
-    justify-content: center;
-  `;
-
   const Image = () => {
     if (props.color === 'peach') {
-      return <SchemedImage light={getImage(peachRule)} dark={getImage(creamRule)} />;
+      return <SchemedImage alt="" light={getImage(peachRule)} dark={getImage(creamRule)} />;
     } else if (props.color === 'blue') {
-      return <SchemedImage light={getImage(blueRule)} dark={getImage(lightBlueRule)} />;
+      return <SchemedImage alt="" light={getImage(blueRule)} dark={getImage(lightBlueRule)} />;
     }
   };
 

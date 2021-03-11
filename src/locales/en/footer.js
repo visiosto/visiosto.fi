@@ -2,11 +2,17 @@
 // Licensed under the MIT License
 
 export default {
+  footerLogoAlt: 'Visiosto Logo',
   footerCompanyName: 'Visiosto oy',
   footerBusinessId: 'Finnish Business ID:',
   footerVatNumber: 'VAT number:',
   footerManagement: 'Management',
   footerSocialMediaTitle: 'Social Media',
+  footerFacebookAlt: 'Facebook Logo',
+  footerGithubAlt: 'GitHub Logo',
+  footerInstagramAlt: 'Instagram Logo',
+  footerLinkedinAlt: 'LinkedIn Logo',
+  footerTwitterAlt: 'Twitter Logo',
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
 };

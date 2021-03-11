@@ -9,6 +9,48 @@ import SchemedImage from './SchemedImage';
 
 import theme from '../theme';
 
+const Section = styled.section`
+  overflow: hidden;
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0 0 2em;
+`;
+
+const Inner = styled.div`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  padding: 0.5em 0 1em;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    padding: 2em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em ${(props) => props.theme.layout.marginDesktop};
+    padding: 2em 0;
+  }
+`;
+
+const Title = styled.h2`
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 3rem;
+`;
+
+const Content = styled.div`
+  margin: 0 0 3rem;
+  font-size: 1.1rem;
+  text-align: center;
+`;
+
+const Image = styled(SchemedImage)`
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    width: ${(props) => props.tablet.width};
+    height: ${(props) => props.tablet.height};
+  }
+`;
+
 const Cover = (props) => {
   const { data } = props;
 
@@ -38,48 +80,6 @@ const Cover = (props) => {
     },
   ]);
 
-  const Section = styled.section`
-    overflow: hidden;
-    position: relative;
-    min-width: 100%;
-    min-height: 100%;
-    margin: 0 0 2em;
-  `;
-
-  const Inner = styled.div`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-    padding: 0.5em 0 1em;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-      padding: 2em 0;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginDesktop};
-      padding: 2em 0;
-    }
-  `;
-
-  const Title = styled.h2`
-    margin-bottom: 3rem;
-    text-align: center;
-    font-size: 3rem;
-  `;
-
-  const Content = styled.div`
-    margin: 0 0 3rem;
-    font-size: 1.1rem;
-    text-align: center;
-  `;
-
-  const Image = styled(SchemedImage)`
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      width: ${(props) => props.tablet.width};
-      height: ${(props) => props.tablet.height};
-    }
-  `;
-
   const imageStyles = {
     position: 'absolute',
     zIndex: -1,
@@ -88,11 +88,12 @@ const Cover = (props) => {
   return (
     <Section>
       <Image
+        alt=""
         light={imagesTopLight}
         dark={imagesTopDark}
         style={{ ...props.style.top, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tablet }}
+        tablet={{ ...props.tabletStyle }}
       />
       <Inner>
         <header>
@@ -107,11 +108,12 @@ const Cover = (props) => {
         <Content>{props.children}</Content>
       </Inner>
       <Image
+        alt=""
         light={imagesBottomLight}
         dark={imagesBottomDark}
         style={{ ...props.style.bottom, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tablet }}
+        tablet={{ ...props.tabletStyle }}
       />
     </Section>
   );

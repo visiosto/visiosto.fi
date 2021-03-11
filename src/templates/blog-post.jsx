@@ -9,20 +9,20 @@ import Intl from '../components/Intl';
 import LayoutPost from '../components/LayoutPost';
 import Theme from '../components/Theme';
 
+const PostDiv = styled.div`
+  margin: 1em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 1em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 1em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
 const Page = (props) => {
   const { markdownRemark: post } = props.data;
-
-  const PostDiv = styled.div`
-    margin: 1em ${(props) => props.theme.layout.marginPhone};
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 1em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 1em ${(props) => props.theme.layout.marginDesktop};
-    }
-  `;
 
   return (
     <LayoutPost

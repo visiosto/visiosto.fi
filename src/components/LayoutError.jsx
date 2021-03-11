@@ -11,19 +11,19 @@ import Header from './Header';
 
 import listenColorScheme from '../utils/listenColorScheme';
 
+const ErrorCode = styled.h1`
+  font-size: 3rem;
+  font-family: ${(props) => props.theme.fonts.code};
+  text-align: center;
+`;
+
+const PageTitle = styled.h2`
+  font-size: 2rem;
+  text-align: center;
+`;
+
 export default (props) => {
   listenColorScheme();
-
-  const ErrorCode = styled.h1`
-    font-size: 3rem;
-    font-family: ${(props) => props.theme.fonts.code};
-    text-align: center;
-  `;
-
-  const PageTitle = styled.h2`
-    font-size: 2rem;
-    text-align: center;
-  `;
 
   return (
     <>

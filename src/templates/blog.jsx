@@ -15,66 +15,66 @@ import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
+const Post = styled.article`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
+const PostHeader = styled.header``;
+
+const H2 = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+`;
+
+const createStyledLink = (lang) => styled(createLink(lang))`
+  text-decoration: none;
+  color: var(--color-text);
+
+  &:visited {
+    color: var(--color-text);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: var(--color-link-text);
+  }
+`;
+
+const PostMeta = styled.div`
+  margin: 2em 0;
+  text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em 0;
+  }
+`;
+
+const PostAuthor = styled.span`
+  clear: both;
+  display: block;
+`;
+
+const PostContent = styled.div``;
+
 const Page = (props) => {
   const i = createIntl(useIntl());
-  const LocalizedLink = createLink(props.pageContext.lang);
+  const Link = createStyledLink(props.pageContext.lang);
 
   const { edges: posts } = props.data.allMarkdownRemark;
-
-  const Post = styled.article`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginDesktop};
-    }
-  `;
-
-  const PostHeader = styled.header``;
-
-  const H2 = styled.h2`
-    text-align: center;
-    font-size: 2rem;
-  `;
-
-  const Link = styled(LocalizedLink)`
-    text-decoration: none;
-    color: var(--color-text);
-
-    &:visited {
-      color: var(--color-text);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      text-decoration: underline;
-      color: var(--color-link-text);
-    }
-  `;
-
-  const PostMeta = styled.div`
-    margin: 2em 0;
-    text-align: center;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em 0;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em 0;
-    }
-  `;
-
-  const PostAuthor = styled.span`
-    clear: both;
-    display: block;
-  `;
-
-  const PostContent = styled.div``;
 
   return (
     <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>

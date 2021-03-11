@@ -6,18 +6,18 @@ import styled from 'styled-components';
 
 import Card from './Card';
 
+const Icon = styled.div`
+  text-align: center;
+`;
+
+const H3 = styled.h3`
+  clear: none;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+`;
+
 export default (props) => {
-  const Icon = styled.div`
-    text-align: center;
-  `;
-
-  const H3 = styled.h3`
-    clear: none;
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    text-align: center;
-  `;
-
   return (
     <Card>
       <Icon>{props.icon}</Icon>
