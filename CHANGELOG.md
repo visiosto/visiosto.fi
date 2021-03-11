@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Search box to the site.
 
+## [0.7.2] - 2021-03-11
+
+### Changed
+
+- Story cover top image into a reflection.
+
 ## [0.7.1] - 2021-03-11
 
 ### Changed
@@ -180,7 +186,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.7.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.7.2...HEAD
+[0.7.2]: https://github.com/visiosto/visiosto.fi/compare/v0.7.1...v0.7.2
 [0.7.1]: https://github.com/visiosto/visiosto.fi/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/visiosto/visiosto.fi/compare/v0.6.2...v0.7.0
 [0.6.2]: https://github.com/visiosto/visiosto.fi/compare/v0.6.1...v0.6.2
