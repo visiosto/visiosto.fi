@@ -7,29 +7,29 @@ import styled from 'styled-components';
 
 import Card from './Card';
 
+const ImageDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const Image = styled(GatsbyImage)`
+  > * {
+    border-radius: 50%;
+  }
+`;
+
+const H3 = styled.h3`
+  clear: none;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+`;
+
+const Div = styled.div`
+  text-align: center;
+`;
+
 export default (props) => {
-  const ImageDiv = styled.div`
-    display: flex;
-    justify-content: center;
-  `;
-
-  const Image = styled(GatsbyImage)`
-    > * {
-      border-radius: 50%;
-    }
-  `;
-
-  const H3 = styled.h3`
-    clear: none;
-    margin: 2rem 0;
-    font-size: 1.5rem;
-    text-align: center;
-  `;
-
-  const Div = styled.div`
-    text-align: center;
-  `;
-
   // TODO Add the image and a 'read more' button
   return (
     <Card>

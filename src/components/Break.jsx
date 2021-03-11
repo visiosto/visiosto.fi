@@ -6,11 +6,11 @@ import styled from 'styled-components';
 
 import Rule from './Rule';
 
-export default (props) => {
-  const Hr = styled.hr`
-    visibility: hidden;
-  `;
+const Hr = styled.hr`
+  visibility: hidden;
+`;
 
+export default (props) => {
   return (
     <>
       <Rule {...props} />

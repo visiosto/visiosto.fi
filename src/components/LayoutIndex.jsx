@@ -11,12 +11,12 @@ import Header from './Header';
 
 import listenColorScheme from '../utils/listenColorScheme';
 
+const PageTitle = styled.h2`
+  display: none;
+`;
+
 export default (props) => {
   listenColorScheme();
-
-  const PageTitle = styled.h2`
-    display: none;
-  `;
 
   return (
     <>

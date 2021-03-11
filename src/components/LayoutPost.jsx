@@ -11,42 +11,42 @@ import Header from './Header';
 
 import listenColorScheme from '../utils/listenColorScheme';
 
+const PageTitle = styled.h1`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  font-size: 2rem;
+  text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    font-size: 3rem;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    font-size: 3rem;
+  }
+`;
+
+const PostMeta = styled.div`
+  margin: 2em 0;
+  text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em 0;
+  }
+`;
+
+const PostAuthor = styled.span`
+  clear: both;
+  display: block;
+`;
+
 export default (props) => {
   listenColorScheme();
-
-  const PageTitle = styled.h1`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-    font-size: 2rem;
-    text-align: center;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-      font-size: 3rem;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-      font-size: 3rem;
-    }
-  `;
-
-  const PostMeta = styled.div`
-    margin: 2em 0;
-    text-align: center;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em 0;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em 0;
-    }
-  `;
-
-  const PostAuthor = styled.span`
-    clear: both;
-    display: block;
-  `;
 
   return (
     <>

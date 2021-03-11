@@ -101,13 +101,13 @@ const getRules = (ruleType) => {
   }
 };
 
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export default (props) => {
   const { blueRule, lightBlueRule, peachRule, creamRule } = getRules(props.mode);
-
-  const Div = styled.div`
-    display: flex;
-    justify-content: center;
-  `;
 
   const Image = () => {
     if (props.color === 'peach') {

@@ -16,6 +16,44 @@ import createIntl from '../utils/createIntl';
 
 import theme from '../theme';
 
+const Header = styled.header`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
+const createSiteTitle = (isHome) => (isHome ? styled.h1 : styled.p)`
+    display: none;
+    margin: 0;
+    font-size: 3rem;
+    font-family: ${(props) => props.theme.fonts.heading};
+    font-weight: 700;
+    text-align: center;
+  `;
+
+const SiteBranding = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 3rem auto;
+  }
+`;
+
+const Image = styled(SchemedImage)`
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    width: 300px;
+    height: auto;
+  }
+`;
+
 export default (props) => {
   const i = createIntl(useIntl());
   const LocalizedLink = createLink(props.lang);
@@ -65,43 +103,7 @@ export default (props) => {
     },
   ]);
 
-  const Header = styled.header`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginDesktop};
-    }
-  `;
-
-  const SiteTitle = (props.home ? styled.h1 : styled.p)`
-    display: none;
-    margin: 0;
-    font-size: 3rem;
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-weight: 700;
-    text-align: center;
-  `;
-
-  const SiteBranding = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 2rem auto;
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 3rem auto;
-    }
-  `;
-
-  const Image = styled(SchemedImage)`
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      width: 300px;
-      height: auto;
-    }
-  `;
+  const SiteTitle = createSiteTitle(props.home);
 
   return (
     <Header>

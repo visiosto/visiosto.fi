@@ -14,6 +14,92 @@ import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
 
+const Footer = styled.footer`
+  margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
+  text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 4em ${(props) => props.theme.layout.marginDesktop} 2em;
+  }
+`;
+
+const Div = styled.div`
+  margin: 2em 0;
+`;
+
+const CompanyDiv = styled(Div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+`;
+
+const LogoImage = styled(SchemedImage)`
+  margin: 1rem;
+`;
+
+const CompanyP = styled.p`
+  margin: 0;
+`;
+
+const ManagementP = styled.p`
+  margin: 2rem 0 0;
+`;
+
+const SocialMediaTitle = styled.h3`
+  margin: 2rem 0 0;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 3rem 0 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 4rem 0 0;
+  }
+`;
+
+const SocialMediaDiv = styled(Div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SocialMediaImage = styled(SchemedImage)`
+  margin: 1rem;
+`;
+
+const GithubImage = styled(SocialMediaImage)`
+  filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg)
+    brightness(93%) contrast(88%);
+
+  @media screen and (prefers-color-scheme: dark) {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
+`;
+
+const InstagramImage = styled(SocialMediaImage)`
+  @media screen and (prefers-color-scheme: dark) {
+    filter: invert(100%);
+  }
+`;
+
+const LinkedinImage = styled(SocialMediaImage)`
+  @media screen and (prefers-color-scheme: dark) {
+    filter: invert(100%);
+  }
+`;
+
+const TwitterImage = styled(SocialMediaImage)`
+  @media screen and (prefers-color-scheme: dark) {
+    filter: invert(100%);
+  }
+`;
+
 export default (props) => {
   const i = createIntl(useIntl());
   const LocalizedLink = createLink(props.lang);
@@ -95,92 +181,6 @@ export default (props) => {
   );
 
   const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
-
-  const Footer = styled.footer`
-    margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
-    text-align: center;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 4em ${(props) => props.theme.layout.marginDesktop} 2em;
-    }
-  `;
-
-  const Div = styled.div`
-    margin: 2em 0;
-  `;
-
-  const CompanyDiv = styled(Div)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2em 0;
-  `;
-
-  const LogoImage = styled(SchemedImage)`
-    margin: 1rem;
-  `;
-
-  const CompanyP = styled.p`
-    margin: 0;
-  `;
-
-  const ManagementP = styled.p`
-    margin: 2rem 0 0;
-  `;
-
-  const SocialMediaTitle = styled.h3`
-    margin: 2rem 0 0;
-
-    @media screen and ${(props) => props.theme.devices.phoneL} {
-      margin: 3rem 0 0;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 4rem 0 0;
-    }
-  `;
-
-  const SocialMediaDiv = styled(Div)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `;
-
-  const SocialMediaImage = styled(SchemedImage)`
-    margin: 1rem;
-  `;
-
-  const GithubImage = styled(SocialMediaImage)`
-    filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg)
-      brightness(93%) contrast(88%);
-
-    @media screen and (prefers-color-scheme: dark) {
-      filter: brightness(0) saturate(100%) invert(100%);
-    }
-  `;
-
-  const InstagramImage = styled(SocialMediaImage)`
-    @media screen and (prefers-color-scheme: dark) {
-      filter: invert(100%);
-    }
-  `;
-
-  const LinkedinImage = styled(SocialMediaImage)`
-    @media screen and (prefers-color-scheme: dark) {
-      filter: invert(100%);
-    }
-  `;
-
-  const TwitterImage = styled(SocialMediaImage)`
-    @media screen and (prefers-color-scheme: dark) {
-      filter: invert(100%);
-    }
-  `;
 
   return (
     <Footer>
