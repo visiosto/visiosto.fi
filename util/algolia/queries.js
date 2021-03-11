@@ -3,7 +3,7 @@
 
 const escapeStringRegexp = require('escape-string-regexp');
 
-const pagePath = `content`;
+const pagePath = 'content';
 
 const pageQuery = `{
   pages: allMarkdownRemark(
@@ -39,7 +39,7 @@ const queries = [
   {
     query: pageQuery,
     transformer: ({ data }) => data.pages.edges.map(pageToAlgoliaRecord),
-    settings: { attributesToSnippet: [`excerpt:20`] },
+    settings: { attributesToSnippet: ['excerpt:20'] },
   },
 ];
 
