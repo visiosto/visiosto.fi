@@ -9,15 +9,17 @@ import ThemeContext from './ThemeContext';
 const SchemedImage = (props) => {
   const { colorMode } = useContext(ThemeContext);
 
+  const { light, dark, alt, ...imageProps } = props;
+
   const createImage = (image) => () =>
-    props.alt ? (
-      <GatsbyImage image={image} alt={props.alt} {...props} />
+    alt ? (
+      <GatsbyImage image={image} alt={alt} {...imageProps} />
     ) : (
-      <GatsbyImage image={props.light} alt="" role="presentation" {...props} />
+      <GatsbyImage image={image} alt="" role="presentation" {...imageProps} />
     );
 
-  const LightImage = createImage(props.light);
-  const DarkImage = createImage(props.dark);
+  const LightImage = createImage(light);
+  const DarkImage = createImage(dark);
 
   return colorMode === 'dark' ? <DarkImage /> : <LightImage />;
 };
