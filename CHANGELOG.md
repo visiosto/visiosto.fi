@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Changed
+
+- Name of the project from `visiosto.github.io` to `visiosto.fi`.
+- Deployment of the site to external repository.
+
 ### Removed
 
 - Transitions from the navigation as they don't work.
