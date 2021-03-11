@@ -92,7 +92,7 @@ const Cover = (props) => {
         dark={imagesTopDark}
         style={{ ...props.style.top, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tablet }}
+        tablet={{ ...props.tabletStyle }}
       />
       <Inner>
         <header>
@@ -111,7 +111,7 @@ const Cover = (props) => {
         dark={imagesBottomDark}
         style={{ ...props.style.bottom, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tablet }}
+        tablet={{ ...props.tabletStyle }}
       />
     </Section>
   );
