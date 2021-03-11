@@ -69,6 +69,7 @@ export default (props) => {
   return (
     <Cover
       data={data}
+      rule={{ color: 'blue', mode: 3 }}
       tabletStyle={{ width: '400px', height: '400px' }}
       style={{ top: {}, bottom: { bottom: 0, right: 0 } }}
       {...props}

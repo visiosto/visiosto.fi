@@ -5,6 +5,7 @@ import React from 'react';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
+import Rule from './Rule';
 import SchemedImage from './SchemedImage';
 
 import theme from '../theme';
@@ -17,8 +18,27 @@ const Section = styled.section`
   margin: 0 0 2em;
 `;
 
+const TopRuleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    display: none;
+  }
+`;
+
+const Image = styled(SchemedImage)`
+  display: none;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    display: inline-block;
+    width: ${(props) => props.tablet.width};
+    height: ${(props) => props.tablet.height};
+  }
+`;
+
 const Inner = styled.div`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 0 ${(props) => props.theme.layout.marginPhone};
   padding: 0.5em 0 1em;
 
   @media screen and ${(props) => props.theme.devices.phoneL} {
@@ -42,13 +62,6 @@ const Content = styled.div`
   margin: 0 0 3rem;
   font-size: 1.1rem;
   text-align: center;
-`;
-
-const Image = styled(SchemedImage)`
-  @media screen and ${(props) => props.theme.devices.tablet} {
-    width: ${(props) => props.tablet.width};
-    height: ${(props) => props.tablet.height};
-  }
 `;
 
 const Cover = (props) => {
@@ -87,6 +100,9 @@ const Cover = (props) => {
 
   return (
     <Section>
+      <TopRuleWrapper>
+        <Rule color={props.rule.color} mode={props.rule.mode} />
+      </TopRuleWrapper>
       <Image
         alt=""
         light={imagesTopLight}
