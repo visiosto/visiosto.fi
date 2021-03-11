@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- `alt` tags to the image elements.
+
 ### Changed
 
 - Name of the project from `visiosto.github.io` to `visiosto.fi`.
