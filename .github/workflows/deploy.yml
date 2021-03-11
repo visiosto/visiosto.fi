@@ -39,7 +39,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: site/production
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: main
           allow_empty_commit: true
-          commit_message: Deploy v${{ steps.version.outputs.version }} of the site
+          external_repository: visiosto/visiosto.github.io
+          commit_message: "chore: deploy v${{ steps.version.outputs.version }} of the site"
