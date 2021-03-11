@@ -85,7 +85,7 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         indexName: process.env.ALGOLIA_INDEX_NAME,
         queries,
-        skipIndexing: process.env.CI,
+        skipIndexing: process.env.CI || !process.env.INDEX_SEARCH,
       },
     },
   ],
