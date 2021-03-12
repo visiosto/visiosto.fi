@@ -2,70 +2,13 @@
 // Licensed under the MIT License
 
 import React, { createRef, Component } from 'react';
-import { Link } from 'gatsby';
 import axios from 'axios';
-import { SearchIcon } from '@primer/octicons-react';
 import * as JsSearch from 'js-search';
-import styled from 'styled-components';
+
+import SearchForm from './SearchForm';
+import SearchResults from './SearchResults';
 
 const events = ['mousedown', 'touchstart'];
-
-const Icon = styled(SearchIcon)`
-  width: 1em;
-  height: auto;
-  margin: 0.3em;
-  color: var(--color-text);
-  pointer-events: none;
-`;
-
-const SearchResults = styled.div`
-  display: ${(props) => (props.show ? `block` : `none`)};
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 100%;
-  margin-top: 0.5em;
-
-  .inner-search-results {
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-    left: -50%;
-    max-height: 80vh;
-    width: 80vw;
-    max-width: 30em;
-    padding: 1em;
-    border-radius: 0.25em;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08),
-      0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06);
-    background: var(--color-background);
-  }
-
-  .hit-count {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .hits {
-    ul.hits-list {
-      list-style: none;
-      margin-left: 0;
-      padding-inline-start: 0;
-    }
-
-    li.hits-item {
-      margin-bottom: 1em;
-
-      a {
-        color: var(--color-link);
-
-        h4 {
-          margin-bottom: 0.2em;
-        }
-      }
-    }
-  }
-`;
 
 class SearchContainer extends Component {
   state = {
@@ -175,50 +118,21 @@ class SearchContainer extends Component {
   };
 
   render() {
-    const { i } = this.props;
     const { pageList, searchResults, searchQuery, hasFocus } = this.state;
     const queryResults = searchQuery === '' ? pageList : searchResults;
 
     return (
       <div ref={this.rootRef} className={this.props.className}>
-        <form className="search-form">
-          <input
-            className="search-input"
-            type="text"
-            placeholder={i('searchPlaceholder')}
-            aria-label={i('searchPlaceholder')}
-            onChange={this.searchData}
-            value={searchQuery}
-            onFocus={() => this.setState({ hasFocus: true })}
-          />
-          <Icon />
-        </form>
-        <SearchResults show={queryResults && searchQuery.length > 0 && hasFocus}>
-          <div className="inner-search-results">
-            {(() => {
-              if (queryResults && queryResults.length > 0) {
-                return (
-                  <div className="hit-count">
-                    {queryResults.length}{' '}
-                    {queryResults.length !== 1 ? i('searchResults') : i('searchResult')}
-                  </div>
-                );
-              }
-            })()}
-            <div className="hits">
-              <ul className="hits-list">
-                {queryResults.map((result) => (
-                  <li className="hits-item" key={result.id}>
-                    <Link to={result.slug}>
-                      <h4>{result.title}</h4>
-                    </Link>
-                    <div>{result.excerpt}</div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </SearchResults>
+        <SearchForm
+          searchData={this.searchData}
+          searchQuery={searchQuery}
+          onFocus={() => this.setState({ hasFocus: true })}
+        />
+        <SearchResults
+          queryResults={queryResults}
+          show={queryResults && searchQuery.length > 0 && hasFocus}
+          searchResults={searchResults}
+        />
       </div>
     );
   }

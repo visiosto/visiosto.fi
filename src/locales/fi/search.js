@@ -6,4 +6,5 @@ export default {
   searchPlaceholder: 'Haku',
   searchResult: 'tulos',
   searchResults: 'tulosta',
+  searchNotFound: 'Ei tuloksia',
 };

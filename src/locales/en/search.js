@@ -2,8 +2,8 @@
 // Licensed under the MIT License
 
 export default {
-  searchPagesTitle: 'Pages',
   searchPlaceholder: 'Search',
   searchResult: 'result',
   searchResults: 'results',
+  searchNotFound: 'Nothing found',
 };
