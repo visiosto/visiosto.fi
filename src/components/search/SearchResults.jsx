@@ -49,12 +49,10 @@ const SearchResults = (props) => {
     return (
       <Div show={show}>
         <Inner>
-          <div>
-            {i('searchNotFound')}
-          </div>
+          <div>{i('searchNotFound')}</div>
         </Inner>
       </Div>
-    )
+    );
   }
 };
 
