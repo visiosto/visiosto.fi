@@ -13,11 +13,11 @@ module.exports = (locale, filename, reporter) => {
     ? `${pageSlugs.blog[locale]}`
     : `${locale}/${pageSlugs.blog[locale]}`;
 
-  reporter.verbose('Set the blog path to', blogPath);
+  reporter.verbose(`Set the blog path to ${blogPath}`);
 
   const slug = `/${blogPath}/${blogSlugs[filename][locale]}`;
 
-  reporter.verbose('The slug path for the blog post page is', slug);
+  reporter.verbose(`The slug path for the blog post page is ${slug}`);
 
   return slug;
 };

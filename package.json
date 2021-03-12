@@ -4,7 +4,7 @@
   "version": "0.8.0-dev",
   "description": "The shared source for the website of Visiosto",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --verbose",
     "check-all": "npm-run-all format --parallel lint:js lint:css",
     "ci-check": "npm-run-all nit --parallel lint:js lint:css",
     "dev": "gatsby develop",

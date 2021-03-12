@@ -6,7 +6,9 @@ const createBlogPostSlug = require('./pages/createBlogPostSlug');
 const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
-const blogPostFilenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
+const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
+const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
+const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
 
 module.exports = ({ node, actions, getNode, reporter }) => {
   const { createNodeField } = actions;
@@ -29,12 +31,12 @@ module.exports = ({ node, actions, getNode, reporter }) => {
           // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
           // The date portion comes from the file name: <date>-<title>.md
           const match = blogPostFilenameRegex.exec(relativePath);
-          const [, , filename] = match;
+          const [, , , , , filename] = match;
 
-          [, , , locale] = match;
+          [, , , , , , locale] = match;
 
-          reporter.verbose('The filename is', filename);
-          reporter.verbose('The locale is', locale);
+          reporter.verbose(`The filename is ${filename}`);
+          reporter.verbose(`The locale is ${locale}`);
 
           slug = createBlogPostSlug(locale, filename, reporter);
 
@@ -42,13 +44,13 @@ module.exports = ({ node, actions, getNode, reporter }) => {
         } else if (relativePath.includes('author')) {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
-          const match = blogPostFilenameRegex.exec(relativePath);
+          const match = filenameRegex.exec(relativePath);
           const [, , filename] = match;
 
           [, , , locale] = match;
 
-          reporter.verbose('The filename is', filename);
-          reporter.verbose('The locale is', locale);
+          reporter.verbose(`The filename is ${filename}`);
+          reporter.verbose(`The locale is ${locale}`);
 
           slug = createAuthorSlug(locale, filename, reporter);
 
@@ -56,13 +58,13 @@ module.exports = ({ node, actions, getNode, reporter }) => {
         } else if (relativePath.includes('index')) {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
-          const match = blogPostFilenameRegex.exec(relativePath);
-          const [, , filename] = match;
+          const match = indexFilenameRegex.exec(relativePath);
+          const [, , order, filename] = match;
 
-          [, , , locale] = match;
+          [, , , , locale] = match;
 
-          reporter.verbose('The filename is', filename);
-          reporter.verbose('The locale is', locale);
+          reporter.verbose(`The filename is ${filename}`);
+          reporter.verbose(`The locale is ${locale}`);
 
           slug = `index/${filename}`;
 
@@ -76,15 +78,15 @@ module.exports = ({ node, actions, getNode, reporter }) => {
 
         [, , locale] = match;
 
-        reporter.verbose('The filename is', filename);
-        reporter.verbose('The locale is', locale);
+        reporter.verbose(`The filename is ${filename}`);
+        reporter.verbose(`The locale is ${locale}`);
 
         slug = createSlug(locale, filename, reporter);
 
         keySlug = `/${filename}`;
       }
 
-      reporter.verbose('The slug is', slug);
+      reporter.verbose(`The slug is ${slug}`);
 
       // Used to generate URL to view this content.
       createNodeField({
@@ -93,7 +95,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
         value: slug,
       });
 
-      reporter.verbose('The key slug is', keySlug);
+      reporter.verbose(`The key slug is ${keySlug}`);
 
       // Used to generate the key slug that is used to create localized links to the content.
       createNodeField({
@@ -101,6 +103,8 @@ module.exports = ({ node, actions, getNode, reporter }) => {
         name: 'keySlug',
         value: keySlug,
       });
+
+      reporter.verbose(`The final locale is ${locale}`);
 
       createNodeField({
         node,
