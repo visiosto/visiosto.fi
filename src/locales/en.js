@@ -10,7 +10,7 @@ import indexMessages from './en/index';
 import metaMessages from './en/meta';
 import navigationMessages from './en/navigation';
 import notFoundMessages from './en/not-found';
-import searchMessages from './fi/search';
+import searchMessages from './en/search';
 
 export const messages = {
   ...blogMessages,
