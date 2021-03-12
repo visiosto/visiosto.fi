@@ -3,8 +3,6 @@
 
 const path = require('path');
 
-const { addPathToSite } = require('../../sitePaths');
-
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
@@ -41,8 +39,6 @@ module.exports = async (actions, graphql, reporter) => {
     const { slug, locale } = node.fields;
 
     reporter.verbose('The path for the author page is', slug);
-
-    addPathToSite(slug);
 
     createPage({
       path: slug,

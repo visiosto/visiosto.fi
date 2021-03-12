@@ -8,7 +8,6 @@ const config = require('../../../gatsby-config');
 
 const pageSlugs = require('../../../src/data/page-slugs.json');
 const recursiveReadDirSync = require('../../recursiveReadDirSync');
-const { addPathToSite } = require('../../sitePaths');
 
 const pageKeySlashIndex = 1;
 
@@ -81,7 +80,6 @@ module.exports = async (actions, graphql, reporter) => {
         },
       };
 
-      addPathToSite(sitePath);
       createPage(pageOpts);
     });
   });
@@ -119,8 +117,6 @@ module.exports = async (actions, graphql, reporter) => {
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, locale } = node.fields;
-
-    addPathToSite(slug);
 
     createPage({
       path: slug,

@@ -3,8 +3,6 @@
 
 const path = require('path');
 
-const { addPathToSite } = require('../../sitePaths');
-
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
@@ -44,8 +42,6 @@ module.exports = async (actions, graphql, reporter) => {
     const { locale, slug } = node.fields;
 
     reporter.verbose('The path for the blog post page is', slug);
-
-    addPathToSite(slug);
 
     const momentJsLocale = locale === 'en' ? 'en-gb' : locale;
 
