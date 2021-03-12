@@ -147,7 +147,9 @@ module.exports = async ({ graphql, reporter }) => {
 
   const searchData = {};
 
-  query.data.site.siteMetadata.locales.forEach((locale) => (searchData[locale] = { pages: [] }));
+  query.data.site.siteMetadata.locales.forEach((locale) => {
+    searchData[locale] = { pages: [] };
+  });
 
   query.data.site.siteMetadata.locales.forEach((locale) =>
     searchData[locale].pages.push(
