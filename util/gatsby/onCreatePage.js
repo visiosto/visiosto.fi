@@ -1,8 +1,6 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const { addPathToSite } = require('../sitePaths');
-
 module.exports = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
 
@@ -17,6 +15,4 @@ module.exports = ({ page, actions }) => {
       createPage(page);
     }
   }
-
-  addPathToSite(page.path);
 };

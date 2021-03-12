@@ -12,7 +12,7 @@ module.exports = (locale, filename, reporter) => {
     ? `/${pageSlugs[filename][locale]}`
     : `/${locale}/${pageSlugs[filename][locale]}`;
 
-  reporter.verbose('Set the path to', path);
+  reporter.verbose(`Set the path to ${path}`);
 
   return path;
 };

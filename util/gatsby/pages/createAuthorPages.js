@@ -3,8 +3,6 @@
 
 const path = require('path');
 
-const { addPathToSite } = require('../../sitePaths');
-
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
@@ -40,9 +38,7 @@ module.exports = async (actions, graphql, reporter) => {
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, locale } = node.fields;
 
-    reporter.verbose('The path for the author page is', slug);
-
-    addPathToSite(slug);
+    reporter.verbose(`The path for the author page is ${slug}`);
 
     createPage({
       path: slug,

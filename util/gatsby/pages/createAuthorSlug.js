@@ -12,11 +12,11 @@ module.exports = (locale, filename, reporter) => {
     ? `${pageSlugs.author[locale]}`
     : `${locale}/${pageSlugs.author[locale]}`;
 
-  reporter.verbose('Set the author path to', authorPath);
+  reporter.verbose(`Set the author path to ${authorPath}`);
 
   const slug = `/${authorPath}/${filename}`;
 
-  reporter.verbose('The slug path for the author page is', slug);
+  reporter.verbose(`The slug path for the author page is ${slug}`);
 
   return slug;
 };

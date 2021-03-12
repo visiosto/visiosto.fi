@@ -10,6 +10,7 @@ import indexMessages from './en/index';
 import metaMessages from './en/meta';
 import navigationMessages from './en/navigation';
 import notFoundMessages from './en/not-found';
+import searchMessages from './fi/search';
 
 export const messages = {
   ...blogMessages,
@@ -19,6 +20,7 @@ export const messages = {
   ...metaMessages,
   ...navigationMessages,
   ...notFoundMessages,
+  ...searchMessages,
 };
 
 export const lang = defineMessages(messages);

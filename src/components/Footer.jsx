@@ -9,6 +9,7 @@ import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import SchemedImage from './SchemedImage';
+import Search from './search/Search';
 
 import createLink from './createLink';
 
@@ -184,6 +185,7 @@ export default (props) => {
 
   return (
     <Footer>
+      <Search {...props} />
       <CompanyDiv>
         <LogoImage
           alt={i('footerLogoAlt')}

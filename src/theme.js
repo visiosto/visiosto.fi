@@ -27,6 +27,10 @@ export const COLORS = {
     light: colors.black,
     dark: colors.white,
   },
+  'text-weak': {
+    light: colors.shade,
+    dark: colors.gray,
+  },
   'text-button': {
     light: colors.white,
     dark: colors.black,
