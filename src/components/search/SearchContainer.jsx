@@ -80,7 +80,9 @@ class SearchContainer extends Component {
 
   constructor(props) {
     super(props);
+
     this.rootRef = createRef();
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   /**
@@ -105,19 +107,19 @@ class SearchContainer extends Component {
         console.log('====================================');
       });
     events.forEach((event) => {
-      document.addEventListener(event, this.onClickOutside);
+      document.addEventListener(event, this.handleClickOutside);
     });
   }
 
   componentDidUpdate() {
     events.forEach((event) => {
-      document.addEventListener(event, this.onClickOutside);
+      document.addEventListener(event, this.handleClickOutside);
     });
   }
 
   componentWillUnmount() {
     events.forEach((event) => {
-      document.removeEventListener(event, this.onClickOutside);
+      document.removeEventListener(event, this.handleClickOutside);
     });
   }
 
@@ -166,10 +168,8 @@ class SearchContainer extends Component {
     e.preventDefault();
   };
 
-  isOutside = (element) => !this.rootRef.current || !this.rootRef.current.contains(element);
-
-  onClickOutside = (event) => {
-    if (this.isOutside(event.target)) {
+  handleClickOutside = (event) => {
+    if (this.rootRef && !this.rootRef.current.contains(event.target)) {
       this.setState({ hasFocus: false });
     }
   };
@@ -179,10 +179,8 @@ class SearchContainer extends Component {
     const { pageList, searchResults, searchQuery, hasFocus } = this.state;
     const queryResults = searchQuery === '' ? pageList : searchResults;
 
-    console.log(pageList);
-
     return (
-      <div className={this.props.className}>
+      <div ref={this.rootRef} className={this.props.className}>
         <form className="search-form">
           <input
             className="search-input"
