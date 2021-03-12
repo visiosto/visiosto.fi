@@ -17,7 +17,7 @@ module.exports = async (actions, graphql, reporter) => {
 
   const defaultLanguage = config.siteMetadata.defaultLocale;
 
-  reporter.verbose('Default language is set to', defaultLanguage);
+  reporter.verbose(`Default language is set to ${defaultLanguage}`);
 
   const rootPagesDir = path.join(__dirname, '..', '..', '..', 'src', 'templates');
   const langRootDir = path.join(__dirname, '..', '..', '..', 'src', 'locales');
@@ -33,16 +33,16 @@ module.exports = async (actions, graphql, reporter) => {
     .filter((f) => !f.includes('blog-post.jsx'))
     .filter((f) => !f.includes('markdown-page.jsx'));
 
-  reporter.verbose('The languages found are', langs);
+  reporter.verbose(`The languages found are ${langs}`);
 
   files.forEach((f) => {
     const fullpath = path.join(__dirname, '..', '..', '..', '..', '..', f);
 
-    reporter.verbose('Processing file', fullpath);
+    reporter.verbose(`Processing file ${fullpath}`);
 
     let originalSitePath = path.relative(rootPagesDir, fullpath).replace(/.jsx$/g, '');
 
-    reporter.verbose('The original path is', originalSitePath);
+    reporter.verbose(`The original path is ${originalSitePath}`);
 
     // Remove the index files
     if (originalSitePath.endsWith('index')) {
@@ -68,7 +68,7 @@ module.exports = async (actions, graphql, reporter) => {
         return lang === defaultLanguage ? `/${originalSitePath}` : `/${lang}/${originalSitePath}`;
       })();
 
-      reporter.verbose('The new path for the page is', sitePath);
+      reporter.verbose(`The new path for the page is ${sitePath}`);
 
       const pageOpts = {
         path: sitePath,

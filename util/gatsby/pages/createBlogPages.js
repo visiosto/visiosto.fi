@@ -41,11 +41,11 @@ module.exports = async (actions, graphql, reporter) => {
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { locale, slug } = node.fields;
 
-    reporter.verbose('The path for the blog post page is', slug);
+    reporter.verbose(`The path for the blog post page is ${slug}`);
 
     const momentJsLocale = locale === 'en' ? 'en-gb' : locale;
 
-    reporter.verbose('The Moment.js locale to', momentJsLocale);
+    reporter.verbose(`The Moment.js locale to ${momentJsLocale}`);
 
     const pageOpts = {
       path: slug,

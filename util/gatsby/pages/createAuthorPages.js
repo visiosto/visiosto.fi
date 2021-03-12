@@ -38,7 +38,7 @@ module.exports = async (actions, graphql, reporter) => {
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, locale } = node.fields;
 
-    reporter.verbose('The path for the author page is', slug);
+    reporter.verbose(`The path for the author page is ${slug}`);
 
     createPage({
       path: slug,
