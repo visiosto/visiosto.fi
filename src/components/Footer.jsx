@@ -9,15 +9,11 @@ import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import SchemedImage from './SchemedImage';
-import Search from './Search';
+import Search from './search/Search';
 
 import createLink from './createLink';
 
 import createIntl from '../utils/createIntl';
-
-// const searchIndices = (i) => [
-//   { name: process.env.ALGOLIA_INDEX_NAME, title: i('searchPagesTitle') },
-// ];
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
@@ -189,7 +185,7 @@ export default (props) => {
 
   return (
     <Footer>
-      <Search />
+      <Search {...props} />
       <CompanyDiv>
         <LogoImage
           alt={i('footerLogoAlt')}

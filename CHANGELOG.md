@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Search box to the site.
+- Automatic indexing of the pages of the site on build.
 
 ## [0.7.2] - 2021-03-11
 
