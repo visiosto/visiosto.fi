@@ -59,7 +59,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
           const match = indexFilenameRegex.exec(relativePath);
-          const [, , order, filename] = match;
+          const [, , , filename] = match;
 
           [, , , , locale] = match;
 
