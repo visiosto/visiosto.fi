@@ -122,7 +122,14 @@ class SearchContainer extends Component {
     const queryResults = searchQuery === '' ? pageList : searchResults;
 
     return (
-      <div ref={this.rootRef} className={this.props.className}>
+      <div
+        ref={this.rootRef}
+        className={
+          hasFocus || searchQuery.length > 0
+            ? `${this.props.className} focus`
+            : this.props.className
+        }
+      >
         <SearchForm
           searchData={this.searchData}
           searchQuery={searchQuery}
