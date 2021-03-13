@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Added
+
+- Hovering effect for the search box only when it has focus or text.
+
 ## [0.8.2] - 2021-03-12
 
 ### Fixed
