@@ -16,8 +16,7 @@ const Container = styled(SearchContainer)`
   transition: box-shadow 75ms ease-in;
 
   &.focus {
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08),
-      0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--color-box-shadow);
   }
 `;
 
