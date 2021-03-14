@@ -30,6 +30,7 @@ module.exports = async (actions, graphql, reporter) => {
   const files = recursiveReadDirSync(rootPagesDir)
     .filter((f) => !f.startsWith('.'))
     .filter((f) => !f.includes('.scss'))
+    .filter((f) => !f.includes('author.jsx'))
     .filter((f) => !f.includes('blog-post.jsx'))
     .filter((f) => !f.includes('markdown-page.jsx'));
 
@@ -69,6 +70,7 @@ module.exports = async (actions, graphql, reporter) => {
       })();
 
       reporter.verbose(`The new path for the page is ${sitePath}`);
+      reporter.verbose(`The page key is ${originalSitePath}`);
 
       const pageOpts = {
         path: sitePath,
@@ -117,6 +119,9 @@ module.exports = async (actions, graphql, reporter) => {
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, locale } = node.fields;
+
+    reporter.verbose(`Creating page ${slug}`);
+    reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
 
     createPage({
       path: slug,
