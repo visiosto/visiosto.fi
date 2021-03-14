@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import AuthorName from '../components/AuthorName';
+import Button from '../components/Button';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
@@ -70,6 +71,22 @@ const PostAuthor = styled.span`
 
 const PostContent = styled.div``;
 
+const Center = styled.div`
+  text-align: center;
+`;
+
+const Separator = styled.div`
+  margin: 3em 0;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 4em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 5em 0;
+  }
+`;
+
 const Page = (props) => {
   const i = createIntl(useIntl());
 
@@ -97,7 +114,12 @@ const Page = (props) => {
             <PostContent>
               <p>{post.excerpt}</p>
             </PostContent>
-            <Rule color="blue" mode={2} />
+            <Center>
+              <Button to={post.fields.keySlug} lang={props.pageContext.lang}>{i('blogReadMore')}</Button>
+            </Center>
+            <Separator>
+              <Rule color="blue" mode={2} />
+            </Separator>
           </Post>
         );
       })}

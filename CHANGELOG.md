@@ -12,6 +12,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Messages when the search index is still loading and when the loading has failed.
 - Information that the site is made by Visiosto to the footer.
 - Company hashtag to the footer of the site.
+- ‘Read more’ button to blog posts.
+- More space between blog posts in the blog page.
 
 ## [0.8.2] - 2021-03-12
 

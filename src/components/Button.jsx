@@ -2,8 +2,9 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
+
+import LocalizedLink from './link/LocalizedLink';
 
 const Span = styled.span`
   display: inline-flex;
@@ -27,12 +28,14 @@ const Span = styled.span`
   }
 `;
 
-export default (props) => {
+const Button = (props) => {
   return (
     <div>
-      <Link to={props.to}>
+      <LocalizedLink to={props.to} locale={props.lang}>
         <Span>{props.children}</Span>
-      </Link>
+      </LocalizedLink>
     </div>
   );
 };
+
+export default Button;
