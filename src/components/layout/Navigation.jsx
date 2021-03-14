@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import createAnchorLink from '../link/createAnchorLink';
-import createLink from '../link/createLink';
+import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
+import LocalizedLink from '../link/LocalizedLink';
 
 import createIntl from '../../utils/createIntl';
 
@@ -109,7 +109,7 @@ const Li = styled.li`
   }
 `;
 
-const createStyledLink = (lang) => styled(createLink(lang))`
+const Link = styled(LocalizedLink)`
   position: relative;
   margin: 1rem auto 0;
   border-radius: ${(props) => props.theme.borders.commonRadius};
@@ -132,7 +132,7 @@ const createStyledLink = (lang) => styled(createLink(lang))`
   }
 `;
 
-const createStyledAnchorLink = (lang) => styled(createAnchorLink(lang))`
+const AnchorLink = styled(LocalizedAnchorLink)`
   position: relative;
   margin: 1rem auto 0;
   border-radius: ${(props) => props.theme.borders.commonRadius};
@@ -157,8 +157,6 @@ const createStyledAnchorLink = (lang) => styled(createAnchorLink(lang))`
 
 export default (props) => {
   const i = createIntl(useIntl());
-  const Link = createStyledLink(props.lang);
-  const AnchorLink = createStyledAnchorLink(props.lang);
 
   const [toggled, setToggled] = useState(false);
 
@@ -176,16 +174,24 @@ export default (props) => {
       </Toggle>
       <Ul id="primary-menu" toggled={toggled}>
         <Li>
-          <Link to="/">{i('indexTitle')}</Link>
+          <Link to="/" locale={props.lang}>
+            {i('indexTitle')}
+          </Link>
         </Li>
         <Li>
-          <AnchorLink to="/#portfolio">{i('indexPortfolioTitle')}</AnchorLink>
+          <AnchorLink to="/#portfolio" locale={props.lang}>
+            {i('indexPortfolioTitle')}
+          </AnchorLink>
         </Li>
         <Li>
-          <AnchorLink to="/#contact">{i('indexContactTitle')}</AnchorLink>
+          <AnchorLink to="/#contact" locale={props.lang}>
+            {i('indexContactTitle')}
+          </AnchorLink>
         </Li>
         <Li>
-          <Link to="/blog">{i('blogTitle')}</Link>
+          <Link to="/blog" locale={props.lang}>
+            {i('blogTitle')}
+          </Link>
         </Li>
       </Ul>
     </Nav>

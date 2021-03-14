@@ -8,10 +8,9 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
+import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
 import Search from '../search/Search';
-
-import createLink from '../link/createLink';
 
 import createIntl from '../../utils/createIntl';
 
@@ -103,7 +102,6 @@ const TwitterImage = styled(SocialMediaImage)`
 
 export default (props) => {
   const i = createIntl(useIntl());
-  const LocalizedLink = createLink(props.lang);
 
   const data = useStaticQuery(
     graphql`
@@ -203,7 +201,9 @@ export default (props) => {
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
         <ManagementP>
-          <LocalizedLink to="/management">{i('footerManagement')}</LocalizedLink>
+          <LocalizedLink to="/management" locale={props.lang}>
+            {i('footerManagement')}
+          </LocalizedLink>
         </ManagementP>
       </CompanyDiv>
       {(() => {
@@ -265,7 +265,11 @@ export default (props) => {
       <Div>
         <p>
           {i('footerMadeBy', {
-            a: (...chunk) => <LocalizedLink to="/">{chunk}</LocalizedLink>,
+            a: (...chunk) => (
+              <LocalizedLink to="/" locale={props.lang}>
+                {chunk}
+              </LocalizedLink>
+            ),
           })}
         </p>
       </Div>

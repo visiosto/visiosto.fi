@@ -2,23 +2,43 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import styled from 'styled-components';
 
-import Button from '../Button';
+import LocaleLink from '../link/LocaleLink';
 
-import createLanguageLink from '../link/createLanguageLink';
+const Span = styled.span`
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border-style: none;
+  border-radius: 3rem;
+  border: 3px solid transparent;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+  background-clip: padding-box;
+  background-color: var(--color-link);
+  color: var(--color-text-button);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-link-hover);
+  }
+`;
 
 export default (props) => {
-  const LanguageLink = createLanguageLink(props.pageKey);
-
+  console.log('Page key is', props.pageKey);
   return (
     <>
       {(() => {
         if (props.lang !== 'fi') {
           return (
             <>
-              <Button to="fi" link={LanguageLink}>
-                Suomeksi
-              </Button>
+              <LocaleLink to="fi" pageKey={props.pageKey}>
+                <Span>Suomeksi</Span>
+              </LocaleLink>
               <br />
             </>
           );
@@ -30,9 +50,10 @@ export default (props) => {
         if (props.lang !== 'en') {
           return (
             <>
-              <Button to="en" link={LanguageLink}>
-                In English
-              </Button>
+              <LocaleLink to="en" pageKey={props.pageKey}>
+                <Span>In English</Span>
+              </LocaleLink>
+              <br />
             </>
           );
         }

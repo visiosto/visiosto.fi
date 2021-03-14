@@ -9,10 +9,9 @@ import { useIntl } from 'react-intl';
 import AuthorName from '../components/AuthorName';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
+import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
-
-import createLink from '../components/link/createLink';
 
 import createIntl from '../utils/createIntl';
 
@@ -35,7 +34,7 @@ const H2 = styled.h2`
   font-size: 2rem;
 `;
 
-const createStyledLink = (lang) => styled(createLink(lang))`
+const Link = styled(LocalizedLink)`
   text-decoration: none;
   color: var(--color-text);
 
@@ -73,7 +72,6 @@ const PostContent = styled.div``;
 
 const Page = (props) => {
   const i = createIntl(useIntl());
-  const Link = createStyledLink(props.pageContext.lang);
 
   const { edges: posts } = props.data.allMarkdownRemark;
 
@@ -85,12 +83,14 @@ const Page = (props) => {
           <Post>
             <PostHeader>
               <H2>
-                <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
+                <Link to={post.fields.keySlug} locale={props.pageContext.lang}>
+                  {post.frontmatter.title}
+                </Link>
               </H2>
               <PostMeta>
                 <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
                 <PostAuthor>
-                  <AuthorName name={post.frontmatter.author} lang={props.pageContext.lang} />
+                  <AuthorName name={post.frontmatter.author} locale={props.pageContext.lang} />
                 </PostAuthor>
               </PostMeta>
             </PostHeader>

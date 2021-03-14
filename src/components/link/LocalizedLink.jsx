@@ -43,26 +43,26 @@ const createLocalizedSlug = (locale, slug) => {
   return localized;
 };
 
-export default (currentLocale) => {
-  return (linkProps) => {
-    if (linkProps.to.startsWith('/blog/')) {
-      const page = createLocalizedSlug(currentLocale, '/blog');
+const LocalizedLink = (props) => {
+  if (props.to.startsWith('/blog/')) {
+    const page = createLocalizedSlug(props.locale, '/blog');
 
-      let { to } = linkProps;
+    let { to } = props;
 
-      const blogPostFilenameRegex = /(.+)\/(.+)/;
+    const blogPostFilenameRegex = /(.+)\/(.+)/;
 
-      const filename = blogPostFilenameRegex.exec(linkProps.to.substring(pageKeySlashIndex))[2];
+    const filename = blogPostFilenameRegex.exec(props.to.substring(pageKeySlashIndex))[2];
 
-      const linkPath = `${page}/${blogSlugs[filename][currentLocale]}`;
+    const linkPath = `${page}/${blogSlugs[filename][props.locale]}`;
 
-      if (filename in blogSlugs && currentLocale in blogSlugs[filename]) {
-        to = linkPath;
-      }
-
-      return <Link {...linkProps} to={to} />;
-    } else {
-      return <Link {...linkProps} to={createLocalizedSlug(currentLocale, linkProps.to)} />;
+    if (filename in blogSlugs && props.locale in blogSlugs[filename]) {
+      to = linkPath;
     }
-  };
+
+    return <Link {...props} to={to} />;
+  } else {
+    return <Link {...props} to={createLocalizedSlug(props.locale, props.to)} />;
+  }
 };
+
+export default LocalizedLink;

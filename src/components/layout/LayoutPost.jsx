@@ -64,7 +64,7 @@ export default (props) => {
             <PostMeta>
               <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
               <PostAuthor>
-                <AuthorName name={props.frontmatter.author} lang={props.lang} />
+                <AuthorName name={props.frontmatter.author} locale={props.lang} />
               </PostAuthor>
             </PostMeta>
           </header>

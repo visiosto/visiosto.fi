@@ -6,7 +6,7 @@ import React from 'react';
 import authorNames from '../../data/author-names.json';
 
 const AuthorName = (props) => {
-  const localizedName = authorNames[props.name][props.lang];
+  const localizedName = authorNames[props.name][props.locale];
 
   return <>{localizedName}</>;
 };

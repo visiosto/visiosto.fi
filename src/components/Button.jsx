@@ -2,12 +2,8 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
-
-const createButtonLink = (linkElement) => (linkElement ? styled(linkElement) : styled(Link))`
-    text-decoration: none;
-  `;
+import styled from 'styled-components';
 
 const Span = styled.span`
   display: inline-flex;
@@ -32,13 +28,11 @@ const Span = styled.span`
 `;
 
 export default (props) => {
-  const ButtonLink = createButtonLink(props.link);
-
   return (
     <div>
-      <ButtonLink to={props.to}>
+      <Link to={props.to}>
         <Span>{props.children}</Span>
-      </ButtonLink>
+      </Link>
     </div>
   );
 };

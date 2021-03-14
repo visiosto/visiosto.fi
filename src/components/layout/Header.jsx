@@ -7,10 +7,9 @@ import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import SchemedImage from '../SchemedImage';
+import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
-
-import createLink from '../link/createLink';
+import SchemedImage from '../SchemedImage';
 
 import createIntl from '../../utils/createIntl';
 
@@ -56,7 +55,6 @@ const Image = styled(SchemedImage)`
 
 export default (props) => {
   const i = createIntl(useIntl());
-  const LocalizedLink = createLink(props.lang);
 
   const { site, logoPhoneSLight, logoPhoneSDark, logoTabletLight, logoTabletDark } = useStaticQuery(
     graphql`
@@ -109,7 +107,7 @@ export default (props) => {
     <Header>
       <SiteBranding>
         <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
-        <LocalizedLink to="/">
+        <LocalizedLink to="/" locale={props.lang}>
           <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>

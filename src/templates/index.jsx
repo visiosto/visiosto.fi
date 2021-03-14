@@ -23,8 +23,6 @@ import LayoutIndex from '../components/layout/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
 
-import createLink from '../components/link/createLink';
-
 import createIntl from '../utils/createIntl';
 
 const H2 = styled.h2`

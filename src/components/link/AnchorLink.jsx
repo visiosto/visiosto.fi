@@ -11,7 +11,7 @@ import handleLinkClick from '../../utils/anchor-link/handleLinkClick';
 import stripHashedLocation from '../../utils/anchor-link/stripHashedLocation';
 import handleStrippedLinkClick from '../../utils/anchor-link/handleStrippedLinkClick';
 
-export default (props) => {
+const AnchorLink = (props) => {
   const onClickHandler = props.stripHash ? handleStrippedLinkClick : handleLinkClick;
   const linkProps = {
     ...props.gatsbyLinkProps,
@@ -35,3 +35,5 @@ export default (props) => {
 
   return <Link {...linkProps}>{props.children ? props.children : props.title}</Link>;
 };
+
+export default AnchorLink;

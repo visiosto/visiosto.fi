@@ -40,21 +40,22 @@ const createLocalizedSlug = (toLang, slug) => {
   return localized;
 };
 
-export default (pageKey) => {
-  return (linkProps) => {
-    const toLang = linkProps.to;
-    if (pageKey.startsWith('/blog/')) {
-      const page = createLocalizedSlug(toLang, 'blog');
+const LocaleLink = (props) => {
+  const toLang = props.to;
+  console.log('The page key for the locale link is', props.pageKey);
+  if (props.pageKey.startsWith('/blog/')) {
+    const page = createLocalizedSlug(toLang, 'blog');
 
-      const blogPostFilenameRegex = /(.+)\/(.+)/;
+    const blogPostFilenameRegex = /(.+)\/(.+)/;
 
-      const filename = blogPostFilenameRegex.exec(pageKey.substring(pageKeySlashIndex))[2];
+    const filename = blogPostFilenameRegex.exec(props.pageKey.substring(pageKeySlashIndex))[2];
 
-      const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
+    const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
 
-      return <Link {...linkProps} to={linkPath} />;
-    } else {
-      return <Link {...linkProps} to={createLocalizedSlug(toLang, pageKey)} />;
-    }
-  };
+    return <Link {...props} to={linkPath} />;
+  } else {
+    return <Link {...props} to={createLocalizedSlug(toLang, props.pageKey)} />;
+  }
 };
+
+export default LocaleLink;
