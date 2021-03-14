@@ -28,12 +28,11 @@ const CategoryName = (props) => {
   const localizedName = categories[props.name][props.locale];
 
   // TODO Add link
-  return <>{localizedName}</>;
-  // return (
-  //   <Link to={`/author/${props.name}`} locale={props.locale}>
-  //     {localizedName}
-  //   </Link>
-  // );
+  return (
+    <Link to={`/category/${props.name}`} locale={props.locale}>
+      {localizedName}
+    </Link>
+  );
 };
 
 export default CategoryName;

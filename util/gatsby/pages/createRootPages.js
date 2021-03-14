@@ -32,6 +32,7 @@ module.exports = async (actions, graphql, reporter) => {
     .filter((f) => !f.includes('.scss'))
     .filter((f) => !f.includes('author.jsx'))
     .filter((f) => !f.includes('blog-post.jsx'))
+    .filter((f) => !f.includes('category.jsx'))
     .filter((f) => !f.includes('markdown-page.jsx'));
 
   reporter.verbose(`The languages found are ${langs}`);
