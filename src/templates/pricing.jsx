@@ -6,13 +6,19 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import AnchorButton from '../components/AnchorButton';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import PriceList from '../components/PriceList';
+import PriceList, { createLocalizationKey } from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
+
+const Buttons = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Separator = styled.div`
   display: flex;
@@ -35,10 +41,26 @@ const Page = (props) => {
 
   return (
     <Layout title={i('pricingTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <Buttons>
+        {lists.map(({ node: list }) => {
+          return (
+            <AnchorButton
+              key={list.listType}
+              to={`/${props.pageContext.key}#${list.listType}`}
+              locale={props.pageContext.lang}
+            >
+              {i(`${createLocalizationKey(list.listType)}Title`)}
+            </AnchorButton>
+          );
+        })}
+      </Buttons>
+      <Separator>
+        <Rule color="peach" mode={3} />
+      </Separator>
       {lists.map(({ node: list }) => {
         return (
           <>
-            <PriceList key={list.listType} list={list} pageContext={props.pageContext} />
+            <PriceList key={list.listType} list={list} jsLocale={props.pageContext.jsLocale} />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
@@ -65,8 +87,22 @@ export const pageQuery = graphql`
       edges {
         node {
           listType
-          server
-          domain
+          prices {
+            name
+            price
+            rate
+          }
+          additionalWork {
+            name
+            price
+            rate
+          }
+          additionalFees {
+            name
+            price
+            rate
+            extra
+          }
         }
       }
     }

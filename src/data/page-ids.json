@@ -12,5 +12,15 @@
       "fi": "palvelut",
       "en": "services"
     }
+  },
+  "pricing": {
+    "business": {
+      "fi": "yrityshinnasto",
+      "en": "business-prices"
+    },
+    "consumer": {
+      "fi": "kuluttajahinnasto",
+      "en": "consumer-prices"
+    }
   }
 }
