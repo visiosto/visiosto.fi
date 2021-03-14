@@ -8,7 +8,7 @@ export default {
   footerVatNumber: 'VAT number:',
   footerManagement: 'Management',
   footerSocialMediaTitle: 'Social Media',
-  footerHashtag: '&num;linssimmeläpi',
+  footerHashtag: '&num;throughourlens',
   footerFacebookAlt: 'Facebook Logo',
   footerGithubAlt: 'GitHub Logo',
   footerInstagramAlt: 'Instagram Logo',
