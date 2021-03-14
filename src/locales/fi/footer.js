@@ -15,4 +15,5 @@ export default {
   footerTwitterAlt: 'Twitterin logo',
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
+  footerMadeBy: 'Tämä sivusto on tehty <a>Visioston</a> linssin läpi',
 };

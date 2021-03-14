@@ -253,8 +253,19 @@ export default (props) => {
           />
         </a>
       </SocialMediaDiv>
-      <Div dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />
-      <Div dangerouslySetInnerHTML={{ __html: i('footerCopyright') }} />
+      <Div>
+        <p dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />
+      </Div>
+      <Div>
+        <p dangerouslySetInnerHTML={{ __html: i('footerCopyright') }} />
+      </Div>
+      <Div>
+        <p>
+          {i('footerMadeBy', {
+            a: (...chunk) => <LocalizedLink to="/">{chunk}</LocalizedLink>,
+          })}
+        </p>
+      </Div>
     </Footer>
   );
 };
