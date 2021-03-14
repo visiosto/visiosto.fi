@@ -1,6 +1,6 @@
 ---
 title: 'Visiosto juhlii ensimmäistä syntymäpäiväänsä'
-author: 'Gurmann Saini'
+author: 'gurmann-saini'
 date: '2020-07-01T21:08:22+03:00'
 ---
 

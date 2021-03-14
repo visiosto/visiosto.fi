@@ -1,6 +1,6 @@
 ---
 title: 'The Renewed Website of Visiosto Combines Fresh Design with Modern Features'
-author: 'Anssi Moilanen'
+author: 'anssi-moilanen'
 date: '2020-07-17T21:59:59+03:00'
 ---
 

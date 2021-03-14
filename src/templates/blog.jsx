@@ -2,10 +2,11 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import AuthorName from '../components/AuthorName';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import Rule from '../components/Rule';
@@ -88,7 +89,9 @@ const Page = (props) => {
               </H2>
               <PostMeta>
                 <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
-                <PostAuthor>{post.frontmatter.author}</PostAuthor>
+                <PostAuthor>
+                  <AuthorName name={post.frontmatter.author} lang={props.pageContext.lang} />
+                </PostAuthor>
               </PostMeta>
             </PostHeader>
             <PostContent>

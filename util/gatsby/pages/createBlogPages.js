@@ -17,6 +17,7 @@ module.exports = async (actions, graphql, reporter) => {
           edges {
             node {
               frontmatter {
+                author
                 date
               }
               fields {

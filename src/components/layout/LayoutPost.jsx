@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import AuthorName from '../AuthorName';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
@@ -62,7 +63,9 @@ export default (props) => {
             <PageTitle>{props.title}</PageTitle>
             <PostMeta>
               <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
-              <PostAuthor>{props.frontmatter.author}</PostAuthor>
+              <PostAuthor>
+                <AuthorName name={props.frontmatter.author} lang={props.lang} />
+              </PostAuthor>
             </PostMeta>
           </header>
           <div>{props.children}</div>

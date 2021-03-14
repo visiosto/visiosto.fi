@@ -1,6 +1,6 @@
 ---
 title: 'Visioston uudistettu verkkosivusto yhdistää raikkaan suunnittelun moderneihin ominaisuuksiin'
-author: 'Anssi Moilanen'
+author: 'anssi-moilanen'
 date: '2020-07-17T21:59:59+03:00'
 ---
 
