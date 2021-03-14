@@ -6,6 +6,10 @@ import styled from 'styled-components';
 
 import LocaleLink from '../link/LocaleLink';
 
+const Link = styled(LocaleLink)`
+  text-decoration: none;
+`;
+
 const Span = styled.span`
   display: inline-flex;
   align-items: center;
@@ -36,9 +40,9 @@ export default (props) => {
         if (props.lang !== 'fi') {
           return (
             <>
-              <LocaleLink to="fi" pageKey={props.pageKey}>
+              <Link to="fi" pageKey={props.pageKey}>
                 <Span>Suomeksi</Span>
-              </LocaleLink>
+              </Link>
               <br />
             </>
           );
@@ -50,9 +54,9 @@ export default (props) => {
         if (props.lang !== 'en') {
           return (
             <>
-              <LocaleLink to="en" pageKey={props.pageKey}>
+              <Link to="en" pageKey={props.pageKey}>
                 <Span>In English</Span>
-              </LocaleLink>
+              </Link>
               <br />
             </>
           );

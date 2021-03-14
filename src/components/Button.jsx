@@ -6,6 +6,10 @@ import styled from 'styled-components';
 
 import LocalizedLink from './link/LocalizedLink';
 
+const Link = styled(LocalizedLink)`
+  text-decoration: none;
+`;
+
 const Span = styled.span`
   display: inline-flex;
   align-items: center;
@@ -31,9 +35,9 @@ const Span = styled.span`
 const Button = (props) => {
   return (
     <div>
-      <LocalizedLink to={props.to} locale={props.lang}>
+      <Link to={props.to} locale={props.lang}>
         <Span>{props.children}</Span>
-      </LocalizedLink>
+      </Link>
     </div>
   );
 };
