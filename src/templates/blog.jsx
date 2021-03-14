@@ -94,7 +94,9 @@ const Page = (props) => {
 
   return (
     <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
-      <Rule color="peach" mode={2} />
+      <Separator>
+        <Rule color="peach" mode={2} />
+      </Separator>
       {posts.map(({ node: post }) => {
         return (
           <Post>
