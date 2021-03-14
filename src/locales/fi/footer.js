@@ -8,6 +8,7 @@ export default {
   footerVatNumber: 'ALV-numero:',
   footerManagement: 'Hallinto',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',
+  footerHashtag: '&num;linssimmeläpi',
   footerFacebookAlt: 'Facebookin logo',
   footerGithubAlt: 'Githubin logo',
   footerInstagramAlt: 'Instagramin logo',

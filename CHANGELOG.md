@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Hovering effect for the search box only when it has focus or text.
 - Messages when the search index is still loading and when the loading has failed.
 - Information that the site is made by Visiosto to the footer.
+- Company hashtag to the footer of the site.
 
 ## [0.8.2] - 2021-03-12
 

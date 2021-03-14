@@ -216,6 +216,9 @@ export default (props) => {
         }
       })()}
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
+      <Div>
+        <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />
+      </Div>
       <SocialMediaDiv>
         <a href={socialMedia.instagram} rel="noopener noreferrer" target="_blank">
           <InstagramImage
