@@ -10,5 +10,9 @@
   "pricing": {
     "fi": "hinnasto",
     "en": "pricing"
+  },
+  "server-domain-service-terms": {
+    "fi": "palvelin-verkkotunnus-palvelusopimus",
+    "en": "server-domain-service-terms"
   }
 }
