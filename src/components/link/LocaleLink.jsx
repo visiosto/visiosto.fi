@@ -4,7 +4,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import {AUTHOR_SLUG, BLOG_SLUG} from '../../constants';
+import { AUTHOR_SLUG, BLOG_SLUG } from '../../constants';
 
 import blogSlugs from '../../../data/blog-slugs.json';
 import markdownPageSlugs from '../../../data/markdown-page-slugs.json';

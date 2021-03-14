@@ -27,7 +27,11 @@ const Link = styled(LocalizedLink)`
 const AuthorName = (props) => {
   const localizedName = authorNames[props.name][props.locale];
 
-  return <Link to={`/author/${props.name}`} locale={props.locale}>{localizedName}</Link>;
+  return (
+    <Link to={`/author/${props.name}`} locale={props.locale}>
+      {localizedName}
+    </Link>
+  );
 };
 
 export default AuthorName;

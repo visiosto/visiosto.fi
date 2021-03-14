@@ -115,7 +115,9 @@ const Page = (props) => {
               <p>{post.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.fields.keySlug} lang={props.pageContext.lang}>{i('blogReadMore')}</Button>
+              <Button to={post.fields.keySlug} lang={props.pageContext.lang}>
+                {i('blogReadMore')}
+              </Button>
             </Center>
             <Separator>
               <Rule color="blue" mode={2} />
