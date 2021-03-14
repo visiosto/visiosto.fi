@@ -3,13 +3,16 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 
 import AuthorName from '../AuthorName';
+import CategoryName from '../CategoryName';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
+import createIntl from '../../utils/createIntl';
 import listenColorScheme from '../../utils/listenColorScheme';
 
 const PageTitle = styled.h1`
@@ -49,8 +52,15 @@ const PostAuthor = styled.span`
   display: block;
 `;
 
+const PostCategory = styled.span`
+  clear: both;
+  display: block;
+`;
+
 export default (props) => {
   listenColorScheme();
+
+  const i = createIntl(useIntl());
 
   return (
     <>
@@ -66,6 +76,10 @@ export default (props) => {
               <PostAuthor>
                 <AuthorName name={props.frontmatter.author} locale={props.lang} />
               </PostAuthor>
+              <PostCategory>
+                {i('blogCategory')}{' '}
+                <CategoryName name={props.frontmatter.category} locale={props.lang} />
+              </PostCategory>
             </PostMeta>
           </header>
           <div>{props.children}</div>

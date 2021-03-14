@@ -2,6 +2,8 @@
 title: 'Visiosto Celebrates Its First Birthday'
 author: 'gurmann-saini'
 date: '2020-07-01T21:08:22+03:00'
+category: 'blog'
+management: false
 ---
 
 It’s been exactly one year since we took the memorandum of association to the Finnish Patent and Registration Office’s bureau in Hakaniemi. Thus, a year ago we began to form an alternative to horrendous visual appearances and faceless work with clients. That’s why we founded Visiosto, the modern communications agency that can build experiences that touch heart and are visually appealing.

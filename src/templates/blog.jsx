@@ -8,6 +8,7 @@ import { useIntl } from 'react-intl';
 
 import AuthorName from '../components/AuthorName';
 import Button from '../components/Button';
+import CategoryName from '../components/CategoryName';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
@@ -69,6 +70,11 @@ const PostAuthor = styled.span`
   display: block;
 `;
 
+const PostCategory = styled.span`
+  clear: both;
+  display: block;
+`;
+
 const PostContent = styled.div``;
 
 const Center = styled.div`
@@ -113,6 +119,10 @@ const Page = (props) => {
                 <PostAuthor>
                   <AuthorName name={post.frontmatter.author} locale={props.pageContext.lang} />
                 </PostAuthor>
+                <PostCategory>
+                  {i('blogCategory')}{' '}
+                  <CategoryName name={post.frontmatter.category} locale={props.pageContext.lang} />
+                </PostCategory>
               </PostMeta>
             </PostHeader>
             <PostContent>
@@ -146,17 +156,21 @@ export default Blog;
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
     allMarkdownRemark(
-      filter: { fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } } }
+      filter: {
+        fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } }
+        frontmatter: { management: { eq: false } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
           excerpt(pruneLength: 500)
           frontmatter {
-            title
             author
-            datetime: date
+            category
             date: date(formatString: "LL", locale: $momentJsLocale)
+            datetime: date
+            title
           }
           fields {
             keySlug

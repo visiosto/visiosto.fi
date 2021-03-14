@@ -67,10 +67,11 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
-        title
         author
-        datetime: date
+        category
         date: date(formatString: "LL", locale: $momentJsLocale)
+        datetime: date
+        title
       }
     }
   }

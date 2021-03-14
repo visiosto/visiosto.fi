@@ -7,6 +7,10 @@
     "fi": "blogi",
     "en": "blog"
   },
+  "category": {
+    "fi": "kategoria",
+    "en": "category"
+  },
   "pricing": {
     "fi": "hinnasto",
     "en": "pricing"

@@ -2,6 +2,8 @@
 title: 'The Renewed Website of Visiosto Combines Fresh Design with Modern Features'
 author: 'anssi-moilanen'
 date: '2020-07-17T21:59:59+03:00'
+category: 'blog'
+management: false
 ---
 
 A couple of weeks ago Visiosto celebrated its first anniversary. Today we hit another milestone: Visiosto’s first year in the Finnish Trade Register. To celebrate the occasion we decided to give Visiosto a little gift. We refurbished the design of the website!

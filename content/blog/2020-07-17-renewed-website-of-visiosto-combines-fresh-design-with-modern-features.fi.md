@@ -2,6 +2,8 @@
 title: 'Visioston uudistettu verkkosivusto yhdistää raikkaan suunnittelun moderneihin ominaisuuksiin'
 author: 'anssi-moilanen'
 date: '2020-07-17T21:59:59+03:00'
+category: 'blog'
+management: false
 ---
 
 Pari viikkoa sitten Visiosto juhli yksivuotista taivaltaan. Tänään täyteen tuli toinen merkkipaalu: Visioston vuosipäivä Kaupparekisterissä. Juhlapäivien johdosta päätimmekin antaa Visiostolle pienen syntymäpäivälahjan. Uudistimme verkkosivustomme ilmettä!

@@ -2,6 +2,8 @@
 title: 'Moderni markkinointitoimisto Visiosto taittaa sinun visiosi'
 author: 'antti-kivi'
 date: '2020-01-01T19:29:01+02:00'
+category: 'blog'
+management: false
 ---
 
 Mikä olisikaan parempi tapa aloittaa uusi vuosikymmen kuin hyvät uutiset! Visiosto on uusi, heinäkuussa perustettu markkinointi- ja viestintäyhtiö, joka sai alkunsa, kun yhtiön perustajat kyllästyivät visuaalisesti kammottaviin graafisiin ilmeisiin ja kasvottomaan asiakastyöhön. Liian usein viestintää rakennetaan purkkaviritelmin, mikä ei palvele ketään. Perustimmekin Visioston, jottei viestinnän tarvitse olla sumeaa, vaan sanoma voidaan tarkentaa näyttäväksi kokonaisuudeksi, joka luo lisäarvoa sekä asiakkaille että yhteiskunnalle.
