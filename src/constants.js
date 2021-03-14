@@ -3,3 +3,6 @@
 
 export const COLOR_MODE_KEY = 'color-mode';
 export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
+
+export const AUTHOR_SLUG = 'author';
+export const BLOG_SLUG = 'blog';
