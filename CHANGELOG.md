@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - More space between blog posts in the blog page.
 - Localized author names and links to author pages to the blog posts.
 - Pricing page that is dynamically generated from pricing data.
+- Anchor link button.
 
 ## [0.8.2] - 2021-03-12
 
