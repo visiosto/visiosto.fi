@@ -8,12 +8,12 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import LanguageSwitcher from './LanguageSwitcher';
-import SchemedImage from './SchemedImage';
-import Search from './search/Search';
+import SchemedImage from '../SchemedImage';
+import Search from '../search/Search';
 
-import createLink from './createLink';
+import createLink from '../link/createLink';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../../utils/createIntl';
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;

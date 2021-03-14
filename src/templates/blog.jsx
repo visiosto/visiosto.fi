@@ -7,11 +7,11 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createLink from '../components/createLink';
+import createLink from '../components/link/createLink';
 
 import createIntl from '../utils/createIntl';
 

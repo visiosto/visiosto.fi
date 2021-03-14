@@ -5,10 +5,10 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import createAnchorLink from './createAnchorLink';
-import createLink from './createLink';
+import createAnchorLink from '../link/createAnchorLink';
+import createLink from '../link/createLink';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../../utils/createIntl';
 
 const Nav = styled.nav`
   margin: 0 auto;

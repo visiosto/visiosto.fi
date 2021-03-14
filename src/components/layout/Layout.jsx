@@ -9,7 +9,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../utils/listenColorScheme';
+import listenColorScheme from '../../utils/listenColorScheme';
 
 export default (props) => {
   listenColorScheme();

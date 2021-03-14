@@ -6,10 +6,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import AnchorLink from './AnchorLink';
 
-import pageIds from '../data/page-ids.json';
-import pageSlugs from '../data/page-slugs.json';
+import pageIds from '../../data/page-ids.json';
+import pageSlugs from '../../data/page-slugs.json';
 
-import stripHashedLocation from '../utils/anchor-link/stripHashedLocation';
+import stripHashedLocation from '../../utils/anchor-link/stripHashedLocation';
 
 const pageKeySlashIndex = 1;
 

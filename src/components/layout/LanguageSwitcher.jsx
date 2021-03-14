@@ -3,9 +3,9 @@
 
 import React from 'react';
 
-import Button from './Button';
+import Button from '../Button';
 
-import createLanguageLink from './createLanguageLink';
+import createLanguageLink from '../link/createLanguageLink';
 
 export default (props) => {
   const LanguageLink = createLanguageLink(props.pageKey);

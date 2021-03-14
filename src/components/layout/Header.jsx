@@ -7,14 +7,14 @@ import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import SchemedImage from '../SchemedImage';
 import Navigation from './Navigation';
-import SchemedImage from './SchemedImage';
 
-import createLink from './createLink';
+import createLink from '../link/createLink';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../../utils/createIntl';
 
-import theme from '../theme';
+import theme from '../../theme';
 
 const Header = styled.header`
   margin: 2em ${(props) => props.theme.layout.marginPhone};

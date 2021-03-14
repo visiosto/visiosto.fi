@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
-import LayoutError from '../components/LayoutError';
+import LayoutError from '../components/layout/LayoutError';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';

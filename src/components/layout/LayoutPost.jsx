@@ -2,14 +2,14 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../utils/listenColorScheme';
+import listenColorScheme from '../../utils/listenColorScheme';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginPhone};

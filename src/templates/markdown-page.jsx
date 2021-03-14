@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
 
 const Div = styled.div`

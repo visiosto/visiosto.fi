@@ -4,9 +4,9 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import blogSlugs from '../../data/blog-slugs.json';
-import markdownPageSlugs from '../../data/markdown-page-slugs.json';
-import pageSlugs from '../data/page-slugs.json';
+import blogSlugs from '../../../data/blog-slugs.json';
+import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
+import pageSlugs from '../../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
 
