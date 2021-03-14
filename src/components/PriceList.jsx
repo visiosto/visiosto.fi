@@ -82,7 +82,7 @@ const PriceList = (props) => {
               rate={price.rate}
               jsLocale={props.jsLocale}
             />
-          )
+          );
         })}
       </Div>
       <h3>{i(`${createLocalizationKey('additionalFees')}Title`)}</h3>
@@ -98,7 +98,7 @@ const PriceList = (props) => {
                 rate={price.rate}
                 jsLocale={props.jsLocale}
               />
-            )
+            );
           } else {
             return (
               <Price
@@ -108,7 +108,7 @@ const PriceList = (props) => {
                 rate={price.rate}
                 jsLocale={props.jsLocale}
               />
-            )
+            );
           }
         })}
       </Div>
