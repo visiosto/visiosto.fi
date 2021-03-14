@@ -17,7 +17,22 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
-import categories from '../../data/categories.json';
+const Div = styled.div`
+  margin: 1em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 1em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 1em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
+const H2 = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+`;
 
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginPhone};
@@ -33,7 +48,7 @@ const Post = styled.article`
 
 const PostHeader = styled.header``;
 
-const H2 = styled.h2`
+const H3 = styled.h3`
   text-align: center;
   font-size: 2rem;
 `;
@@ -100,28 +115,24 @@ const Separator = styled.div`
 const Page = (props) => {
   const i = createIntl(useIntl());
 
-  const { edges: posts } = props.data.allMarkdownRemark;
+  const { page, posts } = props.data;
 
   return (
-    <Layout
-      title={`${i('blogCategory')} ${
-        categories[props.pageContext.category][props.pageContext.lang]
-      }`}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
+    <Layout title={page.frontmatter.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+      <H2>{i('managementNewsTitle')}</H2>
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
-      {posts.map(({ node: post }) => {
+      {posts.edges.map(({ node: post }) => {
         return (
           <Post>
             <PostHeader>
-              <H2>
+              <H3>
                 <Link to={post.fields.keySlug} locale={props.pageContext.lang}>
                   {post.frontmatter.title}
                 </Link>
-              </H2>
+              </H3>
               <PostMeta>
                 <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
                 <PostAuthor>
@@ -151,7 +162,7 @@ const Page = (props) => {
   );
 };
 
-const Category = (props) => (
+const Management = (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
       <Page {...props} />
@@ -159,14 +170,20 @@ const Category = (props) => (
   </Intl>
 );
 
-export default Category;
+export default Management;
 
 export const pageQuery = graphql`
-  query CategoryQuery($category: String, $lang: String, $momentJsLocale: String) {
-    allMarkdownRemark(
+  query ManagementQuery($path: String, $lang: String, $momentJsLocale: String) {
+    page: markdownRemark(fields: { slug: { eq: $path } }) {
+      html
+      frontmatter {
+        title
+      }
+    }
+    posts: allMarkdownRemark(
       filter: {
         fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } }
-        frontmatter: { category: { eq: $category } }
+        frontmatter: { management: { eq: true } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {

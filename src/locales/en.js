@@ -7,6 +7,7 @@ import blogMessages from './en/blog';
 import footerMessages from './en/footer';
 import headerMessages from './en/header';
 import indexMessages from './en/index';
+import managementMessages from './en/management';
 import metaMessages from './en/meta';
 import navigationMessages from './en/navigation';
 import notFoundMessages from './en/not-found';
@@ -18,6 +19,7 @@ export const messages = {
   ...footerMessages,
   ...headerMessages,
   ...indexMessages,
+  ...managementMessages,
   ...metaMessages,
   ...navigationMessages,
   ...notFoundMessages,

@@ -11,6 +11,10 @@
     "fi": "kategoria",
     "en": "category"
   },
+  "management": {
+    "fi": "hallinto",
+    "en": "management"
+  },
   "pricing": {
     "fi": "hinnasto",
     "en": "pricing"

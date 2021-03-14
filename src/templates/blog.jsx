@@ -158,7 +158,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } }
-        frontmatter: { management: { eq: false } }
       }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
