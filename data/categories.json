@@ -2,5 +2,9 @@
   "blog": {
     "fi": "Blogi",
     "en": "Blog"
+  },
+  "news": {
+    "fi": "Uutiset",
+    "en": "News"
   }
 }
