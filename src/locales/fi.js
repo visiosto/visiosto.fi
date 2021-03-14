@@ -10,6 +10,7 @@ import indexMessages from './fi/index';
 import metaMessages from './fi/meta';
 import navigationMessages from './fi/navigation';
 import notFoundMessages from './fi/not-found';
+import pricingMessages from './fi/pricing';
 import searchMessages from './fi/search';
 
 export const messages = {
@@ -20,6 +21,7 @@ export const messages = {
   ...metaMessages,
   ...navigationMessages,
   ...notFoundMessages,
+  ...pricingMessages,
   ...searchMessages,
 };
 

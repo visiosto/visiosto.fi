@@ -77,6 +77,7 @@ module.exports = async (actions, graphql, reporter) => {
         component: fullpath,
         context: {
           lang,
+          jsLocale: lang === 'en' ? 'en-GB' : lang,
           momentJsLocale: lang === 'en' ? 'en-gb' : lang,
           key: originalSitePath,
         },

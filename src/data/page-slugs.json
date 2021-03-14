@@ -6,5 +6,9 @@
   "blog": {
     "fi": "blogi",
     "en": "blog"
+  },
+  "pricing": {
+    "fi": "hinnasto",
+    "en": "pricing"
   }
 }

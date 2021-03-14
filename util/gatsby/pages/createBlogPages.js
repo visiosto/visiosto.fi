@@ -44,6 +44,7 @@ module.exports = async (actions, graphql, reporter) => {
 
     reporter.verbose(`The path for the blog post page is ${slug}`);
 
+    const jsLocale = locale === 'en' ? 'en-GB' : locale;
     const momentJsLocale = locale === 'en' ? 'en-gb' : locale;
 
     reporter.verbose(`The Moment.js locale to ${momentJsLocale}`);
@@ -53,6 +54,7 @@ module.exports = async (actions, graphql, reporter) => {
       component: blogPostTemplate,
       context: {
         lang: locale,
+        jsLocale,
         momentJsLocale,
         key: node.fields.keySlug,
       },

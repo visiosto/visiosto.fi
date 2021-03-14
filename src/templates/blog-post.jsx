@@ -7,7 +7,20 @@ import styled from 'styled-components';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
+import Rule from '../components/Rule';
 import Theme from '../components/Theme';
+
+const Separator = styled.div`
+  margin: 3em 0;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 4em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 5em 0;
+  }
+`;
 
 const PostDiv = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginPhone};
@@ -31,6 +44,9 @@ const Page = (props) => {
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
+      <Separator>
+        <Rule color="blue" mode={1} />
+      </Separator>
       <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
     </LayoutPost>
   );

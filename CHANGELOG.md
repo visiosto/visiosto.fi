@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - ‘Read more’ button to blog posts.
 - More space between blog posts in the blog page.
 - Localized author names and links to author pages to the blog posts.
+- Pricing page that is dynamically generated from pricing data.
 
 ## [0.8.2] - 2021-03-12
 

@@ -51,6 +51,10 @@ const ManagementP = styled.p`
   margin: 2rem 0 0;
 `;
 
+const PricingP = styled.p`
+  margin: 2rem 0 0;
+`;
+
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
@@ -205,6 +209,11 @@ export default (props) => {
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
+        <CompanyP>
+          <LocalizedLink to="/pricing" locale={props.lang}>
+            {i('footerPricing')}
+          </LocalizedLink>
+        </CompanyP>
       </CompanyDiv>
       {(() => {
         if (!props.noLanguageSwitcher) {

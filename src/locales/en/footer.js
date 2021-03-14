@@ -7,6 +7,7 @@ export default {
   footerBusinessId: 'Finnish Business ID:',
   footerVatNumber: 'VAT number:',
   footerManagement: 'Management',
+  footerPricing: 'Pricing',
   footerSocialMediaTitle: 'Social Media',
   footerHashtag: '&num;throughourlens',
   footerFacebookAlt: 'Facebook Logo',

@@ -76,6 +76,8 @@ const Center = styled.div`
 `;
 
 const Separator = styled.div`
+  display: flex;
+  justify-content: center;
   margin: 3em 0;
 
   @media screen and ${(props) => props.theme.devices.phoneL} {

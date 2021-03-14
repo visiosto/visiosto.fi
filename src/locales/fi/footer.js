@@ -7,6 +7,7 @@ export default {
   footerBusinessId: 'Y-tunnus:',
   footerVatNumber: 'ALV-numero:',
   footerManagement: 'Hallinto',
+  footerPricing: 'Hinnasto',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',
   footerHashtag: '&num;linssimmeläpi',
   footerFacebookAlt: 'Facebookin logo',

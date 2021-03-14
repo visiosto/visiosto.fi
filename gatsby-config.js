@@ -49,8 +49,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: path.join(__dirname, 'data'),
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
     },
+    'gatsby-transformer-json',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -74,5 +82,8 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+    },
   ],
 };
