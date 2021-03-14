@@ -34,9 +34,27 @@ const Inner = styled.div`
 
 const SearchResults = (props) => {
   const i = createIntl(useIntl());
-  const { show, queryResults, searchResults } = props;
+  const { show } = props;
 
-  if (searchResults.length > 0) {
+  if (props.loading) {
+    return (
+      <Div show={show}>
+        <Inner>
+          <div>{i('searchLoading')}</div>
+        </Inner>
+      </Div>
+    );
+  } else if (props.error) {
+    return (
+      <Div show={show}>
+        <Inner>
+          <div>{i('searchError')}</div>
+        </Inner>
+      </Div>
+    );
+  } else if (props.searchResults.length > 0) {
+    const { queryResults } = props;
+
     return (
       <Div show={show}>
         <Inner>

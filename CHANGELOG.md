@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Hovering effect for the search box only when it has focus or text.
+- Messages when the search index is still loading and when the loading has failed.
 
 ## [0.8.2] - 2021-03-12
 

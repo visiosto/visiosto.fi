@@ -1,9 +1,9 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { createRef, useState } from 'react';
+import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import SearchContainer from './SearchContainer';
 
