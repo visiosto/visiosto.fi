@@ -1,12 +1,11 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const createAuthorSlug = require('./pages/createAuthorSlug');
 const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
 // const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
-const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
+// const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
 const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
 
 module.exports = ({ node, actions, getNode, reporter }) => {
