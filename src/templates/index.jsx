@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 import {
@@ -82,12 +81,7 @@ const Page = (props) => {
     serviceDesignMarkdownRemark: design,
     serviceEventsMarkdownRemark: events,
     sectionContactMarkdownRemark: contact,
-    authorAnttiKiviMarkdownRemark: anttiKivi,
-    authorGurmannSainiMarkdownRemark: gurmannSaini,
-    authorAnssiMoilanenMarkdownRemark: anssiMoilanen,
-    imageAnttiKivi,
-    imageGurmannSaini,
-    imageAnssiMoilanen,
+    allContentfulAuthor: authors,
   } = props.data;
 
   return (
@@ -135,24 +129,9 @@ const Page = (props) => {
         <H2 id={i('indexContactId')}>{contact.frontmatter.title}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: contact.html }} />
         <Cards>
-          <AuthorContactCard
-            name={anttiKivi.frontmatter.title}
-            job={anttiKivi.frontmatter.job}
-            email={anttiKivi.frontmatter.email}
-            image={getImage(imageAnttiKivi)}
-          />
-          <AuthorContactCard
-            name={gurmannSaini.frontmatter.title}
-            job={gurmannSaini.frontmatter.job}
-            email={gurmannSaini.frontmatter.email}
-            image={getImage(imageGurmannSaini)}
-          />
-          <AuthorContactCard
-            name={anssiMoilanen.frontmatter.title}
-            job={anssiMoilanen.frontmatter.job}
-            email={anssiMoilanen.frontmatter.email}
-            image={getImage(imageAnssiMoilanen)}
-          />
+          {authors.edges.map(({ node: author }) => {
+            return <AuthorContactCard key={author.id} author={author} />;
+          })}
         </Cards>
       </Section>
     </LayoutIndex>
@@ -170,7 +149,7 @@ const Index = (props) => (
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexQuery($lang: String) {
+  query IndexQuery($lang: String, $locale: String) {
     coverMarkdownRemark: markdownRemark(
       fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }
     ) {
@@ -219,46 +198,17 @@ export const pageQuery = graphql`
         title
       }
     }
-    authorAnttiKiviMarkdownRemark: markdownRemark(
-      fields: { keySlug: { eq: "/author/antti-kivi" }, locale: { eq: $lang } }
-    ) {
-      frontmatter {
-        title
-        job
-        email
-      }
-    }
-    authorGurmannSainiMarkdownRemark: markdownRemark(
-      fields: { keySlug: { eq: "/author/gurmann-saini" }, locale: { eq: $lang } }
-    ) {
-      frontmatter {
-        title
-        job
-        email
-      }
-    }
-    authorAnssiMoilanenMarkdownRemark: markdownRemark(
-      fields: { keySlug: { eq: "/author/anssi-moilanen" }, locale: { eq: $lang } }
-    ) {
-      frontmatter {
-        title
-        job
-        email
-      }
-    }
-    imageAnttiKivi: file(relativePath: { eq: "author/antti-kivi.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 200)
-      }
-    }
-    imageGurmannSaini: file(relativePath: { eq: "author/gurmann-saini.jpeg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 200)
-      }
-    }
-    imageAnssiMoilanen: file(relativePath: { eq: "author/anssi-moilanen.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 200)
+    allContentfulAuthor(filter: { node_locale: { eq: $locale } }) {
+      edges {
+        node {
+          email
+          id
+          job
+          name
+          profileImage {
+            gatsbyImageData(width: 200)
+          }
+        }
       }
     }
   }

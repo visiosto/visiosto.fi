@@ -27,21 +27,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
 
       // TODO Have separate handling for the key slugs.
       if (!slug) {
-        if (relativePath.includes('author')) {
-          reporter.verbose(`Creating node for '${relativePath}'`);
-
-          const match = filenameRegex.exec(relativePath);
-          const [, , filename] = match;
-
-          [, , , locale] = match;
-
-          reporter.verbose(`The filename is ${filename}`);
-          reporter.verbose(`The locale is ${locale}`);
-
-          slug = createAuthorSlug(locale, filename, reporter);
-
-          keySlug = `/author/${filename}`;
-        } else if (relativePath.includes('index')) {
+        if (relativePath.includes('index')) {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
           const match = indexFilenameRegex.exec(relativePath);

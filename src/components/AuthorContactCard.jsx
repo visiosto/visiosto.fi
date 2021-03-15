@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import Card from './Card';
@@ -30,23 +30,25 @@ const Div = styled.div`
 `;
 
 export default (props) => {
+  const { author } = props;
+
   // TODO Add the image and a 'read more' button
   return (
     <Card>
       <ImageDiv>
-        <Image alt={props.name} image={props.image} />
+        <Image alt={author.name} image={getImage(author.profileImage)} />
       </ImageDiv>
       {(() => {
         if (props.htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: props.name }} />;
+          return <H3 dangerouslySetInnerHTML={{ __html: author.name }} />;
         } else {
-          return <H3>{props.name}</H3>;
+          return <H3>{author.name}</H3>;
         }
       })()}
       <Div>
-        <p>{props.job}</p>
+        <p>{author.job}</p>
         <p>
-          <a href={`mailto:${props.email}`}>{props.email}</a>
+          <a href={`mailto:${author.email}`}>{author.email}</a>
         </p>
       </Div>
       {props.children}
