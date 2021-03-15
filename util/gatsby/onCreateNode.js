@@ -18,6 +18,14 @@ module.exports = ({ node, actions, getNode, reporter }) => {
       const { permalink, frontmatterLocale } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
+      reporter.verbose(`The relative path for the current node is ${relativePath}`);
+      // reporter.verbose(`The parent for the current node is ${JSON.stringify(getNode(node.parent))}`);
+      console.log(getNode(getNode(node.parent).parent));
+
+      if (!relativePath) {
+        break;
+      }
+
       let slug = permalink;
       let keySlug = permalink;
       let locale = frontmatterLocale;

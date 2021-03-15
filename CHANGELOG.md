@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Category to the blog posts.
 - Blog post flag telling whether or not the post is meant to be shown only on the management page.
 - Management news to the management page.
+- Contentful as the source for blog posts, categories, and authors.
 
 ## [0.8.2] - 2021-03-12
 

@@ -100,13 +100,12 @@ const Separator = styled.div`
 const Page = (props) => {
   const i = createIntl(useIntl());
 
-  const { edges: posts } = props.data.allMarkdownRemark;
+  const { contentfulCategory: category } = props.data;
+  const { edges: posts } = props.data.allContentfulBlogPost;
 
   return (
     <Layout
-      title={`${i('blogCategory')} ${
-        categories[props.pageContext.category][props.pageContext.lang]
-      }`}
+      title={`${i('blogCategory')} ${category.name}`}
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
@@ -118,18 +117,18 @@ const Page = (props) => {
           <Post>
             <PostHeader>
               <H2>
-                <Link to={post.fields.keySlug} locale={props.pageContext.lang}>
-                  {post.frontmatter.title}
+                <Link to={post.contentful_id} locale={props.pageContext.lang}>
+                  {post.title}
                 </Link>
               </H2>
               <PostMeta>
-                <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
+                <time datetime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName name={post.frontmatter.author} locale={props.pageContext.lang} />
+                  <AuthorName author={post.author} locale={props.pageContext.lang} />
                 </PostAuthor>
                 <PostCategory>
                   {i('blogCategory')}{' '}
-                  <CategoryName name={post.frontmatter.category} locale={props.pageContext.lang} />
+                  <CategoryName category={post.category} locale={props.pageContext.lang} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -137,7 +136,7 @@ const Page = (props) => {
               <p>{post.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.fields.keySlug} lang={props.pageContext.lang}>
+              <Button to={post.contentful_id} lang={props.pageContext.lang}>
                 {i('blogReadMore')}
               </Button>
             </Center>
@@ -162,26 +161,34 @@ const Category = (props) => (
 export default Category;
 
 export const pageQuery = graphql`
-  query CategoryQuery($category: String, $lang: String, $momentJsLocale: String) {
-    allMarkdownRemark(
-      filter: {
-        fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } }
-        frontmatter: { category: { eq: $category } }
-      }
-      sort: { order: DESC, fields: [frontmatter___date] }
+  query CategoryQuery($key: String, $locale: String, $momentJsLocale: String) {
+    contentfulCategory(contentful_id: { eq: $key }, node_locale: { eq: $locale }) {
+      name
+    }
+    allContentfulBlogPost(
+      filter: { category: { contentful_id: { eq: $key } }, node_locale: { eq: $locale } }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
-          excerpt(pruneLength: 500)
-          frontmatter {
-            author
-            category
-            date: date(formatString: "LL", locale: $momentJsLocale)
-            datetime: date
-            title
+          contentful_id
+          date: date(formatString: "LL", locale: $momentJsLocale)
+          datetime: date
+          slug
+          node_locale
+          title
+          author {
+            contentful_id
+            name
           }
-          fields {
-            keySlug
+          body {
+            childMarkdownRemark {
+              excerpt(pruneLength: 500)
+            }
+          }
+          category {
+            contentful_id
+            name
           }
         }
       }

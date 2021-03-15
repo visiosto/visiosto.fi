@@ -25,11 +25,9 @@ const Link = styled(LocalizedLink)`
 `;
 
 const AuthorName = (props) => {
-  const localizedName = authorNames[props.name][props.locale];
-
   return (
-    <Link to={`/author/${props.name}`} locale={props.locale}>
-      {localizedName}
+    <Link to={props.author.contentful_id} locale={props.locale}>
+      {props.author.name}
     </Link>
   );
 };

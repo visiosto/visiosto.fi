@@ -17,6 +17,7 @@ title: 'Yhtiöjärjestys'
 7 § Varsinainen yhtiökokous on pidettävä vuosittain hallituksen määräämänä päivänä kuuden kuukauden kuluessa tilikauden päättymisestä.
 
 Varsinaisessa yhtiökokouksessa on päätettävä:
+
 1. tilinpäätöksen vahvistamisesta;
 2. taseen osoittaman voiton käyttämisestä;
 3. vastuuvapaudesta hallituksen jäsenille ja toimitusjohtajalle;
@@ -25,4 +26,3 @@ Varsinaisessa yhtiökokouksessa on päätettävä:
 8 § Osakkeenomistajalla ja yhtiöllä on oikeus lunastaa muulta omistajalta kuin yhtiöltä toiselle siirtyvä osake. Ensisijainen lunastusoikeus on osakkeenomistajalla. Jos useampi osakkeenomistaja haluaa käyttää lunastusoikeuttaan, osakkeet jaetaan lunastukseen halukkaiden kesken heidän omistamiensa osakkeiden mukaisessa suhteessa. Mikäli osakkeiden jako ei mene tasan, jaetaan ylijääneet osakkeet lunastusta haluavien kesken arvalla. Yhtiöllä on lunastusoikeus, mikäli kukaan osakkeenomistajista ei lunasta siirtyviä osakkeita.
 
 Muilta osin lunastukseen sovelletaan osakeyhtiölain määräyksiä.
-

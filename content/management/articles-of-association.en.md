@@ -17,6 +17,7 @@ title: 'Articles of Association'
 7 § The Ordinary General Meeting shall be held annually within six months of the end of the financial year on day resolved by the Board of Directors.
 
 Decisions shall be made at the Ordinary General Meeting on the following:
+
 1. adoption of the financial statements;
 2. the use of the profit shown on the balance sheet;
 3. the discharge of the members of the Board of Directors and the Managing Director from liability;

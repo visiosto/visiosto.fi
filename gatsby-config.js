@@ -1,6 +1,8 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
+require('dotenv').config();
+
 const path = require('path');
 
 module.exports = {
@@ -62,6 +64,13 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || process.env.CONTENTFUL_DELIVERY_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {

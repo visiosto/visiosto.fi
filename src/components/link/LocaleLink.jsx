@@ -4,6 +4,10 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import LocalizedAuthorLink from './LocalizedAuthorLink';
+import LocalizedBlogLink from './LocalizedBlogLink';
+import LocalizedCategoryLink from './LocalizedCategoryLink';
+
 import { AUTHOR_SLUG, BLOG_SLUG, CATEGORY_SLUG } from '../../constants';
 
 import blogSlugs from '../../../data/blog-slugs.json';
@@ -13,19 +17,7 @@ import pageSlugs from '../../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
 
-const createLocalizedSlug = (toLang, slug) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultLocale
-          }
-        }
-      }
-    `,
-  );
-
+const createLocalizedSlug = (site, toLang, slug) => {
   const { defaultLocale } = site.siteMetadata;
 
   if (slug) {
@@ -42,34 +34,92 @@ const createLocalizedSlug = (toLang, slug) => {
 };
 
 const LocaleLink = (props) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+        allContentfulEntry {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              internal {
+                type
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
   const toLang = props.to;
   console.log('The page key for the locale link is', props.pageKey);
-  if (props.pageKey.startsWith(`/${BLOG_SLUG}/`)) {
-    const page = createLocalizedSlug(toLang, BLOG_SLUG);
 
-    const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
+  const contentfulIdMatches = data.allContentfulEntry.edges.filter(
+    ({ node }) => node.contentful_id === props.pageKey,
+  );
 
-    const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
+  console.log('The Contentful matches are', contentfulIdMatches);
 
-    return <Link {...props} to={linkPath} />;
-  } else if (props.pageKey.startsWith(`/${AUTHOR_SLUG}/`)) {
-    const page = createLocalizedSlug(toLang, AUTHOR_SLUG);
+  if (contentfulIdMatches.length === 0) {
+    if (props.pageKey.startsWith(`/${BLOG_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, toLang, BLOG_SLUG);
 
-    const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
+      const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
 
-    const linkPath = `${page}/${filename}`;
+      const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
 
-    return <Link {...props} to={linkPath} />;
-  } else if (props.pageKey.startsWith(`/${CATEGORY_SLUG}/`)) {
-    const page = createLocalizedSlug(toLang, CATEGORY_SLUG);
+      return <Link {...props} to={linkPath} />;
+    } else if (props.pageKey.startsWith(`/${AUTHOR_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, toLang, AUTHOR_SLUG);
 
-    const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
+      const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
 
-    const linkPath = `${page}/${categorySlugs[filename][toLang]}`;
+      const linkPath = `${page}/${filename}`;
 
-    return <Link {...props} to={linkPath} />;
+      return <Link {...props} to={linkPath} />;
+    } else if (props.pageKey.startsWith(`/${CATEGORY_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, toLang, CATEGORY_SLUG);
+
+      const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${categorySlugs[filename][toLang]}`;
+
+      return <Link {...props} to={linkPath} />;
+    } else {
+      return <Link {...props} to={createLocalizedSlug(data.site, toLang, props.pageKey)} />;
+    }
   } else {
-    return <Link {...props} to={createLocalizedSlug(toLang, props.pageKey)} />;
+    console.log('Creating Contentful locale link to', toLang, 'for id', props.pageKey);
+
+    console.log(data);
+
+    const node = data.allContentfulEntry.edges.filter(
+      ({ node }) =>
+        node.contentful_id === props.pageKey &&
+        (toLang === 'en' ? node.node_locale === 'en-GB' : node.node_locale === toLang),
+    )[0].node;
+
+    console.log(node);
+
+    switch (node.internal.type) {
+      case 'ContentfulAuthor': {
+        return <LocalizedAuthorLink {...props} to={props.pageKey} locale={toLang} />;
+      }
+      case 'ContentfulBlogPost': {
+        return <LocalizedBlogLink {...props} to={props.pageKey} locale={toLang} />;
+      }
+      case 'ContentfulCategory': {
+        return <LocalizedCategoryLink {...props} to={props.pageKey} locale={toLang} />;
+      }
+      default:
+        break;
+    }
   }
 };
 

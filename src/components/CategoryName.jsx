@@ -6,8 +6,6 @@ import styled from 'styled-components';
 
 import LocalizedLink from './link/LocalizedLink';
 
-import categories from '../../data/categories.json';
-
 const Link = styled(LocalizedLink)`
   text-decoration: none;
   color: var(--color-text);
@@ -25,12 +23,9 @@ const Link = styled(LocalizedLink)`
 `;
 
 const CategoryName = (props) => {
-  const localizedName = categories[props.name][props.locale];
-
-  // TODO Add link
   return (
-    <Link to={`/category/${props.name}`} locale={props.locale}>
-      {localizedName}
+    <Link to={props.category.contentful_id} locale={props.locale}>
+      {props.category.name}
     </Link>
   );
 };

@@ -72,13 +72,13 @@ export default (props) => {
           <header>
             <PageTitle>{props.title}</PageTitle>
             <PostMeta>
-              <time datetime={props.frontmatter.datetime}>{props.frontmatter.date}</time>
+              <time datetime={props.post.datetime}>{props.post.date}</time>
               <PostAuthor>
-                <AuthorName name={props.frontmatter.author} locale={props.lang} />
+                <AuthorName author={props.post.author} locale={props.lang} />
               </PostAuthor>
               <PostCategory>
                 {i('blogCategory')}{' '}
-                <CategoryName name={props.frontmatter.category} locale={props.lang} />
+                <CategoryName category={props.post.category} locale={props.lang} />
               </PostCategory>
             </PostMeta>
           </header>

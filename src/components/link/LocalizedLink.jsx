@@ -4,6 +4,10 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import LocalizedAuthorLink from './LocalizedAuthorLink';
+import LocalizedBlogLink from './LocalizedBlogLink';
+import LocalizedCategoryLink from './LocalizedCategoryLink';
+
 import { AUTHOR_SLUG, BLOG_SLUG, CATEGORY_SLUG } from '../../constants';
 
 import blogSlugs from '../../../data/blog-slugs.json';
@@ -13,19 +17,7 @@ import pageSlugs from '../../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
 
-const createLocalizedSlug = (locale, slug) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultLocale
-          }
-        }
-      }
-    `,
-  );
-
+const createLocalizedSlug = (site, locale, slug) => {
   const { defaultLocale } = site.siteMetadata;
 
   const pageKey = slug.substring(pageKeySlashIndex);
@@ -41,67 +33,104 @@ const createLocalizedSlug = (locale, slug) => {
   } else {
     return locale === defaultLocale ? '/' : `/${locale}`;
   }
-
-  // let localized = slug;
-
-  // if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
-  //   localized = `/${pageSlugs[pageKey][locale]}`;
-  // } else if (pageKey in markdownPageSlugs && locale in markdownPageSlugs[pageKey]) {
-  //   localized = `/${markdownPageSlugs[pageKey][locale]}`;
-  // }
-
-  // const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
-
-  // if (locale !== defaultLocale) {
-  //   localized = localeVersion;
-  // }
-
-  // return localized;
 };
 
 const LocalizedLink = (props) => {
-  if (props.to.startsWith(`/${BLOG_SLUG}/`)) {
-    const page = createLocalizedSlug(props.locale, `/${BLOG_SLUG}`);
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+        allContentfulEntry {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              internal {
+                type
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
 
-    let { to } = props;
+  console.log('Creating link to', props.to);
 
-    const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
+  if (props.to.startsWith('/')) {
+    if (props.to.startsWith(`/${BLOG_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, props.locale, `/${BLOG_SLUG}`);
 
-    const linkPath = `${page}/${blogSlugs[filename][props.locale]}`;
+      let { to } = props;
 
-    if (filename in blogSlugs && props.locale in blogSlugs[filename]) {
+      const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${blogSlugs[filename][props.locale]}`;
+
+      if (filename in blogSlugs && props.locale in blogSlugs[filename]) {
+        to = linkPath;
+      }
+
+      return <Link {...props} to={to} />;
+    } else if (props.to.startsWith(`/${AUTHOR_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, props.locale, `/${AUTHOR_SLUG}`);
+
+      let { to } = props;
+
+      const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${filename}`;
+
       to = linkPath;
+
+      return <Link {...props} to={to} />;
+    } else if (props.to.startsWith(`/${CATEGORY_SLUG}/`)) {
+      const page = createLocalizedSlug(data.site, props.locale, `/${CATEGORY_SLUG}`);
+
+      let { to } = props;
+
+      const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
+
+      const linkPath = `${page}/${categorySlugs[filename][props.locale]}`;
+
+      if (filename in categorySlugs && props.locale in categorySlugs[filename]) {
+        to = linkPath;
+      }
+
+      return <Link {...props} to={to} />;
+    } else {
+      return <Link {...props} to={createLocalizedSlug(data.site, props.locale, props.to)} />;
     }
-
-    return <Link {...props} to={to} />;
-  } else if (props.to.startsWith(`/${AUTHOR_SLUG}/`)) {
-    const page = createLocalizedSlug(props.locale, `/${AUTHOR_SLUG}`);
-
-    let { to } = props;
-
-    const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
-
-    const linkPath = `${page}/${filename}`;
-
-    to = linkPath;
-
-    return <Link {...props} to={to} />;
-  } else if (props.to.startsWith(`/${CATEGORY_SLUG}/`)) {
-    const page = createLocalizedSlug(props.locale, `/${CATEGORY_SLUG}`);
-
-    let { to } = props;
-
-    const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
-
-    const linkPath = `${page}/${categorySlugs[filename][props.locale]}`;
-
-    if (filename in categorySlugs && props.locale in categorySlugs[filename]) {
-      to = linkPath;
-    }
-
-    return <Link {...props} to={to} />;
   } else {
-    return <Link {...props} to={createLocalizedSlug(props.locale, props.to)} />;
+    console.log('Creating Contentful link to', props.to);
+
+    console.log(data);
+
+    const node = data.allContentfulEntry.edges.filter(
+      ({ node }) =>
+        node.contentful_id === props.to &&
+        (props.locale === 'en' ? node.node_locale === 'en-GB' : node.node_locale === props.locale),
+    )[0].node;
+
+    console.log(node);
+
+    switch (node.internal.type) {
+      case 'ContentfulAuthor': {
+        return <LocalizedAuthorLink {...props} />;
+      }
+      case 'ContentfulBlogPost': {
+        return <LocalizedBlogLink {...props} />;
+      }
+      case 'ContentfulCategory': {
+        return <LocalizedCategoryLink {...props} />;
+      }
+      default:
+        break;
+    }
   }
 };
 

@@ -4,6 +4,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
@@ -35,19 +36,19 @@ const PostDiv = styled.div`
 `;
 
 const Page = (props) => {
-  const { markdownRemark: post } = props.data;
+  const { contentfulBlogPost: post } = props.data;
 
   return (
     <LayoutPost
-      title={post.frontmatter.title}
-      frontmatter={post.frontmatter}
+      title={post.title}
+      post={post}
       lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
+      pageKey={post.contentful_id}
     >
       <Separator>
         <Rule color="blue" mode={1} />
       </Separator>
-      <PostDiv dangerouslySetInnerHTML={{ __html: post.html }} />
+      <PostDiv dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }} />
     </LayoutPost>
   );
 };
@@ -63,15 +64,24 @@ const BlogPost = (props) => (
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostQuery($path: String, $momentJsLocale: String) {
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        author
-        category
-        date: date(formatString: "LL", locale: $momentJsLocale)
-        datetime: date
-        title
+  query BlogPostQuery($key: String, $nodeLocale: String, $momentJsLocale: String) {
+    contentfulBlogPost(contentful_id: { eq: $key }, node_locale: { eq: $nodeLocale }) {
+      contentful_id
+      date: date(formatString: "LL", locale: $momentJsLocale)
+      datetime: date
+      title
+      author {
+        contentful_id
+        name
+      }
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      category {
+        contentful_id
+        name
       }
     }
   }
