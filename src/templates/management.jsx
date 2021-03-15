@@ -51,6 +51,7 @@ const PostHeader = styled.header``;
 const H3 = styled.h3`
   text-align: center;
   font-size: 2rem;
+  font-family: ${(props) => props.theme.fonts.heading};
 `;
 
 const Link = styled(LocalizedLink)`
@@ -118,7 +119,11 @@ const Page = (props) => {
   const { page, posts } = props.data;
 
   return (
-    <Layout title={page.frontmatter.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <Layout
+      title={page.frontmatter.title}
+      lang={props.pageContext.lang}
+      pageKey={props.pageContext.key}
+    >
       <Div dangerouslySetInnerHTML={{ __html: page.html }} />
       <H2>{i('managementNewsTitle')}</H2>
       <Separator>
