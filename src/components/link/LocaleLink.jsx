@@ -28,19 +28,17 @@ const createLocalizedSlug = (toLang, slug) => {
 
   const { defaultLocale } = site.siteMetadata;
 
-  let localized = toLang === defaultLocale ? '/' : `/${toLang}`;
-
-  let slugs = slug in pageSlugs ? pageSlugs : markdownPageSlugs;
-
-  if (slug in slugs && toLang in slugs[slug]) {
-    localized = `/${toLang}/${slugs[slug][toLang]}`;
-
-    if (toLang === defaultLocale) {
-      localized = `/${slugs[slug][toLang]}`;
-    }
+  if (slug) {
+    return slug.split('/').reduce(
+      (previous, current) => {
+        const slugs = current in pageSlugs ? pageSlugs : markdownPageSlugs;
+        return `${previous}/${slugs[current][toLang]}`;
+      },
+      toLang === defaultLocale ? '' : `/${toLang}`,
+    );
+  } else {
+    return toLang === defaultLocale ? '/' : `/${toLang}`;
   }
-
-  return localized;
 };
 
 const LocaleLink = (props) => {

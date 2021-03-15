@@ -29,21 +29,34 @@ const createLocalizedSlug = (locale, slug) => {
   const { defaultLocale } = site.siteMetadata;
 
   const pageKey = slug.substring(pageKeySlashIndex);
-  let localized = slug;
 
-  if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
-    localized = `/${pageSlugs[pageKey][locale]}`;
-  } else if (pageKey in markdownPageSlugs && locale in markdownPageSlugs[pageKey]) {
-    localized = `/${markdownPageSlugs[pageKey][locale]}`;
+  if (pageKey) {
+    return pageKey.split('/').reduce(
+      (previous, current) => {
+        const slugs = current in pageSlugs ? pageSlugs : markdownPageSlugs;
+        return `${previous}/${slugs[current][locale]}`;
+      },
+      locale === defaultLocale ? '' : `/${locale}`,
+    );
+  } else {
+    return locale === defaultLocale ? '/' : `/${locale}`;
   }
 
-  const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
+  // let localized = slug;
 
-  if (locale !== defaultLocale) {
-    localized = localeVersion;
-  }
+  // if (pageKey in pageSlugs && locale in pageSlugs[pageKey]) {
+  //   localized = `/${pageSlugs[pageKey][locale]}`;
+  // } else if (pageKey in markdownPageSlugs && locale in markdownPageSlugs[pageKey]) {
+  //   localized = `/${markdownPageSlugs[pageKey][locale]}`;
+  // }
 
-  return localized;
+  // const localeVersion = pageKey === '' ? `/${locale}` : `/${locale}${localized}`;
+
+  // if (locale !== defaultLocale) {
+  //   localized = localeVersion;
+  // }
+
+  // return localized;
 };
 
 const LocalizedLink = (props) => {

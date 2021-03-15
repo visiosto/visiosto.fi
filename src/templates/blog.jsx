@@ -156,7 +156,10 @@ export default Blog;
 export const pageQuery = graphql`
   query BlogQuery($lang: String, $momentJsLocale: String) {
     allMarkdownRemark(
-      filter: { fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } } }
+      filter: {
+        fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } }
+        frontmatter: { management: { eq: false } }
+      }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
