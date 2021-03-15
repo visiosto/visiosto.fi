@@ -8,10 +8,9 @@ import LocalizedAuthorLink from './LocalizedAuthorLink';
 import LocalizedBlogLink from './LocalizedBlogLink';
 import LocalizedCategoryLink from './LocalizedCategoryLink';
 
-import { AUTHOR_SLUG, BLOG_SLUG, CATEGORY_SLUG } from '../../constants';
+import { AUTHOR_SLUG, BLOG_SLUG } from '../../constants';
 
 import blogSlugs from '../../../data/blog-slugs.json';
-import categorySlugs from '../../../data/category-slugs.json';
 import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
 import pageSlugs from '../../data/page-slugs.json';
 
@@ -86,20 +85,6 @@ const LocalizedLink = (props) => {
       const linkPath = `${page}/${filename}`;
 
       to = linkPath;
-
-      return <Link {...props} to={to} />;
-    } else if (props.to.startsWith(`/${CATEGORY_SLUG}/`)) {
-      const page = createLocalizedSlug(data.site, props.locale, `/${CATEGORY_SLUG}`);
-
-      let { to } = props;
-
-      const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
-
-      const linkPath = `${page}/${categorySlugs[filename][props.locale]}`;
-
-      if (filename in categorySlugs && props.locale in categorySlugs[filename]) {
-        to = linkPath;
-      }
 
       return <Link {...props} to={to} />;
     } else {

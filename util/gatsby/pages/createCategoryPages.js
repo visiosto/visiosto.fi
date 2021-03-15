@@ -69,31 +69,4 @@ module.exports = async (actions, graphql, reporter) => {
 
     createPage(pageOpts);
   });
-
-  // Object.keys(categories).forEach((key) => {
-  //   query.data.site.siteMetadata.locales.forEach((locale) => {
-  //     const slug = createCategorySlug(locale, key, reporter);
-
-  //     reporter.verbose(`The path for the category page is ${slug}`);
-
-  //     const jsLocale = locale === 'en' ? 'en-GB' : locale;
-  //     const momentJsLocale = locale === 'en' ? 'en-gb' : locale;
-
-  //     reporter.verbose(`The Moment.js locale to ${momentJsLocale}`);
-
-  //     const pageOpts = {
-  //       path: slug,
-  //       component: categoryTemplate,
-  //       context: {
-  //         lang: locale,
-  //         jsLocale,
-  //         momentJsLocale,
-  //         key: `/category/${key}`,
-  //         category: key,
-  //       },
-  //     };
-
-  //     createPage(pageOpts);
-  //   });
-  // });
 };

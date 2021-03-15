@@ -6,8 +6,6 @@ import styled from 'styled-components';
 
 import LocalizedLink from './link/LocalizedLink';
 
-import authorNames from '../../data/author-names.json';
-
 const Link = styled(LocalizedLink)`
   text-decoration: none;
   color: var(--color-text);
@@ -24,12 +22,10 @@ const Link = styled(LocalizedLink)`
   }
 `;
 
-const AuthorName = (props) => {
-  return (
-    <Link to={props.author.contentful_id} locale={props.locale}>
-      {props.author.name}
-    </Link>
-  );
-};
+const AuthorName = (props) => (
+  <Link to={props.author.contentful_id} locale={props.locale}>
+    {props.author.name}
+  </Link>
+);
 
 export default AuthorName;

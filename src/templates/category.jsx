@@ -17,8 +17,6 @@ import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';
 
-import categories from '../../data/categories.json';
-
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginPhone};
 
