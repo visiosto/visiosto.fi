@@ -20,6 +20,10 @@ import createIntl from '../utils/createIntl';
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginPhone};
 
+  .centered {
+    text-align: center;
+  }
+
   @media screen and ${(props) => props.theme.devices.phoneL} {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
