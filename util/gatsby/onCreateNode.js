@@ -5,7 +5,7 @@ const createAuthorSlug = require('./pages/createAuthorSlug');
 const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
-const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
+// const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
 const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
 const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
 
@@ -16,10 +16,6 @@ module.exports = ({ node, actions, getNode, reporter }) => {
     case 'MarkdownRemark': {
       const { permalink, frontmatterLocale } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
-
-      reporter.verbose(`The relative path for the current node is ${relativePath}`);
-      // reporter.verbose(`The parent for the current node is ${JSON.stringify(getNode(node.parent))}`);
-      console.log(getNode(getNode(node.parent).parent));
 
       if (!relativePath) {
         break;
