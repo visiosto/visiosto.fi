@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ### Changed
 
+- Front page data to be read from Contentful.
 - Author data to be read from Contentful.
 
 ## [0.9.0] - 2021-03-15
