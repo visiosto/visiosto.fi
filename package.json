@@ -1,7 +1,7 @@
 {
   "name": "visiosto.fi",
   "private": true,
-  "version": "0.9.0-dev",
+  "version": "0.9.0",
   "description": "The source code for the website of Visiosto",
   "scripts": {
     "build": "gatsby build",
