@@ -94,7 +94,7 @@ module.exports = async (actions, graphql, reporter) => {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___title] }
           limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
+          filter: { fields: { keySlug: { regex: "/^(?!/(?:blog))/management/.*/" } } }
         ) {
           edges {
             node {

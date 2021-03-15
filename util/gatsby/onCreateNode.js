@@ -6,7 +6,7 @@ const createSlug = require('./pages/createSlug');
 // Parse information out of blog post filename.
 // const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
 // const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
-const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
+// const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
 
 module.exports = ({ node, actions, getNode, reporter }) => {
   const { createNodeField } = actions;
@@ -23,25 +23,6 @@ module.exports = ({ node, actions, getNode, reporter }) => {
       let slug = permalink;
       let keySlug = permalink;
       let locale = frontmatterLocale;
-
-      // TODO Have separate handling for the key slugs.
-      if (!slug) {
-        if (relativePath.includes('index')) {
-          reporter.verbose(`Creating node for '${relativePath}'`);
-
-          const match = indexFilenameRegex.exec(relativePath);
-          const [, , , filename] = match;
-
-          [, , , , locale] = match;
-
-          reporter.verbose(`The filename is ${filename}`);
-          reporter.verbose(`The locale is ${locale}`);
-
-          slug = `index/${filename}`;
-
-          keySlug = `/index/${filename}`;
-        }
-      }
 
       if (!slug) {
         const match = /(.+)\.(.{2})\.md$/.exec(relativePath);

@@ -74,43 +74,40 @@ const Centered = styled.div`
 const Page = (props) => {
   const i = createIntl(useIntl());
 
-  const {
-    coverMarkdownRemark: cover,
-    storyMarkdownRemark: story,
-    serviceWebsitesMarkdownRemark: websites,
-    serviceDesignMarkdownRemark: design,
-    serviceEventsMarkdownRemark: events,
-    sectionContactMarkdownRemark: contact,
-    allContentfulAuthor: authors,
-  } = props.data;
+  const { contentfulIndexPage: page } = props.data;
 
   return (
-    <LayoutIndex
-      title={i('indexTitle')}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-      <IndexCover title={cover.frontmatter.title} htmlTitle>
-        <div dangerouslySetInnerHTML={{ __html: cover.html }} />
+    <LayoutIndex title={page.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <IndexCover title={page.introTitle} htmlTitle>
+        <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </IndexCover>
-      <StoryCover title={story.frontmatter.title}>
-        <div dangerouslySetInnerHTML={{ __html: story.html }} />
+      <StoryCover title={page.storyTitle}>
+        <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
       </StoryCover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin>
-        <H2 id={i('indexServicesId')}>{i('indexServicesTitle')}</H2>
+        <H2 id={page.productsId}>{page.productsTitle}</H2>
         <Cards>
-          <FeatureCard
-            title={websites.frontmatter.title}
-            icon={<DeviceDesktopIcon size={'large'} />}
-          >
-            <div dangerouslySetInnerHTML={{ __html: websites.html }} />
+          <FeatureCard title={page.products[0].title} icon={<DeviceDesktopIcon size={'large'} />}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: page.products[0].description.childMarkdownRemark.html,
+              }}
+            />
           </FeatureCard>
-          <FeatureCard title={design.frontmatter.title} icon={<PencilIcon size={'large'} />}>
-            <div dangerouslySetInnerHTML={{ __html: design.html }} />
+          <FeatureCard title={page.products[1].title} icon={<PencilIcon size={'large'} />}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: page.products[1].description.childMarkdownRemark.html,
+              }}
+            />
           </FeatureCard>
-          <FeatureCard title={events.frontmatter.title} icon={<CalendarIcon size={'large'} />}>
-            <div dangerouslySetInnerHTML={{ __html: events.html }} />
+          <FeatureCard title={page.products[2].title} icon={<CalendarIcon size={'large'} />}>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: page.products[2].description.childMarkdownRemark.html,
+              }}
+            />
           </FeatureCard>
         </Cards>
       </Section>
@@ -119,18 +116,18 @@ const Page = (props) => {
         <Icon>
           <NorthStarIcon size={'large'} />
         </Icon>
-        <H2 id={i('indexPortfolioId')}>{i('indexPortfolioTitle')}</H2>
+        <H2 id={page.portfolioId}>{page.portfolioTitle}</H2>
       </Section>
       <Break color={'peach'} mode={3} />
       <Section lesserMargin>
         <Icon>
           <PaperAirplaneIcon size={'large'} />
         </Icon>
-        <H2 id={i('indexContactId')}>{contact.frontmatter.title}</H2>
-        <Centered dangerouslySetInnerHTML={{ __html: contact.html }} />
+        <H2 id={page.contactId}>{page.contactTitle}</H2>
+        <Centered dangerouslySetInnerHTML={{ __html: page.contactBody.childMarkdownRemark.html }} />
         <Cards>
-          {authors.edges.map(({ node: author }) => {
-            return <AuthorContactCard key={author.id} author={author} />;
+          {page.contacts.map((contact) => {
+            return <AuthorContactCard key={contact.id} author={contact} />;
           })}
         </Cards>
       </Section>
@@ -149,65 +146,47 @@ const Index = (props) => (
 export default Index;
 
 export const pageQuery = graphql`
-  query IndexQuery($lang: String, $locale: String) {
-    coverMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/cover" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
-        title
+  query IndexQuery($locale: String) {
+    contentfulIndexPage(node_locale: { eq: $locale }) {
+      contactId
+      contactTitle
+      introTitle
+      portfolioId
+      portfolioTitle
+      productsId
+      productsTitle
+      storyTitle
+      title
+      contactBody {
+        childMarkdownRemark {
+          html
+        }
       }
-    }
-    storyMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/story" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
-        title
+      contacts {
+        email
+        id
+        job
+        name
+        profileImage {
+          gatsbyImageData(width: 200)
+        }
       }
-    }
-    serviceWebsitesMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/websites" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
-        title
+      introBody {
+        childMarkdownRemark {
+          html
+        }
       }
-    }
-    serviceDesignMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/design" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
+      products {
         title
-      }
-    }
-    serviceEventsMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/events" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
-        title
-      }
-    }
-    sectionContactMarkdownRemark: markdownRemark(
-      fields: { slug: { eq: "index/contact" }, locale: { eq: $lang } }
-    ) {
-      html
-      frontmatter {
-        title
-      }
-    }
-    allContentfulAuthor(filter: { node_locale: { eq: $locale } }) {
-      edges {
-        node {
-          email
-          id
-          job
-          name
-          profileImage {
-            gatsbyImageData(width: 200)
+        description {
+          childMarkdownRemark {
+            html
           }
+        }
+      }
+      storyBody {
+        childMarkdownRemark {
+          html
         }
       }
     }
