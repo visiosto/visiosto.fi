@@ -3,6 +3,10 @@
     "fi": "asiakasrekisterin-tietosuojaseloste",
     "en": "client-register-privacy-policy"
   },
+  "general-meetings": {
+    "fi": "yhtiokokoukset",
+    "en": "general-meetings"
+  },
   "management": {
     "fi": "hallinto",
     "en": "management"
