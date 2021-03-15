@@ -30,7 +30,9 @@ module.exports = async (actions, graphql, reporter) => {
   const files = recursiveReadDirSync(rootPagesDir)
     .filter((f) => !f.startsWith('.'))
     .filter((f) => !f.includes('.scss'))
+    .filter((f) => !f.includes('author.jsx'))
     .filter((f) => !f.includes('blog-post.jsx'))
+    .filter((f) => !f.includes('category.jsx'))
     .filter((f) => !f.includes('markdown-page.jsx'));
 
   reporter.verbose(`The languages found are ${langs}`);
@@ -69,12 +71,15 @@ module.exports = async (actions, graphql, reporter) => {
       })();
 
       reporter.verbose(`The new path for the page is ${sitePath}`);
+      reporter.verbose(`The page key is ${originalSitePath}`);
 
       const pageOpts = {
         path: sitePath,
         component: fullpath,
         context: {
           lang,
+          locale: lang === 'en' ? 'en-GB' : lang,
+          jsLocale: lang === 'en' ? 'en-GB' : lang,
           momentJsLocale: lang === 'en' ? 'en-gb' : lang,
           key: originalSitePath,
         },
@@ -89,7 +94,7 @@ module.exports = async (actions, graphql, reporter) => {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___title] }
           limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(/(?!author|blog|index))/" } } }
+          filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
         ) {
           edges {
             node {
@@ -117,6 +122,9 @@ module.exports = async (actions, graphql, reporter) => {
 
   query.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const { slug, locale } = node.fields;
+
+    reporter.verbose(`Creating page ${slug}`);
+    reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
 
     createPage({
       path: slug,

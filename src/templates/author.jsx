@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
 
 import createIntl from '../utils/createIntl';

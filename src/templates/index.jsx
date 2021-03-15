@@ -16,15 +16,12 @@ import {
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
-import Button from '../components/Button';
 import FeatureCard from '../components/FeatureCard';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
-import LayoutIndex from '../components/LayoutIndex';
+import LayoutIndex from '../components/layout/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
-
-import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 

@@ -7,10 +7,15 @@ const config = require('../../../gatsby-config');
 module.exports = (locale, filename, reporter) => {
   const defaultLanguage = config.siteMetadata.defaultLocale;
 
-  // prettier-ignore
-  const path = locale === defaultLanguage
-    ? `/${pageSlugs[filename][locale]}`
-    : `/${locale}/${pageSlugs[filename][locale]}`;
+  reporter.verbose(`Resolving slug for ${filename} with locale ${locale}`);
+
+  const path = filename.split('/').reduce(
+    (previous, current) => {
+      reporter.verbose(`Previous: ${previous}, current: ${current}`);
+      return `${previous}/${pageSlugs[current][locale]}`;
+    },
+    locale === defaultLanguage ? '' : `/${locale}`,
+  );
 
   reporter.verbose(`Set the path to ${path}`);
 

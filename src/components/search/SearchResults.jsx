@@ -28,16 +28,33 @@ const Inner = styled.div`
   max-width: 30em;
   padding: 1em;
   border-radius: 0.25em;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08),
-    0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--color-box-shadow);
   background: var(--color-background);
 `;
 
 const SearchResults = (props) => {
   const i = createIntl(useIntl());
-  const { show, queryResults, searchResults } = props;
+  const { show } = props;
 
-  if (searchResults.length > 0) {
+  if (props.loading) {
+    return (
+      <Div show={show}>
+        <Inner>
+          <div>{i('searchLoading')}</div>
+        </Inner>
+      </Div>
+    );
+  } else if (props.error) {
+    return (
+      <Div show={show}>
+        <Inner>
+          <div>{i('searchError')}</div>
+        </Inner>
+      </Div>
+    );
+  } else if (props.searchResults.length > 0) {
+    const { queryResults } = props;
+
     return (
       <Div show={show}>
         <Inner>

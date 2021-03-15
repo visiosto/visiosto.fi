@@ -51,11 +51,26 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: path.join(__dirname, 'data'),
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
     },
+    'gatsby-transformer-json',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || process.env.CONTENTFUL_DELIVERY_TOKEN,
+      },
+    },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
@@ -76,5 +91,8 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+    },
   ],
 };

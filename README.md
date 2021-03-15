@@ -2,9 +2,9 @@
 
 ![Main workflow](https://github.com/visiosto/visiosto.fi/workflows/Main%20workflow/badge.svg)
 
-This is the source code and production code of [Visiosto’s](https://github.com/visiosto) website-in-progress.
+This is the source code for [Visiosto’s](https://github.com/visiosto) website-in-progress.
 
-The site is deployed to [GitHub Pages](https://pages.github.com) from the [`site/production`](https://github.com/visiosto/visiosto.fi/tree/site/production) branch. The website, when ready, will be available at [visiosto.fi](#).
+The site is deployed to [GitHub Pages](https://pages.github.com) from the [`visiosto/visiosto.github.io`](https://github.com/visiosto/visiosto.github.io) repository. The website, when ready, will be available at [visiosto.fi](#).
 
 ## Install
 

@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.9.0] - 2021-03-15
+
+### Added
+
+- Hovering effect for the search box only when it has focus or text.
+- Messages when the search index is still loading and when the loading has failed.
+- Information that the site is made by Visiosto to the footer.
+- Company hashtag to the footer of the site.
+- ‘Read more’ button to blog posts.
+- More space between blog posts in the blog page.
+- Localized author names and links to author pages to the blog posts.
+- Pricing page that is dynamically generated from pricing data.
+- Anchor link button.
+- Page containing the terms of Visiosto server and domain service.
+- Category to the blog posts.
+- Blog post flag telling whether or not the post is meant to be shown only on the management page.
+- Management news to the management page.
+- Contentful as the source for blog posts, categories, and authors.
+
 ## [0.8.2] - 2021-03-12
 
 ### Fixed
@@ -204,7 +223,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.8.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/visiosto/visiosto.fi/compare/v0.8.2...v0.9.0
 [0.8.2]: https://github.com/visiosto/visiosto.fi/compare/v0.8.1...v0.8.2
 [0.8.1]: https://github.com/visiosto/visiosto.fi/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/visiosto/visiosto.fi/compare/v0.7.2...v0.8.0

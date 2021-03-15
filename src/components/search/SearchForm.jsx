@@ -63,19 +63,35 @@ const Icon = styled(SearchIcon)`
 const SearchForm = (props) => {
   const i = createIntl(useIntl());
 
-  return (
-    <Form>
-      <Input
-        type="text"
-        placeholder={i('searchPlaceholder')}
-        aria-label={i('searchPlaceholder')}
-        onChange={props.searchData}
-        value={props.searchQuery}
-        onFocus={props.onFocus}
-      />
-      <Icon />
-    </Form>
-  );
+  if (props.loading || props.error) {
+    return (
+      <Form>
+        <Input
+          type="text"
+          placeholder={i('searchPlaceholder')}
+          aria-label={i('searchPlaceholder')}
+          onChange={props.searchData}
+          value={props.searchQuery}
+          onFocus={props.onFocus}
+        />
+        <Icon />
+      </Form>
+    );
+  } else {
+    return (
+      <Form>
+        <Input
+          type="text"
+          placeholder={i('searchPlaceholder')}
+          aria-label={i('searchPlaceholder')}
+          onChange={props.searchData}
+          value={props.searchQuery}
+          onFocus={props.onFocus}
+        />
+        <Icon />
+      </Form>
+    );
+  }
 };
 
 export default SearchForm;

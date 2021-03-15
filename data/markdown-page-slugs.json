@@ -1,14 +1,22 @@
 {
+  "articles-of-association": {
+    "fi": "yhtiojarjestys",
+    "en": "articles-of-association"
+  },
   "client-register-privacy-policy": {
     "fi": "asiakasrekisterin-tietosuojaseloste",
     "en": "client-register-privacy-policy"
+  },
+  "general-meetings": {
+    "fi": "yhtiokokoukset",
+    "en": "general-meetings"
   },
   "management": {
     "fi": "hallinto",
     "en": "management"
   },
-  "pricing": {
-    "fi": "hinnasto",
-    "en": "pricing"
+  "server-domain-service-terms": {
+    "fi": "palvelin-verkkotunnus-palvelusopimus",
+    "en": "server-domain-service-terms"
   }
 }

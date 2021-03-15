@@ -2,16 +2,18 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import AuthorName from '../components/AuthorName';
+import Button from '../components/Button';
+import CategoryName from '../components/CategoryName';
 import Intl from '../components/Intl';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
+import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
-
-import createLink from '../components/createLink';
 
 import createIntl from '../utils/createIntl';
 
@@ -34,7 +36,7 @@ const H2 = styled.h2`
   font-size: 2rem;
 `;
 
-const createStyledLink = (lang) => styled(createLink(lang))`
+const Link = styled(LocalizedLink)`
   text-decoration: none;
   color: var(--color-text);
 
@@ -68,33 +70,72 @@ const PostAuthor = styled.span`
   display: block;
 `;
 
+const PostCategory = styled.span`
+  clear: both;
+  display: block;
+`;
+
 const PostContent = styled.div``;
+
+const Center = styled.div`
+  text-align: center;
+`;
+
+const Separator = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 3em 0;
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 4em 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 5em 0;
+  }
+`;
 
 const Page = (props) => {
   const i = createIntl(useIntl());
-  const Link = createStyledLink(props.pageContext.lang);
 
-  const { edges: posts } = props.data.allMarkdownRemark;
+  const { edges: posts } = props.data.allContentfulBlogPost;
 
   return (
     <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
-      <Rule color="peach" mode={2} />
+      <Separator>
+        <Rule color="peach" mode={2} />
+      </Separator>
       {posts.map(({ node: post }) => {
         return (
           <Post>
             <PostHeader>
               <H2>
-                <Link to={post.fields.keySlug}>{post.frontmatter.title}</Link>
+                <Link to={post.contentful_id} locale={props.pageContext.lang}>
+                  {post.title}
+                </Link>
               </H2>
               <PostMeta>
-                <time datetime={post.frontmatter.datetime}>{post.frontmatter.date}</time>
-                <PostAuthor>{post.frontmatter.author}</PostAuthor>
+                <time datetime={post.datetime}>{post.date}</time>
+                <PostAuthor>
+                  <AuthorName author={post.author} locale={props.pageContext.lang} />
+                </PostAuthor>
+                <PostCategory>
+                  {i('blogCategory')}{' '}
+                  <CategoryName category={post.category} locale={props.pageContext.lang} />
+                </PostCategory>
               </PostMeta>
             </PostHeader>
             <PostContent>
-              <p>{post.excerpt}</p>
+              <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
-            <Rule color="blue" mode={2} />
+            <Center>
+              <Button to={post.contentful_id} lang={props.pageContext.lang}>
+                {i('blogReadMore')}
+              </Button>
+            </Center>
+            <Separator>
+              <Rule color="blue" mode={2} />
+            </Separator>
           </Post>
         );
       })}
@@ -113,22 +154,31 @@ const Blog = (props) => (
 export default Blog;
 
 export const pageQuery = graphql`
-  query BlogQuery($lang: String, $momentJsLocale: String) {
-    allMarkdownRemark(
-      filter: { fields: { keySlug: { glob: "**/blog/**" }, locale: { eq: $lang } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+  query BlogQuery($locale: String, $momentJsLocale: String) {
+    allContentfulBlogPost(
+      filter: { management: { eq: false }, node_locale: { eq: $locale } }
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
-          excerpt(pruneLength: 500)
-          frontmatter {
-            title
-            author
-            datetime: date
-            date: date(formatString: "LL", locale: $momentJsLocale)
+          contentful_id
+          date: date(formatString: "LL", locale: $momentJsLocale)
+          datetime: date
+          slug
+          node_locale
+          title
+          author {
+            contentful_id
+            name
           }
-          fields {
-            keySlug
+          body {
+            childMarkdownRemark {
+              excerpt(pruneLength: 500)
+            }
+          }
+          category {
+            contentful_id
+            name
           }
         }
       }

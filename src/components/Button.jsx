@@ -3,11 +3,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
-const createButtonLink = (linkElement) => (linkElement ? styled(linkElement) : styled(Link))`
-    text-decoration: none;
-  `;
+import LocalizedLink from './link/LocalizedLink';
+
+const Link = styled(LocalizedLink)`
+  text-decoration: none;
+`;
 
 const Span = styled.span`
   display: inline-flex;
@@ -31,14 +32,14 @@ const Span = styled.span`
   }
 `;
 
-export default (props) => {
-  const ButtonLink = createButtonLink(props.link);
-
+const Button = (props) => {
   return (
     <div>
-      <ButtonLink to={props.to}>
+      <Link to={props.to} locale={props.lang}>
         <Span>{props.children}</Span>
-      </ButtonLink>
+      </Link>
     </div>
   );
 };
+
+export default Button;

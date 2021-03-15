@@ -102,9 +102,14 @@ class SearchContainer extends Component {
    * in which the results will be added to the state
    */
   searchData = (e) => {
-    const { search } = this.state;
-    const queryResult = search.search(e.target.value);
-    this.setState({ searchQuery: e.target.value, searchResults: queryResult });
+    const { search, isLoading, isError } = this.state;
+
+    if (isLoading || isError) {
+      this.setState({ searchQuery: e.target.value, searchResults: '' });
+    } else {
+      const queryResult = search.search(e.target.value);
+      this.setState({ searchQuery: e.target.value, searchResults: queryResult });
+    }
   };
 
   handleSubmit = (e) => {
@@ -121,20 +126,67 @@ class SearchContainer extends Component {
     const { pageList, searchResults, searchQuery, hasFocus } = this.state;
     const queryResults = searchQuery === '' ? pageList : searchResults;
 
-    return (
-      <div ref={this.rootRef} className={this.props.className}>
-        <SearchForm
-          searchData={this.searchData}
-          searchQuery={searchQuery}
-          onFocus={() => this.setState({ hasFocus: true })}
-        />
-        <SearchResults
-          queryResults={queryResults}
-          show={queryResults && searchQuery.length > 0 && hasFocus}
-          searchResults={searchResults}
-        />
-      </div>
-    );
+    if (this.state.isLoading) {
+      return (
+        <div
+          ref={this.rootRef}
+          className={
+            hasFocus || searchQuery.length > 0
+              ? `${this.props.className} focus`
+              : this.props.className
+          }
+        >
+          <SearchForm
+            searchData={this.searchData}
+            searchQuery={searchQuery}
+            onFocus={() => this.setState({ hasFocus: true })}
+            loading
+          />
+          <SearchResults show={searchQuery.length > 0 && hasFocus} loading />
+        </div>
+      );
+    } else if (this.state.isError) {
+      return (
+        <div
+          ref={this.rootRef}
+          className={
+            hasFocus || searchQuery.length > 0
+              ? `${this.props.className} focus`
+              : this.props.className
+          }
+        >
+          <SearchForm
+            searchData={this.searchData}
+            searchQuery={searchQuery}
+            onFocus={() => this.setState({ hasFocus: true })}
+            error
+          />
+          <SearchResults show={searchQuery.length > 0 && hasFocus} error />
+        </div>
+      );
+    } else {
+      return (
+        <div
+          ref={this.rootRef}
+          className={
+            hasFocus || searchQuery.length > 0
+              ? `${this.props.className} focus`
+              : this.props.className
+          }
+        >
+          <SearchForm
+            searchData={this.searchData}
+            searchQuery={searchQuery}
+            onFocus={() => this.setState({ hasFocus: true })}
+          />
+          <SearchResults
+            queryResults={queryResults}
+            show={queryResults && searchQuery.length > 0 && hasFocus}
+            searchResults={searchResults}
+          />
+        </div>
+      );
+    }
   }
 }
 

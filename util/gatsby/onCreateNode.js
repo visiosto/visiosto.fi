@@ -2,11 +2,10 @@
 // Licensed under the MIT License
 
 const createAuthorSlug = require('./pages/createAuthorSlug');
-const createBlogPostSlug = require('./pages/createBlogPostSlug');
 const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
-const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
+// const blogPostFilenameRegex = /(.+)\/(\d{4})-(\d{2})-(\d{2})-(.+)\.(.{2})\.md$/;
 const filenameRegex = /(.+)\/(.+)\.(.{2})\.md$/;
 const indexFilenameRegex = /(.+)\/(\d+)-(.+)\.(.{2})\.md$/;
 
@@ -18,30 +17,17 @@ module.exports = ({ node, actions, getNode, reporter }) => {
       const { permalink, frontmatterLocale } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
+      if (!relativePath) {
+        break;
+      }
+
       let slug = permalink;
       let keySlug = permalink;
       let locale = frontmatterLocale;
 
       // TODO Have separate handling for the key slugs.
       if (!slug) {
-        if (relativePath.includes('blog')) {
-          reporter.verbose(`Creating node for '${relativePath}'`);
-
-          // Blog posts don't have embedded permalinks.
-          // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
-          // The date portion comes from the file name: <date>-<title>.md
-          const match = blogPostFilenameRegex.exec(relativePath);
-          const [, , , , , filename] = match;
-
-          [, , , , , , locale] = match;
-
-          reporter.verbose(`The filename is ${filename}`);
-          reporter.verbose(`The locale is ${locale}`);
-
-          slug = createBlogPostSlug(locale, filename, reporter);
-
-          keySlug = `/blog/${filename}`;
-        } else if (relativePath.includes('author')) {
+        if (relativePath.includes('author')) {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
           const match = filenameRegex.exec(relativePath);
@@ -78,7 +64,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
 
         [, , locale] = match;
 
-        reporter.verbose(`The filename is ${filename}`);
+        reporter.verbose(`The filename for the default node is ${filename}`);
         reporter.verbose(`The locale is ${locale}`);
 
         slug = createSlug(locale, filename, reporter);

@@ -76,50 +76,10 @@ module.exports = async ({ graphql, reporter }) => {
             }
           }
         }
-        author: allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___title] }
-          limit: 1000
-          filter: { fields: { keySlug: { glob: "**/author/**" } } }
-        ) {
-          edges {
-            node {
-              excerpt
-              htmlAst
-              id
-              fields {
-                locale
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-        blog: allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          limit: 1000
-          filter: { fields: { keySlug: { glob: "**/blog/**" } } }
-        ) {
-          edges {
-            node {
-              excerpt
-              htmlAst
-              id
-              fields {
-                locale
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
         rootPages: allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___title] }
           limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(/(?!author|blog|index))/" } } }
+          filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
         ) {
           edges {
             node {
@@ -139,6 +99,97 @@ module.exports = async ({ graphql, reporter }) => {
       }
     `,
   );
+  // const query = await graphql(
+  //   `
+  //     {
+  //       site: site {
+  //         siteMetadata {
+  //           defaultLocale
+  //           locales
+  //         }
+  //       }
+  //       index: allMarkdownRemark(
+  //         sort: { order: ASC, fields: [frontmatter___order] }
+  //         filter: { fields: { slug: { glob: "index/**" } } }
+  //       ) {
+  //         edges {
+  //           node {
+  //             excerpt
+  //             htmlAst
+  //             id
+  //             fields {
+  //               locale
+  //             }
+  //             frontmatter {
+  //               order
+  //               title
+  //             }
+  //           }
+  //         }
+  //       }
+  //       author: allMarkdownRemark(
+  //         sort: { order: DESC, fields: [frontmatter___title] }
+  //         limit: 1000
+  //         filter: { fields: { keySlug: { glob: "**/author/**" } } }
+  //       ) {
+  //         edges {
+  //           node {
+  //             excerpt
+  //             htmlAst
+  //             id
+  //             fields {
+  //               locale
+  //               slug
+  //             }
+  //             frontmatter {
+  //               title
+  //             }
+  //           }
+  //         }
+  //       }
+  //       blog: allMarkdownRemark(
+  //         sort: { order: DESC, fields: [frontmatter___date] }
+  //         limit: 1000
+  //         filter: { fields: { keySlug: { glob: "**/blog/**" } } }
+  //       ) {
+  //         edges {
+  //           node {
+  //             excerpt
+  //             htmlAst
+  //             id
+  //             fields {
+  //               locale
+  //               slug
+  //             }
+  //             frontmatter {
+  //               title
+  //             }
+  //           }
+  //         }
+  //       }
+  //       rootPages: allMarkdownRemark(
+  //         sort: { order: DESC, fields: [frontmatter___title] }
+  //         limit: 1000
+  //         filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
+  //       ) {
+  //         edges {
+  //           node {
+  //             excerpt
+  //             htmlAst
+  //             id
+  //             fields {
+  //               locale
+  //               slug
+  //             }
+  //             frontmatter {
+  //               title
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `,
+  // );
 
   if (query.errors) {
     reporter.panicOnBuild('Error while running GraphQL query');
@@ -161,35 +212,35 @@ module.exports = async ({ graphql, reporter }) => {
     ),
   );
 
-  query.data.author.edges.forEach(({ node }) => {
-    const { excerpt, fields, frontmatter, htmlAst, id } = node;
-    const { locale, slug } = fields;
+  // query.data.author.edges.forEach(({ node }) => {
+  //   const { excerpt, fields, frontmatter, htmlAst, id } = node;
+  //   const { locale, slug } = fields;
 
-    const page = {
-      id,
-      slug,
-      title: frontmatter.title,
-      content: createFromHtmlAst(htmlAst.children),
-      excerpt,
-    };
+  //   const page = {
+  //     id,
+  //     slug,
+  //     title: frontmatter.title,
+  //     content: createFromHtmlAst(htmlAst.children),
+  //     excerpt,
+  //   };
 
-    searchData[locale].pages.push(page);
-  });
+  //   searchData[locale].pages.push(page);
+  // });
 
-  query.data.blog.edges.forEach(({ node }) => {
-    const { excerpt, fields, frontmatter, htmlAst, id } = node;
-    const { locale, slug } = fields;
+  // query.data.blog.edges.forEach(({ node }) => {
+  //   const { excerpt, fields, frontmatter, htmlAst, id } = node;
+  //   const { locale, slug } = fields;
 
-    const page = {
-      id,
-      slug,
-      title: frontmatter.title,
-      content: createFromHtmlAst(htmlAst.children),
-      excerpt,
-    };
+  //   const page = {
+  //     id,
+  //     slug,
+  //     title: frontmatter.title,
+  //     content: createFromHtmlAst(htmlAst.children),
+  //     excerpt,
+  //   };
 
-    searchData[locale].pages.push(page);
-  });
+  //   searchData[locale].pages.push(page);
+  // });
 
   query.data.rootPages.edges.forEach(({ node }) => {
     const { excerpt, fields, frontmatter, htmlAst, id } = node;
