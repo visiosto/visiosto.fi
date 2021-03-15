@@ -8,4 +8,6 @@ Visiosto is a Finnish company that builds a world where anyone&rsquo;s message c
 
 [General Meetings](/en/management/general-meetings)
 
+[Articles of Association](/en/management/articles-of-association)
+
 </div>

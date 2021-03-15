@@ -8,4 +8,6 @@ Visiosto on suomalainen yksityinen osakeyhtiö, jonka visioiden maailmassa kenen
 
 [Yhtiökokoukset](/hallinto/yhtiokokoukset)
 
+[Yhtiöjärjestys](/hallinto/yhtiojarjestys)
+
 </div>

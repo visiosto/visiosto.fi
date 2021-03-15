@@ -1,4 +1,8 @@
 {
+  "articles-of-association": {
+    "fi": "yhtiojarjestys",
+    "en": "articles-of-association"
+  },
   "client-register-privacy-policy": {
     "fi": "asiakasrekisterin-tietosuojaseloste",
     "en": "client-register-privacy-policy"
