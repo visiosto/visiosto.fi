@@ -2,7 +2,6 @@
 // Licensed under the MIT License
 
 const createAuthorSlug = require('./pages/createAuthorSlug');
-const createBlogPostSlug = require('./pages/createBlogPostSlug');
 const createSlug = require('./pages/createSlug');
 
 // Parse information out of blog post filename.
@@ -32,24 +31,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
 
       // TODO Have separate handling for the key slugs.
       if (!slug) {
-        if (relativePath.includes('blog')) {
-          reporter.verbose(`Creating node for '${relativePath}'`);
-
-          // Blog posts don't have embedded permalinks.
-          // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>
-          // The date portion comes from the file name: <date>-<title>.md
-          const match = blogPostFilenameRegex.exec(relativePath);
-          const [, , , , , filename] = match;
-
-          [, , , , , , locale] = match;
-
-          reporter.verbose(`The filename is ${filename}`);
-          reporter.verbose(`The locale is ${locale}`);
-
-          slug = createBlogPostSlug(locale, filename, reporter);
-
-          keySlug = `/blog/${filename}`;
-        } else if (relativePath.includes('author')) {
+        if (relativePath.includes('author')) {
           reporter.verbose(`Creating node for '${relativePath}'`);
 
           const match = filenameRegex.exec(relativePath);
@@ -86,7 +68,7 @@ module.exports = ({ node, actions, getNode, reporter }) => {
 
         [, , locale] = match;
 
-        reporter.verbose(`The filename is ${filename}`);
+        reporter.verbose(`The filename for the default node is ${filename}`);
         reporter.verbose(`The locale is ${locale}`);
 
         slug = createSlug(locale, filename, reporter);

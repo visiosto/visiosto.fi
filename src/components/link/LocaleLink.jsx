@@ -8,9 +8,8 @@ import LocalizedAuthorLink from './LocalizedAuthorLink';
 import LocalizedBlogLink from './LocalizedBlogLink';
 import LocalizedCategoryLink from './LocalizedCategoryLink';
 
-import { AUTHOR_SLUG, BLOG_SLUG } from '../../constants';
+import { AUTHOR_SLUG } from '../../constants';
 
-import blogSlugs from '../../../data/blog-slugs.json';
 import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
 import pageSlugs from '../../data/page-slugs.json';
 
@@ -66,15 +65,7 @@ const LocaleLink = (props) => {
   console.log('The Contentful matches are', contentfulIdMatches);
 
   if (contentfulIdMatches.length === 0) {
-    if (props.pageKey.startsWith(`/${BLOG_SLUG}/`)) {
-      const page = createLocalizedSlug(data.site, toLang, BLOG_SLUG);
-
-      const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
-
-      const linkPath = `${page}/${blogSlugs[filename][toLang]}`;
-
-      return <Link {...props} to={linkPath} />;
-    } else if (props.pageKey.startsWith(`/${AUTHOR_SLUG}/`)) {
+    if (props.pageKey.startsWith(`/${AUTHOR_SLUG}/`)) {
       const page = createLocalizedSlug(data.site, toLang, AUTHOR_SLUG);
 
       const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];

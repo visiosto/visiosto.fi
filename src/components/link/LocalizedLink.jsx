@@ -8,9 +8,8 @@ import LocalizedAuthorLink from './LocalizedAuthorLink';
 import LocalizedBlogLink from './LocalizedBlogLink';
 import LocalizedCategoryLink from './LocalizedCategoryLink';
 
-import { AUTHOR_SLUG, BLOG_SLUG } from '../../constants';
+import { AUTHOR_SLUG } from '../../constants';
 
-import blogSlugs from '../../../data/blog-slugs.json';
 import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
 import pageSlugs from '../../data/page-slugs.json';
 
@@ -61,21 +60,7 @@ const LocalizedLink = (props) => {
   console.log('Creating link to', props.to);
 
   if (props.to.startsWith('/')) {
-    if (props.to.startsWith(`/${BLOG_SLUG}/`)) {
-      const page = createLocalizedSlug(data.site, props.locale, `/${BLOG_SLUG}`);
-
-      let { to } = props;
-
-      const filename = /(.+)\/(.+)/.exec(props.to.substring(pageKeySlashIndex))[2];
-
-      const linkPath = `${page}/${blogSlugs[filename][props.locale]}`;
-
-      if (filename in blogSlugs && props.locale in blogSlugs[filename]) {
-        to = linkPath;
-      }
-
-      return <Link {...props} to={to} />;
-    } else if (props.to.startsWith(`/${AUTHOR_SLUG}/`)) {
+    if (props.to.startsWith(`/${AUTHOR_SLUG}/`)) {
       const page = createLocalizedSlug(data.site, props.locale, `/${AUTHOR_SLUG}`);
 
       let { to } = props;

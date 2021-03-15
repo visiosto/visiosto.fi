@@ -131,7 +131,7 @@ const Page = (props) => {
               </PostMeta>
             </PostHeader>
             <PostContent>
-              <p>{post.excerpt}</p>
+              <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
               <Button to={post.contentful_id} lang={props.pageContext.lang}>

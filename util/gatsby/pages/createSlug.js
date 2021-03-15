@@ -11,6 +11,7 @@ module.exports = (locale, filename, reporter) => {
 
   const path = filename.split('/').reduce(
     (previous, current) => {
+      reporter.verbose(`Previous: ${previous}, current: ${current}`);
       return `${previous}/${pageSlugs[current][locale]}`;
     },
     locale === defaultLanguage ? '' : `/${locale}`,
