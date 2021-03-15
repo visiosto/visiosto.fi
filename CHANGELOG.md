@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Page containing the terms of Visiosto server and domain service.
 - Category to the blog posts.
 - Blog post flag telling whether or not the post is meant to be shown only on the management page.
+- Management news to the management page.
 
 ## [0.8.2] - 2021-03-12
 
