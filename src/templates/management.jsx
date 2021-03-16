@@ -120,15 +120,15 @@ const Separator = styled.div`
 const Page = (props) => {
   const i = createIntl(useIntl());
 
-  const { page, posts } = props.data;
+  const { contentfulPage: page, allContentfulBlogPost: posts } = props.data;
 
   return (
     <Layout
-      title={page.frontmatter.title}
+      title={page.title}
       lang={props.pageContext.lang}
       pageKey={props.pageContext.key}
     >
-      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+      <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <H2>{i('managementNewsTitle')}</H2>
       <Separator>
         <Rule color="peach" mode={2} />
@@ -182,14 +182,16 @@ const Management = (props) => (
 export default Management;
 
 export const pageQuery = graphql`
-  query ManagementQuery($path: String, $locale: String, $momentJsLocale: String) {
-    page: markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        title
+  query ManagementQuery($key: String, $locale: String, $momentJsLocale: String) {
+    contentfulPage(contentful_id: { eq: $key }, node_locale: { eq: $locale }) {
+      title
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
-    posts: allContentfulBlogPost(
+    allContentfulBlogPost(
       filter: { management: { eq: true }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
