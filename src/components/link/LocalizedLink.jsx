@@ -7,6 +7,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import LocalizedAuthorLink from './LocalizedAuthorLink';
 import LocalizedBlogLink from './LocalizedBlogLink';
 import LocalizedCategoryLink from './LocalizedCategoryLink';
+import LocalizedPageLink from './LocalizedPageLink';
 
 import { AUTHOR_SLUG } from '../../constants';
 
@@ -97,6 +98,9 @@ const LocalizedLink = (props) => {
       }
       case 'ContentfulCategory': {
         return <LocalizedCategoryLink {...props} />;
+      }
+      case 'ContentfulPage': {
+        return <LocalizedPageLink {...props} />;
       }
       default:
         break;

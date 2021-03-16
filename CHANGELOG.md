@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- General pages from Contentful.
+- Generation of the slugs of the pages from Contentful by using parent pages.
+
 ### Changed
 
 - Front page data to be read from Contentful.
