@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Front page data to be read from Contentful.
 - Author data to be read from Contentful.
 
+### Removed
+
+- Generation of the search index as long as the transition to Contentful is in progress.
+
 ## [0.9.0] - 2021-03-15
 
 ### Added
