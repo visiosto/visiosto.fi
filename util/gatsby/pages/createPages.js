@@ -20,8 +20,11 @@ module.exports = async (actions, graphql, reporter) => {
               contentful_id
               node_locale
               slug
-              parents {
+              parentPath {
                 slug
+                parentPath {
+                  slug
+                }
               }
             }
           }
@@ -41,7 +44,7 @@ module.exports = async (actions, graphql, reporter) => {
 
   query.data.allContentfulPage.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id, node_locale, parents, slug } = node;
+    const { contentful_id, node_locale, parentPath, slug } = node;
 
     reporter.verbose(`The Contentful slug for the page is ${slug}`);
 
@@ -51,14 +54,18 @@ module.exports = async (actions, graphql, reporter) => {
     reporter.verbose(`The Moment.js locale to ${node_locale.toLowerCase()}`);
 
     const pagePath = (() => {
-      if (parents) {
-        return `${parents
-          .map(({ slug: parentSlug }) => parentSlug)
-          .reduce(
-            (previous, current) => `${previous}/${current}`,
-            locale === defaultLocale ? '' : `/${locale}`,
-          )}/${slug}`;
+      if (parentPath) {
+        if (parentPath.parentPath) {
+          return locale === defaultLocale
+            ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
+            : `/${locale}/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`;
+        }
+
+        return locale === defaultLocale
+          ? `/${parentPath.slug}/${slug}`
+          : `/${locale}/${parentPath.slug}/${slug}`;
       }
+
       return locale === defaultLocale ? `/${slug}` : `/${locale}/${slug}`;
     })();
 

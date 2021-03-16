@@ -19,8 +19,11 @@ const LocalizedPageLink = (props) => {
               contentful_id
               node_locale
               slug
-              parents {
+              parentPath {
                 slug
+                parentPath {
+                  slug
+                }
               }
             }
           }
@@ -41,18 +44,23 @@ const LocalizedPageLink = (props) => {
 
   console.log(node);
 
-  const { parents, slug } = node;
+  const { parentPath, slug } = node;
 
-  const pageSlug = parents
-    ? `${parents
-        .map(({ slug }) => slug)
-        .reduce(
-          (previous, current) => `${previous}/${current}`,
-          props.locale === defaultLocale ? '' : `/${props.locale}`,
-        )}/${slug}`
-    : props.locale === defaultLocale
-    ? `/${slug}`
-    : `/${props.locale}/${slug}`;
+  const pageSlug = (() => {
+    if (parentPath) {
+      if (parentPath.parentPath) {
+        return props.locale === defaultLocale
+          ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
+          : `/${props.locale}/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`;
+      }
+
+      return props.locale === defaultLocale
+        ? `/${parentPath.slug}/${slug}`
+        : `/${props.locale}/${parentPath.slug}/${slug}`;
+    }
+
+    return props.locale === defaultLocale ? `/${slug}` : `/${props.locale}/${slug}`;
+  })();
 
   return <Link {...props} to={`${pageSlug}`} />;
 };
