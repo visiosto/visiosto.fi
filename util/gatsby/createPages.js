@@ -94,7 +94,8 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    const pagePath = locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
+    const pagePath =
+      locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
     reporter.verbose(`The path created is ${pagePath}`);
 
