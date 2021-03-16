@@ -22,7 +22,7 @@ const NotFoundPage = (props) => {
     <LayoutError
       errorCode="404"
       title={i('notFoundTitle')}
-      lang="fi"
+      locale="fi"
       pageKey={props.pageContext.key}
     >
       <P>{i('notFoundContent')}</P>
