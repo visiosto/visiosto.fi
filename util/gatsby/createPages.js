@@ -1,11 +1,13 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const createAuthorPages = require('./pages/createAuthorPages');
-const createBlogPages = require('./pages/createBlogPages');
-const createCategoryPages = require('./pages/createCategoryPages');
-const createPages = require('./pages/createPages');
-const createRootPages = require('./pages/createRootPages');
+const path = require('path');
+
+// const createAuthorPages = require('./pages/createAuthorPages');
+// const createBlogPages = require('./pages/createBlogPages');
+// const createCategoryPages = require('./pages/createCategoryPages');
+// const createPages = require('./pages/createPages');
+// const createRootPages = require('./pages/createRootPages');
 
 // module.exports = async ({ actions, graphql, reporter }) => {
 //   await createRootPages(actions, graphql, reporter);
@@ -42,6 +44,15 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
       }
     `,
   );
@@ -53,7 +64,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   const { defaultLocale, localePaths, simpleLocales } = query.data.site.siteMetadata;
 
-  const basicPageTemplate = path.resolve('src', 'templates', 'page.jsx');
+  // Create the basic pages from Contentful.
 
   query.data.basicPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
@@ -65,10 +76,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
       if (parents) {
         return `${parents
           .map(({ slug: parentSlug }) => parentSlug)
-          .reduce(
-            (previous, current) => `${previous}/${current}`,
-            localePaths[locale],
-          )}/${slug}`;
+          .reduce((previous, current) => `${previous}/${current}`, localePaths[locale])}/${slug}`;
       }
       return locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
     })();
@@ -77,11 +85,37 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     const pageOpts = {
       path: pagePath,
-      component: basicPageTemplate,
+      component: path.resolve('src', 'templates', 'page.jsx'),
       context: {
         locale,
         pageId,
         simpleLocale: simpleLocales[locale],
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the management page from Contentful.
+
+  query.data.managementPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    eporter.verbose(`The creating page for the base slug '${slug}'`);
+
+    const pagePath = locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'management.jsx'),
+      context: {
+        locale,
+        pageId,
+        simpleLocale: simpleLocales[locale],
+        momentJsLocale: locale.toLowerCase(),
       },
     };
 
