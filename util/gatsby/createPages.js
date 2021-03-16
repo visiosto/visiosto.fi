@@ -24,8 +24,11 @@ module.exports = async ({ actions, graphql, reporter }) => {
               contentful_id
               node_locale
               slug
-              parents {
+              parentPath {
                 slug
+                parentPath {
+                  slug
+                }
               }
             }
           }
@@ -54,16 +57,33 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   query.data.basicPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, parents, slug } = node;
+    const { contentful_id: pageId, node_locale: locale, parentPath, slug } = node;
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
+    // const pagePath = (() => {
+    //   if (parents) {
+    //     return `${parents
+    //       .map(({ slug: parentSlug }) => parentSlug)
+    //       .reduce((previous, current) => `${previous}/${current}`, localePaths[locale])}/${slug}`;
+    //   }
+    //   return locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
+    // })();
+
+    // TODO Make a common helper function for this
     const pagePath = (() => {
-      if (parents) {
-        return `${parents
-          .map(({ slug: parentSlug }) => parentSlug)
-          .reduce((previous, current) => `${previous}/${current}`, localePaths[locale])}/${slug}`;
+      if (parentPath) {
+        if (parentPath.parentPath) {
+          return locale === defaultLocale
+            ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
+            : `/${localePaths[locale]}/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`;
+        }
+
+        return locale === defaultLocale
+          ? `/${parentPath.slug}/${slug}`
+          : `/${localePaths[locale]}/${parentPath.slug}/${slug}`;
       }
+
       return locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
     })();
 
