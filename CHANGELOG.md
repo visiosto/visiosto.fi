@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - All of the localized links to be contained in one component.
 
+## [0.10.1] - 2021-03-16
+
+### Fixed
+
+- Quality of the images got from Contentful.
+
 ## [0.10.0] - 2021-03-16
 
 ### Added
@@ -245,7 +251,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.10.0...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.10.1...HEAD
+[0.10.1]: https://github.com/visiosto/visiosto.fi/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/visiosto/visiosto.fi/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/visiosto/visiosto.fi/compare/v0.8.2...v0.9.0
 [0.8.2]: https://github.com/visiosto/visiosto.fi/compare/v0.8.1...v0.8.2
