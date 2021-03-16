@@ -37,7 +37,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
-        blogSlugs: allContentfulSlugs(filter: { contentful_id: { eq: "4hyT4qfodmt3LuGu7WmotG" } }) {
+        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
           edges {
             node {
               node_locale
@@ -49,8 +49,30 @@ module.exports = async ({ actions, graphql, reporter }) => {
           edges {
             node {
               contentful_id
-              slug
               node_locale
+              slug
+            }
+          }
+        }
+        categoryPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+              parentPath {
+                slug
+              }
+            }
+          }
+        }
+        categories: allContentfulCategory {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
             }
           }
         }
@@ -100,7 +122,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   // Create the blog post pages from Contentful.
 
-  const { blogSlugs } = query.data;
+  const { blogPaths } = query.data;
 
   query.data.blogPosts.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
@@ -108,7 +130,8 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    const blogSlug = blogSlugs.edges.filter(({ nodeLocale }) => nodeLocale === locale)[0].node;
+    const blogSlug = blogPaths.edges.filter(({node}) => {
+      return node.node_locale === locale})[0].node.slug;
 
     const pagePath =
       locale === defaultLocale
@@ -120,6 +143,35 @@ module.exports = async ({ actions, graphql, reporter }) => {
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'blog-post.jsx'),
+      context: {
+        locale,
+        pageId,
+        momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the category pages from Contentful.
+
+  const { categoryPaths } = query.data;
+
+  query.data.categories.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`The creating page for the base slug '${slug}'`);
+
+    const categorySlug = categoryPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
+
+    const pagePath = `${createPagePath(categorySlug, locale, defaultLocale, localePaths)}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'category.jsx'),
       context: {
         locale,
         pageId,

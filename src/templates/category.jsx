@@ -104,8 +104,8 @@ const Page = (props) => {
   return (
     <Layout
       title={`${i('blogCategory')} ${category.name}`}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
     >
       <Separator>
         <Rule color="peach" mode={2} />
@@ -115,18 +115,18 @@ const Page = (props) => {
           <Post>
             <PostHeader>
               <H2>
-                <Link to={post.contentful_id} locale={props.pageContext.lang}>
+                <Link to={post.contentful_id} locale={props.pageContext.locale}>
                   {post.title}
                 </Link>
               </H2>
               <PostMeta>
                 <time datetime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.lang} />
+                  <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>
                 <PostCategory>
                   {i('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.lang} />
+                  <CategoryName category={post.category} locale={props.pageContext.locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -134,7 +134,7 @@ const Page = (props) => {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.contentful_id} lang={props.pageContext.lang}>
+              <Button to={post.contentful_id} locale={props.pageContext.locale}>
                 {i('blogReadMore')}
               </Button>
             </Center>
@@ -149,7 +149,9 @@ const Page = (props) => {
 };
 
 const Category = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -159,12 +161,20 @@ const Category = (props) => (
 export default Category;
 
 export const pageQuery = graphql`
-  query CategoryQuery($key: String, $locale: String, $momentJsLocale: String) {
-    contentfulCategory(contentful_id: { eq: $key }, node_locale: { eq: $locale }) {
+  query CategoryQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
+    contentfulCategory(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
       name
     }
     allContentfulBlogPost(
-      filter: { category: { contentful_id: { eq: $key } }, node_locale: { eq: $locale } }
+      filter: { category: { contentful_id: { eq: $pageId } }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {
