@@ -39,7 +39,7 @@ export default (props) => {
           <div>{props.children}</div>
         </section>
       </main>
-      <Footer noLanguageSwitcher {...props} />
+      <Footer noLocaleSwitcher {...props} />
     </>
   );
 };

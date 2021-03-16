@@ -16,11 +16,12 @@ const Head = (props) => {
       query {
         site {
           siteMetadata {
+            description
+            locales
+            simpleLocales
             siteUrl
             title
-            description
             twitterAuthor
-            locales
           }
         }
       }
@@ -32,7 +33,8 @@ const Head = (props) => {
   const baseUrl =
     process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : site.siteMetadata.siteUrl;
 
-  const createUrl = createLanguageUrl(baseUrl, props.pageKey);
+  // TODO Make sure this function works.
+  const createUrl = createLanguageUrl(baseUrl, props.pageId);
 
   const titleTemplate = props.home
     ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
@@ -44,7 +46,7 @@ const Head = (props) => {
 
   return (
     <Helmet titleTemplate={titleTemplate}>
-      <html lang={`${props.lang}`} />
+      <html lang={`${site.siteMetadata.simpleLocales[props.locale]}`} />
       <title>{props.title}</title>
 
       <meta name="description" content={description} />
@@ -53,7 +55,7 @@ const Head = (props) => {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {/* TODO For articles: <meta property="og:type" content="article" /> */}
-      <meta property="og:url" content={createUrl(props.lang)} />
+      <meta property="og:url" content={createUrl(props.locale)} />
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={site.siteMetadata.twitterAuthor} />

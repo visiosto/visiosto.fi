@@ -56,34 +56,34 @@ const LocaleLink = (props) => {
   );
 
   const toLang = props.to;
-  console.log('The page key for the locale link is', props.pageKey);
+  console.log('The page key for the locale link is', props.pageId);
 
   const contentfulIdMatches = data.allContentfulEntry.edges.filter(
-    ({ node }) => node.contentful_id === props.pageKey,
+    ({ node }) => node.contentful_id === props.pageId,
   );
 
   console.log('The Contentful matches are', contentfulIdMatches);
 
   if (contentfulIdMatches.length === 0) {
-    if (props.pageKey.startsWith(`/${AUTHOR_SLUG}/`)) {
+    if (props.pageId.startsWith(`/${AUTHOR_SLUG}/`)) {
       const page = createLocalizedSlug(data.site, toLang, AUTHOR_SLUG);
 
-      const filename = /(.+)\/(.+)/.exec(props.pageKey.substring(pageKeySlashIndex))[2];
+      const filename = /(.+)\/(.+)/.exec(props.pageId.substring(pageKeySlashIndex))[2];
 
       const linkPath = `${page}/${filename}`;
 
       return <Link {...props} to={linkPath} />;
     } else {
-      return <Link {...props} to={createLocalizedSlug(data.site, toLang, props.pageKey)} />;
+      return <Link {...props} to={createLocalizedSlug(data.site, toLang, props.pageId)} />;
     }
   } else {
-    console.log('Creating Contentful locale link to', toLang, 'for id', props.pageKey);
+    console.log('Creating Contentful locale link to', toLang, 'for id', props.pageId);
 
     console.log(data);
 
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) =>
-        node.contentful_id === props.pageKey &&
+        node.contentful_id === props.pageId &&
         (toLang === 'en' ? node.node_locale === 'en-GB' : node.node_locale === toLang),
     )[0].node;
 
@@ -91,16 +91,16 @@ const LocaleLink = (props) => {
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
-        return <LocalizedAuthorLink {...props} to={props.pageKey} locale={toLang} />;
+        return <LocalizedAuthorLink {...props} to={props.pageId} locale={toLang} />;
       }
       case 'ContentfulBlogPost': {
-        return <LocalizedBlogLink {...props} to={props.pageKey} locale={toLang} />;
+        return <LocalizedBlogLink {...props} to={props.pageId} locale={toLang} />;
       }
       case 'ContentfulCategory': {
-        return <LocalizedCategoryLink {...props} to={props.pageKey} locale={toLang} />;
+        return <LocalizedCategoryLink {...props} to={props.pageId} locale={toLang} />;
       }
       case 'ContentfulPage': {
-        return <LocalizedPageLink {...props} to={props.pageKey} locale={toLang} />;
+        return <LocalizedPageLink {...props} to={props.pageId} locale={toLang} />;
       }
       default:
         break;

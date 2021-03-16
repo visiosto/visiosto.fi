@@ -27,6 +27,7 @@ const Header = styled.header`
   }
 `;
 
+// TODO Remove and use simpler components instead.
 const createSiteTitle = (isHome) => (isHome ? styled.h1 : styled.p)`
     display: none;
     margin: 0;
@@ -107,7 +108,7 @@ export default (props) => {
     <Header>
       <SiteBranding>
         <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
-        <LocalizedLink to="/" locale={props.lang}>
+        <LocalizedLink to="/" locale={props.locale}>
           <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>

@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - All of the localized links to be contained in one component.
+- All `lang` properties to `locale` properties.
+- All pages to be constructed by using Contentful data.
 
 ## [0.10.2] - 2021-03-16
 
