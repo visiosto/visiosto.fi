@@ -11,7 +11,6 @@ import LocalizedPageLink from './LocalizedPageLink';
 
 import { AUTHOR_SLUG } from '../../constants';
 
-import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
 import pageSlugs from '../../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
@@ -24,7 +23,7 @@ const createLocalizedSlug = (site, locale, slug) => {
   if (pageKey) {
     return pageKey.split('/').reduce(
       (previous, current) => {
-        const slugs = current in pageSlugs ? pageSlugs : markdownPageSlugs;
+        const slugs = pageSlugs;
         return `${previous}/${slugs[current][locale]}`;
       },
       locale === defaultLocale ? '' : `/${locale}`,

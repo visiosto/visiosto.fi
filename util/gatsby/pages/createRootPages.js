@@ -7,8 +7,6 @@ const path = require('path');
 const pageSlugs = require('../../../src/data/page-slugs.json');
 const recursiveReadDirSync = require('../../recursiveReadDirSync');
 
-const pageKeySlashIndex = 1;
-
 // This function creates the pages for each root-level page.
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
@@ -30,24 +28,6 @@ module.exports = async (actions, graphql, reporter) => {
             }
           }
         }
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___title] }
-          limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(?!/(?:blog))/management/.*/" } } }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
-              fields {
-                slug
-                keySlug
-                locale
-              }
-            }
-          }
-        }
       }
     `,
   );
@@ -57,7 +37,7 @@ module.exports = async (actions, graphql, reporter) => {
     return;
   }
 
-  const {defaultLocale} = query.data.site.siteMetadata;
+  const { defaultLocale } = query.data.site.siteMetadata;
 
   reporter.verbose(`Default language is set to ${defaultLocale}`);
 
@@ -166,21 +146,21 @@ module.exports = async (actions, graphql, reporter) => {
     createPage(pageOpts);
   });
 
-  const template = path.resolve('src', 'templates', 'markdown-page.jsx');
+  // const template = path.resolve('src', 'templates', 'markdown-page.jsx');
 
-  query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, locale } = node.fields;
+  // query.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  //   const { slug, locale } = node.fields;
 
-    reporter.verbose(`Creating page ${slug}`);
-    reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
+  //   reporter.verbose(`Creating page ${slug}`);
+  //   reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
 
-    createPage({
-      path: slug,
-      component: template,
-      context: {
-        lang: locale,
-        key: node.fields.keySlug.substring(pageKeySlashIndex),
-      },
-    });
-  });
+  //   createPage({
+  //     path: slug,
+  //     component: template,
+  //     context: {
+  //       lang: locale,
+  //       key: node.fields.keySlug.substring(pageKeySlashIndex),
+  //     },
+  //   });
+  // });
 };
