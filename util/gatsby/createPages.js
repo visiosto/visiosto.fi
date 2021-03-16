@@ -88,7 +88,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    eporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`The creating page for the base slug '${slug}'`);
 
     const pagePath = locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
 
