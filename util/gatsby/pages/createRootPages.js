@@ -4,20 +4,42 @@
 const fs = require('fs');
 const path = require('path');
 
-const config = require('../../../gatsby-config');
-
 const pageSlugs = require('../../../src/data/page-slugs.json');
 const recursiveReadDirSync = require('../../recursiveReadDirSync');
-
-const pageKeySlashIndex = 1;
 
 // This function creates the pages for each root-level page.
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
-  const defaultLanguage = config.siteMetadata.defaultLocale;
+  const query = await graphql(
+    `
+      {
+        site {
+          siteMetadata {
+            defaultLocale
+          }
+        }
+        allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+      }
+    `,
+  );
 
-  reporter.verbose(`Default language is set to ${defaultLanguage}`);
+  if (query.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query');
+    return;
+  }
+
+  const { defaultLocale } = query.data.site.siteMetadata;
+
+  reporter.verbose(`Default language is set to ${defaultLocale}`);
 
   const rootPagesDir = path.join(__dirname, '..', '..', '..', 'src', 'templates');
   const langRootDir = path.join(__dirname, '..', '..', '..', 'src', 'locales');
@@ -33,7 +55,9 @@ module.exports = async (actions, graphql, reporter) => {
     .filter((f) => !f.includes('author.jsx'))
     .filter((f) => !f.includes('blog-post.jsx'))
     .filter((f) => !f.includes('category.jsx'))
-    .filter((f) => !f.includes('markdown-page.jsx'));
+    .filter((f) => !f.includes('management.jsx'))
+    .filter((f) => !f.includes('markdown-page.jsx'))
+    .filter((f) => !f.includes('page.jsx'));
 
   reporter.verbose(`The languages found are ${langs}`);
 
@@ -52,22 +76,22 @@ module.exports = async (actions, graphql, reporter) => {
     }
 
     // If they have .fi then just drop that completely
-    if (originalSitePath.endsWith(`.${defaultLanguage}`)) {
+    if (originalSitePath.endsWith(`.${defaultLocale}`)) {
       originalSitePath = originalSitePath.substring(0, originalSitePath.length - 3);
     }
 
     langs.forEach((lang) => {
       const sitePath = (() => {
         if (originalSitePath === '') {
-          return lang === defaultLanguage ? '/' : `/${lang}`;
+          return lang === defaultLocale ? '/' : `/${lang}`;
         }
         if (originalSitePath in pageSlugs && lang in pageSlugs[originalSitePath]) {
           const slug = pageSlugs[originalSitePath][lang];
 
-          return lang === defaultLanguage ? `/${slug}` : `/${lang}/${slug}`;
+          return lang === defaultLocale ? `/${slug}` : `/${lang}/${slug}`;
         }
 
-        return lang === defaultLanguage ? `/${originalSitePath}` : `/${lang}/${originalSitePath}`;
+        return lang === defaultLocale ? `/${originalSitePath}` : `/${lang}/${originalSitePath}`;
       })();
 
       reporter.verbose(`The new path for the page is ${sitePath}`);
@@ -88,51 +112,55 @@ module.exports = async (actions, graphql, reporter) => {
       createPage(pageOpts);
     });
   });
-  const query = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___title] }
-          limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
-              fields {
-                slug
-                keySlug
-                locale
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
 
-  if (query.errors) {
-    reporter.panicOnBuild('Error while running GraphQL query');
-    return;
-  }
+  const pageTemplate = path.resolve('src', 'templates', 'management.jsx');
 
-  const template = path.resolve('src', 'templates', 'markdown-page.jsx');
+  query.data.allContentfulPage.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id, node_locale, slug } = node;
 
-  query.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, locale } = node.fields;
+    reporter.verbose(`The Contentful slug for the page is ${slug}`);
 
-    reporter.verbose(`Creating page ${slug}`);
-    reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
+    // eslint-disable-next-line camelcase
+    const locale = node_locale === 'en-GB' ? 'en' : node_locale;
 
-    createPage({
-      path: slug,
-      component: template,
+    reporter.verbose(`The Moment.js locale to ${node_locale.toLowerCase()}`);
+
+    const pagePath = locale === defaultLocale ? `/${slug}` : `/${locale}/${slug}`;
+
+    reporter.verbose(`The path for the page created from Contentful data is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: pageTemplate,
       context: {
         lang: locale,
-        key: node.fields.keySlug.substring(pageKeySlashIndex),
+        locale: node_locale,
+        nodeLocale: node_locale,
+        jsLocale: node_locale,
+        momentJsLocale: node_locale.toLowerCase(),
+        key: contentful_id,
       },
-    });
+    };
+
+    createPage(pageOpts);
   });
+
+  // const template = path.resolve('src', 'templates', 'markdown-page.jsx');
+
+  // query.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  //   const { slug, locale } = node.fields;
+
+  //   reporter.verbose(`Creating page ${slug}`);
+  //   reporter.verbose(`The page key is ${node.fields.keySlug.substring(pageKeySlashIndex)}`);
+
+  //   createPage({
+  //     path: slug,
+  //     component: template,
+  //     context: {
+  //       lang: locale,
+  //       key: node.fields.keySlug.substring(pageKeySlashIndex),
+  //     },
+  //   });
+  // });
 };

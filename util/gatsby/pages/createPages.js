@@ -3,8 +3,6 @@
 
 const path = require('path');
 
-const pageSlugs = require('../../../src/data/page-slugs.json');
-
 module.exports = async (actions, graphql, reporter) => {
   const { createPage } = actions;
 
@@ -16,12 +14,15 @@ module.exports = async (actions, graphql, reporter) => {
             defaultLocale
           }
         }
-        allContentfulAuthor {
+        allContentfulPage(filter: { slug: { regex: "/^(?!hallinto|management).*$/" } }) {
           edges {
             node {
               contentful_id
               node_locale
               slug
+              parentPages {
+                slug
+              }
             }
           }
         }
@@ -36,27 +37,36 @@ module.exports = async (actions, graphql, reporter) => {
 
   const { defaultLocale } = query.data.site.siteMetadata;
 
-  const authorTemplate = path.resolve('src', 'templates', 'author.jsx');
+  const pageTemplate = path.resolve('src', 'templates', 'page.jsx');
 
-  query.data.allContentfulAuthor.edges.forEach(({ node }) => {
+  query.data.allContentfulPage.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id, node_locale, slug } = node;
+    const { contentful_id, node_locale, parentPages, slug } = node;
 
-    reporter.verbose(`The Contentful slug for the author page is ${slug}`);
+    reporter.verbose(`The Contentful slug for the page is ${slug}`);
 
     // eslint-disable-next-line camelcase
     const locale = node_locale === 'en-GB' ? 'en' : node_locale;
 
     reporter.verbose(`The Moment.js locale to ${node_locale.toLowerCase()}`);
 
-    // prettier-ignore
-    const authorPath = locale === defaultLocale
-      ? `${pageSlugs.author[locale]}`
-      : `${locale}/${pageSlugs.author[locale]}`;
+    const pagePath = (() => {
+      if (parentPages) {
+        return `${parentPages
+          .map(({ slug: parentSlug }) => parentSlug)
+          .reduce(
+            (previous, current) => `${previous}/${current}`,
+            locale === defaultLocale ? '' : `/${locale}`,
+          )}/${slug}`;
+      }
+      return locale === defaultLocale ? `/${slug}` : `/${locale}/${slug}`;
+    })();
+
+    reporter.verbose(`The path for the page created from Contentful data is ${pagePath}`);
 
     const pageOpts = {
-      path: `/${authorPath}/${slug}`,
-      component: authorTemplate,
+      path: pagePath,
+      component: pageTemplate,
       context: {
         lang: locale,
         locale: node_locale,

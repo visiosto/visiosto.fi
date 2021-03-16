@@ -52,6 +52,7 @@ const Head = (props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
+      {/* TODO For articles: <meta property="og:type" content="article" /> */}
       <meta property="og:url" content={createUrl(props.lang)} />
 
       <meta name="twitter:card" content="summary" />

@@ -22,20 +22,16 @@ const Div = styled.div`
 `;
 
 const Page = (props) => {
-  const { markdownRemark: page } = props.data;
+  const { contentfulPage: page } = props.data;
 
   return (
-    <Layout
-      title={page.frontmatter.title}
-      lang={props.pageContext.lang}
-      pageKey={props.pageContext.key}
-    >
-      <Div dangerouslySetInnerHTML={{ __html: page.html }} />
+    <Layout title={page.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+      <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
   );
 };
 
-const MarkdownPage = (props) => (
+const ContentfulPage = (props) => (
   <Intl locale={props.pageContext.lang}>
     <Theme>
       <Page {...props} />
@@ -43,14 +39,16 @@ const MarkdownPage = (props) => (
   </Intl>
 );
 
-export default MarkdownPage;
+export default ContentfulPage;
 
 export const pageQuery = graphql`
-  query MarkdownPageQuery($path: String) {
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      frontmatter {
-        title
+  query PageQuery($key: String, $locale: String) {
+    contentfulPage(contentful_id: { eq: $key }, node_locale: { eq: $locale }) {
+      title
+      body {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

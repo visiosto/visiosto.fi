@@ -7,10 +7,10 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import LocalizedAuthorLink from './LocalizedAuthorLink';
 import LocalizedBlogLink from './LocalizedBlogLink';
 import LocalizedCategoryLink from './LocalizedCategoryLink';
+import LocalizedPageLink from './LocalizedPageLink';
 
 import { AUTHOR_SLUG } from '../../constants';
 
-import markdownPageSlugs from '../../../data/markdown-page-slugs.json';
 import pageSlugs from '../../data/page-slugs.json';
 
 const pageKeySlashIndex = 1;
@@ -21,7 +21,7 @@ const createLocalizedSlug = (site, toLang, slug) => {
   if (slug) {
     return slug.split('/').reduce(
       (previous, current) => {
-        const slugs = current in pageSlugs ? pageSlugs : markdownPageSlugs;
+        const slugs = pageSlugs;
         return `${previous}/${slugs[current][toLang]}`;
       },
       toLang === defaultLocale ? '' : `/${toLang}`,
@@ -98,6 +98,9 @@ const LocaleLink = (props) => {
       }
       case 'ContentfulCategory': {
         return <LocalizedCategoryLink {...props} to={props.pageKey} locale={toLang} />;
+      }
+      case 'ContentfulPage': {
+        return <LocalizedPageLink {...props} to={props.pageKey} locale={toLang} />;
       }
       default:
         break;
