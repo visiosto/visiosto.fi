@@ -168,7 +168,9 @@ const Page = (props) => {
 };
 
 const Management = (props) => (
-  <Intl locale={props.pageContext.simpleLocale}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -179,6 +181,14 @@ export default Management;
 
 export const pageQuery = graphql`
   query ManagementQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
     contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
       title
       body {

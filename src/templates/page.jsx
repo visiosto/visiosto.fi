@@ -32,7 +32,9 @@ const Page = (props) => {
 };
 
 const ContentfulPage = (props) => (
-  <Intl locale={props.pageContext.simpleLocale}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -43,6 +45,14 @@ export default ContentfulPage;
 
 export const pageQuery = graphql`
   query PageQuery($pageId: String, $locale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
     contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
       title
       body {

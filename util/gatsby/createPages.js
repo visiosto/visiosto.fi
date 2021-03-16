@@ -18,10 +18,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
               en_GB
               fi
             }
-            simpleLocales {
-              en_GB
-              fi
-            }
           }
         }
         basicPages: allContentfulPage(
@@ -59,7 +55,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const { defaultLocale, localePaths, simpleLocales } = query.data.site.siteMetadata;
+  const { defaultLocale, localePaths } = query.data.site.siteMetadata;
 
   // Create the basic pages from Contentful.
 
@@ -79,7 +75,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
       context: {
         locale,
         pageId,
-        simpleLocale: simpleLocales[locale.replace('-', '_')],
       },
     };
 
@@ -105,7 +100,6 @@ module.exports = async ({ actions, graphql, reporter }) => {
       context: {
         locale,
         pageId,
-        simpleLocale: simpleLocales[locale.replace('-', '_')],
         momentJsLocale: locale.toLowerCase(),
       },
     };
