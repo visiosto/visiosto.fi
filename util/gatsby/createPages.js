@@ -3,6 +3,8 @@
 
 const path = require('path');
 
+const createPagePath = require('../createPagePath');
+
 module.exports = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
@@ -12,8 +14,14 @@ module.exports = async ({ actions, graphql, reporter }) => {
         site {
           siteMetadata {
             defaultLocale
-            localePaths
-            simpleLocales
+            localePaths {
+              en_GB
+              fi
+            }
+            simpleLocales {
+              en_GB
+              fi
+            }
           }
         }
         basicPages: allContentfulPage(
@@ -57,35 +65,11 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   query.data.basicPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, parentPath, slug } = node;
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    // const pagePath = (() => {
-    //   if (parents) {
-    //     return `${parents
-    //       .map(({ slug: parentSlug }) => parentSlug)
-    //       .reduce((previous, current) => `${previous}/${current}`, localePaths[locale])}/${slug}`;
-    //   }
-    //   return locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
-    // })();
-
-    // TODO Make a common helper function for this
-    const pagePath = (() => {
-      if (parentPath) {
-        if (parentPath.parentPath) {
-          return locale === defaultLocale
-            ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
-            : `/${localePaths[locale]}/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`;
-        }
-
-        return locale === defaultLocale
-          ? `/${parentPath.slug}/${slug}`
-          : `/${localePaths[locale]}/${parentPath.slug}/${slug}`;
-      }
-
-      return locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
-    })();
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths, reporter);
 
     reporter.verbose(`The path created is ${pagePath}`);
 
@@ -95,7 +79,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
       context: {
         locale,
         pageId,
-        simpleLocale: simpleLocales[locale],
+        simpleLocale: simpleLocales[locale.replace('-', '_')],
       },
     };
 
@@ -110,7 +94,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    const pagePath = locale === defaultLocale ? `/${slug}` : `/${localePaths[locale]}/${slug}`;
+    const pagePath = locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
     reporter.verbose(`The path created is ${pagePath}`);
 
@@ -120,7 +104,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
       context: {
         locale,
         pageId,
-        simpleLocale: simpleLocales[locale],
+        simpleLocale: simpleLocales[locale.replace('-', '_')],
         momentJsLocale: locale.toLowerCase(),
       },
     };

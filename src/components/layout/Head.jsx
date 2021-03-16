@@ -18,7 +18,10 @@ const Head = (props) => {
           siteMetadata {
             description
             locales
-            simpleLocales
+            simpleLocales {
+              en_GB
+              fi
+            }
             siteUrl
             title
             twitterAuthor
@@ -46,7 +49,7 @@ const Head = (props) => {
 
   return (
     <Helmet titleTemplate={titleTemplate}>
-      <html lang={`${site.siteMetadata.simpleLocales[props.locale]}`} />
+      <html lang={`${site.siteMetadata.simpleLocales[props.locale.replace('-', '_')]}`} />
       <title>{props.title}</title>
 
       <meta name="description" content={description} />
