@@ -20,7 +20,7 @@ module.exports = async (actions, graphql, reporter) => {
               contentful_id
               node_locale
               slug
-              parentPages {
+              parents {
                 slug
               }
             }
@@ -41,7 +41,7 @@ module.exports = async (actions, graphql, reporter) => {
 
   query.data.allContentfulPage.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id, node_locale, parentPages, slug } = node;
+    const { contentful_id, node_locale, parents, slug } = node;
 
     reporter.verbose(`The Contentful slug for the page is ${slug}`);
 
@@ -51,8 +51,8 @@ module.exports = async (actions, graphql, reporter) => {
     reporter.verbose(`The Moment.js locale to ${node_locale.toLowerCase()}`);
 
     const pagePath = (() => {
-      if (parentPages) {
-        return `${parentPages
+      if (parents) {
+        return `${parents
           .map(({ slug: parentSlug }) => parentSlug)
           .reduce(
             (previous, current) => `${previous}/${current}`,
