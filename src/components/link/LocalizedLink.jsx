@@ -81,7 +81,7 @@ const LocalizedLink = (props) => {
               contentful_id
               node_locale
               slug
-              parentPages {
+              parents {
                 slug
               }
             }
@@ -168,10 +168,10 @@ const LocalizedLink = (props) => {
               : node.node_locale === props.locale),
         )[0].node;
 
-        const { parentPages, slug } = pageNode;
+        const { parents, slug } = pageNode;
 
-        const pageSlug = parentPages
-          ? `${parentPages
+        const pageSlug = parents
+          ? `${parents
               .map(({ slug }) => slug)
               .reduce(
                 (previous, current) => `${previous}/${current}`,
