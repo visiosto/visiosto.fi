@@ -3,20 +3,6 @@
 
 const path = require('path');
 
-// const createAuthorPages = require('./pages/createAuthorPages');
-// const createBlogPages = require('./pages/createBlogPages');
-// const createCategoryPages = require('./pages/createCategoryPages');
-// const createPages = require('./pages/createPages');
-// const createRootPages = require('./pages/createRootPages');
-
-// module.exports = async ({ actions, graphql, reporter }) => {
-//   await createRootPages(actions, graphql, reporter);
-//   await createPages(actions, graphql, reporter);
-//   await createBlogPages(actions, graphql, reporter);
-//   await createAuthorPages(actions, graphql, reporter);
-//   await createCategoryPages(actions, graphql, reporter);
-// };
-
 module.exports = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
