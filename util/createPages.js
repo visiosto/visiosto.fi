@@ -3,7 +3,7 @@
 
 const path = require('path');
 
-const createPagePath = require('../createPagePath');
+const createPagePath = require('./createPagePath');
 
 module.exports = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
