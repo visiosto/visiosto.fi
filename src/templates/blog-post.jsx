@@ -74,7 +74,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulBlogPost(contentful_id: { eq: $pageId }, node_locale: { eq: $nodeLocale }) {
+    contentfulBlogPost(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
       contentful_id
       date: date(formatString: "LL", locale: $momentJsLocale)
       datetime: date
