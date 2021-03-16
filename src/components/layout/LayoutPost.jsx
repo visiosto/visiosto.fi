@@ -74,11 +74,11 @@ export default (props) => {
             <PostMeta>
               <time datetime={props.post.datetime}>{props.post.date}</time>
               <PostAuthor>
-                <AuthorName author={props.post.author} locale={props.lang} />
+                <AuthorName author={props.post.author} locale={props.locale} />
               </PostAuthor>
               <PostCategory>
                 {i('blogCategory')}{' '}
-                <CategoryName category={props.post.category} locale={props.lang} />
+                <CategoryName category={props.post.category} locale={props.locale} />
               </PostCategory>
             </PostMeta>
           </header>

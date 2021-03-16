@@ -37,6 +37,23 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        blogSlugs: allContentfulSlugs(filter: { contentful_id: { eq: "4hyT4qfodmt3LuGu7WmotG" } }) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
+        blogPosts: allContentfulBlogPost(sort: { fields: date, order: DESC }) {
+          edges {
+            node {
+              contentful_id
+              slug
+              node_locale
+            }
+          }
+        }
         managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
           edges {
             node {
@@ -75,6 +92,38 @@ module.exports = async ({ actions, graphql, reporter }) => {
       context: {
         locale,
         pageId,
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the blog post pages from Contentful.
+
+  const { blogSlugs } = query.data;
+
+  query.data.blogPosts.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`The creating page for the base slug '${slug}'`);
+
+    const blogSlug = blogSlugs.edges.filter(({ nodeLocale }) => nodeLocale === locale)[0].node;
+
+    const pagePath =
+      locale === defaultLocale
+        ? `/${blogSlug}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${blogSlug}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'blog-post.jsx'),
+      context: {
+        locale,
+        pageId,
+        momentJsLocale: locale.toLowerCase(),
       },
     };
 

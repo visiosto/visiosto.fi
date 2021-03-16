@@ -4,7 +4,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
@@ -42,8 +41,8 @@ const Page = (props) => {
     <LayoutPost
       title={post.title}
       post={post}
-      lang={props.pageContext.lang}
-      pageKey={post.contentful_id}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
     >
       <Separator>
         <Rule color="blue" mode={1} />
@@ -54,7 +53,9 @@ const Page = (props) => {
 };
 
 const BlogPost = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -64,8 +65,16 @@ const BlogPost = (props) => (
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostQuery($key: String, $nodeLocale: String, $momentJsLocale: String) {
-    contentfulBlogPost(contentful_id: { eq: $key }, node_locale: { eq: $nodeLocale }) {
+  query BlogPostQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
+    contentfulBlogPost(contentful_id: { eq: $pageId }, node_locale: { eq: $nodeLocale }) {
       contentful_id
       date: date(formatString: "LL", locale: $momentJsLocale)
       datetime: date
