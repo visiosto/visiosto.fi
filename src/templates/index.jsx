@@ -168,7 +168,7 @@ export const pageQuery = graphql`
         job
         name
         profileImage {
-          gatsbyImageData(width: 200)
+          gatsbyImageData(quality: 100, width: 200)
         }
       }
       introBody {
