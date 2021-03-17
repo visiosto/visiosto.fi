@@ -79,8 +79,7 @@ const LocaleLink = (props) => {
     console.log(data);
 
     const node = data.allContentfulEntry.edges.filter(
-      ({ node }) =>
-        node.contentful_id === props.pageId && node.node_locale === toLang,
+      ({ node }) => node.contentful_id === props.pageId && node.node_locale === toLang,
     )[0].node;
 
     console.log(node);

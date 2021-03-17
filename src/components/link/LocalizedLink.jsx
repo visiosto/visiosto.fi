@@ -120,8 +120,7 @@ const LocalizedLink = (props) => {
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) =>
-            node.contentful_id === props.to && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
 
         const authorSlug =
@@ -133,34 +132,35 @@ const LocalizedLink = (props) => {
       }
       case 'ContentfulBlogPost': {
         const blogNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) =>
-            node.contentful_id === props.to && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
 
         const blogSlug =
           props.locale === defaultLocale
             ? `/${pageSlugs[BLOG_SLUG][props.locale]}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${pageSlugs[BLOG_SLUG][props.locale]}`;
+            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
+                pageSlugs[BLOG_SLUG][props.locale]
+              }`;
 
         return <Link {...props} to={`${blogSlug}/${blogNode.slug}`} />;
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) =>
-            node.contentful_id === props.to && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
 
         const categorySlug =
           props.locale === defaultLocale
             ? `/${pageSlugs[CATEGORY_SLUG][props.locale]}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${pageSlugs[CATEGORY_SLUG][props.locale]}`;
+            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
+                pageSlugs[CATEGORY_SLUG][props.locale]
+              }`;
 
         return <Link {...props} to={`${categorySlug}/${categoryNode.slug}`} />;
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) =>
-            node.contentful_id === props.to && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
 
         const { parentPath, slug } = pageNode;
@@ -171,7 +171,9 @@ const LocalizedLink = (props) => {
             if (parentPath.parentPath) {
               return props.locale === defaultLocale
                 ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
-                : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`;
+                : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
+                    parentPath.parentPath.slug
+                  }/${parentPath.slug}/${slug}`;
             }
 
             return props.locale === defaultLocale
@@ -179,7 +181,9 @@ const LocalizedLink = (props) => {
               : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentPath.slug}/${slug}`;
           }
 
-          return props.locale === defaultLocale ? `/${slug}` : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${slug}`;
+          return props.locale === defaultLocale
+            ? `/${slug}`
+            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${slug}`;
         })();
 
         return <Link {...props} to={`${pageSlug}`} />;
