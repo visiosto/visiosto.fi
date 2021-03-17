@@ -69,9 +69,9 @@ const LocaleLink = (props) => {
 
       const linkPath = `${page}/${filename}`;
 
-      return <Link to={linkPath} {...props} />;
+      return <Link {...props} to={linkPath} />;
     } else {
-      return <Link to={createLocalizedSlug(data.site, toLang, props.pageId)} {...props} />;
+      return <Link {...props} to={createLocalizedSlug(data.site, toLang, props.pageId)} />;
     }
   } else {
     console.log('Creating Contentful locale link to', toLang, 'for id', props.pageId);
@@ -85,23 +85,6 @@ const LocaleLink = (props) => {
     console.log(node);
 
     return <LocalizedLink to={props.pageId} locale={toLang} />;
-
-    // switch (node.internal.type) {
-    //   case 'ContentfulAuthor': {
-    //     return <LocalizedAuthorLink to={props.pageId} locale={toLang} {...props} />;
-    //   }
-    //   case 'ContentfulBlogPost': {
-    //     return <LocalizedBlogLink to={props.pageId} locale={toLang} {...props} />;
-    //   }
-    //   case 'ContentfulCategory': {
-    //     return <LocalizedCategoryLink to={props.pageId} locale={toLang} {...props} />;
-    //   }
-    //   case 'ContentfulPage': {
-    //     return <LocalizedPageLink to={props.pageId} locale={toLang} {...props} />;
-    //   }
-    //   default:
-    //     break;
-    // }
   }
 };
 

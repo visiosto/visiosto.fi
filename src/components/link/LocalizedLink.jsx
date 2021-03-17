@@ -94,6 +94,22 @@ const LocalizedLink = (props) => {
             }
           }
         }
+        categoryPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
       }
     `,
   );
@@ -102,7 +118,11 @@ const LocalizedLink = (props) => {
 
   console.log('Creating link to', props.to);
 
-  if (props.to.startsWith('/')) {
+  if (props.to === '/') {
+    const indexPath = props.locale === defaultLocale ? '' : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
+
+    return <Link {...props} to={indexPath} />;
+  } else if (props.to.startsWith('/')) {
     return <Link {...props} to={createLocalizedSlug(data.site, props.locale, props.to)} />;
   } else {
     console.log('Creating Contentful link to', props.to);
@@ -149,14 +169,32 @@ const LocalizedLink = (props) => {
           ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
 
-        const categorySlug =
-          props.locale === defaultLocale
-            ? `/${pageSlugs[CATEGORY_SLUG][props.locale]}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
-                pageSlugs[CATEGORY_SLUG][props.locale]
-              }`;
+        const { slug } = categoryNode;
+        const { parentPath, slug: parentSlug } = data.categoryPaths;
 
-        return <Link {...props} to={`${categorySlug}/${categoryNode.slug}`} />;
+        // TODO Make a common helper function for this
+        const categorySlug = (() => {
+          if (parentPath) {
+            return props.locale === defaultLocale
+              ? `/${parentPath.slug}/${parentSlug}/${slug}`
+              : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentPath.slug}/${parentSlug}/${slug}`;
+          }
+
+          return props.locale === defaultLocale
+            ? `/${parentSlug}/${slug}`
+            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentSlug}/${slug}`;
+        })();
+
+        return <Link {...props} to={categorySlug} />;
+
+        // const categorySlug =
+        //   props.locale === defaultLocale
+        //     ? `/${pageSlugs[CATEGORY_SLUG][props.locale]}`
+        //     : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
+        //         pageSlugs[CATEGORY_SLUG][props.locale]
+        //       }`;
+
+        // return <Link {...props} to={`${categorySlug}/${categoryNode.slug}`} />;
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
@@ -187,6 +225,11 @@ const LocalizedLink = (props) => {
         })();
 
         return <Link {...props} to={`${pageSlug}`} />;
+      }
+      case 'ContentfulIndexPage': {
+        const indexPath = props.locale === defaultLocale ? '' : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
+
+        return <Link {...props} to={indexPath} />;
       }
       default:
         break;

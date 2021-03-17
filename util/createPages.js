@@ -280,7 +280,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale } = node;
 
-    reporter.verbose('Creating the index page');
+    reporter.verbose(`Creating the index page for ID '${pageId}'`);
 
     const pagePath = locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
 
