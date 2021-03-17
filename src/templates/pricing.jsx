@@ -13,7 +13,7 @@ import PriceList, { createLocalizationKey } from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const Buttons = styled.div`
   display: flex;

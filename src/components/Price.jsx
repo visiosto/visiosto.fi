@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const Div = styled.div`
   margin: 2em 0;

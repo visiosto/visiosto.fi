@@ -8,7 +8,7 @@ import { useIntl } from 'react-intl';
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Nav = styled.nav`
   margin: 0 auto;

@@ -9,7 +9,7 @@ import AnchorLink from './AnchorLink';
 import pageIds from '../../data/page-ids.json';
 import pageSlugs from '../../data/page-slugs.json';
 
-import stripHashedLocation from '../../utils/anchor-link/stripHashedLocation';
+import stripHashedLocation from '../../util/anchor-link/stripHashedLocation';
 
 const pageKeySlashIndex = 1;
 

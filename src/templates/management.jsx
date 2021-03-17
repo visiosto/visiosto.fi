@@ -15,7 +15,7 @@ import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginPhone};

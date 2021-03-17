@@ -12,8 +12,8 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import createIntl from '../../utils/createIntl';
-import listenColorScheme from '../../utils/listenColorScheme';
+import createIntl from '../../util/createIntl';
+import listenColorScheme from '../../util/listenColorScheme';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginPhone};

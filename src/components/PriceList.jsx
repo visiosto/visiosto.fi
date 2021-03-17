@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 
 import Price from './Price';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const Wrapper = styled.div`
   margin: 0 ${(props) => props.theme.layout.marginPhone};

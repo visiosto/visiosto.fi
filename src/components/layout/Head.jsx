@@ -6,8 +6,8 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../utils/createIntl';
-import createLanguageUrl from '../../utils/createLanguageUrl';
+import createIntl from '../../util/createIntl';
+import createLanguageUrl from '../../util/createLanguageUrl';
 
 // TODO Add at least 'og:image'
 const Head = (props) => {

@@ -9,7 +9,7 @@ import Intl from '../components/Intl';
 import LayoutError from '../components/layout/LayoutError';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const P = styled.p`
   text-align: center;

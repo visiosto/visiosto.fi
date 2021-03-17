@@ -11,7 +11,7 @@ import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
 import SchemedImage from '../SchemedImage';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 import theme from '../../theme';
 

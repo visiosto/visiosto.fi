@@ -7,8 +7,8 @@ import 'normalize.css';
 
 import App from './src/components/App';
 
-import checkHash from './src/utils/anchor-link/checkHash';
-import scroller from './src/utils/anchor-link/scroller';
+import checkHash from './src/util/anchor-link/checkHash';
+import scroller from './src/util/anchor-link/scroller';
 
 // Based on code by Chase Ohlson.
 // Original code is available at https://github.com/brohlson/gatsby-plugin-anchor-links.

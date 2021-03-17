@@ -9,7 +9,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../../utils/listenColorScheme';
+import listenColorScheme from '../../util/listenColorScheme';
 
 const ErrorCode = styled.h1`
   font-size: 3rem;

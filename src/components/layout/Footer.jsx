@@ -12,7 +12,7 @@ import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
 import Search from '../search/Search';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
