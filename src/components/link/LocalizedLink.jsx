@@ -119,7 +119,10 @@ const LocalizedLink = (props) => {
   console.log('Creating link to', props.to);
 
   if (props.to === '/') {
-    const indexPath = props.locale === defaultLocale ? '' : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
+    const indexPath =
+      props.locale === defaultLocale
+        ? ''
+        : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
 
     return <Link {...props} to={indexPath} />;
   } else if (props.to.startsWith('/')) {
@@ -177,7 +180,9 @@ const LocalizedLink = (props) => {
           if (parentPath) {
             return props.locale === defaultLocale
               ? `/${parentPath.slug}/${parentSlug}/${slug}`
-              : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentPath.slug}/${parentSlug}/${slug}`;
+              : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
+                  parentPath.slug
+                }/${parentSlug}/${slug}`;
           }
 
           return props.locale === defaultLocale
@@ -227,7 +232,10 @@ const LocalizedLink = (props) => {
         return <Link {...props} to={`${pageSlug}`} />;
       }
       case 'ContentfulIndexPage': {
-        const indexPath = props.locale === defaultLocale ? '' : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
+        const indexPath =
+          props.locale === defaultLocale
+            ? ''
+            : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
 
         return <Link {...props} to={indexPath} />;
       }
