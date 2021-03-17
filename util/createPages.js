@@ -20,6 +20,25 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        authors: allContentfulAuthor {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        authorPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
         basicPages: allContentfulPage(
           filter: { slug: { regex: "/^(?!hallinto|management).*$/" } }
         ) {
@@ -95,6 +114,40 @@ module.exports = async ({ actions, graphql, reporter }) => {
   }
 
   const { defaultLocale, localePaths } = query.data.site.siteMetadata;
+
+  // Create the author pages from Contentful.
+
+  const { authorPaths } = query.data;
+
+  query.data.authors.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`The creating page for the base slug '${slug}'`);
+
+    const authorSlug = authorPaths.edges.filter(({ node: pathNode }) => {
+      return pathNode.node_locale === locale;
+    })[0].node.slug;
+
+    const pagePath =
+      locale === defaultLocale
+        ? `/${authorSlug}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${authorSlug}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'author.jsx'),
+      context: {
+        locale,
+        pageId,
+        momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
 
   // Create the basic pages from Contentful.
 
