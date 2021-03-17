@@ -95,6 +95,16 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        indexPages: allContentfulIndexPage(
+          filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+            }
+          }
+        }
         managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
           edges {
             node {
@@ -123,7 +133,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    reporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
 
     const authorSlug = authorPaths.edges.filter(({ node: pathNode }) => {
       return pathNode.node_locale === locale;
@@ -155,7 +165,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    reporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
 
     const pagePath = createPagePath(node, locale, defaultLocale, localePaths, reporter);
 
@@ -181,7 +191,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    reporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
 
     const blogSlug = blogPaths.edges.filter(({ node: pathNode }) => {
       return pathNode.node_locale === locale;
@@ -215,7 +225,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    reporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
 
     const categorySlug = categoryPaths.edges.filter(
       ({ node: pathNode }) => pathNode.node_locale === locale,
@@ -238,13 +248,37 @@ module.exports = async ({ actions, graphql, reporter }) => {
     createPage(pageOpts);
   });
 
+  // Create the index page from Contentful.
+
+  query.data.indexPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale } = node;
+
+    reporter.verbose('Creating the index page');
+
+    const pagePath = locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'index.jsx'),
+      context: {
+        locale,
+        pageId,
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
   // Create the management page from Contentful.
 
   query.data.managementPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
     const { contentful_id: pageId, node_locale: locale, slug } = node;
 
-    reporter.verbose(`The creating page for the base slug '${slug}'`);
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
 
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;

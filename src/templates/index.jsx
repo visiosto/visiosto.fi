@@ -4,7 +4,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 import {
   CalendarIcon,
   DeviceDesktopIcon,
@@ -21,8 +20,6 @@ import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
-
-import createIntl from '../utils/createIntl';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -72,12 +69,14 @@ const Centered = styled.div`
 `;
 
 const Page = (props) => {
-  const i = createIntl(useIntl());
-
   const { contentfulIndexPage: page } = props.data;
 
   return (
-    <LayoutIndex title={page.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <LayoutIndex
+      title={page.title}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
+    >
       <IndexCover title={page.introTitle} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </IndexCover>
@@ -136,7 +135,9 @@ const Page = (props) => {
 };
 
 const Index = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -147,6 +148,14 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery($locale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
     contentfulIndexPage(node_locale: { eq: $locale }) {
       contactId
       contactTitle
