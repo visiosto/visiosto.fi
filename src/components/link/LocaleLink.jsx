@@ -4,10 +4,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import LocalizedAuthorLink from './LocalizedAuthorLink';
-import LocalizedBlogLink from './LocalizedBlogLink';
-import LocalizedCategoryLink from './LocalizedCategoryLink';
-import LocalizedPageLink from './LocalizedPageLink';
+import LocalizedLink from './LocalizedLink';
 
 import { AUTHOR_SLUG } from '../../constants';
 
@@ -72,9 +69,9 @@ const LocaleLink = (props) => {
 
       const linkPath = `${page}/${filename}`;
 
-      return <Link {...props} to={linkPath} />;
+      return <Link to={linkPath} {...props} />;
     } else {
-      return <Link {...props} to={createLocalizedSlug(data.site, toLang, props.pageId)} />;
+      return <Link to={createLocalizedSlug(data.site, toLang, props.pageId)} {...props} />;
     }
   } else {
     console.log('Creating Contentful locale link to', toLang, 'for id', props.pageId);
@@ -83,28 +80,29 @@ const LocaleLink = (props) => {
 
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) =>
-        node.contentful_id === props.pageId &&
-        (toLang === 'en' ? node.node_locale === 'en-GB' : node.node_locale === toLang),
+        node.contentful_id === props.pageId && node.node_locale === toLang,
     )[0].node;
 
     console.log(node);
 
-    switch (node.internal.type) {
-      case 'ContentfulAuthor': {
-        return <LocalizedAuthorLink {...props} to={props.pageId} locale={toLang} />;
-      }
-      case 'ContentfulBlogPost': {
-        return <LocalizedBlogLink {...props} to={props.pageId} locale={toLang} />;
-      }
-      case 'ContentfulCategory': {
-        return <LocalizedCategoryLink {...props} to={props.pageId} locale={toLang} />;
-      }
-      case 'ContentfulPage': {
-        return <LocalizedPageLink {...props} to={props.pageId} locale={toLang} />;
-      }
-      default:
-        break;
-    }
+    return <LocalizedLink to={props.pageId} locale={toLang} />;
+
+    // switch (node.internal.type) {
+    //   case 'ContentfulAuthor': {
+    //     return <LocalizedAuthorLink to={props.pageId} locale={toLang} {...props} />;
+    //   }
+    //   case 'ContentfulBlogPost': {
+    //     return <LocalizedBlogLink to={props.pageId} locale={toLang} {...props} />;
+    //   }
+    //   case 'ContentfulCategory': {
+    //     return <LocalizedCategoryLink to={props.pageId} locale={toLang} {...props} />;
+    //   }
+    //   case 'ContentfulPage': {
+    //     return <LocalizedPageLink to={props.pageId} locale={toLang} {...props} />;
+    //   }
+    //   default:
+    //     break;
+    // }
   }
 };
 

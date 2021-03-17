@@ -153,7 +153,7 @@ const Page = (props) => {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.contentful_id} lang={props.pageContext.locale}>
+              <Button to={post.contentful_id} locale={props.pageContext.locale}>
                 {i('blogReadMore')}
               </Button>
             </Center>

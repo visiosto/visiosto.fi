@@ -130,8 +130,9 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    const blogSlug = blogPaths.edges.filter(({node}) => {
-      return node.node_locale === locale})[0].node.slug;
+    const blogSlug = blogPaths.edges.filter(({ node }) => {
+      return node.node_locale === locale;
+    })[0].node.slug;
 
     const pagePath =
       locale === defaultLocale
@@ -163,7 +164,8 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     reporter.verbose(`The creating page for the base slug '${slug}'`);
 
-    const categorySlug = categoryPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
+    const categorySlug = categoryPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+      .node;
 
     const pagePath = `${createPagePath(categorySlug, locale, defaultLocale, localePaths)}/${slug}`;
 

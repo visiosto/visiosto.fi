@@ -205,7 +205,7 @@ export default (props) => {
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
         <ManagementP>
-          <LocalizedLink to="/management" locale={props.locale}>
+          <LocalizedLink to="3rPdaUCw3nKo73b5Z6thWW" locale={props.locale}>
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
