@@ -85,7 +85,7 @@ const Page = (props) => {
       </StoryCover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin>
-        <H2 id={page.productsId}>{page.productsTitle}</H2>
+        <H2>{page.productsTitle}</H2>
         <Cards>
           <FeatureCard title={page.products[0].title} icon={<DeviceDesktopIcon size={'large'} />}>
             <div
@@ -115,14 +115,14 @@ const Page = (props) => {
         <Icon>
           <NorthStarIcon size={'large'} />
         </Icon>
-        <H2 id={page.portfolioId}>{page.portfolioTitle}</H2>
+        <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
       </Section>
       <Break color={'peach'} mode={3} />
       <Section lesserMargin>
         <Icon>
           <PaperAirplaneIcon size={'large'} />
         </Icon>
-        <H2 id={page.contactId}>{page.contactTitle}</H2>
+        <H2 id={page.contactId.slug}>{page.contactTitle}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: page.contactBody.childMarkdownRemark.html }} />
         <Cards>
           {page.contacts.map((contact) => {
@@ -157,12 +157,9 @@ export const pageQuery = graphql`
       }
     }
     contentfulIndexPage(node_locale: { eq: $locale }) {
-      contactId
       contactTitle
       introTitle
-      portfolioId
       portfolioTitle
-      productsId
       productsTitle
       storyTitle
       title
@@ -170,6 +167,9 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      contactId {
+        slug
       }
       contacts {
         email
@@ -184,6 +184,9 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      portfolioId {
+        slug
       }
       products {
         title

@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Support for new all-Contentful content into the localized links.
 - Support for new all-Contentful content into the locale links.
+- Support for new all-Contentful content into the localized anchor links.
 
 ### Changed
 
