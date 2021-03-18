@@ -51,145 +51,113 @@ module.exports = async ({ graphql, reporter }) => {
   const query = await graphql(
     `
       {
-        site: site {
+        site {
           siteMetadata {
             defaultLocale
-            locales
+            localePaths {
+              en_GB
+              fi
+            }
           }
         }
-        index: allMarkdownRemark(
-          sort: { order: ASC, fields: [frontmatter___order] }
-          filter: { fields: { slug: { glob: "index/**" } } }
+        authors: allContentfulAuthor {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        authorPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
         ) {
           edges {
             node {
-              excerpt
-              htmlAst
-              id
-              fields {
-                locale
-              }
-              frontmatter {
-                order
-                title
+              node_locale
+              slug
+            }
+          }
+        }
+        basicPages: allContentfulPage(
+          filter: { slug: { regex: "/^(?!hallinto|management).*$/" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
               }
             }
           }
         }
-        rootPages: allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___title] }
-          limit: 1000
-          filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
+        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        blogPosts: allContentfulBlogPost(sort: { fields: date, order: DESC }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        categoryPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
         ) {
           edges {
             node {
-              excerpt
-              htmlAst
-              id
-              fields {
-                locale
+              node_locale
+              slug
+              parentPath {
                 slug
               }
-              frontmatter {
-                title
-              }
+            }
+          }
+        }
+        categories: allContentfulCategory {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        indexPages: allContentfulIndexPage(
+          filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+            }
+          }
+        }
+        managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
             }
           }
         }
       }
     `,
   );
-  // const query = await graphql(
-  //   `
-  //     {
-  //       site: site {
-  //         siteMetadata {
-  //           defaultLocale
-  //           locales
-  //         }
-  //       }
-  //       index: allMarkdownRemark(
-  //         sort: { order: ASC, fields: [frontmatter___order] }
-  //         filter: { fields: { slug: { glob: "index/**" } } }
-  //       ) {
-  //         edges {
-  //           node {
-  //             excerpt
-  //             htmlAst
-  //             id
-  //             fields {
-  //               locale
-  //             }
-  //             frontmatter {
-  //               order
-  //               title
-  //             }
-  //           }
-  //         }
-  //       }
-  //       author: allMarkdownRemark(
-  //         sort: { order: DESC, fields: [frontmatter___title] }
-  //         limit: 1000
-  //         filter: { fields: { keySlug: { glob: "**/author/**" } } }
-  //       ) {
-  //         edges {
-  //           node {
-  //             excerpt
-  //             htmlAst
-  //             id
-  //             fields {
-  //               locale
-  //               slug
-  //             }
-  //             frontmatter {
-  //               title
-  //             }
-  //           }
-  //         }
-  //       }
-  //       blog: allMarkdownRemark(
-  //         sort: { order: DESC, fields: [frontmatter___date] }
-  //         limit: 1000
-  //         filter: { fields: { keySlug: { glob: "**/blog/**" } } }
-  //       ) {
-  //         edges {
-  //           node {
-  //             excerpt
-  //             htmlAst
-  //             id
-  //             fields {
-  //               locale
-  //               slug
-  //             }
-  //             frontmatter {
-  //               title
-  //             }
-  //           }
-  //         }
-  //       }
-  //       rootPages: allMarkdownRemark(
-  //         sort: { order: DESC, fields: [frontmatter___title] }
-  //         limit: 1000
-  //         filter: { fields: { keySlug: { regex: "/^(?!/(?:author|blog|index))/management/.*/" } } }
-  //       ) {
-  //         edges {
-  //           node {
-  //             excerpt
-  //             htmlAst
-  //             id
-  //             fields {
-  //               locale
-  //               slug
-  //             }
-  //             frontmatter {
-  //               title
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `,
-  // );
 
   if (query.errors) {
     reporter.panicOnBuild('Error while running GraphQL query');
