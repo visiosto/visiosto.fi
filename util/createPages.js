@@ -59,6 +59,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
           edges {
             node {
+              contentful_id
               node_locale
               slug
             }
@@ -228,7 +229,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
-    reporter.verbose(`The path created is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
 
     const pageOpts = {
       path: pagePath,

@@ -139,7 +139,7 @@ const Page = (props) => {
                 </Link>
               </H3>
               <PostMeta>
-                <time datetime={post.datetime}>{post.date}</time>
+                <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
                   <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>

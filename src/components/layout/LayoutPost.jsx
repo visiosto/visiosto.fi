@@ -72,7 +72,7 @@ export default (props) => {
           <header>
             <PageTitle>{props.title}</PageTitle>
             <PostMeta>
-              <time datetime={props.post.datetime}>{props.post.date}</time>
+              <time dateTime={props.post.datetime}>{props.post.date}</time>
               <PostAuthor>
                 <AuthorName author={props.post.author} locale={props.locale} />
               </PostAuthor>

@@ -111,7 +111,7 @@ const Page = (props) => {
       </Separator>
       {posts.map(({ node: post }) => {
         return (
-          <Post>
+          <Post key={post.contentful_id}>
             <PostHeader>
               <H2>
                 <Link to={post.contentful_id} locale={props.pageContext.locale}>
@@ -119,7 +119,7 @@ const Page = (props) => {
                 </Link>
               </H2>
               <PostMeta>
-                <time datetime={post.datetime}>{post.date}</time>
+                <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
                   <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>

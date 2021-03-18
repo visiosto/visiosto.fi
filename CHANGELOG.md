@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Support for new all-Contentful content into the localized links.
+- Support for new all-Contentful content into the locale links.
+
 ### Changed
 
 - All of the localized links to be contained in one component.

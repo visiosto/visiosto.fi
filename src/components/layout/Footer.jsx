@@ -215,7 +215,7 @@ export default (props) => {
           </LocalizedLink>
         </CompanyP> */}
       </CompanyDiv>
-      {/* {(() => {
+      {(() => {
         if (!props.noLocaleSwitcher) {
           return (
             <Div>
@@ -223,7 +223,7 @@ export default (props) => {
             </Div>
           );
         }
-      })()} */}
+      })()}
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />

@@ -19,12 +19,7 @@ const NotFoundPage = (props) => {
   const i = createIntl(useIntl());
 
   return (
-    <LayoutError
-      errorCode="404"
-      title={i('notFoundTitle')}
-      locale="fi"
-      pageKey={props.pageContext.key}
-    >
+    <LayoutError errorCode="404" title={i('notFoundTitle')} locale="fi">
       <P>{i('notFoundContent')}</P>
     </LayoutError>
   );
