@@ -184,9 +184,6 @@ const LocalizedLink = (props) => {
 
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
-  // TODO Remove
-  console.log('Creating link to', props.to);
-
   if (props.to === '/') {
     return (
       <Link
@@ -214,8 +211,6 @@ const LocalizedLink = (props) => {
       return <Link {...props} />;
     }
   } else {
-    console.log('Creating Contentful link to', props.to);
-
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
     )[0].node;

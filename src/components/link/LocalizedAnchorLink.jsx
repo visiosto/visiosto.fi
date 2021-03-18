@@ -230,8 +230,6 @@ const LocalizedAnchorLink = (props) => {
       return <AnchorLink {...props} />;
     }
   } else {
-    console.log('Creating Contentful link to', props.to);
-
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
     )[0].node;
