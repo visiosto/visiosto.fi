@@ -4,28 +4,63 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import { AUTHOR_SLUG, BLOG_SLUG, CATEGORY_SLUG } from '../../constants';
+import createPagePath from '../../util/createPagePath';
 
-import pageSlugs from '../../data/page-slugs.json';
+const createPathFromSlug = (slug, locale, data) => {
+  const { defaultLocale, localePaths } = data.site.siteMetadata;
 
-const pageKeySlashIndex = 1;
+  const authorNodes = data.allContentfulAuthor.edges.filter(
+    ({ node }) => node.slug === slug && node.node_locale === locale,
+  );
 
-const createLocalizedSlug = (site, locale, slug) => {
-  const { defaultLocale } = site.siteMetadata;
-
-  const pageKey = slug.substring(pageKeySlashIndex);
-
-  if (pageKey) {
-    return pageKey.split('/').reduce(
-      (previous, current) => {
-        const slugs = pageSlugs;
-        return `${previous}/${slugs[current][locale]}`;
-      },
-      locale === defaultLocale ? '' : `/${locale}`,
-    );
-  } else {
-    return locale === defaultLocale ? '/' : `/${locale}`;
+  if (authorNodes) {
+    const node = authorNodes[0].node;
+    const authorPath = data.authorPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+      .node;
+    return createPagePath(node, locale, defaultLocale, localePaths, authorPath);
   }
+
+  const blogPostNodes = data.allContentfulBlogPost.edges.filter(
+    ({ node }) => node.slug === slug && node.node_locale === locale,
+  );
+
+  if (blogPostNodes) {
+    const node = blogPostNodes[0].node;
+    const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
+    return createPagePath(node, locale, defaultLocale, localePaths, blogPath);
+  }
+
+  const categoryNodes = data.allContentfulCategory.edges.filter(
+    ({ node }) => node.slug === slug && node.node_locale === locale,
+  );
+
+  if (categoryNodes) {
+    const node = categoryNodes[0].node;
+    const categoryPath = data.categoryPaths.edges.filter(
+      ({ node }) => node.node_locale === locale,
+    )[0].node;
+    return createPagePath(node, locale, defaultLocale, localePaths, categoryPath);
+  }
+
+  const pageNodes = data.allContentfulPage.edges.filter(
+    ({ node }) => node.slug === slug && node.node_locale === locale,
+  );
+
+  if (pageNodes) {
+    const node = pageNodes[0].node;
+    return createPagePath(node, locale, defaultLocale, localePaths);
+  }
+
+  const pathNodes = data.allContentfulPath.edges.filter(
+    ({ node }) => node.slug === slug && node.node_locale === locale,
+  );
+
+  if (pathNodes) {
+    const node = pathNodes[0].node;
+    return createPagePath(node, locale, defaultLocale, localePaths);
+  }
+
+  return null;
 };
 
 const LocalizedLink = (props) => {
@@ -35,7 +70,7 @@ const LocalizedLink = (props) => {
         site {
           siteMetadata {
             defaultLocale
-            simpleLocales {
+            localePaths {
               en_GB
               fi
             }
@@ -94,6 +129,39 @@ const LocalizedLink = (props) => {
             }
           }
         }
+        allContentfulPath {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
+        authorPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
+        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
         categoryPaths: allContentfulPath(
           filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
         ) {
@@ -114,130 +182,123 @@ const LocalizedLink = (props) => {
     `,
   );
 
-  const { defaultLocale } = data.site.siteMetadata;
+  const { defaultLocale, localePaths } = data.site.siteMetadata;
 
+  // TODO Remove
   console.log('Creating link to', props.to);
 
   if (props.to === '/') {
-    const indexPath =
+    return (
+      <Link
+        {...props}
+        to={
+          props.locale === defaultLocale ? '/' : `/${localePaths[props.locale.replace('-', '_')]}`
+        }
+      />
+    );
+  } else if (props.to === '/blog') {
+    const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === props.locale)[0]
+      .node;
+    const pagePath =
       props.locale === defaultLocale
-        ? ''
-        : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
-
-    return <Link {...props} to={indexPath} />;
+        ? `/${blogPath.slug}`
+        : `/${localePaths[props.locale.replace('-', '_')]}/${blogPath.slug}`;
+    return <Link {...props} to={pagePath} />;
   } else if (props.to.startsWith('/')) {
-    return <Link {...props} to={createLocalizedSlug(data.site, props.locale, props.to)} />;
+    const pageSlug = props.to.substring(1);
+    const pagePath = createPathFromSlug(pageSlug, props.locale, data);
+
+    if (pagePath) {
+      return <Link {...props} to={pagePath} />;
+    } else {
+      return <Link {...props} />;
+    }
   } else {
     console.log('Creating Contentful link to', props.to);
 
     console.log(data);
 
-    const nodes = data.allContentfulEntry.edges.filter(
+    const node = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
-    );
-
-    console.log(nodes);
-
-    const node = nodes[0].node;
+    )[0].node;
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
           ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
-
-        const authorSlug =
-          props.locale === defaultLocale
-            ? `/${pageSlugs[AUTHOR_SLUG][props.locale]}`
-            : `/${props.locale}/${pageSlugs[AUTHOR_SLUG][props.locale]}`;
-
-        return <Link {...props} to={`${authorSlug}/${authorNode.slug}`} />;
-      }
-      case 'ContentfulBlogPost': {
-        const blogNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
+        const authorPath = data.authorPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
         )[0].node;
 
-        const blogSlug =
-          props.locale === defaultLocale
-            ? `/${pageSlugs[BLOG_SLUG][props.locale]}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
-                pageSlugs[BLOG_SLUG][props.locale]
-              }`;
-
-        return <Link {...props} to={`${blogSlug}/${blogNode.slug}`} />;
+        return (
+          <Link
+            {...props}
+            to={createPagePath(authorNode, props.locale, defaultLocale, localePaths, authorPath)}
+          />
+        );
+      }
+      case 'ContentfulBlogPost': {
+        const blogPostNode = data.allContentfulBlogPost.edges.filter(
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
+        )[0].node;
+        const blogPath = data.blogPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
+        )[0].node;
+        return (
+          <Link
+            {...props}
+            to={createPagePath(blogPostNode, props.locale, defaultLocale, localePaths, blogPath)}
+          />
+        );
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
           ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
+        const categoryPath = data.categoryPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
+        )[0].node;
 
-        const { slug } = categoryNode;
-        const { parentPath, slug: parentSlug } = data.categoryPaths;
-
-        // TODO Make a common helper function for this
-        const categorySlug = (() => {
-          if (parentPath) {
-            return props.locale === defaultLocale
-              ? `/${parentPath.slug}/${parentSlug}/${slug}`
-              : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
-                  parentPath.slug
-                }/${parentSlug}/${slug}`;
-          }
-
-          return props.locale === defaultLocale
-            ? `/${parentSlug}/${slug}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentSlug}/${slug}`;
-        })();
-
-        return <Link {...props} to={categorySlug} />;
-
-        // const categorySlug =
-        //   props.locale === defaultLocale
-        //     ? `/${pageSlugs[CATEGORY_SLUG][props.locale]}`
-        //     : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
-        //         pageSlugs[CATEGORY_SLUG][props.locale]
-        //       }`;
-
-        // return <Link {...props} to={`${categorySlug}/${categoryNode.slug}`} />;
+        return (
+          <Link
+            {...props}
+            to={createPagePath(
+              categoryNode,
+              props.locale,
+              defaultLocale,
+              localePaths,
+              categoryPath,
+            )}
+          />
+        );
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
           ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
         )[0].node;
-
-        const { parentPath, slug } = pageNode;
-
-        // TODO Make a common helper function for this
-        const pageSlug = (() => {
-          if (parentPath) {
-            if (parentPath.parentPath) {
-              return props.locale === defaultLocale
-                ? `/${parentPath.parentPath.slug}/${parentPath.slug}/${slug}`
-                : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${
-                    parentPath.parentPath.slug
-                  }/${parentPath.slug}/${slug}`;
-            }
-
-            return props.locale === defaultLocale
-              ? `/${parentPath.slug}/${slug}`
-              : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${parentPath.slug}/${slug}`;
-          }
-
-          return props.locale === defaultLocale
-            ? `/${slug}`
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}/${slug}`;
-        })();
-
-        return <Link {...props} to={`${pageSlug}`} />;
+        return (
+          <Link
+            {...props}
+            to={createPagePath(pageNode, props.locale, defaultLocale, localePaths)}
+          />
+        );
       }
       case 'ContentfulIndexPage': {
         const indexPath =
-          props.locale === defaultLocale
-            ? ''
-            : `/${data.site.siteMetadata.simpleLocales[props.locale]}`;
-
+          props.locale === defaultLocale ? '/' : `/${localePaths[props.locale.replace('-', '_')]}`;
         return <Link {...props} to={indexPath} />;
+      }
+      case 'ContentfulPath': {
+        const pathNode = data.allContentfulPath.edges.filter(
+          ({ node }) => node.contentful_id === props.to && node.node_locale === props.locale,
+        )[0].node;
+        return (
+          <Link
+            {...props}
+            to={createPagePath(pathNode, props.locale, defaultLocale, localePaths)}
+          />
+        );
       }
       default:
         break;

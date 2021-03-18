@@ -209,11 +209,11 @@ export default (props) => {
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
-        <CompanyP>
+        {/* <CompanyP>
           <LocalizedLink to="/pricing" locale={props.locale}>
             {i('footerPricing')}
           </LocalizedLink>
-        </CompanyP>
+        </CompanyP> */}
       </CompanyDiv>
       {/* {(() => {
         if (!props.noLocaleSwitcher) {
