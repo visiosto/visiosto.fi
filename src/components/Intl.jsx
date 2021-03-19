@@ -22,11 +22,11 @@ const Intl = ({ children, locale }) => {
   const { defaultLocale } = site.siteMetadata;
 
   // eslint-disable-next-line global-require, no-undef
-  let messages = require(`../locales/${defaultLocale}`).lang;
+  let messages = require(`../locales/${defaultLocale}`).locale;
 
   try {
     // eslint-disable-next-line global-require, no-undef
-    messages = require(`../locales/${locale}`).lang;
+    messages = require(`../locales/${locale}`).locale;
   } catch (error) {
     // Do nothing and use the default.
   }

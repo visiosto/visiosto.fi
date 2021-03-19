@@ -40,14 +40,18 @@ const Page = (props) => {
   const { edges: lists } = props.data.allPricesJson;
 
   return (
-    <Layout title={i('pricingTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <Layout
+      title={i('pricingTitle')}
+      locale={props.pageContext.locale}
+      pageKey={props.pageContext.key}
+    >
       <Buttons>
         {lists.map(({ node: list }) => {
           return (
             <AnchorButton
               key={list.listType}
               to={`/${props.pageContext.key}#${list.listType}`}
-              locale={props.pageContext.lang}
+              locale={props.pageContext.locale}
             >
               {i(`${createLocalizationKey(list.listType)}Title`)}
             </AnchorButton>

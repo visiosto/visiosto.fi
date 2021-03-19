@@ -27,4 +27,4 @@ export const messages = {
   ...searchMessages,
 };
 
-export const lang = defineMessages(messages);
+export const locale = defineMessages(messages);

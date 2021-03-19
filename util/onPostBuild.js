@@ -509,7 +509,7 @@ module.exports = async ({ graphql, reporter }) => {
   }
 
   query.data.site.siteMetadata.locales.forEach((locale) => {
-    const localeFile = path.join(searchPath, `pages-${locale}.json`);
+    const localeFile = path.join(searchPath, `pages-${locale.toLowerCase()}.json`);
     fs.writeFileSync(localeFile, JSON.stringify(searchData[locale]));
   });
 };
