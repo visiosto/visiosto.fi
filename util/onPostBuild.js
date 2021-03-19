@@ -16,6 +16,16 @@ const createFromHTMLAST = (elements) =>
     element === '\n' ? `${accumulator}` : `${accumulator} ${element}`,
   );
 
+const createBlogPostContent = (node) => {
+  const content = [
+    node.title,
+    node.author.name,
+    node.category.name,
+    createFromHTMLAST(node.body.childMarkdownRemark.htmlAst.children),
+  ];
+
+  return content.join(' ');
+};
 const createIndexPageEntry = (node, locale, defaultLocale, localePaths) => {
   const content = [
     node.introTitle,
@@ -36,7 +46,7 @@ const createIndexPageEntry = (node, locale, defaultLocale, localePaths) => {
   ];
 
   const page = {
-    slug: locale === defaultLocale ? '/' : `/${locale}`,
+    slug: locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`,
     id: node.contentful_id,
     title: node.title,
     excerpt: node.introBody.childMarkdownRemark.excerpt,
@@ -106,6 +116,36 @@ module.exports = async ({ graphql, reporter }) => {
                 parentPath {
                   slug
                 }
+              }
+            }
+          }
+        }
+        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        blogPosts: allContentfulBlogPost(sort: { fields: date, order: DESC }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              title
+              author {
+                name
+              }
+              body {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+              category {
+                name
               }
             }
           }
@@ -216,6 +256,7 @@ module.exports = async ({ graphql, reporter }) => {
     const { node: indexNode } = query.data.indexPages.edges.filter(
       ({ node: pageNode }) => pageNode.node_locale === locale,
     )[0];
+    reporter.verbose(`Creating search index entry for the index page for locale: ${locale}`);
     searchData[locale].pages.push(
       createIndexPageEntry(indexNode, locale, defaultLocale, localePaths),
     );
@@ -224,8 +265,10 @@ module.exports = async ({ graphql, reporter }) => {
   // Create basic page entries.
 
   query.data.basicPages.edges.forEach(({ node: pageNode }) => {
-    const { body, node_locale: locale, contentful_id: id, title } = pageNode;
+    const { body, node_locale: locale, contentful_id: id, title, slug } = pageNode;
     const { htmlAst: htmlAST, excerpt } = body.childMarkdownRemark;
+
+    reporter.verbose(`Creating search index entry for the page '${slug}' (locale: ${locale})`);
 
     const page = {
       slug: createPagePath(pageNode, locale, defaultLocale, localePaths, reporter),
@@ -247,9 +290,39 @@ module.exports = async ({ graphql, reporter }) => {
     const blogPostNodes = query.data.managementBlogPosts.edges.filter(
       ({ node: postNode }) => postNode.node_locale === locale,
     );
+
+    reporter.verbose(`Creating search index entry for the page '${managementNode.slug}' (locale: ${locale})`);
+
     searchData[locale].pages.push(
       createManagementPageEntry(managementNode, blogPostNodes, locale, defaultLocale, localePaths),
     );
+  });
+
+  const { blogPaths } = query.data;
+
+  // Create blog post page entries.
+
+  query.data.blogPosts.edges.forEach(({ node: postNode }) => {
+    const { body, node_locale: locale, contentful_id: id, title, slug } = postNode;
+    const { excerpt } = body.childMarkdownRemark;
+    reporter.verbose(`Creating search index entry for the blog post '${slug}' (locale: ${locale})`);
+    const blogPath = blogPaths.edges.filter(({ node: pathNode }) => {
+      return pathNode.node_locale === locale;
+    })[0].node.slug;
+    const pagePath =
+      locale === defaultLocale
+        ? `/${blogPath}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${blogPath}/${slug}`;
+
+    const page = {
+      slug: pagePath,
+      id,
+      title,
+      excerpt,
+      content: createBlogPostContent(postNode),
+    };
+
+    searchData[locale].pages.push(page);
   });
 
   const searchPath = path.join(__dirname, '..', 'public', 'search');
