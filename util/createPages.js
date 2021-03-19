@@ -40,7 +40,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
           }
         }
         basicPages: allContentfulPage(
-          filter: { slug: { regex: "/^(?!hallinto|management).*$/" } }
+          filter: { slug: { regex: "/^(?!hallinto|management|hinnasto|pricing).*$/" } }
         ) {
           edges {
             node {
@@ -107,6 +107,15 @@ module.exports = async ({ actions, graphql, reporter }) => {
           }
         }
         managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        pricingPages: allContentfulPage(filter: { slug: { regex: "/^hinnasto|pricing$/" } }) {
           edges {
             node {
               contentful_id
@@ -319,6 +328,31 @@ module.exports = async ({ actions, graphql, reporter }) => {
         locale,
         pageId,
         momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the pricing page from Contentful.
+
+  query.data.pricingPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath =
+      locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'pricing.jsx'),
+      context: {
+        locale,
+        pageId,
       },
     };
 
