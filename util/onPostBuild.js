@@ -16,7 +16,7 @@ const createFromHTMLAST = (elements) =>
     element === '\n' ? `${accumulator}` : `${accumulator} ${element}`,
   );
 
-const createIndexPageEntry = (node, locale, defaultLocale) => {
+const createIndexPageEntry = (node, locale, defaultLocale, localePaths) => {
   const content = [
     node.introTitle,
     createFromHTMLAST(node.introBody.childMarkdownRemark.htmlAst.children),
@@ -46,6 +46,32 @@ const createIndexPageEntry = (node, locale, defaultLocale) => {
   return page;
 };
 
+const createManagementPageEntry = (node, blogNodes, locale, defaultLocale, localePaths) => {
+  const content = [
+    node.title,
+    createFromHTMLAST(node.body.childMarkdownRemark.htmlAst.children),
+    blogNodes.map(
+      ({ node: postNode }) =>
+        `${postNode.title} ${postNode.author.name} ${postNode.category.name} ${createFromHTMLAST(
+          postNode.body.childMarkdownRemark.htmlAst.children,
+        )}`,
+    ),
+  ];
+
+  const page = {
+    slug:
+      locale === defaultLocale
+        ? `/${node.slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${node.slug}`,
+    id: node.contentful_id,
+    title: node.title,
+    excerpt: node.body.childMarkdownRemark.excerpt,
+    content: content.join(' '),
+  };
+
+  return page;
+};
+
 module.exports = async ({ graphql, reporter }) => {
   const query = await graphql(
     `
@@ -68,6 +94,7 @@ module.exports = async ({ graphql, reporter }) => {
               contentful_id
               node_locale
               slug
+              title
               body {
                 childMarkdownRemark {
                   excerpt
@@ -128,6 +155,46 @@ module.exports = async ({ graphql, reporter }) => {
             }
           }
         }
+        managementBlogPosts: allContentfulBlogPost(
+          filter: { management: { eq: true } }
+          sort: { fields: date, order: DESC }
+        ) {
+          edges {
+            node {
+              slug
+              node_locale
+              title
+              author {
+                name
+              }
+              body {
+                childMarkdownRemark {
+                  excerpt(pruneLength: 500)
+                  htmlAst
+                }
+              }
+              category {
+                name
+              }
+            }
+          }
+        }
+        managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              title
+              body {
+                childMarkdownRemark {
+                  excerpt
+                  htmlAst
+                }
+              }
+            }
+          }
+        }
       }
     `,
   );
@@ -141,7 +208,7 @@ module.exports = async ({ graphql, reporter }) => {
 
   const searchData = {};
 
-  locales.forEach((locale) => searchData[locale] = { pages: [] });
+  locales.forEach((locale) => (searchData[locale] = { pages: [] }));
 
   // Create the index page entries.
 
@@ -150,7 +217,7 @@ module.exports = async ({ graphql, reporter }) => {
       ({ node: pageNode }) => pageNode.node_locale === locale,
     )[0];
     searchData[locale].pages.push(
-      createIndexPageEntry(indexNode, locale, defaultLocale),
+      createIndexPageEntry(indexNode, locale, defaultLocale, localePaths),
     );
   });
 
@@ -169,6 +236,20 @@ module.exports = async ({ graphql, reporter }) => {
     };
 
     searchData[locale].pages.push(page);
+  });
+
+  // Create management page entries.
+
+  locales.forEach((locale) => {
+    const { node: managementNode } = query.data.managementPages.edges.filter(
+      ({ node: pageNode }) => pageNode.node_locale === locale,
+    )[0];
+    const blogPostNodes = query.data.managementBlogPosts.edges.filter(
+      ({ node: postNode }) => postNode.node_locale === locale,
+    );
+    searchData[locale].pages.push(
+      createManagementPageEntry(managementNode, blogPostNodes, locale, defaultLocale, localePaths),
+    );
   });
 
   const searchPath = path.join(__dirname, '..', 'public', 'search');
