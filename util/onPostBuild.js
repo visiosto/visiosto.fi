@@ -124,6 +124,7 @@ module.exports = async ({ graphql, reporter }) => {
           edges {
             node {
               contentful_id
+              name
               node_locale
               slug
             }
@@ -209,11 +210,37 @@ module.exports = async ({ graphql, reporter }) => {
               body {
                 childMarkdownRemark {
                   htmlAst
+                  excerpt
                 }
               }
               category {
+                contentful_id
                 name
               }
+            }
+          }
+        }
+        categoryPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+              title
+              parentPath {
+                slug
+              }
+            }
+          }
+        }
+        categories: allContentfulCategory {
+          edges {
+            node {
+              contentful_id
+              slug
+              node_locale
+              name
             }
           }
         }
@@ -434,6 +461,42 @@ module.exports = async ({ graphql, reporter }) => {
       title,
       excerpt: '',
       content: '',
+    };
+
+    searchData[locale].pages.push(page);
+  });
+
+  // Create category page entries.
+
+  query.data.categories.edges.forEach(({ node: categoryNode }) => {
+    const { node_locale: locale, contentful_id: id, name: title, slug } = categoryNode;
+    reporter.verbose(`Creating search index entry for the category '${slug}' (locale: ${locale})`);
+    const categoryPath = query.data.categoryPaths.edges.filter(
+      ({ node: pathNode }) => pathNode.node_locale === locale,
+    )[0].node;
+
+    const pagePath = `${createPagePath(categoryPath, locale, defaultLocale, localePaths)}/${slug}`;
+
+    const firstPost = query.data.blogPosts.edges.filter(
+      ({ node: postNode }) =>
+        postNode.category.contentful_id === id && postNode.node_locale === locale,
+    )[0].node;
+
+    const page = {
+      slug: pagePath,
+      id,
+      title: `${categoryPath.title}: ${title}`,
+      excerpt: `${firstPost.title} ${firstPost.author.name} ${firstPost.category.name} ${firstPost.body.childMarkdownRemark.excerpt}`,
+      content: query.data.blogPosts.edges
+        .filter(
+          ({ node: postNode }) =>
+            postNode.category.contentful_id === id && postNode.node_locale === locale,
+        )
+        .map(
+          ({ node: postNode }) =>
+            `${postNode.title} ${postNode.author.name} ${postNode.category.name} ${postNode.body.childMarkdownRemark.excerpt}`,
+        )
+        .join(' '),
     };
 
     searchData[locale].pages.push(page);
