@@ -162,10 +162,18 @@ const Head = (props) => {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {/* TODO For articles: <meta property="og:type" content="article" /> */}
-      <meta
-        property="og:url"
-        content={createLocaleURL(baseURL, props.pageId, props.locale, data)}
-      />
+      {(() => {
+        if (props.errorPage) {
+          return <meta property="og:url" content={`${baseURL}/404`} />;
+        } else {
+          return (
+            <meta
+              property="og:url"
+              content={createLocaleURL(baseURL, props.pageId, props.locale, data)}
+            />
+          );
+        }
+      })()}
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
@@ -173,14 +181,27 @@ const Head = (props) => {
 
       <link rel="stylesheet" href="https://use.typekit.net/wvk6tpf.css" />
 
-      {siteMetadata.locales.map((locale) => (
-        <link
-          rel="alternate"
-          href={createLocaleURL(baseURL, props.pageId, locale, data)}
-          hrefLang={siteMetadata.simpleLocales[locale.replace('-', '_')]}
-          key={locale}
-        />
-      ))}
+      {(() => {
+        if (props.errorPage) {
+          return (
+            <link
+              rel="alternate"
+              href={`${baseURL}/404`}
+              hrefLang={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
+              key={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
+            />
+          );
+        } else {
+          siteMetadata.locales.map((locale) => (
+            <link
+              rel="alternate"
+              href={createLocaleURL(baseURL, props.pageId, locale, data)}
+              hrefLang={siteMetadata.simpleLocales[locale.replace('-', '_')]}
+              key={locale}
+            />
+          ));
+        }
+      })()}
     </Helmet>
   );
 };

@@ -28,7 +28,7 @@ export default (props) => {
   return (
     <>
       <GlobalStyle />
-      <Head {...props} />
+      <Head errorPage {...props} />
       <Header {...props} />
       <main>
         <section>

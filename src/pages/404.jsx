@@ -15,7 +15,7 @@ const P = styled.p`
   text-align: center;
 `;
 
-const NotFoundPage = (props) => {
+const Page = () => {
   const i = createIntl(useIntl());
 
   return (
@@ -28,7 +28,7 @@ const NotFoundPage = (props) => {
 const NotFound = (props) => (
   <Intl locale="fi">
     <Theme>
-      <NotFoundPage {...props} />
+      <Page {...props} />
     </Theme>
   </Intl>
 );
