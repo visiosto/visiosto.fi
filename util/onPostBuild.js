@@ -4,45 +4,44 @@
 const fs = require('fs');
 const path = require('path');
 
+const createPagePath = require('./createPagePath');
+
 const htmlTreeToText = (elements) =>
   elements.map((element) =>
     element.type === 'text' ? element.value : htmlTreeToText(element.children),
   );
 
-const createFromHtmlAst = (elements) =>
+const createFromHTMLAST = (elements) =>
   htmlTreeToText(elements).reduce((accumulator, element) =>
     element === '\n' ? `${accumulator}` : `${accumulator} ${element}`,
   );
 
-const createIndexPageEntry = (edges, locale, defaultLocale) => {
+const createIndexPageEntry = (node, locale, defaultLocale) => {
+  const content = [
+    node.introTitle,
+    createFromHTMLAST(node.introBody.childMarkdownRemark.htmlAst.children),
+    node.storyTitle,
+    createFromHTMLAST(node.storyBody.childMarkdownRemark.htmlAst.children),
+    node.productsTitle,
+    ...node.products.map(
+      (product) =>
+        `${product.title} ${createFromHTMLAST(
+          product.description.childMarkdownRemark.htmlAst.children,
+        )}`,
+    ),
+    node.portfolioTitle,
+    node.contactTitle,
+    createFromHTMLAST(node.contactBody.childMarkdownRemark.htmlAst.children),
+    ...node.contacts.map((contact) => `${contact.name} ${contact.job} ${contact.email}`),
+  ];
+
   const page = {
     slug: locale === defaultLocale ? '/' : `/${locale}`,
+    id: node.contentful_id,
+    title: node.title,
+    excerpt: node.introBody.childMarkdownRemark.excerpt,
+    content: content.join(' '),
   };
-
-  let content = '';
-
-  edges
-    .filter(({ node }) => node.fields.locale === locale)
-    .forEach(({ node }) => {
-      const { excerpt, frontmatter, htmlAst, id } = node;
-
-      if (frontmatter.order === 0) {
-        page.id = id;
-        page.title = frontmatter.title;
-      } else {
-        if (!('excerpt' in page)) {
-          page.excerpt = excerpt;
-        }
-
-        if (content) {
-          content = `${content} `;
-        }
-
-        content = `${content}${frontmatter.title} ${createFromHtmlAst(htmlAst.children)}`;
-      }
-    });
-
-  page.content = content;
 
   return page;
 };
@@ -54,28 +53,10 @@ module.exports = async ({ graphql, reporter }) => {
         site {
           siteMetadata {
             defaultLocale
+            locales
             localePaths {
               en_GB
               fi
-            }
-          }
-        }
-        authors: allContentfulAuthor {
-          edges {
-            node {
-              contentful_id
-              node_locale
-              slug
-            }
-          }
-        }
-        authorPaths: allContentfulPath(
-          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
-        ) {
-          edges {
-            node {
-              node_locale
-              slug
             }
           }
         }
@@ -87,6 +68,12 @@ module.exports = async ({ graphql, reporter }) => {
               contentful_id
               node_locale
               slug
+              body {
+                childMarkdownRemark {
+                  excerpt
+                  htmlAst
+                }
+              }
               parentPath {
                 slug
                 parentPath {
@@ -96,62 +83,48 @@ module.exports = async ({ graphql, reporter }) => {
             }
           }
         }
-        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
-          edges {
-            node {
-              contentful_id
-              node_locale
-              slug
-            }
-          }
-        }
-        blogPosts: allContentfulBlogPost(sort: { fields: date, order: DESC }) {
-          edges {
-            node {
-              contentful_id
-              node_locale
-              slug
-            }
-          }
-        }
-        categoryPaths: allContentfulPath(
-          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
-        ) {
-          edges {
-            node {
-              node_locale
-              slug
-              parentPath {
-                slug
-              }
-            }
-          }
-        }
-        categories: allContentfulCategory {
-          edges {
-            node {
-              contentful_id
-              node_locale
-              slug
-            }
-          }
-        }
         indexPages: allContentfulIndexPage(
           filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
         ) {
           edges {
             node {
+              contactTitle
               contentful_id
+              introTitle
               node_locale
-            }
-          }
-        }
-        managementPages: allContentfulPage(filter: { slug: { regex: "/^hallinto|management$/" } }) {
-          edges {
-            node {
-              contentful_id
-              node_locale
-              slug
+              portfolioTitle
+              productsTitle
+              storyTitle
+              title
+              contactBody {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+              contacts {
+                email
+                job
+                name
+              }
+              introBody {
+                childMarkdownRemark {
+                  excerpt
+                  htmlAst
+                }
+              }
+              products {
+                title
+                description {
+                  childMarkdownRemark {
+                    htmlAst
+                  }
+                }
+              }
+              storyBody {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
             }
           }
         }
@@ -164,68 +137,41 @@ module.exports = async ({ graphql, reporter }) => {
     return;
   }
 
+  const { defaultLocale, localePaths, locales } = query.data.site.siteMetadata;
+
   const searchData = {};
 
-  query.data.site.siteMetadata.locales.forEach((locale) => {
-    searchData[locale] = { pages: [] };
+  locales.forEach((locale) => searchData[locale] = { pages: [] });
+
+  // Create the index page entries.
+
+  locales.forEach((locale) => {
+    const { node: indexNode } = query.data.indexPages.edges.filter(
+      ({ node: pageNode }) => pageNode.node_locale === locale,
+    )[0];
+    searchData[locale].pages.push(
+      createIndexPageEntry(indexNode, locale, defaultLocale),
+    );
   });
 
-  query.data.site.siteMetadata.locales.forEach((locale) =>
-    searchData[locale].pages.push(
-      createIndexPageEntry(
-        query.data.index.edges,
-        locale,
-        query.data.site.siteMetadata.defaultLocale,
-      ),
-    ),
-  );
+  // Create basic page entries.
 
-  // query.data.author.edges.forEach(({ node }) => {
-  //   const { excerpt, fields, frontmatter, htmlAst, id } = node;
-  //   const { locale, slug } = fields;
-
-  //   const page = {
-  //     id,
-  //     slug,
-  //     title: frontmatter.title,
-  //     content: createFromHtmlAst(htmlAst.children),
-  //     excerpt,
-  //   };
-
-  //   searchData[locale].pages.push(page);
-  // });
-
-  // query.data.blog.edges.forEach(({ node }) => {
-  //   const { excerpt, fields, frontmatter, htmlAst, id } = node;
-  //   const { locale, slug } = fields;
-
-  //   const page = {
-  //     id,
-  //     slug,
-  //     title: frontmatter.title,
-  //     content: createFromHtmlAst(htmlAst.children),
-  //     excerpt,
-  //   };
-
-  //   searchData[locale].pages.push(page);
-  // });
-
-  query.data.rootPages.edges.forEach(({ node }) => {
-    const { excerpt, fields, frontmatter, htmlAst, id } = node;
-    const { locale, slug } = fields;
+  query.data.basicPages.edges.forEach(({ node: pageNode }) => {
+    const { body, node_locale: locale, contentful_id: id, title } = pageNode;
+    const { htmlAst: htmlAST, excerpt } = body.childMarkdownRemark;
 
     const page = {
+      slug: createPagePath(pageNode, locale, defaultLocale, localePaths, reporter),
       id,
-      slug,
-      title: frontmatter.title,
-      content: createFromHtmlAst(htmlAst.children),
+      title,
       excerpt,
+      content: createFromHTMLAST(htmlAST.children),
     };
 
     searchData[locale].pages.push(page);
   });
 
-  const searchPath = path.join(__dirname, '..', '..', 'public', 'search');
+  const searchPath = path.join(__dirname, '..', 'public', 'search');
 
   if (!fs.existsSync(searchPath)) {
     fs.mkdirSync(searchPath);

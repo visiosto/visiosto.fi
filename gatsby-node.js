@@ -3,5 +3,4 @@
 
 exports.createPages = require('./util/createPages');
 exports.onCreatePage = require('./util/onCreatePage');
-// TODO Uncomment when the functionality is implemented again.
-// exports.onPostBuild = require('./util/gatsby/onPostBuild');
+exports.onPostBuild = require('./util/onPostBuild');
