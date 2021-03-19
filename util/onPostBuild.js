@@ -120,6 +120,25 @@ module.exports = async ({ graphql, reporter }) => {
             }
           }
         }
+        authors: allContentfulAuthor {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        authorPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
         basicPages: allContentfulPage(
           filter: { slug: { regex: "/^(?!hallinto|management).*$/" } }
         ) {
@@ -394,6 +413,30 @@ module.exports = async ({ graphql, reporter }) => {
     searchData[locale].pages.push(
       createBlogPageEntry(pathNode, blogPostNodes, locale, defaultLocale, localePaths),
     );
+  });
+
+  // Create author page entries.
+
+  query.data.authors.edges.forEach(({ node: authorNode }) => {
+    const { node_locale: locale, contentful_id: id, name: title, slug } = authorNode;
+    reporter.verbose(`Creating search index entry for the author '${slug}' (locale: ${locale})`);
+    const authorPath = query.data.authorPaths.edges.filter(({ node: pathNode }) => {
+      return pathNode.node_locale === locale;
+    })[0].node.slug;
+    const pagePath =
+      locale === defaultLocale
+        ? `/${authorPath}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${authorPath}/${slug}`;
+
+    const page = {
+      slug: pagePath,
+      id,
+      title,
+      excerpt: '',
+      content: '',
+    };
+
+    searchData[locale].pages.push(page);
   });
 
   const searchPath = path.join(__dirname, '..', 'public', 'search');
