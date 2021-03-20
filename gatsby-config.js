@@ -46,13 +46,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'data',
-        path: path.join(__dirname, 'data'),
-      },
-    },
-    {
       resolve: 'gatsby-transformer-remark',
     },
     'gatsby-transformer-json',
