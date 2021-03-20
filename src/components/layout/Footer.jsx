@@ -7,12 +7,12 @@ import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import LanguageSwitcher from './LanguageSwitcher';
+import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
 import Search from '../search/Search';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
@@ -205,21 +205,21 @@ export default (props) => {
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
         <ManagementP>
-          <LocalizedLink to="/management" locale={props.lang}>
+          <LocalizedLink to="3rPdaUCw3nKo73b5Z6thWW" locale={props.locale}>
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
         <CompanyP>
-          <LocalizedLink to="/pricing" locale={props.lang}>
+          <LocalizedLink to="/pricing" locale={props.locale}>
             {i('footerPricing')}
           </LocalizedLink>
         </CompanyP>
       </CompanyDiv>
       {(() => {
-        if (!props.noLanguageSwitcher) {
+        if (!props.noLocaleSwitcher) {
           return (
             <Div>
-              <LanguageSwitcher {...props} />
+              <LocaleSwitcher {...props} />
             </Div>
           );
         }
@@ -275,7 +275,7 @@ export default (props) => {
         <p>
           {i('footerMadeBy', {
             a: (...chunk) => (
-              <LocalizedLink to="/" locale={props.lang}>
+              <LocalizedLink to="/" locale={props.locale}>
                 {chunk}
               </LocalizedLink>
             ),

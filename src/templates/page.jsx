@@ -25,14 +25,16 @@ const Page = (props) => {
   const { contentfulPage: page } = props.data;
 
   return (
-    <Layout title={page.title} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
   );
 };
 
 const ContentfulPage = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -42,8 +44,16 @@ const ContentfulPage = (props) => (
 export default ContentfulPage;
 
 export const pageQuery = graphql`
-  query PageQuery($key: String, $locale: String) {
-    contentfulPage(contentful_id: { eq: $key }, node_locale: { eq: $locale }) {
+  query PageQuery($pageId: String, $locale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
+    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

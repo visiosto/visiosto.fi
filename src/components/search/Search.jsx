@@ -33,7 +33,7 @@ const Search = (props) => {
     `,
   );
 
-  return <Container siteUrl={site.siteMetadata.siteUrl} lang={props.lang} />;
+  return <Container siteUrl={site.siteMetadata.siteUrl} locale={props.locale} />;
 };
 
 export default Search;

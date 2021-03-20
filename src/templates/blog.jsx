@@ -15,7 +15,7 @@ import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginPhone};
@@ -101,27 +101,31 @@ const Page = (props) => {
   const { edges: posts } = props.data.allContentfulBlogPost;
 
   return (
-    <Layout title={i('blogTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <Layout
+      title={i('blogTitle')}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
+    >
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
       {posts.map(({ node: post }) => {
         return (
-          <Post>
+          <Post key={post.contentful_id}>
             <PostHeader>
               <H2>
-                <Link to={post.contentful_id} locale={props.pageContext.lang}>
+                <Link to={post.contentful_id} locale={props.pageContext.locale}>
                   {post.title}
                 </Link>
               </H2>
               <PostMeta>
-                <time datetime={post.datetime}>{post.date}</time>
+                <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.lang} />
+                  <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>
                 <PostCategory>
                   {i('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.lang} />
+                  <CategoryName category={post.category} locale={props.pageContext.locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -129,7 +133,7 @@ const Page = (props) => {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.contentful_id} lang={props.pageContext.lang}>
+              <Button to={post.contentful_id} locale={props.pageContext.locale}>
                 {i('blogReadMore')}
               </Button>
             </Center>
@@ -144,7 +148,9 @@ const Page = (props) => {
 };
 
 const Blog = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -155,6 +161,14 @@ export default Blog;
 
 export const pageQuery = graphql`
   query BlogQuery($locale: String, $momentJsLocale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
     allContentfulBlogPost(
       filter: { management: { eq: false }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }

@@ -36,7 +36,7 @@ class SearchContainer extends Component {
       .get(
         `${
           process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : this.props.siteUrl
-        }/search/pages-${this.props.lang}.json`,
+        }/search/pages-${this.props.locale.toLowerCase()}.json`,
       )
       .then((result) => {
         const pageData = result.data;

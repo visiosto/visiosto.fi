@@ -33,14 +33,13 @@ const Span = styled.span`
 `;
 
 export default (props) => {
-  console.log('Page key is', props.pageKey);
   return (
     <>
       {(() => {
-        if (props.lang !== 'fi') {
+        if (props.locale !== 'fi') {
           return (
             <>
-              <Link to="fi" pageKey={props.pageKey}>
+              <Link to="fi" pageId={props.pageId}>
                 <Span>Suomeksi</Span>
               </Link>
               <br />
@@ -51,10 +50,10 @@ export default (props) => {
         return <></>;
       })()}
       {(() => {
-        if (props.lang !== 'en') {
+        if (props.locale !== 'en-GB') {
           return (
             <>
-              <Link to="en" pageKey={props.pageKey}>
+              <Link to="en-GB" pageId={props.pageId}>
                 <Span>In English</Span>
               </Link>
               <br />

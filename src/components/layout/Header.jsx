@@ -11,7 +11,7 @@ import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
 import SchemedImage from '../SchemedImage';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 import theme from '../../theme';
 
@@ -27,6 +27,7 @@ const Header = styled.header`
   }
 `;
 
+// TODO Remove and use simpler components instead.
 const createSiteTitle = (isHome) => (isHome ? styled.h1 : styled.p)`
     display: none;
     margin: 0;
@@ -107,7 +108,7 @@ export default (props) => {
     <Header>
       <SiteBranding>
         <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
-        <LocalizedLink to="/" locale={props.lang}>
+        <LocalizedLink to="/" locale={props.locale}>
           <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>

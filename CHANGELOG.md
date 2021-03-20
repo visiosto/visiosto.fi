@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.11.0] - 2021-03-21
+
+### Added
+
+- Support for new all-Contentful content into the localized links.
+- Support for new all-Contentful content into the locale links.
+- Support for new all-Contentful content into the localized anchor links.
+- Support for new all-Contentful content into the alternative links in the head for each page.
+- Support for search when using Contentful.
+- Possibility to create localized links using slugs.
+
+### Changed
+
+- All of the localized links to be contained in one component.
+- All `lang` properties to `locale` properties.
+- All pages to be constructed by using Contentful data.
+
 ## [0.10.3] - 2021-03-16
 
 ### Fixed
@@ -257,7 +274,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.10.3...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/visiosto/visiosto.fi/compare/v0.10.3...v0.11.0
 [0.10.3]: https://github.com/visiosto/visiosto.fi/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/visiosto/visiosto.fi/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/visiosto/visiosto.fi/compare/v0.10.0...v0.10.1

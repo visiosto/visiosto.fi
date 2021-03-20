@@ -9,22 +9,17 @@ import Intl from '../components/Intl';
 import LayoutError from '../components/layout/LayoutError';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
 
 const P = styled.p`
   text-align: center;
 `;
 
-const NotFoundPage = (props) => {
+const Page = () => {
   const i = createIntl(useIntl());
 
   return (
-    <LayoutError
-      errorCode="404"
-      title={i('notFoundTitle')}
-      lang="fi"
-      pageKey={props.pageContext.key}
-    >
+    <LayoutError errorCode="404" title={i('notFoundTitle')} locale="fi">
       <P>{i('notFoundContent')}</P>
     </LayoutError>
   );
@@ -33,7 +28,7 @@ const NotFoundPage = (props) => {
 const NotFound = (props) => (
   <Intl locale="fi">
     <Theme>
-      <NotFoundPage {...props} />
+      <Page {...props} />
     </Theme>
   </Intl>
 );

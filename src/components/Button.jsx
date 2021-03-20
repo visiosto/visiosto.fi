@@ -35,7 +35,7 @@ const Span = styled.span`
 const Button = (props) => {
   return (
     <div>
-      <Link to={props.to} locale={props.lang}>
+      <Link to={props.to} locale={props.locale}>
         <Span>{props.children}</Span>
       </Link>
     </div>

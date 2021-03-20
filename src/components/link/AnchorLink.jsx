@@ -7,9 +7,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import handleLinkClick from '../../utils/anchor-link/handleLinkClick';
-import stripHashedLocation from '../../utils/anchor-link/stripHashedLocation';
-import handleStrippedLinkClick from '../../utils/anchor-link/handleStrippedLinkClick';
+import handleLinkClick from '../../util/anchor-link/handleLinkClick';
+import stripHashedLocation from '../../util/anchor-link/stripHashedLocation';
+import handleStrippedLinkClick from '../../util/anchor-link/handleStrippedLinkClick';
 
 const AnchorLink = (props) => {
   const onClickHandler = props.stripHash ? handleStrippedLinkClick : handleLinkClick;

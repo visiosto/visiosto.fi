@@ -12,7 +12,9 @@ module.exports = {
     description:
       'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
     twitterAuthor: '@visiosto_oy',
-    locales: ['fi', 'en'],
+    locales: ['fi', 'en-GB'],
+    localePaths: { fi: '', 'en-GB': 'en' },
+    simpleLocales: { fi: 'fi', 'en-GB': 'en' },
     defaultLocale: 'fi',
     defaultEmail: 'info@visiosto.fi',
     businessId: '3010084-6',
@@ -26,7 +28,7 @@ module.exports = {
     },
   },
   flags: {
-    DEV_SSR: true,
+    DEV_SSR: false,
   },
   plugins: [
     {
@@ -41,13 +43,6 @@ module.exports = {
       options: {
         name: 'assets',
         path: path.join(__dirname, 'src', 'assets'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'data',
-        path: path.join(__dirname, 'data'),
       },
     },
     {

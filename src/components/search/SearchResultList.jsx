@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const HitCount = styled.div`
   display: flex;

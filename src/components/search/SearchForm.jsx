@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 import { SearchIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Form = styled.form`
   display: flex;

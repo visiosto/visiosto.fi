@@ -8,7 +8,7 @@ import { useIntl } from 'react-intl';
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Nav = styled.nav`
   margin: 0 auto;
@@ -172,24 +172,25 @@ export default (props) => {
         <ToggleBar toggled={toggled} />
         <ToggleBar toggled={toggled} />
       </Toggle>
+      {/* TODO Consider getting the page titles and link values by query from Contentful */}
       <Ul id="primary-menu" toggled={toggled}>
         <Li>
-          <Link to="/" locale={props.lang}>
+          <Link to="/" locale={props.locale}>
             {i('indexTitle')}
           </Link>
         </Li>
         <Li>
-          <AnchorLink to="/#portfolio" locale={props.lang}>
+          <AnchorLink to="/#portfolio" locale={props.locale}>
             {i('indexPortfolioTitle')}
           </AnchorLink>
         </Li>
         <Li>
-          <AnchorLink to="/#contact" locale={props.lang}>
+          <AnchorLink to="/#contact" locale={props.locale}>
             {i('indexContactTitle')}
           </AnchorLink>
         </Li>
         <Li>
-          <Link to="/blog" locale={props.lang}>
+          <Link to="/blog" locale={props.locale}>
             {i('blogTitle')}
           </Link>
         </Li>

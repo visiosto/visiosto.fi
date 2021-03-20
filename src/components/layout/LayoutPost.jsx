@@ -12,8 +12,8 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import createIntl from '../../utils/createIntl';
-import listenColorScheme from '../../utils/listenColorScheme';
+import createIntl from '../../util/createIntl';
+import listenColorScheme from '../../util/listenColorScheme';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginPhone};
@@ -72,13 +72,13 @@ export default (props) => {
           <header>
             <PageTitle>{props.title}</PageTitle>
             <PostMeta>
-              <time datetime={props.post.datetime}>{props.post.date}</time>
+              <time dateTime={props.post.datetime}>{props.post.date}</time>
               <PostAuthor>
-                <AuthorName author={props.post.author} locale={props.lang} />
+                <AuthorName author={props.post.author} locale={props.locale} />
               </PostAuthor>
               <PostCategory>
                 {i('blogCategory')}{' '}
-                <CategoryName category={props.post.category} locale={props.lang} />
+                <CategoryName category={props.post.category} locale={props.locale} />
               </PostCategory>
             </PostMeta>
           </header>

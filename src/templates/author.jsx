@@ -3,27 +3,21 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
-
-const P = styled.p`
-  text-align: center;
-`;
-
 const Page = (props) => {
-  const i = createIntl(useIntl());
-
-  return <Layout title={''} lang={props.pageContext.lang} pageKey={props.pageContext.key}></Layout>;
+  return (
+    <Layout title={''} locale={props.pageContext.locale} pageId={props.pageContext.pageId}></Layout>
+  );
 };
 
 const Author = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -31,3 +25,16 @@ const Author = (props) => (
 );
 
 export default Author;
+
+export const pageQuery = graphql`
+  query AuthorQuery {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
+  }
+`;

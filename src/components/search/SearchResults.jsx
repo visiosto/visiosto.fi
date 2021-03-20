@@ -7,7 +7,7 @@ import { useIntl } from 'react-intl';
 
 import SearchResultList from './SearchResultList';
 
-import createIntl from '../../utils/createIntl';
+import createIntl from '../../util/createIntl';
 
 const Div = styled.div`
   display: ${(props) => (props.show ? `block` : `none`)};

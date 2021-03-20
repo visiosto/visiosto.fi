@@ -6,45 +6,154 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../utils/createIntl';
-import createLanguageUrl from '../../utils/createLanguageUrl';
+import createIntl from '../../util/createIntl';
+import createLocaleURL from '../../util/createLocaleURL';
 
 // TODO Add at least 'og:image'
 const Head = (props) => {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
+            description
+            locales
             siteUrl
             title
-            description
             twitterAuthor
-            locales
+            localePaths {
+              en_GB
+              fi
+            }
+            simpleLocales {
+              en_GB
+              fi
+            }
+          }
+        }
+        allContentfulEntry {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              internal {
+                type
+              }
+            }
+          }
+        }
+        allContentfulAuthor {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        allContentfulBlogPost {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        allContentfulCategory {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        allContentfulPage {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
+        allContentfulPath {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
+        authorPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
+        blogPaths: allContentfulPath(filter: { contentful_id: { eq: "2zOhJf5PQ1SzUJhT37Cnb2" } }) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
+        categoryPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "54IoCQAEBdBmvFfVtUeegI" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
           }
         }
       }
     `,
   );
 
+  const { siteMetadata } = data.site;
+
   const i = createIntl(useIntl());
-
-  const baseUrl =
-    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : site.siteMetadata.siteUrl;
-
-  const createUrl = createLanguageUrl(baseUrl, props.pageKey);
+  const baseURL =
+    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteUrl;
 
   const titleTemplate = props.home
-    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
-    : `%s - ${site.siteMetadata.title}`;
+    ? `${siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${siteMetadata.title}`;
   const title = props.home
-    ? `${site.siteMetadata.title} - ${i('metaSlogan')}`
-    : `%s - ${site.siteMetadata.title}`;
+    ? `${siteMetadata.title} - ${i('metaSlogan')}`
+    : `%s - ${siteMetadata.title}`;
   const description = i('metaDescription') || props.description;
 
   return (
     <Helmet titleTemplate={titleTemplate}>
-      <html lang={`${props.lang}`} />
+      <html lang={`${siteMetadata.simpleLocales[props.locale.replace('-', '_')]}`} />
       <title>{props.title}</title>
 
       <meta name="description" content={description} />
@@ -53,17 +162,46 @@ const Head = (props) => {
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       {/* TODO For articles: <meta property="og:type" content="article" /> */}
-      <meta property="og:url" content={createUrl(props.lang)} />
+      {(() => {
+        if (props.errorPage) {
+          return <meta property="og:url" content={`${baseURL}/404`} />;
+        } else {
+          return (
+            <meta
+              property="og:url"
+              content={createLocaleURL(baseURL, props.pageId, props.locale, data)}
+            />
+          );
+        }
+      })()}
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={site.siteMetadata.twitterAuthor} />
-      <meta name="twitter:creator" content={site.siteMetadata.twitterAuthor} />
+      <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
+      <meta name="twitter:creator" content={siteMetadata.twitterAuthor} />
 
       <link rel="stylesheet" href="https://use.typekit.net/wvk6tpf.css" />
 
-      {site.siteMetadata.locales.map((locale) => (
-        <link rel="alternate" href={createUrl(locale)} hrefLang={locale} key={locale} />
-      ))}
+      {(() => {
+        if (props.errorPage) {
+          return (
+            <link
+              rel="alternate"
+              href={`${baseURL}/404`}
+              hrefLang={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
+              key={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
+            />
+          );
+        } else {
+          siteMetadata.locales.map((locale) => (
+            <link
+              rel="alternate"
+              href={createLocaleURL(baseURL, props.pageId, locale, data)}
+              hrefLang={siteMetadata.simpleLocales[locale.replace('-', '_')]}
+              key={locale}
+            />
+          ));
+        }
+      })()}
     </Helmet>
   );
 };

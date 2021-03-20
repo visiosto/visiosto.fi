@@ -9,11 +9,27 @@ import { useIntl } from 'react-intl';
 import AnchorButton from '../components/AnchorButton';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import PriceList, { createLocalizationKey } from '../components/PriceList';
+import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../utils/createIntl';
+import createIntl from '../util/createIntl';
+
+const Div = styled.div`
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+
+  .centered {
+    text-align: center;
+  }
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 3em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
 
 const Buttons = styled.div`
   display: flex;
@@ -37,19 +53,24 @@ const Separator = styled.div`
 const Page = (props) => {
   const i = createIntl(useIntl());
 
-  const { edges: lists } = props.data.allPricesJson;
+  const { contentfulPage: page } = props.data;
+  const { pageData: pricingList, pageDataLocalization: localizations } = page;
 
   return (
-    <Layout title={i('pricingTitle')} lang={props.pageContext.lang} pageKey={props.pageContext.key}>
+    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
+      <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Buttons>
-        {lists.map(({ node: list }) => {
+        {pricingList.map((node) => {
           return (
             <AnchorButton
-              key={list.listType}
-              to={`/${props.pageContext.key}#${list.listType}`}
-              locale={props.pageContext.lang}
+              key={node.listType}
+              to={`${props.pageContext.pageId}#${
+                localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
+                  .link
+              }`}
+              locale={props.pageContext.locale}
             >
-              {i(`${createLocalizationKey(list.listType)}Title`)}
+              {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
             </AnchorButton>
           );
         })}
@@ -57,10 +78,15 @@ const Page = (props) => {
       <Separator>
         <Rule color="peach" mode={3} />
       </Separator>
-      {lists.map(({ node: list }) => {
+      {pricingList.map((list) => {
         return (
           <>
-            <PriceList key={list.listType} list={list} jsLocale={props.pageContext.jsLocale} />
+            <PriceList
+              key={list.listType}
+              list={list}
+              localizations={localizations}
+              locale={props.pageContext.locale}
+            />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
@@ -72,7 +98,9 @@ const Page = (props) => {
 };
 
 const Pricing = (props) => (
-  <Intl locale={props.pageContext.lang}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -82,27 +110,64 @@ const Pricing = (props) => (
 export default Pricing;
 
 export const pageQuery = graphql`
-  query PricingQuery {
-    allPricesJson {
-      edges {
-        node {
-          listType
-          prices {
-            name
-            price
-            rate
-          }
-          additionalWork {
-            name
-            price
-            rate
-          }
-          additionalFees {
-            name
-            price
-            rate
-            extra
-          }
+  query PricingQuery($pageId: String, $locale: String) {
+    site {
+      siteMetadata {
+        simpleLocales {
+          en_GB
+          fi
+        }
+      }
+    }
+    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+      title
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      pageData {
+        listType
+        additionalFees {
+          extra
+          name
+          price
+          rate
+        }
+        additionalWork {
+          name
+          price
+          rate
+        }
+        prices {
+          name
+          price
+          rate
+        }
+      }
+      pageDataLocalization {
+        additionalFees {
+          extra
+          id
+          name
+        }
+        additionalWork {
+          id
+          name
+        }
+        listType {
+          description
+          id
+          link
+          name
+        }
+        prices {
+          id
+          name
+        }
+        rate {
+          id
+          name
         }
       }
     }
