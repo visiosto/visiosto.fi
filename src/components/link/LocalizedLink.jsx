@@ -215,8 +215,6 @@ const LocalizedLink = (props) => {
     const pageSlug = props.to.substring(1);
     const pagePath = createPathFromSlug(pageSlug, props.locale, data);
 
-    console.log(pagePath);
-
     if (pagePath) {
       return <Link {...props} to={pagePath} />;
     } else {

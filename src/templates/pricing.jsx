@@ -9,25 +9,25 @@ import { useIntl } from 'react-intl';
 import AnchorButton from '../components/AnchorButton';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import PriceList, { createLocalizationKey } from '../components/PriceList';
+import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
 import createIntl from '../util/createIntl';
 
 const Div = styled.div`
-  margin: 1em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
 
   .centered {
     text-align: center;
   }
 
   @media screen and ${(props) => props.theme.devices.phoneL} {
-    margin: 1em ${(props) => props.theme.layout.marginTablet};
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
   @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 1em ${(props) => props.theme.layout.marginDesktop};
+    margin: 3em ${(props) => props.theme.layout.marginDesktop};
   }
 `;
 
@@ -57,18 +57,17 @@ const Page = (props) => {
   const { pageData: pricingList, pageDataLocalization: localizations } = page;
 
   return (
-    <Layout
-      title={page.title}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
-    >
+    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Buttons>
         {pricingList.map((node) => {
           return (
             <AnchorButton
               key={node.listType}
-              to={`${props.pageContext.pageId}#${node.listType}`}
+              to={`${props.pageContext.pageId}#${
+                localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
+                  .link
+              }`}
               locale={props.pageContext.locale}
             >
               {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
@@ -79,22 +78,29 @@ const Page = (props) => {
       <Separator>
         <Rule color="peach" mode={3} />
       </Separator>
-      {/* {lists.map(({ node: list }) => {
+      {pricingList.map((list) => {
         return (
           <>
-            <PriceList key={list.listType} list={list} jsLocale={props.pageContext.jsLocale} />
+            <PriceList
+              key={list.listType}
+              list={list}
+              localizations={localizations}
+              locale={props.pageContext.locale}
+            />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
           </>
         );
-      })} */}
+      })}
     </Layout>
   );
 };
 
 const Pricing = (props) => (
-  <Intl locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}>
+  <Intl
+    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
+  >
     <Theme>
       <Page {...props} />
     </Theme>
@@ -121,6 +127,7 @@ export const pageQuery = graphql`
         }
       }
       pageData {
+        listType
         additionalFees {
           extra
           name
@@ -151,9 +158,14 @@ export const pageQuery = graphql`
         listType {
           description
           id
+          link
           name
         }
         prices {
+          id
+          name
+        }
+        rate {
           id
           name
         }

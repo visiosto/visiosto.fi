@@ -11,7 +11,6 @@ import managementMessages from './en/management';
 import metaMessages from './en/meta';
 import navigationMessages from './en/navigation';
 import notFoundMessages from './en/not-found';
-import pricingMessages from './en/pricing';
 import searchMessages from './en/search';
 
 export const messages = {
@@ -23,7 +22,6 @@ export const messages = {
   ...metaMessages,
   ...navigationMessages,
   ...notFoundMessages,
-  ...pricingMessages,
   ...searchMessages,
 };
 

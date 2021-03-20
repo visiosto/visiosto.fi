@@ -3,11 +3,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 
 import Price from './Price';
-
-import createIntl from '../util/createIntl';
 
 const Wrapper = styled.div`
   margin: 0 ${(props) => props.theme.layout.marginPhone};
@@ -35,78 +32,91 @@ const Div = styled.div`
   }
 `;
 
-export const createLocalizationKey = (name) =>
-  `pricing${name.charAt(0).toUpperCase() + name.slice(1)}`;
-
-export const createPriceLocalizationKey = (name) =>
-  `pricingPrice${name.charAt(0).toUpperCase() + name.slice(1)}`;
+const createLocalization = (list, key, property) =>
+  list.filter(({ id }) => id === key)[0][property ? property : 'name'];
 
 const PriceList = (props) => {
-  const i = createIntl(useIntl());
-
   const { listType, prices, additionalWork, additionalFees } = props.list;
+  const { localizations } = props;
+  const {
+    prices: pricesLocalizations,
+    additionalFees: additionalFeesLocalizations,
+    additionalWork: additionalWorkLocalizations,
+  } = localizations;
 
   const domainPrice = prices.filter(({ name }) => name === 'domain')[0];
   const serverPrice = prices.filter(({ name }) => name === 'server')[0];
 
   return (
     <Wrapper>
-      <h2 id={i(createLocalizationKey(`${listType}Id`))}>
-        {i(createLocalizationKey(`${listType}Title`))}
+      <h2 id={createLocalization(localizations.listType, listType, 'link')}>
+        {createLocalization(localizations.listType, listType)}
       </h2>
       <Div
         dangerouslySetInnerHTML={{
-          __html: i(createLocalizationKey(`${listType}Common`)),
+          __html: createLocalization(localizations.listType, listType, 'description'),
         }}
       />
       <Div>
         <Price
-          title={i(createLocalizationKey('priceServerDomain'))}
+          id="serverDomain"
+          title={createLocalization(pricesLocalizations, 'serverDomain')}
           price={serverPrice.price + domainPrice.price}
           rate={serverPrice.rate}
           extraPrices={[
             { name: serverPrice.name, price: serverPrice.price, rate: serverPrice.rate },
             { name: domainPrice.name, price: domainPrice.price, rate: domainPrice.rate },
           ]}
-          jsLocale={props.jsLocale}
+          locale={props.locale}
+          localizations={localizations}
+          localizationList="prices"
         />
       </Div>
-      <h3>{i(`${createLocalizationKey('additionalWork')}Title`)}</h3>
+      <h3>{createLocalization(additionalWorkLocalizations, 'title')}</h3>
       <Div>
         {additionalWork.map((price) => {
           return (
             <Price
               key={price.name}
-              title={i(createPriceLocalizationKey(price.name))}
+              id={price.name}
+              title={createLocalization(additionalWorkLocalizations, price.name)}
               price={price.price}
               rate={price.rate}
-              jsLocale={props.jsLocale}
+              locale={props.locale}
+              localizations={localizations}
+              localizationList="additionalWork"
             />
           );
         })}
       </Div>
-      <h3>{i(`${createLocalizationKey('additionalFees')}Title`)}</h3>
+      <h3>{createLocalization(additionalFeesLocalizations, 'title')}</h3>
       <Div>
         {additionalFees.map((price) => {
           if (price.extra) {
             return (
               <Price
                 key={price.name}
-                title={i(createPriceLocalizationKey(price.name))}
-                extra={i(`${createLocalizationKey(price.name)}Extra`)}
+                id={price.name}
+                title={createLocalization(additionalFeesLocalizations, price.name)}
+                extra={createLocalization(additionalFeesLocalizations, price.name, 'extra')}
                 price={price.price}
                 rate={price.rate}
-                jsLocale={props.jsLocale}
+                locale={props.locale}
+                localizations={localizations}
+                localizationList="additionalFees"
               />
             );
           } else {
             return (
               <Price
                 key={price.name}
-                title={i(createPriceLocalizationKey(price.name))}
+                id={price.name}
+                title={createLocalization(additionalFeesLocalizations, price.name)}
                 price={price.price}
                 rate={price.rate}
-                jsLocale={props.jsLocale}
+                locale={props.locale}
+                localizations={localizations}
+                localizationList="additionalFees"
               />
             );
           }
