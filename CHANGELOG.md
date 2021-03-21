@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - To large summary card on Twitter.
 - Name of the site in the manifest file.
+- Border radii of the card to result in more round corners.
 
 ## [0.12.3] - 2021-03-21
 
