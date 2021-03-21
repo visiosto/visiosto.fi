@@ -69,7 +69,7 @@ module.exports = {
       options: {
         name: 'Visiosto',
         short_name: 'Visiosto',
-        icon: 'src/assets/favicon.png',
+        icon: 'src/assets/favicon.svg',
         theme_color: '#eb5952',
         background_color: '#ffffff',
         display: 'browser',
