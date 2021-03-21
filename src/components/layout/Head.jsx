@@ -179,9 +179,16 @@ const Head = (props) => {
         }
       })()}
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
-      <meta name="twitter:creator" content={siteMetadata.twitterAuthor} />
+      <meta
+        name="twitter:creator"
+        content={
+          props.author && props.author.twitter
+            ? `@${props.author.twitter}`
+            : siteMetadata.twitterAuthor
+        }
+      />
 
       <link rel="stylesheet" href="https://use.typekit.net/wbu0jvl.css" />
 

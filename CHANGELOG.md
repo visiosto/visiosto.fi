@@ -9,6 +9,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Facebook App ID.
+- Twitter creator information.
+
+### Changed
+
+- To large summary card on Twitter.
 
 ## [0.12.3] - 2021-03-21
 

@@ -92,6 +92,7 @@ const Page = (props) => {
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
       description={post.body.childMarkdownRemark.excerpt}
+      author={post.author}
     >
       <Separator>
         <Rule color="blue" mode={1} />
@@ -166,6 +167,7 @@ export const pageQuery = graphql`
       author {
         contentful_id
         name
+        twitter
       }
       body {
         childMarkdownRemark {
