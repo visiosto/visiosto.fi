@@ -179,7 +179,7 @@ const Head = (props) => {
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
       <meta name="twitter:creator" content={siteMetadata.twitterAuthor} />
 
-      <link rel="stylesheet" href="https://use.typekit.net/wvk6tpf.css" />
+      <link rel="stylesheet" href="https://use.typekit.net/wbu0jvl.css" />
 
       {(() => {
         if (props.errorPage) {
