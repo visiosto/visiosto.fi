@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Links to the next and previous blog posts to the blog post pages.
+- Breadcrumbs to pages that are deeper in the tree.
 
 ### Changed
 
