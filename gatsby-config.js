@@ -80,6 +80,9 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-catch-links',
     {
+      resolve: 'gatsby-plugin-netlify',
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
     },
   ],

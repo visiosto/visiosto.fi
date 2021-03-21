@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.12.0] - 2021-03-21
+
+### Added
+
+- Links to the next and previous blog posts to the blog post pages.
+- Breadcrumbs to pages that are deeper in the tree.
+- Main navigation of the site to be read from Contentful.
+- Netlify plugin to generate Netlify headers.
+- More margin between the links in the footer on mobile.
+- Open Graph image.
+- Support for custom descriptions for each page.
+
+### Changed
+
+- Colour of the links.
+
 ## [0.11.2] - 2021-03-21
 
 ### Changed
@@ -286,7 +302,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.11.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/visiosto/visiosto.fi/compare/v0.11.2...v0.12.0
 [0.11.2]: https://github.com/visiosto/visiosto.fi/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/visiosto/visiosto.fi/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/visiosto/visiosto.fi/compare/v0.10.3...v0.11.0

@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React, { useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { useIntl } from 'react-intl';
 
@@ -158,6 +159,44 @@ const AnchorLink = styled(LocalizedAnchorLink)`
 export default (props) => {
   const i = createIntl(useIntl());
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allContentfulMenu(filter: { contentful_id: { eq: "7oKEb5SnrTGF1vbDGwfBbr" } }) {
+          edges {
+            node {
+              node_locale
+              links {
+                ... on ContentfulIndexPage {
+                  contentful_id
+                  title
+                  internal {
+                    type
+                  }
+                }
+                ... on ContentfulId {
+                  contentful_id
+                  slug
+                  title
+                  internal {
+                    type
+                  }
+                }
+                ... on ContentfulPath {
+                  contentful_id
+                  title
+                  internal {
+                    type
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
   const [toggled, setToggled] = useState(false);
 
   const handleClick = (event) => {
@@ -174,26 +213,38 @@ export default (props) => {
       </Toggle>
       {/* TODO Consider getting the page titles and link values by query from Contentful */}
       <Ul id="primary-menu" toggled={toggled}>
-        <Li>
-          <Link to="/" locale={props.locale}>
-            {i('indexTitle')}
-          </Link>
-        </Li>
-        <Li>
-          <AnchorLink to="/#portfolio" locale={props.locale}>
-            {i('indexPortfolioTitle')}
-          </AnchorLink>
-        </Li>
-        <Li>
-          <AnchorLink to="/#contact" locale={props.locale}>
-            {i('indexContactTitle')}
-          </AnchorLink>
-        </Li>
-        <Li>
-          <Link to="/blog" locale={props.locale}>
-            {i('blogTitle')}
-          </Link>
-        </Li>
+        {data.allContentfulMenu.edges
+          .filter(({ node }) => node.node_locale === props.locale)[0]
+          .node.links.map((link) => {
+            switch (link.internal.type) {
+              case 'ContentfulIndexPage':
+                return (
+                  <Li key={link.contentful_id}>
+                    <Link to={link.contentful_id} locale={props.locale}>
+                      {link.title}
+                    </Link>
+                  </Li>
+                );
+              case 'ContentfulId':
+                return (
+                  <Li key={link.contentful_id}>
+                    <AnchorLink to={`/#${link.slug}`} locale={props.locale}>
+                      {link.title}
+                    </AnchorLink>
+                  </Li>
+                );
+              case 'ContentfulPath':
+                return (
+                  <Li key={link.contentful_id}>
+                    <Link to={link.contentful_id} locale={props.locale}>
+                      {link.title}
+                    </Link>
+                  </Li>
+                );
+              default:
+                return null;
+            }
+          })}
       </Ul>
     </Nav>
   );

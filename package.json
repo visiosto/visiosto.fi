@@ -1,8 +1,8 @@
 {
   "name": "visiosto.fi",
   "private": true,
-  "version": "0.11.2",
-  "description": "The source code for the website of Visiosto",
+  "version": "0.12.0",
+  "description": "The website of Visiosto",
   "scripts": {
     "build": "gatsby build",
     "check-all": "npm-run-all format --parallel lint:js lint:css",
@@ -39,6 +39,7 @@
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
+    "gatsby-plugin-netlify": "^3.1.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",

@@ -106,6 +106,7 @@ const Page = (props) => {
       title={`${i('blogCategory')} ${category.name}`}
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
+      description={props.data.contentfulIndexPage.description.description}
     >
       <Separator>
         <Rule color="peach" mode={2} />
@@ -199,6 +200,11 @@ export const pageQuery = graphql`
             name
           }
         }
+      }
+    }
+    contentfulIndexPage(node_locale: { eq: $locale }) {
+      description {
+        description
       }
     }
   }

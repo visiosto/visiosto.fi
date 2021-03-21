@@ -29,7 +29,7 @@ export default (props) => {
     <>
       <GlobalStyle />
       <Head errorPage {...props} />
-      <Header {...props} />
+      <Header errorPage {...props} />
       <main>
         <section>
           <header>
