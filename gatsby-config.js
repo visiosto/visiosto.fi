@@ -28,9 +28,6 @@ module.exports = {
       twitter: 'https://twitter.com/visiosto_oy',
     },
   },
-  flags: {
-    DEV_SSR: false,
-  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
