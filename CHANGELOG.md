@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Open Graph site name.
 - Open Graph locale property.
 - Open Graph alternative locales.
+- Possibility to use Open Graph image that is set in Contentful.
 
 ### Changed
 

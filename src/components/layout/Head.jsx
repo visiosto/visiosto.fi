@@ -163,8 +163,10 @@ const Head = (props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={props.article ? 'article' : 'website'} />
-      <meta property="og:image" content={`${baseURL}/thumbnail.png`} />
-      <meta property="og:image:secure_url" content={`${baseURL}/thumbnail.png`} />
+      <meta property="og:image" content={props.image ? props.image.file.url : `${baseURL}/thumbnail.png`} />
+      <meta property="og:image:secure_url" content={props.image ? props.image.file.url : `${baseURL}/thumbnail.png`} />
+      <meta property="og:image:type" content={props.image ? props.image.file.contentType : 'image/png'} />
+      <meta property="og:image:alt" content={props.image ? props.image.description : i('metaOgImageAlt')} />
       <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (props.errorPage) {

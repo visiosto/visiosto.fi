@@ -77,6 +77,7 @@ const Page = (props) => {
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
       description={page.description.description}
+      image={page.image}
     >
       <IndexCover title={page.introTitle} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
@@ -183,6 +184,13 @@ export const pageQuery = graphql`
       }
       description {
         description
+      }
+      image {
+        description
+        file {
+          contentType
+          url
+        }
       }
       introBody {
         childMarkdownRemark {

@@ -30,6 +30,7 @@ const Page = (props) => {
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
       description={page.description}
+      image={page.image}
     >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
@@ -67,6 +68,13 @@ export const pageQuery = graphql`
       }
       description {
         description
+      }
+      image {
+        description
+        file {
+          contentType
+          url
+        }
       }
     }
   }
