@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Links to the next and previous blog posts to the blog post pages.
 
+### Changed
+
+- Colour of the links.
+
 ## [0.11.2] - 2021-03-21
 
 ### Changed
