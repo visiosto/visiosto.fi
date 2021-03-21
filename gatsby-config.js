@@ -19,6 +19,7 @@ module.exports = {
     defaultEmail: 'info@visiosto.fi',
     businessId: '3010084-6',
     vatNumber: 'FI30100846',
+    facebookAppID: '905927140206660',
     socialMedia: {
       facebook: 'https://facebook.com/visiosto',
       github: 'https://github.com/visiosto',

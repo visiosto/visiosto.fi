@@ -16,6 +16,7 @@ const Head = (props) => {
         site {
           siteMetadata {
             description
+            facebookAppID
             locales
             siteUrl
             title
@@ -156,6 +157,8 @@ const Head = (props) => {
       <title>{props.title}</title>
 
       <meta name="description" content={description} />
+
+      <meta property="fb:app_id" content={siteMetadata.facebookAppID} />
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
