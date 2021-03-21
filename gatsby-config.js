@@ -67,8 +67,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Proof of Concept',
-        short_name: 'Concept',
+        name: 'Visiosto',
+        short_name: 'Visiosto',
         icon: 'src/assets/favicon.png',
         theme_color: '#eb5952',
         background_color: '#ffffff',
