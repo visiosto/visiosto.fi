@@ -4,6 +4,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { ArrowLeftIcon, ArrowRightIcon } from '@primer/octicons-react';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
@@ -36,7 +37,9 @@ const PostDiv = styled.div`
 `;
 
 const NavLinks = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2em;
   margin: 2em ${(props) => props.theme.layout.marginPhone};
 
   @media screen and ${(props) => props.theme.devices.phoneL} {
@@ -48,13 +51,18 @@ const NavLinks = styled.div`
   }
 `;
 
-const Previous = styled.div`
-  flex: 1 0 50%;
-`;
+const Previous = styled.div``;
 
 const Next = styled.div`
-  flex: 1 0 50%;
   text-align: end;
+`;
+
+const ArrowLeft = styled(ArrowLeftIcon)`
+  margin: 0 0.2rem 0.1rem 0;
+`;
+
+const ArrowRight = styled(ArrowRightIcon)`
+  margin: 0 0 0.1rem 0.2rem;
 `;
 
 const Page = (props) => {
@@ -86,9 +94,12 @@ const Page = (props) => {
           {(() => {
             if (previous) {
               return (
-                <LocalizedLink to={previous.contentful_id} locale={props.pageContext.locale}>
-                  {previous.title}
-                </LocalizedLink>
+                <>
+                  <ArrowLeft />
+                  <LocalizedLink to={previous.contentful_id} locale={props.pageContext.locale}>
+                    {previous.title}
+                  </LocalizedLink>
+                </>
               );
             }
           })()}
@@ -97,9 +108,12 @@ const Page = (props) => {
           {(() => {
             if (next) {
               return (
-                <LocalizedLink to={next.contentful_id} locale={props.pageContext.locale}>
-                  {next.title}
-                </LocalizedLink>
+                <>
+                  <LocalizedLink to={next.contentful_id} locale={props.pageContext.locale}>
+                    {next.title}
+                  </LocalizedLink>
+                  <ArrowRight />
+                </>
               );
             }
           })()}
