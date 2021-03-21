@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Links to the next and previous blog posts to the blog post pages.
 
+## [0.11.2] - 2021-03-21
+
+### Changed
+
+- Typekit project.
+
 ## [0.11.1] - 2021-03-21
 
 ### Fixed
@@ -286,7 +292,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.11.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.11.2...HEAD
+[0.11.2]: https://github.com/visiosto/visiosto.fi/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/visiosto/visiosto.fi/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/visiosto/visiosto.fi/compare/v0.10.3...v0.11.0
 [0.10.3]: https://github.com/visiosto/visiosto.fi/compare/v0.10.2...v0.10.3
