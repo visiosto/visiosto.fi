@@ -52,7 +52,11 @@ const ManagementP = styled.p`
 `;
 
 const PricingP = styled.p`
-  margin: 2rem 0 0;
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
+  }
 `;
 
 const SocialMediaTitle = styled.h3`
@@ -205,15 +209,15 @@ export default (props) => {
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
         <ManagementP>
-          <LocalizedLink to="3rPdaUCw3nKo73b5Z6thWW" locale={props.locale}>
+          <LocalizedLink to="/management" locale={props.locale}>
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
-        <CompanyP>
+        <PricingP>
           <LocalizedLink to="/pricing" locale={props.locale}>
             {i('footerPricing')}
           </LocalizedLink>
-        </CompanyP>
+        </PricingP>
       </CompanyDiv>
       {(() => {
         if (!props.noLocaleSwitcher) {
