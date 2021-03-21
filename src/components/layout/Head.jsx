@@ -162,7 +162,7 @@ const Head = (props) => {
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={props.article ? "article" : "website"} />
+      <meta property="og:type" content={props.article ? 'article' : 'website'} />
       <meta property="og:image" content={`${baseURL}/thumbnail.png`} />
       <meta property="og:image:secure_url" content={`${baseURL}/thumbnail.png`} />
       <meta property="og:site_name" content={siteMetadata.title} />
@@ -174,6 +174,18 @@ const Head = (props) => {
             <meta
               property="og:url"
               content={createLocaleURL(baseURL, props.pageId, props.locale, data)}
+            />
+          );
+        }
+      })()}
+      {(() => {
+        if (props.errorPage) {
+          return <meta property="og:locale" content="fi_FI" />;
+        } else {
+          return (
+            <meta
+              property="og:locale"
+              content={props.locale === 'fi' ? 'fi_FI' : props.locale.replace('-', '_')}
             />
           );
         }

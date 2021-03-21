@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Twitter creator information.
 - Open Graph type to `article` for blog post articles.
 - Open Graph site name.
+- Open Graph locale property.
 
 ### Changed
 
