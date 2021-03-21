@@ -188,11 +188,10 @@ const Head = (props) => {
               rel="alternate"
               href={`${baseURL}/404`}
               hrefLang={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
-              key={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
             />
           );
         } else {
-          siteMetadata.locales.map((locale) => (
+          return siteMetadata.locales.map((locale) => (
             <link
               rel="alternate"
               href={createLocaleURL(baseURL, props.pageId, locale, data)}
