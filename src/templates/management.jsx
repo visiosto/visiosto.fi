@@ -123,7 +123,12 @@ const Page = (props) => {
   const { contentfulPage: page, allContentfulBlogPost: posts } = props.data;
 
   return (
-    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId} description={page.description.description}>
+    <Layout
+      title={page.title}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
+      description={page.description.description}
+    >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <H2>{i('managementNewsTitle')}</H2>
       <Separator>

@@ -25,7 +25,12 @@ const Page = (props) => {
   const { contentfulPage: page } = props.data;
 
   return (
-    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId} description={page.description}>
+    <Layout
+      title={page.title}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
+      description={page.description}
+    >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
   );
