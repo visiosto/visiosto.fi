@@ -51,9 +51,16 @@ const NavLinks = styled.div`
   }
 `;
 
-const Previous = styled.div``;
+const Previous = styled.div`
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+`;
 
 const Next = styled.div`
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
   text-align: end;
 `;
 
