@@ -162,10 +162,9 @@ const Head = (props) => {
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={props.article ? "article" : "website"} />
       <meta property="og:image" content={`${baseURL}/thumbnail.png`} />
       <meta property="og:image:secure_url" content={`${baseURL}/thumbnail.png`} />
-      {/* TODO Consider for articles: <meta property="og:type" content="article" /> */}
       {(() => {
         if (props.errorPage) {
           return <meta property="og:url" content={`${baseURL}/404`} />;

@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Facebook App ID.
 - Twitter creator information.
+- Open Graph type to `article` for blog post articles.
 
 ### Changed
 
