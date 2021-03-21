@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Links to the next and previous blog posts to the blog post pages.
 - Breadcrumbs to pages that are deeper in the tree.
 - Main navigation of the site to be read from Contentful.
+- Netlify plugin to generate Netlify headers.
 
 ### Changed
 
