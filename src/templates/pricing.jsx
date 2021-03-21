@@ -51,13 +51,11 @@ const Separator = styled.div`
 `;
 
 const Page = (props) => {
-  const i = createIntl(useIntl());
-
   const { contentfulPage: page } = props.data;
   const { pageData: pricingList, pageDataLocalization: localizations } = page;
 
   return (
-    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
+    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId} description={page.description.description}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Buttons>
         {pricingList.map((node) => {
@@ -125,6 +123,9 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      description {
+        description
       }
       pageData {
         listType

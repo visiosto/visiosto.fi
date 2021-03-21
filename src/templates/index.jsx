@@ -76,6 +76,7 @@ const Page = (props) => {
       title={page.title}
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
+      description={page.description.description}
     >
       <IndexCover title={page.introTitle} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
@@ -179,6 +180,9 @@ export const pageQuery = graphql`
         profileImage {
           gatsbyImageData(quality: 100, width: 200)
         }
+      }
+      description {
+        description
       }
       introBody {
         childMarkdownRemark {

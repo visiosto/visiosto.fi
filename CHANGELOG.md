@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Main navigation of the site to be read from Contentful.
 - Netlify plugin to generate Netlify headers.
 - More margin between the links in the footer on mobile.
+- Open Graph image.
+- Support for custom descriptions for each page.
 
 ### Changed
 

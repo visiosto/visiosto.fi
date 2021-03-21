@@ -4,6 +4,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import { getSrc } from 'gatsby-plugin-image';
 import { useIntl } from 'react-intl';
 
 import createIntl from '../../util/createIntl';
@@ -29,6 +30,11 @@ const Head = (props) => {
               en_GB
               fi
             }
+          }
+        }
+        ogImage: file(relativePath: { eq: "og.png" }) {
+          childImageSharp {
+            gatsbyImageData(width: 2400, height: 2400, layout: FIXED)
           }
         }
         allContentfulEntry {
@@ -161,7 +167,8 @@ const Head = (props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      {/* TODO For articles: <meta property="og:type" content="article" /> */}
+      <meta property="og:image" content={getSrc(data.ogImage)} />
+      {/* TODO Consider for articles: <meta property="og:type" content="article" /> */}
       {(() => {
         if (props.errorPage) {
           return <meta property="og:url" content={`${baseURL}/404`} />;
