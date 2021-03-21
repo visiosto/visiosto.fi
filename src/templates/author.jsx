@@ -9,8 +9,15 @@ import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
 
 const Page = (props) => {
+  const { contentfulAuthor: author } = props.data;
+
   return (
-    <Layout title={''} locale={props.pageContext.locale} pageId={props.pageContext.pageId}></Layout>
+    <Layout
+      title={author.name}
+      locale={props.pageContext.locale}
+      pageId={props.pageContext.pageId}
+      author
+    ></Layout>
   );
 };
 
@@ -27,7 +34,7 @@ const Author = (props) => (
 export default Author;
 
 export const pageQuery = graphql`
-  query AuthorQuery {
+  query AuthorQuery($pageId: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -35,6 +42,10 @@ export const pageQuery = graphql`
           fi
         }
       }
+    }
+    contentfulAuthor(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+      contentful_id
+      name
     }
   }
 `;
