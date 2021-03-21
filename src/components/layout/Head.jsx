@@ -190,6 +190,19 @@ const Head = (props) => {
           );
         }
       })()}
+      {(() => {
+        if (!props.errorPage) {
+          return siteMetadata.locales
+            .filter((locale) => locale !== props.locale)
+            .map((locale) => (
+              <meta
+                key={locale}
+                property="og:locale:alternate"
+                content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')}
+              />
+            ));
+        }
+      })()}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
