@@ -165,6 +165,7 @@ const Head = (props) => {
       <meta property="og:type" content={props.article ? "article" : "website"} />
       <meta property="og:image" content={`${baseURL}/thumbnail.png`} />
       <meta property="og:image:secure_url" content={`${baseURL}/thumbnail.png`} />
+      <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (props.errorPage) {
           return <meta property="og:url" content={`${baseURL}/404`} />;
