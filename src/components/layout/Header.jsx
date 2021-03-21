@@ -89,60 +89,63 @@ const createBreadcrumbPath = (node, parentPath) => {
 };
 
 const createBreadcrumb = (data, props) => {
-  const node = data.allContentfulEntry.edges.filter(
-    ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-  )[0].node;
+  if (!props.errorPage) {
+    const node = data.allContentfulEntry.edges.filter(
+      ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+    )[0].node;
 
-  switch (node.internal.type) {
-    case 'ContentfulAuthor': {
-      const authorNode = data.allContentfulAuthor.edges.filter(
-        ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-      )[0].node;
-      const authorPath = data.authorPaths.edges.filter(
-        ({ node }) => node.node_locale === props.locale,
-      )[0].node;
+    switch (node.internal.type) {
+      case 'ContentfulAuthor': {
+        const authorNode = data.allContentfulAuthor.edges.filter(
+          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+        )[0].node;
+        const authorPath = data.authorPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
+        )[0].node;
 
-      return [authorPath, authorNode];
-    }
-    case 'ContentfulBlogPost': {
-      const blogPostNode = data.allContentfulBlogPost.edges.filter(
-        ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-      )[0].node;
-      const blogPath = data.blogPaths.edges.filter(
-        ({ node }) => node.node_locale === props.locale,
-      )[0].node;
+        return [authorPath, authorNode];
+      }
+      case 'ContentfulBlogPost': {
+        const blogPostNode = data.allContentfulBlogPost.edges.filter(
+          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+        )[0].node;
+        const blogPath = data.blogPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
+        )[0].node;
 
-      return [blogPath, blogPostNode];
-    }
-    case 'ContentfulCategory': {
-      const categoryNode = data.allContentfulCategory.edges.filter(
-        ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-      )[0].node;
-      const categoryPath = data.categoryPaths.edges.filter(
-        ({ node }) => node.node_locale === props.locale,
-      )[0].node;
-      const parentPath = categoryPath.parentPath;
+        return [blogPath, blogPostNode];
+      }
+      case 'ContentfulCategory': {
+        const categoryNode = data.allContentfulCategory.edges.filter(
+          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+        )[0].node;
+        const categoryPath = data.categoryPaths.edges.filter(
+          ({ node }) => node.node_locale === props.locale,
+        )[0].node;
+        const parentPath = categoryPath.parentPath;
 
-      return [parentPath, categoryPath, categoryNode];
+        return [parentPath, categoryPath, categoryNode];
+      }
+      case 'ContentfulPage': {
+        const pageNode = data.allContentfulPage.edges.filter(
+          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+        )[0].node;
+        return createBreadcrumbPath(pageNode);
+      }
+      case 'ContentfulIndexPage': {
+        return null;
+      }
+      case 'ContentfulPath': {
+        const pathNode = data.allContentfulPath.edges.filter(
+          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+        )[0].node;
+        return createBreadcrumbPath(pathNode);
+      }
+      default:
+        return null;
     }
-    case 'ContentfulPage': {
-      const pageNode = data.allContentfulPage.edges.filter(
-        ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-      )[0].node;
-      return createBreadcrumbPath(pageNode);
-    }
-    case 'ContentfulIndexPage': {
-      return null;
-    }
-    case 'ContentfulPath': {
-      const pathNode = data.allContentfulPath.edges.filter(
-        ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
-      )[0].node;
-      return createBreadcrumbPath(pathNode);
-    }
-    default:
-      return null;
   }
+  return null;
 };
 
 const Header = (props) => {
