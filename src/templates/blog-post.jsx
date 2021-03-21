@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
+import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
@@ -34,8 +35,40 @@ const PostDiv = styled.div`
   }
 `;
 
+const NavLinks = styled.div`
+  display: flex;
+  margin: 2em ${(props) => props.theme.layout.marginPhone};
+
+  @media screen and ${(props) => props.theme.devices.phoneL} {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+`;
+
+const Previous = styled.div`
+  flex: 1 0 50%;
+`;
+
+const Next = styled.div`
+  flex: 1 0 50%;
+  text-align: end;
+`;
+
 const Page = (props) => {
-  const { contentfulBlogPost: post } = props.data;
+  const { contentfulBlogPost: post, allContentfulBlogPost: posts } = props.data;
+
+  const previousEdges = posts.edges.filter(
+    ({ node }) => node.contentful_id === props.pageContext.pageId,
+  );
+  const nextEdges = posts.edges.filter(
+    ({ node }) => node.contentful_id === props.pageContext.pageId,
+  );
+
+  const previous = previousEdges.length > 0 ? previousEdges[0].previous : null;
+  const next = nextEdges.length > 0 ? nextEdges[0].next : null;
 
   return (
     <LayoutPost
@@ -48,6 +81,30 @@ const Page = (props) => {
         <Rule color="blue" mode={1} />
       </Separator>
       <PostDiv dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }} />
+      <NavLinks>
+        <Previous>
+          {(() => {
+            if (previous) {
+              return (
+                <LocalizedLink to={previous.contentful_id} locale={props.pageContext.locale}>
+                  {previous.title}
+                </LocalizedLink>
+              );
+            }
+          })()}
+        </Previous>
+        <Next>
+          {(() => {
+            if (next) {
+              return (
+                <LocalizedLink to={next.contentful_id} locale={props.pageContext.locale}>
+                  {next.title}
+                </LocalizedLink>
+              );
+            }
+          })()}
+        </Next>
+      </NavLinks>
     </LayoutPost>
   );
 };
@@ -65,7 +122,12 @@ const BlogPost = (props) => (
 export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+  query BlogPostQuery(
+    $pageId: String
+    $locale: String
+    $momentJsLocale: String
+    $management: Boolean
+  ) {
     site {
       siteMetadata {
         simpleLocales {
@@ -91,6 +153,25 @@ export const pageQuery = graphql`
       category {
         contentful_id
         name
+      }
+    }
+    allContentfulBlogPost(
+      filter: { management: { eq: $management }, node_locale: { eq: $locale } }
+      sort: { fields: date, order: DESC }
+    ) {
+      edges {
+        next {
+          contentful_id
+          title
+        }
+        node {
+          contentful_id
+          title
+        }
+        previous {
+          contentful_id
+          title
+        }
       }
     }
   }

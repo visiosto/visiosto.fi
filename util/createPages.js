@@ -69,6 +69,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
           edges {
             node {
               contentful_id
+              management
               node_locale
               slug
             }
@@ -199,7 +200,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
   query.data.blogPosts.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageId, node_locale: locale, slug, management } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -221,6 +222,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         locale,
         pageId,
         momentJsLocale: locale.toLowerCase(),
+        management,
       },
     };
 
