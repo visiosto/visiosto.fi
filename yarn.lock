@@ -6046,6 +6046,21 @@ gatsby-plugin-catch-links@^3.0.0:
     "@babel/runtime" "^7.12.5"
     escape-string-regexp "^1.0.5"
 
+gatsby-plugin-google-gtag@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.1.0.tgz#ab564a1ae4e6a0e106d5ff4b0c33c17130122ac9"
+  integrity sha512-iGxvZXXTEf4a4X5WF9xqHdc9HJFQkwLCl/Kxthxc/C8J0IpGfPrEfbIyzQtHEXyt93X3OBSyadbsU7tkQMJseg==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    minimatch "^3.0.4"
+
+gatsby-plugin-google-tagmanager@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-3.1.0.tgz#fa5d044075e501b2dc5dd85019be5ce028c4abad"
+  integrity sha512-DWwCv6OGgJz91B/p5ExtsGWV139UiOEi/LgjO5Q32nQCY6idX9PGwC30qGzSV4z/Vm3YyDQxOSAD2GFYmKePdw==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 gatsby-plugin-i18n@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-i18n/-/gatsby-plugin-i18n-1.0.1.tgz#573fb98b85654c29e0cda50740037061fa38e694"

@@ -19,6 +19,7 @@ module.exports = {
     defaultEmail: 'info@visiosto.fi',
     businessId: '3010084-6',
     vatNumber: 'FI30100846',
+    facebookAppID: '905927140206660',
     socialMedia: {
       facebook: 'https://facebook.com/visiosto',
       github: 'https://github.com/visiosto',
@@ -26,9 +27,6 @@ module.exports = {
       linkedin: 'https://linkedin.com/company/visiosto',
       twitter: 'https://twitter.com/visiosto_oy',
     },
-  },
-  flags: {
-    DEV_SSR: false,
   },
   plugins: [
     {
@@ -69,9 +67,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Proof of Concept',
-        short_name: 'Concept',
-        icon: 'src/assets/favicon.png',
+        name: 'Visiosto',
+        short_name: 'Visiosto',
+        icon: 'src/assets/favicon.svg',
         theme_color: '#eb5952',
         background_color: '#ffffff',
         display: 'browser',
@@ -81,6 +79,12 @@ module.exports = {
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-netlify',
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-6EQKK25267'],
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',

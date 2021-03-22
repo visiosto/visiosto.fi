@@ -16,6 +16,7 @@ const Head = (props) => {
         site {
           siteMetadata {
             description
+            facebookAppID
             locales
             siteUrl
             title
@@ -157,12 +158,38 @@ const Head = (props) => {
 
       <meta name="description" content={description} />
 
+      <meta property="fb:app_id" content={siteMetadata.facebookAppID} />
+
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${baseURL}/thumbnail.png`} />
-      <meta property="og:image:secure_url" content={`${baseURL}/thumbnail.png`} />
-      {/* TODO Consider for articles: <meta property="og:type" content="article" /> */}
+      <meta
+        property="og:type"
+        content={(() => {
+          if (props.article) {
+            return 'article';
+          } else if (props.author) {
+            return 'profile';
+          }
+          return 'website';
+        })()}
+      />
+      <meta
+        property="og:image"
+        content={props.image ? props.image.file.url : `${baseURL}/thumbnail.png`}
+      />
+      <meta
+        property="og:image:secure_url"
+        content={props.image ? props.image.file.url : `${baseURL}/thumbnail.png`}
+      />
+      <meta
+        property="og:image:type"
+        content={props.image ? props.image.file.contentType : 'image/png'}
+      />
+      <meta
+        property="og:image:alt"
+        content={props.image ? props.image.description : i('metaOgImageAlt')}
+      />
+      <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (props.errorPage) {
           return <meta property="og:url" content={`${baseURL}/404`} />;
@@ -175,10 +202,42 @@ const Head = (props) => {
           );
         }
       })()}
+      {(() => {
+        if (props.errorPage) {
+          return <meta property="og:locale" content="fi_FI" />;
+        } else {
+          return (
+            <meta
+              property="og:locale"
+              content={props.locale === 'fi' ? 'fi_FI' : props.locale.replace('-', '_')}
+            />
+          );
+        }
+      })()}
+      {(() => {
+        if (!props.errorPage) {
+          return siteMetadata.locales
+            .filter((locale) => locale !== props.locale)
+            .map((locale) => (
+              <meta
+                key={locale}
+                property="og:locale:alternate"
+                content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')}
+              />
+            ));
+        }
+      })()}
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
-      <meta name="twitter:creator" content={siteMetadata.twitterAuthor} />
+      <meta
+        name="twitter:creator"
+        content={
+          props.author && props.author.twitter
+            ? `@${props.author.twitter}`
+            : siteMetadata.twitterAuthor
+        }
+      />
 
       <link rel="stylesheet" href="https://use.typekit.net/wbu0jvl.css" />
 

@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.13.0] - 2021-03-22
+
+### Added
+
+- Facebook App ID.
+- Twitter creator information.
+- Open Graph type to `article` for blog post articles.
+- Open Graph site name.
+- Open Graph locale property.
+- Open Graph alternative locales.
+- Possibility to use Open Graph image that is set in Contentful.
+- Vector variant of the favicon that has different colour when device uses dark mode.
+- Author information on author pages.
+- Author blog posts on author pages.
+- Page for all authors on the site.
+- Page for all categories on the site.
+- Google Analytics tracking.
+
+### Changed
+
+- To large summary card on Twitter.
+- Name of the site in the manifest file.
+- Border radii of the card to result in more round corners.
+
 ## [0.12.3] - 2021-03-21
 
 ### Added
@@ -324,7 +348,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.12.3...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/visiosto/visiosto.fi/compare/v0.12.3...v0.13.0
 [0.12.3]: https://github.com/visiosto/visiosto.fi/compare/v0.12.2...v0.12.3
 [0.12.2]: https://github.com/visiosto/visiosto.fi/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/visiosto/visiosto.fi/compare/v0.12.0...v0.12.1

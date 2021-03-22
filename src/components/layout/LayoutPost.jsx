@@ -65,7 +65,7 @@ export default (props) => {
   return (
     <>
       <GlobalStyle />
-      <Head {...props} />
+      <Head article {...props} />
       <Header {...props} />
       <main>
         <section>

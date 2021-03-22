@@ -34,6 +34,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         ) {
           edges {
             node {
+              contentful_id
               node_locale
               slug
             }
@@ -80,6 +81,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         ) {
           edges {
             node {
+              contentful_id
               node_locale
               slug
               parentPath {
@@ -160,6 +162,32 @@ module.exports = async ({ actions, graphql, reporter }) => {
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'author.jsx'),
+      context: {
+        locale,
+        pageId,
+        momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the authors page from Contentful.
+
+  authorPaths.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating the author page for ID '${pageId}'`);
+
+    const pagePath =
+      locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
+
+    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'authors.jsx'),
       context: {
         locale,
         pageId,
@@ -280,6 +308,30 @@ module.exports = async ({ actions, graphql, reporter }) => {
         locale,
         pageId,
         momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the categories page from Contentful.
+
+  categoryPaths.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale } = node;
+
+    reporter.verbose(`Creating the category page for ID '${pageId}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'categories.jsx'),
+      context: {
+        locale,
+        pageId,
       },
     };
 

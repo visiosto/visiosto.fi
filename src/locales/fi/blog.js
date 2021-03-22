@@ -6,4 +6,5 @@ export default {
   blogNothingFound: 'Täällä ei ole vielä mitään',
   blogCategory: 'Kategoria:',
   blogReadMore: 'Lue koko artikkeli',
+  blogPosts: 'Julkaisuja:',
 };

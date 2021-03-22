@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Article = styled.article`
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   padding: 2rem;
   box-shadow: var(--color-box-shadow);
   transition: box-shadow 100ms ease-in;
