@@ -6,4 +6,5 @@ export default {
   blogNothingFound: 'There isn’t anything to see',
   blogCategory: 'Category:',
   blogReadMore: 'Read the article',
+  blogPosts: 'Articles:',
 };

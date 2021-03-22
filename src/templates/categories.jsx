@@ -3,13 +3,9 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import AuthorName from '../components/AuthorName';
-import Button from '../components/Button';
-import CategoryName from '../components/CategoryName';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
@@ -48,23 +44,6 @@ const Category = styled.div`
   text-align: center;
 `;
 
-const Image = styled(GatsbyImage)`
-  justify-self: center;
-  align-self: center;
-
-  > * {
-    border-radius: 50%;
-  }
-`;
-
-const AuthorInfo = styled.div`
-  margin: 0;
-
-  @media screen and ${(props) => props.theme.devices.phoneL} {
-    margin: 0 0 0 4rem;
-  }
-`;
-
 const H2 = styled.h2``;
 
 const Link = styled(LocalizedLink)`
@@ -95,42 +74,6 @@ const Post = styled.article`
   }
 `;
 
-const PostHeader = styled.header``;
-
-const H3 = styled.h3`
-  text-align: center;
-  font-size: 1.2rem;
-`;
-
-const PostMeta = styled.div`
-  margin: 2em 0;
-  text-align: center;
-
-  @media screen and ${(props) => props.theme.devices.phoneL} {
-    margin: 2em 0;
-  }
-
-  @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 2em 0;
-  }
-`;
-
-const PostAuthor = styled.span`
-  clear: both;
-  display: block;
-`;
-
-const PostCategory = styled.span`
-  clear: both;
-  display: block;
-`;
-
-const PostContent = styled.div``;
-
-const Center = styled.div`
-  text-align: center;
-`;
-
 const Page = (props) => {
   const i = createIntl(useIntl());
 
@@ -155,21 +98,22 @@ const Page = (props) => {
             <Category key={category.slug}>
               <H2>
                 <Link to={category.contentful_id} locale={props.pageContext.locale}>
-                  {category.name}
+                  {`${i('blogCategory')} ${category.name}`}
                 </Link>
               </H2>
+              <p>{i('blogPosts')}</p>
               {posts
                 .filter(({ node: post }) => post.category.contentful_id === category.contentful_id)
                 .map(({ node: post }) => {
                   return (
                     <Post key={post.slug}>
-                      <PostHeader>
-                        <H3>
+                      <header>
+                        <p>
                           <Link to={post.contentful_id} locale={props.pageContext.locale}>
                             {post.title}
                           </Link>
-                        </H3>
-                      </PostHeader>
+                        </p>
+                      </header>
                     </Post>
                   );
                 })}
