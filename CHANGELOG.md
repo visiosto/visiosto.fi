@@ -16,6 +16,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Open Graph alternative locales.
 - Possibility to use Open Graph image that is set in Contentful.
 - Vector variant of the favicon that has different colour when device uses dark mode.
+- Author information on author pages.
+- Author blog posts on author pages.
 
 ### Changed
 
