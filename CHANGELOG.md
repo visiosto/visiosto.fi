@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Vector variant of the favicon that has different colour when device uses dark mode.
 - Author information on author pages.
 - Author blog posts on author pages.
+- Page for all authors on the site.
 
 ### Changed
 

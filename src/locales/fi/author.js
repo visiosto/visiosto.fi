@@ -3,4 +3,5 @@
 
 export default {
   authorBlogTitle: 'Blogista',
+  authorsTitle: 'Henkilöt',
 };
