@@ -80,8 +80,6 @@ const Page = (props) => {
   const { edges: categories } = props.data.allContentfulCategory;
   const { edges: posts } = props.data.allContentfulBlogPost;
 
-  console.log('Categories page ID is', props.pageContext.pageId)
-
   return (
     <Layout
       title={i('categoriesTitle')}
