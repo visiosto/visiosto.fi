@@ -81,6 +81,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         ) {
           edges {
             node {
+              contentful_id
               node_locale
               slug
               parentPath {
@@ -307,6 +308,30 @@ module.exports = async ({ actions, graphql, reporter }) => {
         locale,
         pageId,
         momentJsLocale: locale.toLowerCase(),
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the categories page from Contentful.
+
+  categoryPaths.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale } = node;
+
+    reporter.verbose(`Creating the category page for ID '${pageId}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'categories.jsx'),
+      context: {
+        locale,
+        pageId,
       },
     };
 

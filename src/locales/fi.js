@@ -5,6 +5,7 @@ import { defineMessages } from 'react-intl';
 
 import authorMessages from './fi/author';
 import blogMessages from './fi/blog';
+import categoryMessages from './fi/category';
 import footerMessages from './fi/footer';
 import headerMessages from './fi/header';
 import indexMessages from './fi/index';
@@ -17,6 +18,7 @@ import searchMessages from './fi/search';
 export const messages = {
   ...authorMessages,
   ...blogMessages,
+  ...categoryMessages,
   ...footerMessages,
   ...headerMessages,
   ...indexMessages,

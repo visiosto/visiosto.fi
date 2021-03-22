@@ -6,6 +6,8 @@ import createPagePath from './createPagePath';
 const createLocaleURL = (baseURL, pageId, locale, data) => {
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
+  console.log('Creating locale link', pageId);
+
   const entryNode = data.allContentfulEntry.edges.filter(
     ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
   )[0].node;
