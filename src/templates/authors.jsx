@@ -280,7 +280,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulAuthor(filter: { node_locale: { eq: $locale } }, sort: {fields: name, order: ASC}) {
+    allContentfulAuthor(
+      filter: { node_locale: { eq: $locale } }
+      sort: { fields: name, order: ASC }
+    ) {
       edges {
         node {
           contentful_id
