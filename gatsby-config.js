@@ -81,6 +81,12 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify',
     },
     {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-6EQKK25267'],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
     },
   ],

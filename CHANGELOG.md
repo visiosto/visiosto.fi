@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Author blog posts on author pages.
 - Page for all authors on the site.
 - Page for all categories on the site.
+- Google Analytics tracking.
 
 ### Changed
 
