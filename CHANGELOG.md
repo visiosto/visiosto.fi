@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Explicit anonymization of IP addresses.
 
+### Fixed
+
+- Wrong theme variable used to make the layout responsive.
+
 ## [0.13.0] - 2021-03-22
 
 ### Added

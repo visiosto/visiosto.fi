@@ -15,7 +15,7 @@ import Theme from '../components/Theme';
 const Separator = styled.div`
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 
@@ -25,9 +25,9 @@ const Separator = styled.div`
 `;
 
 const PostDiv = styled.div`
-  margin: 1em ${(props) => props.theme.layout.marginPhone};
+  margin: 1em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -40,9 +40,9 @@ const NavLinks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2em;
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 

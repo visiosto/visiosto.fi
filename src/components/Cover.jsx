@@ -38,10 +38,10 @@ const Image = styled(SchemedImage)`
 `;
 
 const Inner = styled.div`
-  margin: 0 ${(props) => props.theme.layout.marginPhone};
+  margin: 0 ${(props) => props.theme.layout.marginMobile};
   padding: 0.5em 0 1em;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     padding: 2em 0;
   }

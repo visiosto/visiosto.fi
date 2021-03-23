@@ -35,10 +35,10 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -85,10 +85,10 @@ const TwitterImage = styled(SocialMediaImage)`
 `;
 
 const H2 = styled.h2`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -98,9 +98,9 @@ const H2 = styled.h2`
 `;
 
 const Post = styled.article`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -136,7 +136,7 @@ const PostMeta = styled.div`
   margin: 2em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em 0;
   }
 
@@ -166,7 +166,7 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 

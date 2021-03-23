@@ -15,10 +15,10 @@ import Search from '../search/Search';
 import createIntl from '../../util/createIntl';
 
 const Footer = styled.footer`
-  margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
+  margin: 4em ${(props) => props.theme.layout.marginMobile} 2em;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
   }
 
@@ -62,7 +62,7 @@ const PricingP = styled.p`
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 3rem 0 0;
   }
 

@@ -19,7 +19,7 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 
@@ -29,9 +29,9 @@ const Separator = styled.div`
 `;
 
 const Div = styled.div`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -63,9 +63,9 @@ const Link = styled(LocalizedLink)`
 `;
 
 const Post = styled.article`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 

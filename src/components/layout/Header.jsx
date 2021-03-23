@@ -17,9 +17,9 @@ import createIntl from '../../util/createIntl';
 import theme from '../../theme';
 
 const Div = styled.header`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 

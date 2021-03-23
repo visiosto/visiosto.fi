@@ -7,10 +7,10 @@ import styled from 'styled-components';
 import Price from './Price';
 
 const Wrapper = styled.div`
-  margin: 0 ${(props) => props.theme.layout.marginPhone};
+  margin: 0 ${(props) => props.theme.layout.marginMobile};
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 0 ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -23,7 +23,7 @@ const Div = styled.div`
   margin: 1em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 1em 0;
   }
 

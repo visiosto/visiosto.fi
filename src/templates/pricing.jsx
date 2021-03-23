@@ -16,13 +16,13 @@ import Theme from '../components/Theme';
 import createIntl from '../util/createIntl';
 
 const Div = styled.div`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
   .centered {
     text-align: center;
   }
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -41,7 +41,7 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 

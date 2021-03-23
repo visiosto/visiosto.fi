@@ -97,13 +97,14 @@ const devices = {
 };
 
 const layout = {
-  marginPhone: '2em',
+  marginMobile: '2em',
   marginTablet: '4em',
   marginDesktop: '16em',
 };
 
 const borders = {
   commonRadius: '25px',
+  cardRadius: '0.5em',
 };
 
 export default {
