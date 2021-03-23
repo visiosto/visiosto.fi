@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import CookieNotice from './CookieNotice';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
@@ -15,11 +16,11 @@ export default (props) => {
   listenColorScheme();
 
   const PageTitle = styled.h1`
-    margin: 2em ${(props) => props.theme.layout.marginPhone};
+    margin: 2em ${(props) => props.theme.layout.marginMobile};
     font-size: 2rem;
     text-align: center;
 
-    @media screen and ${(props) => props.theme.devices.phoneL} {
+    @media screen and ${(props) => props.theme.devices.mobileL} {
       margin: 2em ${(props) => props.theme.layout.marginTablet};
       font-size: 3rem;
     }
@@ -44,6 +45,7 @@ export default (props) => {
         </section>
       </main>
       <Footer {...props} />
+      <CookieNotice {...props} />
     </>
   );
 };

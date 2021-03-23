@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 
 import AuthorName from '../AuthorName';
 import CategoryName from '../CategoryName';
+import CookieNotice from './CookieNotice';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
@@ -16,14 +17,14 @@ import createIntl from '../../util/createIntl';
 import listenColorScheme from '../../util/listenColorScheme';
 
 const PageTitle = styled.h1`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
   font-size: 2rem;
   text-align: center;
   word-break: break-all;
   word-break: break-word;
   hyphens: auto;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     font-size: 3rem;
   }
@@ -38,7 +39,7 @@ const PostMeta = styled.div`
   margin: 2em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em 0;
   }
 
@@ -86,6 +87,7 @@ export default (props) => {
         </section>
       </main>
       <Footer {...props} />
+      <CookieNotice {...props} />
     </>
   );
 };
