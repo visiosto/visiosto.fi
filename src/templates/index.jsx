@@ -50,7 +50,7 @@ const Cards = styled.div`
   margin: 2em 0;
 
   @media screen and ${(props) => props.theme.devices.mobileL} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 2em;
   }
 
