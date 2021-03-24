@@ -6,9 +6,9 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import AnchorButton from '../components/AnchorButton';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
+import LocalizedAnchorLinkButton from '../components/link/LocalizedAnchorLinkButton';
 import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
@@ -66,7 +66,7 @@ const Page = (props) => {
       <Buttons>
         {pricingList.map((node) => {
           return (
-            <AnchorButton
+            <LocalizedAnchorLinkButton
               key={node.listType}
               to={`${props.pageContext.pageId}#${
                 localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
@@ -75,7 +75,7 @@ const Page = (props) => {
               locale={props.pageContext.locale}
             >
               {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
-            </AnchorButton>
+            </LocalizedAnchorLinkButton>
           );
         })}
       </Buttons>

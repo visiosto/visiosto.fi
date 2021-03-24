@@ -4,16 +4,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import LocalizedLink from './link/LocalizedLink';
-
-const Link = styled(LocalizedLink)`
-  text-decoration: none;
-`;
-
 const Span = styled.span`
-  display: inline-flex;
-  align-items: center;
-  position: relative;
+  display: inline-block;
   border-style: none;
   border-radius: 3rem;
   border: 3px solid transparent;
@@ -21,25 +13,19 @@ const Span = styled.span`
   cursor: pointer;
   transition: all 100ms ease-in;
   background-clip: padding-box;
-  background-color: var(--color-link);
-  color: var(--color-text-button);
-  font-weight: 600;
+  background-color: var(${(props) => (props.accept ? '--color-link-accept' : '--color-link')});
+  color: var(${(props) => (props.accept ? '--color-text-accept' : '--color-text-button')});
+  font-weight: 400;
   text-align: center;
   text-decoration: none;
 
   &:hover {
-    background-color: var(--color-link-hover);
+    background-color: var(
+      ${(props) => (props.accept ? '--color-link-accept-hover' : '--color-link-hover')}
+    );
   }
 `;
 
-const Button = (props) => {
-  return (
-    <div>
-      <Link to={props.to} locale={props.locale}>
-        <Span>{props.children}</Span>
-      </Link>
-    </div>
-  );
-};
+const Button = (props) => <Span accept={props.accept}>{props.children}</Span>;
 
 export default Button;

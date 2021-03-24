@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Cards on the front page to take up the whole width on tablet.
+- Button to single component that is used inside other components.
 
 ### Fixed
 

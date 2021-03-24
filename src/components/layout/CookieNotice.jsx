@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { injectIntl } from 'react-intl';
 
+import Button from '../Button';
 import LocalizedLink from '../link/LocalizedLink';
 
 import createIntl from '../../util/createIntl';
@@ -47,52 +48,6 @@ const BannerTitle = styled.h2`
 
 const Buttons = styled.div`
   place-self: center;
-`;
-
-const Span = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-style: none;
-  border-radius: 3rem;
-  border: 3px solid transparent;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  transition: all 100ms ease-in;
-  background-clip: padding-box;
-  background-color: var(--color-link);
-  color: var(--color-text-button);
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-
-  &:hover {
-    background-color: var(--color-link-hover);
-  }
-`;
-
-const ButtonAccept = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-style: none;
-  border-radius: 3rem;
-  border: 3px solid transparent;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  transition: all 100ms ease-in;
-  background-clip: padding-box;
-  background-color: var(--color-link-accept);
-  color: var(--color-text-accept);
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-
-  &:hover {
-    background-color: var(--color-link-accept-hover);
-  }
 `;
 
 const Settings = styled.div`
@@ -242,8 +197,8 @@ class CookieNotice extends Component {
                     <p>{i('cookieNoticeDataProtection')}</p>
                   </Section>
                   <SettingButtons>
-                    <ButtonAccept>{i('cookieNoticeSave')}</ButtonAccept>
-                    <Span onClick={this.handleClickClose}>{i('cookieNoticeCancel')}</Span>
+                    <Button accept>{i('cookieNoticeSave')}</Button>
+                    <Button onClick={this.handleClickClose}>{i('cookieNoticeCancel')}</Button>
                   </SettingButtons>
                 </Content>
               </SettingsContent>
@@ -260,8 +215,8 @@ class CookieNotice extends Component {
           <p>{i('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
-          <ButtonAccept>{i('cookieNoticeAccept')}</ButtonAccept>
-          <Span onClick={this.handleClickInfo}>{i('cookieNoticeReject')}</Span>
+          <Button accept>{i('cookieNoticeAccept')}</Button>
+          <Button onClick={this.handleClickInfo}>{i('cookieNoticeReject')}</Button>
         </Buttons>
       </Div>
     );
