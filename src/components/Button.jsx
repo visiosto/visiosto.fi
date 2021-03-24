@@ -26,6 +26,10 @@ const Span = styled.span`
   }
 `;
 
-const Button = (props) => <Span accept={props.accept}>{props.children}</Span>;
+const Button = (props) => (
+  <Span accept={props.accept} onClick={props.onClick}>
+    {props.children}
+  </Span>
+);
 
 export default Button;
