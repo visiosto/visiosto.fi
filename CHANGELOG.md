@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Explicit anonymization of IP addresses.
+- Cookie notice banner.
+- Cookie settings overlay when user chooses to adjust their cookie preferences.
+
+### Changed
+
+- Cards on the front page to take up the whole width on tablet.
 
 ### Fixed
 
