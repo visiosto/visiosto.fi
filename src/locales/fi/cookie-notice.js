@@ -2,6 +2,22 @@
 // Licensed under the MIT License
 
 export default {
-  cookieNoticeContent:
-    'Tällä sivustolla käytetään evästeitä sivujen selaamisen helpottamiseksi ja käyttökokemuksen parantamiseksi. Lisätietoja evästeistä ja asetusten muuttamisesta.',
+  // Fancy a cookie?
+  cookieNoticeTitle: 'Saisiko olla keksi?',
+  cookieNoticeDescription:
+    'Sivustomme käyttää evästeitä. Käytämme evästeitä nähdäksemme mistä sisällöistä sivustomme käyttäjät ovat kiinnostuneita ja mahdollistaaksemme joitakin sivuston toiminnallisuuksia. Voit tutustua tarkemmin evästeiden sisältöön ja hallita asetuksiasi evästeasetus-sivulla.',
+  cookieNoticeAccept: 'Kiitos, hyväksyn evästeet',
+  cookieNoticeReject: 'Tarkistan evästeet ja säädän niitä',
+  cookieNoticeSettings: 'Asetukset',
+  cookieNoticeFunctionalTitle: 'Toiminnalliset evästeet',
+  cookieNoticeFunctionalDescription:
+    'Toiminnallisilla evästeillä mahdollistamme erilaisten sisältöjen ja toiminnallisuuksien (kuten karttapalveluiden ja kyselyiden lisäämisen helposti osaksi sivustoa). Toiminnallisia evästeitä ei voi laittaa pois päältä, sillä niitä tarvitaan sivuston toiminnan mahdollistamiseksi.',
+  cookieNoticeTrackingTitle: 'Anonymisoidut seurantaevästeet',
+  cookieNoticeGoogleAnalytics: 'Google Analytics',
+  cookieNoticeGoogleAnalyticsInfo: 'Mitä tämä tekee?',
+  cookieNoticeTrackingDescription:
+    'Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.',
+  cookieNoticeDataProtection: 'Tietosuoja',
+  cookieNoticeCancel: 'Peruuta',
+  cookieNoticeSave: 'Tallenna ja sulje',
 };

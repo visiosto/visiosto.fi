@@ -21,6 +21,10 @@ export default createGlobalStyle`
     color: var(--color-text);
   }
 
+  body.cookie-settings-open {
+    overflow: hidden;
+  }
+
   h1, h2 {
     clear: both;
     font-family: ${(props) => props.theme.fonts.heading};
