@@ -48,6 +48,7 @@ const BannerTitle = styled.h2`
 
 const Buttons = styled.div`
   place-self: center;
+  text-align: center;
 `;
 
 const Settings = styled.div`
