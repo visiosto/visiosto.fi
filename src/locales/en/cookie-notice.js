@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  cookieSettingsLink: 'Cookie settings',
   // Fancy a cookie?
   cookieNoticeTitle: 'Would you like a cookie?',
   cookieNoticeDescription:

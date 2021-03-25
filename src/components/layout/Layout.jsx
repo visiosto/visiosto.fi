@@ -4,7 +4,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CookieNotice from './CookieNotice';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
@@ -45,7 +44,6 @@ export default (props) => {
         </section>
       </main>
       <Footer {...props} />
-      <CookieNotice {...props} />
     </>
   );
 };

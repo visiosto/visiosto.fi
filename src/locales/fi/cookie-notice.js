@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  cookieSettingsLink: 'Evästeasetukset',
   // Fancy a cookie?
   cookieNoticeTitle: 'Saisiko olla keksi?',
   cookieNoticeDescription:

@@ -29,12 +29,14 @@ const Div = styled.div`
   position: fixed;
   left: 50%;
   bottom: 0;
+  z-index: 999;
   width: 90vw;
   margin: 0 0 2rem -45vw;
   border-radius: 0.5rem;
   padding: 1em ${(props) => props.theme.layout.marginMobile};
   background: var(--color-background);
   box-shadow: var(--color-box-shadow);
+  text-align: left;
 
   @media screen and ${(props) => props.theme.devices.tablet} {
     grid-template-columns: 2fr 1fr;
@@ -67,6 +69,7 @@ const Settings = styled.div`
   left: 0;
   right: 0;
   z-index: 9999;
+  text-align: left;
 
   &::before {
     content: '';
@@ -206,15 +209,20 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
-class CookieNotice extends Component {
+class CookieNoticeBanner extends Component {
   state = {
-    showBanner: !cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME),
-    isOpen: false,
+    showBanner:
+      !cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME) ||
+      cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME) == 'false',
+    isGoogleAnalyticsEnabled:
+      !cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) ||
+      cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) == 'false',
   };
 
   constructor(props) {
     super(props);
 
+    this.handleCookieChange = this.handleCookieChange.bind(this);
     this.handleClickInfo = this.handleClickInfo.bind(this);
     this.handleClickClose = this.handleClickClose.bind(this);
     this.handleClickAccept = this.handleClickAccept.bind(this);
@@ -222,14 +230,30 @@ class CookieNotice extends Component {
     this.handleToggleAnonymizedTracking = this.handleToggleAnonymizedTracking.bind(this);
   }
 
+  componentDidUpdate() {
+    cookies.addChangeListener(this.handleCookieChange);
+  }
+
+  componentWillUnmount() {
+    cookies.removeChangeListener(this.handleCookieChange);
+  }
+
+  handleCookieChange = (options) => {
+    if (options.name === GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) {
+      this.setState({ isGoogleAnalyticsEnabled: !options.value });
+    }
+  };
+
   handleClickInfo = () => {
     document.body.classList.toggle('cookie-settings-open');
-    this.setState({ isOpen: true });
+    this.props.toggleSettings(true);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
 
   handleClickClose = () => {
     document.body.classList.toggle('cookie-settings-open');
-    this.setState({ isOpen: false });
+    this.props.toggleSettings(false);
   };
 
   handleClickAccept = () => {
@@ -249,24 +273,19 @@ class CookieNotice extends Component {
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = cookies.get(
       GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
     );
+    this.props.toggleSettings(false);
     this.setState({ showBanner: false });
   };
 
   handleToggleAnonymizedTracking = () => {
-    cookies.set(
-      GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
-      !cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME),
-    );
+    const isDisabled = cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) == 'true';
+    cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, !isDisabled);
   };
 
   render() {
     const i = createIntl(this.props.intl);
 
-    if (!this.state.showBanner) {
-      return null;
-    }
-
-    if (this.state.isOpen) {
+    if (this.props.settingsOpen) {
       return (
         <Settings>
           <SettingsContainer>
@@ -291,7 +310,7 @@ class CookieNotice extends Component {
                       <SwitchInput
                         type="checkbox"
                         onChange={this.handleToggleAnonymizedTracking}
-                        defaultChecked={!cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME)}
+                        checked={this.state.isGoogleAnalyticsEnabled}
                       />
                       <SwitchSpan />
                     </SwitchLabel>
@@ -313,6 +332,10 @@ class CookieNotice extends Component {
       );
     }
 
+    if (!this.state.showBanner) {
+      return null;
+    }
+
     return (
       <Div>
         <Text>
@@ -330,4 +353,4 @@ class CookieNotice extends Component {
   }
 }
 
-export default injectIntl(CookieNotice);
+export default injectIntl(CookieNoticeBanner);

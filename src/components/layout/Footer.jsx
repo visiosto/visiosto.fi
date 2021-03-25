@@ -7,6 +7,7 @@ import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import CookieNotice from '../cookie/CookieNotice';
 import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
@@ -228,6 +229,7 @@ export default (props) => {
           );
         }
       })()}
+      <CookieNotice {...props} />
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />

@@ -7,7 +7,6 @@ import { useIntl } from 'react-intl';
 
 import AuthorName from '../AuthorName';
 import CategoryName from '../CategoryName';
-import CookieNotice from './CookieNotice';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
 import Head from './Head';
@@ -87,7 +86,6 @@ export default (props) => {
         </section>
       </main>
       <Footer {...props} />
-      <CookieNotice {...props} />
     </>
   );
 };
