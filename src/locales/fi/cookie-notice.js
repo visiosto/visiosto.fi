@@ -12,10 +12,10 @@ export default {
   cookieNoticeFunctionalTitle: 'Toiminnalliset evästeet',
   cookieNoticeFunctionalDescription:
     'Toiminnallisilla evästeillä mahdollistamme erilaisten sisältöjen ja toiminnallisuuksien (kuten karttapalveluiden ja kyselyiden lisäämisen helposti osaksi sivustoa). Toiminnallisia evästeitä ei voi laittaa pois päältä, sillä niitä tarvitaan sivuston toiminnan mahdollistamiseksi.',
-  cookieNoticeTrackingTitle: 'Anonymisoidut seurantaevästeet',
+  cookieNoticeAnonymizedTrackingTitle: 'Anonymisoidut seurantaevästeet',
   cookieNoticeGoogleAnalytics: 'Google Analytics',
   cookieNoticeGoogleAnalyticsInfo: 'Mitä tämä tekee?',
-  cookieNoticeTrackingDescription:
+  cookieNoticeAnonymizedTrackingDescription:
     'Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.',
   cookieNoticeDataProtection: 'Tietosuoja',
   cookieNoticeCancel: 'Peruuta',

@@ -12,10 +12,10 @@ export default {
   cookieNoticeFunctionalTitle: 'Functional cookies',
   cookieNoticeFunctionalDescription:
     'These cookies are required for our website to work properly and cannot be turned off. Among other things, they take care of remembering the cookie preferences you select and loading different functions on the website, such as maps and online tests.',
-  cookieNoticeTrackingTitle: 'Anonymized tracking cookies',
+  cookieNoticeAnonymizedTrackingTitle: 'Anonymized tracking cookies',
   cookieNoticeGoogleAnalytics: 'Google Analytics',
   cookieNoticeGoogleAnalyticsInfo: 'What does this do?',
-  cookieNoticeTrackingDescription:
+  cookieNoticeAnonymizedTrackingDescription:
     'Tracking cookies help us track what content our visitors are interested in and where we need to do better. We cannot identify you with these cookies.',
   cookieNoticeDataProtection: 'Data protection',
   cookieNoticeCancel: 'Cancel',

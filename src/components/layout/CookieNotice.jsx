@@ -3,12 +3,22 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Cookies from 'universal-cookie';
 import { injectIntl } from 'react-intl';
 
 import Button from '../Button';
 import LocalizedLink from '../link/LocalizedLink';
 
 import createIntl from '../../util/createIntl';
+
+import {
+  ALLOW_ALL_COOKIE_NAME,
+  COOKIE_PREFERENCE_SET_COOKIE_NAME,
+  GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
+  GOOGLE_ANALYTICS_TRACKING_ID,
+} from '../../constants';
+
+const cookies = new Cookies();
 
 const Div = styled.div`
   display: grid;
@@ -145,10 +155,60 @@ const WhatLink = styled(LocalizedLink)`
   text-align: right;
 `;
 
+const SwitchLabel = styled.label`
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+`;
+
+const SwitchInput = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + span {
+    background-color: var(--color-primary);
+  }
+
+  &:checked + span::before {
+    transform: translateX(26px);
+  }
+
+  &:focus + span {
+    box-shadow: 0 0 1px #2196f3;
+  }
+`;
+
+const SwitchSpan = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: var(--color-text-weak);
+  transition: 0.4s;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    transition: 0.4s;
+  }
+`;
+
 const SettingButtons = styled.div``;
 
 class CookieNotice extends Component {
   state = {
+    showBanner: !cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME),
     isOpen: false,
   };
 
@@ -157,6 +217,9 @@ class CookieNotice extends Component {
 
     this.handleClickInfo = this.handleClickInfo.bind(this);
     this.handleClickClose = this.handleClickClose.bind(this);
+    this.handleClickAccept = this.handleClickAccept.bind(this);
+    this.handleClickSave = this.handleClickSave.bind(this);
+    this.handleToggleAnonymizedTracking = this.handleToggleAnonymizedTracking.bind(this);
   }
 
   handleClickInfo = () => {
@@ -169,8 +232,39 @@ class CookieNotice extends Component {
     this.setState({ isOpen: false });
   };
 
+  handleClickAccept = () => {
+    cookies.set(ALLOW_ALL_COOKIE_NAME, true);
+    cookies.set(COOKIE_PREFERENCE_SET_COOKIE_NAME, true);
+    cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, false);
+    window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = false;
+    this.setState({ showBanner: false });
+  };
+
+  handleClickSave = () => {
+    document.body.classList.toggle('cookie-settings-open');
+    if (cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) === undefined) {
+      cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, false);
+    }
+    cookies.set(COOKIE_PREFERENCE_SET_COOKIE_NAME, true);
+    window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = cookies.get(
+      GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
+    );
+    this.setState({ showBanner: false });
+  };
+
+  handleToggleAnonymizedTracking = () => {
+    cookies.set(
+      GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
+      !cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME),
+    );
+  };
+
   render() {
     const i = createIntl(this.props.intl);
+
+    if (!this.state.showBanner) {
+      return null;
+    }
 
     if (this.state.isOpen) {
       return (
@@ -185,20 +279,30 @@ class CookieNotice extends Component {
                     <p>{i('cookieNoticeFunctionalDescription')}</p>
                   </Section>
                   <Section>
-                    <H3>{i('cookieNoticeTrackingTitle')}</H3>
+                    <H3>{i('cookieNoticeAnonymizedTrackingTitle')}</H3>
                     <FeatureContainer>
                       <h4>{i('cookieNoticeGoogleAnalytics')}</h4>
                       <WhatLink to="/" locale={this.props.locale}>
                         {i('cookieNoticeGoogleAnalyticsInfo')}
                       </WhatLink>
                     </FeatureContainer>
-                    <p>{i('cookieNoticeTrackingDescription')}</p>
+                    <p>{i('cookieNoticeAnonymizedTrackingDescription')}</p>
+                    <SwitchLabel>
+                      <SwitchInput
+                        type="checkbox"
+                        onChange={this.handleToggleAnonymizedTracking}
+                        defaultChecked={!cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME)}
+                      />
+                      <SwitchSpan />
+                    </SwitchLabel>
                   </Section>
                   <Section>
                     <p>{i('cookieNoticeDataProtection')}</p>
                   </Section>
                   <SettingButtons>
-                    <Button accept>{i('cookieNoticeSave')}</Button>
+                    <Button onClick={this.handleClickSave} accept>
+                      {i('cookieNoticeSave')}
+                    </Button>
                     <Button onClick={this.handleClickClose}>{i('cookieNoticeCancel')}</Button>
                   </SettingButtons>
                 </Content>
@@ -216,7 +320,9 @@ class CookieNotice extends Component {
           <p>{i('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
-          <Button accept>{i('cookieNoticeAccept')}</Button>
+          <Button onClick={this.handleClickAccept} accept>
+            {i('cookieNoticeAccept')}
+          </Button>
           <Button onClick={this.handleClickInfo}>{i('cookieNoticeReject')}</Button>
         </Buttons>
       </Div>
