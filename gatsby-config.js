@@ -81,12 +81,11 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify',
     },
     {
-      resolve: 'gatsby-plugin-google-gtag',
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingIds: ['G-6EQKK25267'],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
+        id: 'GTM-P33RLCP',
+        includeInDevelopment: true,
+        routeChangeEventName: 'gatsby-route-change',
       },
     },
     {
