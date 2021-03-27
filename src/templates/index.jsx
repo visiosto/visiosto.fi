@@ -215,6 +215,11 @@ const Page = (props) => {
               <input type="email" name="email" id="email" />
             </FormDiv>
             <FormDiv>
+              <p>
+                {i('indexContactFormOr')}
+              </p>
+            </FormDiv>
+            <FormDiv>
               <label for="tel">{i('indexContactFormTel')}</label>
               <input type="tel" name="tel" id="tel" />
             </FormDiv>
