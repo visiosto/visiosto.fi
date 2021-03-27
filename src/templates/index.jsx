@@ -88,7 +88,8 @@ const FormContainer = styled.div`
 `;
 
 const FormDiv = styled.div`
-  input, textarea {
+  input,
+  textarea {
     margin: 0.6em 0;
     border: none;
     border-radius: 0.25rem;
