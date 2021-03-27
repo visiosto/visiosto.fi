@@ -7,6 +7,7 @@ import Cookies from 'universal-cookie';
 import { injectIntl } from 'react-intl';
 
 import Button from '../Button';
+import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
 import createIntl from '../../util/createIntl';
@@ -152,7 +153,7 @@ const FeatureContainer = styled.div`
   font-size: 1.2rem;
 `;
 
-const WhatLink = styled(LocalizedLink)`
+const WhatLink = styled.span`
   margin: 0 0 0 2rem;
   text-align: right;
 `;
@@ -227,6 +228,7 @@ class CookieSettings extends Component {
     this.handleClickAccept = this.handleClickAccept.bind(this);
     this.handleClickSave = this.handleClickSave.bind(this);
     this.handleToggleAnalytics = this.handleToggleAnalytics.bind(this);
+    this.handleChangePage = this.handleChangePage.bind(this);
   }
 
   componentDidUpdate() {
@@ -285,6 +287,11 @@ class CookieSettings extends Component {
     cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled);
   };
 
+  handleChangePage = () => {
+    document.body.classList.toggle('cookie-settings-open');
+    this.props.toggleSettings(false);
+  };
+
   render() {
     const i = createIntl(this.props.intl);
 
@@ -304,8 +311,15 @@ class CookieSettings extends Component {
                     <H3>{i('cookieNoticeAnonymizedTrackingTitle')}</H3>
                     <FeatureContainer>
                       <h4>{i('cookieNoticeGoogleAnalytics')}</h4>
-                      <WhatLink to="/" locale={this.props.locale}>
-                        {i('cookieNoticeGoogleAnalyticsInfo')}
+                      <WhatLink>
+                        <LocalizedAnchorLink
+                          to="/data-protection#google-analytics"
+                          locale={this.props.locale}
+                        >
+                          <span onClick={this.handleChangePage}>
+                            {i('cookieNoticeGoogleAnalyticsInfo')}
+                          </span>
+                        </LocalizedAnchorLink>
                       </WhatLink>
                     </FeatureContainer>
                     <p>{i('cookieNoticeAnonymizedTrackingDescription')}</p>
@@ -319,7 +333,15 @@ class CookieSettings extends Component {
                     </SwitchLabel>
                   </Section>
                   <Section>
-                    <p>{i('cookieNoticeDataProtection')}</p>
+                    <p>
+                      <LocalizedLink
+                        to="/data-protection"
+                        locale={this.props.locale}
+                        onClick={this.handleChangePage}
+                      >
+                        {i('cookieNoticeDataProtection')}
+                      </LocalizedLink>
+                    </p>
                   </Section>
                   <SettingButtons>
                     <Button onClick={this.handleClickSave} accept>
