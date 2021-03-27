@@ -6,4 +6,5 @@ export default {
   indexContactFormEmail: 'Sähköposti',
   indexContactFormTel: 'Puhelinnumero',
   indexContactFormMessage: 'Viestisi meille',
+  indexContactFormSend: 'Lähetä',
 };
