@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Button colour to be set by using an explicit colour option.
+- Colour of the green buttons to be a bit darker.
 
 ## [0.14.2] - 2021-03-27
 
