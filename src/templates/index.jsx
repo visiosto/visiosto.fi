@@ -105,7 +105,7 @@ const FormDiv = styled.div`
     }
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     display: inline-block;
     border-style: none;
     border-radius: 3rem;
