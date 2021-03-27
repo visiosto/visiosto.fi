@@ -6,4 +6,5 @@ export default {
   indexContactFormEmail: 'Email',
   indexContactFormTel: 'Phone Number',
   indexContactFormMessage: 'Your message for us',
+  indexContactFormSend: 'Send',
 };

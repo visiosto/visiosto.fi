@@ -105,6 +105,27 @@ const FormDiv = styled.div`
     }
   }
 
+  input[type="submit"] {
+    display: inline-block;
+    border-style: none;
+    border-radius: 3rem;
+    border: 3px solid transparent;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    box-shadow: none;
+    transition: all 100ms ease-in;
+    background-color: var(--color-link);
+    background-clip: padding-box;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text-button);
+
+    &:hover {
+      background-color: var(--color-link-hover);
+    }
+  }
+
   label {
     display: block;
     margin: 1rem 0 0;
@@ -194,6 +215,9 @@ const Page = (props) => {
             <FormDiv>
               <label for="message">{i('indexContactFormMessage')}</label>
               <textarea id="message" name="message" rows="5" cols="40" />
+            </FormDiv>
+            <FormDiv>
+              <input type="submit" value={i('indexContactFormSend')} />
             </FormDiv>
           </form>
         </FormContainer>
