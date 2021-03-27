@@ -12,9 +12,8 @@ import LocalizedLink from '../link/LocalizedLink';
 import createIntl from '../../util/createIntl';
 
 import {
-  ALLOW_ALL_COOKIE_NAME,
-  COOKIE_PREFERENCE_SET_COOKIE_NAME,
-  GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
+  COOKIES_ACCEPTED_COOKIE_NAME,
+  DISABLE_ANALYTICS_COOKIE_NAME,
   GOOGLE_ANALYTICS_TRACKING_ID,
 } from '../../constants';
 
@@ -209,14 +208,14 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
-class CookieNoticeBanner extends Component {
+class CookieSettings extends Component {
   state = {
     showBanner:
-      !cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME) ||
-      cookies.get(COOKIE_PREFERENCE_SET_COOKIE_NAME) == 'false',
-    isGoogleAnalyticsEnabled:
-      !cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) ||
-      cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) == 'false',
+      !cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) ||
+      cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) == 'false',
+    isAnalyticsEnabled:
+      !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
+      cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'false',
   };
 
   constructor(props) {
@@ -227,7 +226,7 @@ class CookieNoticeBanner extends Component {
     this.handleClickClose = this.handleClickClose.bind(this);
     this.handleClickAccept = this.handleClickAccept.bind(this);
     this.handleClickSave = this.handleClickSave.bind(this);
-    this.handleToggleAnonymizedTracking = this.handleToggleAnonymizedTracking.bind(this);
+    this.handleToggleAnalytics = this.handleToggleAnalytics.bind(this);
   }
 
   componentDidUpdate() {
@@ -239,8 +238,8 @@ class CookieNoticeBanner extends Component {
   }
 
   handleCookieChange = (options) => {
-    if (options.name === GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) {
-      this.setState({ isGoogleAnalyticsEnabled: !options.value });
+    if (options.name === DISABLE_ANALYTICS_COOKIE_NAME) {
+      this.setState({ isAnalyticsEnabled: !options.value });
     }
   };
 
@@ -257,29 +256,33 @@ class CookieNoticeBanner extends Component {
   };
 
   handleClickAccept = () => {
-    cookies.set(ALLOW_ALL_COOKIE_NAME, true);
-    cookies.set(COOKIE_PREFERENCE_SET_COOKIE_NAME, true);
-    cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, false);
+    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true);
+    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false);
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = false;
     this.setState({ showBanner: false });
   };
 
   handleClickSave = () => {
     document.body.classList.toggle('cookie-settings-open');
-    if (cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) === undefined) {
-      cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, false);
+
+    // The cookie that determines whether the tracking is disabled may not be set if the user has not touched the toggle.
+    if (cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === undefined) {
+      cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false);
     }
-    cookies.set(COOKIE_PREFERENCE_SET_COOKIE_NAME, true);
+
+    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true);
+
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = cookies.get(
-      GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME,
+      DISABLE_ANALYTICS_COOKIE_NAME,
     );
+
     this.props.toggleSettings(false);
     this.setState({ showBanner: false });
   };
 
-  handleToggleAnonymizedTracking = () => {
-    const isDisabled = cookies.get(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME) == 'true';
-    cookies.set(GOOGLE_ANALYTICS_OPT_OUT_COOKIE_NAME, !isDisabled);
+  handleToggleAnalytics = () => {
+    const isDisabled = cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'true';
+    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled);
   };
 
   render() {
@@ -309,8 +312,8 @@ class CookieNoticeBanner extends Component {
                     <SwitchLabel>
                       <SwitchInput
                         type="checkbox"
-                        onChange={this.handleToggleAnonymizedTracking}
-                        checked={this.state.isGoogleAnalyticsEnabled}
+                        onChange={this.handleToggleAnalytics}
+                        checked={this.state.isAnalyticsEnabled}
                       />
                       <SwitchSpan />
                     </SwitchLabel>
@@ -353,4 +356,4 @@ class CookieNoticeBanner extends Component {
   }
 }
 
-export default injectIntl(CookieNoticeBanner);
+export default injectIntl(CookieSettings);

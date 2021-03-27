@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import CookieNoticeBanner from './CookieNoticeBanner';
+import CookieSettings from './CookieSettings';
 
 import createIntl from '../../util/createIntl';
 
@@ -46,11 +46,7 @@ const CookieNotice = (props) => {
     <>
       <Link onClick={handleSettingsToggle}>{i('cookieSettingsLink')}</Link>
       <Wrapper>
-        <CookieNoticeBanner
-          settingsOpen={settingsOpen}
-          toggleSettings={setSettingsOpen}
-          {...props}
-        />
+        <CookieSettings settingsOpen={settingsOpen} toggleSettings={setSettingsOpen} {...props} />
       </Wrapper>
     </>
   );
