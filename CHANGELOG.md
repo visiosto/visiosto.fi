@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Honeypot field to the contact form.
+- Word ‘or’ between email and phone number in the contact form to indicate that one of them is required.
 
 ## [0.15.3] - 2021-03-27
 
