@@ -73,13 +73,13 @@ export const COLORS = {
     light:
       '0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
     dark:
-      '0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
+      '0px 3px 1px rgba(0, 0, 0, 0.10), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 3px 8px rgba(0, 0, 0, 0.14), 0px 15px 22px rgba(0, 0, 0, 0.12)',
   },
   'box-shadow-hover': {
     light:
       '0px 13px 11px rgba(0, 0, 0, 0.04), 0px 11px 11px rgba(0, 0, 0, 0.08), 0px 13px 18px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
     dark:
-      '0px 13px 11px rgba(0, 0, 0, 0.04), 0px 11px 11px rgba(0, 0, 0, 0.08), 0px 13px 18px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
+      '0px 13px 11px rgba(0, 0, 0, 0.14), 0px 11px 11px rgba(0, 0, 0, 0.18), 0px 13px 18px rgba(0, 0, 0, 0.18), 0px 15px 22px rgba(0, 0, 0, 0.16)',
   },
 };
 

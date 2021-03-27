@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Colour of the green buttons to be a bit darker.
 - Placeholder for some of the images to be blurred instead of single colour.
 - Search box to always have a shadow.
+- Box shadows to show better in dark mode.
 
 ## [0.14.2] - 2021-03-27
 
