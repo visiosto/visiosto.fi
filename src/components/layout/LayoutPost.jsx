@@ -16,14 +16,14 @@ import createIntl from '../../util/createIntl';
 import listenColorScheme from '../../util/listenColorScheme';
 
 const PageTitle = styled.h1`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
   font-size: 2rem;
   text-align: center;
   word-break: break-all;
   word-break: break-word;
   hyphens: auto;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     font-size: 3rem;
   }
@@ -38,7 +38,7 @@ const PostMeta = styled.div`
   margin: 2em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em 0;
   }
 

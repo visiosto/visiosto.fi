@@ -10,9 +10,9 @@ import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
 
 const Div = styled.div`
-  margin: 1em ${(props) => props.theme.layout.marginPhone};
+  margin: 1em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
 

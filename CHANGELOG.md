@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.14.0] - 2021-03-27
+
+### Added
+
+- Explicit anonymization of IP addresses.
+- Cookie notice banner.
+- Cookie settings overlay when user chooses to adjust their cookie preferences.
+- Ability to toggle tracking on and off.
+- Link to the data protection page to the footer.
+
+### Changed
+
+- Cards on the front page to take up the whole width on tablet.
+- Button to single component that is used inside other components.
+- Google Analytics tracking to use Google Tag Manager for setting the scripts.
+
+### Fixed
+
+- Wrong theme variable used to make the layout responsive.
+
 ## [0.13.0] - 2021-03-22
 
 ### Added
@@ -348,7 +368,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.13.0...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.14.0...HEAD
+[0.14.0]: https://github.com/visiosto/visiosto.fi/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/visiosto/visiosto.fi/compare/v0.12.3...v0.13.0
 [0.12.3]: https://github.com/visiosto/visiosto.fi/compare/v0.12.2...v0.12.3
 [0.12.2]: https://github.com/visiosto/visiosto.fi/compare/v0.12.1...v0.12.2

@@ -7,6 +7,7 @@ import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
+import CookieNotice from '../cookie/CookieNotice';
 import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
@@ -15,10 +16,10 @@ import Search from '../search/Search';
 import createIntl from '../../util/createIntl';
 
 const Footer = styled.footer`
-  margin: 4em ${(props) => props.theme.layout.marginPhone} 2em;
+  margin: 4em ${(props) => props.theme.layout.marginMobile} 2em;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
   }
 
@@ -59,15 +60,27 @@ const PricingP = styled.p`
   }
 `;
 
+const DataProtectionP = styled.p`
+  margin: 2rem 0 0;
+`;
+
+const CookieSettingsP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
+  }
+`;
+
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
-    margin: 3rem 0 0;
+  @media screen and ${(props) => props.theme.devices.mobileL} {
+    margin: 2rem 0 0;
   }
 
   @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 4rem 0 0;
+    margin: 2rem 0 0;
   }
 `;
 
@@ -228,6 +241,16 @@ export default (props) => {
           );
         }
       })()}
+      <Div>
+        <DataProtectionP>
+          <LocalizedLink to="/data-protection" locale={props.locale}>
+            {i('footerDataProtection')}
+          </LocalizedLink>
+        </DataProtectionP>
+        <CookieSettingsP>
+          <CookieNotice {...props} />
+        </CookieSettingsP>
+      </Div>
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />

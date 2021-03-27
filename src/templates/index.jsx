@@ -27,9 +27,9 @@ const H2 = styled.h2`
 `;
 
 const Section = styled.div`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -49,8 +49,8 @@ const Cards = styled.div`
   align-content: center;
   margin: 2em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
-    grid-template-columns: repeat(2, 1fr);
+  @media screen and ${(props) => props.theme.devices.mobileL} {
+    grid-template-columns: 1fr;
     gap: 2em;
   }
 

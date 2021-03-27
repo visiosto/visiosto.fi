@@ -7,24 +7,24 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import AuthorName from '../components/AuthorName';
-import Button from '../components/Button';
 import CategoryName from '../components/CategoryName';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
+import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
 import createIntl from '../util/createIntl';
 
 const Div = styled.div`
-  margin: 1em ${(props) => props.theme.layout.marginPhone};
+  margin: 1em ${(props) => props.theme.layout.marginMobile};
 
   .centered {
     text-align: center;
   }
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -39,9 +39,9 @@ const H2 = styled.h2`
 `;
 
 const Post = styled.article`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -78,7 +78,7 @@ const PostMeta = styled.div`
   margin: 2em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 2em 0;
   }
 
@@ -108,7 +108,7 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 
@@ -159,9 +159,9 @@ const Page = (props) => {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <Button to={post.contentful_id} locale={props.pageContext.locale}>
+              <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
                 {i('blogReadMore')}
-              </Button>
+              </LocalizedLinkButton>
             </Center>
             <Separator>
               <Rule color="blue" mode={2} />

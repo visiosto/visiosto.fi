@@ -6,9 +6,9 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import AnchorButton from '../components/AnchorButton';
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
+import LocalizedAnchorLinkButton from '../components/link/LocalizedAnchorLinkButton';
 import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
@@ -16,13 +16,13 @@ import Theme from '../components/Theme';
 import createIntl from '../util/createIntl';
 
 const Div = styled.div`
-  margin: 2em ${(props) => props.theme.layout.marginPhone};
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
 
   .centered {
     text-align: center;
   }
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
@@ -41,7 +41,7 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.phoneL} {
+  @media screen and ${(props) => props.theme.devices.mobileL} {
     margin: 4em 0;
   }
 
@@ -66,7 +66,7 @@ const Page = (props) => {
       <Buttons>
         {pricingList.map((node) => {
           return (
-            <AnchorButton
+            <LocalizedAnchorLinkButton
               key={node.listType}
               to={`${props.pageContext.pageId}#${
                 localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
@@ -75,7 +75,7 @@ const Page = (props) => {
               locale={props.pageContext.locale}
             >
               {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
-            </AnchorButton>
+            </LocalizedAnchorLinkButton>
           );
         })}
       </Buttons>

@@ -8,6 +8,7 @@ export default {
   footerVatNumber: 'VAT number:',
   footerManagement: 'Management',
   footerPricing: 'Pricing',
+  footerDataProtection: 'Data protection',
   footerSocialMediaTitle: 'Social Media',
   footerHashtag: '&num;throughourlens',
   footerFacebookAlt: 'Facebook Logo',
