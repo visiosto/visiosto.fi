@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Changed
+
+- Button colour to be set by using an explicit colour option.
+
 ## [0.14.2] - 2021-03-27
 
 ### Fixed
