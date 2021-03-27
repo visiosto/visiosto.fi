@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  indexContactFormHoneypot: 'Älä täytä, jos olet ihminen',
   indexContactFormName: 'Nimi',
   indexContactFormEmail: 'Sähköposti',
   indexContactFormTel: 'Puhelinnumero',
