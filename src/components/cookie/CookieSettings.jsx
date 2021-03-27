@@ -258,21 +258,31 @@ class CookieSettings extends Component {
   };
 
   handleClickAccept = () => {
-    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true);
-    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false);
+    const expires = new Date();
+
+    expires.setMonth(new Date().getMonth() + 1);
+
+    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
+    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
+
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = false;
+
     this.setState({ showBanner: false });
   };
 
   handleClickSave = () => {
     document.body.classList.toggle('cookie-settings-open');
 
+    const expires = new Date();
+
+    expires.setMonth(new Date().getMonth() + 1);
+
     // The cookie that determines whether the tracking is disabled may not be set if the user has not touched the toggle.
     if (cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === undefined) {
-      cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false);
+      cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
     }
 
-    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true);
+    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
 
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = cookies.get(
       DISABLE_ANALYTICS_COOKIE_NAME,
@@ -283,8 +293,13 @@ class CookieSettings extends Component {
   };
 
   handleToggleAnalytics = () => {
+    const expires = new Date();
+
+    expires.setMonth(new Date().getMonth() + 1);
+
     const isDisabled = cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'true';
-    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled);
+
+    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
   };
 
   handleChangePage = () => {
