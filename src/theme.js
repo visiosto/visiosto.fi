@@ -12,8 +12,8 @@ const colors = {
   linkBlueDark: '#00336e',
   linkYellow: '#fabd46',
   linkYellowDark: '#ba8d34',
-  linkGreen: '#73c92d',
-  linkGreenDark: '#569722',
+  buttonGreen: '#73c92d',
+  buttonGreenDark: '#569722',
   // white: '#f2f0eb',
   shade: '#dde1e9',
   shadeDark: '#2a2a2b',
@@ -37,7 +37,7 @@ export const COLORS = {
     light: colors.white,
     dark: colors.black,
   },
-  'text-accept': {
+  'text-button-green': {
     light: colors.black,
     dark: colors.black,
   },
@@ -49,13 +49,13 @@ export const COLORS = {
     light: colors.linkBlueDark,
     dark: colors.linkYellowDark,
   },
-  'link-accept': {
-    light: colors.linkGreen,
-    dark: colors.linkGreen,
+  'button-green': {
+    light: colors.buttonGreen,
+    dark: colors.buttonGreen,
   },
-  'link-accept-hover': {
-    light: colors.linkGreenDark,
-    dark: colors.linkGreenDark,
+  'button-green-hover': {
+    light: colors.buttonGreenDark,
+    dark: colors.buttonGreenDark,
   },
   primary: {
     light: colors.blue,
