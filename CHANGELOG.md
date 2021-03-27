@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Cookie notice banner.
 - Cookie settings overlay when user chooses to adjust their cookie preferences.
 - Ability to toggle tracking on and off.
+- Link to the data protection page to the footer.
 
 ### Changed
 
