@@ -151,12 +151,12 @@ export default (props) => {
         }
         logoLight: file(relativePath: { eq: "footer/logo-light.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 160)
+            gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
         logoDark: file(relativePath: { eq: "footer/logo-dark-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 160)
+            gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
         facebook: file(relativePath: { eq: "footer/facebook.png" }) {

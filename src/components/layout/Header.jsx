@@ -166,22 +166,22 @@ const Header = (props) => {
         }
         logoPhoneSLight: file(relativePath: { eq: "header/logo-light.png" }) {
           childImageSharp {
-            gatsbyImageData(quality: 100, width: 301)
+            gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
         logoPhoneSDark: file(relativePath: { eq: "header/logo-dark.png" }) {
           childImageSharp {
-            gatsbyImageData(quality: 100, width: 301)
+            gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
         logoTabletLight: file(relativePath: { eq: "header/logo-light.png" }) {
           childImageSharp {
-            gatsbyImageData(quality: 100, width: 301)
+            gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
         logoTabletDark: file(relativePath: { eq: "header/logo-dark.png" }) {
           childImageSharp {
-            gatsbyImageData(quality: 100, width: 301)
+            gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
         allContentfulEntry {

@@ -14,52 +14,52 @@ export default (props) => {
           relativePath: { eq: "front-page/cover/phone-small-up-left-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300)
+            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         topPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300)
+            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         topTabletLight: file(relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 400)
+            gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
         topTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 400)
+            gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
         bottomPhoneSmallLight: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300)
+            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         bottomPhoneSmallDark: file(
           relativePath: { eq: "front-page/cover/phone-small-down-right-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 300)
+            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         bottomTabletLight: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 400)
+            gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
         bottomTabletDark: file(
           relativePath: { eq: "front-page/cover/tablet-down-right-dark.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(width: 400)
+            gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
       }
