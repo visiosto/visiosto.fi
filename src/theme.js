@@ -12,8 +12,8 @@ const colors = {
   linkBlueDark: '#00336e',
   linkYellow: '#fabd46',
   linkYellowDark: '#ba8d34',
-  linkGreen: '#84ff20',
-  linkGreenDark: '#63bf18',
+  buttonGreen: '#49e324',
+  buttonGreenDark: '#37aa1b',
   // white: '#f2f0eb',
   shade: '#dde1e9',
   shadeDark: '#2a2a2b',
@@ -37,7 +37,7 @@ export const COLORS = {
     light: colors.white,
     dark: colors.black,
   },
-  'text-accept': {
+  'text-button-green': {
     light: colors.black,
     dark: colors.black,
   },
@@ -49,13 +49,13 @@ export const COLORS = {
     light: colors.linkBlueDark,
     dark: colors.linkYellowDark,
   },
-  'link-accept': {
-    light: colors.linkGreen,
-    dark: colors.linkGreen,
+  'button-green': {
+    light: colors.buttonGreen,
+    dark: colors.buttonGreen,
   },
-  'link-accept-hover': {
-    light: colors.linkGreenDark,
-    dark: colors.linkGreenDark,
+  'button-green-hover': {
+    light: colors.buttonGreenDark,
+    dark: colors.buttonGreenDark,
   },
   primary: {
     light: colors.blue,
@@ -73,13 +73,13 @@ export const COLORS = {
     light:
       '0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
     dark:
-      '0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
+      '0px 3px 1px rgba(0, 0, 0, 0.10), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 3px 8px rgba(0, 0, 0, 0.14), 0px 15px 22px rgba(0, 0, 0, 0.12)',
   },
   'box-shadow-hover': {
     light:
       '0px 13px 11px rgba(0, 0, 0, 0.04), 0px 11px 11px rgba(0, 0, 0, 0.08), 0px 13px 18px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
     dark:
-      '0px 13px 11px rgba(0, 0, 0, 0.04), 0px 11px 11px rgba(0, 0, 0, 0.08), 0px 13px 18px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
+      '0px 13px 11px rgba(0, 0, 0, 0.14), 0px 11px 11px rgba(0, 0, 0, 0.18), 0px 13px 18px rgba(0, 0, 0, 0.18), 0px 15px 22px rgba(0, 0, 0, 0.16)',
   },
 };
 

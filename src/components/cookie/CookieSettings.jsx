@@ -359,7 +359,7 @@ class CookieSettings extends Component {
                     </p>
                   </Section>
                   <SettingButtons>
-                    <Button onClick={this.handleClickSave} accept>
+                    <Button onClick={this.handleClickSave} color="green">
                       {i('cookieNoticeSave')}
                     </Button>
                     <Button onClick={this.handleClickClose}>{i('cookieNoticeCancel')}</Button>
@@ -383,7 +383,7 @@ class CookieSettings extends Component {
           <p>{i('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
-          <Button onClick={this.handleClickAccept} accept>
+          <Button onClick={this.handleClickAccept} color="green">
             {i('cookieNoticeAccept')}
           </Button>
           <Button onClick={this.handleClickInfo}>{i('cookieNoticeReject')}</Button>

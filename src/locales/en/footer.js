@@ -9,6 +9,7 @@ export default {
   footerManagement: 'Management',
   footerPricing: 'Pricing',
   footerDataProtection: 'Data protection',
+  footerTermsOfUse: 'Terms of use',
   footerSocialMediaTitle: 'Social Media',
   footerHashtag: '&num;throughourlens',
   footerFacebookAlt: 'Facebook Logo',

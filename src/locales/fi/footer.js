@@ -9,6 +9,7 @@ export default {
   footerManagement: 'Hallinto',
   footerPricing: 'Hinnasto',
   footerDataProtection: 'Tietosuoja',
+  footerTermsOfUse: 'Käyttöehdot',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',
   footerHashtag: '&num;linssimmeläpi',
   footerFacebookAlt: 'Facebookin logo',

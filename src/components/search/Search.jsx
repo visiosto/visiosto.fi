@@ -12,11 +12,11 @@ const Container = styled(SearchContainer)`
   position: relative;
   margin: 0.6em 0;
   border-radius: 0.25rem;
-  box-shadow: none;
+  box-shadow: var(--color-box-shadow);
   transition: box-shadow 75ms ease-in;
 
   &.focus {
-    box-shadow: var(--color-box-shadow);
+    box-shadow: var(--color-box-shadow-hover);
   }
 `;
 

@@ -14,62 +14,62 @@ const getRules = (ruleType) => {
       {
         blueRule1: file(relativePath: { eq: "rule/blue-rule-1.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         lightBlueRule1: file(relativePath: { eq: "rule/light-blue-rule-1.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         peachRule1: file(relativePath: { eq: "rule/peach-rule-1.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         creamRule1: file(relativePath: { eq: "rule/cream-rule-1.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         blueRule2: file(relativePath: { eq: "rule/blue-rule-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         lightBlueRule2: file(relativePath: { eq: "rule/light-blue-rule-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         peachRule2: file(relativePath: { eq: "rule/peach-rule-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         creamRule2: file(relativePath: { eq: "rule/cream-rule-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         blueRule3: file(relativePath: { eq: "rule/blue-rule-3.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         lightBlueRule3: file(relativePath: { eq: "rule/light-blue-rule-3.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         peachRule3: file(relativePath: { eq: "rule/peach-rule-3.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
         creamRule3: file(relativePath: { eq: "rule/cream-rule-3.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 250, height: 50, layout: FIXED)
+            gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
       }

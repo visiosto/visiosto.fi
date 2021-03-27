@@ -20,6 +20,8 @@ import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
+import createIntl from '../util/createIntl';
+import { useIntl } from 'react-intl';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -68,7 +70,50 @@ const Centered = styled.div`
   text-align: center;
 `;
 
+const H3 = styled.h3`
+  margin: 2rem 0;
+  text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.mobileL} {
+    margin: 2rem 0;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 4rem 0;
+  }
+`;
+
+const FormContainer = styled.div`
+  text-align: center;
+`;
+
+const FormDiv = styled.div`
+  input,
+  textarea {
+    margin: 0.6em 0;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.4rem 1rem;
+    box-shadow: var(--color-box-shadow);
+    transition: box-shadow 75ms ease-in;
+    background: var(--color-background);
+    color: var(--color-text);
+
+    &:focus {
+      box-shadow: var(--color-box-shadow-hover);
+      outline: none;
+    }
+  }
+
+  label {
+    display: block;
+    margin: 1rem 0 0;
+  }
+`;
+
 const Page = (props) => {
+  const i = createIntl(useIntl());
+
   const { contentfulIndexPage: page } = props.data;
 
   return (
@@ -131,6 +176,27 @@ const Page = (props) => {
             return <AuthorContactCard key={contact.id} author={contact} />;
           })}
         </Cards>
+        <H3>{page.contactFormTitle}</H3>
+        <FormContainer>
+          <form name="contact" method="POST" data-netlify="true">
+            <FormDiv>
+              <label for="name">{i('indexContactFormName')}</label>
+              <input type="text" name="name" id="name" required />
+            </FormDiv>
+            <FormDiv>
+              <label for="email">{i('indexContactFormEmail')}</label>
+              <input type="email" name="email" id="email" />
+            </FormDiv>
+            <FormDiv>
+              <label for="tel">{i('indexContactFormTel')}</label>
+              <input type="tel" name="tel" id="tel" />
+            </FormDiv>
+            <FormDiv>
+              <label for="message">{i('indexContactFormMessage')}</label>
+              <textarea id="message" name="message" rows="5" cols="40" />
+            </FormDiv>
+          </form>
+        </FormContainer>
       </Section>
     </LayoutIndex>
   );
@@ -159,6 +225,7 @@ export const pageQuery = graphql`
       }
     }
     contentfulIndexPage(node_locale: { eq: $locale }) {
+      contactFormTitle
       contactTitle
       introTitle
       portfolioTitle

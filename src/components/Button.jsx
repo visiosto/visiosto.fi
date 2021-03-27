@@ -13,23 +13,35 @@ const Span = styled.span`
   cursor: pointer;
   transition: all 100ms ease-in;
   background-clip: padding-box;
-  background-color: var(${(props) => (props.accept ? '--color-link-accept' : '--color-link')});
-  color: var(${(props) => (props.accept ? '--color-text-accept' : '--color-text-button')});
   font-weight: 400;
   text-align: center;
   text-decoration: none;
+`;
+
+const SpanNormal = styled(Span)`
+  background-color: var(--color-link);
+  color: var(--color-text-button);
 
   &:hover {
-    background-color: var(
-      ${(props) => (props.accept ? '--color-link-accept-hover' : '--color-link-hover')}
-    );
+    background-color: var(--color-link-hover);
   }
 `;
 
-const Button = (props) => (
-  <Span accept={props.accept} onClick={props.onClick}>
-    {props.children}
-  </Span>
-);
+const SpanGreen = styled(Span)`
+  background-color: var(--color-button-green);
+  color: var(--color-text-button-green);
+
+  &:hover {
+    background-color: var(--color-button-green-hover);
+  }
+`;
+
+const Button = (props) => {
+  if (props.color && props.color === 'green') {
+    return <SpanGreen onClick={props.onClick}>{props.children}</SpanGreen>;
+  }
+
+  return <SpanNormal onClick={props.onClick}>{props.children}</SpanNormal>;
+};
 
 export default Button;

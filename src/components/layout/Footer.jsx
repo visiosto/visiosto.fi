@@ -60,27 +60,15 @@ const PricingP = styled.p`
   }
 `;
 
-const DataProtectionP = styled.p`
-  margin: 2rem 0 0;
-`;
-
-const CookieSettingsP = styled.p`
-  margin: 2rem 0 1rem;
-
-  @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 0;
-  }
-`;
-
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
   @media screen and ${(props) => props.theme.devices.mobileL} {
-    margin: 2rem 0 0;
+    margin: 3rem 0 0;
   }
 
   @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 2rem 0 0;
+    margin: 4rem 0 0;
   }
 `;
 
@@ -121,6 +109,26 @@ const TwitterImage = styled(SocialMediaImage)`
   }
 `;
 
+const DataProtectionP = styled.p`
+  margin: 2rem 0 0;
+`;
+
+const CookieSettingsP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
+  }
+`;
+
+const TermsOfUseP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
+  }
+`;
+
 export default (props) => {
   const i = createIntl(useIntl());
 
@@ -143,12 +151,12 @@ export default (props) => {
         }
         logoLight: file(relativePath: { eq: "footer/logo-light.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 160)
+            gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
         logoDark: file(relativePath: { eq: "footer/logo-dark-2.png" }) {
           childImageSharp {
-            gatsbyImageData(width: 160)
+            gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
         facebook: file(relativePath: { eq: "footer/facebook.png" }) {
@@ -241,16 +249,6 @@ export default (props) => {
           );
         }
       })()}
-      <Div>
-        <DataProtectionP>
-          <LocalizedLink to="/data-protection" locale={props.locale}>
-            {i('footerDataProtection')}
-          </LocalizedLink>
-        </DataProtectionP>
-        <CookieSettingsP>
-          <CookieNotice {...props} />
-        </CookieSettingsP>
-      </Div>
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />
@@ -292,6 +290,21 @@ export default (props) => {
           />
         </a>
       </SocialMediaDiv>
+      <Div>
+        <DataProtectionP>
+          <LocalizedLink to="/data-protection" locale={props.locale}>
+            {i('footerDataProtection')}
+          </LocalizedLink>
+        </DataProtectionP>
+        <CookieSettingsP>
+          <CookieNotice {...props} />
+        </CookieSettingsP>
+        <TermsOfUseP>
+          <LocalizedLink to="/terms-of-use" locale={props.locale}>
+            {i('footerTermsOfUse')}
+          </LocalizedLink>
+        </TermsOfUseP>
+      </Div>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />
       </Div>
