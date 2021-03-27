@@ -199,7 +199,7 @@ const Page = (props) => {
         </Cards>
         <H3>{page.contactFormTitle}</H3>
         <FormContainer>
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" action="/" method="POST" data-netlify="true">
             <FormDiv>
               <label for="name">{i('indexContactFormName')}</label>
               <input type="text" name="name" id="name" required />
