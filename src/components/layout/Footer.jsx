@@ -60,27 +60,15 @@ const PricingP = styled.p`
   }
 `;
 
-const DataProtectionP = styled.p`
-  margin: 2rem 0 0;
-`;
-
-const CookieSettingsP = styled.p`
-  margin: 2rem 0 1rem;
-
-  @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 0;
-  }
-`;
-
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
   @media screen and ${(props) => props.theme.devices.mobileL} {
-    margin: 2rem 0 0;
+    margin: 3rem 0 0;
   }
 
   @media screen and ${(props) => props.theme.devices.tablet} {
-    margin: 2rem 0 0;
+    margin: 4rem 0 0;
   }
 `;
 
@@ -118,6 +106,26 @@ const LinkedinImage = styled(SocialMediaImage)`
 const TwitterImage = styled(SocialMediaImage)`
   @media screen and (prefers-color-scheme: dark) {
     filter: invert(100%);
+  }
+`;
+
+const DataProtectionP = styled.p`
+  margin: 2rem 0 0;
+`;
+
+const CookieSettingsP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
+  }
+`;
+
+const TermsOfUseP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 0;
   }
 `;
 
@@ -241,16 +249,6 @@ export default (props) => {
           );
         }
       })()}
-      <Div>
-        <DataProtectionP>
-          <LocalizedLink to="/data-protection" locale={props.locale}>
-            {i('footerDataProtection')}
-          </LocalizedLink>
-        </DataProtectionP>
-        <CookieSettingsP>
-          <CookieNotice {...props} />
-        </CookieSettingsP>
-      </Div>
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />
@@ -292,6 +290,21 @@ export default (props) => {
           />
         </a>
       </SocialMediaDiv>
+      <Div>
+        <DataProtectionP>
+          <LocalizedLink to="/data-protection" locale={props.locale}>
+            {i('footerDataProtection')}
+          </LocalizedLink>
+        </DataProtectionP>
+        <CookieSettingsP>
+          <CookieNotice {...props} />
+        </CookieSettingsP>
+        <TermsOfUseP>
+          <LocalizedLink to="/terms-of-use" locale={props.locale}>
+            {i('footerTermsOfUse')}
+          </LocalizedLink>
+        </TermsOfUseP>
+      </Div>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerOcticons') }} />
       </Div>
