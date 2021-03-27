@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Link to the terms of use to the footer.
+- Contact for to the front page.
 
 ### Changed
 
