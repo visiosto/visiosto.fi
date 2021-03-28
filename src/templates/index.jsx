@@ -199,7 +199,14 @@ const Page = (props) => {
         </Cards>
         <H3>{page.contactFormTitle}</H3>
         <FormContainer>
-          <form name="contact" action="/" method="POST" netlify-honeypot="bot-field" netlify data-netlify="true">
+          <form
+            name="contact"
+            action="/"
+            method="POST"
+            netlify-honeypot="bot-field"
+            netlify
+            data-netlify="true"
+          >
             {/* This input field is required by Netlify */}
             <input type="hidden" name="form-name" value="contact" />
             <FormDiv hidden>
@@ -215,9 +222,7 @@ const Page = (props) => {
               <input type="email" name="email" id="email" />
             </FormDiv>
             <FormDiv>
-              <p>
-                {i('indexContactFormOr')}
-              </p>
+              <p>{i('indexContactFormOr')}</p>
             </FormDiv>
             <FormDiv>
               <label for="tel">{i('indexContactFormTel')}</label>
