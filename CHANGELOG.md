@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Name of the form `contact` to `Front page contact`.
 
+### Fixed
+
+- Site title component that was created inside another component.
+
 ## [0.15.4] - 2021-03-27
 
 ### Added
