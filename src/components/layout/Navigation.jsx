@@ -4,12 +4,9 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
-import { useIntl } from 'react-intl';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
-
-import createIntl from '../../util/createIntl';
 
 const Nav = styled.nav`
   margin: 0 auto;
@@ -157,8 +154,6 @@ const AnchorLink = styled(LocalizedAnchorLink)`
 `;
 
 export default (props) => {
-  const i = createIntl(useIntl());
-
   const data = useStaticQuery(
     graphql`
       query {
