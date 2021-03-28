@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Changed
+
+- Name of the form `contact` to `Front page contact`.
+
 ## [0.15.4] - 2021-03-27
 
 ### Added

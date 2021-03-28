@@ -200,7 +200,7 @@ const Page = (props) => {
         <H3>{page.contactFormTitle}</H3>
         <FormContainer>
           <form
-            name="contact"
+            name="Front page contact"
             action="/"
             method="POST"
             netlify-honeypot="bot-field"
@@ -208,7 +208,7 @@ const Page = (props) => {
             data-netlify="true"
           >
             {/* This input field is required by Netlify */}
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="Front page contact" />
             <FormDiv hidden>
               <label>{i('indexContactFormHoneypot')}</label>
               <input name="bot-field" />
