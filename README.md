@@ -4,8 +4,6 @@
 
 This is the source code for [Visiosto’s](https://github.com/visiosto) website-in-progress.
 
-The site is deployed to [GitHub Pages](https://pages.github.com) from the [`visiosto/visiosto.github.io`](https://github.com/visiosto/visiosto.github.io) repository. The website, when ready, will be available at [visiosto.fi](#).
-
 ## Install
 
 The released versions of the website are available on the [Releases page](https://github.com/visiosto/visiosto.fi/releases).
