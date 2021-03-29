@@ -148,7 +148,7 @@ const Head = (props) => {
     : `%s - ${siteMetadata.title}`;
   const title = props.home
     ? `${siteMetadata.title} - ${i('metaSlogan')}`
-    : `%s - ${siteMetadata.title}`;
+    : `${props.title} - ${siteMetadata.title}`;
   const description = i('metaDescription') || props.description;
 
   return (
