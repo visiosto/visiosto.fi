@@ -6,7 +6,7 @@ const path = require('path');
 const createPagePath = require('./createPagePath');
 
 module.exports = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const query = await graphql(
     `
@@ -14,6 +14,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
         site {
           siteMetadata {
             defaultLocale
+            locales
             localePaths {
               en_GB
               fi
@@ -136,7 +137,7 @@ module.exports = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const { defaultLocale, localePaths } = query.data.site.siteMetadata;
+  const { defaultLocale, localePaths, locales } = query.data.site.siteMetadata;
 
   // Create the author pages from Contentful.
 
@@ -411,5 +412,39 @@ module.exports = async ({ actions, graphql, reporter }) => {
     };
 
     createPage(pageOpts);
+  });
+
+  // Create the 404 error pages.
+
+  locales.forEach((locale) => {
+    reporter.verbose(`Creating a 404 error page for the locale '${locale}'`);
+
+    const pagePath =
+      locale === defaultLocale ? '/404' : `/${localePaths[locale.replace('-', '_')]}/404`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', '404.jsx'),
+      context: {
+        locale,
+        pageId: '404',
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the redirects for the 404 error pages.
+  createRedirect({
+    fromPath: '/en/*',
+    toPath: `/en/404`,
+    statusCode: 404,
+  });
+  createRedirect({
+    fromPath: '/*',
+    toPath: `/404`,
+    statusCode: 404,
   });
 };

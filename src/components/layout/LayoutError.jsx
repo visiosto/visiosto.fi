@@ -15,6 +15,14 @@ const ErrorCode = styled.h1`
   font-size: 3rem;
   font-family: ${(props) => props.theme.fonts.code};
   text-align: center;
+
+  @media screen and ${(props) => props.theme.devices.mobileL} {
+    font-size: 4em;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    font-size: 5em;
+  }
 `;
 
 const PageTitle = styled.h2`
