@@ -1,6 +1,6 @@
 # Visiosto’s website
 
-![Main workflow](https://github.com/visiosto/visiosto.fi/workflows/Main%20workflow/badge.svg)
+![Main workflow](https://github.com/visiosto/visiosto.fi/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2c66ee86-8bbe-473b-8599-57cceaf87eec/deploy-status)](https://app.netlify.com/sites/visiosto/deploys)
 
 This is the source code for [Visiosto’s](https://github.com/visiosto) website-in-progress.
 

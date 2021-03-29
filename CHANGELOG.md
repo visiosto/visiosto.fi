@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Deploy status to the README.
+
 ### Changed
 
 - Name of the form `contact` to `Front page contact`.
