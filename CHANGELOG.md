@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Name of the form `contact` to `Front page contact`.
+- Project name in the Netlify URL from `practical-ptolemy-144432` to `visiosto`.
 
 ### Fixed
 
