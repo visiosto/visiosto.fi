@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Deploy status to the README.
+- Localized `404` error pages.
 
 ### Changed
 
@@ -17,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Site title component that was created inside another component.
+- Page title in the head.
 
 ## [0.15.4] - 2021-03-27
 

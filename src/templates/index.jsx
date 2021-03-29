@@ -218,6 +218,9 @@ const Page = (props) => {
               <input type="text" name="name" id="name" required />
             </FormDiv>
             <FormDiv>
+              <p>{i('indexContactFormEither')}</p>
+            </FormDiv>
+            <FormDiv>
               <label for="email">{i('indexContactFormEmail')}</label>
               <input type="email" name="email" id="email" />
             </FormDiv>
