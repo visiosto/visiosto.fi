@@ -211,7 +211,8 @@ class RegisterForm extends Component {
         this.setState({ currentPage: 0 });
       } else if (
         this.state.currentPage === 4 &&
-        this.state.billingMethod !== 'e-invoice' && this.state.billingMethod !== 'email'
+        this.state.billingMethod !== 'e-invoice' &&
+        this.state.billingMethod !== 'email'
       ) {
         this.setState({ currentPage: 2 });
       } else {
@@ -232,7 +233,8 @@ class RegisterForm extends Component {
         this.setState({ currentPage: 2 });
       } else if (
         this.state.currentPage === 2 &&
-        this.state.billingMethod !== 'e-invoice' && this.state.billingMethod !== 'email'
+        this.state.billingMethod !== 'e-invoice' &&
+        this.state.billingMethod !== 'email'
       ) {
         this.setState({ currentPage: 4 });
       } else {
