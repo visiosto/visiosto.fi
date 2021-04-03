@@ -1,15 +1,15 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
+import { injectIntl } from 'react-intl';
 
 import Button from './Button';
 import LocalizedLink from './link/LocalizedLink';
 
 import createIntl from '../util/createIntl';
-import { useIntl } from 'react-intl';
 
 const FormContainer = styled.div`
   text-align: center;
@@ -168,200 +168,307 @@ const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
 
-const RegisterForm = (props) => {
-  const i = createIntl(useIntl());
+class RegisterForm extends Component {
+  constructor(props) {
+    super(props);
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [differentBillingAddress, setDifferentBillingAddress] = useState(false);
-  const [billingMethod, setBillingMethod] = useState(undefined);
+    this.state = {
+      firstName: '',
+      surname: '',
+      tel: '',
+      email: '',
+      addressLine1: '',
+      addressLine2: '',
+      postcode: '',
+      postOffice: '',
+      isSameBillingAddress: false,
+      billingAddressLine1: '',
+      billingAddressLine2: '',
+      billingPostcode: '',
+      billingPostOffice: '',
+      billingMethod: '',
+      currentPage: 0,
+    };
 
-  const handleToggleClick = () => {
-    setDifferentBillingAddress(!differentBillingAddress);
+    this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
+    this.moveToNextPage = this.moveToNextPage.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleBillingAddressToggleClick = () => {
+    this.setState({ isSameBillingAddress: !this.state.isSameBillingAddress });
   };
 
-  const moveToPreviousPage = () => {
-    if (currentPage === 2 && !differentBillingAddress) {
-      setCurrentPage(0);
+  moveToPreviousPage = () => {
+    if (this.state.currentPage === 2 && this.state.isSameBillingAddress) {
+      this.setState({ currentPage: 0 });
     } else {
-      setCurrentPage(currentPage - 1);
+      this.setState({ currentPage: this.state.currentPage - 1 });
     }
   };
 
-  const moveToNextPage = () => {
-    if (currentPage === 0 && !differentBillingAddress) {
-      setCurrentPage(2);
+  moveToNextPage = () => {
+    if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
+      this.setState({ currentPage: 2 });
     } else {
-      setCurrentPage(currentPage + 1);
+      this.setState({ currentPage: this.state.currentPage + 1 });
     }
   };
 
-  return (
-    <FormContainer>
-      <form
-        name="Personal data for client register"
-        action="/"
-        method="POST"
-        netlify-honeypot="bot-field"
-        netlify
-        data-netlify="true"
-      >
-        {/* This input field is required by Netlify */}
-        <input type="hidden" name="form-name" value="Personal data for client register" />
-        <FormDiv hidden>
-          <label>{i('clientRegisterFormHoneypot')}</label>
-          <input name="bot-field" />
-        </FormDiv>
+  handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-        {/* The client's basic information */}
-        <FormPage hidden={currentPage !== 0}>
-          <FormDiv>
-            <label for="first-name">{i('clientRegisterFormFirstName')}</label>
-            <input type="text" name="first-name" id="first-name" required />
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  render() {
+    const i = createIntl(this.props.intl);
+
+    return (
+      <FormContainer>
+        <form
+          name="Personal data for client register"
+          action="/"
+          method="POST"
+          netlify-honeypot="bot-field"
+          netlify
+          data-netlify="true"
+        >
+          {/* This input field is required by Netlify */}
+          <input type="hidden" name="form-name" value="Personal data for client register" />
+          <FormDiv hidden>
+            <label>{i('clientRegisterFormHoneypot')}</label>
+            <input name="bot-field" />
           </FormDiv>
-          <FormDiv>
-            <label for="surname">{i('clientRegisterFormSurname')}</label>
-            <input type="text" name="surname" id="surname" required />
-          </FormDiv>
-          <FormDiv>
-            <label for="tel">{i('clientRegisterFormTel')}</label>
-            <input type="tel" name="tel" id="tel" required />
-          </FormDiv>
-          <FormDiv>
-            <label for="email">{i('clientRegisterFormEmail')}</label>
-            <input className="medium" type="email" name="email" id="email" required />
-            <p>{i('indexContactFormEmailForBilling')}</p>
-          </FormDiv>
-          <FormDiv>
-            <label for="address-line-1">{i('clientRegisterFormAddressLine1')}</label>
-            <input
-              className="wider"
-              type="text"
-              name="address-line-1"
-              id="address-line-1"
-              required
-            />
-          </FormDiv>
-          <FormDiv>
-            <label for="address-line-2">{i('clientRegisterFormAddressLine2')}</label>
-            <input
-              className="wider"
-              type="text"
-              name="address-line-2"
-              id="address-line-2"
-              required
-            />
-          </FormDiv>
-          <FormDiv>
-            <label for="postcode">{i('clientRegisterFormPostcode')}</label>
-            <input type="text" name="postcode" id="postcode" required />
-          </FormDiv>
-          <FormDiv>
-            <label for="post-office">{i('clientRegisterFormPostOffice')}</label>
-            <input type="text" name="post-office" id="post-office" required />
-          </FormDiv>
-          <FormDiv>
-            <label for="same-billing-address">{i('clientRegisterFormSameBillingAddress')}</label>
-            <SwitchInputSpan onClick={handleToggleClick}>
+
+          {/* The client's basic information */}
+          <FormPage hidden={this.state.currentPage !== 0}>
+            <FormDiv>
+              <label for="first-name">{i('clientRegisterFormFirstName')}</label>
               <input
-                key={Math.random()}
-                type="checkbox"
-                name="same-billing-address"
-                id="same-billing-address"
-                defaultChecked={!differentBillingAddress}
+                type="text"
+                name="firstName"
+                id="first-name"
+                value={this.state.firstName}
+                onChange={this.handleInputChange}
+                required
               />
-              <SwitchSpan />
-            </SwitchInputSpan>
-          </FormDiv>
-        </FormPage>
+            </FormDiv>
+            <FormDiv>
+              <label for="surname">{i('clientRegisterFormSurname')}</label>
+              <input
+                type="text"
+                name="surname"
+                id="surname"
+                value={this.state.surname}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="tel">{i('clientRegisterFormTel')}</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                value={this.state.tel}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="email">{i('clientRegisterFormEmail')}</label>
+              <input
+                className="medium"
+                type="email"
+                name="email"
+                id="email"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                required
+              />
+              <p>{i('indexContactFormEmailForBilling')}</p>
+            </FormDiv>
+            <FormDiv>
+              <label for="address-line-1">{i('clientRegisterFormAddressLine1')}</label>
+              <input
+                className="wider"
+                type="text"
+                name="addressLine1"
+                id="address-line-1"
+                value={this.state.addressLine1}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="address-line-2">{i('clientRegisterFormAddressLine2')}</label>
+              <input
+                className="wider"
+                type="text"
+                name="addressLine2"
+                id="address-line-2"
+                value={this.state.addressLine2}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="postcode">{i('clientRegisterFormPostcode')}</label>
+              <input
+                type="text"
+                name="postcode"
+                id="postcode"
+                value={this.state.postcode}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="post-office">{i('clientRegisterFormPostOffice')}</label>
+              <input
+                type="text"
+                name="postOffice"
+                id="post-office"
+                value={this.state.postOffice}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="same-billing-address">{i('clientRegisterFormSameBillingAddress')}</label>
+              <SwitchInputSpan onClick={this.handleBillingAddressToggleClick}>
+                <input
+                  key={Math.random()}
+                  type="checkbox"
+                  name="isSameBillingAddress"
+                  id="same-billing-address"
+                  defaultChecked={this.state.isSameBillingAddress}
+                />
+                <SwitchSpan />
+              </SwitchInputSpan>
+            </FormDiv>
+          </FormPage>
 
-        {/* TODO Make the inputs on the billing address page required only if the page is opened */}
-        {/* The form page for giving the possible billing address */}
-        <FormPage hidden={currentPage !== 1}>
-          <h3>{i('clientRegisterFormBillingAddress')}</h3>
-          <FormDiv>
-            <label for="billing-address-line-1">{i('clientRegisterFormBillingAddressLine1')}</label>
-            <input
-              className="wider"
-              type="text"
-              name="billing-address-line-1"
-              id="billing-address-line-1"
-              required={differentBillingAddress}
-            />
-          </FormDiv>
-          <FormDiv>
-            <label for="billing-address-line-2">{i('clientRegisterFormBillingAddressLine2')}</label>
-            <input
-              className="wider"
-              type="text"
-              name="billing-address-line-2"
-              id="billing-address-line-2"
-              required={differentBillingAddress}
-            />
-          </FormDiv>
-          <FormDiv>
-            <label for="billing-postcode">{i('clientRegisterFormBillingPostcode')}</label>
-            <input
-              type="text"
-              name="billing-postcode"
-              id="billing-postcode"
-              required={differentBillingAddress}
-            />
-          </FormDiv>
-          <FormDiv>
-            <label for="billing-post-office">{i('clientRegisterFormBillingPostOffice')}</label>
-            <input
-              type="text"
-              name="billing-post-office"
-              id="billing-post-office"
-              required={differentBillingAddress}
-            />
-          </FormDiv>
-        </FormPage>
+          {/* The form page for giving the possible billing address */}
+          <FormPage hidden={this.state.currentPage !== 1}>
+            <h3>{i('clientRegisterFormBillingAddress')}</h3>
+            <FormDiv>
+              <label for="billing-address-line-1">
+                {i('clientRegisterFormBillingAddressLine1')}
+              </label>
+              <input
+                className="wider"
+                type="text"
+                name="billingAddressLine1"
+                id="billing-address-line-1"
+                value={this.state.billingAddressLine1}
+                onChange={this.handleInputChange}
+                required={!this.state.isSameBillingAddress}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-address-line-2">
+                {i('clientRegisterFormBillingAddressLine2')}
+              </label>
+              <input
+                className="wider"
+                type="text"
+                name="billingAddressLine2"
+                id="billing-address-line-2"
+                value={this.state.billingAddressLine2}
+                onChange={this.handleInputChange}
+                required={!this.state.isSameBillingAddress}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-postcode">{i('clientRegisterFormBillingPostcode')}</label>
+              <input
+                type="text"
+                name="billingPostcode"
+                id="billing-postcode"
+                value={this.state.billingPostcode}
+                onChange={this.handleInputChange}
+                required={!this.state.isSameBillingAddress}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-post-office">{i('clientRegisterFormBillingPostOffice')}</label>
+              <input
+                type="text"
+                name="billingPostOffice"
+                id="billing-post-office"
+                value={this.state.billingPostOffice}
+                onChange={this.handleInputChange}
+                required={!this.state.isSameBillingAddress}
+              />
+            </FormDiv>
+          </FormPage>
 
-        {/* The form page for selecting the billing method */}
-        <FormPage hidden={currentPage !== 2}>
+          {/* The form page for selecting the billing method */}
+          <FormPage hidden={this.state.currentPage !== 2}>
+            <FormDiv>
+              <h3>{i('clientRegisterFormBillingMethod')}</h3>
+              <p>
+                {i('clientRegisterFormBillingMethodContent', {
+                  a: (...chunk) => (
+                    <LocalizedLink to="/pricing" locale={this.props.locale}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
+              <RadioDiv>
+                <input
+                  type="radio"
+                  name="billingMethod"
+                  id="radio-email"
+                  value="email"
+                  checked={this.state.billingMethod === 'email'}
+                  onChange={this.handleInputChange}
+                />
+                <label for="radio-email">{i('clientRegisterFormBillingMethodEmail')}</label>
+              </RadioDiv>
+              <RadioDiv>
+                <input
+                  type="radio"
+                  name="billingMethod"
+                  id="radio-paper"
+                  value="paper"
+                  checked={this.state.billingMethod === 'paper'}
+                  onChange={this.handleInputChange}
+                />
+                <label for="radio-paper">{i('clientRegisterFormBillingMethodPaper')}</label>
+              </RadioDiv>
+            </FormDiv>
+          </FormPage>
+
           <FormDiv>
-            <h3>{i('clientRegisterFormBillingMethod')}</h3>
-            <p>
-              {i('clientRegisterFormBillingMethodContent', {
-                a: (...chunk) => (
-                  <LocalizedLink to="/pricing" locale={props.locale}>
-                    {chunk}
-                  </LocalizedLink>
-                ),
-              })}
-            </p>
-            <RadioDiv>
-              <input type="radio" name="billing-method" id="email" value="email" />
-              <label for="email">{i('clientRegisterFormBillingMethodEmail')}</label>
-            </RadioDiv>
-            <RadioDiv>
-              <input type="radio" name="billing-method" id="paper" value="paper" />
-              <label for="paper">{i('clientRegisterFormBillingMethodPaper')}</label>
-            </RadioDiv>
+            <ButtonDiv hidden={this.state.currentPage === 0}>
+              <Button onClick={this.moveToPreviousPage}>
+                <ArrowLeft size={24} /> <span>{i('clientRegisterFormPrevious')}</span>
+              </Button>
+            </ButtonDiv>
+            <ButtonDiv hidden={this.state.currentPage === 2}>
+              <Button onClick={this.moveToNextPage}>
+                <span>{i('clientRegisterFormNext')}</span> <ArrowRight size={24} />
+              </Button>
+            </ButtonDiv>
+            <ButtonDiv hidden={this.state.currentPage !== 2}>
+              <button type="submit">
+                <PaperAirplane size={24} /> {i('clientRegisterFormSend')}
+              </button>
+            </ButtonDiv>
           </FormDiv>
-        </FormPage>
+        </form>
+      </FormContainer>
+    );
+  }
+}
 
-        <FormDiv>
-          <ButtonDiv hidden={currentPage === 0}>
-            <Button onClick={moveToPreviousPage}>
-              <ArrowLeft size={24} />{' '}<span>{i('clientRegisterFormPrevious')}</span>
-            </Button>
-          </ButtonDiv>
-          <ButtonDiv hidden={currentPage === 2}>
-            <Button onClick={moveToNextPage}>
-              <span>{i('clientRegisterFormNext')}</span>{' '}<ArrowRight size={24} />
-            </Button>
-          </ButtonDiv>
-          <ButtonDiv hidden={currentPage !== 2}>
-            <button type="submit">
-              <PaperAirplane size={24} />{' '}{i('clientRegisterFormSend')}
-            </button>
-          </ButtonDiv>
-        </FormDiv>
-      </form>
-    </FormContainer>
-  );
-};
-
-export default RegisterForm;
+export default injectIntl(RegisterForm);
