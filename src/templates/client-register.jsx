@@ -12,9 +12,34 @@ import Theme from '../components/Theme';
 import createIntl from '../util/createIntl';
 import { useIntl } from 'react-intl';
 
+const Div = styled.div`
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
+
+  .centered {
+    text-align: center;
+  }
+
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 3em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
 const H2 = styled.h2`
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
   font-size: 2.2rem;
   text-align: center;
+
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 3em ${(props) => props.theme.layout.marginDesktop};
+  }
 `;
 
 const Page = (props) => {
@@ -24,13 +49,14 @@ const Page = (props) => {
 
   return (
     <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
-      <H2>{page.contactFormTitle}</H2>
-      <RegisterForm clientType="business" locale={props.pageContext.locale} />
+      <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
+      <H2>{i('clientRegisterFormTitle')}</H2>
+      <RegisterForm clientType={props.pageContext.clientType} locale={props.pageContext.locale} />
     </Layout>
   );
 };
 
-const ClientRegisterBusiness = (props) => (
+const ClientRegister = (props) => (
   <Intl
     locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
   >
@@ -40,10 +66,10 @@ const ClientRegisterBusiness = (props) => (
   </Intl>
 );
 
-export default ClientRegisterBusiness;
+export default ClientRegister;
 
 export const pageQuery = graphql`
-  query ClientRegisterBusinessQuery($pageId: String, $locale: String) {
+  query ClientRegisterQuery($pageId: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {

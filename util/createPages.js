@@ -470,10 +470,11 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     const pageOpts = {
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register-business.jsx'),
+      component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
         locale,
         pageId,
+        clientType: 'business',
       },
     };
 
@@ -494,10 +495,11 @@ module.exports = async ({ actions, graphql, reporter }) => {
 
     const pageOpts = {
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register-person.jsx'),
+      component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
         locale,
         pageId,
+        clientType: 'person',
       },
     };
 
