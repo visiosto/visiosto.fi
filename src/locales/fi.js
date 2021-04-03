@@ -6,6 +6,7 @@ import { defineMessages } from 'react-intl';
 import authorMessages from './fi/author';
 import blogMessages from './fi/blog';
 import categoryMessages from './fi/category';
+import clientRegisterMessages from './fi/client-register';
 import cookieNoticeMessages from './fi/cookie-notice';
 import footerMessages from './fi/footer';
 import headerMessages from './fi/header';
@@ -20,6 +21,7 @@ export const messages = {
   ...authorMessages,
   ...blogMessages,
   ...categoryMessages,
+  ...clientRegisterMessages,
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
