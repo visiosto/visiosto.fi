@@ -102,6 +102,40 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        clientRegisterBusinessPages: allContentfulPage(
+          filter: { contentful_id: { eq: "4oIYhIQVDliSRZWcw0uLih" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
+        clientRegisterPersonPages: allContentfulPage(
+          filter: { contentful_id: { eq: "4TippijFyNwApyemfLovAf" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
         indexPages: allContentfulIndexPage(
           filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
         ) {
@@ -413,6 +447,54 @@ module.exports = async ({ actions, graphql, reporter }) => {
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'pricing.jsx'),
+      context: {
+        locale,
+        pageId,
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the client register page for businesses from Contentful.
+
+  query.data.clientRegisterBusinessPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'client-register-business.jsx'),
+      context: {
+        locale,
+        pageId,
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the client register page for people from Contentful.
+
+  query.data.clientRegisterPersonPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'client-register-person.jsx'),
       context: {
         locale,
         pageId,
