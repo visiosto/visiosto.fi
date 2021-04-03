@@ -5,6 +5,7 @@ export default {
   clientRegisterFormHoneypot: 'Don’t fill this out if you’re a human',
   clientRegisterFormFirstName: 'First Name',
   clientRegisterFormSurname: 'Last Name',
+  clientRegisterFormTel: 'Phone Number',
   clientRegisterFormEmail: 'Email',
   indexContactFormEmailForBilling:
     'If you choose email as your billing method, the invoices are sent to the email given here.',

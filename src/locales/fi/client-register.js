@@ -5,6 +5,7 @@ export default {
   clientRegisterFormHoneypot: 'Älä täytä, jos olet ihminen',
   clientRegisterFormFirstName: 'Etunimi',
   clientRegisterFormSurname: 'Sukunimi',
+  clientRegisterFormTel: 'Puhelinnumero',
   clientRegisterFormEmail: 'Sähköpostiosoite',
   indexContactFormEmailForBilling:
     'Jos valitset laskutustavaksi sähköpostilaskun, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen.',

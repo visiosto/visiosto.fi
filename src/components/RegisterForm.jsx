@@ -223,6 +223,10 @@ const RegisterForm = (props) => {
             <input type="text" name="surname" id="surname" required />
           </FormDiv>
           <FormDiv>
+            <label for="tel">{i('clientRegisterFormTel')}</label>
+            <input type="tel" name="tel" id="tel" required />
+          </FormDiv>
+          <FormDiv>
             <label for="email">{i('clientRegisterFormEmail')}</label>
             <input className="medium" type="email" name="email" id="email" required />
             <p>{i('indexContactFormEmailForBilling')}</p>
