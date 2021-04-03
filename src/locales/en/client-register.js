@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 export default {
+  clientRegisterFormTitle: 'Form',
   clientRegisterFormHoneypot: 'Don’t fill this out if you’re a human',
   clientRegisterFormBusinessID: 'Finnish Business ID',
   clientRegisterFormBusinessName: 'Business or Organization Name',
