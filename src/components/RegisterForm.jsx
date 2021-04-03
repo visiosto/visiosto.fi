@@ -153,7 +153,7 @@ const RadioDiv = styled.div`
 const ButtonDiv = styled.div``;
 
 const iconStyle = css`
-  margin: 0 0 0.2rem;
+  margin: 0;
 `;
 
 const ArrowLeft = styled(ArrowLeftIcon)`
@@ -341,17 +341,17 @@ const RegisterForm = (props) => {
         <FormDiv>
           <ButtonDiv hidden={currentPage === 0}>
             <Button onClick={moveToPreviousPage}>
-              <ArrowLeft /> {i('clientRegisterFormPrevious')}
+              <ArrowLeft size={24} />{' '}<span>{i('clientRegisterFormPrevious')}</span>
             </Button>
           </ButtonDiv>
           <ButtonDiv hidden={currentPage === 2}>
             <Button onClick={moveToNextPage}>
-              {i('clientRegisterFormNext')} <ArrowRight />
+              <span>{i('clientRegisterFormNext')}</span>{' '}<ArrowRight size={24} />
             </Button>
           </ButtonDiv>
           <ButtonDiv hidden={currentPage !== 2}>
             <button type="submit">
-              {i('clientRegisterFormSend')} <PaperAirplane />
+              <PaperAirplane size={24} />{' '}{i('clientRegisterFormSend')}
             </button>
           </ButtonDiv>
         </FormDiv>
