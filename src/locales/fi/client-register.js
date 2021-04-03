@@ -19,7 +19,8 @@ export default {
   clientRegisterFormBillingPostcode: 'Postinumero',
   clientRegisterFormBillingPostOffice: 'Postitoimipaikka',
   clientRegisterFormBillingMethod: 'Laskutustapa',
-  clientRegisterFormBillingMethodContent: 'Huomaathan, että eri laskutustavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
+  clientRegisterFormBillingMethodContent:
+    'Huomaathan, että eri laskutustavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
   clientRegisterFormBillingMethodEmail: 'Sähköpostitse',
   clientRegisterFormBillingMethodPaper: 'Postitse',
   clientRegisterFormPrevious: 'Palaa',

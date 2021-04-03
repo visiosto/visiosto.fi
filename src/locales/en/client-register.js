@@ -19,7 +19,8 @@ export default {
   clientRegisterFormBillingPostcode: 'Postcode',
   clientRegisterFormBillingPostOffice: 'City',
   clientRegisterFormBillingMethod: 'Billing Method',
-  clientRegisterFormBillingMethodContent: 'Please note that additional fees may apply according to our current <a>prices</a>.',
+  clientRegisterFormBillingMethodContent:
+    'Please note that additional fees may apply according to our current <a>prices</a>.',
   clientRegisterFormBillingMethodEmail: 'By email',
   clientRegisterFormBillingMethodPaper: 'By mail',
   clientRegisterFormPrevious: 'Return',

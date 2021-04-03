@@ -318,13 +318,15 @@ const RegisterForm = (props) => {
         <FormPage hidden={currentPage !== 2}>
           <FormDiv>
             <h3>{i('clientRegisterFormBillingMethod')}</h3>
-            <p>{i('clientRegisterFormBillingMethodContent', {
-              a: (...chunk) => (
-                <LocalizedLink to="/pricing" locale={props.locale}>
-                  {chunk}
-                </LocalizedLink>
-              ),
-            })}</p>
+            <p>
+              {i('clientRegisterFormBillingMethodContent', {
+                a: (...chunk) => (
+                  <LocalizedLink to="/pricing" locale={props.locale}>
+                    {chunk}
+                  </LocalizedLink>
+                ),
+              })}
+            </p>
             <RadioDiv>
               <input type="radio" name="billing-method" id="email" value="email" />
               <label for="email">{i('clientRegisterFormBillingMethodEmail')}</label>
