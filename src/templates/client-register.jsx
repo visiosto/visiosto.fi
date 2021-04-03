@@ -4,13 +4,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import RegisterForm from '../components/RegisterForm';
+import Rule from '../components/Rule';
 import Theme from '../components/Theme';
+
 import createIntl from '../util/createIntl';
-import { useIntl } from 'react-intl';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -25,6 +27,20 @@ const Div = styled.div`
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
+const Separator = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 3em 0;
+
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
+    margin: 4em 0;
+  }
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 5em 0;
   }
 `;
 
@@ -50,6 +66,9 @@ const Page = (props) => {
   return (
     <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
+      <Separator>
+        <Rule color="peach" mode={1} />
+      </Separator>
       <H2>{i('clientRegisterFormTitle')}</H2>
       <RegisterForm clientType={props.pageContext.clientType} locale={props.pageContext.locale} />
     </Layout>
