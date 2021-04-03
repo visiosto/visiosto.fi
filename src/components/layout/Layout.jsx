@@ -11,24 +11,27 @@ import Header from './Header';
 
 import listenColorScheme from '../../util/listenColorScheme';
 
+const PageTitle = styled.h1`
+  margin: 2em ${(props) => props.theme.layout.marginMobile};
+  font-size: 2rem;
+  text-align: center;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+
+  @media screen and ${(props) => props.theme.devices.mobileL} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    font-size: 3rem;
+  }
+
+  @media screen and ${(props) => props.theme.devices.tablet} {
+    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    font-size: 3rem;
+  }
+`;
+
 export default (props) => {
   listenColorScheme();
-
-  const PageTitle = styled.h1`
-    margin: 2em ${(props) => props.theme.layout.marginMobile};
-    font-size: 2rem;
-    text-align: center;
-
-    @media screen and ${(props) => props.theme.devices.mobileL} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-      font-size: 3rem;
-    }
-
-    @media screen and ${(props) => props.theme.devices.tablet} {
-      margin: 2em ${(props) => props.theme.layout.marginTablet};
-      font-size: 3rem;
-    }
-  `;
 
   return (
     <>
