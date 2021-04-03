@@ -38,7 +38,7 @@ const H2 = styled.h2`
   }
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
-    margin: 3em ${(props) => props.theme.layout.marginDesktop};
+    margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 `;
 
