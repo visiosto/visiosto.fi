@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Deploy status to the README.
 - Localized `404` error pages.
 - Redirects for different URLs.
+- Form component for submitting data to the client register.
 
 ### Changed
 
@@ -21,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Site title component that was created inside another component.
 - Page title in the head.
+- Page title stylings.
+- Page title components that were defined inside other components.
 
 ## [0.15.4] - 2021-03-27
 
