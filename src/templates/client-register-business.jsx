@@ -25,7 +25,7 @@ const Page = (props) => {
   return (
     <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
       <H2>{page.contactFormTitle}</H2>
-      <RegisterForm locale={props.pageContext.locale} />
+      <RegisterForm clientType="business" locale={props.pageContext.locale} />
     </Layout>
   );
 };

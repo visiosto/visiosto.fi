@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Deploy status to the README.
 - Localized `404` error pages.
 - Redirects for different URLs.
-- Form component for submitting data to the client register.
+- Form component for submitting data to the client register for both businesses and persons.
 
 ### Changed
 

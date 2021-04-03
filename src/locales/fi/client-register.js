@@ -3,12 +3,8 @@
 
 export default {
   clientRegisterFormHoneypot: 'Älä täytä, jos olet ihminen',
-  clientRegisterFormFirstName: 'Etunimi',
-  clientRegisterFormSurname: 'Sukunimi',
-  clientRegisterFormTel: 'Puhelinnumero',
-  clientRegisterFormEmail: 'Sähköpostiosoite',
-  indexContactFormEmailForBilling:
-    'Jos valitset laskutustavaksi sähköpostilaskun, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen.',
+  clientRegisterFormBusinessID: 'Y-tunnus',
+  clientRegisterFormBusinessName: 'Yrityksen tai yhteisön nimi',
   clientRegisterFormAddressLine1: 'Osoiterivi 1',
   clientRegisterFormAddressLine2: 'Osoiterivi 2',
   clientRegisterFormPostcode: 'Postinumero',
@@ -22,8 +18,18 @@ export default {
   clientRegisterFormBillingMethod: 'Laskutustapa',
   clientRegisterFormBillingMethodContent:
     'Huomaathan, että eri laskutustavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
+  clientRegisterFormBillingMethodEInvoice: 'Verkkolasku',
   clientRegisterFormBillingMethodEmail: 'Sähköpostitse',
   clientRegisterFormBillingMethodPaper: 'Postitse',
+  clientRegisterFormEInvoiceAddress: 'Verkkolaskuosoite',
+  clientRegisterFormEInvoiceOperator: 'Verkkolaskuoperaattori',
+  clientRegisterFormBillingEmail: 'Laskujen sähköpostiosoite',
+  clientRegisterFormFirstName: 'Etunimi',
+  clientRegisterFormSurname: 'Sukunimi',
+  clientRegisterFormTel: 'Puhelinnumero',
+  clientRegisterFormEmail: 'Sähköpostiosoite',
+  indexContactFormEmailForBilling:
+    'Jos valitset laskutustavaksi sähköpostilaskun, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen.',
   clientRegisterFormPrevious: 'Palaa',
   clientRegisterFormNext: 'Jatka',
   clientRegisterFormSend: 'Lähetä',
