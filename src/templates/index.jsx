@@ -31,11 +31,11 @@ const H2 = styled.h2`
 const Section = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4em
       ${(props) =>
         props.lesserMargin ? props.theme.layout.marginTablet : props.theme.layout.marginDesktop};
@@ -51,12 +51,12 @@ const Cards = styled.div`
   align-content: center;
   margin: 2em 0;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     grid-template-columns: 1fr;
     gap: 2em;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
   }
@@ -74,11 +74,11 @@ const H3 = styled.h3`
   margin: 2rem 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2rem 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4rem 0;
   }
 `;

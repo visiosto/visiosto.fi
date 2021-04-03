@@ -22,11 +22,11 @@ const Div = styled.div`
     text-align: center;
   }
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3em ${(props) => props.theme.layout.marginDesktop};
   }
 `;
@@ -41,11 +41,11 @@ const Separator = styled.div`
   justify-content: center;
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 4em 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 5em 0;
   }
 `;

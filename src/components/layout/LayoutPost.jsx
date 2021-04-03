@@ -23,12 +23,12 @@ const PageTitle = styled.h1`
   word-break: break-word;
   hyphens: auto;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     font-size: 3rem;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     font-size: 3rem;
   }
@@ -38,11 +38,11 @@ const PostMeta = styled.div`
   margin: 2em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em 0;
   }
 `;

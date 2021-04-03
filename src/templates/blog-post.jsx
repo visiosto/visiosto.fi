@@ -15,11 +15,11 @@ import Theme from '../components/Theme';
 const Separator = styled.div`
   margin: 3em 0;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 4em 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 5em 0;
   }
 `;
@@ -27,11 +27,11 @@ const Separator = styled.div`
 const PostDiv = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 1em ${(props) => props.theme.layout.marginDesktop};
   }
 `;
@@ -42,11 +42,11 @@ const NavLinks = styled.div`
   column-gap: 2em;
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 `;

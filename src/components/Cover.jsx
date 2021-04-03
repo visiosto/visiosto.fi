@@ -22,7 +22,7 @@ const TopRuleWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     display: none;
   }
 `;
@@ -30,7 +30,7 @@ const TopRuleWrapper = styled.div`
 const Image = styled(SchemedImage)`
   display: none;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     display: inline-block;
     width: ${(props) => props.tablet.width};
     height: ${(props) => props.tablet.height};
@@ -41,12 +41,12 @@ const Inner = styled.div`
   margin: 0 ${(props) => props.theme.layout.marginMobile};
   padding: 0.5em 0 1em;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
     padding: 2em 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em ${(props) => props.theme.layout.marginDesktop};
     padding: 2em 0;
   }

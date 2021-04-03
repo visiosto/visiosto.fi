@@ -19,11 +19,11 @@ import theme from '../../theme';
 const Div = styled.header`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em ${(props) => props.theme.layout.marginDesktop};
   }
 `;
@@ -51,13 +51,13 @@ const SiteBranding = styled.div`
   justify-content: center;
   margin: 2rem auto;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3rem auto;
   }
 `;
 
 const Image = styled(SchemedImage)`
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     width: 300px;
     height: auto;
   }

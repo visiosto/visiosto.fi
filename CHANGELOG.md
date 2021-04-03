@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Page title in the head.
 - Page title stylings.
 - Page title components that were defined inside other components.
+- Format of the device media queries to follow CSS syntax more closely.
 
 ## [0.15.4] - 2021-03-27
 
