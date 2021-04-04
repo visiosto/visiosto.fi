@@ -38,7 +38,7 @@ const Div = styled.div`
   box-shadow: var(--color-box-shadow);
   text-align: left;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     grid-template-columns: 2fr 1fr;
     gap: 2rem 1rem;
   }
@@ -49,11 +49,11 @@ const Text = styled.div``;
 const BannerTitle = styled.h2`
   font-size: 2rem;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     font-size: 2rem;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     font-size: 3rem;
   }
 `;
@@ -98,11 +98,11 @@ const Container = styled.div`
 const SettingsContent = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     padding: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 `;
@@ -111,7 +111,7 @@ const Content = styled.div`
   width: 100%;
   padding: 0;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     width: 66.6%;
     padding: 0 0 0 2rem;
   }
@@ -120,11 +120,11 @@ const Content = styled.div`
 const H2 = styled.h2`
   font-size: 2.5rem;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     font-size: 2.5rem;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     font-size: 3.5rem;
   }
 `;
@@ -134,11 +134,11 @@ const Section = styled.div``;
 const H3 = styled.h3`
   font-size: 2rem;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     font-size: 2rem;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     font-size: 2.5rem;
   }
 `;

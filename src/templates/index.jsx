@@ -31,11 +31,11 @@ const H2 = styled.h2`
 const Section = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4em
       ${(props) =>
         props.lesserMargin ? props.theme.layout.marginTablet : props.theme.layout.marginDesktop};
@@ -51,12 +51,12 @@ const Cards = styled.div`
   align-content: center;
   margin: 2em 0;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     grid-template-columns: 1fr;
     gap: 2em;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
   }
@@ -74,11 +74,11 @@ const H3 = styled.h3`
   margin: 2rem 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2rem 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4rem 0;
   }
 `;
@@ -199,9 +199,16 @@ const Page = (props) => {
         </Cards>
         <H3>{page.contactFormTitle}</H3>
         <FormContainer>
-          <form name="contact" action="/" method="POST" netlify-honeypot="bot-field" netlify data-netlify="true">
+          <form
+            name="Front page contact"
+            action="/"
+            method="POST"
+            netlify-honeypot="bot-field"
+            netlify
+            data-netlify="true"
+          >
             {/* This input field is required by Netlify */}
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="Front page contact" />
             <FormDiv hidden>
               <label>{i('indexContactFormHoneypot')}</label>
               <input name="bot-field" />
@@ -211,13 +218,14 @@ const Page = (props) => {
               <input type="text" name="name" id="name" required />
             </FormDiv>
             <FormDiv>
+              <p>{i('indexContactFormEither')}</p>
+            </FormDiv>
+            <FormDiv>
               <label for="email">{i('indexContactFormEmail')}</label>
               <input type="email" name="email" id="email" />
             </FormDiv>
             <FormDiv>
-              <p>
-                {i('indexContactFormOr')}
-              </p>
+              <p>{i('indexContactFormOr')}</p>
             </FormDiv>
             <FormDiv>
               <label for="tel">{i('indexContactFormTel')}</label>

@@ -148,7 +148,7 @@ const Head = (props) => {
     : `%s - ${siteMetadata.title}`;
   const title = props.home
     ? `${siteMetadata.title} - ${i('metaSlogan')}`
-    : `%s - ${siteMetadata.title}`;
+    : `${props.title} - ${siteMetadata.title}`;
   const description = i('metaDescription') || props.description;
 
   return (
@@ -192,7 +192,11 @@ const Head = (props) => {
       <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (props.errorPage) {
-          return <meta property="og:url" content={`${baseURL}/404`} />;
+          const pagePath =
+            props.locale === siteMetadata.defaultLocale
+              ? '404'
+              : `${siteMetadata.localePaths[props.locale.replace('-', '_')]}/404`;
+          return <meta property="og:url" content={`${baseURL}/${pagePath}`} />;
         } else {
           return (
             <meta
@@ -202,31 +206,20 @@ const Head = (props) => {
           );
         }
       })()}
-      {(() => {
-        if (props.errorPage) {
-          return <meta property="og:locale" content="fi_FI" />;
-        } else {
-          return (
-            <meta
-              property="og:locale"
-              content={props.locale === 'fi' ? 'fi_FI' : props.locale.replace('-', '_')}
-            />
-          );
-        }
-      })()}
-      {(() => {
-        if (!props.errorPage) {
-          return siteMetadata.locales
-            .filter((locale) => locale !== props.locale)
-            .map((locale) => (
-              <meta
-                key={locale}
-                property="og:locale:alternate"
-                content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')}
-              />
-            ));
-        }
-      })()}
+      <meta
+        property="og:locale"
+        content={props.locale === 'fi' ? 'fi_FI' : props.locale.replace('-', '_')}
+      />
+
+      {siteMetadata.locales
+        .filter((locale) => locale !== props.locale)
+        .map((locale) => (
+          <meta
+            key={locale}
+            property="og:locale:alternate"
+            content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')}
+          />
+        ))}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
@@ -243,13 +236,18 @@ const Head = (props) => {
 
       {(() => {
         if (props.errorPage) {
-          return (
+          return siteMetadata.locales.map((locale) => (
             <link
               rel="alternate"
-              href={`${baseURL}/404`}
-              hrefLang={siteMetadata.simpleLocales[props.locale.replace('-', '_')]}
+              href={`${baseURL}/${
+                locale === siteMetadata.defaultLocale
+                  ? '404'
+                  : `${siteMetadata.localePaths[locale.replace('-', '_')]}/404`
+              }`}
+              hrefLang={siteMetadata.simpleLocales[locale.replace('-', '_')]}
+              key={locale}
             />
-          );
+          ));
         } else {
           return siteMetadata.locales.map((locale) => (
             <link

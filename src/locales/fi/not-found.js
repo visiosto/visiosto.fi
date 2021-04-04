@@ -3,6 +3,7 @@
 
 export default {
   notFoundCode: '404',
-  notFoundTitle: 'Tätä sivua ei ole olemassa',
-  notFoundContent: 'Täällä ei ole mitään',
+  notFoundTitle: 'Ei löydy',
+  notFoundContent:
+    'Palvelimelta ei löydy antamallasi osoitteella sivua. Tämä voi johtua esimerkiksi siitä, että antamasi osoite on virheellinen. Tarkista, onko kirjoittamasi osoite oikein. Kannattaa myös kokeilla alla olevaa hakua.',
 };

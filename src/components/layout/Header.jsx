@@ -4,7 +4,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ChevronRightIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
@@ -19,37 +19,45 @@ import theme from '../../theme';
 const Div = styled.header`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 2em ${(props) => props.theme.layout.marginDesktop};
   }
 `;
 
 // TODO Remove and use simpler components instead.
-const createSiteTitle = (isHome) => (isHome ? styled.h1 : styled.p)`
-    display: none;
-    margin: 0;
-    font-size: 3rem;
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-weight: 700;
-    text-align: center;
-  `;
+const siteTitleStyle = css`
+  display: none;
+  margin: 0;
+  font-size: 3rem;
+  font-family: ${(props) => props.theme.fonts.heading};
+  font-weight: 700;
+  text-align: center;
+`;
+
+const SiteTitle = styled.h1`
+  ${siteTitleStyle}
+`;
+
+const SiteTitleP = styled.p`
+  ${siteTitleStyle}
+`;
 
 const SiteBranding = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem auto;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3rem auto;
   }
 `;
 
 const Image = styled(SchemedImage)`
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     width: 300px;
     height: auto;
   }
@@ -314,14 +322,18 @@ const Header = (props) => {
     },
   ]);
 
-  const SiteTitle = createSiteTitle(props.home);
-
   const breadcrumb = createBreadcrumb(data, props);
 
   return (
     <Div>
       <SiteBranding>
-        <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>
+        {(() => {
+          if (props.home) {
+            return <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>;
+          }
+
+          return <SiteTitleP {...props}>{site.siteMetadata.title}</SiteTitleP>;
+        })()}
         <LocalizedLink to="/" locale={props.locale}>
           <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>

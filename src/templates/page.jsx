@@ -12,11 +12,11 @@ import Theme from '../components/Theme';
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 1em ${(props) => props.theme.layout.marginDesktop};
   }
 `;

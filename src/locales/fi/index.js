@@ -5,6 +5,7 @@ export default {
   indexContactFormHoneypot: 'Älä täytä, jos olet ihminen',
   indexContactFormName: 'Nimi',
   indexContactFormEmail: 'Sähköposti',
+  indexContactFormEither: 'Ainakin joko',
   indexContactFormOr: 'tai',
   indexContactFormTel: 'Puhelinnumero',
   indexContactFormMessage: 'Viestisi meille',

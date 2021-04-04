@@ -7,7 +7,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://practical-ptolemy-144432.netlify.app',
+    siteUrl: 'https://visiosto.netlify.app',
+    alternativeUrls: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
     title: 'Visiosto',
     description:
       'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',

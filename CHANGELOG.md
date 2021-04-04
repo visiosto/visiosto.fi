@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.16.0] - 2021-04-04
+
+### Added
+
+- Deploy status to the README.
+- Localized `404` error pages.
+- Redirects for different URLs.
+- Form component for submitting data to the client register for both businesses and persons.
+
+### Changed
+
+- Name of the form `contact` to `Front page contact`.
+- Project name in the Netlify URL from `practical-ptolemy-144432` to `visiosto`.
+
+### Fixed
+
+- Site title component that was created inside another component.
+- Page title in the head.
+- Page title stylings.
+- Page title components that were defined inside other components.
+- Format of the device media queries to follow CSS syntax more closely.
+
 ## [0.15.4] - 2021-03-27
 
 ### Added
@@ -420,7 +442,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.15.4...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.16.0...HEAD
+[0.16.0]: https://github.com/visiosto/visiosto.fi/compare/v0.15.4...v0.16.0
 [0.15.4]: https://github.com/visiosto/visiosto.fi/compare/v0.15.3...v0.15.4
 [0.15.3]: https://github.com/visiosto/visiosto.fi/compare/v0.15.2...v0.15.3
 [0.15.2]: https://github.com/visiosto/visiosto.fi/compare/v0.15.1...v0.15.2

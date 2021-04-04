@@ -6,14 +6,17 @@ const path = require('path');
 const createPagePath = require('./createPagePath');
 
 module.exports = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const query = await graphql(
     `
       {
         site {
           siteMetadata {
+            alternativeUrls
             defaultLocale
+            locales
+            siteUrl
             localePaths {
               en_GB
               fi
@@ -99,6 +102,40 @@ module.exports = async ({ actions, graphql, reporter }) => {
             }
           }
         }
+        clientRegisterBusinessPages: allContentfulPage(
+          filter: { contentful_id: { eq: "4oIYhIQVDliSRZWcw0uLih" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
+        clientRegisterPersonPages: allContentfulPage(
+          filter: { contentful_id: { eq: "4TippijFyNwApyemfLovAf" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
         indexPages: allContentfulIndexPage(
           filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
         ) {
@@ -136,7 +173,13 @@ module.exports = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const { defaultLocale, localePaths } = query.data.site.siteMetadata;
+  const {
+    alternativeUrls,
+    defaultLocale,
+    localePaths,
+    locales,
+    siteUrl,
+  } = query.data.site.siteMetadata;
 
   // Create the author pages from Contentful.
 
@@ -411,5 +454,111 @@ module.exports = async ({ actions, graphql, reporter }) => {
     };
 
     createPage(pageOpts);
+  });
+
+  // Create the client register page for businesses from Contentful.
+
+  query.data.clientRegisterBusinessPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      context: {
+        locale,
+        pageId,
+        clientType: 'business',
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the client register page for people from Contentful.
+
+  query.data.clientRegisterPersonPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageId, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      context: {
+        locale,
+        pageId,
+        clientType: 'person',
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the 404 error pages.
+
+  locales.forEach((locale) => {
+    reporter.verbose(`Creating a 404 error page for the locale '${locale}'`);
+
+    const pagePath =
+      locale === defaultLocale ? '/404' : `/${localePaths[locale.replace('-', '_')]}/404`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    const pageOpts = {
+      path: pagePath,
+      component: path.resolve('src', 'templates', '404.jsx'),
+      context: {
+        locale,
+        pageId: '404',
+      },
+    };
+
+    createPage(pageOpts);
+  });
+
+  // Create the redirects for the 404 error pages.
+  createRedirect({
+    fromPath: '/en/*',
+    toPath: `/en/404`,
+    statusCode: 404,
+  });
+  createRedirect({
+    fromPath: '/*',
+    toPath: `/404`,
+    statusCode: 404,
+  });
+
+  // Create the redirects for the URLs.
+
+  alternativeUrls.forEach((url) => {
+    createRedirect({
+      fromPath: url,
+      toPath: siteUrl,
+      isPermanent: true,
+      force: true,
+    });
+  });
+
+  // Create the redirects for all of the pages.
+
+  alternativeUrls.forEach((url) => {
+    createRedirect({
+      fromPath: `${url}/*`,
+      toPath: `${siteUrl}/:splat`,
+      isPermanent: true,
+      force: true,
+    });
   });
 };

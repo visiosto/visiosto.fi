@@ -4,12 +4,9 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
-import { useIntl } from 'react-intl';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
-
-import createIntl from '../../util/createIntl';
 
 const Nav = styled.nav`
   margin: 0 auto;
@@ -24,7 +21,7 @@ const Toggle = styled.div`
   cursor: pointer;
   user-select: none;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     display: none;
   }
 `;
@@ -94,7 +91,7 @@ const Ul = styled.ul`
       max-height: none;
     `};
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     overflow: visible;
     display: flex;
     justify-content: center;
@@ -105,7 +102,7 @@ const Ul = styled.ul`
 const Li = styled.li`
   margin: 2rem 1em;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 1em;
   }
 `;
@@ -157,8 +154,6 @@ const AnchorLink = styled(LocalizedAnchorLink)`
 `;
 
 export default (props) => {
-  const i = createIntl(useIntl());
-
   const data = useStaticQuery(
     graphql`
       query {

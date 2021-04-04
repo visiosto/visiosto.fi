@@ -10,11 +10,11 @@ const Wrapper = styled.div`
   margin: 0 ${(props) => props.theme.layout.marginMobile};
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 0 ${(props) => props.theme.layout.marginTablet};
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0 ${(props) => props.theme.layout.marginDesktop};
   }
 `;
@@ -23,11 +23,11 @@ const Div = styled.div`
   margin: 1em 0;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 1em 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 1em 0;
   }
 `;

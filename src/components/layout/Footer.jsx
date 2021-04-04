@@ -19,11 +19,11 @@ const Footer = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginMobile} 2em;
   text-align: center;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 4em ${(props) => props.theme.layout.marginTablet} 2em;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4em ${(props) => props.theme.layout.marginDesktop} 2em;
   }
 `;
@@ -55,7 +55,7 @@ const ManagementP = styled.p`
 const PricingP = styled.p`
   margin: 2rem 0 1rem;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
   }
 `;
@@ -63,11 +63,11 @@ const PricingP = styled.p`
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
-  @media screen and ${(props) => props.theme.devices.mobileL} {
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3rem 0 0;
   }
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4rem 0 0;
   }
 `;
@@ -116,7 +116,7 @@ const DataProtectionP = styled.p`
 const CookieSettingsP = styled.p`
   margin: 2rem 0 1rem;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
   }
 `;
@@ -124,7 +124,7 @@ const CookieSettingsP = styled.p`
 const TermsOfUseP = styled.p`
   margin: 2rem 0 1rem;
 
-  @media screen and ${(props) => props.theme.devices.tablet} {
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
   }
 `;
