@@ -6,7 +6,11 @@ import styled from 'styled-components';
 import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
 
-import { CONTACT_FORM_NAME } from '../../constants';
+import {
+  CONTACT_FORM_NAME,
+  FORM_POST_STATUS_ERROR,
+  FORM_POST_STATUS_SUCCESS,
+} from '../../constants';
 
 import createIntl from '../../util/createIntl';
 
@@ -106,20 +110,27 @@ class ContactForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: '', tel: '', email: '', message: '' };
+    this.state = { name: '', email: '', tel: '', message: '', postStatus: '', errorMessage: '' };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit = (event) => {
+    const formData = {
+      name: this.state.name,
+      email: this.state.email,
+      tel: this.state.tel,
+      message: this.state.message,
+    };
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': CONTACT_FORM_NAME, ...this.state }),
+      body: encode({ 'form-name': CONTACT_FORM_NAME, ...formData }),
     })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error));
+      .then(() => this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }))
+      .catch((error) => this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }));
 
     event.preventDefault();
   };
@@ -206,6 +217,17 @@ class ContactForm extends Component {
                 <PaperAirplaneIcon size={24} /> {i('contactFormSend')}
               </button>
             </ButtonDiv>
+          </FormDiv>
+          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
+            <p>{i('contactFormSuccess')}</p>
+          </FormDiv>
+          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
+            <p>{i('contactFormError')}</p>
+            <p>
+              {this.state.errorMessage
+                ? this.state.errorMessage
+                : i('contactFormErrorNoErrorMessage')}
+            </p>
           </FormDiv>
         </form>
       </FormContainer>

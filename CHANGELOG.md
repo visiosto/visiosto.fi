@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Success and error messages to the contact form.
+
+### Removed
+
+- Alert messages from the contact form.
+
 ### Fixed
 
 - Cases of the front page contact form.

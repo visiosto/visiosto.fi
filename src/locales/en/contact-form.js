@@ -10,4 +10,7 @@ export default {
   contactFormTel: 'Phone Number',
   contactFormMessage: 'Your message for us',
   contactFormSend: 'Send',
+  contactFormSuccess: 'Your message was successfully sent. Thank you!',
+  contactFormError: 'Sending your message failed. Error:',
+  contactFormErrorNoErrorMessage: 'No error message.',
 };

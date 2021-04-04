@@ -9,4 +9,6 @@ export const DISABLE_ANALYTICS_COOKIE_NAME = 'visiosto_analytics_opt_out';
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = 'G-6EQKK25267';
 
+export const FORM_POST_STATUS_SUCCESS = 'success';
+export const FORM_POST_STATUS_ERROR = 'error';
 export const CONTACT_FORM_NAME = 'Front page contact';

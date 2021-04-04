@@ -10,4 +10,7 @@ export default {
   contactFormTel: 'puhelinnumero',
   contactFormMessage: 'Viestisi meille',
   contactFormSend: 'Lähetä',
+  contactFormSuccess: 'Lähetys onnistui. Kiitos viestistäsi!',
+  contactFormError: 'Lähetys epäonnistui. Virhe:',
+  contactFormErrorNoErrorMessage: 'Ei erillistä virheviestiä.',
 };
