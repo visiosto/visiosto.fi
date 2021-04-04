@@ -97,7 +97,10 @@ const FormDiv = styled.div`
 
 const ButtonDiv = styled.div``;
 
-const encode = (data) => Object.keys(data).map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&")
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 
 class ContactForm extends Component {
   constructor(props) {
