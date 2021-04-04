@@ -3,7 +3,7 @@
 
 import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: inherit;
   }
@@ -49,3 +49,5 @@ export default createGlobalStyle`
     }
   }
 `;
+
+export default GlobalStyle;
