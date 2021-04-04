@@ -16,17 +16,13 @@ import {
 } from '../../constants';
 
 import createIntl from '../../util/createIntl';
+import encodeFormState from '../../util/encodeFormState';
 
 const FormContainer = styled.div`
   text-align: center;
 `;
 
 const ButtonDiv = styled.div``;
-
-const encode = (data) =>
-  Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
 
 class ContactForm extends Component {
   constructor(props) {
@@ -49,7 +45,7 @@ class ContactForm extends Component {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': CONTACT_FORM_NAME, ...formData }),
+      body: encodeFormState({ 'form-name': CONTACT_FORM_NAME, ...formData }),
     })
       .then(() =>
         this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
