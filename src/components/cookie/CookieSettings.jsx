@@ -211,9 +211,7 @@ const SettingButtons = styled.div``;
 
 class CookieSettings extends Component {
   state = {
-    showBanner:
-      !cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) ||
-      cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) == 'false',
+    showBanner: false,
     isAnalyticsEnabled:
       !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
       cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'false',
@@ -229,6 +227,14 @@ class CookieSettings extends Component {
     this.handleClickSave = this.handleClickSave.bind(this);
     this.handleToggleAnalytics = this.handleToggleAnalytics.bind(this);
     this.handleChangePage = this.handleChangePage.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      showBanner:
+        !cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) ||
+        cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) == 'false',
+    });
   }
 
   componentDidUpdate() {

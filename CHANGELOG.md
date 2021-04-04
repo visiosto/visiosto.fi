@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Cases of the front page contact form.
+- Flashing cookie banner when cookies have already been accepted by determining whether the banner should be shown after the component has mounted.
 
 ## [0.17.0] - 2021-04-04
 
