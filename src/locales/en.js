@@ -11,7 +11,6 @@ import contactFormMessages from './en/contact-form';
 import cookieNoticeMessages from './en/cookie-notice';
 import footerMessages from './en/footer';
 import headerMessages from './en/header';
-import indexMessages from './en/index';
 import managementMessages from './en/management';
 import metaMessages from './en/meta';
 import navigationMessages from './en/navigation';
@@ -27,7 +26,6 @@ export const messages = {
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
-  ...indexMessages,
   ...managementMessages,
   ...metaMessages,
   ...navigationMessages,
