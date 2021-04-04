@@ -8,7 +8,7 @@ import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import RegisterForm from '../form/components/RegisterForm';
+import RegisterForm from '../components/form/RegisterForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
