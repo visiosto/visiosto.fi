@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.16.1] - 2021-04-04
+
+### Fixed
+
+- Art direction of the images that use media queries.
+
 ## [0.16.0] - 2021-04-04
 
 ### Added
@@ -442,7 +448,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.16.0...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.16.1...HEAD
+[0.16.1]: https://github.com/visiosto/visiosto.fi/compare/v0.16.0...v0.16.1
 [0.16.0]: https://github.com/visiosto/visiosto.fi/compare/v0.15.4...v0.16.0
 [0.15.4]: https://github.com/visiosto/visiosto.fi/compare/v0.15.3...v0.15.4
 [0.15.3]: https://github.com/visiosto/visiosto.fi/compare/v0.15.2...v0.15.3
