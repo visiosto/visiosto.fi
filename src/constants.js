@@ -11,4 +11,5 @@ export const GOOGLE_ANALYTICS_TRACKING_ID = 'G-6EQKK25267';
 
 export const FORM_POST_STATUS_SUCCESS = 'success';
 export const FORM_POST_STATUS_ERROR = 'error';
+export const FORM_POST_STATUS_TIMEOUT = 10000;
 export const CONTACT_FORM_NAME = 'Front page contact';

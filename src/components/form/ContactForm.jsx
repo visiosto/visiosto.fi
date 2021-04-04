@@ -10,6 +10,7 @@ import {
   CONTACT_FORM_NAME,
   FORM_POST_STATUS_ERROR,
   FORM_POST_STATUS_SUCCESS,
+  FORM_POST_STATUS_TIMEOUT,
 } from '../../constants';
 
 import createIntl from '../../util/createIntl';
@@ -129,8 +130,16 @@ class ContactForm extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': CONTACT_FORM_NAME, ...formData }),
     })
-      .then(() => this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }))
-      .catch((error) => this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }));
+      .then(() =>
+        this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
+          setTimeout(() => this.setState({ postStatus: '' }), FORM_POST_STATUS_TIMEOUT),
+        ),
+      )
+      .catch((error) =>
+        this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }, () =>
+          setTimeout(() => this.setState({ postStatus: '', errorMessage: '' }), FORM_POST_STATUS_TIMEOUT),
+        ),
+      );
 
     event.preventDefault();
   };
