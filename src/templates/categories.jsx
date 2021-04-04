@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -92,8 +92,8 @@ const Page = (props) => {
       </Separator>
       <Div>
         {categories.map(({ node: category }) => (
-          <>
-            <Category key={category.slug}>
+          <Fragment key={category.slug}>
+            <Category>
               <H2>
                 <Link to={category.contentful_id} locale={props.pageContext.locale}>
                   {`${i('blogCategory')} ${category.name}`}
@@ -119,7 +119,7 @@ const Page = (props) => {
             <Separator>
               <Rule color="blue" mode={2} />
             </Separator>
-          </>
+          </Fragment>
         ))}
       </Div>
     </Layout>

@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -146,8 +146,8 @@ const Page = (props) => {
       </Separator>
       <Div>
         {authors.map(({ node: author }) => (
-          <>
-            <Author key={author.slug}>
+          <Fragment key={author.slug}>
+            <Author>
               <Image alt={author.name} image={getImage(author.profileImage)} />
               <AuthorInfo>
                 <H2>
@@ -251,7 +251,7 @@ const Page = (props) => {
             <Separator>
               <Rule color="blue" mode={2} />
             </Separator>
-          </>
+          </Fragment>
         ))}
       </Div>
     </Layout>

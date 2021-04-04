@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -84,9 +84,8 @@ const Page = (props) => {
       </Separator>
       {pricingList.map((list) => {
         return (
-          <>
+          <Fragment key={list.listType}>
             <PriceList
-              key={list.listType}
               list={list}
               localizations={localizations}
               locale={props.pageContext.locale}
@@ -94,7 +93,7 @@ const Page = (props) => {
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
-          </>
+          </Fragment>
         );
       })}
     </Layout>
