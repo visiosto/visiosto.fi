@@ -311,13 +311,13 @@ const Header = (props) => {
 
   const logosLight = withArtDirection(getImage(logoPhoneSLight), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(logoTabletLight),
     },
   ]);
   const logosDark = withArtDirection(getImage(logoPhoneSDark), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(logoTabletDark),
     },
   ]);
