@@ -11,17 +11,19 @@ import {
   PaperAirplaneIcon,
   PencilIcon,
 } from '@primer/octicons-react';
+import { useIntl } from 'react-intl';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
+import ContactForm from '../components/ContactForm';
 import FeatureCard from '../components/FeatureCard';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
 import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
+
 import createIntl from '../util/createIntl';
-import { useIntl } from 'react-intl';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -80,55 +82,6 @@ const H3 = styled.h3`
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 4rem 0;
-  }
-`;
-
-const FormContainer = styled.div`
-  text-align: center;
-`;
-
-const FormDiv = styled.div`
-  input,
-  textarea {
-    margin: 0.6em 0;
-    border: none;
-    border-radius: 0.25rem;
-    padding: 0.4rem 1rem;
-    box-shadow: var(--color-box-shadow);
-    transition: box-shadow 75ms ease-in;
-    background: var(--color-background);
-    color: var(--color-text);
-
-    &:focus {
-      box-shadow: var(--color-box-shadow-hover);
-      outline: none;
-    }
-  }
-
-  input[type='submit'] {
-    display: inline-block;
-    border-style: none;
-    border-radius: 3rem;
-    border: 3px solid transparent;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    box-shadow: none;
-    transition: all 100ms ease-in;
-    background-color: var(--color-link);
-    background-clip: padding-box;
-    font-weight: 400;
-    text-align: center;
-    text-decoration: none;
-    color: var(--color-text-button);
-
-    &:hover {
-      background-color: var(--color-link-hover);
-    }
-  }
-
-  label {
-    display: block;
-    margin: 1rem 0 0;
   }
 `;
 
@@ -198,48 +151,7 @@ const Page = (props) => {
           })}
         </Cards>
         <H3>{page.contactFormTitle}</H3>
-        <FormContainer>
-          <form
-            name="Front page contact"
-            action="/"
-            method="POST"
-            netlify-honeypot="bot-field"
-            netlify
-            data-netlify="true"
-          >
-            {/* This input field is required by Netlify */}
-            <input type="hidden" name="form-name" value="Front page contact" />
-            <FormDiv hidden>
-              <label>{i('indexContactFormHoneypot')}</label>
-              <input name="bot-field" />
-            </FormDiv>
-            <FormDiv>
-              <label for="name">{i('indexContactFormName')}</label>
-              <input type="text" name="name" id="name" required />
-            </FormDiv>
-            <FormDiv>
-              <p>{i('indexContactFormEither')}</p>
-            </FormDiv>
-            <FormDiv>
-              <label for="email">{i('indexContactFormEmail')}</label>
-              <input type="email" name="email" id="email" />
-            </FormDiv>
-            <FormDiv>
-              <p>{i('indexContactFormOr')}</p>
-            </FormDiv>
-            <FormDiv>
-              <label for="tel">{i('indexContactFormTel')}</label>
-              <input type="tel" name="tel" id="tel" />
-            </FormDiv>
-            <FormDiv>
-              <label for="message">{i('indexContactFormMessage')}</label>
-              <textarea id="message" name="message" rows="5" cols="40" />
-            </FormDiv>
-            <FormDiv>
-              <input type="submit" value={i('indexContactFormSend')} />
-            </FormDiv>
-          </form>
-        </FormContainer>
+        <ContactForm />
       </Section>
     </LayoutIndex>
   );

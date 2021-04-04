@@ -8,3 +8,5 @@ export const COOKIES_ACCEPTED_COOKIE_NAME = 'visiosto_cookies_accepted';
 export const DISABLE_ANALYTICS_COOKIE_NAME = 'visiosto_analytics_opt_out';
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = 'G-6EQKK25267';
+
+export const CONTACT_FORM_NAME = 'Front page contact';

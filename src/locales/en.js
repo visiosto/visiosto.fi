@@ -7,6 +7,7 @@ import authorMessages from './en/author';
 import blogMessages from './en/blog';
 import categoryMessages from './en/category';
 import clientRegisterMessages from './en/client-register';
+import contactFormMessages from './en/contact-form';
 import cookieNoticeMessages from './en/cookie-notice';
 import footerMessages from './en/footer';
 import headerMessages from './en/header';
@@ -22,6 +23,7 @@ export const messages = {
   ...blogMessages,
   ...categoryMessages,
   ...clientRegisterMessages,
+  ...contactFormMessages,
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
