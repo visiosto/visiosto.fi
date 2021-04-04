@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
 
-import { CONTACT_FORM_NAME } from '../constants';
+import { CONTACT_FORM_NAME } from '../../constants';
 
-import createIntl from '../util/createIntl';
+import createIntl from '../../util/createIntl';
 
 const FormContainer = styled.div`
   text-align: center;
@@ -196,8 +196,6 @@ class ContactForm extends Component {
             <textarea
               id="message"
               name="message"
-              // rows="5"
-              // cols="40"
               onChange={this.handleChange}
               value={this.state.message}
             />

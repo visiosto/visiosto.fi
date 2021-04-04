@@ -6,10 +6,10 @@ import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
 
-import Button from './Button';
-import LocalizedLink from './link/LocalizedLink';
+import Button from '../Button';
+import LocalizedLink from '../link/LocalizedLink';
 
-import createIntl from '../util/createIntl';
+import createIntl from '../../util/createIntl';
 
 const FormContainer = styled.div`
   text-align: center;

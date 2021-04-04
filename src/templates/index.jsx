@@ -15,7 +15,7 @@ import { useIntl } from 'react-intl';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../form/components/ContactForm';
 import FeatureCard from '../components/FeatureCard';
 import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
