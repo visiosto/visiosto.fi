@@ -7,10 +7,10 @@ import authorMessages from './fi/author';
 import blogMessages from './fi/blog';
 import categoryMessages from './fi/category';
 import clientRegisterMessages from './fi/client-register';
+import contactFormMessages from './fi/contact-form';
 import cookieNoticeMessages from './fi/cookie-notice';
 import footerMessages from './fi/footer';
 import headerMessages from './fi/header';
-import indexMessages from './fi/index';
 import managementMessages from './fi/management';
 import metaMessages from './fi/meta';
 import navigationMessages from './fi/navigation';
@@ -22,10 +22,10 @@ export const messages = {
   ...blogMessages,
   ...categoryMessages,
   ...clientRegisterMessages,
+  ...contactFormMessages,
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
-  ...indexMessages,
   ...managementMessages,
   ...metaMessages,
   ...navigationMessages,
