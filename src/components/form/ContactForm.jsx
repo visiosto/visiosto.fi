@@ -137,7 +137,10 @@ class ContactForm extends Component {
       )
       .catch((error) =>
         this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }, () =>
-          setTimeout(() => this.setState({ postStatus: '', errorMessage: '' }), FORM_POST_STATUS_TIMEOUT),
+          setTimeout(
+            () => this.setState({ postStatus: '', errorMessage: '' }),
+            FORM_POST_STATUS_TIMEOUT,
+          ),
         ),
       );
 
