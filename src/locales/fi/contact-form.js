@@ -4,10 +4,10 @@
 export default {
   contactFormHoneypot: 'Älä täytä, jos olet ihminen',
   contactFormName: 'Nimi',
-  contactFormEmail: 'Sähköposti',
   contactFormEither: 'Ainakin joko',
+  contactFormEmail: 'sähköposti',
   contactFormOr: 'tai',
-  contactFormTel: 'Puhelinnumero',
+  contactFormTel: 'puhelinnumero',
   contactFormMessage: 'Viestisi meille',
   contactFormSend: 'Lähetä',
 };
