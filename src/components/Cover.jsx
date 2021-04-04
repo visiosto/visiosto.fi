@@ -69,26 +69,26 @@ const Cover = (props) => {
 
   const imagesTopLight = withArtDirection(getImage(data.topPhoneSmallLight), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(data.topTabletLight),
     },
   ]);
   const imagesTopDark = withArtDirection(getImage(data.topPhoneSmallDark), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(data.topTabletDark),
     },
   ]);
 
   const imagesBottomLight = withArtDirection(getImage(data.bottomPhoneSmallLight), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(data.bottomTabletLight),
     },
   ]);
   const imagesBottomDark = withArtDirection(getImage(data.bottomPhoneSmallDark), [
     {
-      media: theme.devices.tablet,
+      media: `(${theme.devices.tablet})`,
       image: getImage(data.bottomTabletDark),
     },
   ]);
