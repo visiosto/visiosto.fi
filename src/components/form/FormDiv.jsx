@@ -82,6 +82,10 @@ const FormDiv = styled.div`
   input.wider {
     min-width: 30vw;
   }
+
+  .error-message {
+    color: var(--color-text-error);
+  }
 `;
 
 export default FormDiv;

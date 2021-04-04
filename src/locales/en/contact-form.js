@@ -13,4 +13,7 @@ export default {
   contactFormSuccess: 'Your message was successfully sent. Thank you!',
   contactFormError: 'Sending your message failed. Error:',
   contactFormErrorNoErrorMessage: 'No error message.',
+  contactFormErrorMissingName: 'Give your name',
+  contactFormErrorMissingEmailOrPhone: 'Give at least your email or your phone number',
+  contactFormErrorMissingMessage: 'Write a message',
 };

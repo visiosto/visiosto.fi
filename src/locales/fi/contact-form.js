@@ -13,4 +13,7 @@ export default {
   contactFormSuccess: 'Lähetys onnistui. Kiitos viestistäsi!',
   contactFormError: 'Lähetys epäonnistui. Virhe:',
   contactFormErrorNoErrorMessage: 'Ei erillistä virheviestiä.',
+  contactFormErrorMissingName: 'Anna nimesi',
+  contactFormErrorMissingEmailOrPhone: 'Anna ainakin joko sähköpostiosoitteesi tai puhelinnumerosi',
+  contactFormErrorMissingMessage: 'Kirjoita jokin viesti',
 };

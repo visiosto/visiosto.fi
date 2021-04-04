@@ -14,6 +14,8 @@ const colors = {
   linkYellowDark: '#ba8d34',
   buttonGreen: '#49e324',
   buttonGreenDark: '#37aa1b',
+  errorRed: '#ffc7c7',
+  errorRedDark: '#a31212',
   // white: '#f2f0eb',
   shade: '#dde1e9',
   shadeDark: '#2a2a2b',
@@ -40,6 +42,10 @@ export const COLORS = {
   'text-button-green': {
     light: colors.black,
     dark: colors.black,
+  },
+  'text-error': {
+    light: colors.errorRedDark,
+    dark: colors.errorRed,
   },
   link: {
     light: colors.linkBlue,

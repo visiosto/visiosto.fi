@@ -28,38 +28,76 @@ class ContactForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: '', email: '', tel: '', message: '', postStatus: '', errorMessage: '' };
+    this.state = {
+      name: '',
+      email: '',
+      tel: '',
+      message: '',
+      postStatus: '',
+      errorMessage: '',
+      errors: {},
+    };
 
+    this.validateFormData = this.validateFormData.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit = (event) => {
-    const formData = {
-      name: this.state.name,
-      email: this.state.email,
-      tel: this.state.tel,
-      message: this.state.message,
-    };
+  validateFormData = () => {
+    const i = createIntl(this.props.intl);
+    const errors = {};
+    let isValid = true;
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeFormState({ 'form-name': CONTACT_FORM_NAME, ...formData }),
-    })
-      .then(() =>
-        this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
-          setTimeout(() => this.setState({ postStatus: '' }), FORM_POST_STATUS_TIMEOUT),
-        ),
-      )
-      .catch((error) =>
-        this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }, () =>
-          setTimeout(
-            () => this.setState({ postStatus: '', errorMessage: '' }),
-            FORM_POST_STATUS_TIMEOUT,
+    if (!this.state.name) {
+      isValid = false;
+      errors.name = i('contactFormErrorMissingName');
+    }
+
+    if (!this.state.email) {
+      if (!this.state.tel) {
+        isValid = false;
+        errors.tel = i('contactFormErrorMissingEmailOrPhone');
+      }
+    }
+
+    if (!this.state.message) {
+      isValid = false;
+      errors.message = i('contactFormErrorMissingMessage');
+    }
+
+    this.setState({ errors });
+
+    return isValid;
+  };
+
+  handleSubmit = (event) => {
+    if (this.validateFormData()) {
+      const formData = {
+        name: this.state.name,
+        email: this.state.email,
+        tel: this.state.tel,
+        message: this.state.message,
+      };
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormState({ 'form-name': CONTACT_FORM_NAME, ...formData }),
+      })
+        .then(() =>
+          this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
+            setTimeout(() => this.setState({ postStatus: '' }), FORM_POST_STATUS_TIMEOUT),
           ),
-        ),
-      );
+        )
+        .catch((error) =>
+          this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }, () =>
+            setTimeout(
+              () => this.setState({ postStatus: '', errorMessage: '' }),
+              FORM_POST_STATUS_TIMEOUT,
+            ),
+          ),
+        );
+    }
 
     event.preventDefault();
   };
@@ -96,13 +134,15 @@ class ContactForm extends Component {
           </FormDiv>
           <FormDiv>
             <label for="name">{i('contactFormName')}</label>
+            <label for="name" className="error-message" hidden={!this.state.errors.name}>
+              {this.state.errors.name}
+            </label>
             <input
               type="text"
               name="name"
               id="name"
               onChange={this.handleChange}
               value={this.state.name}
-              required
             />
           </FormDiv>
           <FormDiv>
@@ -110,6 +150,9 @@ class ContactForm extends Component {
           </FormDiv>
           <FormDiv>
             <label for="email">{i('contactFormEmail')}</label>
+            <label for="email" className="error-message" hidden={!this.state.errors.tel}>
+              {this.state.errors.tel}
+            </label>
             <input
               type="email"
               name="email"
@@ -123,6 +166,9 @@ class ContactForm extends Component {
           </FormDiv>
           <FormDiv>
             <label for="tel">{i('contactFormTel')}</label>
+            <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
+              {this.state.errors.tel}
+            </label>
             <input
               type="tel"
               name="tel"
@@ -133,6 +179,9 @@ class ContactForm extends Component {
           </FormDiv>
           <FormDiv>
             <label for="message">{i('contactFormMessage')}</label>
+            <label for="message" className="error-message" hidden={!this.state.errors.message}>
+              {this.state.errors.message}
+            </label>
             <textarea
               id="message"
               name="message"

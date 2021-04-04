@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Success and error messages to the contact form.
 - Timeout for the status messages of the contact form.
+- Validation for the input of the contact form.
 
 ### Removed
 
