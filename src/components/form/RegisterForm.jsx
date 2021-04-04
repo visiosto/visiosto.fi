@@ -15,9 +15,7 @@ const FormContainer = styled.div`
   text-align: center;
 `;
 
-const FormPage = styled.div`
-  /* display: none; */
-`;
+const FormPage = styled.div``;
 
 const FormDiv = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
