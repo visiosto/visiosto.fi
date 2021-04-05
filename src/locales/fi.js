@@ -13,7 +13,6 @@ import footerMessages from './fi/footer';
 import headerMessages from './fi/header';
 import managementMessages from './fi/management';
 import metaMessages from './fi/meta';
-import navigationMessages from './fi/navigation';
 import notFoundMessages from './fi/not-found';
 import searchMessages from './fi/search';
 
