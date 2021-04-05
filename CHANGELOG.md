@@ -23,6 +23,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Client register forms for people and businesses to separate components.
 - Code related to the Gatsby APIs to comply better with the coding standards.
 - Utility code to comply better with the coding standards.
+- Page template components to comply better with the coding standards.
 
 ### Removed
 
