@@ -31,7 +31,8 @@ export default {
   clientRegisterFormEmail: 'Sähköpostiosoite',
   clientRegisterFormEmailForBilling:
     'Jos valitset laskutustavaksi sähköpostilaskun, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen.',
-  clientRegisterFormAcceptTerms: 'Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa',
+  clientRegisterFormAcceptTerms:
+    'Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa',
   clientRegisterFormPrevious: 'Palaa',
   clientRegisterFormNext: 'Jatka',
   clientRegisterFormSend: 'Lähetä',
