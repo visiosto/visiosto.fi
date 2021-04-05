@@ -3,6 +3,8 @@
 
 import styled from 'styled-components';
 
+import { FORM_CLASS_ERROR_MESSAGE } from '../../constants';
+
 const FormDiv = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
@@ -83,7 +85,7 @@ const FormDiv = styled.div`
     min-width: 30vw;
   }
 
-  .error-message {
+  .${FORM_CLASS_ERROR_MESSAGE} {
     color: var(--color-text-error);
   }
 `;

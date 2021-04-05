@@ -12,6 +12,7 @@ export const GOOGLE_ANALYTICS_TRACKING_ID = 'G-6EQKK25267';
 export const FORM_POST_STATUS_SUCCESS = 'success';
 export const FORM_POST_STATUS_ERROR = 'error';
 export const FORM_POST_STATUS_TIMEOUT = 10000;
+export const FORM_CLASS_ERROR_MESSAGE = 'error-message';
 export const FORM_BILLING_EMAIL = 'email';
 export const FORM_BILLING_E_INVOICE = 'e-invoice';
 export const FORM_BILLING_PAPER = 'paper';

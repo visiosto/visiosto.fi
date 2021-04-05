@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Validation for the input of the contact form.
 - Validation for the input of the client register forms.
 - Component for checkbox inputs styled as switches.
+- Component for radio inputs.
 
 ### Changed
 

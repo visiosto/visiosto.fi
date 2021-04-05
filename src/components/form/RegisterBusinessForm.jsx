@@ -9,6 +9,7 @@ import { injectIntl } from 'react-intl';
 import Button from '../Button';
 import FormDiv from './FormDiv';
 import LocalizedLink from '../link/LocalizedLink';
+import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
 
 import {
@@ -29,14 +30,6 @@ const FormContainer = styled.div`
 `;
 
 const FormPage = styled.div``;
-
-const RadioDiv = styled.div`
-  margin: 0.5rem 0;
-
-  label {
-    display: inline-block;
-  }
-`;
 
 const ButtonDiv = styled.div``;
 
@@ -89,6 +82,7 @@ class RegisterBusinessForm extends Component {
     this.validatePageData = this.validatePageData.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.handleBillingMethodClick = this.handleBillingMethodClick.bind(this);
     this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
     this.moveToNextPage = this.moveToNextPage.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -241,6 +235,10 @@ class RegisterBusinessForm extends Component {
 
   handleBillingAddressToggleClick = () => {
     this.setState((state, props) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  };
+
+  handleBillingMethodClick = (value) => {
+    this.setState({ billingMethod: value });
   };
 
   moveToPreviousPage = () => {
@@ -485,52 +483,37 @@ class RegisterBusinessForm extends Component {
           {/* The form page for selecting the billing method */}
           <FormPage hidden={this.state.currentPage !== 2}>
             <FormDiv>
-              <h3>{i('clientRegisterFormBillingMethod')}</h3>
-              <p>
-                {i('clientRegisterFormBillingMethodContent', {
+              <RadioInput
+                title={i('clientRegisterFormBillingMethod')}
+                description={i('clientRegisterFormBillingMethodContent', {
                   a: (...chunk) => (
                     <LocalizedLink to="/pricing" locale={this.props.locale}>
                       {chunk}
                     </LocalizedLink>
                   ),
                 })}
-              </p>
-              <p className="error-message" hidden={!this.state.errors.billingMethod}>
-                {this.state.errors.billingMethod}
-              </p>
-              <RadioDiv>
-                <input
-                  type="radio"
-                  name="billingMethod"
-                  id="radio-e-invoice"
-                  value={FORM_BILLING_E_INVOICE}
-                  checked={this.state.billingMethod === FORM_BILLING_E_INVOICE}
-                  onChange={this.handleChange}
-                />
-                <label for="radio-e-invoice">{i('clientRegisterFormBillingMethodEInvoice')}</label>
-              </RadioDiv>
-              <RadioDiv>
-                <input
-                  type="radio"
-                  name="billingMethod"
-                  id="radio-email"
-                  value={FORM_BILLING_EMAIL}
-                  checked={this.state.billingMethod === FORM_BILLING_EMAIL}
-                  onChange={this.handleChange}
-                />
-                <label for="radio-email">{i('clientRegisterFormBillingMethodEmail')}</label>
-              </RadioDiv>
-              <RadioDiv>
-                <input
-                  type="radio"
-                  name="billingMethod"
-                  id="radio-paper"
-                  value={FORM_BILLING_PAPER}
-                  checked={this.state.billingMethod === FORM_BILLING_PAPER}
-                  onChange={this.handleChange}
-                />
-                <label for="radio-paper">{i('clientRegisterFormBillingMethodPaper')}</label>
-              </RadioDiv>
+                errorMessage={this.state.errors.billingMethod}
+                displayError={!this.state.errors.billingMethod}
+                value={this.state.billingMethod}
+                handleChange={this.handleBillingMethodClick}
+                inputs={[
+                  {
+                    id: FORM_BILLING_E_INVOICE,
+                    label: i('clientRegisterFormBillingMethodEInvoice'),
+                    value: FORM_BILLING_E_INVOICE,
+                  },
+                  {
+                    id: FORM_BILLING_EMAIL,
+                    label: i('clientRegisterFormBillingMethodEmail'),
+                    value: FORM_BILLING_EMAIL,
+                  },
+                  {
+                    id: FORM_BILLING_PAPER,
+                    label: i('clientRegisterFormBillingMethodPaper'),
+                    value: FORM_BILLING_PAPER,
+                  },
+                ]}
+              />
             </FormDiv>
           </FormPage>
 
