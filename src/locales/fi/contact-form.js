@@ -9,6 +9,7 @@ export default {
   contactFormOr: 'tai',
   contactFormTel: 'puhelinnumero',
   contactFormMessage: 'Viestisi meille',
+  contactFormSendConsent: 'Lähettämällä tiedot hyväksyt henkilötietojesi käsittelyn rekisterin <a>tietosuojaselosteen</a> mukaisesti',
   contactFormSend: 'Lähetä',
   contactFormSuccess: 'Lähetys onnistui. Kiitos viestistäsi!',
   contactFormError: 'Lähetys epäonnistui. Virhe:',
