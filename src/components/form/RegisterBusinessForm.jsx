@@ -73,6 +73,7 @@ class RegisterBusinessForm extends Component {
       surname: '',
       tel: '',
       email: '',
+      acceptTerms: false,
       currentPage: 0,
       postStatus: '',
       errorMessage: '',
@@ -82,6 +83,7 @@ class RegisterBusinessForm extends Component {
     this.validatePageData = this.validatePageData.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.handleAcceptTermsToggleClick = this.handleAcceptTermsToggleClick.bind(this);
     this.handleBillingMethodClick = this.handleBillingMethodClick.bind(this);
     this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
     this.moveToNextPage = this.moveToNextPage.bind(this);
@@ -178,6 +180,10 @@ class RegisterBusinessForm extends Component {
           isValid = false;
           errors.tel = i('clientRegisterFormErrorMissingTel');
         }
+        if (!this.state.acceptTerms) {
+          isValid = false;
+          errors.acceptTerms = i('clientRegisterFormErrorTermsNotAccepted');
+        }
         break;
     }
 
@@ -208,6 +214,7 @@ class RegisterBusinessForm extends Component {
         surname: this.state.surname,
         tel: this.state.tel,
         email: this.state.email,
+        acceptTerms: this.state.acceptTerms,
       };
 
       fetch('/', {
@@ -235,6 +242,10 @@ class RegisterBusinessForm extends Component {
 
   handleBillingAddressToggleClick = () => {
     this.setState((state, props) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  };
+
+  handleAcceptTermsToggleClick = () => {
+    this.setState((state, props) => ({ acceptTerms: !state.acceptTerms }));
   };
 
   handleBillingMethodClick = (value) => {
@@ -493,7 +504,6 @@ class RegisterBusinessForm extends Component {
                   ),
                 })}
                 errorMessage={this.state.errors.billingMethod}
-                displayError={!this.state.errors.billingMethod}
                 value={this.state.billingMethod}
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
@@ -632,6 +642,16 @@ class RegisterBusinessForm extends Component {
                 id="email"
                 value={this.state.email}
                 onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <SwitchCheckbox
+                id="accept-terms"
+                name="acceptTerms"
+                errorMessage={this.state.errors.acceptTerms}
+                handleClick={this.handleAcceptTermsToggleClick}
+                checked={this.state.acceptTerms}
+                label={i('clientRegisterFormAcceptTerms')}
               />
             </FormDiv>
           </FormPage>

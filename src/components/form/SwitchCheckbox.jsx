@@ -4,6 +4,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { FORM_CLASS_ERROR_MESSAGE } from '../../constants';
+
 const SwitchInputSpan = styled.span`
   display: inline-block;
   position: relative;
@@ -56,6 +58,11 @@ const SwitchSpan = styled.span`
 const SwitchCheckbox = (props) => (
   <>
     <label for={props.id}>{props.label}</label>
+    {'errorMessage' in props ? (
+      <label className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
+        {props.errorMessage}
+      </label>
+    ) : null}
     <SwitchInputSpan onClick={props.handleClick}>
       <input
         key={Math.random()}

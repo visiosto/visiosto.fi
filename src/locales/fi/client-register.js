@@ -31,6 +31,7 @@ export default {
   clientRegisterFormEmail: 'Sähköpostiosoite',
   clientRegisterFormEmailForBilling:
     'Jos valitset laskutustavaksi sähköpostilaskun, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen.',
+  clientRegisterFormAcceptTerms: 'Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa',
   clientRegisterFormPrevious: 'Palaa',
   clientRegisterFormNext: 'Jatka',
   clientRegisterFormSend: 'Lähetä',
@@ -53,4 +54,6 @@ export default {
   clientRegisterFormErrorMissingSurname: 'Anna yhteyshenkilön sukunimi',
   clientRegisterFormErrorMissingEmail: 'Anna yhteyshenkilön sähköpostiosoite',
   clientRegisterFormErrorMissingTel: 'Anna yhteyshenkilön puhelinnumero',
+  clientRegisterFormErrorTermsNotAccepted:
+    'Sinun tulee hyväksyä henkilötietojen käsittely, jotta voit lähettää lomakkeen',
 };

@@ -67,6 +67,7 @@ class RegisterPersonForm extends Component {
       billingPostcode: '',
       billingPostOffice: '',
       billingMethod: '',
+      acceptTerms: false,
       currentPage: 0,
       postStatus: '',
       errorMessage: '',
@@ -76,6 +77,7 @@ class RegisterPersonForm extends Component {
     this.validatePageData = this.validatePageData.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.handleAcceptTermsToggleClick = this.handleAcceptTermsToggleClick.bind(this);
     this.handleBillingMethodClick = this.handleBillingMethodClick.bind(this);
     this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
     this.moveToNextPage = this.moveToNextPage.bind(this);
@@ -139,6 +141,10 @@ class RegisterPersonForm extends Component {
           isValid = false;
           errors.billingMethod = i('clientRegisterFormErrorMissingBillingMethod');
         }
+        if (!this.state.acceptTerms) {
+          isValid = false;
+          errors.acceptTerms = i('clientRegisterFormErrorTermsNotAccepted');
+        }
         break;
     }
 
@@ -164,6 +170,7 @@ class RegisterPersonForm extends Component {
         billingPostcode: this.state.billingPostcode,
         billingPostOffice: this.state.billingPostOffice,
         billingMethod: this.state.billingMethod,
+        acceptTerms: this.state.acceptTerms,
       };
 
       fetch('/', {
@@ -191,6 +198,10 @@ class RegisterPersonForm extends Component {
 
   handleBillingAddressToggleClick = () => {
     this.setState((state, props) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  };
+
+  handleAcceptTermsToggleClick = () => {
+    this.setState((state, props) => ({ acceptTerms: !state.acceptTerms }));
   };
 
   handleBillingMethodClick = (value) => {
@@ -322,7 +333,6 @@ class RegisterPersonForm extends Component {
                 id="address-line-1"
                 value={this.state.addressLine1}
                 onChange={this.handleChange}
-                required
               />
             </FormDiv>
             <FormDiv>
@@ -334,7 +344,6 @@ class RegisterPersonForm extends Component {
                 id="address-line-2"
                 value={this.state.addressLine2}
                 onChange={this.handleChange}
-                required
               />
             </FormDiv>
             <FormDiv>
@@ -348,7 +357,6 @@ class RegisterPersonForm extends Component {
                 id="postcode"
                 value={this.state.postcode}
                 onChange={this.handleChange}
-                required
               />
             </FormDiv>
             <FormDiv>
@@ -366,7 +374,6 @@ class RegisterPersonForm extends Component {
                 id="post-office"
                 value={this.state.postOffice}
                 onChange={this.handleChange}
-                required
               />
             </FormDiv>
             <FormDiv>
@@ -465,7 +472,6 @@ class RegisterPersonForm extends Component {
                   ),
                 })}
                 errorMessage={this.state.errors.billingMethod}
-                displayError={!this.state.errors.billingMethod}
                 value={this.state.billingMethod}
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
@@ -480,6 +486,16 @@ class RegisterPersonForm extends Component {
                     value: FORM_BILLING_PAPER,
                   },
                 ]}
+              />
+            </FormDiv>
+            <FormDiv>
+              <SwitchCheckbox
+                id="accept-terms"
+                name="acceptTerms"
+                errorMessage={this.state.errors.acceptTerms}
+                handleClick={this.handleAcceptTermsToggleClick}
+                checked={this.state.acceptTerms}
+                label={i('clientRegisterFormAcceptTerms')}
               />
             </FormDiv>
           </FormPage>
