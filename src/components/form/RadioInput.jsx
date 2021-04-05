@@ -18,7 +18,7 @@ const RadioInput = (props) => (
   <>
     {props.title ? <h3>{props.title}</h3> : null}
     {props.description ? <p>{props.description}</p> : null}
-    {errorMessage in props ? (
+    {'errorMessage' in props ? (
       <p className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.displayError}>
         {props.errorMessage}
       </p>
