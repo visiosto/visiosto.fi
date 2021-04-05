@@ -54,19 +54,19 @@ const SwitchSpan = styled.span`
 `;
 
 const SwitchCheckbox = (props) => (
-    <>
-      <label for={props.id}>{props.label}</label>
-      <SwitchInputSpan onClick={props.handleClick}>
-        <input
-          key={Math.random()}
-          type="checkbox"
-          name={props.name}
-          id={props.id}
-          defaultChecked={props.checked}
-        />
-        <SwitchSpan />
-      </SwitchInputSpan>
-    </>
-  );
+  <>
+    <label for={props.id}>{props.label}</label>
+    <SwitchInputSpan onClick={props.handleClick}>
+      <input
+        key={Math.random()}
+        type="checkbox"
+        name={props.name}
+        id={props.id}
+        defaultChecked={props.checked}
+      />
+      <SwitchSpan />
+    </SwitchInputSpan>
+  </>
+);
 
 export default SwitchCheckbox;
