@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 export default {
-  clientRegisterFormTitle: 'Lomake',
+  clientRegisterFormTitle: 'Tiedot asiakasrekisteriin',
   clientRegisterFormHoneypot: 'Älä täytä, jos olet ihminen',
   clientRegisterFormBasicInfo: 'Yrityksen tai yhteisön perustiedot',
   clientRegisterFormBusinessID: 'Y-tunnus',
