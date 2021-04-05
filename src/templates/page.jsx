@@ -21,7 +21,7 @@ const Div = styled.div`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const { contentfulPage: page } = props.data;
 
   return (
@@ -35,19 +35,21 @@ const Page = (props) => {
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
   );
-};
+}
 
-const ContentfulPage = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default ContentfulPage;
+export default function ContentfulPage(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query PageQuery($pageId: String, $locale: String) {

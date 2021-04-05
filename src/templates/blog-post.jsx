@@ -72,7 +72,7 @@ const ArrowRight = styled(ArrowRightIcon)`
   margin: 0 0 0.1rem 0.2rem;
 `;
 
-const Page = (props) => {
+function Page(props) {
   const { contentfulBlogPost: post, allContentfulBlogPost: posts } = props.data;
 
   const previousEdges = posts.edges.filter(
@@ -130,19 +130,21 @@ const Page = (props) => {
       </NavLinks>
     </LayoutPost>
   );
-};
+}
 
-const BlogPost = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default BlogPost;
+export default function BlogPost(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query BlogPostQuery(

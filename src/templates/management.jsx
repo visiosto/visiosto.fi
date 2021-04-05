@@ -117,7 +117,7 @@ const Separator = styled.div`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const i = createIntl(useIntl());
 
   const { contentfulPage: page, allContentfulBlogPost: posts } = props.data;
@@ -171,19 +171,21 @@ const Page = (props) => {
       })}
     </Layout>
   );
-};
+}
 
-const Management = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default Management;
+export default function Management(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query ManagementQuery($pageId: String, $locale: String, $momentJsLocale: String) {

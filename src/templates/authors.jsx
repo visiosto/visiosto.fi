@@ -129,7 +129,7 @@ const TwitterImage = styled(SocialMediaImage)`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const i = createIntl(useIntl());
 
   const { edges: authors } = props.data.allContentfulAuthor;
@@ -256,19 +256,21 @@ const Page = (props) => {
       </Div>
     </Layout>
   );
-};
+}
 
-const Authors = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default Authors;
+export default function Authors(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query AuthorsQuery($locale: String) {

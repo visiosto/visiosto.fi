@@ -59,7 +59,7 @@ const H2 = styled.h2`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const i = createIntl(useIntl());
 
   const { contentfulPage: page } = props.data;
@@ -78,19 +78,21 @@ const Page = (props) => {
       )}
     </Layout>
   );
-};
+}
 
-const ClientRegister = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default ClientRegister;
+export default function ClientRegister(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query ClientRegisterQuery($pageId: String, $locale: String) {

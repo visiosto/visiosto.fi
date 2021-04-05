@@ -40,7 +40,7 @@ const Div = styled.div`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const i = createIntl(useIntl());
 
   return (
@@ -53,19 +53,21 @@ const Page = (props) => {
       </Div>
     </LayoutError>
   );
-};
+}
 
-const NotFound = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default NotFound;
+export default function NotFound(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query NotFoundQuery {

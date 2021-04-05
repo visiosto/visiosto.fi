@@ -74,7 +74,7 @@ const Post = styled.article`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const i = createIntl(useIntl());
 
   const { edges: categories } = props.data.allContentfulCategory;
@@ -124,19 +124,21 @@ const Page = (props) => {
       </Div>
     </Layout>
   );
-};
+}
 
-const Categories = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default Categories;
+export default function Categories(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query CategoriesQuery($locale: String) {

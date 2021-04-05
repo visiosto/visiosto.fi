@@ -4,7 +4,6 @@
 import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
@@ -12,8 +11,6 @@ import LocalizedAnchorLinkButton from '../components/link/LocalizedAnchorLinkBut
 import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
-
-import createIntl from '../util/createIntl';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -50,7 +47,7 @@ const Separator = styled.div`
   }
 `;
 
-const Page = (props) => {
+function Page(props) {
   const { contentfulPage: page } = props.data;
   const { pageData: pricingList, pageDataLocalization: localizations } = page;
 
@@ -98,19 +95,21 @@ const Page = (props) => {
       })}
     </Layout>
   );
-};
+}
 
-const Pricing = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default Pricing;
+export default function Pricing(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query PricingQuery($pageId: String, $locale: String) {

@@ -85,9 +85,7 @@ const H3 = styled.h3`
   }
 `;
 
-const Page = (props) => {
-  const i = createIntl(useIntl());
-
+function Page(props) {
   const { contentfulIndexPage: page } = props.data;
 
   return (
@@ -155,19 +153,21 @@ const Page = (props) => {
       </Section>
     </LayoutIndex>
   );
-};
+}
 
-const Index = (props) => (
-  <Intl
-    locale={props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]}
-  >
-    <Theme>
-      <Page {...props} />
-    </Theme>
-  </Intl>
-);
-
-export default Index;
+export default function Index(props) {
+  return (
+    <Intl
+      locale={
+        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
+      }
+    >
+      <Theme>
+        <Page {...props} />
+      </Theme>
+    </Intl>
+  );
+}
 
 export const pageQuery = graphql`
   query IndexQuery($locale: String) {
