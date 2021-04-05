@@ -41,7 +41,7 @@ export default {
   clientRegisterFormPrevious: 'Palaa',
   clientRegisterFormNext: 'Jatka',
   clientRegisterFormSend: 'Lähetä',
-  clientRegisterFormSuccess: 'Lähetys onnistui. Kiitos viestistäsi!',
+  clientRegisterFormSuccess: 'Lähetys onnistui. Kiitos!',
   clientRegisterFormError: 'Lähetys epäonnistui. Virhe:',
   clientRegisterFormErrorNoErrorMessage: 'Ei erillistä virheviestiä.',
   clientRegisterFormErrorMissingBusinessID: 'Anna yrityksen tai yhteisön y-tunnus',
