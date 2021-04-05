@@ -206,10 +206,12 @@ class RegisterPersonForm extends Component {
   };
 
   moveToNextPage = () => {
-    if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
-      this.setState({ currentPage: 2 });
-    } else {
-      this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
+    if (this.validatePageData()) {
+      if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
+        this.setState({ currentPage: 2 });
+      } else {
+        this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
+      }
     }
   };
 
