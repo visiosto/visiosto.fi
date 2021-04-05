@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Validation for the input of the client register forms.
 - Component for checkbox inputs styled as switches.
 - Component for radio inputs.
+- Option for explicitly giving consent for processing personal data before submitting the forms.
 
 ### Changed
 
