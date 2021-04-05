@@ -13,7 +13,7 @@ import Head from './Head';
 import Header from './Header';
 
 import createIntl from '../../util/createIntl';
-import listenColorScheme from '../../util/listenColorScheme';
+import useColorScheme from '../../util/useColorScheme';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -58,7 +58,7 @@ const PostCategory = styled.span`
 `;
 
 export default (props) => {
-  listenColorScheme();
+  useColorScheme();
 
   const i = createIntl(useIntl());
 

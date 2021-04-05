@@ -9,7 +9,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../../util/listenColorScheme';
+import useColorScheme from '../../util/useColorScheme';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -31,7 +31,7 @@ const PageTitle = styled.h1`
 `;
 
 export default (props) => {
-  listenColorScheme();
+  useColorScheme();
 
   return (
     <>

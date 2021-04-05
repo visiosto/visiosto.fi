@@ -9,7 +9,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../../util/listenColorScheme';
+import useColorScheme from '../../util/useColorScheme';
 
 const ErrorCode = styled.h1`
   font-size: 3rem;
@@ -31,7 +31,7 @@ const PageTitle = styled.h2`
 `;
 
 export default (props) => {
-  listenColorScheme();
+  useColorScheme();
 
   return (
     <>

@@ -9,14 +9,14 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import listenColorScheme from '../../util/listenColorScheme';
+import useColorScheme from '../../util/useColorScheme';
 
 const PageTitle = styled.h2`
   display: none;
 `;
 
 export default (props) => {
-  listenColorScheme();
+  useColorScheme();
 
   return (
     <>
