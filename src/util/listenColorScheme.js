@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 import ThemeContext from '../components/ThemeContext';
 
-export default () => {
+export default function listenColorScheme() {
   if (typeof window !== 'undefined') {
     const { setColorMode } = useContext(ThemeContext);
 
@@ -13,4 +13,4 @@ export default () => {
       setColorMode(e.matches ? 'dark' : 'light');
     });
   }
-};
+}

@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-const createPath = (pathNode) => {
+const createPath = function createPathWithParentNodes(pathNode) {
   if (pathNode.parentPath) {
     return `${createPath(pathNode.parentPath)}/${pathNode.slug}`;
   }
@@ -9,7 +9,13 @@ const createPath = (pathNode) => {
   return `${pathNode.slug}`;
 };
 
-const createPagePath = (node, locale, defaultLocale, localePaths, parentPath) => {
+const createPagePath = function createPagePathFromEntryNode(
+  node,
+  locale,
+  defaultLocale,
+  localePaths,
+  parentPath,
+) {
   let pagePath = `${node.slug}`;
   if (parentPath) {
     if (node.parentPath) {

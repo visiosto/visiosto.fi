@@ -10,7 +10,7 @@ import errorTypes from './errorTypes';
 import logWarning from './logWarning';
 import scroller from './scroller';
 
-export default (to, e, onAnchorLinkClick) => {
+export default function handleLinkClick(to, e, onAnchorLinkClick) {
   /**
    * Log warnings on click
    */
@@ -33,4 +33,4 @@ export default (to, e, onAnchorLinkClick) => {
   if (onAnchorLinkClick) {
     onAnchorLinkClick();
   }
-};
+}

@@ -8,7 +8,7 @@ import errorTypes from './errorTypes';
 import logWarning from './logWarning';
 import scroller from './scroller';
 
-export default (location, offset) => {
+export default function checkHash(location, offset) {
   const { hash } = location;
   const selector = hash ? hash.substr(1) : null;
   const validElement = selector ? document.getElementById(selector) : null;
@@ -18,4 +18,4 @@ export default (location, offset) => {
   } else if (hash && selector && !validElement) {
     logWarning(errorTypes.INVALID_HASH);
   }
-};
+}

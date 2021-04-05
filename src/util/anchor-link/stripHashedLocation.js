@@ -4,4 +4,6 @@
 // Based on code by Chase Ohlson.
 // Original code is available at https://github.com/brohlson/gatsby-plugin-anchor-links.
 
-export default (to) => to.split('#')[0];
+export default function stripHashedLocation(to) {
+  return to.split('#')[0];
+}

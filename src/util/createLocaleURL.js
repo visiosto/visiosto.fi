@@ -3,7 +3,7 @@
 
 import createPagePath from './createPagePath';
 
-const createLocaleURL = (baseURL, pageId, locale, data) => {
+export default function createLocaleURL(baseURL, pageId, locale, data) {
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
   const entryNode = data.allContentfulEntry.edges.filter(
@@ -75,6 +75,4 @@ const createLocaleURL = (baseURL, pageId, locale, data) => {
     default:
       return null;
   }
-};
-
-export default createLocaleURL;
+}
