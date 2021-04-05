@@ -14,6 +14,7 @@ import { COLORS } from './src/theme';
 // Thanks to Joshua Comeau for the original code, licensed under MIT License:
 // https://github.com/joshwcomeau/dark-mode-minimal
 
+// Don't use named function expression for this function just in case - this is embedded to the site
 function setColorsByTheme() {
   const colors = '🌈';
   const colorModeKey = '🔑';
@@ -46,7 +47,7 @@ function setColorsByTheme() {
   });
 }
 
-const MagicScriptTag = () => {
+function MagicScriptTag() {
   const boundFn = String(setColorsByTheme)
     .replace("'🌈'", JSON.stringify(COLORS))
     .replace('🔑', COLOR_MODE_KEY)
@@ -58,7 +59,7 @@ const MagicScriptTag = () => {
 
   // eslint-disable-next-line react/no-danger, react/jsx-filename-extension
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
-};
+}
 
 /**
  * If the user has JS disabled, the injected script will never fire!
@@ -68,7 +69,7 @@ const MagicScriptTag = () => {
  * document, which sets default values for all of our colors.
  * Only light mode will be available for users with JS disabled.
  */
-const FallbackStyles = () => {
+function FallbackStyles() {
   // Create a string holding each CSS variable:
   /*
     `--color-text: black;
@@ -84,11 +85,16 @@ const FallbackStyles = () => {
 
   // eslint-disable-next-line react/jsx-filename-extension
   return <style>{wrappedInSelector}</style>;
-};
+}
 
-export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
+export const onRenderBody = function addColorThemeStylesOnRenderBody({
+  setPreBodyComponents,
+  setHeadComponents,
+}) {
   setHeadComponents(<FallbackStyles key="color-scheme-fallback-styles" />);
   setPreBodyComponents(<MagicScriptTag key="color-scheme-magic-script-tag" />);
 };
 
-export const wrapPageElement = ({ element }) => <App>{element}</App>;
+export const wrapPageElement = function wrapPageElementWithAppComponent({ element }) {
+  return <App>{element}</App>;
+};
