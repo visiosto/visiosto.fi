@@ -44,18 +44,22 @@ export default {
   clientRegisterFormSuccess: 'The form was successfully sent. Thank you!',
   clientRegisterFormError: 'Sending failed. Error:',
   clientRegisterFormErrorNoErrorMessage: 'No error message.',
-  clientRegisterFormErrorMissingBusinessID: 'Give the Finnish Business ID of the business or organization',
+  clientRegisterFormErrorMissingBusinessID:
+    'Give the Finnish Business ID of the business or organization',
   clientRegisterFormErrorMissingBusinessName: 'Give the name of the business or organization',
   clientRegisterFormErrorMissingAddressLine1: 'Give the address of the business or organization',
-  clientRegisterFormErrorMissingPostcode: 'Give the postcode of the address of the business or organization',
-  clientRegisterFormErrorMissingPostOffice: 'Give the city of the address of the business or organization',
+  clientRegisterFormErrorMissingPostcode:
+    'Give the postcode of the address of the business or organization',
+  clientRegisterFormErrorMissingPostOffice:
+    'Give the city of the address of the business or organization',
   clientRegisterFormErrorMissingBillingAddressLine1: 'Give the billing address',
   clientRegisterFormErrorMissingBillingPostcode: 'Give the postcode of the billing address',
   clientRegisterFormErrorMissingBillingPostOffice: 'Give the city of the billing address',
   clientRegisterFormErrorMissingBillingMethod: 'Choose a billing method',
   clientRegisterFormErrorMissingEInvoiceAddress: 'Give the e-invoice address',
   clientRegisterFormErrorMissingEInvoiceOperator: 'Give the e-invoice operator',
-  clientRegisterFormErrorMissingBillingEmail: 'Give the email address where you want to receive the invoices',
+  clientRegisterFormErrorMissingBillingEmail:
+    'Give the email address where you want to receive the invoices',
   clientRegisterFormErrorMissingFirstName: 'Give the first name of the contact person',
   clientRegisterFormErrorMissingSurname: 'Give the last name of the contact person',
   clientRegisterFormErrorMissingEmail: 'Give the email address of the contact person',
