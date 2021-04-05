@@ -1,0 +1,582 @@
+// Copyright (c) 2021 Visiosto oy
+// Licensed under the MIT License
+
+import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
+import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
+import { injectIntl } from 'react-intl';
+
+import Button from '../Button';
+import FormDiv from './FormDiv';
+import LocalizedLink from '../link/LocalizedLink';
+
+import {
+  FORM_BILLING_EMAIL,
+  FORM_BILLING_PAPER,
+  FORM_POST_STATUS_ERROR,
+  FORM_POST_STATUS_SUCCESS,
+  FORM_POST_STATUS_TIMEOUT,
+  REGISTER_PERSON_FORM_NAME,
+} from '../../constants';
+
+import createIntl from '../../util/createIntl';
+import encodeFormState from '../../util/encodeFormState';
+
+const FormContainer = styled.div`
+  text-align: center;
+`;
+
+const FormPage = styled.div``;
+
+const SwitchInputSpan = styled.span`
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + span {
+      background-color: var(--color-primary);
+    }
+
+    &:checked + span::before {
+      transform: translateX(26px);
+    }
+
+    &:focus + span {
+      box-shadow: 0 0 1px #2196f3;
+    }
+  }
+`;
+
+const SwitchSpan = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: var(--color-text-weak);
+  transition: 0.4s;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    transition: 0.4s;
+  }
+`;
+
+const RadioDiv = styled.div`
+  margin: 0.5rem 0;
+
+  label {
+    display: inline-block;
+  }
+`;
+
+const ButtonDiv = styled.div``;
+
+const iconStyle = css`
+  margin: 0;
+`;
+
+const ArrowLeft = styled(ArrowLeftIcon)`
+  ${iconStyle}
+`;
+
+const ArrowRight = styled(ArrowRightIcon)`
+  ${iconStyle}
+`;
+
+const PaperAirplane = styled(PaperAirplaneIcon)`
+  ${iconStyle}
+`;
+
+class RegisterPersonForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstName: '',
+      surname: '',
+      tel: '',
+      email: '',
+      addressLine1: '',
+      addressLine2: '',
+      postcode: '',
+      postOffice: '',
+      isSameBillingAddress: false,
+      billingAddressLine1: '',
+      billingAddressLine2: '',
+      billingPostcode: '',
+      billingPostOffice: '',
+      billingMethod: '',
+      currentPage: 0,
+      postStatus: '',
+      errorMessage: '',
+      errors: {},
+    };
+
+    this.validatePageData = this.validatePageData.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
+    this.moveToNextPage = this.moveToNextPage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  validatePageData = () => {
+    const i = createIntl(this.props.intl);
+    const errors = {};
+    let isValid = true;
+
+    switch (this.state.currentPage) {
+      case 0:
+        if (!this.state.firstName) {
+          isValid = false;
+          errors.firstName = i('clientRegisterFormErrorMissingFirstName');
+        }
+        if (!this.state.surname) {
+          isValid = false;
+          errors.surname = i('clientRegisterFormErrorMissingSurname');
+        }
+        if (!this.state.tel) {
+          isValid = false;
+          errors.tel = i('clientRegisterFormErrorMissingTel');
+        }
+        if (!this.state.email) {
+          isValid = false;
+          errors.email = i('clientRegisterFormErrorMissingEmail');
+        }
+        if (!this.state.addressLine1) {
+          isValid = false;
+          errors.addressLine1 = i('clientRegisterFormErrorMissingAddressLine1');
+        }
+        if (!this.state.postcode) {
+          isValid = false;
+          errors.postcode = i('clientRegisterFormErrorMissingPostcode');
+        }
+        if (!this.state.postOffice) {
+          isValid = false;
+          errors.postOffice = i('clientRegisterFormErrorMissingPostOffice');
+        }
+        break;
+
+      case 1:
+        if (!this.state.billingAddressLine1) {
+          isValid = false;
+          errors.billingAddressLine1 = i('clientRegisterFormErrorMissingBillingAddressLine1');
+        }
+        if (!this.state.billingPostcode) {
+          isValid = false;
+          errors.billingPostcode = i('clientRegisterFormErrorMissingBillingPostcode');
+        }
+        if (!this.state.billingPostOffice) {
+          isValid = false;
+          errors.billingPostOffice = i('clientRegisterFormErrorMissingBillingPostOffice');
+        }
+        break;
+
+      case 2:
+        if (!this.state.billingMethod) {
+          isValid = false;
+          errors.billingMethod = i('clientRegisterFormErrorMissingBillingMethod');
+        }
+        break;
+    }
+
+    this.setState({ errors });
+
+    return isValid;
+  };
+
+  handleSubmit = (event) => {
+    if (this.validatePageData()) {
+      const formData = {
+        firstName: this.state.firstName,
+        surname: this.state.surname,
+        tel: this.state.tel,
+        email: this.state.email,
+        addressLine1: this.state.addressLine1,
+        addressLine2: this.state.addressLine2,
+        postcode: this.state.postcode,
+        postOffice: this.state.postOffice,
+        isSameBillingAddress: this.state.isSameBillingAddress,
+        billingAddressLine1: this.state.billingAddressLine1,
+        billingAddressLine2: this.state.billingAddressLine2,
+        billingPostcode: this.state.billingPostcode,
+        billingPostOffice: this.state.billingPostOffice,
+        billingMethod: this.state.billingMethod,
+      };
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormState({ 'form-name': REGISTER_PERSON_FORM_NAME, ...formData }),
+      })
+        .then(() =>
+          this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
+            setTimeout(() => this.setState({ postStatus: '' }), FORM_POST_STATUS_TIMEOUT),
+          ),
+        )
+        .catch((error) =>
+          this.setState({ postStatus: FORM_POST_STATUS_ERROR, errorMessage: error }, () =>
+            setTimeout(
+              () => this.setState({ postStatus: '', errorMessage: '' }),
+              FORM_POST_STATUS_TIMEOUT,
+            ),
+          ),
+        );
+    }
+
+    event.preventDefault();
+  };
+
+  handleBillingAddressToggleClick = () => {
+    this.setState((state, props) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  };
+
+  moveToPreviousPage = () => {
+    if (this.state.currentPage === 2 && this.state.isSameBillingAddress) {
+      this.setState({ currentPage: 0 });
+    } else {
+      this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
+    }
+  };
+
+  moveToNextPage = () => {
+    if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
+      this.setState({ currentPage: 2 });
+    } else {
+      this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
+    }
+  };
+
+  handleChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  render() {
+    const i = createIntl(this.props.intl);
+
+    return (
+      <FormContainer>
+        <form
+          name={REGISTER_PERSON_FORM_NAME}
+          onSubmit={this.handleSubmit}
+          action="/"
+          method="POST"
+          netlify-honeypot="bot-field"
+          netlify
+          data-netlify="true"
+        >
+          {/* This input field is required by Netlify */}
+          <input type="hidden" name="form-name" value={REGISTER_PERSON_FORM_NAME} />
+          <FormDiv hidden>
+            <label>{i('clientRegisterFormHoneypot')}</label>
+            <input name="bot-field" />
+          </FormDiv>
+
+          {/* The client's basic information */}
+          <FormPage hidden={this.state.currentPage !== 0}>
+            <FormDiv>
+              <label for="first-name">{i('clientRegisterFormFirstName')}</label>
+              <label
+                for="first-name"
+                className="error-message"
+                hidden={!this.state.errors.firstName}
+              >
+                {this.state.errors.firstName}
+              </label>
+              <input
+                type="text"
+                name="firstName"
+                id="first-name"
+                value={this.state.firstName}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="surname">{i('clientRegisterFormSurname')}</label>
+              <label for="surname" className="error-message" hidden={!this.state.errors.surname}>
+                {this.state.errors.surname}
+              </label>
+              <input
+                type="text"
+                name="surname"
+                id="surname"
+                value={this.state.surname}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="tel">{i('clientRegisterFormTel')}</label>
+              <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
+                {this.state.errors.tel}
+              </label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                value={this.state.tel}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="email">{i('clientRegisterFormEmail')}</label>
+              <label for="email" className="error-message" hidden={!this.state.errors.email}>
+                {this.state.errors.email}
+              </label>
+              <input
+                className="medium"
+                type="email"
+                name="email"
+                id="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+              <p>{i('clientRegisterFormEmailForBilling')}</p>
+            </FormDiv>
+            <FormDiv>
+              <label for="address-line-1">{i('clientRegisterFormAddressLine1')}</label>
+              <label
+                for="address-line-1"
+                className="error-message"
+                hidden={!this.state.errors.addressLine1}
+              >
+                {this.state.errors.addressLine1}
+              </label>
+              <input
+                className="wider"
+                type="text"
+                name="addressLine1"
+                id="address-line-1"
+                value={this.state.addressLine1}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="address-line-2">{i('clientRegisterFormAddressLine2')}</label>
+              <input
+                className="wider"
+                type="text"
+                name="addressLine2"
+                id="address-line-2"
+                value={this.state.addressLine2}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="postcode">{i('clientRegisterFormPostcode')}</label>
+              <label for="postcode" className="error-message" hidden={!this.state.errors.postcode}>
+                {this.state.errors.postcode}
+              </label>
+              <input
+                type="text"
+                name="postcode"
+                id="postcode"
+                value={this.state.postcode}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="post-office">{i('clientRegisterFormPostOffice')}</label>
+              <label
+                for="post-office"
+                className="error-message"
+                hidden={!this.state.errors.postOffice}
+              >
+                {this.state.errors.postOffice}
+              </label>
+              <input
+                type="text"
+                name="postOffice"
+                id="post-office"
+                value={this.state.postOffice}
+                onChange={this.handleInputChange}
+                required
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="same-billing-address">{i('clientRegisterFormSameBillingAddress')}</label>
+              <SwitchInputSpan onClick={this.handleBillingAddressToggleClick}>
+                <input
+                  key={Math.random()}
+                  type="checkbox"
+                  name="isSameBillingAddress"
+                  id="same-billing-address"
+                  defaultChecked={this.state.isSameBillingAddress}
+                />
+                <SwitchSpan />
+              </SwitchInputSpan>
+            </FormDiv>
+          </FormPage>
+
+          {/* The form page for giving the possible billing address */}
+          <FormPage hidden={this.state.currentPage !== 1}>
+            <h3>{i('clientRegisterFormBillingAddress')}</h3>
+            <FormDiv>
+              <label for="billing-address-line-1">
+                {i('clientRegisterFormBillingAddressLine1')}
+              </label>
+              <label
+                for="billing-address-line-1"
+                className="error-message"
+                hidden={!this.state.errors.billingAddressLine1}
+              >
+                {this.state.errors.billingAddressLine1}
+              </label>
+              <input
+                className="wider"
+                type="text"
+                name="billingAddressLine1"
+                id="billing-address-line-1"
+                value={this.state.billingAddressLine1}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-address-line-2">
+                {i('clientRegisterFormBillingAddressLine2')}
+              </label>
+              <input
+                className="wider"
+                type="text"
+                name="billingAddressLine2"
+                id="billing-address-line-2"
+                value={this.state.billingAddressLine2}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-postcode">{i('clientRegisterFormBillingPostcode')}</label>
+              <label
+                for="billing-postcode"
+                className="error-message"
+                hidden={!this.state.errors.billingPostcode}
+              >
+                {this.state.errors.billingPostcode}
+              </label>
+              <input
+                type="text"
+                name="billingPostcode"
+                id="billing-postcode"
+                value={this.state.billingPostcode}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+            <FormDiv>
+              <label for="billing-post-office">{i('clientRegisterFormBillingPostOffice')}</label>
+              <label
+                for="billing-post-office"
+                className="error-message"
+                hidden={!this.state.errors.billingPostOffice}
+              >
+                {this.state.errors.billingPostOffice}
+              </label>
+              <input
+                type="text"
+                name="billingPostOffice"
+                id="billing-post-office"
+                value={this.state.billingPostOffice}
+                onChange={this.handleChange}
+              />
+            </FormDiv>
+          </FormPage>
+
+          {/* The form page for selecting the billing method */}
+          <FormPage hidden={this.state.currentPage !== 2}>
+            <FormDiv>
+              <h3>{i('clientRegisterFormBillingMethod')}</h3>
+              <p>
+                {i('clientRegisterFormBillingMethodContent', {
+                  a: (...chunk) => (
+                    <LocalizedLink to="/pricing" locale={this.props.locale}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
+              <p className="error-message" hidden={!this.state.errors.billingMethod}>
+                {this.state.errors.billingMethod}
+              </p>
+              <RadioDiv>
+                <input
+                  type="radio"
+                  name="billingMethod"
+                  id="radio-email"
+                  value={FORM_BILLING_EMAIL}
+                  checked={this.state.billingMethod === FORM_BILLING_EMAIL}
+                  onChange={this.handleInputChange}
+                />
+                <label for="radio-email">{i('clientRegisterFormBillingMethodEmail')}</label>
+              </RadioDiv>
+              <RadioDiv>
+                <input
+                  type="radio"
+                  name="billingMethod"
+                  id="radio-paper"
+                  value={FORM_BILLING_PAPER}
+                  checked={this.state.billingMethod === FORM_BILLING_PAPER}
+                  onChange={this.handleInputChange}
+                />
+                <label for="radio-paper">{i('clientRegisterFormBillingMethodPaper')}</label>
+              </RadioDiv>
+            </FormDiv>
+          </FormPage>
+
+          <FormDiv>
+            <ButtonDiv hidden={this.state.currentPage === 0}>
+              <Button onClick={this.moveToPreviousPage}>
+                <ArrowLeft size={24} /> <span>{i('clientRegisterFormPrevious')}</span>
+              </Button>
+            </ButtonDiv>
+            <ButtonDiv hidden={this.state.currentPage === 2}>
+              <Button onClick={this.moveToNextPage}>
+                <span>{i('clientRegisterFormNext')}</span> <ArrowRight size={24} />
+              </Button>
+            </ButtonDiv>
+            <ButtonDiv hidden={this.state.currentPage !== 2}>
+              <button type="submit">
+                <PaperAirplane size={24} /> {i('clientRegisterFormSend')}
+              </button>
+            </ButtonDiv>
+          </FormDiv>
+          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
+            <p>{i('clientRegisterFormSuccess')}</p>
+          </FormDiv>
+          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
+            <p>{i('clientRegisterFormError')}</p>
+            <p>
+              {this.state.errorMessage
+                ? this.state.errorMessage
+                : i('clientRegisterFormErrorNoErrorMessage')}
+            </p>
+          </FormDiv>
+        </form>
+      </FormContainer>
+    );
+  }
+}
+
+export default injectIntl(RegisterPersonForm);

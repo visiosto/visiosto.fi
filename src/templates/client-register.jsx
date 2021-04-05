@@ -8,7 +8,8 @@ import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import RegisterForm from '../components/form/RegisterForm';
+import RegisterBusinessForm from '../components/form/RegisterBusinessForm';
+import RegisterPersonForm from '../components/form/RegisterPersonForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
@@ -70,7 +71,11 @@ const Page = (props) => {
         <Rule color="peach" mode={1} />
       </Separator>
       <H2>{i('clientRegisterFormTitle')}</H2>
-      <RegisterForm clientType={props.pageContext.clientType} locale={props.pageContext.locale} />
+      {props.pageContext.clientType === 'business' ? (
+        <RegisterBusinessForm locale={props.pageContext.locale} />
+      ) : (
+        <RegisterPersonForm locale={props.pageContext.locale} />
+      )}
     </Layout>
   );
 };

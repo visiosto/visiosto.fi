@@ -29,7 +29,7 @@ export default {
   clientRegisterFormSurname: 'Last Name',
   clientRegisterFormTel: 'Phone Number',
   clientRegisterFormEmail: 'Email',
-  indexContactFormEmailForBilling:
+  clientRegisterFormEmailForBilling:
     'If you choose email as your billing method, the invoices are sent to the email given here.',
   clientRegisterFormPrevious: 'Return',
   clientRegisterFormNext: 'Continue',
