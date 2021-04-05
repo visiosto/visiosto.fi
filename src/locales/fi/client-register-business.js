@@ -1,0 +1,67 @@
+// Copyright (c) 2021 Visiosto oy
+// Licensed under the MIT License
+
+export default {
+  clientRegisterBusinessFormTitle: 'Tiedot asiakasrekisteriin',
+  clientRegisterBusinessFormHoneypot: 'Älä täytä, jos olet ihminen',
+  clientRegisterBusinessFormBasicInfo: 'Yrityksen tai yhteisön perustiedot',
+  clientRegisterBusinessFormBusinessID: 'Y-tunnus',
+  clientRegisterBusinessFormBusinessName: 'Yrityksen tai yhteisön nimi',
+  clientRegisterBusinessFormAddress: 'Yrityksen tai yhteisön rekisteröity osoite',
+  clientRegisterBusinessFormAddressLine1: 'Osoiterivi 1',
+  clientRegisterBusinessFormAddressLine2: 'Osoiterivi 2',
+  clientRegisterBusinessFormPostcode: 'Postinumero',
+  clientRegisterBusinessFormPostOffice: 'Postitoimipaikka',
+  clientRegisterBusinessFormSameBillingAddress: 'Laskutusosoite on sama kuin yllä annettu osoite',
+  clientRegisterBusinessFormBillingAddress: 'Laskutusosoite',
+  clientRegisterBusinessFormBillingAddressLine1: 'Osoiterivi 1',
+  clientRegisterBusinessFormBillingAddressLine2: 'Osoiterivi 2',
+  clientRegisterBusinessFormBillingPostcode: 'Postinumero',
+  clientRegisterBusinessFormBillingPostOffice: 'Postitoimipaikka',
+  clientRegisterBusinessFormBillingMethod: 'Laskutustapa',
+  clientRegisterBusinessFormBillingMethodContent:
+    'Huomaathan, että eri laskutustavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
+  clientRegisterBusinessFormBillingMethodEInvoice: 'Verkkolasku',
+  clientRegisterBusinessFormBillingMethodEmail: 'Sähköpostitse',
+  clientRegisterBusinessFormBillingMethodPaper: 'Postitse',
+  clientRegisterBusinessFormBillingInfo: 'Laskutustiedot',
+  clientRegisterBusinessFormEInvoiceAddress: 'Verkkolaskuosoite',
+  clientRegisterBusinessFormEInvoiceOperator: 'Verkkolaskuoperaattori',
+  clientRegisterBusinessFormBillingEmail: 'Laskujen sähköpostiosoite',
+  clientRegisterBusinessFormContactPerson: 'Yhteyshenkilö',
+  clientRegisterBusinessFormFirstName: 'Etunimi',
+  clientRegisterBusinessFormSurname: 'Sukunimi',
+  clientRegisterBusinessFormTel: 'Puhelinnumero',
+  clientRegisterBusinessFormEmail: 'Sähköpostiosoite',
+  clientRegisterBusinessFormAcceptTerms:
+    'Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa',
+  clientRegisterBusinessFormPrivacyInfo:
+    'Rekisterin tietosuojaselosteeseen voit tutustua <a>täällä</a>',
+  clientRegisterBusinessFormPrevious: 'Palaa',
+  clientRegisterBusinessFormNext: 'Jatka',
+  clientRegisterBusinessFormSend: 'Lähetä',
+  clientRegisterBusinessFormSuccess: 'Lähetys onnistui. Kiitos!',
+  clientRegisterBusinessFormError: 'Lähetys epäonnistui. Virhe:',
+  clientRegisterBusinessFormErrorNoErrorMessage: 'Ei erillistä virheviestiä.',
+  clientRegisterBusinessFormErrorMissingBusinessID: 'Anna yrityksen tai yhteisön y-tunnus',
+  clientRegisterBusinessFormErrorMissingBusinessName: 'Anna yrityksen tai yhteisön nimi',
+  clientRegisterBusinessFormErrorMissingAddressLine1: 'Anna yrityksen tai yhteisön osoite',
+  clientRegisterBusinessFormErrorMissingPostcode:
+    'Anna yrityksen tai yhteisön osoitteen postinumero',
+  clientRegisterBusinessFormErrorMissingPostOffice: 'Anna yrityksen tai yhteisön postitoimipaikka',
+  clientRegisterBusinessFormErrorMissingBillingAddressLine1: 'Anna laskutusosoite',
+  clientRegisterBusinessFormErrorMissingBillingPostcode: 'Anna laskutusosoitteen postinumero',
+  clientRegisterBusinessFormErrorMissingBillingPostOffice:
+    'Anna laskutusosoitteen postitoimipaikka',
+  clientRegisterBusinessFormErrorMissingBillingMethod: 'Valitse laskutustapa',
+  clientRegisterBusinessFormErrorMissingEInvoiceAddress: 'Anna verkkolaskutusosoite',
+  clientRegisterBusinessFormErrorMissingEInvoiceOperator: 'Anna verkkolaskuoperaattori',
+  clientRegisterBusinessFormErrorMissingBillingEmail:
+    'Anna sähköpostiosoite, johon laskut toimitetaan',
+  clientRegisterBusinessFormErrorMissingFirstName: 'Anna yhteyshenkilön etunimi',
+  clientRegisterBusinessFormErrorMissingSurname: 'Anna yhteyshenkilön sukunimi',
+  clientRegisterBusinessFormErrorMissingEmail: 'Anna yhteyshenkilön sähköpostiosoite',
+  clientRegisterBusinessFormErrorMissingTel: 'Anna yhteyshenkilön puhelinnumero',
+  clientRegisterBusinessFormErrorTermsNotAccepted:
+    'Sinun tulee hyväksyä henkilötietojen käsittely, jotta voit lähettää lomakkeen',
+};

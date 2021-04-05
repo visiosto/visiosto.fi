@@ -93,57 +93,57 @@ class RegisterPersonForm extends Component {
       case 0:
         if (!this.state.firstName) {
           isValid = false;
-          errors.firstName = i('clientRegisterFormErrorMissingFirstName');
+          errors.firstName = i('clientRegisterPersonFormErrorMissingFirstName');
         }
         if (!this.state.surname) {
           isValid = false;
-          errors.surname = i('clientRegisterFormErrorMissingSurname');
+          errors.surname = i('clientRegisterPersonFormErrorMissingSurname');
         }
         if (!this.state.tel) {
           isValid = false;
-          errors.tel = i('clientRegisterFormErrorMissingTel');
+          errors.tel = i('clientRegisterPersonFormErrorMissingTel');
         }
         if (!this.state.email) {
           isValid = false;
-          errors.email = i('clientRegisterFormErrorMissingEmail');
+          errors.email = i('clientRegisterPersonFormErrorMissingEmail');
         }
         if (!this.state.addressLine1) {
           isValid = false;
-          errors.addressLine1 = i('clientRegisterFormErrorMissingAddressLine1');
+          errors.addressLine1 = i('clientRegisterPersonFormErrorMissingAddressLine1');
         }
         if (!this.state.postcode) {
           isValid = false;
-          errors.postcode = i('clientRegisterFormErrorMissingPostcode');
+          errors.postcode = i('clientRegisterPersonFormErrorMissingPostcode');
         }
         if (!this.state.postOffice) {
           isValid = false;
-          errors.postOffice = i('clientRegisterFormErrorMissingPostOffice');
+          errors.postOffice = i('clientRegisterPersonFormErrorMissingPostOffice');
         }
         break;
 
       case 1:
         if (!this.state.billingAddressLine1) {
           isValid = false;
-          errors.billingAddressLine1 = i('clientRegisterFormErrorMissingBillingAddressLine1');
+          errors.billingAddressLine1 = i('clientRegisterPersonFormErrorMissingBillingAddressLine1');
         }
         if (!this.state.billingPostcode) {
           isValid = false;
-          errors.billingPostcode = i('clientRegisterFormErrorMissingBillingPostcode');
+          errors.billingPostcode = i('clientRegisterPersonFormErrorMissingBillingPostcode');
         }
         if (!this.state.billingPostOffice) {
           isValid = false;
-          errors.billingPostOffice = i('clientRegisterFormErrorMissingBillingPostOffice');
+          errors.billingPostOffice = i('clientRegisterPersonFormErrorMissingBillingPostOffice');
         }
         break;
 
       case 2:
         if (!this.state.billingMethod) {
           isValid = false;
-          errors.billingMethod = i('clientRegisterFormErrorMissingBillingMethod');
+          errors.billingMethod = i('clientRegisterPersonFormErrorMissingBillingMethod');
         }
         if (!this.state.acceptTerms) {
           isValid = false;
-          errors.acceptTerms = i('clientRegisterFormErrorTermsNotAccepted');
+          errors.acceptTerms = i('clientRegisterPersonFormErrorTermsNotAccepted');
         }
         break;
     }
@@ -253,17 +253,17 @@ class RegisterPersonForm extends Component {
           {/* This input field is required by Netlify */}
           <input type="hidden" name="form-name" value={REGISTER_PERSON_FORM_NAME} />
           <FormDiv hidden>
-            <label>{i('clientRegisterFormHoneypot')}</label>
+            <label>{i('clientRegisterPersonFormHoneypot')}</label>
             <input name="bot-field" />
           </FormDiv>
 
           {/* The client's basic information */}
           <FormPage hidden={this.state.currentPage !== 0}>
             <FormDiv>
-              <h3>{i('clientRegisterFormBasicInfo')}</h3>
+              <h3>{i('clientRegisterPersonFormBasicInfo')}</h3>
             </FormDiv>
             <FormDiv>
-              <label for="first-name">{i('clientRegisterFormFirstName')}</label>
+              <label for="first-name">{i('clientRegisterPersonFormFirstName')}</label>
               <label
                 for="first-name"
                 className="error-message"
@@ -280,7 +280,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="surname">{i('clientRegisterFormSurname')}</label>
+              <label for="surname">{i('clientRegisterPersonFormSurname')}</label>
               <label for="surname" className="error-message" hidden={!this.state.errors.surname}>
                 {this.state.errors.surname}
               </label>
@@ -293,7 +293,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="tel">{i('clientRegisterFormTel')}</label>
+              <label for="tel">{i('clientRegisterPersonFormTel')}</label>
               <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
                 {this.state.errors.tel}
               </label>
@@ -306,7 +306,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="email">{i('clientRegisterFormEmail')}</label>
+              <label for="email">{i('clientRegisterPersonFormEmail')}</label>
               <label for="email" className="error-message" hidden={!this.state.errors.email}>
                 {this.state.errors.email}
               </label>
@@ -318,10 +318,10 @@ class RegisterPersonForm extends Component {
                 value={this.state.email}
                 onChange={this.handleChange}
               />
-              <p>{i('clientRegisterFormEmailForBilling')}</p>
+              <p>{i('clientRegisterPersonFormEmailForBilling')}</p>
             </FormDiv>
             <FormDiv>
-              <label for="address-line-1">{i('clientRegisterFormAddressLine1')}</label>
+              <label for="address-line-1">{i('clientRegisterPersonFormAddressLine1')}</label>
               <label
                 for="address-line-1"
                 className="error-message"
@@ -339,7 +339,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="address-line-2">{i('clientRegisterFormAddressLine2')}</label>
+              <label for="address-line-2">{i('clientRegisterPersonFormAddressLine2')}</label>
               <input
                 className="wider"
                 type="text"
@@ -350,7 +350,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="postcode">{i('clientRegisterFormPostcode')}</label>
+              <label for="postcode">{i('clientRegisterPersonFormPostcode')}</label>
               <label for="postcode" className="error-message" hidden={!this.state.errors.postcode}>
                 {this.state.errors.postcode}
               </label>
@@ -363,7 +363,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="post-office">{i('clientRegisterFormPostOffice')}</label>
+              <label for="post-office">{i('clientRegisterPersonFormPostOffice')}</label>
               <label
                 for="post-office"
                 className="error-message"
@@ -385,17 +385,17 @@ class RegisterPersonForm extends Component {
                 name="isSameBillingAddress"
                 handleClick={this.handleBillingAddressToggleClick}
                 checked={this.state.isSameBillingAddress}
-                label={i('clientRegisterFormSameBillingAddress')}
+                label={i('clientRegisterPersonFormSameBillingAddress')}
               />
             </FormDiv>
           </FormPage>
 
           {/* The form page for giving the possible billing address */}
           <FormPage hidden={this.state.currentPage !== 1}>
-            <h3>{i('clientRegisterFormBillingAddress')}</h3>
+            <h3>{i('clientRegisterPersonFormBillingAddress')}</h3>
             <FormDiv>
               <label for="billing-address-line-1">
-                {i('clientRegisterFormBillingAddressLine1')}
+                {i('clientRegisterPersonFormBillingAddressLine1')}
               </label>
               <label
                 for="billing-address-line-1"
@@ -415,7 +415,7 @@ class RegisterPersonForm extends Component {
             </FormDiv>
             <FormDiv>
               <label for="billing-address-line-2">
-                {i('clientRegisterFormBillingAddressLine2')}
+                {i('clientRegisterPersonFormBillingAddressLine2')}
               </label>
               <input
                 className="wider"
@@ -427,7 +427,7 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-postcode">{i('clientRegisterFormBillingPostcode')}</label>
+              <label for="billing-postcode">{i('clientRegisterPersonFormBillingPostcode')}</label>
               <label
                 for="billing-postcode"
                 className="error-message"
@@ -444,7 +444,9 @@ class RegisterPersonForm extends Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-post-office">{i('clientRegisterFormBillingPostOffice')}</label>
+              <label for="billing-post-office">
+                {i('clientRegisterPersonFormBillingPostOffice')}
+              </label>
               <label
                 for="billing-post-office"
                 className="error-message"
@@ -466,8 +468,8 @@ class RegisterPersonForm extends Component {
           <FormPage hidden={this.state.currentPage !== 2}>
             <FormDiv>
               <RadioInput
-                title={i('clientRegisterFormBillingMethod')}
-                description={i('clientRegisterFormBillingMethodContent', {
+                title={i('clientRegisterPersonFormBillingMethod')}
+                description={i('clientRegisterPersonFormBillingMethodContent', {
                   a: (...chunk) => (
                     <LocalizedLink to="/pricing" locale={this.props.locale}>
                       {chunk}
@@ -480,12 +482,12 @@ class RegisterPersonForm extends Component {
                 inputs={[
                   {
                     id: FORM_BILLING_EMAIL,
-                    label: i('clientRegisterFormBillingMethodEmail'),
+                    label: i('clientRegisterPersonFormBillingMethodEmail'),
                     value: FORM_BILLING_EMAIL,
                   },
                   {
                     id: FORM_BILLING_PAPER,
-                    label: i('clientRegisterFormBillingMethodPaper'),
+                    label: i('clientRegisterPersonFormBillingMethodPaper'),
                     value: FORM_BILLING_PAPER,
                   },
                 ]}
@@ -498,12 +500,12 @@ class RegisterPersonForm extends Component {
                 errorMessage={this.state.errors.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 checked={this.state.acceptTerms}
-                label={i('clientRegisterFormAcceptTerms')}
+                label={i('clientRegisterPersonFormAcceptTerms')}
               />
             </FormDiv>
             <FormDiv>
               <p>
-                {i('clientRegisterFormPrivacyInfo', {
+                {i('clientRegisterPersonFormPrivacyInfo', {
                   a: (...chunk) => (
                     <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={this.props.locale}>
                       {chunk}
@@ -517,29 +519,29 @@ class RegisterPersonForm extends Component {
           <FormDiv>
             <ButtonDiv hidden={this.state.currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <ArrowLeft size={24} /> <span>{i('clientRegisterFormPrevious')}</span>
+                <ArrowLeft size={24} /> <span>{i('clientRegisterPersonFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={this.state.currentPage === 2}>
               <Button onClick={this.moveToNextPage}>
-                <span>{i('clientRegisterFormNext')}</span> <ArrowRight size={24} />
+                <span>{i('clientRegisterPersonFormNext')}</span> <ArrowRight size={24} />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={this.state.currentPage !== 2}>
               <button type="submit">
-                <PaperAirplane size={24} /> {i('clientRegisterFormSend')}
+                <PaperAirplane size={24} /> {i('clientRegisterPersonFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
-            <p>{i('clientRegisterFormSuccess')}</p>
+            <p>{i('clientRegisterPersonFormSuccess')}</p>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
-            <p>{i('clientRegisterFormError')}</p>
+            <p>{i('clientRegisterPersonFormError')}</p>
             <p>
               {this.state.errorMessage
                 ? this.state.errorMessage
-                : i('clientRegisterFormErrorNoErrorMessage')}
+                : i('clientRegisterPersonFormErrorNoErrorMessage')}
             </p>
           </FormDiv>
         </form>

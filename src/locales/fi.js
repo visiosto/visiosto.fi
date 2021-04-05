@@ -6,7 +6,8 @@ import { defineMessages } from 'react-intl';
 import authorMessages from './fi/author';
 import blogMessages from './fi/blog';
 import categoryMessages from './fi/category';
-import clientRegisterMessages from './fi/client-register';
+import clientRegisterBusinessMessages from './fi/client-register-business';
+import clientRegisterPersonMessages from './fi/client-register-person';
 import contactFormMessages from './fi/contact-form';
 import cookieNoticeMessages from './fi/cookie-notice';
 import footerMessages from './fi/footer';
@@ -20,14 +21,14 @@ export const messages = {
   ...authorMessages,
   ...blogMessages,
   ...categoryMessages,
-  ...clientRegisterMessages,
+  ...clientRegisterBusinessMessages,
+  ...clientRegisterPersonMessages,
   ...contactFormMessages,
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
   ...managementMessages,
   ...metaMessages,
-  ...navigationMessages,
   ...notFoundMessages,
   ...searchMessages,
 };
