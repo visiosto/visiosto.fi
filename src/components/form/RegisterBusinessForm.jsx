@@ -316,6 +316,9 @@ class RegisterBusinessForm extends Component {
           {/* The client's basic information */}
           <FormPage hidden={this.state.currentPage !== 0}>
             <FormDiv>
+              <h3>{i('clientRegisterFormBasicInfo')}</h3>
+            </FormDiv>
+            <FormDiv>
               <label for="business-id">{i('clientRegisterFormBusinessID')}</label>
               <label
                 for="business-id"
@@ -348,6 +351,9 @@ class RegisterBusinessForm extends Component {
                 value={this.state.businessName}
                 onChange={this.handleChange}
               />
+            </FormDiv>
+            <FormDiv>
+              <h4>{i('clientRegisterFormAddress')}</h4>
             </FormDiv>
             <FormDiv>
               <label for="address-line-1">{i('clientRegisterFormAddressLine1')}</label>
@@ -529,6 +535,9 @@ class RegisterBusinessForm extends Component {
 
           {/* The billing information: either e-invoice info or email for billing */}
           <FormPage hidden={this.state.currentPage !== 3}>
+            <FormDiv>
+              <h3>{i('clientRegisterFormBillingInfo')}</h3>
+            </FormDiv>
             <FormDiv hidden={this.state.billingMethod !== FORM_BILLING_E_INVOICE}>
               <label for="e-invoice-address">{i('clientRegisterFormEInvoiceAddress')}</label>
               <label
@@ -587,6 +596,9 @@ class RegisterBusinessForm extends Component {
 
           {/* The client's contact person's information */}
           <FormPage hidden={this.state.currentPage !== 4}>
+            <FormDiv>
+              <h3>{i('clientRegisterFormContactPerson')}</h3>
+            </FormDiv>
             <FormDiv>
               <label for="first-name">{i('clientRegisterFormFirstName')}</label>
               <label
@@ -653,6 +665,17 @@ class RegisterBusinessForm extends Component {
                 checked={this.state.acceptTerms}
                 label={i('clientRegisterFormAcceptTerms')}
               />
+            </FormDiv>
+            <FormDiv>
+              <p>
+                {i('clientRegisterFormPrivacyInfo', {
+                  a: (...chunk) => (
+                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={this.props.locale}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
             </FormDiv>
           </FormPage>
 

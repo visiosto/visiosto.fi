@@ -260,6 +260,9 @@ class RegisterPersonForm extends Component {
           {/* The client's basic information */}
           <FormPage hidden={this.state.currentPage !== 0}>
             <FormDiv>
+              <h3>{i('clientRegisterFormBasicInfo')}</h3>
+            </FormDiv>
+            <FormDiv>
               <label for="first-name">{i('clientRegisterFormFirstName')}</label>
               <label
                 for="first-name"
@@ -497,6 +500,17 @@ class RegisterPersonForm extends Component {
                 checked={this.state.acceptTerms}
                 label={i('clientRegisterFormAcceptTerms')}
               />
+            </FormDiv>
+            <FormDiv>
+              <p>
+                {i('clientRegisterFormPrivacyInfo', {
+                  a: (...chunk) => (
+                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={this.props.locale}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
             </FormDiv>
           </FormPage>
 
