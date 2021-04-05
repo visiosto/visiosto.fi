@@ -9,7 +9,8 @@ export default {
   contactFormOr: 'or',
   contactFormTel: 'Phone Number',
   contactFormMessage: 'Your message for us',
-  contactFormSendConsent: 'By sending this data you give your consent to process your personal data according to the register’s <a>privacy policy</a>',
+  contactFormSendConsent:
+    'By sending this data you give your consent to process your personal data according to the register’s <a>privacy policy</a>',
   contactFormSend: 'Send',
   contactFormSuccess: 'Your message was successfully sent. Thank you!',
   contactFormError: 'Sending your message failed. Error:',

@@ -190,7 +190,17 @@ class ContactForm extends Component {
               value={this.state.message}
             />
           </FormDiv>
-          <FormDiv><p>{i('contactFormSendConsent', {a: (...chunk) => <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={this.props.locale}>{chunk}</LocalizedLink>})}</p></FormDiv>
+          <FormDiv>
+            <p>
+              {i('contactFormSendConsent', {
+                a: (...chunk) => (
+                  <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={this.props.locale}>
+                    {chunk}
+                  </LocalizedLink>
+                ),
+              })}
+            </p>
+          </FormDiv>
           <FormDiv>
             <ButtonDiv>
               <button type="submit">
