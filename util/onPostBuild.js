@@ -6,17 +6,25 @@ const path = require('path');
 
 const createPagePath = require('./createPagePath');
 
-const htmlTreeToText = (elements) =>
-  elements.map((element) =>
+const htmlTreeToText = function transformHTMLTreeToText(elements) {
+  return elements.map((element) =>
     element.type === 'text' ? element.value : htmlTreeToText(element.children),
   );
+};
 
-const createFromHTMLAST = (elements) =>
-  htmlTreeToText(elements).reduce((accumulator, element) =>
+const createFromHTMLAST = function createFullTextFromHTMLAST(elements) {
+  return htmlTreeToText(elements).reduce((accumulator, element) =>
     element === '\n' ? `${accumulator}` : `${accumulator} ${element}`,
   );
+};
 
-const createBlogPageEntry = (node, blogNodes, locale, defaultLocale, localePaths) => {
+const createBlogPageEntry = function createBlogPageEntryFromHTMLAST(
+  node,
+  blogNodes,
+  locale,
+  defaultLocale,
+  localePaths,
+) {
   const content = [
     node.title,
     ...blogNodes.map(
@@ -39,7 +47,7 @@ const createBlogPageEntry = (node, blogNodes, locale, defaultLocale, localePaths
   return page;
 };
 
-const createBlogPostContent = (node) => {
+const createBlogPostContent = function createBlogPostContentFromHTMLAST(node) {
   const content = [
     node.title,
     node.author.name,
@@ -50,7 +58,12 @@ const createBlogPostContent = (node) => {
   return content.join(' ');
 };
 
-const createIndexPageEntry = (node, locale, defaultLocale, localePaths) => {
+const createIndexPageEntry = function createIndexPageEntryFromHTMLAST(
+  node,
+  locale,
+  defaultLocale,
+  localePaths,
+) {
   const content = [
     node.introTitle,
     createFromHTMLAST(node.introBody.childMarkdownRemark.htmlAst.children),
@@ -80,7 +93,13 @@ const createIndexPageEntry = (node, locale, defaultLocale, localePaths) => {
   return page;
 };
 
-const createManagementPageEntry = (node, blogNodes, locale, defaultLocale, localePaths) => {
+const createManagementPageEntry = function createManagementPageEntryFromHTMLAST(
+  node,
+  blogNodes,
+  locale,
+  defaultLocale,
+  localePaths,
+) {
   const content = [
     node.title,
     createFromHTMLAST(node.body.childMarkdownRemark.htmlAst.children),
@@ -106,7 +125,7 @@ const createManagementPageEntry = (node, blogNodes, locale, defaultLocale, local
   return page;
 };
 
-module.exports = async ({ graphql, reporter }) => {
+module.exports = async function onPostBuild({ graphql, reporter }) {
   const query = await graphql(
     `
       {

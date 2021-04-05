@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-module.exports = ({ page, actions }) => {
+module.exports = function onCreatePage({ page, actions }) {
   const { createPage, deletePage } = actions;
 
   if (page.path === '/404/') {

@@ -1,6 +1,10 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-exports.createPages = require('./util/createPages');
-exports.onCreatePage = require('./util/onCreatePage');
-exports.onPostBuild = require('./util/onPostBuild');
+const createPages = require('./util/createPages');
+const onCreatePage = require('./util/onCreatePage');
+const onPostBuild = require('./util/onPostBuild');
+
+exports.createPages = createPages;
+exports.onCreatePage = onCreatePage;
+exports.onPostBuild = onPostBuild;

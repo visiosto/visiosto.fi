@@ -5,7 +5,7 @@ const path = require('path');
 
 const createPagePath = require('./createPagePath');
 
-module.exports = async ({ actions, graphql, reporter }) => {
+module.exports = async function createPages({ actions, graphql, reporter }) {
   const { createPage, createRedirect } = actions;
 
   const query = await graphql(
