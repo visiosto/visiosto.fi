@@ -11,6 +11,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Success and error messages to the contact form.
 - Timeout for the status messages of the contact form.
 - Validation for the input of the contact form.
+- Validation for the input of the client register forms.
+
+### Changed
+
+- Client register forms for people and businesses to separate components.
 
 ### Removed
 
