@@ -3,19 +3,19 @@
 
 import { defineMessages } from 'react-intl';
 
-import authorMessages from './en/author';
-import blogMessages from './en/blog';
-import categoryMessages from './en/category';
-import clientRegisterBusinessMessages from './fi/client-register-business';
-import clientRegisterPersonMessages from './fi/client-register-person';
-import contactFormMessages from './en/contact-form';
-import cookieNoticeMessages from './en/cookie-notice';
-import footerMessages from './en/footer';
-import headerMessages from './en/header';
-import managementMessages from './en/management';
-import metaMessages from './en/meta';
-import notFoundMessages from './en/not-found';
-import searchMessages from './en/search';
+import authorMessages from './en/authorMessages';
+import blogMessages from './en/blogMessages';
+import categoryMessages from './en/categoryMessages';
+import clientRegisterBusinessMessages from './fi/clientRegisterBusinessMessages';
+import clientRegisterPersonMessages from './fi/clientRegisterPersonMessages';
+import contactFormMessages from './en/contactFormMessages';
+import cookieNoticeMessages from './en/cookieNoticeMessages';
+import footerMessages from './en/footerMessages';
+import headerMessages from './en/headerMessages';
+import managementMessages from './en/managementMessages';
+import metaMessages from './en/metaMessages';
+import notFoundMessages from './en/notFoundMessages';
+import searchMessages from './en/searchMessages';
 
 export const messages = {
   ...authorMessages,
