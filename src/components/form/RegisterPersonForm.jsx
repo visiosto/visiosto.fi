@@ -321,7 +321,7 @@ class RegisterPersonForm extends Component {
                 name="addressLine1"
                 id="address-line-1"
                 value={this.state.addressLine1}
-                onChange={this.handleInputChange}
+                onChange={this.handleChange}
                 required
               />
             </FormDiv>
@@ -333,7 +333,7 @@ class RegisterPersonForm extends Component {
                 name="addressLine2"
                 id="address-line-2"
                 value={this.state.addressLine2}
-                onChange={this.handleInputChange}
+                onChange={this.handleChange}
                 required
               />
             </FormDiv>
@@ -347,7 +347,7 @@ class RegisterPersonForm extends Component {
                 name="postcode"
                 id="postcode"
                 value={this.state.postcode}
-                onChange={this.handleInputChange}
+                onChange={this.handleChange}
                 required
               />
             </FormDiv>
@@ -365,7 +365,7 @@ class RegisterPersonForm extends Component {
                 name="postOffice"
                 id="post-office"
                 value={this.state.postOffice}
-                onChange={this.handleInputChange}
+                onChange={this.handleChange}
                 required
               />
             </FormDiv>
@@ -475,7 +475,7 @@ class RegisterPersonForm extends Component {
                   id="radio-email"
                   value={FORM_BILLING_EMAIL}
                   checked={this.state.billingMethod === FORM_BILLING_EMAIL}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleChange}
                 />
                 <label for="radio-email">{i('clientRegisterFormBillingMethodEmail')}</label>
               </RadioDiv>
@@ -486,7 +486,7 @@ class RegisterPersonForm extends Component {
                   id="radio-paper"
                   value={FORM_BILLING_PAPER}
                   checked={this.state.billingMethod === FORM_BILLING_PAPER}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleChange}
                 />
                 <label for="radio-paper">{i('clientRegisterFormBillingMethodPaper')}</label>
               </RadioDiv>
