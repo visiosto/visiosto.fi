@@ -151,7 +151,7 @@ const Page = (props) => {
           })}
         </Cards>
         <H3>{page.contactFormTitle}</H3>
-        <ContactForm />
+        <ContactForm locale={props.pageContext.locale} />
       </Section>
     </LayoutIndex>
   );
