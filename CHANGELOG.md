@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Component for radio inputs.
 - Option for explicitly giving consent for processing personal data before submitting the forms.
 - Information about giving consent before submitting the front page contact form.
+- Separate translations for personal and business client register forms.
 
 ### Changed
 
