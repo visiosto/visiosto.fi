@@ -57,7 +57,7 @@ const PostCategory = styled.span`
   display: block;
 `;
 
-export default (props) => {
+export default function LayoutPost(props) {
   useColorScheme();
 
   const i = createIntl(useIntl());
@@ -88,4 +88,4 @@ export default (props) => {
       <Footer {...props} />
     </>
   );
-};
+}

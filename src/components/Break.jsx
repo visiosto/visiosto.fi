@@ -10,11 +10,11 @@ const Hr = styled.hr`
   visibility: hidden;
 `;
 
-export default (props) => {
+export default function Break(props) {
   return (
     <>
       <Rule {...props} />
       <Hr />
     </>
   );
-};
+}

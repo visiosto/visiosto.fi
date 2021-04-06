@@ -15,7 +15,7 @@ const PageTitle = styled.h2`
   display: none;
 `;
 
-export default (props) => {
+export default function LayoutIndex(props) {
   useColorScheme();
 
   return (
@@ -34,4 +34,4 @@ export default (props) => {
       <Footer {...props} />
     </>
   );
-};
+}

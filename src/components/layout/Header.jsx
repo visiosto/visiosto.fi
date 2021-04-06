@@ -72,7 +72,7 @@ const ChevronIcon = styled(ChevronRightIcon)`
   margin: 0 0 0.1rem;
 `;
 
-const createPath = (pathNode) => {
+const createPath = function createPathEntryForNode(pathNode) {
   if (pathNode.parentPath) {
     return concat(createPath(pathNode.parentPath)).concat([pathNode]);
   }
@@ -80,7 +80,7 @@ const createPath = (pathNode) => {
   return [pathNode];
 };
 
-const createBreadcrumbPath = (node, parentPath) => {
+const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath) {
   let pagePath = [node];
 
   if (parentPath) {
@@ -96,7 +96,7 @@ const createBreadcrumbPath = (node, parentPath) => {
   return pagePath;
 };
 
-const createBreadcrumb = (data, props) => {
+const createBreadcrumb = function createBreadcrumbFromQueryData(data, props) {
   if (!props.errorPage) {
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
@@ -156,7 +156,7 @@ const createBreadcrumb = (data, props) => {
   return null;
 };
 
-const Header = (props) => {
+export default function Header(props) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -365,6 +365,4 @@ const Header = (props) => {
       </Breadcrumb>
     </Div>
   );
-};
-
-export default Header;
+}

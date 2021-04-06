@@ -15,7 +15,7 @@ import Search from '../search/Search';
 
 import createIntl from '../../util/createIntl';
 
-const Footer = styled.footer`
+const FooterElement = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginMobile} 2em;
   text-align: center;
 
@@ -129,7 +129,7 @@ const TermsOfUseP = styled.p`
   }
 `;
 
-export default (props) => {
+export default function Footer(props) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -211,7 +211,7 @@ export default (props) => {
   const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
 
   return (
-    <Footer>
+    <FooterElement>
       <Search {...props} />
       <CompanyDiv>
         <LogoImage
@@ -322,6 +322,6 @@ export default (props) => {
           })}
         </p>
       </Div>
-    </Footer>
+    </FooterElement>
   );
-};
+}

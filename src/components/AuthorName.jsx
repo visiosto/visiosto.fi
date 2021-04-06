@@ -22,10 +22,10 @@ const Link = styled(LocalizedLink)`
   }
 `;
 
-const AuthorName = (props) => (
-  <Link to={props.author.contentful_id} locale={props.locale}>
-    {props.author.name}
-  </Link>
-);
-
-export default AuthorName;
+export default function AuthorName({ author: { contentful_id: authorID, name }, locale }) {
+  return (
+    <Link to={authorID} locale={locale}>
+      {name}
+    </Link>
+  );
+}

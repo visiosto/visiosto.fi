@@ -8,4 +8,6 @@ import React from 'react';
 
 import ThemeContextProvider from './ThemeContextProvider';
 
-export default (props) => <ThemeContextProvider>{props.children}</ThemeContextProvider>;
+export default function App({ children }) {
+  return <ThemeContextProvider>{children}</ThemeContextProvider>;
+}

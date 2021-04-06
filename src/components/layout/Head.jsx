@@ -9,7 +9,7 @@ import { useIntl } from 'react-intl';
 import createIntl from '../../util/createIntl';
 import createLocaleURL from '../../util/createLocaleURL';
 
-const Head = (props) => {
+export default function Head(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -261,6 +261,4 @@ const Head = (props) => {
       })()}
     </Helmet>
   );
-};
-
-export default Head;
+}

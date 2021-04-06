@@ -20,7 +20,7 @@ const Container = styled(SearchContainer)`
   }
 `;
 
-const Search = (props) => {
+export default function Search(props) {
   const { site } = useStaticQuery(
     graphql`
       {
@@ -34,6 +34,4 @@ const Search = (props) => {
   );
 
   return <Container siteUrl={site.siteMetadata.siteUrl} locale={props.locale} />;
-};
-
-export default Search;
+}

@@ -36,12 +36,10 @@ const SpanGreen = styled(Span)`
   }
 `;
 
-const Button = (props) => {
-  if (props.color && props.color === 'green') {
-    return <SpanGreen onClick={props.onClick}>{props.children}</SpanGreen>;
+export default function Button({ children, color, onClick }) {
+  if (color && color === 'green') {
+    return <SpanGreen onClick={onClick}>{children}</SpanGreen>;
   }
 
-  return <SpanNormal onClick={props.onClick}>{props.children}</SpanNormal>;
-};
-
-export default Button;
+  return <SpanNormal onClick={onClick}>{children}</SpanNormal>;
+}

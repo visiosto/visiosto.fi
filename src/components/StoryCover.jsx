@@ -6,7 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Cover from './Cover';
 
-export default (props) => {
+export default function StoryCover(props) {
   const data = useStaticQuery(
     graphql`
       {
@@ -73,4 +73,4 @@ export default (props) => {
       {...props}
     />
   );
-};
+}

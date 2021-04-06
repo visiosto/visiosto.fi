@@ -1,9 +1,9 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import CookieSettings from './CookieSettings';
 
@@ -30,26 +30,45 @@ const Wrapper = styled.div`
   text-align: left;
 `;
 
-const CookieNotice = (props) => {
-  const i = createIntl(useIntl());
+class CookieNotice extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const [settingsOpen, setSettingsOpen] = useState(false);
+    this.state = { isOpen: false };
 
-  const handleSettingsToggle = () => {
+    this.handleSettingsToggle = this.handleSettingsToggle.bind(this);
+    this.onLinkClick = this.onLinkClick.bind(this);
+  }
+
+  handleSettingsToggle(open) {
+    this.setState({ isOpen: open });
+  }
+
+  onLinkClick() {
     document.body.classList.toggle('cookie-settings-open');
-    setSettingsOpen(true);
+
+    this.setState({ isOpen: true });
+
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  };
+  }
 
-  return (
-    <>
-      <Link onClick={handleSettingsToggle}>{i('cookieSettingsLink')}</Link>
-      <Wrapper>
-        <CookieSettings settingsOpen={settingsOpen} toggleSettings={setSettingsOpen} {...props} />
-      </Wrapper>
-    </>
-  );
-};
+  render() {
+    const i = createIntl(this.props.intl);
 
-export default CookieNotice;
+    return (
+      <>
+        <Link onClick={this.onLinkClick}>{i('cookieSettingsLink')}</Link>
+        <Wrapper>
+          <CookieSettings
+            settingsOpen={this.state.isOpen}
+            toggleSettings={this.handleSettingsToggle}
+            {...this.props}
+          />
+        </Wrapper>
+      </>
+    );
+  }
+}
+
+export default injectIntl(CookieNotice);

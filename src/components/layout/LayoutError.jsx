@@ -30,7 +30,7 @@ const PageTitle = styled.h2`
   text-align: center;
 `;
 
-export default (props) => {
+export default function LayoutError(props) {
   useColorScheme();
 
   return (
@@ -50,4 +50,4 @@ export default (props) => {
       <Footer noLocaleSwitcher {...props} />
     </>
   );
-};
+}

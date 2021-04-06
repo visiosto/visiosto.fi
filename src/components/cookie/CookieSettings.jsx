@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Cookies from 'universal-cookie';
 import { injectIntl } from 'react-intl';
@@ -209,24 +209,24 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
-class CookieSettings extends Component {
-  state = {
-    showBanner: false,
-    isAnalyticsEnabled:
-      !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
-      cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'false',
-  };
-
+class CookieSettings extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      showBanner: false,
+      isAnalyticsEnabled:
+        !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
+        cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'false',
+    };
+
     this.handleCookieChange = this.handleCookieChange.bind(this);
-    this.handleClickInfo = this.handleClickInfo.bind(this);
-    this.handleClickClose = this.handleClickClose.bind(this);
-    this.handleClickAccept = this.handleClickAccept.bind(this);
-    this.handleClickSave = this.handleClickSave.bind(this);
-    this.handleToggleAnalytics = this.handleToggleAnalytics.bind(this);
-    this.handleChangePage = this.handleChangePage.bind(this);
+    this.handleInfoClick = this.handleInfoClick.bind(this);
+    this.handleClosingClick = this.handleClosingClick.bind(this);
+    this.handleAcceptClick = this.handleAcceptClick.bind(this);
+    this.handleSaveClick = this.handleSaveClick.bind(this);
+    this.handleAnalyticsToggle = this.handleAnalyticsToggle.bind(this);
+    this.handlePageChange = this.handlePageChange.bind(this);
   }
 
   componentDidMount() {
@@ -245,25 +245,28 @@ class CookieSettings extends Component {
     cookies.removeChangeListener(this.handleCookieChange);
   }
 
-  handleCookieChange = (options) => {
+  handleCookieChange(options) {
     if (options.name === DISABLE_ANALYTICS_COOKIE_NAME) {
       this.setState({ isAnalyticsEnabled: !options.value });
     }
-  };
+  }
 
-  handleClickInfo = () => {
+  handleInfoClick() {
     document.body.classList.toggle('cookie-settings-open');
+
     this.props.toggleSettings(true);
+
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  };
+  }
 
-  handleClickClose = () => {
+  handleClosingClick() {
     document.body.classList.toggle('cookie-settings-open');
-    this.props.toggleSettings(false);
-  };
 
-  handleClickAccept = () => {
+    this.props.toggleSettings(false);
+  }
+
+  handleAcceptClick() {
     const expires = new Date();
 
     expires.setMonth(new Date().getMonth() + 1);
@@ -274,16 +277,17 @@ class CookieSettings extends Component {
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = false;
 
     this.setState({ showBanner: false });
-  };
+  }
 
-  handleClickSave = () => {
+  handleSaveClick() {
     document.body.classList.toggle('cookie-settings-open');
 
     const expires = new Date();
 
     expires.setMonth(new Date().getMonth() + 1);
 
-    // The cookie that determines whether the tracking is disabled may not be set if the user has not touched the toggle.
+    // The cookie that determines whether the tracking is disabled may not be
+    // set if the user has not touched the toggle.
     if (cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === undefined) {
       cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
     }
@@ -296,9 +300,9 @@ class CookieSettings extends Component {
 
     this.props.toggleSettings(false);
     this.setState({ showBanner: false });
-  };
+  }
 
-  handleToggleAnalytics = () => {
+  handleAnalyticsToggle() {
     const expires = new Date();
 
     expires.setMonth(new Date().getMonth() + 1);
@@ -306,12 +310,13 @@ class CookieSettings extends Component {
     const isDisabled = cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'true';
 
     cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
-  };
+  }
 
-  handleChangePage = () => {
+  handlePageChange() {
     document.body.classList.toggle('cookie-settings-open');
+
     this.props.toggleSettings(false);
-  };
+  }
 
   render() {
     const i = createIntl(this.props.intl);
@@ -337,7 +342,7 @@ class CookieSettings extends Component {
                           to="/data-protection#google-analytics"
                           locale={this.props.locale}
                         >
-                          <span onClick={this.handleChangePage}>
+                          <span onClick={this.handlePageChange}>
                             {i('cookieNoticeGoogleAnalyticsInfo')}
                           </span>
                         </LocalizedAnchorLink>
@@ -347,7 +352,7 @@ class CookieSettings extends Component {
                     <SwitchLabel>
                       <SwitchInput
                         type="checkbox"
-                        onChange={this.handleToggleAnalytics}
+                        onChange={this.handleAnalyticsToggle}
                         checked={this.state.isAnalyticsEnabled}
                       />
                       <SwitchSpan />
@@ -358,17 +363,17 @@ class CookieSettings extends Component {
                       <LocalizedLink
                         to="/data-protection"
                         locale={this.props.locale}
-                        onClick={this.handleChangePage}
+                        onClick={this.handlePageChange}
                       >
                         {i('cookieNoticeDataProtection')}
                       </LocalizedLink>
                     </p>
                   </Section>
                   <SettingButtons>
-                    <Button onClick={this.handleClickSave} color="green">
+                    <Button onClick={this.handleSaveClick} color="green">
                       {i('cookieNoticeSave')}
                     </Button>
-                    <Button onClick={this.handleClickClose}>{i('cookieNoticeCancel')}</Button>
+                    <Button onClick={this.handleClosingClick}>{i('cookieNoticeCancel')}</Button>
                   </SettingButtons>
                 </Content>
               </SettingsContent>
@@ -389,10 +394,10 @@ class CookieSettings extends Component {
           <p>{i('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
-          <Button onClick={this.handleClickAccept} color="green">
+          <Button onClick={this.handleAcceptClick} color="green">
             {i('cookieNoticeAccept')}
           </Button>
-          <Button onClick={this.handleClickInfo}>{i('cookieNoticeReject')}</Button>
+          <Button onClick={this.handleInfoClick}>{i('cookieNoticeReject')}</Button>
         </Buttons>
       </Div>
     );

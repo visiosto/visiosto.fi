@@ -22,12 +22,11 @@ const Link = styled(LocalizedLink)`
   }
 `;
 
-const CategoryName = (props) => {
+export default function CategoryName({ category: { contentful_id: categoryID, name }, locale }) {
+  // const { contentful_id: categoryID, name } = category;
   return (
-    <Link to={props.category.contentful_id} locale={props.locale}>
-      {props.category.name}
+    <Link to={categoryID} locale={locale}>
+      {name}
     </Link>
   );
-};
-
-export default CategoryName;
+}

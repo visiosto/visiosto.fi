@@ -14,29 +14,29 @@ const RadioDiv = styled.div`
   }
 `;
 
-const RadioInput = (props) => (
-  <>
-    {props.title ? <h3>{props.title}</h3> : null}
-    {props.description ? <p>{props.description}</p> : null}
-    {'errorMessage' in props ? (
-      <p className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
-        {props.errorMessage}
-      </p>
-    ) : null}
-    {props.inputs.map(({ id, label, value }) => (
-      <RadioDiv key={id}>
-        <input
-          type="radio"
-          name={props.name}
-          id={`radio-${id}`}
-          value={value}
-          checked={props.value === value}
-          onChange={() => props.handleChange(value)}
-        />
-        <label for={`radio-${id}`}>{label}</label>
-      </RadioDiv>
-    ))}
-  </>
-);
-
-export default RadioInput;
+export default function RadioInput(props) {
+  return (
+    <>
+      {props.title ? <h3>{props.title}</h3> : null}
+      {props.description ? <p>{props.description}</p> : null}
+      {'errorMessage' in props ? (
+        <p className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
+          {props.errorMessage}
+        </p>
+      ) : null}
+      {props.inputs.map(({ id, label, value: inputValue }) => (
+        <RadioDiv key={id}>
+          <input
+            type="radio"
+            name={props.name}
+            id={`radio-${id}`}
+            value={inputValue}
+            checked={props.value === inputValue}
+            onChange={() => props.handleChange(inputValue)}
+          />
+          <label for={`radio-${id}`}>{label}</label>
+        </RadioDiv>
+      ))}
+    </>
+  );
+}

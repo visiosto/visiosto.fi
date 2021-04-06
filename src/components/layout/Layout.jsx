@@ -30,7 +30,7 @@ const PageTitle = styled.h1`
   }
 `;
 
-export default (props) => {
+export default function Layout(props) {
   useColorScheme();
 
   return (
@@ -49,4 +49,4 @@ export default (props) => {
       <Footer {...props} />
     </>
   );
-};
+}

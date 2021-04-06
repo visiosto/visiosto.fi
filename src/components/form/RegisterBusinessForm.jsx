@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { Component } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
@@ -49,7 +49,7 @@ const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
 
-class RegisterBusinessForm extends Component {
+class RegisterBusinessForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -90,7 +90,7 @@ class RegisterBusinessForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  validatePageData = () => {
+  validatePageData() {
     const i = createIntl(this.props.intl);
     const errors = {};
     let isValid = true;
@@ -192,9 +192,9 @@ class RegisterBusinessForm extends Component {
     this.setState({ errors });
 
     return isValid;
-  };
+  }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     if (this.validatePageData()) {
       const formData = {
         businessID: this.state.businessID,
@@ -240,21 +240,21 @@ class RegisterBusinessForm extends Component {
     }
 
     event.preventDefault();
-  };
+  }
 
-  handleBillingAddressToggleClick = () => {
+  handleBillingAddressToggleClick() {
     this.setState((state, props) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
-  };
+  }
 
-  handleAcceptTermsToggleClick = () => {
+  handleAcceptTermsToggleClick() {
     this.setState((state, props) => ({ acceptTerms: !state.acceptTerms }));
-  };
+  }
 
-  handleBillingMethodClick = (value) => {
+  handleBillingMethodClick(value) {
     this.setState({ billingMethod: value });
-  };
+  }
 
-  moveToPreviousPage = () => {
+  moveToPreviousPage() {
     if (this.state.currentPage === 2 && this.state.isSameBillingAddress) {
       this.setState({ currentPage: 0 });
     } else if (
@@ -266,9 +266,9 @@ class RegisterBusinessForm extends Component {
     } else {
       this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
     }
-  };
+  }
 
-  moveToNextPage = () => {
+  moveToNextPage() {
     if (this.validatePageData()) {
       if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
         this.setState({ currentPage: 2 });
@@ -282,9 +282,9 @@ class RegisterBusinessForm extends Component {
         this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
       }
     }
-  };
+  }
 
-  handleChange = (event) => {
+  handleChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -292,7 +292,7 @@ class RegisterBusinessForm extends Component {
     this.setState({
       [name]: value,
     });
-  };
+  }
 
   render() {
     const i = createIntl(this.props.intl);

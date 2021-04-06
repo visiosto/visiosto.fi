@@ -6,22 +6,22 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import ThemeContext from './ThemeContext';
 
-const SchemedImage = (props) => {
+export default function SchemedImage({ light, dark, alt, ...imageProps }) {
   const { colorMode } = useContext(ThemeContext);
 
-  const { light, dark, alt, ...imageProps } = props;
+  const altText = alt && alt !== '' ? alt : '';
 
-  const createImage = (image) => () =>
-    alt ? (
-      <GatsbyImage image={image} alt={alt} {...imageProps} />
-    ) : (
-      <GatsbyImage image={image} alt="" role="presentation" {...imageProps} />
-    );
-
-  const LightImage = createImage(light);
-  const DarkImage = createImage(dark);
-
-  return colorMode === 'dark' ? <DarkImage /> : <LightImage />;
-};
-
-export default SchemedImage;
+  if (colorMode === 'dark') {
+    if (altText === '') {
+      return <GatsbyImage image={dark} alt="" role="presentation" {...imageProps} />;
+    } else {
+      return <GatsbyImage image={dark} alt={altText} {...imageProps} />;
+    }
+  } else {
+    if (altText === '') {
+      return <GatsbyImage image={light} alt="" role="presentation" {...imageProps} />;
+    } else {
+      return <GatsbyImage image={light} alt={altText} {...imageProps} />;
+    }
+  }
+}

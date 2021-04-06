@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { IntlProvider } from 'react-intl';
 
-const Intl = ({ children, locale }) => {
+export default function Intl({ children, locale }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -36,6 +36,4 @@ const Intl = ({ children, locale }) => {
       {children}
     </IntlProvider>
   );
-};
-
-export default Intl;
+}

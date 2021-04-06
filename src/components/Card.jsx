@@ -15,4 +15,6 @@ const Article = styled.article`
   }
 `;
 
-export default (props) => <Article>{props.children}</Article>;
+export default function Card({ children }) {
+  return <Article>{children}</Article>;
+}

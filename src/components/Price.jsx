@@ -12,10 +12,11 @@ const Title = styled.h4`
   margin: 0;
 `;
 
-const createLocalization = (list, key, property) =>
-  list.filter(({ id }) => id === key)[0][property ? property : 'name'];
+const createLocalization = function createLocalizationID(list, key, property) {
+  return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
+};
 
-const createPrice = (price, locale, rate, localizations) => {
+const createPrice = function createPriceFromData(price, locale, rate, localizations) {
   if (rate) {
     return `${price.toLocaleString(locale, {
       style: 'currency',
@@ -29,7 +30,7 @@ const createPrice = (price, locale, rate, localizations) => {
   }
 };
 
-const Price = (props) => {
+export default function Price(props) {
   const { localizations } = props;
   const localizationList = localizations[props.localizationList];
 
@@ -80,6 +81,4 @@ const Price = (props) => {
       </Div>
     );
   }
-};
-
-export default Price;
+}

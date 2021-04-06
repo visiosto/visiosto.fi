@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { createRef, Component } from 'react';
+import React, { createRef } from 'react';
 import axios from 'axios';
 import * as JsSearch from 'js-search';
 
@@ -10,21 +10,24 @@ import SearchResults from './SearchResults';
 
 const events = ['mousedown', 'touchstart'];
 
-class SearchContainer extends Component {
-  state = {
-    pageList: [],
-    search: [],
-    searchResults: [],
-    isLoading: true,
-    isError: false,
-    searchQuery: '',
-    hasFocus: false,
-  };
-
+export default class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      pageList: [],
+      search: [],
+      searchResults: [],
+      isLoading: true,
+      isError: false,
+      searchQuery: '',
+      hasFocus: false,
+    };
+
     this.rootRef = createRef();
+    this.rebuildIndex = this.rebuildIndex.bind(this);
+    this.searchData = this.searchData.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
@@ -69,7 +72,7 @@ class SearchContainer extends Component {
   /**
    * rebuilds the overall index based on the options
    */
-  rebuildIndex = () => {
+  rebuildIndex() {
     const { pageList } = this.state;
 
     const dataToSearch = new JsSearch.Search('id');
@@ -95,32 +98,32 @@ class SearchContainer extends Component {
 
     dataToSearch.addDocuments(pageList); // adds the data to be searched
     this.setState({ search: dataToSearch, isLoading: false });
-  };
+  }
 
   /**
    * handles the input change and perform a search with js-search
    * in which the results will be added to the state
    */
-  searchData = (e) => {
+  searchData(event) {
     const { search, isLoading, isError } = this.state;
 
     if (isLoading || isError) {
-      this.setState({ searchQuery: e.target.value, searchResults: '' });
+      this.setState({ searchQuery: event.target.value, searchResults: '' });
     } else {
-      const queryResult = search.search(e.target.value);
-      this.setState({ searchQuery: e.target.value, searchResults: queryResult });
+      const queryResult = search.search(event.target.value);
+      this.setState({ searchQuery: event.target.value, searchResults: queryResult });
     }
-  };
+  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  handleSubmit(event) {
+    event.preventDefault();
+  }
 
-  handleClickOutside = (event) => {
+  handleClickOutside(event) {
     if (this.rootRef && !this.rootRef.current.contains(event.target)) {
       this.setState({ hasFocus: false });
     }
-  };
+  }
 
   render() {
     const { pageList, searchResults, searchQuery, hasFocus } = this.state;
@@ -189,5 +192,3 @@ class SearchContainer extends Component {
     }
   }
 }
-
-export default SearchContainer;

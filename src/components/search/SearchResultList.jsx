@@ -31,7 +31,7 @@ const Item = styled.li`
   }
 `;
 
-const SearchResultList = (props) => {
+export default function SearchResultList(props) {
   const i = createIntl(useIntl());
 
   return (
@@ -60,6 +60,4 @@ const SearchResultList = (props) => {
       </div>
     </>
   );
-};
-
-export default SearchResultList;
+}

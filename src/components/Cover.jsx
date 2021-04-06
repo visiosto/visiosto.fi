@@ -64,9 +64,7 @@ const Content = styled.div`
   text-align: center;
 `;
 
-const Cover = (props) => {
-  const { data } = props;
-
+export default function Cover({ children, data, htmlTitle, rule, style, tabletStyle, title }) {
   const imagesTopLight = withArtDirection(getImage(data.topPhoneSmallLight), [
     {
       media: `(${theme.devices.tablet})`,
@@ -101,38 +99,36 @@ const Cover = (props) => {
   return (
     <Section>
       <TopRuleWrapper>
-        <Rule color={props.rule.color} mode={props.rule.mode} />
+        <Rule color={rule.color} mode={rule.mode} />
       </TopRuleWrapper>
       <Image
         alt=""
         light={imagesTopLight}
         dark={imagesTopDark}
-        style={{ ...props.style.top, ...imageStyles }}
+        style={{ ...style.top, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tabletStyle }}
+        tablet={{ ...tabletStyle }}
       />
       <Inner>
         <header>
           {(() => {
-            if (props.htmlTitle) {
-              return <Title dangerouslySetInnerHTML={{ __html: props.title }} />;
+            if (htmlTitle) {
+              return <Title dangerouslySetInnerHTML={{ __html: title }} />;
             }
 
-            return <Title>{props.title}</Title>;
+            return <Title>{title}</Title>;
           })()}
         </header>
-        <Content>{props.children}</Content>
+        <Content>{children}</Content>
       </Inner>
       <Image
         alt=""
         light={imagesBottomLight}
         dark={imagesBottomDark}
-        style={{ ...props.style.bottom, ...imageStyles }}
+        style={{ ...style.bottom, ...imageStyles }}
         objectFit="cover"
-        tablet={{ ...props.tabletStyle }}
+        tablet={{ ...tabletStyle }}
       />
     </Section>
   );
-};
-
-export default Cover;
+}

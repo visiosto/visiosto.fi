@@ -29,29 +29,30 @@ const Div = styled.div`
   text-align: center;
 `;
 
-export default (props) => {
-  const { author } = props;
-
-  // TODO Add the image and a 'read more' button
+export default function AuthorContactCard({
+  author: { email, job, name, profileImage },
+  children,
+  htmlTitle,
+}) {
   return (
     <Card>
       <ImageDiv>
-        <Image alt={author.name} image={getImage(author.profileImage)} />
+        <Image alt={name} image={getImage(profileImage)} />
       </ImageDiv>
       {(() => {
-        if (props.htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: author.name }} />;
+        if (htmlTitle) {
+          return <H3 dangerouslySetInnerHTML={{ __html: name }} />;
         } else {
-          return <H3>{author.name}</H3>;
+          return <H3>{name}</H3>;
         }
       })()}
       <Div>
-        <p>{author.job}</p>
+        <p>{job}</p>
         <p>
-          <a href={`mailto:${author.email}`}>{author.email}</a>
+          <a href={`mailto:${email}`}>{email}</a>
         </p>
       </Div>
-      {props.children}
+      {children}
     </Card>
   );
-};
+}

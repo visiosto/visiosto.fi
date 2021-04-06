@@ -11,10 +11,10 @@ const Link = styled(LocalizedAnchorLink)`
   text-decoration: none;
 `;
 
-const LocalizedAnchorLinkButton = (props) => (
-  <Link to={props.to} locale={props.locale}>
-    <Button>{props.children}</Button>
-  </Link>
-);
-
-export default LocalizedAnchorLinkButton;
+export default function LocalizedAnchorLinkButton(props) {
+  return (
+    <Link to={props.to} locale={props.locale}>
+      <Button>{props.children}</Button>
+    </Link>
+  );
+}

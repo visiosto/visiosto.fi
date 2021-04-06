@@ -8,7 +8,7 @@ import AnchorLink from './AnchorLink';
 
 import createPagePath from '../../util/createPagePath';
 
-const createPathFromSlug = (slug, locale, data) => {
+const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, data) {
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
   const authorNodes = data.allContentfulAuthor.edges.filter(({ node }) => node.slug === slug);
@@ -75,7 +75,7 @@ const createPathFromSlug = (slug, locale, data) => {
   return null;
 };
 
-const LocalizedAnchorLink = (props) => {
+export default function LocalizedAnchorLink(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -348,6 +348,4 @@ const LocalizedAnchorLink = (props) => {
         break;
     }
   }
-};
-
-export default LocalizedAnchorLink;
+}

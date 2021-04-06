@@ -8,7 +8,7 @@ import { getImage } from 'gatsby-plugin-image';
 
 import SchemedImage from './SchemedImage';
 
-const getRules = (ruleType) => {
+const getRules = function getRuleImageDataWithStaticQuery(ruleType) {
   const data = useStaticQuery(
     graphql`
       {
@@ -106,20 +106,20 @@ const Div = styled.div`
   justify-content: center;
 `;
 
-export default (props) => {
-  const { blueRule, lightBlueRule, peachRule, creamRule } = getRules(props.mode);
+export default function Rule({ color, mode }) {
+  const { blueRule, lightBlueRule, peachRule, creamRule } = getRules(mode);
 
-  const Image = () => {
-    if (props.color === 'peach') {
-      return <SchemedImage alt="" light={getImage(peachRule)} dark={getImage(creamRule)} />;
-    } else if (props.color === 'blue') {
-      return <SchemedImage alt="" light={getImage(blueRule)} dark={getImage(lightBlueRule)} />;
-    }
-  };
-
-  return (
-    <Div>
-      <Image />
-    </Div>
-  );
-};
+  if (color === 'peach') {
+    return (
+      <Div>
+        <SchemedImage alt="" light={getImage(peachRule)} dark={getImage(creamRule)} />
+      </Div>
+    );
+  } else if (color === 'blue') {
+    return (
+      <Div>
+        <SchemedImage alt="" light={getImage(blueRule)} dark={getImage(lightBlueRule)} />
+      </Div>
+    );
+  }
+}

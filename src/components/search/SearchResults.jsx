@@ -32,7 +32,7 @@ const Inner = styled.div`
   background: var(--color-background);
 `;
 
-const SearchResults = (props) => {
+export default function SearchResults(props) {
   const i = createIntl(useIntl());
   const { show } = props;
 
@@ -58,7 +58,7 @@ const SearchResults = (props) => {
     return (
       <Div show={show}>
         <Inner>
-          <SearchResultList i={i} queryResults={queryResults} />
+          <SearchResultList queryResults={queryResults} />
         </Inner>
       </Div>
     );
@@ -71,6 +71,4 @@ const SearchResults = (props) => {
       </Div>
     );
   }
-};
-
-export default SearchResults;
+}

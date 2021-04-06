@@ -153,7 +153,7 @@ const AnchorLink = styled(LocalizedAnchorLink)`
   }
 `;
 
-export default (props) => {
+export default function Navigation(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -243,4 +243,4 @@ export default (props) => {
       </Ul>
     </Nav>
   );
-};
+}

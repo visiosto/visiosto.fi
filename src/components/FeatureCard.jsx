@@ -17,19 +17,19 @@ const H3 = styled.h3`
   text-align: center;
 `;
 
-export default (props) => {
+export default function FeatureCard({ button, children, htmlTitle, icon, title }) {
   return (
     <Card>
-      <Icon>{props.icon}</Icon>
+      <Icon>{icon}</Icon>
       {(() => {
-        if (props.htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: props.title }} />;
+        if (htmlTitle) {
+          return <H3 dangerouslySetInnerHTML={{ __html: title }} />;
         } else {
-          return <H3>{props.title}</H3>;
+          return <H3>{title}</H3>;
         }
       })()}
-      {props.children}
-      {props.button}
+      {children}
+      {button}
     </Card>
   );
-};
+}

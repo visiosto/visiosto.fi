@@ -32,10 +32,11 @@ const Div = styled.div`
   }
 `;
 
-const createLocalization = (list, key, property) =>
-  list.filter(({ id }) => id === key)[0][property ? property : 'name'];
+const createLocalization = function createLocalizationForProperty(list, key, property) {
+  return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
+};
 
-const PriceList = (props) => {
+export default function PriceList(props) {
   const { listType, prices, additionalWork, additionalFees } = props.list;
   const { localizations } = props;
   const {
@@ -124,6 +125,4 @@ const PriceList = (props) => {
       </Div>
     </Wrapper>
   );
-};
-
-export default PriceList;
+}

@@ -60,7 +60,7 @@ const Icon = styled(SearchIcon)`
   pointer-events: none;
 `;
 
-const SearchForm = (props) => {
+export default function SearchForm(props) {
   const i = createIntl(useIntl());
 
   if (props.loading || props.error) {
@@ -92,6 +92,4 @@ const SearchForm = (props) => {
       </Form>
     );
   }
-};
-
-export default SearchForm;
+}

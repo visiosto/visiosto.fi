@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
@@ -25,7 +25,7 @@ const FormContainer = styled.div`
 
 const ButtonDiv = styled.div``;
 
-class ContactForm extends Component {
+class ContactForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -44,7 +44,7 @@ class ContactForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  validateFormData = () => {
+  validateFormData() {
     const i = createIntl(this.props.intl);
     const errors = {};
     let isValid = true;
@@ -69,9 +69,9 @@ class ContactForm extends Component {
     this.setState({ errors });
 
     return isValid;
-  };
+  }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     if (this.validateFormData()) {
       const formData = {
         name: this.state.name,
@@ -101,9 +101,9 @@ class ContactForm extends Component {
     }
 
     event.preventDefault();
-  };
+  }
 
-  handleChange = (event) => {
+  handleChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -111,7 +111,7 @@ class ContactForm extends Component {
     this.setState({
       [name]: value,
     });
-  };
+  }
 
   render() {
     const i = createIntl(this.props.intl);

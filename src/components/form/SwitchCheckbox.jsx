@@ -55,25 +55,25 @@ const SwitchSpan = styled.span`
   }
 `;
 
-const SwitchCheckbox = (props) => (
-  <>
-    <label for={props.id}>{props.label}</label>
-    {'errorMessage' in props ? (
-      <label className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
-        {props.errorMessage}
-      </label>
-    ) : null}
-    <SwitchInputSpan onClick={props.handleClick}>
-      <input
-        key={Math.random()}
-        type="checkbox"
-        name={props.name}
-        id={props.id}
-        defaultChecked={props.checked}
-      />
-      <SwitchSpan />
-    </SwitchInputSpan>
-  </>
-);
-
-export default SwitchCheckbox;
+export default function SwitchCheckbox(props) {
+  return (
+    <>
+      <label for={props.id}>{props.label}</label>
+      {'errorMessage' in props ? (
+        <label className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
+          {props.errorMessage}
+        </label>
+      ) : null}
+      <SwitchInputSpan onClick={props.handleClick}>
+        <input
+          key={Math.random()}
+          type="checkbox"
+          name={props.name}
+          id={props.id}
+          defaultChecked={props.checked}
+        />
+        <SwitchSpan />
+      </SwitchInputSpan>
+    </>
+  );
+}

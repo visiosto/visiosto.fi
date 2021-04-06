@@ -11,7 +11,7 @@ const Link = styled(LocaleLink)`
   text-decoration: none;
 `;
 
-export default (props) => {
+export default function LocaleSwitcher(props) {
   return (
     <>
       {(() => {
@@ -44,4 +44,4 @@ export default (props) => {
       })()}
     </>
   );
-};
+}

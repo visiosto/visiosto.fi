@@ -6,7 +6,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import createPagePath from '../../util/createPagePath';
 
-const createPathFromSlug = (slug, locale, data) => {
+const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, data) {
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
   const authorNodes = data.allContentfulAuthor.edges.filter(({ node }) => node.slug === slug);
@@ -73,7 +73,7 @@ const createPathFromSlug = (slug, locale, data) => {
   return null;
 };
 
-const LocalizedLink = (props) => {
+export default function LocalizedLink(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -307,6 +307,4 @@ const LocalizedLink = (props) => {
         break;
     }
   }
-};
-
-export default LocalizedLink;
+}
