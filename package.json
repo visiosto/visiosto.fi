@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/visiosto/visiosto.fi.git"
   },
-  "author": "Antti Kivi",
+  "author": "Antti Kivi <antti.kivi@visiosto.fi>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/visiosto/visiosto.fi/issues"
