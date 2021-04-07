@@ -53,6 +53,7 @@
     "gatsby-transformer-sharp": "^3.2.0",
     "js-search": "^2.0.0",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

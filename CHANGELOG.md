@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- `prop-types` as a dependency.
+
 ### Changed
 
 - Navigation component to a class to better comply with the coding standards.
