@@ -10,7 +10,7 @@ The released versions of the website are available on the [Releases page](https:
 
 ### Build
 
-Before building the website, please ensure that you have [Node.js](https://nodejs.org), [npm](https://nodejs.org), and [Yarn](https://yarnpkg.com) installed. Please note that this project uses the [Yarn Classic](https://classic.yarnpkg.com).
+Before building the website, please ensure that you have [Node.js](https://nodejs.org), [npm](https://npmjs.com), and [Yarn](https://yarnpkg.com) installed. Please note that this project uses the [Yarn Classic](https://classic.yarnpkg.com).
 
 First, clone the GitHub repository of the website.
 
@@ -42,9 +42,9 @@ The built site is in the `public` directory.
 
 ## Contributing
 
-Contributions to the website are welcome and encouraged! There are many ways to [contribute](https://github.com/visiosto/visiosto.fi/blob/develop/CONTRIBUTING.md#how-can-i-contribute) to it. You can find the guidelines for contributing in [CONTRIBUTING](CONTRIBUTING.md).
+Contributions to the website are welcome and encouraged! There are many ways to [contribute](https://github.com/visiosto/.github/blob/main/CONTRIBUTING.md#how-can-i-contribute) to it. You can find the guidelines for contributing in [CONTRIBUTING](https://github.com/visiosto/.github/blob/main/CONTRIBUTING.md).
 
-This project adheres to the Contributor Covenant [Code of Conduct](https://github.com/visiosto/visiosto.fi/blob/develop/CODE_OF_CONDUCT.md). By participating, you’re expected to uphold this code. Please report unacceptable behaviour to antti.kivi@visiosto.fi.
+This project adheres to the Contributor Covenant [Code of Conduct](https://github.com/visiosto/.github/blob/main/CODE_OF_CONDUCT.md). By participating, you’re expected to uphold this code. Please report unacceptable behaviour to antti.kivi@visiosto.fi.
 
 ## Licence
 

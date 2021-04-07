@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Navigation component to a class to better comply with the coding standards.
 
+### Fixed
+
+- Community file links in the README.
+
 ## [0.18.1] - 2021-04-07
 
 ### Fixed
