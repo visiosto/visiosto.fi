@@ -153,8 +153,8 @@ const AnchorLink = styled(LocalizedAnchorLink)`
   }
 `;
 
-const withMenuData = function withNavigationMenuQueryData(WrapperComponent) {
-  return function (props) {
+const withMenuData = function withNavigationMenuQueryData(WrappedComponent) {
+  function WithMenuData (props) {
     const data = useStaticQuery(
       graphql`
         query {
@@ -193,8 +193,16 @@ const withMenuData = function withNavigationMenuQueryData(WrapperComponent) {
       `,
     );
 
-    return <WrapperComponent data={data} {...props} />;
+    return <WrappedComponent data={data} {...props} />;
   };
+
+  const wrappedComponentName = WrappedComponent.displayName
+    || WrappedComponent.name
+    || 'Component';
+
+  WithMenuData.displayName = `withMenuData(${wrappedComponentName})`;
+
+  return WithMenuData;
 };
 
 class Navigation extends React.Component {
