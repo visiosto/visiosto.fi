@@ -16,15 +16,15 @@ import createIntl from '../../util/createIntl';
 
 import theme from '../../theme';
 
-const Div = styled.header`
-  margin: 2em ${(props) => props.theme.layout.marginMobile};
+const HeaderElement = styled.header`
+  margin: 2em 0;
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {
-    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    margin: 2em 0;
   }
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
-    margin: 2em ${(props) => props.theme.layout.marginDesktop};
+    margin: 2em 0;
   }
 `;
 
@@ -325,7 +325,7 @@ export default function Header(props) {
   const breadcrumb = createBreadcrumb(data, props);
 
   return (
-    <Div>
+    <HeaderElement>
       <SiteBranding>
         {(() => {
           if (props.home) {
@@ -363,6 +363,6 @@ export default function Header(props) {
           }
         })()}
       </Breadcrumb>
-    </Div>
+    </HeaderElement>
   );
 }

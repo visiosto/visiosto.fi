@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Navigation component to a class to better comply with the coding standards.
+- Side margins of the element wrapping the header component to `0`.
 
 ### Fixed
 
