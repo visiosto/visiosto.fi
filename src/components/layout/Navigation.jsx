@@ -154,7 +154,7 @@ const AnchorLink = styled(LocalizedAnchorLink)`
 `;
 
 const withMenuData = function withNavigationMenuQueryData(WrappedComponent) {
-  function WithMenuData (props) {
+  function WithMenuData(props) {
     const data = useStaticQuery(
       graphql`
         query {
@@ -194,11 +194,9 @@ const withMenuData = function withNavigationMenuQueryData(WrappedComponent) {
     );
 
     return <WrappedComponent data={data} {...props} />;
-  };
+  }
 
-  const wrappedComponentName = WrappedComponent.displayName
-    || WrappedComponent.name
-    || 'Component';
+  const wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
   WithMenuData.displayName = `withMenuData(${wrappedComponentName})`;
 
