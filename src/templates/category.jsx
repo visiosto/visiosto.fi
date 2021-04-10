@@ -113,7 +113,7 @@ function Page(props) {
       </Separator>
       {posts.map(({ node: post }) => {
         return (
-          <Post>
+          <Post key={post.contentful_id}>
             <PostHeader>
               <H2>
                 <Link to={post.contentful_id} locale={props.pageContext.locale}>
