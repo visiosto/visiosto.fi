@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Community file links in the README.
+- `for` to `htmlFor` in JSX as the DOM attribute `for` is reserved for JavaScript.
 
 ## [0.18.1] - 2021-04-07
 

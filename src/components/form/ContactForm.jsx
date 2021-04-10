@@ -134,8 +134,8 @@ class ContactForm extends React.Component {
             <input name="bot-field" />
           </FormDiv>
           <FormDiv>
-            <label for="name">{i('contactFormName')}</label>
-            <label for="name" className="error-message" hidden={!this.state.errors.name}>
+            <label htmlFor="name">{i('contactFormName')}</label>
+            <label htmlFor="name" className="error-message" hidden={!this.state.errors.name}>
               {this.state.errors.name}
             </label>
             <input
@@ -150,8 +150,8 @@ class ContactForm extends React.Component {
             <p>{i('contactFormEither')}</p>
           </FormDiv>
           <FormDiv>
-            <label for="email">{i('contactFormEmail')}</label>
-            <label for="email" className="error-message" hidden={!this.state.errors.tel}>
+            <label htmlFor="email">{i('contactFormEmail')}</label>
+            <label htmlFor="email" className="error-message" hidden={!this.state.errors.tel}>
               {this.state.errors.tel}
             </label>
             <input
@@ -166,8 +166,8 @@ class ContactForm extends React.Component {
             <p>{i('contactFormOr')}</p>
           </FormDiv>
           <FormDiv>
-            <label for="tel">{i('contactFormTel')}</label>
-            <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
+            <label htmlFor="tel">{i('contactFormTel')}</label>
+            <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
               {this.state.errors.tel}
             </label>
             <input
@@ -179,8 +179,8 @@ class ContactForm extends React.Component {
             />
           </FormDiv>
           <FormDiv>
-            <label for="message">{i('contactFormMessage')}</label>
-            <label for="message" className="error-message" hidden={!this.state.errors.message}>
+            <label htmlFor="message">{i('contactFormMessage')}</label>
+            <label htmlFor="message" className="error-message" hidden={!this.state.errors.message}>
               {this.state.errors.message}
             </label>
             <textarea

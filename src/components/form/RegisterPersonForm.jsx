@@ -263,9 +263,9 @@ class RegisterPersonForm extends React.Component {
               <h3>{i('clientRegisterPersonFormBasicInfo')}</h3>
             </FormDiv>
             <FormDiv>
-              <label for="first-name">{i('clientRegisterPersonFormFirstName')}</label>
+              <label htmlFor="first-name">{i('clientRegisterPersonFormFirstName')}</label>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="error-message"
                 hidden={!this.state.errors.firstName}
               >
@@ -280,8 +280,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="surname">{i('clientRegisterPersonFormSurname')}</label>
-              <label for="surname" className="error-message" hidden={!this.state.errors.surname}>
+              <label htmlFor="surname">{i('clientRegisterPersonFormSurname')}</label>
+              <label htmlFor="surname" className="error-message" hidden={!this.state.errors.surname}>
                 {this.state.errors.surname}
               </label>
               <input
@@ -293,8 +293,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="tel">{i('clientRegisterPersonFormTel')}</label>
-              <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
+              <label htmlFor="tel">{i('clientRegisterPersonFormTel')}</label>
+              <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
                 {this.state.errors.tel}
               </label>
               <input
@@ -306,8 +306,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="email">{i('clientRegisterPersonFormEmail')}</label>
-              <label for="email" className="error-message" hidden={!this.state.errors.email}>
+              <label htmlFor="email">{i('clientRegisterPersonFormEmail')}</label>
+              <label htmlFor="email" className="error-message" hidden={!this.state.errors.email}>
                 {this.state.errors.email}
               </label>
               <input
@@ -321,9 +321,9 @@ class RegisterPersonForm extends React.Component {
               <p>{i('clientRegisterPersonFormEmailForBilling')}</p>
             </FormDiv>
             <FormDiv>
-              <label for="address-line-1">{i('clientRegisterPersonFormAddressLine1')}</label>
+              <label htmlFor="address-line-1">{i('clientRegisterPersonFormAddressLine1')}</label>
               <label
-                for="address-line-1"
+                htmlFor="address-line-1"
                 className="error-message"
                 hidden={!this.state.errors.addressLine1}
               >
@@ -339,7 +339,7 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="address-line-2">{i('clientRegisterPersonFormAddressLine2')}</label>
+              <label htmlFor="address-line-2">{i('clientRegisterPersonFormAddressLine2')}</label>
               <input
                 className="wider"
                 type="text"
@@ -350,8 +350,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="postcode">{i('clientRegisterPersonFormPostcode')}</label>
-              <label for="postcode" className="error-message" hidden={!this.state.errors.postcode}>
+              <label htmlFor="postcode">{i('clientRegisterPersonFormPostcode')}</label>
+              <label htmlFor="postcode" className="error-message" hidden={!this.state.errors.postcode}>
                 {this.state.errors.postcode}
               </label>
               <input
@@ -363,9 +363,9 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="post-office">{i('clientRegisterPersonFormPostOffice')}</label>
+              <label htmlFor="post-office">{i('clientRegisterPersonFormPostOffice')}</label>
               <label
-                for="post-office"
+                htmlFor="post-office"
                 className="error-message"
                 hidden={!this.state.errors.postOffice}
               >
@@ -394,11 +394,11 @@ class RegisterPersonForm extends React.Component {
           <FormPage hidden={this.state.currentPage !== 1}>
             <h3>{i('clientRegisterPersonFormBillingAddress')}</h3>
             <FormDiv>
-              <label for="billing-address-line-1">
+              <label htmlFor="billing-address-line-1">
                 {i('clientRegisterPersonFormBillingAddressLine1')}
               </label>
               <label
-                for="billing-address-line-1"
+                htmlFor="billing-address-line-1"
                 className="error-message"
                 hidden={!this.state.errors.billingAddressLine1}
               >
@@ -414,7 +414,7 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-address-line-2">
+              <label htmlFor="billing-address-line-2">
                 {i('clientRegisterPersonFormBillingAddressLine2')}
               </label>
               <input
@@ -427,9 +427,9 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-postcode">{i('clientRegisterPersonFormBillingPostcode')}</label>
+              <label htmlFor="billing-postcode">{i('clientRegisterPersonFormBillingPostcode')}</label>
               <label
-                for="billing-postcode"
+                htmlFor="billing-postcode"
                 className="error-message"
                 hidden={!this.state.errors.billingPostcode}
               >
@@ -444,11 +444,11 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-post-office">
+              <label htmlFor="billing-post-office">
                 {i('clientRegisterPersonFormBillingPostOffice')}
               </label>
               <label
-                for="billing-post-office"
+                htmlFor="billing-post-office"
                 className="error-message"
                 hidden={!this.state.errors.billingPostOffice}
               >

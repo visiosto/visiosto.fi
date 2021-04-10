@@ -34,7 +34,7 @@ export default function RadioInput(props) {
             checked={props.value === inputValue}
             onChange={() => props.handleChange(inputValue)}
           />
-          <label for={`radio-${id}`}>{label}</label>
+          <label htmlFor={`radio-${id}`}>{label}</label>
         </RadioDiv>
       ))}
     </>

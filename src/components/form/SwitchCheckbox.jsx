@@ -58,7 +58,7 @@ const SwitchSpan = styled.span`
 export default function SwitchCheckbox(props) {
   return (
     <>
-      <label for={props.id}>{props.label}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       {'errorMessage' in props ? (
         <label className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
           {props.errorMessage}
