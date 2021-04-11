@@ -40,7 +40,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
             description
             facebookAppID
             locales
-            siteUrl
+            siteURL
             title
             twitterAuthor
             localePaths {
@@ -163,7 +163,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
 
   const i = createIntl(useIntl());
   const baseURL =
-    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteUrl;
+    process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteURL;
 
   const titleTemplate = home
     ? `${siteMetadata.title} - ${i('metaSlogan')}`

@@ -16,7 +16,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
             alternativeUrls
             defaultLocale
             locales
-            siteUrl
+            siteURL
             localePaths {
               en_GB
               fi
@@ -178,7 +178,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     defaultLocale,
     localePaths,
     locales,
-    siteUrl,
+    siteURL,
   } = query.data.site.siteMetadata;
 
   // Create the author pages from Contentful.
@@ -545,7 +545,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
   alternativeUrls.forEach((url) => {
     createRedirect({
       fromPath: url,
-      toPath: siteUrl,
+      toPath: siteURL,
       isPermanent: true,
       force: true,
     });
@@ -556,7 +556,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
   alternativeUrls.forEach((url) => {
     createRedirect({
       fromPath: `${url}/*`,
-      toPath: `${siteUrl}/:splat`,
+      toPath: `${siteURL}/:splat`,
       isPermanent: true,
       force: true,
     });

@@ -12,34 +12,34 @@ import SearchResults from './SearchResults';
 
 const events = ['mousedown', 'touchstart'];
 
-const withSiteUrl = function withSiteUrlFromQueryData(WrappedComponent) {
-  function WithSiteUrl(props) {
+const withSiteURL = function withSiteURLFromQueryData(WrappedComponent) {
+  function WithSiteURL(props) {
     const data = useStaticQuery(
       graphql`
         query {
           site {
             siteMetadata {
-              siteUrl
+              siteURL
             }
           }
         }
       `,
     );
 
-    return <WrappedComponent siteUrl={data.site.siteMetadata.siteUrl} {...props} />;
+    return <WrappedComponent siteURL={data.site.siteMetadata.siteURL} {...props} />;
   }
 
   const wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
-  WithSiteUrl.displayName = `withSiteUrl(${wrappedComponentName})`;
+  WithSiteURL.displayName = `withSiteURL(${wrappedComponentName})`;
 
-  return WithSiteUrl;
+  return WithSiteURL;
 };
 
 const propTypes = {
   className: PropTypes.string,
   locale: PropTypes.string.isRequired,
-  siteUrl: PropTypes.string.isRequired,
+  siteURL: PropTypes.string.isRequired,
 };
 
 const defaultProps = { className: null };
@@ -69,12 +69,12 @@ class SearchContainer extends React.Component {
    * React lifecycle method to fetch the data
    */
   async componentDidMount() {
-    const { locale, siteUrl } = this.props;
+    const { locale, siteURL } = this.props;
 
     axios
       .get(
         `${
-          process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteUrl
+          process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteURL
         }/search/pages-${locale.toLowerCase()}.json`,
       )
       .then((result) => {
@@ -221,4 +221,4 @@ class SearchContainer extends React.Component {
 SearchContainer.propTypes = propTypes;
 SearchContainer.defaultProps = defaultProps;
 
-export default withSiteUrl(SearchContainer);
+export default withSiteURL(SearchContainer);

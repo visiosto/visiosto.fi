@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Side margins of the element wrapping the header component to `0`.
 - Theme colour in the web app manifest.
 - Different cover elements into single cover element controlled by props.
+- Variable `siteUrl` to `siteURL` to match coding standards.
 
 ### Fixed
 
