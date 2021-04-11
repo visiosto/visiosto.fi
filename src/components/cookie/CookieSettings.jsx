@@ -11,7 +11,7 @@ import Button from '../Button';
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
-import createINTL from '../../util/createINTL';
+import createInternationalization from '../../util/createInternationalization';
 
 import {
   COOKIES_ACCEPTED_COOKIE_NAME,
@@ -327,7 +327,7 @@ class CookieSettings extends React.Component {
   }
 
   render() {
-    const intl = createINTL(this.props.intl);
+    const intl = createInternationalization(this.props.intl);
     const { locale, settingsOpen } = this.props;
 
     if (settingsOpen) {

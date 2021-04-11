@@ -14,7 +14,7 @@ import RegisterPersonForm from '../components/form/RegisterPersonForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createINTL from '../util/createINTL';
+import createInternationalization from '../util/createInternationalization';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -75,7 +75,7 @@ const propTypes = {
 const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
 
   const { contentfulPage: page } = data;
   const { clientType, locale, pageID } = pageContext;

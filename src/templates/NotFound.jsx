@@ -12,7 +12,7 @@ import LayoutError from '../components/layout/LayoutError';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createINTL from '../util/createINTL';
+import createInternationalization from '../util/createInternationalization';
 
 const Separator = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ const propTypes = {
 const defaultProps = { children: undefined };
 
 function Page({ pageContext }) {
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
   const { locale, pageID } = pageContext;
 
   return (

@@ -13,7 +13,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import createINTL from '../../util/createINTL';
+import createInternationalization from '../../util/createInternationalization';
 import useColorScheme from '../../util/useColorScheme';
 
 const PageTitle = styled.h1`
@@ -90,7 +90,7 @@ function LayoutPost({
 }) {
   useColorScheme();
 
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
 
   return (
     <>

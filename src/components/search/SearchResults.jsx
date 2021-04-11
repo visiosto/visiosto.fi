@@ -8,7 +8,7 @@ import { useIntl } from 'react-intl';
 
 import SearchResultList from './SearchResultList';
 
-import createINTL from '../../util/createINTL';
+import createInternationalization from '../../util/createInternationalization';
 
 const Div = styled.div`
   position: absolute;
@@ -49,7 +49,7 @@ const defaultProps = {
 };
 
 function SearchResults({ error, loading, queryResults, searchResults, show }) {
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
   if (loading) {
     return (
       <Div hidden={!show}>

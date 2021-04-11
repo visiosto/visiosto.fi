@@ -16,7 +16,7 @@ import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createINTL from '../util/createINTL';
+import createInternationalization from '../util/createInternationalization';
 
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
@@ -133,7 +133,7 @@ const propTypes = {
 const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
 
   const { contentfulPage: page, allContentfulBlogPost: posts } = data;
   const { locale, pageID } = pageContext;

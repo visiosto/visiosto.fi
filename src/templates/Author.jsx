@@ -18,7 +18,7 @@ import Rule from '../components/Rule';
 import SchemedImage from '../components/SchemedImage';
 import Theme from '../components/Theme';
 
-import createINTL from '../util/createINTL';
+import createInternationalization from '../util/createInternationalization';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -191,7 +191,7 @@ const propTypes = {
 const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
-  const intl = createINTL(useIntl());
+  const intl = createInternationalization(useIntl());
 
   const { contentfulAuthor: author } = data;
   const { edges: posts } = data.allContentfulBlogPost;
