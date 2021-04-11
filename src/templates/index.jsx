@@ -92,7 +92,7 @@ function Page(props) {
       description={page.description.description}
       image={page.image}
     >
-      <Cover title={page.introTitle} imagesType="lens" rule={{ color: 'peach', mode: 3 }} htmlTitle>
+      <Cover title={page.introTitle} imagesType="lens" rule={{ color: 'peach', mode: 3 }}>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </Cover>
       <Cover title={page.storyTitle} imagesType="lines" rule={{ color: 'blue', mode: 3 }}>

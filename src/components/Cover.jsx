@@ -256,7 +256,6 @@ const useBottomImageStyle = function useTopImageStylesForImagesType(imagesType) 
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  htmlTitle: PropTypes.bool,
   imagesType: PropTypes.string.isRequired,
   rule: PropTypes.shape({
     color: PropTypes.string.isRequired,
@@ -265,9 +264,7 @@ const propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-const defaultProps = { htmlTitle: false };
-
-function Cover({ children, htmlTitle, imagesType, rule, title }) {
+function Cover({ children, imagesType, rule, title }) {
   const {
     topPhoneSmallLight,
     topPhoneSmallDark,
@@ -327,13 +324,7 @@ function Cover({ children, htmlTitle, imagesType, rule, title }) {
       />
       <Inner>
         <header>
-          {(() => {
-            if (htmlTitle) {
-              return <Title dangerouslySetInnerHTML={{ __html: title }} />;
-            }
-
-            return <Title>{title}</Title>;
-          })()}
+          <Title>{title}</Title>
         </header>
         <Content>{children}</Content>
       </Inner>
@@ -349,6 +340,5 @@ function Cover({ children, htmlTitle, imagesType, rule, title }) {
 }
 
 Cover.propTypes = propTypes;
-Cover.defaultProps = defaultProps;
 
 export default Cover;
