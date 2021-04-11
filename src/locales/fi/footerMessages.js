@@ -4,7 +4,7 @@
 export default {
   footerLogoAlt: 'Visioston logo',
   footerCompanyName: 'Visiosto oy',
-  footerBusinessId: 'Y-tunnus:',
+  footerBusinessID: 'Y-tunnus:',
   footerVatNumber: 'ALV-numero:',
   footerManagement: 'Hallinto',
   footerPricing: 'Hinnasto',

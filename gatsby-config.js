@@ -22,7 +22,7 @@ module.exports = {
     simpleLocales: { fi: 'fi', 'en-GB': 'en' },
     defaultLocale: 'fi',
     defaultEmail: 'info@visiosto.fi',
-    businessId: '3010084-6',
+    businessID: '3010084-6',
     vatNumber: 'FI30100846',
     facebookAppID: '905927140206660',
     socialMedia: {

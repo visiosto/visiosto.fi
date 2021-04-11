@@ -144,7 +144,7 @@ function Footer({ locale, pageId }) {
         site {
           siteMetadata {
             defaultEmail
-            businessId
+            businessID
             vatNumber
             socialMedia {
               facebook
@@ -214,7 +214,7 @@ function Footer({ locale, pageId }) {
     `,
   );
 
-  const { defaultEmail, businessId, vatNumber, socialMedia } = data.site.siteMetadata;
+  const { defaultEmail, businessID, vatNumber, socialMedia } = data.site.siteMetadata;
 
   return (
     <FooterElement>
@@ -227,7 +227,7 @@ function Footer({ locale, pageId }) {
         />
         <h2>{i('footerCompanyName')}</h2>
         <CompanyP>
-          {i('footerBusinessId')} {businessId}
+          {i('footerBusinessID')} {businessID}
         </CompanyP>
         <CompanyP>
           {i('footerVatNumber')} {vatNumber}

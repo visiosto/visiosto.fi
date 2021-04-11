@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Different cover elements into single cover element controlled by props.
 - Variable `siteUrl` to `siteURL` to match coding standards.
 - Variable `alternativeUrls` to `alternativeURL` to match coding standards.
+- `Id` in various business ID variables to `ID` to match coding standards.
 
 ### Fixed
 
