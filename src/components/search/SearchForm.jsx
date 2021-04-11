@@ -72,15 +72,15 @@ const propTypes = {
 const defaultProps = { error: false, loading: false, searchQuery: '' };
 
 function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   if (loading || error) {
     return (
       <Form>
         <Input
           type="text"
-          placeholder={i('searchPlaceholder')}
-          aria-label={i('searchPlaceholder')}
+          placeholder={intl('searchPlaceholder')}
+          aria-label={intl('searchPlaceholder')}
           onChange={searchData}
           value={searchQuery}
           onFocus={onFocus}
@@ -93,8 +93,8 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
       <Form>
         <Input
           type="text"
-          placeholder={i('searchPlaceholder')}
-          aria-label={i('searchPlaceholder')}
+          placeholder={intl('searchPlaceholder')}
+          aria-label={intl('searchPlaceholder')}
           onChange={searchData}
           value={searchQuery}
           onFocus={onFocus}

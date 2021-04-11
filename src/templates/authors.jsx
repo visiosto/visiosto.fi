@@ -130,13 +130,13 @@ const TwitterImage = styled(SocialMediaImage)`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { edges: authors } = props.data.allContentfulAuthor;
 
   return (
     <Layout
-      title={i('authorsTitle')}
+      title={intl('authorsTitle')}
       locale={props.pageContext.locale}
       pageID={props.pageContext.pageID}
       description={props.data.contentfulIndexPage.description.description}
@@ -170,7 +170,7 @@ function Page(props) {
                         target="_blank"
                       >
                         <InstagramImage
-                          alt={i('footerInstagramAlt')}
+                          alt={intl('footerInstagramAlt')}
                           light={getImage(props.data.instagramColor)}
                           dark={getImage(props.data.instagram)}
                         />
@@ -187,7 +187,7 @@ function Page(props) {
                         target="_blank"
                       >
                         <SocialMediaImage
-                          alt={i('footerFacebookAlt')}
+                          alt={intl('footerFacebookAlt')}
                           light={getImage(props.data.facebookColor)}
                           dark={getImage(props.data.facebook)}
                         />
@@ -204,7 +204,7 @@ function Page(props) {
                         target="_blank"
                       >
                         <TwitterImage
-                          alt={i('footerTwitterAlt')}
+                          alt={intl('footerTwitterAlt')}
                           light={getImage(props.data.twitterColor)}
                           dark={getImage(props.data.twitter)}
                         />
@@ -221,7 +221,7 @@ function Page(props) {
                         target="_blank"
                       >
                         <LinkedinImage
-                          alt={i('footerLinkedinAlt')}
+                          alt={intl('footerLinkedinAlt')}
                           light={getImage(props.data.linkedinColor)}
                           dark={getImage(props.data.linkedin)}
                         />
@@ -238,7 +238,7 @@ function Page(props) {
                         target="_blank"
                       >
                         <GithubImage
-                          alt={i('footerGithubAlt')}
+                          alt={intl('footerGithubAlt')}
                           light={getImage(props.data.github)}
                           dark={getImage(props.data.github)}
                         />

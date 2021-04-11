@@ -57,12 +57,12 @@ class CookieNotice extends React.Component {
   }
 
   render() {
-    const i = createINTL(this.props.intl);
+    const intl = createINTL(this.props.intl);
     const { locale } = this.props;
 
     return (
       <>
-        <Link onClick={this.onLinkClick}>{i('cookieSettingsLink')}</Link>
+        <Link onClick={this.onLinkClick}>{intl('cookieSettingsLink')}</Link>
         <Wrapper>
           <CookieSettings
             locale={locale}

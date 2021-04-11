@@ -37,7 +37,7 @@ const propTypes = { queryResults: PropTypes.array };
 const defaultProps = { queryResults: [] };
 
 function SearchResultList({ queryResults }) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   return (
     <>
@@ -46,7 +46,7 @@ function SearchResultList({ queryResults }) {
           return (
             <HitCount>
               {queryResults.length}{' '}
-              {queryResults.length !== 1 ? i('searchResults') : i('searchResult')}
+              {queryResults.length !== 1 ? intl('searchResults') : intl('searchResult')}
             </HitCount>
           );
         }

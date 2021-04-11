@@ -8,7 +8,7 @@ import errorTypes from './errorTypes';
 import logWarning from './logWarning';
 import scroller from './scroller';
 
-export default function handleStrippedLinkClick(to, e, onAnchorLinkClick) {
+export default function handleStrippedLinkClick(to, event, onAnchorLinkClick) {
   /**
    * Log warnings on click
    */
@@ -29,7 +29,7 @@ export default function handleStrippedLinkClick(to, e, onAnchorLinkClick) {
   const isDifferentPage = isBrowser && window.location.pathname !== anchorPath;
 
   if (isSamePage) {
-    e.preventDefault();
+    event.preventDefault();
     scroller(`#${anchor}`, window.visiostoScrollOffset, window.visiostoScrollDuration);
   }
 

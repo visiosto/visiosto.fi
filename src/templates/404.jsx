@@ -41,20 +41,20 @@ const Div = styled.div`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   return (
     <LayoutError
       errorCode="404"
       pageID={props.pageContext.pageID}
-      title={i('notFoundTitle')}
+      title={intl('notFoundTitle')}
       locale={props.pageContext.locale}
     >
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
       <Div>
-        <p>{i('notFoundContent')}</p>
+        <p>{intl('notFoundContent')}</p>
       </Div>
     </LayoutError>
   );

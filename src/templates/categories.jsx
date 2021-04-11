@@ -75,14 +75,14 @@ const Post = styled.article`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { edges: categories } = props.data.allContentfulCategory;
   const { edges: posts } = props.data.allContentfulBlogPost;
 
   return (
     <Layout
-      title={i('categoriesTitle')}
+      title={intl('categoriesTitle')}
       locale={props.pageContext.locale}
       pageID={props.pageContext.pageID}
       description={props.data.contentfulIndexPage.description.description}
@@ -96,10 +96,10 @@ function Page(props) {
             <Category>
               <H2>
                 <Link to={category.contentful_id} locale={props.pageContext.locale}>
-                  {`${i('blogCategory')} ${category.name}`}
+                  {`${intl('blogCategory')} ${category.name}`}
                 </Link>
               </H2>
-              <p>{i('blogPosts')}</p>
+              <p>{intl('blogPosts')}</p>
               {posts
                 .filter(({ node: post }) => post.category.contentful_id === category.contentful_id)
                 .map(({ node: post }) => {

@@ -176,7 +176,7 @@ const Separator = styled.div`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { contentfulAuthor: author } = props.data;
   const { edges: posts } = props.data.allContentfulBlogPost;
@@ -201,7 +201,7 @@ function Page(props) {
                 target="_blank"
               >
                 <InstagramImage
-                  alt={i('footerInstagramAlt')}
+                  alt={intl('footerInstagramAlt')}
                   light={getImage(props.data.instagramColor)}
                   dark={getImage(props.data.instagram)}
                 />
@@ -218,7 +218,7 @@ function Page(props) {
                 target="_blank"
               >
                 <SocialMediaImage
-                  alt={i('footerFacebookAlt')}
+                  alt={intl('footerFacebookAlt')}
                   light={getImage(props.data.facebookColor)}
                   dark={getImage(props.data.facebook)}
                 />
@@ -235,7 +235,7 @@ function Page(props) {
                 target="_blank"
               >
                 <TwitterImage
-                  alt={i('footerTwitterAlt')}
+                  alt={intl('footerTwitterAlt')}
                   light={getImage(props.data.twitterColor)}
                   dark={getImage(props.data.twitter)}
                 />
@@ -252,7 +252,7 @@ function Page(props) {
                 target="_blank"
               >
                 <LinkedinImage
-                  alt={i('footerLinkedinAlt')}
+                  alt={intl('footerLinkedinAlt')}
                   light={getImage(props.data.linkedinColor)}
                   dark={getImage(props.data.linkedin)}
                 />
@@ -269,7 +269,7 @@ function Page(props) {
                 target="_blank"
               >
                 <GithubImage
-                  alt={i('footerGithubAlt')}
+                  alt={intl('footerGithubAlt')}
                   light={getImage(props.data.github)}
                   dark={getImage(props.data.github)}
                 />
@@ -285,7 +285,7 @@ function Page(props) {
         ))}
       </Div>
       <Div dangerouslySetInnerHTML={{ __html: author.description.childMarkdownRemark.html }} />
-      <H2>{i('authorBlogTitle')}</H2>
+      <H2>{intl('authorBlogTitle')}</H2>
       {posts.map(({ node: post }) => {
         return (
           <Post>
@@ -301,7 +301,7 @@ function Page(props) {
                   <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
+                  {intl('blogCategory')}{' '}
                   <CategoryName category={post.category} locale={props.pageContext.locale} />
                 </PostCategory>
               </PostMeta>
@@ -311,7 +311,7 @@ function Page(props) {
             </PostContent>
             <Center>
               <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>

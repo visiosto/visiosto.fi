@@ -23,6 +23,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - `Id` in various business ID variables to `ID` to match coding standards.
 - Variable `pageId` to `pageID` to match coding standards.
 - Function `createIntl` to `createINTL` to match coding standards.
+- All of the variables `e` to `event` to match coding standards.
+- All of the functions `i` to `intl` to match coding standards.
 
 ### Fixed
 

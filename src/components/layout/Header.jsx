@@ -156,7 +156,7 @@ const propTypes = {
 const defaultProps = { errorPage: false, home: false };
 
 function Header({ errorPage, home, locale, pageID }) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const data = useStaticQuery(
     graphql`
@@ -334,7 +334,7 @@ function Header({ errorPage, home, locale, pageID }) {
           return <SiteTitle>{site.siteMetadata.title}</SiteTitle>;
         })()}
         <LocalizedLink to="/" locale={locale}>
-          <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
+          <Image alt={intl('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>
       <Navigation locale={locale} />

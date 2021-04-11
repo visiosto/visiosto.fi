@@ -48,25 +48,25 @@ class ContactForm extends React.Component {
   }
 
   validateFormData() {
-    const i = createINTL(this.props.intl);
+    const intl = createINTL(this.props.intl);
     const errors = {};
     let isValid = true;
 
     if (!this.state.name) {
       isValid = false;
-      errors.name = i('contactFormErrorMissingName');
+      errors.name = intl('contactFormErrorMissingName');
     }
 
     if (!this.state.email) {
       if (!this.state.tel) {
         isValid = false;
-        errors.tel = i('contactFormErrorMissingEmailOrPhone');
+        errors.tel = intl('contactFormErrorMissingEmailOrPhone');
       }
     }
 
     if (!this.state.message) {
       isValid = false;
-      errors.message = i('contactFormErrorMissingMessage');
+      errors.message = intl('contactFormErrorMissingMessage');
     }
 
     this.setState({ errors });
@@ -117,7 +117,7 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const i = createINTL(this.props.intl);
+    const intl = createINTL(this.props.intl);
     const { locale } = this.props;
 
     return (
@@ -134,11 +134,11 @@ class ContactForm extends React.Component {
           {/* This input field is required by Netlify */}
           <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
           <FormDiv hidden>
-            <label>{i('contactFormHoneypot')}</label>
+            <label>{intl('contactFormHoneypot')}</label>
             <input name="bot-field" />
           </FormDiv>
           <FormDiv>
-            <label htmlFor="name">{i('contactFormName')}</label>
+            <label htmlFor="name">{intl('contactFormName')}</label>
             <label htmlFor="name" className="error-message" hidden={!this.state.errors.name}>
               {this.state.errors.name}
             </label>
@@ -151,10 +151,10 @@ class ContactForm extends React.Component {
             />
           </FormDiv>
           <FormDiv>
-            <p>{i('contactFormEither')}</p>
+            <p>{intl('contactFormEither')}</p>
           </FormDiv>
           <FormDiv>
-            <label htmlFor="email">{i('contactFormEmail')}</label>
+            <label htmlFor="email">{intl('contactFormEmail')}</label>
             <label htmlFor="email" className="error-message" hidden={!this.state.errors.tel}>
               {this.state.errors.tel}
             </label>
@@ -167,10 +167,10 @@ class ContactForm extends React.Component {
             />
           </FormDiv>
           <FormDiv>
-            <p>{i('contactFormOr')}</p>
+            <p>{intl('contactFormOr')}</p>
           </FormDiv>
           <FormDiv>
-            <label htmlFor="tel">{i('contactFormTel')}</label>
+            <label htmlFor="tel">{intl('contactFormTel')}</label>
             <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
               {this.state.errors.tel}
             </label>
@@ -183,7 +183,7 @@ class ContactForm extends React.Component {
             />
           </FormDiv>
           <FormDiv>
-            <label htmlFor="message">{i('contactFormMessage')}</label>
+            <label htmlFor="message">{intl('contactFormMessage')}</label>
             <label htmlFor="message" className="error-message" hidden={!this.state.errors.message}>
               {this.state.errors.message}
             </label>
@@ -196,7 +196,7 @@ class ContactForm extends React.Component {
           </FormDiv>
           <FormDiv>
             <p>
-              {i('contactFormSendConsent', {
+              {intl('contactFormSendConsent', {
                 a: (...chunk) => (
                   <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={locale}>
                     {chunk}
@@ -208,19 +208,19 @@ class ContactForm extends React.Component {
           <FormDiv>
             <ButtonDiv>
               <button type="submit">
-                <PaperAirplaneIcon size={24} /> {i('contactFormSend')}
+                <PaperAirplaneIcon size={24} /> {intl('contactFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
-            <p>{i('contactFormSuccess')}</p>
+            <p>{intl('contactFormSuccess')}</p>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
-            <p>{i('contactFormError')}</p>
+            <p>{intl('contactFormError')}</p>
             <p>
               {this.state.errorMessage
                 ? this.state.errorMessage
-                : i('contactFormErrorNoErrorMessage')}
+                : intl('contactFormErrorNoErrorMessage')}
             </p>
           </FormDiv>
         </form>

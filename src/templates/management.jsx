@@ -118,7 +118,7 @@ const Separator = styled.div`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { contentfulPage: page, allContentfulBlogPost: posts } = props.data;
 
@@ -131,7 +131,7 @@ function Page(props) {
       image={page.image}
     >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
-      <H2>{i('managementNewsTitle')}</H2>
+      <H2>{intl('managementNewsTitle')}</H2>
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
@@ -150,7 +150,7 @@ function Page(props) {
                   <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
+                  {intl('blogCategory')}{' '}
                   <CategoryName category={post.category} locale={props.pageContext.locale} />
                 </PostCategory>
               </PostMeta>
@@ -160,7 +160,7 @@ function Page(props) {
             </PostContent>
             <Center>
               <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>

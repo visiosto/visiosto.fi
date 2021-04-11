@@ -161,17 +161,17 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
 
   const { siteMetadata } = data.site;
 
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
   const baseURL =
     process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteURL;
 
   const titleTemplate = home
-    ? `${siteMetadata.title} - ${i('metaSlogan')}`
+    ? `${siteMetadata.title} - ${intl('metaSlogan')}`
     : `%s - ${siteMetadata.title}`;
   const pageTitle = home
-    ? `${siteMetadata.title} - ${i('metaSlogan')}`
+    ? `${siteMetadata.title} - ${intl('metaSlogan')}`
     : `${title} - ${siteMetadata.title}`;
-  const pageDescription = description === '' ? i('metaDescription') : description;
+  const pageDescription = description === '' ? intl('metaDescription') : description;
 
   return (
     <Helmet titleTemplate={titleTemplate}>
@@ -201,7 +201,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         content={image ? image.file.url : `${baseURL}/thumbnail.png`}
       />
       <meta property="og:image:type" content={image ? image.file.contentType : 'image/png'} />
-      <meta property="og:image:alt" content={image ? image.description : i('metaOgImageAlt')} />
+      <meta property="og:image:alt" content={image ? image.description : intl('metaOgImageAlt')} />
       <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (errorPage) {

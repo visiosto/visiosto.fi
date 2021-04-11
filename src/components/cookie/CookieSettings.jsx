@@ -327,7 +327,7 @@ class CookieSettings extends React.Component {
   }
 
   render() {
-    const i = createINTL(this.props.intl);
+    const intl = createINTL(this.props.intl);
     const { locale, settingsOpen } = this.props;
 
     if (settingsOpen) {
@@ -337,24 +337,24 @@ class CookieSettings extends React.Component {
             <Container>
               <SettingsContent>
                 <Content>
-                  <H2>{i('cookieNoticeSettings')}</H2>
+                  <H2>{intl('cookieNoticeSettings')}</H2>
                   <Section>
-                    <H3>{i('cookieNoticeFunctionalTitle')}</H3>
-                    <p>{i('cookieNoticeFunctionalDescription')}</p>
+                    <H3>{intl('cookieNoticeFunctionalTitle')}</H3>
+                    <p>{intl('cookieNoticeFunctionalDescription')}</p>
                   </Section>
                   <Section>
-                    <H3>{i('cookieNoticeAnonymizedTrackingTitle')}</H3>
+                    <H3>{intl('cookieNoticeAnonymizedTrackingTitle')}</H3>
                     <FeatureContainer>
-                      <h4>{i('cookieNoticeGoogleAnalytics')}</h4>
+                      <h4>{intl('cookieNoticeGoogleAnalytics')}</h4>
                       <WhatLink>
                         <LocalizedAnchorLink to="/data-protection#google-analytics" locale={locale}>
                           <span onClick={this.handlePageChange}>
-                            {i('cookieNoticeGoogleAnalyticsInfo')}
+                            {intl('cookieNoticeGoogleAnalyticsInfo')}
                           </span>
                         </LocalizedAnchorLink>
                       </WhatLink>
                     </FeatureContainer>
-                    <p>{i('cookieNoticeAnonymizedTrackingDescription')}</p>
+                    <p>{intl('cookieNoticeAnonymizedTrackingDescription')}</p>
                     <SwitchLabel>
                       <SwitchInput
                         type="checkbox"
@@ -371,15 +371,15 @@ class CookieSettings extends React.Component {
                         locale={locale}
                         onClick={this.handlePageChange}
                       >
-                        {i('cookieNoticeDataProtection')}
+                        {intl('cookieNoticeDataProtection')}
                       </LocalizedLink>
                     </p>
                   </Section>
                   <SettingButtons>
                     <Button onClick={this.handleSaveClick} color="green">
-                      {i('cookieNoticeSave')}
+                      {intl('cookieNoticeSave')}
                     </Button>
-                    <Button onClick={this.handleClosingClick}>{i('cookieNoticeCancel')}</Button>
+                    <Button onClick={this.handleClosingClick}>{intl('cookieNoticeCancel')}</Button>
                   </SettingButtons>
                 </Content>
               </SettingsContent>
@@ -396,14 +396,14 @@ class CookieSettings extends React.Component {
     return (
       <Div>
         <Text>
-          <BannerTitle>{i('cookieNoticeTitle')}</BannerTitle>
-          <p>{i('cookieNoticeDescription')}</p>
+          <BannerTitle>{intl('cookieNoticeTitle')}</BannerTitle>
+          <p>{intl('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
           <Button onClick={this.handleAcceptClick} color="green">
-            {i('cookieNoticeAccept')}
+            {intl('cookieNoticeAccept')}
           </Button>
-          <Button onClick={this.handleInfoClick}>{i('cookieNoticeReject')}</Button>
+          <Button onClick={this.handleInfoClick}>{intl('cookieNoticeReject')}</Button>
         </Buttons>
       </Div>
     );

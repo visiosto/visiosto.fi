@@ -60,7 +60,7 @@ const H2 = styled.h2`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { contentfulPage: page } = props.data;
 
@@ -70,7 +70,7 @@ function Page(props) {
       <Separator>
         <Rule color="peach" mode={1} />
       </Separator>
-      <H2>{i('clientRegisterFormTitle')}</H2>
+      <H2>{intl('clientRegisterFormTitle')}</H2>
       {props.pageContext.clientType === 'business' ? (
         <RegisterBusinessForm locale={props.pageContext.locale} />
       ) : (

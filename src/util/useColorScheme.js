@@ -10,8 +10,8 @@ export default function useColorScheme() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { setColorMode } = useContext(ThemeContext);
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      setColorMode(e.matches ? 'dark' : 'light');
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      setColorMode(event.matches ? 'dark' : 'light');
     });
   }
 }

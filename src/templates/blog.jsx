@@ -96,13 +96,13 @@ const Separator = styled.div`
 `;
 
 function Page(props) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   const { edges: posts } = props.data.allContentfulBlogPost;
 
   return (
     <Layout
-      title={i('blogTitle')}
+      title={intl('blogTitle')}
       locale={props.pageContext.locale}
       pageID={props.pageContext.pageID}
       description={props.data.contentfulIndexPage.description.description}
@@ -125,7 +125,7 @@ function Page(props) {
                   <AuthorName author={post.author} locale={props.pageContext.locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
+                  {intl('blogCategory')}{' '}
                   <CategoryName category={post.category} locale={props.pageContext.locale} />
                 </PostCategory>
               </PostMeta>
@@ -135,7 +135,7 @@ function Page(props) {
             </PostContent>
             <Center>
               <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>

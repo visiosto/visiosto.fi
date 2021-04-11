@@ -49,12 +49,12 @@ const defaultProps = {
 };
 
 function SearchResults({ error, loading, queryResults, searchResults, show }) {
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
   if (loading) {
     return (
       <Div hidden={!show}>
         <Inner>
-          <div>{i('searchLoading')}</div>
+          <div>{intl('searchLoading')}</div>
         </Inner>
       </Div>
     );
@@ -62,7 +62,7 @@ function SearchResults({ error, loading, queryResults, searchResults, show }) {
     return (
       <Div hidden={!show}>
         <Inner>
-          <div>{i('searchError')}</div>
+          <div>{intl('searchError')}</div>
         </Inner>
       </Div>
     );
@@ -78,7 +78,7 @@ function SearchResults({ error, loading, queryResults, searchResults, show }) {
     return (
       <Div hidden={!show}>
         <Inner>
-          <div>{i('searchNotFound')}</div>
+          <div>{intl('searchNotFound')}</div>
         </Inner>
       </Div>
     );

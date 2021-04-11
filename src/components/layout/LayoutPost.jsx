@@ -90,7 +90,7 @@ function LayoutPost({
 }) {
   useColorScheme();
 
-  const i = createINTL(useIntl());
+  const intl = createINTL(useIntl());
 
   return (
     <>
@@ -115,7 +115,7 @@ function LayoutPost({
                 <AuthorName author={post.author} locale={locale} />
               </PostAuthor>
               <PostCategory>
-                {i('blogCategory')} <CategoryName category={post.category} locale={locale} />
+                {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
               </PostCategory>
             </PostMeta>
           </header>
