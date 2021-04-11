@@ -65,7 +65,7 @@ const propTypes = {
   description: PropTypes.string,
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
   post: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
 };
@@ -84,7 +84,7 @@ function LayoutPost({
   description,
   image,
   locale,
-  pageId,
+  pageID,
   post,
   title,
 }) {
@@ -101,10 +101,10 @@ function LayoutPost({
         description={description}
         image={image}
         locale={locale}
-        pageId={pageId}
+        pageID={pageID}
         title={title}
       />
-      <Header locale={locale} pageId={pageId} />
+      <Header locale={locale} pageID={pageID} />
       <main>
         <section>
           <header>
@@ -122,7 +122,7 @@ function LayoutPost({
           <div>{children}</div>
         </section>
       </main>
-      <Footer locale={locale} pageId={pageId} />
+      <Footer locale={locale} pageID={pageID} />
     </>
   );
 }

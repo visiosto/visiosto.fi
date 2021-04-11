@@ -18,7 +18,7 @@ const propTypes = {
   home: PropTypes.bool,
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
@@ -31,7 +31,7 @@ const defaultProps = {
   image: null,
 };
 
-function Head({ article, author, description, errorPage, home, image, locale, pageId, title }) {
+function Head({ article, author, description, errorPage, home, image, locale, pageID, title }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -212,7 +212,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
           return <meta property="og:url" content={`${baseURL}/${pagePath}`} />;
         } else {
           return (
-            <meta property="og:url" content={createLocaleURL(baseURL, pageId, locale, data)} />
+            <meta property="og:url" content={createLocaleURL(baseURL, pageID, locale, data)} />
           );
         }
       })()}
@@ -255,7 +255,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
           return siteMetadata.locales.map((listLocale) => (
             <link
               rel="alternate"
-              href={createLocaleURL(baseURL, pageId, listLocale, data)}
+              href={createLocaleURL(baseURL, pageID, listLocale, data)}
               hrefLang={siteMetadata.simpleLocales[listLocale.replace('-', '_')]}
               key={listLocale}
             />

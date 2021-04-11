@@ -22,7 +22,7 @@ const propTypes = {
   errorCode: PropTypes.string.isRequired,
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
@@ -31,7 +31,7 @@ const defaultProps = {
   image: null,
 };
 
-function LayoutIndex({ children, description, image, locale, pageId, title }) {
+function LayoutIndex({ children, description, image, locale, pageID, title }) {
   useColorScheme();
 
   return (
@@ -42,10 +42,10 @@ function LayoutIndex({ children, description, image, locale, pageId, title }) {
         description={description}
         image={image}
         locale={locale}
-        pageId={pageId}
+        pageID={pageID}
         title={title}
       />
-      <Header home locale={locale} pageId={pageId} />
+      <Header home locale={locale} pageID={pageID} />
       <main>
         <section>
           <header>
@@ -54,7 +54,7 @@ function LayoutIndex({ children, description, image, locale, pageId, title }) {
           <div>{children}</div>
         </section>
       </main>
-      <Footer locale={locale} pageId={pageId} />
+      <Footer locale={locale} pageID={pageID} />
     </>
   );
 }

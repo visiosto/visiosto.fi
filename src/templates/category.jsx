@@ -105,7 +105,7 @@ function Page(props) {
     <Layout
       title={`${i('blogCategory')} ${category.name}`}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={props.data.contentfulIndexPage.description.description}
     >
       <Separator>
@@ -164,7 +164,7 @@ export default function Category(props) {
 }
 
 export const pageQuery = graphql`
-  query CategoryQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+  query CategoryQuery($pageID: String, $locale: String, $momentJsLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -173,11 +173,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulCategory(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulCategory(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       name
     }
     allContentfulBlogPost(
-      filter: { category: { contentful_id: { eq: $pageId } }, node_locale: { eq: $locale } }
+      filter: { category: { contentful_id: { eq: $pageID } }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {

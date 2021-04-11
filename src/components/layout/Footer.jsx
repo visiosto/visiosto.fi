@@ -132,10 +132,10 @@ const TermsOfUseP = styled.p`
 
 const propTypes = {
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
 };
 
-function Footer({ locale, pageId }) {
+function Footer({ locale, pageID }) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -247,7 +247,7 @@ function Footer({ locale, pageId }) {
         </PricingP>
       </CompanyDiv>
       <Div>
-        <LocaleSwitcher locale={locale} pageId={pageId} />
+        <LocaleSwitcher locale={locale} pageID={pageID} />
       </Div>
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>

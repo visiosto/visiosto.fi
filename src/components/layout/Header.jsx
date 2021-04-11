@@ -87,16 +87,16 @@ const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath
   return pagePath;
 };
 
-const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage, locale, pageId) {
+const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage, locale, pageID) {
   if (!errorPage) {
     const node = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+      ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
     )[0].node;
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
         )[0].node;
         const authorPath = data.authorPaths.edges.filter(
           ({ node }) => node.node_locale === locale,
@@ -106,7 +106,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulBlogPost': {
         const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
         )[0].node;
         const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
           .node;
@@ -115,7 +115,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
         )[0].node;
         const categoryPath = data.categoryPaths.edges.filter(
           ({ node }) => node.node_locale === locale,
@@ -126,7 +126,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pageNode);
       }
@@ -135,7 +135,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulPath': {
         const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pathNode);
       }
@@ -150,12 +150,12 @@ const propTypes = {
   errorPage: PropTypes.bool,
   home: PropTypes.bool,
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
 };
 
 const defaultProps = { errorPage: false, home: false };
 
-function Header({ errorPage, home, locale, pageId }) {
+function Header({ errorPage, home, locale, pageID }) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -321,7 +321,7 @@ function Header({ errorPage, home, locale, pageId }) {
     },
   ]);
 
-  const breadcrumb = createBreadcrumb(data, errorPage, locale, pageId);
+  const breadcrumb = createBreadcrumb(data, errorPage, locale, pageID);
 
   return (
     <HeaderElement>

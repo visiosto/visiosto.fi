@@ -76,10 +76,10 @@ function Page(props) {
   const { contentfulBlogPost: post, allContentfulBlogPost: posts } = props.data;
 
   const previousEdges = posts.edges.filter(
-    ({ node }) => node.contentful_id === props.pageContext.pageId,
+    ({ node }) => node.contentful_id === props.pageContext.pageID,
   );
   const nextEdges = posts.edges.filter(
-    ({ node }) => node.contentful_id === props.pageContext.pageId,
+    ({ node }) => node.contentful_id === props.pageContext.pageID,
   );
 
   const previous = previousEdges.length > 0 ? previousEdges[0].previous : null;
@@ -90,7 +90,7 @@ function Page(props) {
       title={post.title}
       post={post}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={post.body.childMarkdownRemark.excerpt}
       author={post.author}
     >
@@ -148,7 +148,7 @@ export default function BlogPost(props) {
 
 export const pageQuery = graphql`
   query BlogPostQuery(
-    $pageId: String
+    $pageID: String
     $locale: String
     $momentJsLocale: String
     $management: Boolean
@@ -161,7 +161,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulBlogPost(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulBlogPost(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       contentful_id
       date: date(formatString: "LL", locale: $momentJsLocale)
       datetime: date

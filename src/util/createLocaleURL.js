@@ -3,17 +3,17 @@
 
 import createPagePath from './createPagePath';
 
-export default function createLocaleURL(baseURL, pageId, locale, data) {
+export default function createLocaleURL(baseURL, pageID, locale, data) {
   const { defaultLocale, localePaths } = data.site.siteMetadata;
 
   const entryNode = data.allContentfulEntry.edges.filter(
-    ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+    ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
   )[0].node;
 
   switch (entryNode.internal.type) {
     case 'ContentfulAuthor': {
       const authorNode = data.allContentfulAuthor.edges.filter(
-        ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+        ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
       )[0].node;
       const authorPath = data.authorPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
         .node;
@@ -28,7 +28,7 @@ export default function createLocaleURL(baseURL, pageId, locale, data) {
     }
     case 'ContentfulBlogPost': {
       const blogPostNode = data.allContentfulBlogPost.edges.filter(
-        ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+        ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
       )[0].node;
       const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
         .node;
@@ -42,7 +42,7 @@ export default function createLocaleURL(baseURL, pageId, locale, data) {
     }
     case 'ContentfulCategory': {
       const categoryNode = data.allContentfulCategory.edges.filter(
-        ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+        ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
       )[0].node;
       const categoryPath = data.categoryPaths.edges.filter(
         ({ node }) => node.node_locale === locale,
@@ -57,7 +57,7 @@ export default function createLocaleURL(baseURL, pageId, locale, data) {
     }
     case 'ContentfulPage': {
       const pageNode = data.allContentfulPage.edges.filter(
-        ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+        ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
       )[0].node;
       return `${baseURL}${createPagePath(pageNode, locale, defaultLocale, localePaths)}`;
     }
@@ -68,7 +68,7 @@ export default function createLocaleURL(baseURL, pageId, locale, data) {
     }
     case 'ContentfulPath': {
       const pathNode = data.allContentfulPath.edges.filter(
-        ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
+        ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
       )[0].node;
       return `${baseURL}${createPagePath(pathNode, locale, defaultLocale, localePaths)}`;
     }

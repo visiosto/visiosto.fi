@@ -9,14 +9,14 @@ import LocalizedLink from './LocalizedLink';
 const propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
 };
 
 const defaultProps = { className: null };
 
-function LocaleLink({ children, className, pageId, to }) {
-  return <LocalizedLink children={children} className={className} to={pageId} locale={to} />;
+function LocaleLink({ children, className, pageID, to }) {
+  return <LocalizedLink children={children} className={className} to={pageID} locale={to} />;
 }
 
 LocaleLink.propTypes = propTypes;

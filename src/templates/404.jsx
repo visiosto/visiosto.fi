@@ -46,7 +46,7 @@ function Page(props) {
   return (
     <LayoutError
       errorCode="404"
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       title={i('notFoundTitle')}
       locale={props.pageContext.locale}
     >

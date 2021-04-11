@@ -185,7 +185,7 @@ function Page(props) {
     <Layout
       title={author.name}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       author={author}
     >
       <ImageDiv>
@@ -339,7 +339,7 @@ export default function Author(props) {
 }
 
 export const pageQuery = graphql`
-  query AuthorQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+  query AuthorQuery($pageID: String, $locale: String, $momentJsLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -348,7 +348,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulAuthor(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulAuthor(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       description {
         childMarkdownRemark {
           html
@@ -408,7 +408,7 @@ export const pageQuery = graphql`
       }
     }
     allContentfulBlogPost(
-      filter: { author: { contentful_id: { eq: $pageId } }, node_locale: { eq: $locale } }
+      filter: { author: { contentful_id: { eq: $pageID } }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {

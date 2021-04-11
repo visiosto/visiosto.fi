@@ -187,7 +187,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.authors.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -207,7 +207,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'author.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
     };
@@ -219,21 +219,21 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   authorPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
-    reporter.verbose(`Creating the author page for ID '${pageId}'`);
+    reporter.verbose(`Creating the author page for ID '${pageID}'`);
 
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'authors.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
     };
@@ -245,7 +245,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.basicPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -258,7 +258,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'page.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
     };
 
@@ -271,7 +271,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.blogPosts.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug, management } = node;
+    const { contentful_id: pageID, node_locale: locale, slug, management } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -291,7 +291,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'blog-post.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
         management,
       },
@@ -304,21 +304,21 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   blogPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
-    reporter.verbose(`Creating the blog page for ID '${pageId}'`);
+    reporter.verbose(`Creating the blog page for ID '${pageID}'`);
 
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'blog.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
     };
@@ -332,7 +332,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.categories.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -349,7 +349,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'category.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
     };
@@ -361,20 +361,20 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   categoryPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale } = node;
+    const { contentful_id: pageID, node_locale: locale } = node;
 
-    reporter.verbose(`Creating the category page for ID '${pageId}'`);
+    reporter.verbose(`Creating the category page for ID '${pageID}'`);
 
     const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
     const pageOpts = {
       path: pagePath,
       component: path.resolve('src', 'templates', 'categories.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
     };
 
@@ -385,9 +385,9 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.indexPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale } = node;
+    const { contentful_id: pageID, node_locale: locale } = node;
 
-    reporter.verbose(`Creating the index page for ID '${pageId}'`);
+    reporter.verbose(`Creating the index page for ID '${pageID}'`);
 
     const pagePath = locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
 
@@ -398,7 +398,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'index.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
     };
 
@@ -409,7 +409,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.managementPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -423,7 +423,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'management.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
     };
@@ -435,7 +435,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.pricingPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -449,7 +449,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'pricing.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
     };
 
@@ -460,7 +460,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.clientRegisterBusinessPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -473,7 +473,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         clientType: 'business',
       },
     };
@@ -485,7 +485,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.clientRegisterPersonPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -498,7 +498,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         clientType: 'person',
       },
     };
@@ -521,7 +521,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', '404.jsx'),
       context: {
         locale,
-        pageId: '404',
+        pageID: '404',
       },
     };
 

@@ -65,7 +65,7 @@ function Page(props) {
   const { contentfulPage: page } = props.data;
 
   return (
-    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
+    <Layout title={page.title} locale={props.pageContext.locale} pageID={props.pageContext.pageID}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Separator>
         <Rule color="peach" mode={1} />
@@ -95,7 +95,7 @@ export default function ClientRegister(props) {
 }
 
 export const pageQuery = graphql`
-  query ClientRegisterQuery($pageId: String, $locale: String) {
+  query ClientRegisterQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -104,7 +104,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

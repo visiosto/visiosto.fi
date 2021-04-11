@@ -28,7 +28,7 @@ function Page(props) {
     <Layout
       title={page.title}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={page.description}
       image={page.image}
     >
@@ -52,7 +52,7 @@ export default function ContentfulPage(props) {
 }
 
 export const pageQuery = graphql`
-  query PageQuery($pageId: String, $locale: String) {
+  query PageQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -61,7 +61,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

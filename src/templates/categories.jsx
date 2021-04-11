@@ -84,7 +84,7 @@ function Page(props) {
     <Layout
       title={i('categoriesTitle')}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={props.data.contentfulIndexPage.description.description}
     >
       <Separator>

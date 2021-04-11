@@ -14,17 +14,17 @@ const Link = styled(LocaleLink)`
 
 const propTypes = {
   locale: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
 };
 
-function LocaleSwitcher({ locale, pageId }) {
+function LocaleSwitcher({ locale, pageID }) {
   return (
     <>
       {(() => {
         if (locale !== 'fi') {
           return (
             <>
-              <Link to="fi" pageId={pageId}>
+              <Link to="fi" pageID={pageID}>
                 <Button>Suomeksi</Button>
               </Link>
               <br />
@@ -38,7 +38,7 @@ function LocaleSwitcher({ locale, pageId }) {
         if (locale !== 'en-GB') {
           return (
             <>
-              <Link to="en-GB" pageId={pageId}>
+              <Link to="en-GB" pageID={pageID}>
                 <Button>In English</Button>
               </Link>
               <br />

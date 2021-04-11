@@ -88,7 +88,7 @@ function Page(props) {
     <LayoutIndex
       title={page.title}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={page.description.description}
       image={page.image}
     >

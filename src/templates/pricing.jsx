@@ -55,7 +55,7 @@ function Page(props) {
     <Layout
       title={page.title}
       locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
+      pageID={props.pageContext.pageID}
       description={page.description.description}
       image={page.image}
     >
@@ -65,7 +65,7 @@ function Page(props) {
           return (
             <LocalizedAnchorLinkButton
               key={node.listType}
-              to={`${props.pageContext.pageId}#${
+              to={`${props.pageContext.pageID}#${
                 localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
                   .link
               }`}
@@ -112,7 +112,7 @@ export default function Pricing(props) {
 }
 
 export const pageQuery = graphql`
-  query PricingQuery($pageId: String, $locale: String) {
+  query PricingQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -121,7 +121,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {
