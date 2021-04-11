@@ -230,6 +230,10 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
     } else {
       return <Link children={children} className={className} onClick={onClick} />;
     }
+  } else if (to === '404') {
+    const pagePath =
+      locale === defaultLocale ? '/404' : `/${localePaths[locale.replace('-', '_')]}/404`;
+    return <Link children={children} className={className} onClick={onClick} to={pagePath} />;
   } else {
     const node = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === to && node.node_locale === locale,

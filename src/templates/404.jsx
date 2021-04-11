@@ -44,7 +44,12 @@ function Page(props) {
   const i = createIntl(useIntl());
 
   return (
-    <LayoutError errorCode="404" title={i('notFoundTitle')} locale={props.pageContext.locale}>
+    <LayoutError
+      errorCode="404"
+      pageId={props.pageContext.pageId}
+      title={i('notFoundTitle')}
+      locale={props.pageContext.locale}
+    >
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
