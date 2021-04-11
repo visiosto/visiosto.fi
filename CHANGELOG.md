@@ -26,6 +26,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Function `createIntl` to `createINTL` to match coding standards.
 - All of the variables `e` to `event` to match coding standards.
 - All of the functions `i` to `intl` to match coding standards.
+- `meta` translations to `head`.
 
 ### Fixed
 
