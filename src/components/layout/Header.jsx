@@ -334,7 +334,7 @@ function Header({ errorPage, home, locale, pageID }) {
           return <SiteTitle>{site.siteMetadata.title}</SiteTitle>;
         })()}
         <LocalizedLink to="/" locale={locale}>
-          <Image alt={intl('headerLogoALT')} light={logosLight} dark={logosDark} />
+          <Image alt={intl('headerLogoImageText')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>
       <Navigation locale={locale} />
