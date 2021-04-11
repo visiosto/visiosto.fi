@@ -13,7 +13,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       {
         site {
           siteMetadata {
-            alternativeUrls
+            alternativeURLs
             defaultLocale
             locales
             siteURL
@@ -174,7 +174,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
   }
 
   const {
-    alternativeUrls,
+    alternativeURLs,
     defaultLocale,
     localePaths,
     locales,
@@ -542,7 +542,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   // Create the redirects for the URLs.
 
-  alternativeUrls.forEach((url) => {
+  alternativeURLs.forEach((url) => {
     createRedirect({
       fromPath: url,
       toPath: siteURL,
@@ -553,7 +553,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   // Create the redirects for all of the pages.
 
-  alternativeUrls.forEach((url) => {
+  alternativeURLs.forEach((url) => {
     createRedirect({
       fromPath: `${url}/*`,
       toPath: `${siteURL}/:splat`,

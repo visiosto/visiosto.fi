@@ -12,7 +12,7 @@ module.exports = {
     siteURL,
     // The wrong case of the constant must be included as some plugins depend on it.
     siteUrl: siteURL,
-    alternativeUrls: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
+    alternativeURLs: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
     title: 'Visiosto',
     description:
       'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
