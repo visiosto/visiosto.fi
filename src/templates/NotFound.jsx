@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -40,16 +41,26 @@ const Div = styled.div`
   }
 `;
 
-function Page(props) {
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ pageContext }) {
   const intl = createINTL(useIntl());
+  const { locale, pageID } = pageContext;
 
   return (
-    <LayoutError
-      errorCode="404"
-      pageID={props.pageContext.pageID}
-      title={intl('notFoundTitle')}
-      locale={props.pageContext.locale}
-    >
+    <LayoutError errorCode="404" locale={locale} pageID={pageID} title={intl('notFoundTitle')}>
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
@@ -60,19 +71,23 @@ function Page(props) {
   );
 }
 
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
 function NotFound(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
     </Intl>
   );
 }
+
+NotFound.propTypes = propTypes;
+NotFound.defaultProps = defaultProps;
 
 export default NotFound;
 

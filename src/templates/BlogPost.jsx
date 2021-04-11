@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon } from '@primer/octicons-react';
@@ -72,27 +73,38 @@ const ArrowRight = styled(ArrowRightIcon)`
   margin: 0 0 0.1rem 0.2rem;
 `;
 
-function Page(props) {
-  const { contentfulBlogPost: post, allContentfulBlogPost: posts } = props.data;
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
 
-  const previousEdges = posts.edges.filter(
-    ({ node }) => node.contentful_id === props.pageContext.pageID,
-  );
-  const nextEdges = posts.edges.filter(
-    ({ node }) => node.contentful_id === props.pageContext.pageID,
-  );
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const { contentfulBlogPost: post, allContentfulBlogPost: posts } = data;
+  const { locale, pageID } = pageContext;
+
+  const previousEdges = posts.edges.filter(({ node }) => node.contentful_id === pageID);
+  const nextEdges = posts.edges.filter(({ node }) => node.contentful_id === pageID);
 
   const previous = previousEdges.length > 0 ? previousEdges[0].previous : null;
   const next = nextEdges.length > 0 ? nextEdges[0].next : null;
 
   return (
     <LayoutPost
-      title={post.title}
-      post={post}
-      locale={props.pageContext.locale}
-      pageID={props.pageContext.pageID}
-      description={post.body.childMarkdownRemark.excerpt}
       author={post.author}
+      description={post.body.childMarkdownRemark.excerpt}
+      locale={locale}
+      pageID={pageID}
+      post={post}
+      title={post.title}
     >
       <Separator>
         <Rule color="blue" mode={1} />
@@ -105,7 +117,7 @@ function Page(props) {
               return (
                 <>
                   <ArrowLeft />
-                  <LocalizedLink to={previous.contentful_id} locale={props.pageContext.locale}>
+                  <LocalizedLink to={previous.contentful_id} locale={locale}>
                     {previous.title}
                   </LocalizedLink>
                 </>
@@ -118,7 +130,7 @@ function Page(props) {
             if (next) {
               return (
                 <>
-                  <LocalizedLink to={next.contentful_id} locale={props.pageContext.locale}>
+                  <LocalizedLink to={next.contentful_id} locale={locale}>
                     {next.title}
                   </LocalizedLink>
                   <ArrowRight />
@@ -132,19 +144,25 @@ function Page(props) {
   );
 }
 
-export default function BlogPost(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function BlogPost(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
     </Intl>
   );
 }
+
+BlogPost.propTypes = propTypes;
+BlogPost.defaultProps = defaultProps;
+
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostQuery(

@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -129,17 +130,33 @@ const TwitterImage = styled(SocialMediaImage)`
   }
 `;
 
-function Page(props) {
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
   const intl = createINTL(useIntl());
 
-  const { edges: authors } = props.data.allContentfulAuthor;
+  const { edges: authors } = data.allContentfulAuthor;
+  const { locale, pageID } = pageContext;
 
+  // TODO Add an actual description for the page.
   return (
     <Layout
+      description={data.contentfulIndexPage.description.description}
+      locale={locale}
+      pageID={pageID}
       title={intl('authorsTitle')}
-      locale={props.pageContext.locale}
-      pageID={props.pageContext.pageID}
-      description={props.data.contentfulIndexPage.description.description}
     >
       <Separator>
         <Rule color="peach" mode={2} />
@@ -151,7 +168,7 @@ function Page(props) {
               <Image alt={author.name} image={getImage(author.profileImage)} />
               <AuthorInfo>
                 <H2>
-                  <Link to={author.contentful_id} locale={props.pageContext.locale}>
+                  <Link to={author.contentful_id} locale={locale}>
                     {author.name}
                   </Link>
                 </H2>
@@ -170,9 +187,9 @@ function Page(props) {
                         target="_blank"
                       >
                         <InstagramImage
-                          alt={intl('footerInstagramAlt')}
-                          light={getImage(props.data.instagramColor)}
-                          dark={getImage(props.data.instagram)}
+                          alt={intl('footerInstagramALT')}
+                          light={getImage(data.instagramColor)}
+                          dark={getImage(data.instagram)}
                         />
                       </a>
                     );
@@ -187,9 +204,9 @@ function Page(props) {
                         target="_blank"
                       >
                         <SocialMediaImage
-                          alt={intl('footerFacebookAlt')}
-                          light={getImage(props.data.facebookColor)}
-                          dark={getImage(props.data.facebook)}
+                          alt={intl('footerFacebookALT')}
+                          light={getImage(data.facebookColor)}
+                          dark={getImage(data.facebook)}
                         />
                       </a>
                     );
@@ -204,9 +221,9 @@ function Page(props) {
                         target="_blank"
                       >
                         <TwitterImage
-                          alt={intl('footerTwitterAlt')}
-                          light={getImage(props.data.twitterColor)}
-                          dark={getImage(props.data.twitter)}
+                          alt={intl('footerTwitterALT')}
+                          light={getImage(data.twitterColor)}
+                          dark={getImage(data.twitter)}
                         />
                       </a>
                     );
@@ -221,9 +238,9 @@ function Page(props) {
                         target="_blank"
                       >
                         <LinkedinImage
-                          alt={intl('footerLinkedinAlt')}
-                          light={getImage(props.data.linkedinColor)}
-                          dark={getImage(props.data.linkedin)}
+                          alt={intl('footerLinkedinALT')}
+                          light={getImage(data.linkedinColor)}
+                          dark={getImage(data.linkedin)}
                         />
                       </a>
                     );
@@ -238,9 +255,9 @@ function Page(props) {
                         target="_blank"
                       >
                         <GithubImage
-                          alt={intl('footerGithubAlt')}
-                          light={getImage(props.data.github)}
-                          dark={getImage(props.data.github)}
+                          alt={intl('footerGithubALT')}
+                          light={getImage(data.github)}
+                          dark={getImage(data.github)}
                         />
                       </a>
                     );
@@ -258,19 +275,25 @@ function Page(props) {
   );
 }
 
-export default function Authors(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Authors(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
     </Intl>
   );
 }
+
+Authors.propTypes = propTypes;
+Authors.defaultProps = defaultProps;
+
+export default Authors;
 
 export const pageQuery = graphql`
   query AuthorsQuery($locale: String) {

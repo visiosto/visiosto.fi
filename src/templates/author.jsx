@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -175,19 +176,29 @@ const Separator = styled.div`
   }
 `;
 
-function Page(props) {
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
   const intl = createINTL(useIntl());
 
-  const { contentfulAuthor: author } = props.data;
-  const { edges: posts } = props.data.allContentfulBlogPost;
+  const { contentfulAuthor: author } = data;
+  const { edges: posts } = data.allContentfulBlogPost;
+  const { locale, pageID } = pageContext;
 
   return (
-    <Layout
-      title={author.name}
-      locale={props.pageContext.locale}
-      pageID={props.pageContext.pageID}
-      author={author}
-    >
+    <Layout author={author} locale={locale} pageID={pageID} title={author.name}>
       <ImageDiv>
         <Image alt={author.name} image={getImage(author.profileImage)} />
       </ImageDiv>
@@ -201,9 +212,9 @@ function Page(props) {
                 target="_blank"
               >
                 <InstagramImage
-                  alt={intl('footerInstagramAlt')}
-                  light={getImage(props.data.instagramColor)}
-                  dark={getImage(props.data.instagram)}
+                  alt={intl('footerInstagramALT')}
+                  light={getImage(data.instagramColor)}
+                  dark={getImage(data.instagram)}
                 />
               </a>
             );
@@ -218,9 +229,9 @@ function Page(props) {
                 target="_blank"
               >
                 <SocialMediaImage
-                  alt={intl('footerFacebookAlt')}
-                  light={getImage(props.data.facebookColor)}
-                  dark={getImage(props.data.facebook)}
+                  alt={intl('footerFacebookALT')}
+                  light={getImage(data.facebookColor)}
+                  dark={getImage(data.facebook)}
                 />
               </a>
             );
@@ -235,9 +246,9 @@ function Page(props) {
                 target="_blank"
               >
                 <TwitterImage
-                  alt={intl('footerTwitterAlt')}
-                  light={getImage(props.data.twitterColor)}
-                  dark={getImage(props.data.twitter)}
+                  alt={intl('footerTwitterALT')}
+                  light={getImage(data.twitterColor)}
+                  dark={getImage(data.twitter)}
                 />
               </a>
             );
@@ -252,9 +263,9 @@ function Page(props) {
                 target="_blank"
               >
                 <LinkedinImage
-                  alt={intl('footerLinkedinAlt')}
-                  light={getImage(props.data.linkedinColor)}
-                  dark={getImage(props.data.linkedin)}
+                  alt={intl('footerLinkedinALT')}
+                  light={getImage(data.linkedinColor)}
+                  dark={getImage(data.linkedin)}
                 />
               </a>
             );
@@ -269,9 +280,9 @@ function Page(props) {
                 target="_blank"
               >
                 <GithubImage
-                  alt={intl('footerGithubAlt')}
-                  light={getImage(props.data.github)}
-                  dark={getImage(props.data.github)}
+                  alt={intl('footerGithubALT')}
+                  light={getImage(data.github)}
+                  dark={getImage(data.github)}
                 />
               </a>
             );
@@ -291,18 +302,17 @@ function Page(props) {
           <Post>
             <PostHeader>
               <H3>
-                <Link to={post.contentful_id} locale={props.pageContext.locale}>
+                <Link to={post.contentful_id} locale={locale}>
                   {post.title}
                 </Link>
               </H3>
               <PostMeta>
                 <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.locale} />
+                  <AuthorName author={post.author} locale={locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {intl('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.locale} />
+                  {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -310,7 +320,7 @@ function Page(props) {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
+              <LocalizedLinkButton to={post.contentful_id} locale={locale}>
                 {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
@@ -324,19 +334,25 @@ function Page(props) {
   );
 }
 
-export default function Author(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Author(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
     </Intl>
   );
 }
+
+Author.propTypes = propTypes;
+Author.defaultProps = defaultProps;
+
+export default Author;
 
 export const pageQuery = graphql`
   query AuthorQuery($pageID: String, $locale: String, $momentJsLocale: String) {
