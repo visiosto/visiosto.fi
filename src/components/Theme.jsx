@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from '../theme';
 
-const propTypes = { children: PropTypes.any.isRequired };
+const propTypes = { children: PropTypes.node.isRequired };
 
 function Theme({ children }) {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;

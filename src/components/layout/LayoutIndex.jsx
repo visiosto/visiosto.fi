@@ -19,7 +19,6 @@ const PageTitle = styled.h2`
 const propTypes = {
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
-  errorCode: PropTypes.string.isRequired,
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
