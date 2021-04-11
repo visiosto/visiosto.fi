@@ -202,7 +202,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'author.jsx'),
       context: {
@@ -210,9 +210,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the authors page from Contentful.
@@ -228,7 +226,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'authors.jsx'),
       context: {
@@ -236,9 +234,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the basic pages from Contentful.
@@ -253,16 +249,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'page.jsx'),
       context: {
         locale,
         pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the blog post pages from Contentful.
@@ -286,7 +280,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'blog-post.jsx'),
       context: {
@@ -295,9 +289,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         momentJsLocale: locale.toLowerCase(),
         management,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the blog page from Contentful.
@@ -313,7 +305,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'blog.jsx'),
       context: {
@@ -321,9 +313,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the category pages from Contentful.
@@ -344,7 +334,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'category.jsx'),
       context: {
@@ -352,9 +342,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the categories page from Contentful.
@@ -369,16 +357,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'categories.jsx'),
       context: {
         locale,
         pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the index page from Contentful.
@@ -393,16 +379,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'index.jsx'),
       context: {
         locale,
         pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the management page from Contentful.
@@ -418,7 +402,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'management.jsx'),
       context: {
@@ -426,9 +410,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the pricing page from Contentful.
@@ -444,16 +426,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'pricing.jsx'),
       context: {
         locale,
         pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the client register page for businesses from Contentful.
@@ -468,7 +448,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
@@ -476,9 +456,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         clientType: 'business',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the client register page for people from Contentful.
@@ -493,7 +471,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', 'client-register.jsx'),
       context: {
@@ -501,9 +479,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         pageID,
         clientType: 'person',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the 404 error pages.
@@ -516,16 +492,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
       component: path.resolve('src', 'templates', '404.jsx'),
       context: {
         locale,
         pageID: '404',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the redirects for the 404 error pages.
