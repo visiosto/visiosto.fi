@@ -176,7 +176,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
   return (
     <Helmet titleTemplate={titleTemplate}>
       <html lang={`${siteMetadata.simpleLocales[locale.replace('-', '_')]}`} />
-      <title>{pageTitle}</title>
+      <title>{title}</title>
 
       <meta name="description" content={pageDescription} />
 
@@ -201,7 +201,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         content={image ? image.file.url : `${baseURL}/thumbnail.png`}
       />
       <meta property="og:image:type" content={image ? image.file.contentType : 'image/png'} />
-      <meta property="og:image:alt" content={image ? image.description : intl('metaOGImageALT')} />
+      <meta property="og:image:alt" content={image ? image.description : intl('headOGImageALT')} />
       <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (errorPage) {
