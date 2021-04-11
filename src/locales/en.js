@@ -12,8 +12,8 @@ import contactFormMessages from './en/contactFormMessages';
 import cookieNoticeMessages from './en/cookieNoticeMessages';
 import footerMessages from './en/footerMessages';
 import headerMessages from './en/headerMessages';
+import headMessages from './en/headMessages';
 import managementMessages from './en/managementMessages';
-import metaMessages from './en/metaMessages';
 import notFoundMessages from './en/notFoundMessages';
 import searchMessages from './en/searchMessages';
 
@@ -27,8 +27,8 @@ export const messages = {
   ...cookieNoticeMessages,
   ...footerMessages,
   ...headerMessages,
+  ...headMessages,
   ...managementMessages,
-  ...metaMessages,
   ...notFoundMessages,
   ...searchMessages,
 };

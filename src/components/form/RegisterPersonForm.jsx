@@ -127,7 +127,9 @@ class RegisterPersonForm extends React.Component {
       case 1:
         if (!this.state.billingAddressLine1) {
           isValid = false;
-          errors.billingAddressLine1 = intl('clientRegisterPersonFormErrorMissingBillingAddressLine1');
+          errors.billingAddressLine1 = intl(
+            'clientRegisterPersonFormErrorMissingBillingAddressLine1',
+          );
         }
         if (!this.state.billingPostcode) {
           isValid = false;

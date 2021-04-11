@@ -221,7 +221,7 @@ function Footer({ locale, pageID }) {
       <Search locale={locale} />
       <CompanyDiv>
         <LogoImage
-          alt={intl('footerLogoAlt')}
+          alt={intl('footerLogoALT')}
           light={getImage(data.logoLight)}
           dark={getImage(data.logoDark)}
         />
@@ -256,35 +256,35 @@ function Footer({ locale, pageID }) {
       <SocialMediaDiv>
         <a href={socialMedia.instagram} rel="noopener noreferrer" target="_blank">
           <InstagramImage
-            alt={intl('footerInstagramAlt')}
+            alt={intl('footerInstagramALT')}
             light={getImage(data.instagramColor)}
             dark={getImage(data.instagram)}
           />
         </a>
         <a href={socialMedia.facebook} rel="noopener noreferrer" target="_blank">
           <SocialMediaImage
-            alt={intl('footerFacebookAlt')}
+            alt={intl('footerFacebookALT')}
             light={getImage(data.facebookColor)}
             dark={getImage(data.facebook)}
           />
         </a>
         <a href={socialMedia.twitter} rel="noopener noreferrer" target="_blank">
           <TwitterImage
-            alt={intl('footerTwitterAlt')}
+            alt={intl('footerTwitterALT')}
             light={getImage(data.twitterColor)}
             dark={getImage(data.twitter)}
           />
         </a>
         <a href={socialMedia.linkedin} rel="noopener noreferrer" target="_blank">
           <LinkedinImage
-            alt={intl('footerLinkedinAlt')}
+            alt={intl('footerLinkedinALT')}
             light={getImage(data.linkedinColor)}
             dark={getImage(data.linkedin)}
           />
         </a>
         <a href={socialMedia.github} rel="noopener noreferrer" target="_blank">
           <GithubImage
-            alt={intl('footerGithubAlt')}
+            alt={intl('footerGithubALT')}
             light={getImage(data.github)}
             dark={getImage(data.github)}
           />

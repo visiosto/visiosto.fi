@@ -135,7 +135,9 @@ class RegisterBusinessForm extends React.Component {
         }
         if (!this.state.billingPostOffice) {
           isValid = false;
-          errors.billingPostOffice = intl('clientRegisterBusinessFormErrorMissingBillingPostOffice');
+          errors.billingPostOffice = intl(
+            'clientRegisterBusinessFormErrorMissingBillingPostOffice',
+          );
         }
         break;
 
@@ -151,11 +153,15 @@ class RegisterBusinessForm extends React.Component {
           case FORM_BILLING_E_INVOICE:
             if (!this.state.eInvoiceAddress) {
               isValid = false;
-              errors.eInvoiceAddress = intl('clientRegisterBusinessFormErrorMissingEInvoiceAddress');
+              errors.eInvoiceAddress = intl(
+                'clientRegisterBusinessFormErrorMissingEInvoiceAddress',
+              );
             }
             if (!this.state.eInvoiceOperator) {
               isValid = false;
-              errors.eInvoiceOperator = intl('clientRegisterBusinessFormErrorMissingEInvoiceOperator');
+              errors.eInvoiceOperator = intl(
+                'clientRegisterBusinessFormErrorMissingEInvoiceOperator',
+              );
             }
             break;
 
@@ -342,7 +348,9 @@ class RegisterBusinessForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="business-name">{intl('clientRegisterBusinessFormBusinessName')}</label>
+              <label htmlFor="business-name">
+                {intl('clientRegisterBusinessFormBusinessName')}
+              </label>
               <label
                 htmlFor="business-name"
                 className="error-message"
@@ -362,7 +370,9 @@ class RegisterBusinessForm extends React.Component {
               <h4>{intl('clientRegisterBusinessFormAddress')}</h4>
             </FormDiv>
             <FormDiv>
-              <label htmlFor="address-line-1">{intl('clientRegisterBusinessFormAddressLine1')}</label>
+              <label htmlFor="address-line-1">
+                {intl('clientRegisterBusinessFormAddressLine1')}
+              </label>
               <label
                 htmlFor="address-line-1"
                 className="error-message"
@@ -380,7 +390,9 @@ class RegisterBusinessForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="address-line-2">{intl('clientRegisterBusinessFormAddressLine2')}</label>
+              <label htmlFor="address-line-2">
+                {intl('clientRegisterBusinessFormAddressLine2')}
+              </label>
               <input
                 className="wider"
                 type="text"
@@ -593,7 +605,9 @@ class RegisterBusinessForm extends React.Component {
               />
             </FormDiv>
             <FormDiv hidden={this.state.billingMethod !== FORM_BILLING_EMAIL}>
-              <label htmlFor="billing-email">{intl('clientRegisterBusinessFormBillingEmail')}</label>
+              <label htmlFor="billing-email">
+                {intl('clientRegisterBusinessFormBillingEmail')}
+              </label>
               <label
                 htmlFor="billing-email"
                 className="error-message"

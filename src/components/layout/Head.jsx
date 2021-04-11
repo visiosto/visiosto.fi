@@ -166,12 +166,12 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
     process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteURL;
 
   const titleTemplate = home
-    ? `${siteMetadata.title} - ${intl('metaSlogan')}`
+    ? `${siteMetadata.title} - ${intl('headSlogan')}`
     : `%s - ${siteMetadata.title}`;
   const pageTitle = home
-    ? `${siteMetadata.title} - ${intl('metaSlogan')}`
+    ? `${siteMetadata.title} - ${intl('headSlogan')}`
     : `${title} - ${siteMetadata.title}`;
-  const pageDescription = description === '' ? intl('metaDescription') : description;
+  const pageDescription = description === '' ? intl('headDescription') : description;
 
   return (
     <Helmet titleTemplate={titleTemplate}>
@@ -182,8 +182,8 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
 
       <meta property="fb:app_id" content={siteMetadata.facebookAppID} />
 
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
       <meta
         property="og:type"
         content={(() => {
@@ -201,7 +201,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         content={image ? image.file.url : `${baseURL}/thumbnail.png`}
       />
       <meta property="og:image:type" content={image ? image.file.contentType : 'image/png'} />
-      <meta property="og:image:alt" content={image ? image.description : intl('metaOgImageAlt')} />
+      <meta property="og:image:alt" content={image ? image.description : intl('headOgImageAlt')} />
       <meta property="og:site_name" content={siteMetadata.title} />
       {(() => {
         if (errorPage) {
