@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Index layout properties by removing the `errorCode` property.
+- Page title that included the name of the site twice.
 
 ## [0.19.0] - 2021-04-11
 

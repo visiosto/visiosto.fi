@@ -176,7 +176,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
   return (
     <Helmet titleTemplate={titleTemplate}>
       <html lang={`${siteMetadata.simpleLocales[locale.replace('-', '_')]}`} />
-      <title>{pageTitle}</title>
+      <title>{title}</title>
 
       <meta name="description" content={pageDescription} />
 
