@@ -17,7 +17,7 @@ import {
   FORM_POST_STATUS_TIMEOUT,
 } from '../../constants';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 import encodeFormState from '../../util/encodeFormState';
 
 const FormContainer = styled.div`
@@ -48,7 +48,7 @@ class ContactForm extends React.Component {
   }
 
   validateFormData() {
-    const i = createIntl(this.props.intl);
+    const i = createINTL(this.props.intl);
     const errors = {};
     let isValid = true;
 
@@ -117,7 +117,7 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const i = createIntl(this.props.intl);
+    const i = createINTL(this.props.intl);
     const { locale } = this.props;
 
     return (

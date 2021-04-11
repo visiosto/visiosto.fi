@@ -13,7 +13,7 @@ import RegisterPersonForm from '../components/form/RegisterPersonForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createINTL from '../util/createINTL';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -60,7 +60,7 @@ const H2 = styled.h2`
 `;
 
 function Page(props) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const { contentfulPage: page } = props.data;
 

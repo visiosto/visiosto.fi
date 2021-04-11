@@ -14,7 +14,7 @@ import LocalizedLink from '../link/LocalizedLink';
 import SchemedImage from '../SchemedImage';
 import Search from '../search/Search';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 
 const FooterElement = styled.footer`
   margin: 4em ${(props) => props.theme.layout.marginMobile} 2em;
@@ -136,7 +136,7 @@ const propTypes = {
 };
 
 function Footer({ locale, pageID }) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const data = useStaticQuery(
     graphql`

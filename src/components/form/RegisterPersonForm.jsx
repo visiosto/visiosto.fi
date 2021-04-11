@@ -22,7 +22,7 @@ import {
   REGISTER_PERSON_FORM_NAME,
 } from '../../constants';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 import encodeFormState from '../../util/encodeFormState';
 
 const FormContainer = styled.div`
@@ -88,7 +88,7 @@ class RegisterPersonForm extends React.Component {
   }
 
   validatePageData() {
-    const i = createIntl(this.props.intl);
+    const i = createINTL(this.props.intl);
     const errors = {};
     let isValid = true;
 
@@ -240,7 +240,7 @@ class RegisterPersonForm extends React.Component {
   }
 
   render() {
-    const i = createIntl(this.props.intl);
+    const i = createINTL(this.props.intl);
     const { locale } = this.props;
 
     return (

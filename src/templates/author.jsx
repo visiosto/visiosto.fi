@@ -17,7 +17,7 @@ import Rule from '../components/Rule';
 import SchemedImage from '../components/SchemedImage';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createINTL from '../util/createINTL';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -176,7 +176,7 @@ const Separator = styled.div`
 `;
 
 function Page(props) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const { contentfulAuthor: author } = props.data;
   const { edges: posts } = props.data.allContentfulBlogPost;

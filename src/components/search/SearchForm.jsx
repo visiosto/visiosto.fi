@@ -7,7 +7,7 @@ import styled, { css } from 'styled-components';
 import { SearchIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 
 const Form = styled.form`
   display: flex;
@@ -72,7 +72,7 @@ const propTypes = {
 const defaultProps = { error: false, loading: false, searchQuery: '' };
 
 function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   if (loading || error) {
     return (

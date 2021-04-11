@@ -11,7 +11,7 @@ import LayoutError from '../components/layout/LayoutError';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createINTL from '../util/createINTL';
 
 const Separator = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ const Div = styled.div`
 `;
 
 function Page(props) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   return (
     <LayoutError

@@ -15,7 +15,7 @@ import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createINTL from '../util/createINTL';
 
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -96,7 +96,7 @@ const Separator = styled.div`
 `;
 
 function Page(props) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const { contentfulCategory: category } = props.data;
   const { edges: posts } = props.data.allContentfulBlogPost;

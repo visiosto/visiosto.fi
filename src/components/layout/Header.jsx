@@ -13,7 +13,7 @@ import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
 import SchemedImage from '../SchemedImage';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 
 import theme from '../../theme';
 
@@ -156,7 +156,7 @@ const propTypes = {
 const defaultProps = { errorPage: false, home: false };
 
 function Header({ errorPage, home, locale, pageID }) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const data = useStaticQuery(
     graphql`

@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 
 const HitCount = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const propTypes = { queryResults: PropTypes.array };
 const defaultProps = { queryResults: [] };
 
 function SearchResultList({ queryResults }) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   return (
     <>

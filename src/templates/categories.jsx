@@ -12,7 +12,7 @@ import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createINTL from '../util/createINTL';
 
 const Separator = styled.div`
   display: flex;
@@ -75,7 +75,7 @@ const Post = styled.article`
 `;
 
 function Page(props) {
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
 
   const { edges: categories } = props.data.allContentfulCategory;
   const { edges: posts } = props.data.allContentfulBlogPost;

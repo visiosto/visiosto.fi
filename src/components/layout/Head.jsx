@@ -7,7 +7,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 import createLocaleURL from '../../util/createLocaleURL';
 
 const propTypes = {
@@ -161,7 +161,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
 
   const { siteMetadata } = data.site;
 
-  const i = createIntl(useIntl());
+  const i = createINTL(useIntl());
   const baseURL =
     process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteMetadata.siteURL;
 

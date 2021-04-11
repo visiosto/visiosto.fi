@@ -8,7 +8,7 @@ import { injectIntl } from 'react-intl';
 
 import CookieSettings from './CookieSettings';
 
-import createIntl from '../../util/createIntl';
+import createINTL from '../../util/createINTL';
 
 const Link = styled.span`
   text-align: center;
@@ -57,7 +57,7 @@ class CookieNotice extends React.Component {
   }
 
   render() {
-    const i = createIntl(this.props.intl);
+    const i = createINTL(this.props.intl);
     const { locale } = this.props;
 
     return (
