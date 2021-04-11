@@ -5,33 +5,51 @@
 // Original code is available at https://github.com/brohlson/gatsby-plugin-anchor-links.
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import handleLinkClick from '../../util/anchor-link/handleLinkClick';
 import stripHashedLocation from '../../util/anchor-link/stripHashedLocation';
 import handleStrippedLinkClick from '../../util/anchor-link/handleStrippedLinkClick';
 
-export default function AnchorLink(props) {
-  const onClickHandler = props.stripHash ? handleStrippedLinkClick : handleLinkClick;
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  gatsbyLinkProps: PropTypes.object,
+  onAnchorLinkClick: PropTypes.func,
+  stripHash: PropTypes.bool,
+  to: PropTypes.string.isRequired,
+};
+
+const defaultProps = {
+  className: '',
+  gatsbyLinkProps: {},
+  onAnchorLinkClick: null,
+  stripHash: false,
+};
+
+function AnchorLink({ children, className, gatsbyLinkProps, onAnchorLinkClick, stripHash, to }) {
+  const handleClick = stripHash ? handleStrippedLinkClick : handleLinkClick;
   const linkProps = {
-    ...props.gatsbyLinkProps,
+    ...gatsbyLinkProps,
     /**
      * Spread optional gatsbyLinkProps object in fist, so our specific props will override
      */
-    to: props.stripHash ? stripHashedLocation(props.to) : props.to,
-    onClick: (e) => onClickHandler(props.to, e, props.onAnchorLinkClick),
+    to: stripHash ? stripHashedLocation(to) : to,
+    onClick: (event) => handleClick(to, event, onAnchorLinkClick),
   };
 
   /**
    * Optional props
    */
-  if (props.title) {
-    linkProps.title = props.title;
+  if (className !== '') {
+    linkProps.className = className;
   }
 
-  if (props.className) {
-    linkProps.className = props.className;
-  }
-
-  return <Link {...linkProps}>{props.children ? props.children : props.title}</Link>;
+  return <Link {...linkProps}>{children}</Link>;
 }
+
+AnchorLink.propTypes = propTypes;
+AnchorLink.defaultProps = defaultProps;
+
+export default AnchorLink;

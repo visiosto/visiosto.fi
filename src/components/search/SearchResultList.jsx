@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -31,24 +32,28 @@ const Item = styled.li`
   }
 `;
 
-export default function SearchResultList(props) {
+const propTypes = { queryResults: PropTypes.array };
+
+const defaultProps = { queryResults: [] };
+
+function SearchResultList({ queryResults }) {
   const i = createIntl(useIntl());
 
   return (
     <>
       {(() => {
-        if (props.queryResults && props.queryResults.length > 0) {
+        if (queryResults && queryResults.length > 0) {
           return (
             <HitCount>
-              {props.queryResults.length}{' '}
-              {props.queryResults.length !== 1 ? i('searchResults') : i('searchResult')}
+              {queryResults.length}{' '}
+              {queryResults.length !== 1 ? i('searchResults') : i('searchResult')}
             </HitCount>
           );
         }
       })()}
       <div>
         <List>
-          {props.queryResults.map((result) => (
+          {queryResults.map((result) => (
             <Item key={result.id}>
               <Link to={result.slug}>
                 <h4>{result.title}</h4>
@@ -61,3 +66,8 @@ export default function SearchResultList(props) {
     </>
   );
 }
+
+SearchResultList.propTypes = propTypes;
+SearchResultList.defaultProps = defaultProps;
+
+export default SearchResultList;

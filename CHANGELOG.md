@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - `prop-types` as a dependency.
+- Prop types and default props to the components.
 
 ### Changed
 

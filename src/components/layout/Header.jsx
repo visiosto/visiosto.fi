@@ -2,9 +2,10 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { ChevronRightIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
@@ -28,22 +29,12 @@ const HeaderElement = styled.header`
   }
 `;
 
-// TODO Remove and use simpler components instead.
-const siteTitleStyle = css`
+const HomeTitle = styled.h1`
   display: none;
-  margin: 0;
-  font-size: 3rem;
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-weight: 700;
-  text-align: center;
 `;
 
-const SiteTitle = styled.h1`
-  ${siteTitleStyle}
-`;
-
-const SiteTitleP = styled.p`
-  ${siteTitleStyle}
+const SiteTitle = styled.p`
+  display: none;
 `;
 
 const SiteBranding = styled.div`
@@ -96,39 +87,38 @@ const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath
   return pagePath;
 };
 
-const createBreadcrumb = function createBreadcrumbFromQueryData(data, props) {
-  if (!props.errorPage) {
+const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage, locale, pageId) {
+  if (!errorPage) {
     const node = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+      ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
     )[0].node;
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
         )[0].node;
         const authorPath = data.authorPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
+          ({ node }) => node.node_locale === locale,
         )[0].node;
 
         return [authorPath, authorNode];
       }
       case 'ContentfulBlogPost': {
         const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
         )[0].node;
-        const blogPath = data.blogPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
-        )[0].node;
+        const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+          .node;
 
         return [blogPath, blogPostNode];
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
         )[0].node;
         const categoryPath = data.categoryPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
+          ({ node }) => node.node_locale === locale,
         )[0].node;
         const parentPath = categoryPath.parentPath;
 
@@ -136,7 +126,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, props) {
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pageNode);
       }
@@ -145,7 +135,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, props) {
       }
       case 'ContentfulPath': {
         const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === props.pageId && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === pageId && node.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pathNode);
       }
@@ -156,7 +146,16 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, props) {
   return null;
 };
 
-export default function Header(props) {
+const propTypes = {
+  errorPage: PropTypes.bool,
+  home: PropTypes.bool,
+  locale: PropTypes.string.isRequired,
+  pageId: PropTypes.string.isRequired,
+};
+
+const defaultProps = { errorPage: false, home: false };
+
+function Header({ errorPage, home, locale, pageId }) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -322,23 +321,23 @@ export default function Header(props) {
     },
   ]);
 
-  const breadcrumb = createBreadcrumb(data, props);
+  const breadcrumb = createBreadcrumb(data, errorPage, locale, pageId);
 
   return (
     <HeaderElement>
       <SiteBranding>
         {(() => {
-          if (props.home) {
-            return <SiteTitle {...props}>{site.siteMetadata.title}</SiteTitle>;
+          if (home) {
+            return <HomeTitle>{site.siteMetadata.title}</HomeTitle>;
           }
 
-          return <SiteTitleP {...props}>{site.siteMetadata.title}</SiteTitleP>;
+          return <SiteTitle>{site.siteMetadata.title}</SiteTitle>;
         })()}
-        <LocalizedLink to="/" locale={props.locale}>
+        <LocalizedLink to="/" locale={locale}>
           <Image alt={i('headerLogoAlt')} light={logosLight} dark={logosDark} />
         </LocalizedLink>
       </SiteBranding>
-      <Navigation {...props} />
+      <Navigation locale={locale} />
       <Breadcrumb>
         {(() => {
           if (breadcrumb && breadcrumb.length > 1) {
@@ -346,7 +345,7 @@ export default function Header(props) {
               const title = entry.name ? entry.name : entry.title;
               if (index === 0) {
                 return (
-                  <LocalizedLink to={entry.contentful_id} locale={props.locale}>
+                  <LocalizedLink to={entry.contentful_id} locale={locale}>
                     {title}
                   </LocalizedLink>
                 );
@@ -354,7 +353,7 @@ export default function Header(props) {
               return (
                 <>
                   <ChevronIcon />
-                  <LocalizedLink to={entry.contentful_id} locale={props.locale}>
+                  <LocalizedLink to={entry.contentful_id} locale={locale}>
                     {title}
                   </LocalizedLink>
                 </>
@@ -366,3 +365,8 @@ export default function Header(props) {
     </HeaderElement>
   );
 }
+
+Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
+
+export default Header;

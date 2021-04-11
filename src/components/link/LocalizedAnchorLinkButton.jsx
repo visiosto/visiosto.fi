@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from '../Button';
@@ -11,10 +12,20 @@ const Link = styled(LocalizedAnchorLink)`
   text-decoration: none;
 `;
 
-export default function LocalizedAnchorLinkButton(props) {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  locale: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+};
+
+function LocalizedAnchorLinkButton({ children, locale, to }) {
   return (
-    <Link to={props.to} locale={props.locale}>
-      <Button>{props.children}</Button>
+    <Link to={to} locale={locale}>
+      <Button>{children}</Button>
     </Link>
   );
 }
+
+LocalizedAnchorLinkButton.propTypes = propTypes;
+
+export default LocalizedAnchorLinkButton;

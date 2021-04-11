@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Cookies from 'universal-cookie';
 import { injectIntl } from 'react-intl';
@@ -209,6 +210,13 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
+const propTypes = {
+  intl: PropTypes.object.isRequired,
+  locale: PropTypes.string.isRequired,
+  settingsOpen: PropTypes.bool.isRequired,
+  toggleSettings: PropTypes.func.isRequired,
+};
+
 class CookieSettings extends React.Component {
   constructor(props) {
     super(props);
@@ -320,8 +328,9 @@ class CookieSettings extends React.Component {
 
   render() {
     const i = createIntl(this.props.intl);
+    const { locale, settingsOpen } = this.props;
 
-    if (this.props.settingsOpen) {
+    if (settingsOpen) {
       return (
         <Settings>
           <SettingsContainer>
@@ -338,10 +347,7 @@ class CookieSettings extends React.Component {
                     <FeatureContainer>
                       <h4>{i('cookieNoticeGoogleAnalytics')}</h4>
                       <WhatLink>
-                        <LocalizedAnchorLink
-                          to="/data-protection#google-analytics"
-                          locale={this.props.locale}
-                        >
+                        <LocalizedAnchorLink to="/data-protection#google-analytics" locale={locale}>
                           <span onClick={this.handlePageChange}>
                             {i('cookieNoticeGoogleAnalyticsInfo')}
                           </span>
@@ -362,7 +368,7 @@ class CookieSettings extends React.Component {
                     <p>
                       <LocalizedLink
                         to="/data-protection"
-                        locale={this.props.locale}
+                        locale={locale}
                         onClick={this.handlePageChange}
                       >
                         {i('cookieNoticeDataProtection')}
@@ -403,5 +409,7 @@ class CookieSettings extends React.Component {
     );
   }
 }
+
+CookieSettings.propTypes = propTypes;
 
 export default injectIntl(CookieSettings);

@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import SearchContainer from './SearchContainer';
@@ -20,18 +20,12 @@ const Container = styled(SearchContainer)`
   }
 `;
 
-export default function Search(props) {
-  const { site } = useStaticQuery(
-    graphql`
-      {
-        site {
-          siteMetadata {
-            siteUrl
-          }
-        }
-      }
-    `,
-  );
+const propTypes = { locale: PropTypes.string.isRequired };
 
-  return <Container siteUrl={site.siteMetadata.siteUrl} locale={props.locale} />;
+function Search({ locale }) {
+  return <Container locale={locale} />;
 }
+
+Search.propTypes = propTypes;
+
+export default Search;

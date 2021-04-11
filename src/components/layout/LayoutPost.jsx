@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
@@ -57,7 +58,36 @@ const PostCategory = styled.span`
   display: block;
 `;
 
-export default function LayoutPost(props) {
+const propTypes = {
+  article: PropTypes.bool,
+  author: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  description: PropTypes.string,
+  image: PropTypes.object,
+  locale: PropTypes.string.isRequired,
+  pageId: PropTypes.string.isRequired,
+  post: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+const defaultProps = {
+  article: false,
+  author: null,
+  description: '',
+  image: null,
+};
+
+function LayoutPost({
+  article,
+  author,
+  children,
+  description,
+  image,
+  locale,
+  pageId,
+  post,
+  title,
+}) {
   useColorScheme();
 
   const i = createIntl(useIntl());
@@ -65,27 +95,39 @@ export default function LayoutPost(props) {
   return (
     <>
       <GlobalStyle />
-      <Head article {...props} />
-      <Header {...props} />
+      <Head
+        article={article}
+        author={author}
+        description={description}
+        image={image}
+        locale={locale}
+        pageId={pageId}
+        title={title}
+      />
+      <Header locale={locale} pageId={pageId} />
       <main>
         <section>
           <header>
-            <PageTitle>{props.title}</PageTitle>
+            <PageTitle>{title}</PageTitle>
             <PostMeta>
-              <time dateTime={props.post.datetime}>{props.post.date}</time>
+              <time dateTime={post.datetime}>{post.date}</time>
               <PostAuthor>
-                <AuthorName author={props.post.author} locale={props.locale} />
+                <AuthorName author={post.author} locale={locale} />
               </PostAuthor>
               <PostCategory>
-                {i('blogCategory')}{' '}
-                <CategoryName category={props.post.category} locale={props.locale} />
+                {i('blogCategory')} <CategoryName category={post.category} locale={locale} />
               </PostCategory>
             </PostMeta>
           </header>
-          <div>{props.children}</div>
+          <div>{children}</div>
         </section>
       </main>
-      <Footer {...props} />
+      <Footer locale={locale} pageId={pageId} />
     </>
   );
 }
+
+LayoutPost.propTypes = propTypes;
+LayoutPost.defaultProps = defaultProps;
+
+export default LayoutPost;

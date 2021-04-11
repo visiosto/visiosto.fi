@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { FORM_CLASS_ERROR_MESSAGE } from '../../constants';
@@ -55,25 +56,33 @@ const SwitchSpan = styled.span`
   }
 `;
 
-export default function SwitchCheckbox(props) {
+const propTypes = {
+  checked: PropTypes.bool,
+  errorMessage: PropTypes.string,
+  handleClick: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+const defaultProps = { checked: false, errorMessage: '' };
+
+function SwitchCheckbox({ checked, errorMessage, handleClick, id, label, name }) {
   return (
     <>
-      <label htmlFor={props.id}>{props.label}</label>
-      {'errorMessage' in props ? (
-        <label className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
-          {props.errorMessage}
-        </label>
+      <label htmlFor={id}>{label}</label>
+      {errorMessage !== '' ? (
+        <label className={FORM_CLASS_ERROR_MESSAGE}>{errorMessage}</label>
       ) : null}
-      <SwitchInputSpan onClick={props.handleClick}>
-        <input
-          key={Math.random()}
-          type="checkbox"
-          name={props.name}
-          id={props.id}
-          defaultChecked={props.checked}
-        />
+      <SwitchInputSpan onClick={handleClick}>
+        <input key={Math.random()} type="checkbox" name={name} id={id} defaultChecked={checked} />
         <SwitchSpan />
       </SwitchInputSpan>
     </>
   );
 }
+
+SwitchCheckbox.propTypes = propTypes;
+SwitchCheckbox.defaultProps = defaultProps;
+
+export default SwitchCheckbox;

@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
@@ -10,7 +11,6 @@ import SearchResultList from './SearchResultList';
 import createIntl from '../../util/createIntl';
 
 const Div = styled.div`
-  display: ${(props) => (props.show ? `block` : `none`)};
   position: absolute;
   z-index: 2;
   left: 50%;
@@ -32,31 +32,43 @@ const Inner = styled.div`
   background: var(--color-background);
 `;
 
-export default function SearchResults(props) {
-  const i = createIntl(useIntl());
-  const { show } = props;
+const propTypes = {
+  error: PropTypes.bool,
+  loading: PropTypes.bool,
+  queryResults: PropTypes.array,
+  searchResults: PropTypes.array,
+  show: PropTypes.bool,
+};
 
-  if (props.loading) {
+const defaultProps = {
+  error: false,
+  loading: false,
+  queryResults: [],
+  searchResults: [],
+  show: false,
+};
+
+function SearchResults({ error, loading, queryResults, searchResults, show }) {
+  const i = createIntl(useIntl());
+  if (loading) {
     return (
-      <Div show={show}>
+      <Div hidden={!show}>
         <Inner>
           <div>{i('searchLoading')}</div>
         </Inner>
       </Div>
     );
-  } else if (props.error) {
+  } else if (error) {
     return (
-      <Div show={show}>
+      <Div hidden={!show}>
         <Inner>
           <div>{i('searchError')}</div>
         </Inner>
       </Div>
     );
-  } else if (props.searchResults.length > 0) {
-    const { queryResults } = props;
-
+  } else if (searchResults.length > 0) {
     return (
-      <Div show={show}>
+      <Div hidden={!show}>
         <Inner>
           <SearchResultList queryResults={queryResults} />
         </Inner>
@@ -64,7 +76,7 @@ export default function SearchResults(props) {
     );
   } else {
     return (
-      <Div show={show}>
+      <Div hidden={!show}>
         <Inner>
           <div>{i('searchNotFound')}</div>
         </Inner>
@@ -72,3 +84,8 @@ export default function SearchResults(props) {
     );
   }
 }
+
+SearchResults.propTypes = propTypes;
+SearchResults.defaultProps = defaultProps;
+
+export default SearchResults;

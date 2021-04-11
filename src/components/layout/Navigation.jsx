@@ -1,8 +1,9 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useState } from 'react';
-import { StaticQuery, graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
@@ -203,6 +204,8 @@ const withMenuData = function withNavigationMenuQueryData(WrappedComponent) {
   return WithMenuData;
 };
 
+const propTypes = { data: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
+
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -270,5 +273,7 @@ class Navigation extends React.Component {
     );
   }
 }
+
+Navigation.propTypes = propTypes;
 
 export default withMenuData(Navigation);

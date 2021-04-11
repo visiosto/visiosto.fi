@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { SearchIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
@@ -60,19 +61,29 @@ const Icon = styled(SearchIcon)`
   pointer-events: none;
 `;
 
-export default function SearchForm(props) {
+const propTypes = {
+  error: PropTypes.bool,
+  loading: PropTypes.bool,
+  onFocus: PropTypes.func.isRequired,
+  searchData: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string,
+};
+
+const defaultProps = { error: false, loading: false, searchQuery: '' };
+
+function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
   const i = createIntl(useIntl());
 
-  if (props.loading || props.error) {
+  if (loading || error) {
     return (
       <Form>
         <Input
           type="text"
           placeholder={i('searchPlaceholder')}
           aria-label={i('searchPlaceholder')}
-          onChange={props.searchData}
-          value={props.searchQuery}
-          onFocus={props.onFocus}
+          onChange={searchData}
+          value={searchQuery}
+          onFocus={onFocus}
         />
         <Icon />
       </Form>
@@ -84,12 +95,17 @@ export default function SearchForm(props) {
           type="text"
           placeholder={i('searchPlaceholder')}
           aria-label={i('searchPlaceholder')}
-          onChange={props.searchData}
-          value={props.searchQuery}
-          onFocus={props.onFocus}
+          onChange={searchData}
+          value={searchQuery}
+          onFocus={onFocus}
         />
         <Icon />
       </Form>
     );
   }
 }
+
+SearchForm.propTypes = propTypes;
+SearchForm.defaultProps = defaultProps;
+
+export default SearchForm;

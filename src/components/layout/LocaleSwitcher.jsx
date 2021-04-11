@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from '../Button';
@@ -11,14 +12,19 @@ const Link = styled(LocaleLink)`
   text-decoration: none;
 `;
 
-export default function LocaleSwitcher(props) {
+const propTypes = {
+  locale: PropTypes.string.isRequired,
+  pageId: PropTypes.string.isRequired,
+};
+
+function LocaleSwitcher({ locale, pageId }) {
   return (
     <>
       {(() => {
-        if (props.locale !== 'fi') {
+        if (locale !== 'fi') {
           return (
             <>
-              <Link to="fi" pageId={props.pageId}>
+              <Link to="fi" pageId={pageId}>
                 <Button>Suomeksi</Button>
               </Link>
               <br />
@@ -29,10 +35,10 @@ export default function LocaleSwitcher(props) {
         return <></>;
       })()}
       {(() => {
-        if (props.locale !== 'en-GB') {
+        if (locale !== 'en-GB') {
           return (
             <>
-              <Link to="en-GB" pageId={props.pageId}>
+              <Link to="en-GB" pageId={pageId}>
                 <Button>In English</Button>
               </Link>
               <br />
@@ -45,3 +51,7 @@ export default function LocaleSwitcher(props) {
     </>
   );
 }
+
+LocaleSwitcher.propTypes = propTypes;
+
+export default LocaleSwitcher;

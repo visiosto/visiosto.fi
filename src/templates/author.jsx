@@ -186,7 +186,7 @@ function Page(props) {
       title={author.name}
       locale={props.pageContext.locale}
       pageId={props.pageContext.pageId}
-      author
+      author={author}
     >
       <ImageDiv>
         <Image alt={author.name} image={getImage(author.profileImage)} />

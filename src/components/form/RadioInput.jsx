@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { FORM_CLASS_ERROR_MESSAGE } from '../../constants';
@@ -14,25 +15,37 @@ const RadioDiv = styled.div`
   }
 `;
 
-export default function RadioInput(props) {
+const propTypes = {
+  description: PropTypes.string,
+  errorMessage: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  inputs: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }).isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  value: PropTypes.string,
+};
+
+const defaultProps = { description: '', errorMessage: '', title: '', value: '' };
+
+function RadioInput({ description, errorMessage, handleChange, inputs, name, title, value }) {
   return (
     <>
-      {props.title ? <h3>{props.title}</h3> : null}
-      {props.description ? <p>{props.description}</p> : null}
-      {'errorMessage' in props ? (
-        <p className={FORM_CLASS_ERROR_MESSAGE} hidden={!props.errorMessage}>
-          {props.errorMessage}
-        </p>
-      ) : null}
-      {props.inputs.map(({ id, label, value: inputValue }) => (
+      {title !== '' ? <h3>{title}</h3> : null}
+      {description !== '' ? <p>{description}</p> : null}
+      {errorMessage !== '' ? <p className={FORM_CLASS_ERROR_MESSAGE}>{errorMessage}</p> : null}
+      {inputs.map(({ id, label, value: inputValue }) => (
         <RadioDiv key={id}>
           <input
             type="radio"
-            name={props.name}
+            name={name}
             id={`radio-${id}`}
             value={inputValue}
-            checked={props.value === inputValue}
-            onChange={() => props.handleChange(inputValue)}
+            checked={value === inputValue}
+            onChange={() => handleChange(inputValue)}
           />
           <label htmlFor={`radio-${id}`}>{label}</label>
         </RadioDiv>
@@ -40,3 +53,8 @@ export default function RadioInput(props) {
     </>
   );
 }
+
+RadioInput.propTypes = propTypes;
+RadioInput.defaultProps = defaultProps;
+
+export default RadioInput;

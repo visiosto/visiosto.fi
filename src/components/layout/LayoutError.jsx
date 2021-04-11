@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Footer from './Footer';
@@ -30,24 +31,51 @@ const PageTitle = styled.h2`
   text-align: center;
 `;
 
-export default function LayoutError(props) {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  description: PropTypes.string,
+  errorCode: PropTypes.string.isRequired,
+  image: PropTypes.object,
+  locale: PropTypes.string.isRequired,
+  pageId: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+const defaultProps = {
+  description: '',
+  image: null,
+};
+
+function LayoutError({ children, description, errorCode, image, locale, pageId, title }) {
   useColorScheme();
 
   return (
     <>
       <GlobalStyle />
-      <Head errorPage {...props} />
-      <Header errorPage {...props} />
+      <Head
+        errorPage
+        description={description}
+        image={image}
+        locale={locale}
+        pageId={pageId}
+        title={title}
+      />
+      <Header errorPage locale={locale} pageId={pageId} />
       <main>
         <section>
           <header>
-            <ErrorCode>{props.errorCode}</ErrorCode>
-            <PageTitle>{props.title}</PageTitle>
+            <ErrorCode>{errorCode}</ErrorCode>
+            <PageTitle>{title}</PageTitle>
           </header>
-          <div>{props.children}</div>
+          <div>{children}</div>
         </section>
       </main>
-      <Footer noLocaleSwitcher {...props} />
+      <Footer locale={locale} pageId={pageId} />
     </>
   );
 }
+
+LayoutError.propTypes = propTypes;
+LayoutError.defaultProps = defaultProps;
+
+export default LayoutError;

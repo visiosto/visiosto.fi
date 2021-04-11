@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
@@ -24,6 +25,8 @@ const FormContainer = styled.div`
 `;
 
 const ButtonDiv = styled.div``;
+
+const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -115,6 +118,7 @@ class ContactForm extends React.Component {
 
   render() {
     const i = createIntl(this.props.intl);
+    const { locale } = this.props;
 
     return (
       <FormContainer>
@@ -194,7 +198,7 @@ class ContactForm extends React.Component {
             <p>
               {i('contactFormSendConsent', {
                 a: (...chunk) => (
-                  <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={this.props.locale}>
+                  <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={locale}>
                     {chunk}
                   </LocalizedLink>
                 ),
@@ -224,5 +228,7 @@ class ContactForm extends React.Component {
     );
   }
 }
+
+ContactForm.propTypes = propTypes;
 
 export default injectIntl(ContactForm);

@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
@@ -48,6 +49,8 @@ const ArrowRight = styled(ArrowRightIcon)`
 const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
+
+const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
 
 class RegisterBusinessForm extends React.Component {
   constructor(props) {
@@ -296,6 +299,7 @@ class RegisterBusinessForm extends React.Component {
 
   render() {
     const i = createIntl(this.props.intl);
+    const { locale } = this.props;
 
     return (
       <FormContainer>
@@ -514,7 +518,7 @@ class RegisterBusinessForm extends React.Component {
                 title={i('clientRegisterBusinessFormBillingMethod')}
                 description={i('clientRegisterBusinessFormBillingMethodContent', {
                   a: (...chunk) => (
-                    <LocalizedLink to="/pricing" locale={this.props.locale}>
+                    <LocalizedLink to="/pricing" locale={locale}>
                       {chunk}
                     </LocalizedLink>
                   ),
@@ -688,7 +692,7 @@ class RegisterBusinessForm extends React.Component {
               <p>
                 {i('clientRegisterBusinessFormPrivacyInfo', {
                   a: (...chunk) => (
-                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={this.props.locale}>
+                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={locale}>
                       {chunk}
                     </LocalizedLink>
                   ),
@@ -730,5 +734,7 @@ class RegisterBusinessForm extends React.Component {
     );
   }
 }
+
+RegisterBusinessForm.propTypes = propTypes;
 
 export default injectIntl(RegisterBusinessForm);

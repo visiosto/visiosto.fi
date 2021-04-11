@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -129,7 +130,12 @@ const TermsOfUseP = styled.p`
   }
 `;
 
-export default function Footer(props) {
+const propTypes = {
+  locale: PropTypes.string.isRequired,
+  pageId: PropTypes.string.isRequired,
+};
+
+function Footer({ locale, pageId }) {
   const i = createIntl(useIntl());
 
   const data = useStaticQuery(
@@ -212,7 +218,7 @@ export default function Footer(props) {
 
   return (
     <FooterElement>
-      <Search {...props} />
+      <Search locale={locale} />
       <CompanyDiv>
         <LogoImage
           alt={i('footerLogoAlt')}
@@ -230,25 +236,19 @@ export default function Footer(props) {
           <a href={`mailto:${defaultEmail}`}>{defaultEmail}</a>
         </CompanyP>
         <ManagementP>
-          <LocalizedLink to="/management" locale={props.locale}>
+          <LocalizedLink to="/management" locale={locale}>
             {i('footerManagement')}
           </LocalizedLink>
         </ManagementP>
         <PricingP>
-          <LocalizedLink to="/pricing" locale={props.locale}>
+          <LocalizedLink to="/pricing" locale={locale}>
             {i('footerPricing')}
           </LocalizedLink>
         </PricingP>
       </CompanyDiv>
-      {(() => {
-        if (!props.noLocaleSwitcher) {
-          return (
-            <Div>
-              <LocaleSwitcher {...props} />
-            </Div>
-          );
-        }
-      })()}
+      <Div>
+        <LocaleSwitcher locale={locale} pageId={pageId} />
+      </Div>
       <SocialMediaTitle>{i('footerSocialMediaTitle')}</SocialMediaTitle>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: i('footerHashtag') }} />
@@ -292,15 +292,15 @@ export default function Footer(props) {
       </SocialMediaDiv>
       <Div>
         <DataProtectionP>
-          <LocalizedLink to="/data-protection" locale={props.locale}>
+          <LocalizedLink to="/data-protection" locale={locale}>
             {i('footerDataProtection')}
           </LocalizedLink>
         </DataProtectionP>
         <CookieSettings>
-          <CookieNotice {...props} />
+          <CookieNotice locale={locale} />
         </CookieSettings>
         <TermsOfUseP>
-          <LocalizedLink to="/terms-of-use" locale={props.locale}>
+          <LocalizedLink to="/terms-of-use" locale={locale}>
             {i('footerTermsOfUse')}
           </LocalizedLink>
         </TermsOfUseP>
@@ -315,7 +315,7 @@ export default function Footer(props) {
         <p>
           {i('footerMadeBy', {
             a: (...chunk) => (
-              <LocalizedLink to="/" locale={props.locale}>
+              <LocalizedLink to="/" locale={locale}>
                 {chunk}
               </LocalizedLink>
             ),
@@ -325,3 +325,7 @@ export default function Footer(props) {
     </FooterElement>
   );
 }
+
+Footer.propTypes = propTypes;
+
+export default Footer;
