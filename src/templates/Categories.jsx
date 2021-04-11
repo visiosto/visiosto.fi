@@ -98,10 +98,10 @@ function Page({ data, pageContext }) {
 
   return (
     <Layout
-    description={data.contentfulIndexPage.description.description}
-    locale={locale}
-    pageID={pageID}
-    title={intl('categoriesTitle')}
+      description={data.contentfulIndexPage.description.description}
+      locale={locale}
+      pageID={pageID}
+      title={intl('categoriesTitle')}
     >
       <Separator>
         <Rule color="peach" mode={2} />

@@ -98,11 +98,7 @@ function Page({ data, pageContext }) {
       {pricingList.map((list) => {
         return (
           <Fragment key={list.listType}>
-            <PriceList
-              list={list}
-              localizations={localizations}
-              locale={locale}
-            />
+            <PriceList list={list} localizations={localizations} locale={locale} />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>

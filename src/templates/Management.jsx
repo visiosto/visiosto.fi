@@ -166,8 +166,7 @@ function Page({ data, pageContext }) {
                   <AuthorName author={post.author} locale={locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {intl('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={locale} />
+                  {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
