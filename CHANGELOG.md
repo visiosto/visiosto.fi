@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Index layout properties by removing the `errorCode` property.
 - Page title that included the name of the site twice.
+- Prop types of `ThemeContextProvider`.
 
 ## [0.19.0] - 2021-04-11
 
