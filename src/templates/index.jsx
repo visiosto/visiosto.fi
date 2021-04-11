@@ -11,19 +11,15 @@ import {
   PaperAirplaneIcon,
   PencilIcon,
 } from '@primer/octicons-react';
-import { useIntl } from 'react-intl';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
 import ContactForm from '../components/form/ContactForm';
+import Cover from '../components/Cover';
 import FeatureCard from '../components/FeatureCard';
-import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
-import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
-
-import createIntl from '../util/createIntl';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -96,12 +92,12 @@ function Page(props) {
       description={page.description.description}
       image={page.image}
     >
-      <IndexCover title={page.introTitle} htmlTitle>
+      <Cover title={page.introTitle} imagesType="lens" rule={{ color: 'peach', mode: 3 }} htmlTitle>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
-      </IndexCover>
-      <StoryCover title={page.storyTitle}>
+      </Cover>
+      <Cover title={page.storyTitle} imagesType="lines" rule={{ color: 'blue', mode: 3 }}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
-      </StoryCover>
+      </Cover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
