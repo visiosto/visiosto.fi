@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import AnchorLink from './AnchorLink';
@@ -75,7 +76,16 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
   return null;
 };
 
-export default function LocalizedAnchorLink(props) {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  locale: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+};
+
+const defaultProps = { className: null };
+
+function LocalizedAnchorLink({ children, className, locale, to }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -204,61 +214,74 @@ export default function LocalizedAnchorLink(props) {
   );
 
   const { defaultLocale, localePaths } = data.site.siteMetadata;
-  const [toLocation, hashedLocation] = props.to.split('#');
+  const [toLocation, hashedLocation] = to.split('#');
 
   const hashedEntryId = data.allContentfulId.edges.filter(
     ({ node }) => node.slug === hashedLocation,
   )[0].node.contentful_id;
   const hashedDestination = data.allContentfulId.edges.filter(
-    ({ node }) => node.contentful_id === hashedEntryId && node.node_locale === props.locale,
+    ({ node }) => node.contentful_id === hashedEntryId && node.node_locale === locale,
   )[0].node.slug;
 
   if (toLocation === '/') {
     return (
       <AnchorLink
-        {...props}
+        children={children}
+        className={className}
         to={`${
-          props.locale === defaultLocale ? '/' : `/${localePaths[props.locale.replace('-', '_')]}`
+          locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`
         }#${hashedDestination}`}
       />
     );
   } else if (toLocation === '/blog') {
-    const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === props.locale)[0]
-      .node;
+    const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     const pagePath =
-      props.locale === defaultLocale
+      locale === defaultLocale
         ? `/${blogPath.slug}`
-        : `/${localePaths[props.locale.replace('-', '_')]}/${blogPath.slug}`;
-    return <AnchorLink {...props} to={`${pagePath}#${hashedDestination}`} />;
+        : `/${localePaths[locale.replace('-', '_')]}/${blogPath.slug}`;
+    return (
+      <AnchorLink
+        children={children}
+        className={className}
+        to={`${pagePath}#${hashedDestination}`}
+      />
+    );
   } else if (toLocation.startsWith('/')) {
     const pageSlug = toLocation.substring(1);
-    const pagePath = createPathFromSlug(pageSlug, props.locale, data);
+    const pagePath = createPathFromSlug(pageSlug, locale, data);
 
     if (pagePath) {
-      return <AnchorLink {...props} to={`${pagePath}#${hashedDestination}`} />;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${pagePath}#${hashedDestination}`}
+        />
+      );
     } else {
-      return <AnchorLink {...props} />;
+      return <AnchorLink children={children} className={className} />;
     }
   } else {
     const node = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+      ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
     )[0].node;
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         const authorPath = data.authorPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
+          ({ node }) => node.node_locale === locale,
         )[0].node;
 
         return (
           <AnchorLink
-            {...props}
+            children={children}
+            className={className}
             to={`${createPagePath(
               authorNode,
-              props.locale,
+              locale,
               defaultLocale,
               localePaths,
               authorPath,
@@ -268,17 +291,17 @@ export default function LocalizedAnchorLink(props) {
       }
       case 'ContentfulBlogPost': {
         const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
-        const blogPath = data.blogPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
-        )[0].node;
+        const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+          .node;
         return (
           <AnchorLink
-            {...props}
+            children={children}
+            className={className}
             to={`${createPagePath(
               blogPostNode,
-              props.locale,
+              locale,
               defaultLocale,
               localePaths,
               blogPath,
@@ -288,18 +311,19 @@ export default function LocalizedAnchorLink(props) {
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         const categoryPath = data.categoryPaths.edges.filter(
-          ({ node }) => node.node_locale === props.locale,
+          ({ node }) => node.node_locale === locale,
         )[0].node;
 
         return (
           <AnchorLink
-            {...props}
+            children={children}
+            className={className}
             to={`${createPagePath(
               categoryNode,
-              props.locale,
+              locale,
               defaultLocale,
               localePaths,
               categoryPath,
@@ -309,14 +333,15 @@ export default function LocalizedAnchorLink(props) {
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         return (
           <AnchorLink
-            {...props}
+            children={children}
+            className={className}
             to={`${createPagePath(
               pageNode,
-              props.locale,
+              locale,
               defaultLocale,
               localePaths,
             )}#${hashedDestination}`}
@@ -325,19 +350,26 @@ export default function LocalizedAnchorLink(props) {
       }
       case 'ContentfulIndexPage': {
         const indexPath =
-          props.locale === defaultLocale ? '/' : `/${localePaths[props.locale.replace('-', '_')]}`;
-        return <AnchorLink {...props} to={`${indexPath}#${hashedDestination}`} />;
+          locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
+        return (
+          <AnchorLink
+            children={children}
+            className={className}
+            to={`${indexPath}#${hashedDestination}`}
+          />
+        );
       }
       case 'ContentfulPath': {
         const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === props.locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         return (
           <AnchorLink
-            {...props}
+            children={children}
+            className={className}
             to={`${createPagePath(
               pathNode,
-              props.locale,
+              locale,
               defaultLocale,
               localePaths,
             )}#${hashedDestination}`}
@@ -349,3 +381,8 @@ export default function LocalizedAnchorLink(props) {
     }
   }
 }
+
+LocalizedAnchorLink.propTypes = propTypes;
+LocalizedAnchorLink.defaultProps = defaultProps;
+
+export default LocalizedAnchorLink;

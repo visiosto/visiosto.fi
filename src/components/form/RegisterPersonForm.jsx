@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
 import { injectIntl } from 'react-intl';
@@ -21,7 +22,7 @@ import {
   REGISTER_PERSON_FORM_NAME,
 } from '../../constants';
 
-import createIntl from '../../util/createIntl';
+import createInternationalization from '../../util/createInternationalization';
 import encodeFormState from '../../util/encodeFormState';
 
 const FormContainer = styled.div`
@@ -47,6 +48,8 @@ const ArrowRight = styled(ArrowRightIcon)`
 const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
+
+const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
 
 class RegisterPersonForm extends React.Component {
   constructor(props) {
@@ -85,7 +88,7 @@ class RegisterPersonForm extends React.Component {
   }
 
   validatePageData() {
-    const i = createIntl(this.props.intl);
+    const intl = createInternationalization(this.props.intl);
     const errors = {};
     let isValid = true;
 
@@ -93,57 +96,59 @@ class RegisterPersonForm extends React.Component {
       case 0:
         if (!this.state.firstName) {
           isValid = false;
-          errors.firstName = i('clientRegisterPersonFormErrorMissingFirstName');
+          errors.firstName = intl('clientRegisterPersonFormErrorMissingFirstName');
         }
         if (!this.state.surname) {
           isValid = false;
-          errors.surname = i('clientRegisterPersonFormErrorMissingSurname');
+          errors.surname = intl('clientRegisterPersonFormErrorMissingSurname');
         }
         if (!this.state.tel) {
           isValid = false;
-          errors.tel = i('clientRegisterPersonFormErrorMissingTel');
+          errors.tel = intl('clientRegisterPersonFormErrorMissingTel');
         }
         if (!this.state.email) {
           isValid = false;
-          errors.email = i('clientRegisterPersonFormErrorMissingEmail');
+          errors.email = intl('clientRegisterPersonFormErrorMissingEmail');
         }
         if (!this.state.addressLine1) {
           isValid = false;
-          errors.addressLine1 = i('clientRegisterPersonFormErrorMissingAddressLine1');
+          errors.addressLine1 = intl('clientRegisterPersonFormErrorMissingAddressLine1');
         }
         if (!this.state.postcode) {
           isValid = false;
-          errors.postcode = i('clientRegisterPersonFormErrorMissingPostcode');
+          errors.postcode = intl('clientRegisterPersonFormErrorMissingPostcode');
         }
         if (!this.state.postOffice) {
           isValid = false;
-          errors.postOffice = i('clientRegisterPersonFormErrorMissingPostOffice');
+          errors.postOffice = intl('clientRegisterPersonFormErrorMissingPostOffice');
         }
         break;
 
       case 1:
         if (!this.state.billingAddressLine1) {
           isValid = false;
-          errors.billingAddressLine1 = i('clientRegisterPersonFormErrorMissingBillingAddressLine1');
+          errors.billingAddressLine1 = intl(
+            'clientRegisterPersonFormErrorMissingBillingAddressLine1',
+          );
         }
         if (!this.state.billingPostcode) {
           isValid = false;
-          errors.billingPostcode = i('clientRegisterPersonFormErrorMissingBillingPostcode');
+          errors.billingPostcode = intl('clientRegisterPersonFormErrorMissingBillingPostcode');
         }
         if (!this.state.billingPostOffice) {
           isValid = false;
-          errors.billingPostOffice = i('clientRegisterPersonFormErrorMissingBillingPostOffice');
+          errors.billingPostOffice = intl('clientRegisterPersonFormErrorMissingBillingPostOffice');
         }
         break;
 
       case 2:
         if (!this.state.billingMethod) {
           isValid = false;
-          errors.billingMethod = i('clientRegisterPersonFormErrorMissingBillingMethod');
+          errors.billingMethod = intl('clientRegisterPersonFormErrorMissingBillingMethod');
         }
         if (!this.state.acceptTerms) {
           isValid = false;
-          errors.acceptTerms = i('clientRegisterPersonFormErrorTermsNotAccepted');
+          errors.acceptTerms = intl('clientRegisterPersonFormErrorTermsNotAccepted');
         }
         break;
     }
@@ -237,7 +242,8 @@ class RegisterPersonForm extends React.Component {
   }
 
   render() {
-    const i = createIntl(this.props.intl);
+    const intl = createInternationalization(this.props.intl);
+    const { locale } = this.props;
 
     return (
       <FormContainer>
@@ -253,19 +259,19 @@ class RegisterPersonForm extends React.Component {
           {/* This input field is required by Netlify */}
           <input type="hidden" name="form-name" value={REGISTER_PERSON_FORM_NAME} />
           <FormDiv hidden>
-            <label>{i('clientRegisterPersonFormHoneypot')}</label>
+            <label>{intl('clientRegisterPersonFormHoneypot')}</label>
             <input name="bot-field" />
           </FormDiv>
 
           {/* The client's basic information */}
           <FormPage hidden={this.state.currentPage !== 0}>
             <FormDiv>
-              <h3>{i('clientRegisterPersonFormBasicInfo')}</h3>
+              <h3>{intl('clientRegisterPersonFormBasicInfo')}</h3>
             </FormDiv>
             <FormDiv>
-              <label for="first-name">{i('clientRegisterPersonFormFirstName')}</label>
+              <label htmlFor="first-name">{intl('clientRegisterPersonFormFirstName')}</label>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="error-message"
                 hidden={!this.state.errors.firstName}
               >
@@ -280,8 +286,12 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="surname">{i('clientRegisterPersonFormSurname')}</label>
-              <label for="surname" className="error-message" hidden={!this.state.errors.surname}>
+              <label htmlFor="surname">{intl('clientRegisterPersonFormSurname')}</label>
+              <label
+                htmlFor="surname"
+                className="error-message"
+                hidden={!this.state.errors.surname}
+              >
                 {this.state.errors.surname}
               </label>
               <input
@@ -293,8 +303,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="tel">{i('clientRegisterPersonFormTel')}</label>
-              <label for="tel" className="error-message" hidden={!this.state.errors.tel}>
+              <label htmlFor="tel">{intl('clientRegisterPersonFormTel')}</label>
+              <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
                 {this.state.errors.tel}
               </label>
               <input
@@ -306,8 +316,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="email">{i('clientRegisterPersonFormEmail')}</label>
-              <label for="email" className="error-message" hidden={!this.state.errors.email}>
+              <label htmlFor="email">{intl('clientRegisterPersonFormEmail')}</label>
+              <label htmlFor="email" className="error-message" hidden={!this.state.errors.email}>
                 {this.state.errors.email}
               </label>
               <input
@@ -318,12 +328,12 @@ class RegisterPersonForm extends React.Component {
                 value={this.state.email}
                 onChange={this.handleChange}
               />
-              <p>{i('clientRegisterPersonFormEmailForBilling')}</p>
+              <p>{intl('clientRegisterPersonFormEmailForBilling')}</p>
             </FormDiv>
             <FormDiv>
-              <label for="address-line-1">{i('clientRegisterPersonFormAddressLine1')}</label>
+              <label htmlFor="address-line-1">{intl('clientRegisterPersonFormAddressLine1')}</label>
               <label
-                for="address-line-1"
+                htmlFor="address-line-1"
                 className="error-message"
                 hidden={!this.state.errors.addressLine1}
               >
@@ -339,7 +349,7 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="address-line-2">{i('clientRegisterPersonFormAddressLine2')}</label>
+              <label htmlFor="address-line-2">{intl('clientRegisterPersonFormAddressLine2')}</label>
               <input
                 className="wider"
                 type="text"
@@ -350,8 +360,12 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="postcode">{i('clientRegisterPersonFormPostcode')}</label>
-              <label for="postcode" className="error-message" hidden={!this.state.errors.postcode}>
+              <label htmlFor="postcode">{intl('clientRegisterPersonFormPostcode')}</label>
+              <label
+                htmlFor="postcode"
+                className="error-message"
+                hidden={!this.state.errors.postcode}
+              >
                 {this.state.errors.postcode}
               </label>
               <input
@@ -363,9 +377,9 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="post-office">{i('clientRegisterPersonFormPostOffice')}</label>
+              <label htmlFor="post-office">{intl('clientRegisterPersonFormPostOffice')}</label>
               <label
-                for="post-office"
+                htmlFor="post-office"
                 className="error-message"
                 hidden={!this.state.errors.postOffice}
               >
@@ -385,20 +399,20 @@ class RegisterPersonForm extends React.Component {
                 name="isSameBillingAddress"
                 handleClick={this.handleBillingAddressToggleClick}
                 checked={this.state.isSameBillingAddress}
-                label={i('clientRegisterPersonFormSameBillingAddress')}
+                label={intl('clientRegisterPersonFormSameBillingAddress')}
               />
             </FormDiv>
           </FormPage>
 
           {/* The form page for giving the possible billing address */}
           <FormPage hidden={this.state.currentPage !== 1}>
-            <h3>{i('clientRegisterPersonFormBillingAddress')}</h3>
+            <h3>{intl('clientRegisterPersonFormBillingAddress')}</h3>
             <FormDiv>
-              <label for="billing-address-line-1">
-                {i('clientRegisterPersonFormBillingAddressLine1')}
+              <label htmlFor="billing-address-line-1">
+                {intl('clientRegisterPersonFormBillingAddressLine1')}
               </label>
               <label
-                for="billing-address-line-1"
+                htmlFor="billing-address-line-1"
                 className="error-message"
                 hidden={!this.state.errors.billingAddressLine1}
               >
@@ -414,8 +428,8 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-address-line-2">
-                {i('clientRegisterPersonFormBillingAddressLine2')}
+              <label htmlFor="billing-address-line-2">
+                {intl('clientRegisterPersonFormBillingAddressLine2')}
               </label>
               <input
                 className="wider"
@@ -427,9 +441,11 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-postcode">{i('clientRegisterPersonFormBillingPostcode')}</label>
+              <label htmlFor="billing-postcode">
+                {intl('clientRegisterPersonFormBillingPostcode')}
+              </label>
               <label
-                for="billing-postcode"
+                htmlFor="billing-postcode"
                 className="error-message"
                 hidden={!this.state.errors.billingPostcode}
               >
@@ -444,11 +460,11 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label for="billing-post-office">
-                {i('clientRegisterPersonFormBillingPostOffice')}
+              <label htmlFor="billing-post-office">
+                {intl('clientRegisterPersonFormBillingPostOffice')}
               </label>
               <label
-                for="billing-post-office"
+                htmlFor="billing-post-office"
                 className="error-message"
                 hidden={!this.state.errors.billingPostOffice}
               >
@@ -468,10 +484,10 @@ class RegisterPersonForm extends React.Component {
           <FormPage hidden={this.state.currentPage !== 2}>
             <FormDiv>
               <RadioInput
-                title={i('clientRegisterPersonFormBillingMethod')}
-                description={i('clientRegisterPersonFormBillingMethodContent', {
+                title={intl('clientRegisterPersonFormBillingMethod')}
+                description={intl('clientRegisterPersonFormBillingMethodContent', {
                   a: (...chunk) => (
-                    <LocalizedLink to="/pricing" locale={this.props.locale}>
+                    <LocalizedLink to="/pricing" locale={locale}>
                       {chunk}
                     </LocalizedLink>
                   ),
@@ -482,12 +498,12 @@ class RegisterPersonForm extends React.Component {
                 inputs={[
                   {
                     id: FORM_BILLING_EMAIL,
-                    label: i('clientRegisterPersonFormBillingMethodEmail'),
+                    label: intl('clientRegisterPersonFormBillingMethodEmail'),
                     value: FORM_BILLING_EMAIL,
                   },
                   {
                     id: FORM_BILLING_PAPER,
-                    label: i('clientRegisterPersonFormBillingMethodPaper'),
+                    label: intl('clientRegisterPersonFormBillingMethodPaper'),
                     value: FORM_BILLING_PAPER,
                   },
                 ]}
@@ -500,14 +516,14 @@ class RegisterPersonForm extends React.Component {
                 errorMessage={this.state.errors.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 checked={this.state.acceptTerms}
-                label={i('clientRegisterPersonFormAcceptTerms')}
+                label={intl('clientRegisterPersonFormAcceptTerms')}
               />
             </FormDiv>
             <FormDiv>
               <p>
-                {i('clientRegisterPersonFormPrivacyInfo', {
+                {intl('clientRegisterPersonFormPrivacyInfo', {
                   a: (...chunk) => (
-                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={this.props.locale}>
+                    <LocalizedLink to="6a7fVb49Zf79FTetXflVFL" locale={locale}>
                       {chunk}
                     </LocalizedLink>
                   ),
@@ -519,29 +535,29 @@ class RegisterPersonForm extends React.Component {
           <FormDiv>
             <ButtonDiv hidden={this.state.currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <ArrowLeft size={24} /> <span>{i('clientRegisterPersonFormPrevious')}</span>
+                <ArrowLeft size={24} /> <span>{intl('clientRegisterPersonFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={this.state.currentPage === 2}>
               <Button onClick={this.moveToNextPage}>
-                <span>{i('clientRegisterPersonFormNext')}</span> <ArrowRight size={24} />
+                <span>{intl('clientRegisterPersonFormNext')}</span> <ArrowRight size={24} />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={this.state.currentPage !== 2}>
               <button type="submit">
-                <PaperAirplane size={24} /> {i('clientRegisterPersonFormSend')}
+                <PaperAirplane size={24} /> {intl('clientRegisterPersonFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
-            <p>{i('clientRegisterPersonFormSuccess')}</p>
+            <p>{intl('clientRegisterPersonFormSuccess')}</p>
           </FormDiv>
           <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
-            <p>{i('clientRegisterPersonFormError')}</p>
+            <p>{intl('clientRegisterPersonFormError')}</p>
             <p>
               {this.state.errorMessage
                 ? this.state.errorMessage
-                : i('clientRegisterPersonFormErrorNoErrorMessage')}
+                : intl('clientRegisterPersonFormErrorNoErrorMessage')}
             </p>
           </FormDiv>
         </form>
@@ -549,5 +565,7 @@ class RegisterPersonForm extends React.Component {
     );
   }
 }
+
+RegisterPersonForm.propTypes = propTypes;
 
 export default injectIntl(RegisterPersonForm);

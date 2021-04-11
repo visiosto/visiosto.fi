@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -17,7 +18,7 @@ import Rule from '../components/Rule';
 import SchemedImage from '../components/SchemedImage';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createInternationalization from '../util/createInternationalization';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -175,19 +176,29 @@ const Separator = styled.div`
   }
 `;
 
-function Page(props) {
-  const i = createIntl(useIntl());
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
 
-  const { contentfulAuthor: author } = props.data;
-  const { edges: posts } = props.data.allContentfulBlogPost;
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const intl = createInternationalization(useIntl());
+
+  const { contentfulAuthor: author } = data;
+  const { edges: posts } = data.allContentfulBlogPost;
+  const { locale, pageID } = pageContext;
 
   return (
-    <Layout
-      title={author.name}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
-      author
-    >
+    <Layout author={author} locale={locale} pageID={pageID} title={author.name}>
       <ImageDiv>
         <Image alt={author.name} image={getImage(author.profileImage)} />
       </ImageDiv>
@@ -201,9 +212,9 @@ function Page(props) {
                 target="_blank"
               >
                 <InstagramImage
-                  alt={i('footerInstagramAlt')}
-                  light={getImage(props.data.instagramColor)}
-                  dark={getImage(props.data.instagram)}
+                  alt={intl('footerInstagramALT')}
+                  light={getImage(data.instagramColor)}
+                  dark={getImage(data.instagram)}
                 />
               </a>
             );
@@ -218,9 +229,9 @@ function Page(props) {
                 target="_blank"
               >
                 <SocialMediaImage
-                  alt={i('footerFacebookAlt')}
-                  light={getImage(props.data.facebookColor)}
-                  dark={getImage(props.data.facebook)}
+                  alt={intl('footerFacebookALT')}
+                  light={getImage(data.facebookColor)}
+                  dark={getImage(data.facebook)}
                 />
               </a>
             );
@@ -235,9 +246,9 @@ function Page(props) {
                 target="_blank"
               >
                 <TwitterImage
-                  alt={i('footerTwitterAlt')}
-                  light={getImage(props.data.twitterColor)}
-                  dark={getImage(props.data.twitter)}
+                  alt={intl('footerTwitterALT')}
+                  light={getImage(data.twitterColor)}
+                  dark={getImage(data.twitter)}
                 />
               </a>
             );
@@ -252,9 +263,9 @@ function Page(props) {
                 target="_blank"
               >
                 <LinkedinImage
-                  alt={i('footerLinkedinAlt')}
-                  light={getImage(props.data.linkedinColor)}
-                  dark={getImage(props.data.linkedin)}
+                  alt={intl('footerLinkedinALT')}
+                  light={getImage(data.linkedinColor)}
+                  dark={getImage(data.linkedin)}
                 />
               </a>
             );
@@ -269,9 +280,9 @@ function Page(props) {
                 target="_blank"
               >
                 <GithubImage
-                  alt={i('footerGithubAlt')}
-                  light={getImage(props.data.github)}
-                  dark={getImage(props.data.github)}
+                  alt={intl('footerGithubALT')}
+                  light={getImage(data.github)}
+                  dark={getImage(data.github)}
                 />
               </a>
             );
@@ -285,24 +296,23 @@ function Page(props) {
         ))}
       </Div>
       <Div dangerouslySetInnerHTML={{ __html: author.description.childMarkdownRemark.html }} />
-      <H2>{i('authorBlogTitle')}</H2>
+      <H2>{intl('authorBlogTitle')}</H2>
       {posts.map(({ node: post }) => {
         return (
           <Post>
             <PostHeader>
               <H3>
-                <Link to={post.contentful_id} locale={props.pageContext.locale}>
+                <Link to={post.contentful_id} locale={locale}>
                   {post.title}
                 </Link>
               </H3>
               <PostMeta>
                 <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.locale} />
+                  <AuthorName author={post.author} locale={locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.locale} />
+                  {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -310,8 +320,8 @@ function Page(props) {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+              <LocalizedLinkButton to={post.contentful_id} locale={locale}>
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>
@@ -324,13 +334,14 @@ function Page(props) {
   );
 }
 
-export default function Author(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Author(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -338,8 +349,13 @@ export default function Author(props) {
   );
 }
 
+Author.propTypes = propTypes;
+Author.defaultProps = defaultProps;
+
+export default Author;
+
 export const pageQuery = graphql`
-  query AuthorQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+  query AuthorQuery($pageID: String, $locale: String, $momentJsLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -348,7 +364,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulAuthor(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulAuthor(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       description {
         childMarkdownRemark {
           html
@@ -408,7 +424,7 @@ export const pageQuery = graphql`
       }
     }
     allContentfulBlogPost(
-      filter: { author: { contentful_id: { eq: $pageId } }, node_locale: { eq: $locale } }
+      filter: { author: { contentful_id: { eq: $pageID } }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {

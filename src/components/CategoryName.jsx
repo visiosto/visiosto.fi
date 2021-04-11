@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import LocalizedLink from './link/LocalizedLink';
@@ -22,11 +23,24 @@ const Link = styled(LocalizedLink)`
   }
 `;
 
-export default function CategoryName({ category: { contentful_id: categoryID, name }, locale }) {
-  // const { contentful_id: categoryID, name } = category;
+const propTypes = {
+  category: PropTypes.shape({
+    contentful_id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  locale: PropTypes.string.isRequired,
+};
+
+function CategoryName({ category, locale }) {
+  const { contentful_id: categoryID, name } = category;
+
   return (
     <Link to={categoryID} locale={locale}>
       {name}
     </Link>
   );
 }
+
+CategoryName.propTypes = propTypes;
+
+export default CategoryName;

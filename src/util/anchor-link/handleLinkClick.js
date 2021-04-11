@@ -10,7 +10,7 @@ import errorTypes from './errorTypes';
 import logWarning from './logWarning';
 import scroller from './scroller';
 
-export default function handleLinkClick(to, e, onAnchorLinkClick) {
+export default function handleLinkClick(to, event, onAnchorLinkClick) {
   /**
    * Log warnings on click
    */
@@ -25,7 +25,7 @@ export default function handleLinkClick(to, e, onAnchorLinkClick) {
   if (isBrowser && to.includes('#')) {
     const [anchorPath, anchor] = to.split('#');
     if (window.location.pathname === withPrefix(anchorPath)) {
-      e.preventDefault();
+      event.preventDefault();
       scroller(`#${anchor}`, window.visiostoScrollOffset, window.visiostoScrollDuration);
     }
   }

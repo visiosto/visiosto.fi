@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Rule from './Rule';
@@ -10,11 +11,20 @@ const Hr = styled.hr`
   visibility: hidden;
 `;
 
-export default function Break(props) {
+const propTypes = { color: PropTypes.string, mode: PropTypes.number };
+
+const defaultProps = { color: 'blue', mode: 1 };
+
+function Break({ color, mode }) {
   return (
     <>
-      <Rule {...props} />
+      <Rule color={color} mode={mode} />
       <Hr />
     </>
   );
 }
+
+Break.propTypes = propTypes;
+Break.defaultProps = defaultProps;
+
+export default Break;

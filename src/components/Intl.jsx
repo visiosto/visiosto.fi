@@ -2,11 +2,14 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { IntlProvider } from 'react-intl';
 
-export default function Intl({ children, locale }) {
+const propTypes = { children: PropTypes.node.isRequired, locale: PropTypes.string.isRequired };
+
+function Intl({ children, locale }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,3 +40,7 @@ export default function Intl({ children, locale }) {
     </IntlProvider>
   );
 }
+
+Intl.propTypes = propTypes;
+
+export default Intl;

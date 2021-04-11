@@ -1,7 +1,8 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled, { css } from 'styled-components';
 
@@ -153,94 +154,126 @@ const AnchorLink = styled(LocalizedAnchorLink)`
   }
 `;
 
-export default function Navigation(props) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allContentfulMenu(filter: { contentful_id: { eq: "7oKEb5SnrTGF1vbDGwfBbr" } }) {
-          edges {
-            node {
-              node_locale
-              links {
-                ... on ContentfulIndexPage {
-                  contentful_id
-                  title
-                  internal {
-                    type
+const withMenuData = function withNavigationMenuQueryData(WrappedComponent) {
+  function WithMenuData(props) {
+    const data = useStaticQuery(
+      graphql`
+        query {
+          allContentfulMenu(filter: { contentful_id: { eq: "7oKEb5SnrTGF1vbDGwfBbr" } }) {
+            edges {
+              node {
+                node_locale
+                links {
+                  ... on ContentfulIndexPage {
+                    contentful_id
+                    title
+                    internal {
+                      type
+                    }
                   }
-                }
-                ... on ContentfulId {
-                  contentful_id
-                  slug
-                  title
-                  internal {
-                    type
+                  ... on ContentfulId {
+                    contentful_id
+                    slug
+                    title
+                    internal {
+                      type
+                    }
                   }
-                }
-                ... on ContentfulPath {
-                  contentful_id
-                  title
-                  internal {
-                    type
+                  ... on ContentfulPath {
+                    contentful_id
+                    title
+                    internal {
+                      type
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-    `,
-  );
+      `,
+    );
 
-  const [toggled, setToggled] = useState(false);
+    return <WrappedComponent data={data} {...props} />;
+  }
 
-  const handleClick = (event) => {
+  const wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+
+  WithMenuData.displayName = `withMenuData(${wrappedComponentName})`;
+
+  return WithMenuData;
+};
+
+const propTypes = { data: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
+
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { isToggled: false };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
     event.preventDefault();
-    setToggled(!toggled);
-  };
+    this.setState((state, props) => ({ isToggled: !state.isToggled }));
+  }
 
-  return (
-    <Nav>
-      <Toggle aria-controls="primary-menu" aria-expanded={toggled.toString()} onClick={handleClick}>
-        <ToggleBar toggled={toggled} />
-        <ToggleBar toggled={toggled} />
-        <ToggleBar toggled={toggled} />
-      </Toggle>
-      {/* TODO Consider getting the page titles and link values by query from Contentful */}
-      <Ul id="primary-menu" toggled={toggled}>
-        {data.allContentfulMenu.edges
-          .filter(({ node }) => node.node_locale === props.locale)[0]
-          .node.links.map((link) => {
-            switch (link.internal.type) {
-              case 'ContentfulIndexPage':
-                return (
-                  <Li key={link.contentful_id}>
-                    <Link to={link.contentful_id} locale={props.locale}>
-                      {link.title}
-                    </Link>
-                  </Li>
-                );
-              case 'ContentfulId':
-                return (
-                  <Li key={link.contentful_id}>
-                    <AnchorLink to={`/#${link.slug}`} locale={props.locale}>
-                      {link.title}
-                    </AnchorLink>
-                  </Li>
-                );
-              case 'ContentfulPath':
-                return (
-                  <Li key={link.contentful_id}>
-                    <Link to={link.contentful_id} locale={props.locale}>
-                      {link.title}
-                    </Link>
-                  </Li>
-                );
-              default:
-                return null;
-            }
-          })}
-      </Ul>
-    </Nav>
-  );
+  render() {
+    const { data, locale } = this.props;
+
+    return (
+      <Nav>
+        <Toggle
+          aria-controls="primary-menu"
+          aria-expanded={this.state.isToggled.toString()}
+          onClick={this.handleClick}
+        >
+          <ToggleBar toggled={this.state.isToggled} />
+          <ToggleBar toggled={this.state.isToggled} />
+          <ToggleBar toggled={this.state.isToggled} />
+        </Toggle>
+        {/* TODO Consider getting the page titles and link values by query from Contentful */}
+        <Ul id="primary-menu" toggled={this.state.isToggled}>
+          {data.allContentfulMenu.edges
+            .filter(({ node }) => node.node_locale === locale)[0]
+            .node.links.map((link) => {
+              switch (link.internal.type) {
+                case 'ContentfulIndexPage':
+                  return (
+                    <Li key={link.contentful_id}>
+                      <Link to={link.contentful_id} locale={locale}>
+                        {link.title}
+                      </Link>
+                    </Li>
+                  );
+                case 'ContentfulId':
+                  return (
+                    <Li key={link.contentful_id}>
+                      <AnchorLink to={`/#${link.slug}`} locale={locale}>
+                        {link.title}
+                      </AnchorLink>
+                    </Li>
+                  );
+                case 'ContentfulPath':
+                  return (
+                    <Li key={link.contentful_id}>
+                      <Link to={link.contentful_id} locale={locale}>
+                        {link.title}
+                      </Link>
+                    </Li>
+                  );
+                default:
+                  return null;
+              }
+            })}
+        </Ul>
+      </Nav>
+    );
+  }
 }
+
+Navigation.propTypes = propTypes;
+
+export default withMenuData(Navigation);

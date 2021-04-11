@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -21,29 +22,45 @@ const Div = styled.div`
   }
 `;
 
-function Page(props) {
-  const { contentfulPage: page } = props.data;
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const { contentfulPage: page } = data;
+  const { locale, pageID } = pageContext;
 
   return (
     <Layout
-      title={page.title}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
       description={page.description}
       image={page.image}
+      locale={locale}
+      pageID={pageID}
+      title={page.title}
     >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
     </Layout>
   );
 }
 
-export default function ContentfulPage(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function ContentfulPage(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -51,8 +68,13 @@ export default function ContentfulPage(props) {
   );
 }
 
+ContentfulPage.propTypes = propTypes;
+ContentfulPage.defaultProps = defaultProps;
+
+export default ContentfulPage;
+
 export const pageQuery = graphql`
-  query PageQuery($pageId: String, $locale: String) {
+  query PageQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -61,7 +83,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

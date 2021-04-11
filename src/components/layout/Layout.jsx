@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Footer from './Footer';
@@ -30,23 +31,54 @@ const PageTitle = styled.h1`
   }
 `;
 
-export default function Layout(props) {
+const propTypes = {
+  article: PropTypes.bool,
+  author: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  description: PropTypes.string,
+  image: PropTypes.object,
+  locale: PropTypes.string.isRequired,
+  pageID: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+const defaultProps = {
+  article: false,
+  author: null,
+  description: '',
+  image: null,
+};
+
+function Layout({ article, author, children, description, image, locale, pageID, title }) {
   useColorScheme();
 
   return (
     <>
       <GlobalStyle />
-      <Head {...props} />
-      <Header {...props} />
+      <Head
+        article={article}
+        author={author}
+        description={description}
+        image={image}
+        locale={locale}
+        pageID={pageID}
+        title={title}
+      />
+      <Header locale={locale} pageID={pageID} />
       <main>
         <section>
           <header>
-            <PageTitle>{props.title}</PageTitle>
+            <PageTitle>{title}</PageTitle>
           </header>
-          <div>{props.children}</div>
+          <div>{children}</div>
         </section>
       </main>
-      <Footer {...props} />
+      <Footer locale={locale} pageID={pageID} />
     </>
   );
 }
+
+Layout.propTypes = propTypes;
+Layout.defaultProps = defaultProps;
+
+export default Layout;

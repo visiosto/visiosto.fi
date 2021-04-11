@@ -2,7 +2,9 @@
 // Licensed under the MIT License
 
 import React, { createRef } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+import { graphql, useStaticQuery } from 'gatsby';
 import * as JsSearch from 'js-search';
 
 import SearchForm from './SearchForm';
@@ -10,7 +12,39 @@ import SearchResults from './SearchResults';
 
 const events = ['mousedown', 'touchstart'];
 
-export default class SearchContainer extends React.Component {
+const withSiteURL = function withSiteURLFromQueryData(WrappedComponent) {
+  function WithSiteURL(props) {
+    const data = useStaticQuery(
+      graphql`
+        query {
+          site {
+            siteMetadata {
+              siteURL
+            }
+          }
+        }
+      `,
+    );
+
+    return <WrappedComponent siteURL={data.site.siteMetadata.siteURL} {...props} />;
+  }
+
+  const wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
+
+  WithSiteURL.displayName = `withSiteURL(${wrappedComponentName})`;
+
+  return WithSiteURL;
+};
+
+const propTypes = {
+  className: PropTypes.string,
+  locale: PropTypes.string.isRequired,
+  siteURL: PropTypes.string.isRequired,
+};
+
+const defaultProps = { className: null };
+
+class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -35,11 +69,13 @@ export default class SearchContainer extends React.Component {
    * React lifecycle method to fetch the data
    */
   async componentDidMount() {
+    const { locale, siteURL } = this.props;
+
     axios
       .get(
         `${
-          process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : this.props.siteUrl
-        }/search/pages-${this.props.locale.toLowerCase()}.json`,
+          process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : siteURL
+        }/search/pages-${locale.toLowerCase()}.json`,
       )
       .then((result) => {
         const pageData = result.data;
@@ -128,16 +164,13 @@ export default class SearchContainer extends React.Component {
   render() {
     const { pageList, searchResults, searchQuery, hasFocus } = this.state;
     const queryResults = searchQuery === '' ? pageList : searchResults;
+    const { className } = this.props;
 
     if (this.state.isLoading) {
       return (
         <div
           ref={this.rootRef}
-          className={
-            hasFocus || searchQuery.length > 0
-              ? `${this.props.className} focus`
-              : this.props.className
-          }
+          className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
         >
           <SearchForm
             searchData={this.searchData}
@@ -152,11 +185,7 @@ export default class SearchContainer extends React.Component {
       return (
         <div
           ref={this.rootRef}
-          className={
-            hasFocus || searchQuery.length > 0
-              ? `${this.props.className} focus`
-              : this.props.className
-          }
+          className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
         >
           <SearchForm
             searchData={this.searchData}
@@ -171,11 +200,7 @@ export default class SearchContainer extends React.Component {
       return (
         <div
           ref={this.rootRef}
-          className={
-            hasFocus || searchQuery.length > 0
-              ? `${this.props.className} focus`
-              : this.props.className
-          }
+          className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
         >
           <SearchForm
             searchData={this.searchData}
@@ -192,3 +217,8 @@ export default class SearchContainer extends React.Component {
     }
   }
 }
+
+SearchContainer.propTypes = propTypes;
+SearchContainer.defaultProps = defaultProps;
+
+export default withSiteURL(SearchContainer);

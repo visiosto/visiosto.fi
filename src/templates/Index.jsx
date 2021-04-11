@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import {
@@ -11,19 +12,15 @@ import {
   PaperAirplaneIcon,
   PencilIcon,
 } from '@primer/octicons-react';
-import { useIntl } from 'react-intl';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
 import ContactForm from '../components/form/ContactForm';
+import Cover from '../components/Cover';
 import FeatureCard from '../components/FeatureCard';
-import IndexCover from '../components/IndexCover';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
-import StoryCover from '../components/StoryCover';
 import Theme from '../components/Theme';
-
-import createIntl from '../util/createIntl';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -85,23 +82,38 @@ const H3 = styled.h3`
   }
 `;
 
-function Page(props) {
-  const { contentfulIndexPage: page } = props.data;
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const { contentfulIndexPage: page } = data;
+  const { locale, pageID } = pageContext;
 
   return (
     <LayoutIndex
-      title={page.title}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
       description={page.description.description}
       image={page.image}
+      locale={locale}
+      pageID={pageID}
+      title={page.title}
     >
-      <IndexCover title={page.introTitle} htmlTitle>
+      <Cover title={page.introTitle} imagesType="lens" rule={{ color: 'peach', mode: 3 }}>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
-      </IndexCover>
-      <StoryCover title={page.storyTitle}>
+      </Cover>
+      <Cover title={page.storyTitle} imagesType="lines" rule={{ color: 'blue', mode: 3 }}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
-      </StoryCover>
+      </Cover>
       <Break color={'peach'} mode={1} />
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
@@ -149,25 +161,31 @@ function Page(props) {
           })}
         </Cards>
         <H3>{page.contactFormTitle}</H3>
-        <ContactForm locale={props.pageContext.locale} />
+        <ContactForm locale={locale} />
       </Section>
     </LayoutIndex>
   );
 }
 
-export default function Index(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Index(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
     </Intl>
   );
 }
+
+Index.propTypes = propTypes;
+Index.defaultProps = defaultProps;
+
+export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery($locale: String) {

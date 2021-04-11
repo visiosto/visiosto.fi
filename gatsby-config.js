@@ -5,10 +5,14 @@ require('dotenv').config();
 
 const path = require('path');
 
+const siteURL = 'https://visiosto.netlify.app';
+
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://visiosto.netlify.app',
-    alternativeUrls: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
+    siteURL,
+    // The wrong case of the constant must be included as some plugins depend on it.
+    siteUrl: siteURL,
+    alternativeURLs: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
     title: 'Visiosto',
     description:
       'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
@@ -18,7 +22,7 @@ module.exports = {
     simpleLocales: { fi: 'fi', 'en-GB': 'en' },
     defaultLocale: 'fi',
     defaultEmail: 'info@visiosto.fi',
-    businessId: '3010084-6',
+    businessID: '3010084-6',
     vatNumber: 'FI30100846',
     facebookAppID: '905927140206660',
     socialMedia: {
@@ -71,7 +75,7 @@ module.exports = {
         name: 'Visiosto',
         short_name: 'Visiosto',
         icon: 'src/assets/favicon.svg',
-        theme_color: '#eb5952',
+        theme_color: '#23297a',
         background_color: '#ffffff',
         display: 'browser',
       },

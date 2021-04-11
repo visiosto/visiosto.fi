@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -47,17 +48,32 @@ const Separator = styled.div`
   }
 `;
 
-function Page(props) {
-  const { contentfulPage: page } = props.data;
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
+
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const { contentfulPage: page } = data;
   const { pageData: pricingList, pageDataLocalization: localizations } = page;
+  const { locale, pageID } = pageContext;
 
   return (
     <Layout
-      title={page.title}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
       description={page.description.description}
       image={page.image}
+      locale={locale}
+      pageID={pageID}
+      title={page.title}
     >
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Buttons>
@@ -65,11 +81,11 @@ function Page(props) {
           return (
             <LocalizedAnchorLinkButton
               key={node.listType}
-              to={`${props.pageContext.pageId}#${
+              to={`${pageID}#${
                 localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
                   .link
               }`}
-              locale={props.pageContext.locale}
+              locale={locale}
             >
               {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
             </LocalizedAnchorLinkButton>
@@ -82,11 +98,7 @@ function Page(props) {
       {pricingList.map((list) => {
         return (
           <Fragment key={list.listType}>
-            <PriceList
-              list={list}
-              localizations={localizations}
-              locale={props.pageContext.locale}
-            />
+            <PriceList list={list} localizations={localizations} locale={locale} />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
@@ -97,13 +109,14 @@ function Page(props) {
   );
 }
 
-export default function Pricing(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Pricing(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -111,8 +124,13 @@ export default function Pricing(props) {
   );
 }
 
+Pricing.propTypes = propTypes;
+Pricing.defaultProps = defaultProps;
+
+export default Pricing;
+
 export const pageQuery = graphql`
-  query PricingQuery($pageId: String, $locale: String) {
+  query PricingQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -121,7 +139,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

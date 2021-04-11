@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -15,7 +16,28 @@ import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createInternationalization from '../util/createInternationalization';
+
+const Div = styled.div`
+  margin: 1em ${(props) => props.theme.layout.marginMobile};
+
+  .centered {
+    text-align: center;
+  }
+
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
+    margin: 1em ${(props) => props.theme.layout.marginTablet};
+  }
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 1em ${(props) => props.theme.layout.marginDesktop};
+  }
+`;
+
+const H2 = styled.h2`
+  text-align: center;
+  font-size: 2rem;
+`;
 
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -31,9 +53,10 @@ const Post = styled.article`
 
 const PostHeader = styled.header``;
 
-const H2 = styled.h2`
+const H3 = styled.h3`
   text-align: center;
   font-size: 2rem;
+  font-family: ${(props) => props.theme.fonts.heading};
 `;
 
 const Link = styled(LocalizedLink)`
@@ -95,38 +118,55 @@ const Separator = styled.div`
   }
 `;
 
-function Page(props) {
-  const i = createIntl(useIntl());
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
 
-  const { edges: posts } = props.data.allContentfulBlogPost;
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const intl = createInternationalization(useIntl());
+
+  const { contentfulPage: page, allContentfulBlogPost: posts } = data;
+  const { locale, pageID } = pageContext;
 
   return (
     <Layout
-      title={i('blogTitle')}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
-      description={props.data.contentfulIndexPage.description.description}
+      description={page.description.description}
+      image={page.image}
+      locale={locale}
+      pageID={pageID}
+      title={page.title}
     >
+      <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
+      <H2>{intl('managementNewsTitle')}</H2>
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
-      {posts.map(({ node: post }) => {
+      {posts.edges.map(({ node: post }) => {
         return (
-          <Post key={post.contentful_id}>
+          <Post>
             <PostHeader>
-              <H2>
-                <Link to={post.contentful_id} locale={props.pageContext.locale}>
+              <H3>
+                <Link to={post.contentful_id} locale={locale}>
                   {post.title}
                 </Link>
-              </H2>
+              </H3>
               <PostMeta>
                 <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.locale} />
+                  <AuthorName author={post.author} locale={locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.locale} />
+                  {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -134,8 +174,8 @@ function Page(props) {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+              <LocalizedLinkButton to={post.contentful_id} locale={locale}>
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>
@@ -148,13 +188,14 @@ function Page(props) {
   );
 }
 
-export default function Blog(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Management(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -162,8 +203,13 @@ export default function Blog(props) {
   );
 }
 
+Management.propTypes = propTypes;
+Management.defaultProps = defaultProps;
+
+export default Management;
+
 export const pageQuery = graphql`
-  query BlogQuery($locale: String, $momentJsLocale: String) {
+  query ManagementQuery($pageID: String, $locale: String, $momentJsLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -172,8 +218,26 @@ export const pageQuery = graphql`
         }
       }
     }
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
+      title
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      description {
+        description
+      }
+      image {
+        description
+        file {
+          contentType
+          url
+        }
+      }
+    }
     allContentfulBlogPost(
-      filter: { management: { eq: false }, node_locale: { eq: $locale } }
+      filter: { management: { eq: true }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {
@@ -198,11 +262,6 @@ export const pageQuery = graphql`
             name
           }
         }
-      }
-    }
-    contentfulIndexPage(node_locale: { eq: $locale }) {
-      description {
-        description
       }
     }
   }

@@ -2,12 +2,13 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { injectIntl } from 'react-intl';
 
 import CookieSettings from './CookieSettings';
 
-import createIntl from '../../util/createIntl';
+import createInternationalization from '../../util/createInternationalization';
 
 const Link = styled.span`
   text-align: center;
@@ -29,6 +30,8 @@ const Link = styled.span`
 const Wrapper = styled.div`
   text-align: left;
 `;
+
+const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
 
 class CookieNotice extends React.Component {
   constructor(props) {
@@ -54,21 +57,24 @@ class CookieNotice extends React.Component {
   }
 
   render() {
-    const i = createIntl(this.props.intl);
+    const intl = createInternationalization(this.props.intl);
+    const { locale } = this.props;
 
     return (
       <>
-        <Link onClick={this.onLinkClick}>{i('cookieSettingsLink')}</Link>
+        <Link onClick={this.onLinkClick}>{intl('cookieSettingsLink')}</Link>
         <Wrapper>
           <CookieSettings
+            locale={locale}
             settingsOpen={this.state.isOpen}
             toggleSettings={this.handleSettingsToggle}
-            {...this.props}
           />
         </Wrapper>
       </>
     );
   }
 }
+
+CookieNotice.propTypes = propTypes;
 
 export default injectIntl(CookieNotice);

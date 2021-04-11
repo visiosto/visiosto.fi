@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -13,7 +14,7 @@ import RegisterPersonForm from '../components/form/RegisterPersonForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createInternationalization from '../util/createInternationalization';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -59,34 +60,50 @@ const H2 = styled.h2`
   }
 `;
 
-function Page(props) {
-  const i = createIntl(useIntl());
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
 
-  const { contentfulPage: page } = props.data;
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const intl = createInternationalization(useIntl());
+
+  const { contentfulPage: page } = data;
+  const { clientType, locale, pageID } = pageContext;
 
   return (
-    <Layout title={page.title} locale={props.pageContext.locale} pageId={props.pageContext.pageId}>
+    <Layout locale={locale} pageID={pageID} title={page.title}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Separator>
         <Rule color="peach" mode={1} />
       </Separator>
-      <H2>{i('clientRegisterFormTitle')}</H2>
-      {props.pageContext.clientType === 'business' ? (
-        <RegisterBusinessForm locale={props.pageContext.locale} />
+      <H2>{intl('clientRegisterFormTitle')}</H2>
+      {clientType === 'business' ? (
+        <RegisterBusinessForm locale={locale} />
       ) : (
-        <RegisterPersonForm locale={props.pageContext.locale} />
+        <RegisterPersonForm locale={locale} />
       )}
     </Layout>
   );
 }
 
-export default function ClientRegister(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function ClientRegister(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -94,8 +111,13 @@ export default function ClientRegister(props) {
   );
 }
 
+ClientRegister.propTypes = propTypes;
+ClientRegister.defaultProps = defaultProps;
+
+export default ClientRegister;
+
 export const pageQuery = graphql`
-  query ClientRegisterQuery($pageId: String, $locale: String) {
+  query ClientRegisterQuery($pageID: String, $locale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -104,7 +126,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulPage(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       title
       body {
         childMarkdownRemark {

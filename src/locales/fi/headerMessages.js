@@ -2,5 +2,5 @@
 // Licensed under the MIT License
 
 export default {
-  headerLogoAlt: 'Visioston logo',
+  headerLogoALT: 'Visioston logo',
 };

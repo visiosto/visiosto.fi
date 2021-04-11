@@ -2,9 +2,9 @@
 // Licensed under the MIT License
 
 export default {
-  footerLogoAlt: 'Visioston logo',
+  footerLogoALT: 'Visioston logo',
   footerCompanyName: 'Visiosto oy',
-  footerBusinessId: 'Y-tunnus:',
+  footerBusinessID: 'Y-tunnus:',
   footerVatNumber: 'ALV-numero:',
   footerManagement: 'Hallinto',
   footerPricing: 'Hinnasto',
@@ -12,11 +12,11 @@ export default {
   footerTermsOfUse: 'Käyttöehdot',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',
   footerHashtag: '&num;linssimmeläpi',
-  footerFacebookAlt: 'Facebookin logo',
-  footerGithubAlt: 'Githubin logo',
-  footerInstagramAlt: 'Instagramin logo',
-  footerLinkedinAlt: 'Linkedinin logo',
-  footerTwitterAlt: 'Twitterin logo',
+  footerFacebookALT: 'Facebookin logo',
+  footerGithubALT: 'Githubin logo',
+  footerInstagramALT: 'Instagramin logo',
+  footerLinkedinALT: 'Linkedinin logo',
+  footerTwitterALT: 'Twitterin logo',
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
   footerMadeBy: 'Tämä sivusto on tehty <a>Visioston</a> linssin läpi',

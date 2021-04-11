@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
@@ -15,7 +16,7 @@ import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
-import createIntl from '../util/createIntl';
+import createInternationalization from '../util/createInternationalization';
 
 const Post = styled.article`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -95,39 +96,53 @@ const Separator = styled.div`
   }
 `;
 
-function Page(props) {
-  const i = createIntl(useIntl());
+const propTypes = {
+  children: PropTypes.node,
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  navigate: PropTypes.func.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  pageResources: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  uri: PropTypes.string.isRequired,
+};
 
-  const { contentfulCategory: category } = props.data;
-  const { edges: posts } = props.data.allContentfulBlogPost;
+const defaultProps = { children: undefined };
+
+function Page({ data, pageContext }) {
+  const intl = createInternationalization(useIntl());
+
+  const { contentfulCategory: category } = data;
+  const { edges: posts } = data.allContentfulBlogPost;
+  const { locale, pageID } = pageContext;
 
   return (
     <Layout
-      title={`${i('blogCategory')} ${category.name}`}
-      locale={props.pageContext.locale}
-      pageId={props.pageContext.pageId}
-      description={props.data.contentfulIndexPage.description.description}
+      description={data.contentfulIndexPage.description.description}
+      locale={locale}
+      pageID={pageID}
+      title={`${intl('blogCategory')} ${category.name}`}
     >
       <Separator>
         <Rule color="peach" mode={2} />
       </Separator>
       {posts.map(({ node: post }) => {
         return (
-          <Post>
+          <Post key={post.contentful_id}>
             <PostHeader>
               <H2>
-                <Link to={post.contentful_id} locale={props.pageContext.locale}>
+                <Link to={post.contentful_id} locale={locale}>
                   {post.title}
                 </Link>
               </H2>
               <PostMeta>
                 <time dateTime={post.datetime}>{post.date}</time>
                 <PostAuthor>
-                  <AuthorName author={post.author} locale={props.pageContext.locale} />
+                  <AuthorName author={post.author} locale={locale} />
                 </PostAuthor>
                 <PostCategory>
-                  {i('blogCategory')}{' '}
-                  <CategoryName category={post.category} locale={props.pageContext.locale} />
+                  {intl('blogCategory')} <CategoryName category={post.category} locale={locale} />
                 </PostCategory>
               </PostMeta>
             </PostHeader>
@@ -135,8 +150,8 @@ function Page(props) {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <LocalizedLinkButton to={post.contentful_id} locale={props.pageContext.locale}>
-                {i('blogReadMore')}
+              <LocalizedLinkButton to={post.contentful_id} locale={locale}>
+                {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
             <Separator>
@@ -149,13 +164,14 @@ function Page(props) {
   );
 }
 
-export default function Category(props) {
+Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
+
+function Category(props) {
+  const { simpleLocales } = props.data.site.siteMetadata;
+  const { locale } = props.pageContext;
   return (
-    <Intl
-      locale={
-        props.data.site.siteMetadata.simpleLocales[props.pageContext.locale.replace('-', '_')]
-      }
-    >
+    <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
         <Page {...props} />
       </Theme>
@@ -163,8 +179,13 @@ export default function Category(props) {
   );
 }
 
+Category.propTypes = propTypes;
+Category.defaultProps = defaultProps;
+
+export default Category;
+
 export const pageQuery = graphql`
-  query CategoryQuery($pageId: String, $locale: String, $momentJsLocale: String) {
+  query CategoryQuery($pageID: String, $locale: String, $momentJsLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -173,11 +194,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulCategory(contentful_id: { eq: $pageId }, node_locale: { eq: $locale }) {
+    contentfulCategory(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       name
     }
     allContentfulBlogPost(
-      filter: { category: { contentful_id: { eq: $pageId } }, node_locale: { eq: $locale } }
+      filter: { category: { contentful_id: { eq: $pageID } }, node_locale: { eq: $locale } }
       sort: { fields: date, order: DESC }
     ) {
       edges {

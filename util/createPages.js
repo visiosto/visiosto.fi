@@ -13,10 +13,10 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       {
         site {
           siteMetadata {
-            alternativeUrls
+            alternativeURLs
             defaultLocale
             locales
-            siteUrl
+            siteURL
             localePaths {
               en_GB
               fi
@@ -174,11 +174,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
   }
 
   const {
-    alternativeUrls,
+    alternativeURLs,
     defaultLocale,
     localePaths,
     locales,
-    siteUrl,
+    siteURL,
   } = query.data.site.siteMetadata;
 
   // Create the author pages from Contentful.
@@ -187,7 +187,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.authors.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -202,50 +202,46 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'author.jsx'),
+      component: path.resolve('src', 'templates', 'Author.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the authors page from Contentful.
 
   authorPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
-    reporter.verbose(`Creating the author page for ID '${pageId}'`);
+    reporter.verbose(`Creating the author page for ID '${pageID}'`);
 
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'authors.jsx'),
+      component: path.resolve('src', 'templates', 'Authors.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the basic pages from Contentful.
 
   query.data.basicPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -253,16 +249,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'page.jsx'),
+      component: path.resolve('src', 'templates', 'ContentfulPage.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the blog post pages from Contentful.
@@ -271,7 +265,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.blogPosts.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug, management } = node;
+    const { contentful_id: pageID, node_locale: locale, slug, management } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -286,44 +280,40 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'blog-post.jsx'),
+      component: path.resolve('src', 'templates', 'BlogPost.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
         management,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the blog page from Contentful.
 
   blogPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
-    reporter.verbose(`Creating the blog page for ID '${pageId}'`);
+    reporter.verbose(`Creating the blog page for ID '${pageID}'`);
 
     const pagePath =
       locale === defaultLocale ? `/${slug}` : `/${localePaths[locale.replace('-', '_')]}/${slug}`;
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'blog.jsx'),
+      component: path.resolve('src', 'templates', 'Blog.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the category pages from Contentful.
@@ -332,7 +322,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   query.data.categories.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -344,72 +334,66 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'category.jsx'),
+      component: path.resolve('src', 'templates', 'Category.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the categories page from Contentful.
 
   categoryPaths.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale } = node;
+    const { contentful_id: pageID, node_locale: locale } = node;
 
-    reporter.verbose(`Creating the category page for ID '${pageId}'`);
+    reporter.verbose(`Creating the category page for ID '${pageID}'`);
 
     const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
 
-    reporter.verbose(`The path created for ${pageId} is ${pagePath}`);
+    reporter.verbose(`The path created for ${pageID} is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'categories.jsx'),
+      component: path.resolve('src', 'templates', 'Categories.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the index page from Contentful.
 
   query.data.indexPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale } = node;
+    const { contentful_id: pageID, node_locale: locale } = node;
 
-    reporter.verbose(`Creating the index page for ID '${pageId}'`);
+    reporter.verbose(`Creating the index page for ID '${pageID}'`);
 
     const pagePath = locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'index.jsx'),
+      component: path.resolve('src', 'templates', 'Index.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the management page from Contentful.
 
   query.data.managementPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -418,24 +402,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'management.jsx'),
+      component: path.resolve('src', 'templates', 'Management.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         momentJsLocale: locale.toLowerCase(),
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the pricing page from Contentful.
 
   query.data.pricingPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -444,23 +426,21 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'pricing.jsx'),
+      component: path.resolve('src', 'templates', 'Pricing.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the client register page for businesses from Contentful.
 
   query.data.clientRegisterBusinessPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -468,24 +448,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         clientType: 'business',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the client register page for people from Contentful.
 
   query.data.clientRegisterPersonPages.edges.forEach(({ node }) => {
     // eslint-disable-next-line camelcase
-    const { contentful_id: pageId, node_locale: locale, slug } = node;
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
 
     reporter.verbose(`Creating page for the base slug '${slug}'`);
 
@@ -493,17 +471,15 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
       context: {
         locale,
-        pageId,
+        pageID,
         clientType: 'person',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the 404 error pages.
@@ -516,16 +492,14 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     reporter.verbose(`The path created is ${pagePath}`);
 
-    const pageOpts = {
+    createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', '404.jsx'),
+      component: path.resolve('src', 'templates', 'NotFound.jsx'),
       context: {
         locale,
-        pageId: '404',
+        pageID: '404',
       },
-    };
-
-    createPage(pageOpts);
+    });
   });
 
   // Create the redirects for the 404 error pages.
@@ -542,10 +516,10 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   // Create the redirects for the URLs.
 
-  alternativeUrls.forEach((url) => {
+  alternativeURLs.forEach((url) => {
     createRedirect({
       fromPath: url,
-      toPath: siteUrl,
+      toPath: siteURL,
       isPermanent: true,
       force: true,
     });
@@ -553,10 +527,10 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
   // Create the redirects for all of the pages.
 
-  alternativeUrls.forEach((url) => {
+  alternativeURLs.forEach((url) => {
     createRedirect({
       fromPath: `${url}/*`,
-      toPath: `${siteUrl}/:splat`,
+      toPath: `${siteURL}/:splat`,
       isPermanent: true,
       force: true,
     });

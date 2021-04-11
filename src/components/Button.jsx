@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Span = styled.span`
@@ -36,10 +37,23 @@ const SpanGreen = styled(Span)`
   }
 `;
 
-export default function Button({ children, color, onClick }) {
-  if (color && color === 'green') {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+};
+
+const defaultProps = { color: '', onClick: null };
+
+function Button({ children, color, onClick }) {
+  if (color === 'green') {
     return <SpanGreen onClick={onClick}>{children}</SpanGreen>;
   }
 
   return <SpanNormal onClick={onClick}>{children}</SpanNormal>;
 }
+
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
+
+export default Button;

@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.19.0] - 2021-04-11
+
+### Added
+
+- `prop-types` as a dependency.
+- Prop types and default props to the components.
+- Support for creating links to the `404` error page, mainly for creating the link to change langauge.
+- Prop types and default props to the page template components.
+- Explicit Babel configration.
+
+### Changed
+
+- Navigation component to a class to better comply with the coding standards.
+- Side margins of the element wrapping the header component to `0`.
+- Theme colour in the web app manifest.
+- Different cover elements into single cover element controlled by props.
+- Variable `siteUrl` to `siteURL` to match coding standards.
+- Variable `alternativeUrls` to `alternativeURL` to match coding standards.
+- `Id` in various business ID variables to `ID` to match coding standards.
+- Variable `pageId` to `pageID` to match coding standards.
+- Function `createIntl` to `createInternationalization` to match coding standards.
+- All of the variables `e` to `event` to match coding standards.
+- All of the functions `i` to `intl` to match coding standards.
+- `meta` translations to `head`.
+
+### Fixed
+
+- Community file links in the README.
+- `for` to `htmlFor` in JSX as the DOM attribute `for` is reserved for JavaScript.
+- Missing `key`s in the posts on the category pages.
+
 ## [0.18.1] - 2021-04-07
 
 ### Fixed
@@ -497,7 +528,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.18.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.19.0...HEAD
+[0.19.0]: https://github.com/visiosto/visiosto.fi/compare/v0.18.1...v0.19.0
 [0.18.1]: https://github.com/visiosto/visiosto.fi/compare/v0.18.0...v0.18.1
 [0.18.0]: https://github.com/visiosto/visiosto.fi/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/visiosto/visiosto.fi/compare/v0.16.1...v0.17.0
