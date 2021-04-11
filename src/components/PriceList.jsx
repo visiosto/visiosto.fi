@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Price from './Price';
@@ -36,13 +37,23 @@ const createLocalization = function createLocalizationForProperty(list, key, pro
   return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
 };
 
-export default function PriceList(props) {
-  const { listType, prices, additionalWork, additionalFees } = props.list;
-  const { localizations } = props;
+const propTypes = {
+  list: PropTypes.shape({
+    additionalFees: PropTypes.arrayOf(PropTypes.object).isRequired,
+    additionalWork: PropTypes.arrayOf(PropTypes.object).isRequired,
+    listType: PropTypes.string.isRequired,
+    prices: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
+  locale: PropTypes.string.isRequired,
+  localizations: PropTypes.object.isRequired,
+};
+
+function PriceList({ list, locale, localizations }) {
+  const { additionalFees, additionalWork, listType, prices } = list;
   const {
-    prices: pricesLocalizations,
     additionalFees: additionalFeesLocalizations,
     additionalWork: additionalWorkLocalizations,
+    prices: pricesLocalizations,
   } = localizations;
 
   const domainPrice = prices.filter(({ name }) => name === 'domain')[0];
@@ -68,9 +79,9 @@ export default function PriceList(props) {
             { name: serverPrice.name, price: serverPrice.price, rate: serverPrice.rate },
             { name: domainPrice.name, price: domainPrice.price, rate: domainPrice.rate },
           ]}
-          locale={props.locale}
+          locale={locale}
           localizations={localizations}
-          localizationList="prices"
+          localizationsList="prices"
         />
       </Div>
       <h3>{createLocalization(additionalWorkLocalizations, 'title')}</h3>
@@ -83,9 +94,9 @@ export default function PriceList(props) {
               title={createLocalization(additionalWorkLocalizations, price.name)}
               price={price.price}
               rate={price.rate}
-              locale={props.locale}
+              locale={locale}
               localizations={localizations}
-              localizationList="additionalWork"
+              localizationsList="additionalWork"
             />
           );
         })}
@@ -102,9 +113,9 @@ export default function PriceList(props) {
                 extra={createLocalization(additionalFeesLocalizations, price.name, 'extra')}
                 price={price.price}
                 rate={price.rate}
-                locale={props.locale}
+                locale={locale}
                 localizations={localizations}
-                localizationList="additionalFees"
+                localizationsList="additionalFees"
               />
             );
           } else {
@@ -115,9 +126,9 @@ export default function PriceList(props) {
                 title={createLocalization(additionalFeesLocalizations, price.name)}
                 price={price.price}
                 rate={price.rate}
-                locale={props.locale}
+                locale={locale}
                 localizations={localizations}
-                localizationList="additionalFees"
+                localizationsList="additionalFees"
               />
             );
           }
@@ -126,3 +137,7 @@ export default function PriceList(props) {
     </Wrapper>
   );
 }
+
+PriceList.propTypes = propTypes;
+
+export default PriceList;

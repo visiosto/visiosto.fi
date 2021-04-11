@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
@@ -29,23 +30,27 @@ const Div = styled.div`
   text-align: center;
 `;
 
-export default function AuthorContactCard({
-  author: { email, job, name, profileImage },
-  children,
-  htmlTitle,
-}) {
+const propTypes = {
+  author: PropTypes.shape({
+    email: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    profileImage: PropTypes.object.isRequired,
+  }).isRequired,
+  children: PropTypes.node,
+};
+
+const defaultProps = { children: null };
+
+function AuthorContactCard({ author, children }) {
+  const { email, job, name, profileImage } = author;
+
   return (
     <Card>
       <ImageDiv>
         <Image alt={name} image={getImage(profileImage)} />
       </ImageDiv>
-      {(() => {
-        if (htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: name }} />;
-        } else {
-          return <H3>{name}</H3>;
-        }
-      })()}
+      <H3>{name}</H3>
       <Div>
         <p>{job}</p>
         <p>
@@ -56,3 +61,8 @@ export default function AuthorContactCard({
     </Card>
   );
 }
+
+AuthorContactCard.propTypes = propTypes;
+AuthorContactCard.defaultProps = defaultProps;
+
+export default AuthorContactCard;

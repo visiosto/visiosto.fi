@@ -55,7 +55,7 @@ function Page(props) {
   );
 }
 
-export default function NotFound(props) {
+function NotFound(props) {
   return (
     <Intl
       locale={
@@ -68,6 +68,8 @@ export default function NotFound(props) {
     </Intl>
   );
 }
+
+export default NotFound;
 
 export const pageQuery = graphql`
   query NotFoundQuery {

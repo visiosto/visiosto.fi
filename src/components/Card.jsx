@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Article = styled.article`
@@ -15,6 +16,12 @@ const Article = styled.article`
   }
 `;
 
-export default function Card({ children }) {
+const propTypes = { children: PropTypes.node.isRequired };
+
+function Card({ children }) {
   return <Article>{children}</Article>;
 }
+
+Card.propTypes = propTypes;
+
+export default Card;

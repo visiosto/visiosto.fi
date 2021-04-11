@@ -281,7 +281,11 @@ class RegisterPersonForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="surname">{i('clientRegisterPersonFormSurname')}</label>
-              <label htmlFor="surname" className="error-message" hidden={!this.state.errors.surname}>
+              <label
+                htmlFor="surname"
+                className="error-message"
+                hidden={!this.state.errors.surname}
+              >
                 {this.state.errors.surname}
               </label>
               <input
@@ -351,7 +355,11 @@ class RegisterPersonForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="postcode">{i('clientRegisterPersonFormPostcode')}</label>
-              <label htmlFor="postcode" className="error-message" hidden={!this.state.errors.postcode}>
+              <label
+                htmlFor="postcode"
+                className="error-message"
+                hidden={!this.state.errors.postcode}
+              >
                 {this.state.errors.postcode}
               </label>
               <input
@@ -427,7 +435,9 @@ class RegisterPersonForm extends React.Component {
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="billing-postcode">{i('clientRegisterPersonFormBillingPostcode')}</label>
+              <label htmlFor="billing-postcode">
+                {i('clientRegisterPersonFormBillingPostcode')}
+              </label>
               <label
                 htmlFor="billing-postcode"
                 className="error-message"

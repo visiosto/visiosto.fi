@@ -5,13 +5,16 @@
 // https://github.com/joshwcomeau/dark-mode-minimal
 
 import React, { useEffect, useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import ThemeContext from './ThemeContext';
 
 import { INITIAL_COLOR_MODE_CSS_PROP } from '../constants';
 import { COLORS } from '../theme';
 
-export default function ThemeContextProvider({ children }) {
+const propTypes = { children: PropTypes.node.isRequired };
+
+function ThemeContextProvider({ children }) {
   // Use state in a function component as this is the way it was done in the original code.
   const [colorMode, rawSetColorMode] = useState(undefined);
 
@@ -50,3 +53,7 @@ export default function ThemeContextProvider({ children }) {
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 }
+
+ThemeContextProvider.propTypes = propTypes;
+
+export default ThemeContextProvider;

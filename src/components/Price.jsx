@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Div = styled.div`
@@ -17,7 +18,7 @@ const createLocalization = function createLocalizationID(list, key, property) {
 };
 
 const createPrice = function createPriceFromData(price, locale, rate, localizations) {
-  if (rate) {
+  if (rate !== '') {
     return `${price.toLocaleString(locale, {
       style: 'currency',
       currency: 'EUR',
@@ -30,55 +31,87 @@ const createPrice = function createPriceFromData(price, locale, rate, localizati
   }
 };
 
-export default function Price(props) {
-  const { localizations } = props;
-  const localizationList = localizations[props.localizationList];
+const propTypes = {
+  extra: PropTypes.string,
+  extraPrices: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      rate: PropTypes.string,
+    }),
+  ),
+  locale: PropTypes.string.isRequired,
+  localizations: PropTypes.object.isRequired,
+  localizationsList: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  rate: PropTypes.string,
+  title: PropTypes.string.isRequired,
+};
 
-  if (props.extra) {
+const defaultProps = { extra: '', extraPrices: null, rate: '' };
+
+function Price({
+  extra,
+  extraPrices,
+  locale,
+  localizations,
+  localizationsList,
+  price,
+  rate,
+  title,
+}) {
+  const translations = localizations[localizationsList];
+
+  if (extra !== '') {
     return (
       <Div>
-        <Title>{props.title}</Title>
+        <Title>{title}</Title>
         <div
           dangerouslySetInnerHTML={{
-            __html: createPrice(props.price, props.locale, props.rate, localizations),
+            __html: createPrice(price, locale, rate, localizations),
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: `(${props.extra})` }} />
+        <div dangerouslySetInnerHTML={{ __html: `(${extra})` }} />
       </Div>
     );
-  } else if (props.extraPrices) {
-    const extraPrices = props.extraPrices.reduce((accumulated, price) => {
-      const entryPrice = createPrice(price.price, props.locale, price.rate, localizations);
+  } else if (extraPrices) {
+    const reducedExtraPrices = extraPrices.reduce((accumulated, extraPrice) => {
+      const entryPrice = createPrice(extraPrice.price, locale, extraPrice.rate, localizations);
       if (!accumulated) {
-        return `${createLocalization(localizationList, price.name).toLowerCase()}: ${entryPrice}`;
+        return `${createLocalization(translations, extraPrice.name).toLowerCase()}: ${entryPrice}`;
       } else {
         return `${accumulated}; ${createLocalization(
-          localizationList,
-          price.name,
+          translations,
+          extraPrice.name,
         ).toLowerCase()}: ${entryPrice}`;
       }
     }, '');
     return (
       <Div>
-        <Title>{props.title}</Title>
+        <Title>{title}</Title>
         <div
           dangerouslySetInnerHTML={{
-            __html: createPrice(props.price, props.locale, props.rate, localizations),
+            __html: createPrice(price, locale, rate, localizations),
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: `(${extraPrices})` }} />
+        <div dangerouslySetInnerHTML={{ __html: `(${reducedExtraPrices})` }} />
       </Div>
     );
   } else {
     return (
       <Div>
-        <Title>{props.title}</Title>
+        <Title>{title}</Title>
         <div
           dangerouslySetInnerHTML={{
-            __html: createPrice(props.price, props.locale, props.rate, localizations),
+            __html: createPrice(price, locale, rate, localizations),
           }}
         />
       </Div>
     );
   }
 }
+
+Price.propTypes = propTypes;
+Price.defaultProps = defaultProps;
+
+export default Price;

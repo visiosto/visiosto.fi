@@ -2,6 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Card from './Card';
@@ -17,19 +18,27 @@ const H3 = styled.h3`
   text-align: center;
 `;
 
-export default function FeatureCard({ button, children, htmlTitle, icon, title }) {
+const propTypes = {
+  button: PropTypes.element,
+  children: PropTypes.node.isRequired,
+  icon: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+const defaultProps = { button: null };
+
+function FeatureCard({ button, children, icon, title }) {
   return (
     <Card>
       <Icon>{icon}</Icon>
-      {(() => {
-        if (htmlTitle) {
-          return <H3 dangerouslySetInnerHTML={{ __html: title }} />;
-        } else {
-          return <H3>{title}</H3>;
-        }
-      })()}
+      <H3>{title}</H3>
       {children}
       {button}
     </Card>
   );
 }
+
+FeatureCard.propTypes = propTypes;
+FeatureCard.defaultProps = defaultProps;
+
+export default FeatureCard;

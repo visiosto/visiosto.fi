@@ -113,7 +113,7 @@ const DataProtectionP = styled.p`
   margin: 2rem 0 0;
 `;
 
-const CookieSettingsP = styled.p`
+const CookieSettings = styled.div`
   margin: 2rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
@@ -296,9 +296,9 @@ export default function Footer(props) {
             {i('footerDataProtection')}
           </LocalizedLink>
         </DataProtectionP>
-        <CookieSettingsP>
+        <CookieSettings>
           <CookieNotice {...props} />
-        </CookieSettingsP>
+        </CookieSettings>
         <TermsOfUseP>
           <LocalizedLink to="/terms-of-use" locale={props.locale}>
             {i('footerTermsOfUse')}

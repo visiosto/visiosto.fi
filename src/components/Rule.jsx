@@ -2,13 +2,14 @@
 // Licensed under the MIT License
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import SchemedImage from './SchemedImage';
 
-const getRules = function getRuleImageDataWithStaticQuery(ruleType) {
+const useRuleImages = function useRuleImageDataWithStaticQuery(ruleType) {
   const data = useStaticQuery(
     graphql`
       {
@@ -106,8 +107,12 @@ const Div = styled.div`
   justify-content: center;
 `;
 
-export default function Rule({ color, mode }) {
-  const { blueRule, lightBlueRule, peachRule, creamRule } = getRules(mode);
+const propTypes = { color: PropTypes.string, mode: PropTypes.number };
+
+const defaultProps = { color: 'blue', mode: 1 };
+
+function Rule({ color, mode }) {
+  const { blueRule, lightBlueRule, peachRule, creamRule } = useRuleImages(mode);
 
   if (color === 'peach') {
     return (
@@ -123,3 +128,8 @@ export default function Rule({ color, mode }) {
     );
   }
 }
+
+Rule.propTypes = propTypes;
+Rule.defaultProps = defaultProps;
+
+export default Rule;
