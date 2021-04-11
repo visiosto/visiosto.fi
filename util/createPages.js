@@ -204,7 +204,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'author.jsx'),
+      component: path.resolve('src', 'templates', 'Author.jsx'),
       context: {
         locale,
         pageID,
@@ -228,7 +228,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'authors.jsx'),
+      component: path.resolve('src', 'templates', 'Authors.jsx'),
       context: {
         locale,
         pageID,
@@ -251,7 +251,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'page.jsx'),
+      component: path.resolve('src', 'templates', 'ContentfulPage.jsx'),
       context: {
         locale,
         pageID,
@@ -282,7 +282,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'blog-post.jsx'),
+      component: path.resolve('src', 'templates', 'BlogPost.jsx'),
       context: {
         locale,
         pageID,
@@ -307,7 +307,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'blog.jsx'),
+      component: path.resolve('src', 'templates', 'Blog.jsx'),
       context: {
         locale,
         pageID,
@@ -336,7 +336,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'category.jsx'),
+      component: path.resolve('src', 'templates', 'Category.jsx'),
       context: {
         locale,
         pageID,
@@ -359,7 +359,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'categories.jsx'),
+      component: path.resolve('src', 'templates', 'Categories.jsx'),
       context: {
         locale,
         pageID,
@@ -381,7 +381,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'index.jsx'),
+      component: path.resolve('src', 'templates', 'Index.jsx'),
       context: {
         locale,
         pageID,
@@ -404,7 +404,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'management.jsx'),
+      component: path.resolve('src', 'templates', 'Management.jsx'),
       context: {
         locale,
         pageID,
@@ -428,7 +428,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'pricing.jsx'),
+      component: path.resolve('src', 'templates', 'Pricing.jsx'),
       context: {
         locale,
         pageID,
@@ -450,7 +450,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
       context: {
         locale,
         pageID,
@@ -473,7 +473,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'client-register.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
       context: {
         locale,
         pageID,
@@ -494,7 +494,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', '404.jsx'),
+      component: path.resolve('src', 'templates', 'NotFound.jsx'),
       context: {
         locale,
         pageID: '404',
