@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Prop types and default props to the components.
 - Support for creating links to the `404` error page, mainly for creating the link to change langauge.
 - Prop types and default props to the page template components.
+- Explicit Babel configration.
 
 ### Changed
 
