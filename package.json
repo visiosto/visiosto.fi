@@ -46,7 +46,7 @@
     "gatsby-plugin-styled-components": "^4.3.0",
     "gatsby-source-contentful": "^5.2.1",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-json": "^3.2.0",
+    "gatsby-transformer-json": "^3.3.0",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "js-search": "^2.0.0",
