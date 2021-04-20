@@ -234,7 +234,6 @@ class Navigation extends React.Component {
           <ToggleBar toggled={this.state.isToggled} />
           <ToggleBar toggled={this.state.isToggled} />
         </Toggle>
-        {/* TODO Consider getting the page titles and link values by query from Contentful */}
         <Ul id="primary-menu" toggled={this.state.isToggled}>
           {data.allContentfulMenu.edges
             .filter(({ node }) => node.node_locale === locale)[0]
