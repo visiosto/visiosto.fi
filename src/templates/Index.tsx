@@ -27,7 +27,7 @@ const H2 = styled.h2`
   text-align: center;
 `;
 
-const Section = styled.div<{ lesserMargin?: boolean; }>`
+const Section = styled.div<{ lesserMargin?: boolean }>`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {

@@ -28,13 +28,13 @@ const ButtonDiv = styled.div``;
 type Props = {
   intl: IntlShape;
   locale: string;
-}
+};
 
 type Errors = {
   name?: string;
   tel?: string;
   message?: string;
-}
+};
 
 type State = {
   name?: string;
@@ -44,7 +44,7 @@ type State = {
   postStatus?: string;
   errorMessage?: string;
   errors?: Errors;
-}
+};
 
 class ContactForm extends React.Component<Props, State> {
   constructor(props) {

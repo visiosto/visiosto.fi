@@ -33,11 +33,11 @@ const Wrapper = styled.div`
 type Props = {
   intl: IntlShape;
   locale: string;
-}
+};
 
 type State = {
   isOpen: boolean;
-}
+};
 
 class CookieNotice extends React.Component<Props, State> {
   constructor(props) {

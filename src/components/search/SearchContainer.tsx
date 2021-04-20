@@ -50,7 +50,7 @@ type Props = {
   className?: string;
   locale: string;
   siteURL: string;
-}
+};
 
 class SearchContainer extends React.Component<Props, State> {
   rootRef: React.RefObject<HTMLInputElement>;

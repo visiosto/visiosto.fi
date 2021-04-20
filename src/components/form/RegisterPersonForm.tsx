@@ -48,7 +48,6 @@ const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
 
-
 type Props = {
   intl: IntlShape;
   locale: string;
@@ -89,7 +88,7 @@ type State = {
   postStatus?: string;
   errorMessage?: string;
   errors?: Errors;
-}
+};
 
 class RegisterPersonForm extends React.Component<Props, State> {
   constructor(props) {

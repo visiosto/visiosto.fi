@@ -19,11 +19,13 @@ const propTypes = {
   description: PropTypes.string,
   errorMessage: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
-  inputs: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-  })).isRequired,
+  inputs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   value: PropTypes.string,

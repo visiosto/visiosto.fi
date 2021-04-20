@@ -219,7 +219,7 @@ type Props = {
 type State = {
   showBanner: boolean;
   isAnalyticsEnabled: boolean;
-}
+};
 
 class CookieSettings extends React.Component<Props, State> {
   constructor(props) {
