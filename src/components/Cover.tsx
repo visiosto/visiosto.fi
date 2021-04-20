@@ -185,7 +185,7 @@ const useCoverImages = function useCoverImagesQueryData(imagesType) {
   );
 
   switch (imagesType) {
-    case 'lens':
+    case 'lens': {
       const {
         lensTopPhoneSmallLight,
         lensTopPhoneSmallDark,
@@ -206,7 +206,8 @@ const useCoverImages = function useCoverImagesQueryData(imagesType) {
         bottomTabletLight: lensBottomTabletLight,
         bottomTabletDark: lensBottomTabletDark,
       };
-    case 'lines':
+    }
+    case 'lines': {
       const {
         linesTopPhoneSmallLight,
         linesTopPhoneSmallDark,
@@ -227,8 +228,10 @@ const useCoverImages = function useCoverImagesQueryData(imagesType) {
         bottomTabletLight: linesBottomTabletLight,
         bottomTabletDark: linesBottomTabletDark,
       };
-    default:
+    }
+    default: {
       return {};
+    }
   }
 };
 
