@@ -1,6 +1,10 @@
 // Coypright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
+import './DefaultTheme';
+
+import { DefaultTheme } from 'styled-components';
+
 const colors = {
   blue: '#23297a',
   lightBlue: '#6dcff6',
@@ -127,10 +131,12 @@ const borders = {
   cardRadius: '0.5em',
 };
 
-export default {
+const theme: DefaultTheme = {
   fonts: { ...fonts },
   sizes: { ...sizes },
   devices: { ...devices },
   layout: { ...layout },
   borders: { ...borders },
 };
+
+export default theme;

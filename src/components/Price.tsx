@@ -13,7 +13,7 @@ const Title = styled.h4`
   margin: 0;
 `;
 
-const createLocalization = function createLocalizationID(list, key, property) {
+const createLocalization = function createLocalizationID(list, key, property?) {
   return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
 };
 

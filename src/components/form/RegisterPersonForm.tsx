@@ -2,10 +2,9 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
-import { injectIntl } from 'react-intl';
+import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
 import FormDiv from './FormDiv';
@@ -49,9 +48,50 @@ const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
 
-const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
 
-class RegisterPersonForm extends React.Component {
+type Props = {
+  intl: IntlShape;
+  locale: string;
+};
+
+type Errors = {
+  firstName?: string;
+  surname?: string;
+  tel?: string;
+  email?: string;
+  addressLine1?: string;
+  postcode?: string;
+  postOffice?: string;
+  billingAddressLine1?: string;
+  billingPostcode?: string;
+  billingPostOffice?: string;
+  billingMethod?: string;
+  acceptTerms?: string;
+};
+
+type State = {
+  firstName?: string;
+  surname?: string;
+  tel?: string;
+  email?: string;
+  addressLine1?: string;
+  addressLine2?: string;
+  postcode?: string;
+  postOffice?: string;
+  isSameBillingAddress?: boolean;
+  billingAddressLine1?: string;
+  billingAddressLine2?: string;
+  billingPostcode?: string;
+  billingPostOffice?: string;
+  billingMethod?: string;
+  acceptTerms?: boolean;
+  currentPage?: number;
+  postStatus?: string;
+  errorMessage?: string;
+  errors?: Errors;
+}
+
+class RegisterPersonForm extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
@@ -89,7 +129,7 @@ class RegisterPersonForm extends React.Component {
 
   validatePageData() {
     const intl = createInternationalization(this.props.intl);
-    const errors = {};
+    const errors: Errors = {};
     let isValid = true;
 
     switch (this.state.currentPage) {
@@ -217,7 +257,7 @@ class RegisterPersonForm extends React.Component {
     if (this.state.currentPage === 2 && this.state.isSameBillingAddress) {
       this.setState({ currentPage: 0 });
     } else {
-      this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
+      this.setState((state, props) => ({ currentPage: state.currentPage! - 1 }));
     }
   }
 
@@ -226,7 +266,7 @@ class RegisterPersonForm extends React.Component {
       if (this.state.currentPage === 0 && this.state.isSameBillingAddress) {
         this.setState({ currentPage: 2 });
       } else {
-        this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
+        this.setState((state, props) => ({ currentPage: state.currentPage! + 1 }));
       }
     }
   }
@@ -253,7 +293,6 @@ class RegisterPersonForm extends React.Component {
           action="/"
           method="POST"
           netlify-honeypot="bot-field"
-          netlify
           data-netlify="true"
         >
           {/* This input field is required by Netlify */}
@@ -273,9 +312,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="first-name"
                 className="error-message"
-                hidden={!this.state.errors.firstName}
+                hidden={!this.state.errors!.firstName}
               >
-                {this.state.errors.firstName}
+                {this.state.errors!.firstName}
               </label>
               <input
                 type="text"
@@ -290,9 +329,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="surname"
                 className="error-message"
-                hidden={!this.state.errors.surname}
+                hidden={!this.state.errors!.surname}
               >
-                {this.state.errors.surname}
+                {this.state.errors!.surname}
               </label>
               <input
                 type="text"
@@ -304,8 +343,8 @@ class RegisterPersonForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="tel">{intl('clientRegisterPersonFormTel')}</label>
-              <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
-                {this.state.errors.tel}
+              <label htmlFor="tel" className="error-message" hidden={!this.state.errors!.tel}>
+                {this.state.errors!.tel}
               </label>
               <input
                 type="tel"
@@ -317,8 +356,8 @@ class RegisterPersonForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="email">{intl('clientRegisterPersonFormEmail')}</label>
-              <label htmlFor="email" className="error-message" hidden={!this.state.errors.email}>
-                {this.state.errors.email}
+              <label htmlFor="email" className="error-message" hidden={!this.state.errors!.email}>
+                {this.state.errors!.email}
               </label>
               <input
                 className="medium"
@@ -335,9 +374,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="address-line-1"
                 className="error-message"
-                hidden={!this.state.errors.addressLine1}
+                hidden={!this.state.errors!.addressLine1}
               >
-                {this.state.errors.addressLine1}
+                {this.state.errors!.addressLine1}
               </label>
               <input
                 className="wider"
@@ -364,9 +403,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="postcode"
                 className="error-message"
-                hidden={!this.state.errors.postcode}
+                hidden={!this.state.errors!.postcode}
               >
-                {this.state.errors.postcode}
+                {this.state.errors!.postcode}
               </label>
               <input
                 type="text"
@@ -381,9 +420,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="post-office"
                 className="error-message"
-                hidden={!this.state.errors.postOffice}
+                hidden={!this.state.errors!.postOffice}
               >
-                {this.state.errors.postOffice}
+                {this.state.errors!.postOffice}
               </label>
               <input
                 type="text"
@@ -414,9 +453,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="billing-address-line-1"
                 className="error-message"
-                hidden={!this.state.errors.billingAddressLine1}
+                hidden={!this.state.errors!.billingAddressLine1}
               >
-                {this.state.errors.billingAddressLine1}
+                {this.state.errors!.billingAddressLine1}
               </label>
               <input
                 className="wider"
@@ -447,9 +486,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="billing-postcode"
                 className="error-message"
-                hidden={!this.state.errors.billingPostcode}
+                hidden={!this.state.errors!.billingPostcode}
               >
-                {this.state.errors.billingPostcode}
+                {this.state.errors!.billingPostcode}
               </label>
               <input
                 type="text"
@@ -466,9 +505,9 @@ class RegisterPersonForm extends React.Component {
               <label
                 htmlFor="billing-post-office"
                 className="error-message"
-                hidden={!this.state.errors.billingPostOffice}
+                hidden={!this.state.errors!.billingPostOffice}
               >
-                {this.state.errors.billingPostOffice}
+                {this.state.errors!.billingPostOffice}
               </label>
               <input
                 type="text"
@@ -492,7 +531,7 @@ class RegisterPersonForm extends React.Component {
                     </LocalizedLink>
                   ),
                 })}
-                errorMessage={this.state.errors.billingMethod}
+                errorMessage={this.state.errors!.billingMethod}
                 value={this.state.billingMethod}
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
@@ -507,13 +546,14 @@ class RegisterPersonForm extends React.Component {
                     value: FORM_BILLING_PAPER,
                   },
                 ]}
+                name="billingMethod"
               />
             </FormDiv>
             <FormDiv>
               <SwitchCheckbox
                 id="accept-terms"
                 name="acceptTerms"
-                errorMessage={this.state.errors.acceptTerms}
+                errorMessage={this.state.errors!.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 checked={this.state.acceptTerms}
                 label={intl('clientRegisterPersonFormAcceptTerms')}
@@ -565,7 +605,5 @@ class RegisterPersonForm extends React.Component {
     );
   }
 }
-
-RegisterPersonForm.propTypes = propTypes;
 
 export default injectIntl(RegisterPersonForm);

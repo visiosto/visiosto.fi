@@ -16,7 +16,7 @@ const propTypes = { children: PropTypes.any.isRequired };
 
 function ThemeContextProvider({ children }) {
   // Use state in a function component as this is the way it was done in the original code.
-  const [colorMode, rawSetColorMode] = useState(undefined);
+  const [colorMode, rawSetColorMode] = useState('light');
 
   useEffect(() => {
     const root = window.document.documentElement;

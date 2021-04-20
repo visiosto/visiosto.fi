@@ -165,7 +165,7 @@ function Page({ data, pageContext }) {
         {authors.map(({ node: author }) => (
           <Fragment key={author.slug}>
             <Author>
-              <Image alt={author.name} image={getImage(author.profileImage)} />
+              <Image alt={author.name} image={getImage(author.profileImage)!} />
               <AuthorInfo>
                 <H2>
                   <Link to={author.contentful_id} locale={locale}>

@@ -2,9 +2,8 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { injectIntl } from 'react-intl';
+import { IntlShape, injectIntl } from 'react-intl';
 
 import CookieSettings from './CookieSettings';
 
@@ -31,9 +30,16 @@ const Wrapper = styled.div`
   text-align: left;
 `;
 
-const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
+type Props = {
+  intl: IntlShape;
+  locale: string;
+}
 
-class CookieNotice extends React.Component {
+type State = {
+  isOpen: boolean;
+}
+
+class CookieNotice extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
@@ -74,7 +80,5 @@ class CookieNotice extends React.Component {
     );
   }
 }
-
-CookieNotice.propTypes = propTypes;
 
 export default injectIntl(CookieNotice);

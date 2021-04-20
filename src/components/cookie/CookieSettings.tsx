@@ -2,10 +2,9 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Cookies from 'universal-cookie';
-import { injectIntl } from 'react-intl';
+import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
@@ -210,14 +209,19 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
-const propTypes = {
-  intl: PropTypes.object.isRequired,
-  locale: PropTypes.string.isRequired,
-  settingsOpen: PropTypes.bool.isRequired,
-  toggleSettings: PropTypes.func.isRequired,
+type Props = {
+  intl: IntlShape;
+  locale: string;
+  settingsOpen: boolean;
+  toggleSettings: (boolean) => void;
 };
 
-class CookieSettings extends React.Component {
+type State = {
+  showBanner: boolean;
+  isAnalyticsEnabled: boolean;
+}
+
+class CookieSettings extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
@@ -409,7 +413,5 @@ class CookieSettings extends React.Component {
     );
   }
 }
-
-CookieSettings.propTypes = propTypes;
 
 export default injectIntl(CookieSettings);

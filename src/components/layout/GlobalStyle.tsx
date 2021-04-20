@@ -1,6 +1,8 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
+import '../../DefaultTheme';
+
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`

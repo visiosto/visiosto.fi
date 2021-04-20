@@ -276,29 +276,29 @@ function Cover({ children, imagesType, rule, title }) {
     bottomTabletDark,
   } = useCoverImages(imagesType);
 
-  const imagesTopLight = withArtDirection(getImage(topPhoneSmallLight), [
+  const imagesTopLight = withArtDirection(getImage(topPhoneSmallLight)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(topTabletLight),
+      image: getImage(topTabletLight)!,
     },
   ]);
-  const imagesTopDark = withArtDirection(getImage(topPhoneSmallDark), [
+  const imagesTopDark = withArtDirection(getImage(topPhoneSmallDark)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(topTabletDark),
+      image: getImage(topTabletDark)!,
     },
   ]);
 
-  const imagesBottomLight = withArtDirection(getImage(bottomPhoneSmallLight), [
+  const imagesBottomLight = withArtDirection(getImage(bottomPhoneSmallLight)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(bottomTabletLight),
+      image: getImage(bottomTabletLight)!,
     },
   ]);
-  const imagesBottomDark = withArtDirection(getImage(bottomPhoneSmallDark), [
+  const imagesBottomDark = withArtDirection(getImage(bottomPhoneSmallDark)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(bottomTabletDark),
+      image: getImage(bottomTabletDark)!,
     },
   ]);
 

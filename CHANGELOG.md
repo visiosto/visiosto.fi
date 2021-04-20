@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - All of the translations with the ending `ALT` to have the ending `Text`.
+- Project to use TypeScript.
 
 ## [0.19.1] - 2021-04-11
 

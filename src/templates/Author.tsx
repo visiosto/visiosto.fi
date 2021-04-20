@@ -200,7 +200,7 @@ function Page({ data, pageContext }) {
   return (
     <Layout author={author} locale={locale} pageID={pageID} title={author.name}>
       <ImageDiv>
-        <Image alt={author.name} image={getImage(author.profileImage)} />
+        <Image alt={author.name} image={getImage(author.profileImage)!} />
       </ImageDiv>
       <SocialMediaDiv>
         {(() => {

@@ -2,10 +2,9 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { PaperAirplaneIcon } from '@primer/octicons-react';
-import { injectIntl } from 'react-intl';
+import { IntlShape, injectIntl } from 'react-intl';
 
 import FormDiv from './FormDiv';
 import LocalizedLink from '../link/LocalizedLink';
@@ -26,9 +25,28 @@ const FormContainer = styled.div`
 
 const ButtonDiv = styled.div``;
 
-const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
+type Props = {
+  intl: IntlShape;
+  locale: string;
+}
 
-class ContactForm extends React.Component {
+type Errors = {
+  name?: string;
+  tel?: string;
+  message?: string;
+}
+
+type State = {
+  name?: string;
+  email?: string;
+  tel?: string;
+  message?: string;
+  postStatus?: string;
+  errorMessage?: string;
+  errors?: Errors;
+}
+
+class ContactForm extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
@@ -49,7 +67,7 @@ class ContactForm extends React.Component {
 
   validateFormData() {
     const intl = createInternationalization(this.props.intl);
-    const errors = {};
+    const errors: Errors = {};
     let isValid = true;
 
     if (!this.state.name) {
@@ -111,9 +129,7 @@ class ContactForm extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({
-      [name]: value,
-    });
+    this.setState({ [name]: value });
   }
 
   render() {
@@ -128,7 +144,6 @@ class ContactForm extends React.Component {
           action="/"
           method="POST"
           netlify-honeypot="bot-field"
-          netlify
           data-netlify="true"
         >
           {/* This input field is required by Netlify */}
@@ -139,8 +154,8 @@ class ContactForm extends React.Component {
           </FormDiv>
           <FormDiv>
             <label htmlFor="name">{intl('contactFormName')}</label>
-            <label htmlFor="name" className="error-message" hidden={!this.state.errors.name}>
-              {this.state.errors.name}
+            <label htmlFor="name" className="error-message" hidden={!this.state.errors!.name}>
+              {this.state.errors!.name}
             </label>
             <input
               type="text"
@@ -155,8 +170,8 @@ class ContactForm extends React.Component {
           </FormDiv>
           <FormDiv>
             <label htmlFor="email">{intl('contactFormEmail')}</label>
-            <label htmlFor="email" className="error-message" hidden={!this.state.errors.tel}>
-              {this.state.errors.tel}
+            <label htmlFor="email" className="error-message" hidden={!this.state.errors!.tel}>
+              {this.state.errors!.tel}
             </label>
             <input
               type="email"
@@ -171,21 +186,21 @@ class ContactForm extends React.Component {
           </FormDiv>
           <FormDiv>
             <label htmlFor="tel">{intl('contactFormTel')}</label>
-            <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
-              {this.state.errors.tel}
+            <label htmlFor="tel" className="error-message" hidden={!this.state.errors!.tel}>
+              {this.state.errors!.tel}
             </label>
             <input
               type="tel"
               name="tel"
               id="tel"
               onChange={this.handleChange}
-              value={this.state.phone}
+              value={this.state.tel}
             />
           </FormDiv>
           <FormDiv>
             <label htmlFor="message">{intl('contactFormMessage')}</label>
-            <label htmlFor="message" className="error-message" hidden={!this.state.errors.message}>
-              {this.state.errors.message}
+            <label htmlFor="message" className="error-message" hidden={!this.state.errors!.message}>
+              {this.state.errors!.message}
             </label>
             <textarea
               id="message"
@@ -228,7 +243,5 @@ class ContactForm extends React.Component {
     );
   }
 }
-
-ContactForm.propTypes = propTypes;
 
 export default injectIntl(ContactForm);

@@ -117,16 +117,18 @@ function Rule({ color, mode }) {
   if (color === 'peach') {
     return (
       <Div>
-        <SchemedImage alt="" light={getImage(peachRule)} dark={getImage(creamRule)} />
+        <SchemedImage alt="" light={getImage(peachRule)!} dark={getImage(creamRule)!} />
       </Div>
     );
   } else if (color === 'blue') {
     return (
       <Div>
-        <SchemedImage alt="" light={getImage(blueRule)} dark={getImage(lightBlueRule)} />
+        <SchemedImage alt="" light={getImage(blueRule)!} dark={getImage(lightBlueRule)!} />
       </Div>
     );
   }
+
+  return null;
 }
 
 Rule.propTypes = propTypes;

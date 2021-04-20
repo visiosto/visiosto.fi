@@ -6,4 +6,7 @@
 
 import { createContext } from 'react';
 
-export default createContext();
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+const defaultContext = { colorMode: 'light', setColorMode: (value) => {} };
+
+export default createContext(defaultContext);

@@ -14,7 +14,7 @@ const createPagePath = function createPagePathFromEntryNode(
   locale,
   defaultLocale,
   localePaths,
-  parentPath,
+  parentPath?,
 ) {
   let pagePath = `${node.slug}`;
   if (parentPath) {

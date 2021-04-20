@@ -48,7 +48,7 @@ function AuthorContactCard({ author, children }) {
   return (
     <Card>
       <ImageDiv>
-        <Image alt={name} image={getImage(profileImage)} />
+        <Image alt={name} image={getImage(profileImage)!} />
       </ImageDiv>
       <H3>{name}</H3>
       <Div>

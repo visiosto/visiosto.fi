@@ -65,13 +65,13 @@ const ChevronIcon = styled(ChevronRightIcon)`
 
 const createPath = function createPathEntryForNode(pathNode) {
   if (pathNode.parentPath) {
-    return concat(createPath(pathNode.parentPath)).concat([pathNode]);
+    return createPath(pathNode.parentPath).concat([pathNode]);
   }
 
   return [pathNode];
 };
 
-const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath) {
+const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath?) {
   let pagePath = [node];
 
   if (parentPath) {
@@ -308,16 +308,16 @@ function Header({ errorPage, home, locale, pageID }) {
 
   const { site, logoPhoneSLight, logoPhoneSDark, logoTabletLight, logoTabletDark } = data;
 
-  const logosLight = withArtDirection(getImage(logoPhoneSLight), [
+  const logosLight = withArtDirection(getImage(logoPhoneSLight)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(logoTabletLight),
+      image: getImage(logoTabletLight)!,
     },
   ]);
-  const logosDark = withArtDirection(getImage(logoPhoneSDark), [
+  const logosDark = withArtDirection(getImage(logoPhoneSDark)!, [
     {
       media: `(${theme.devices.tablet})`,
-      image: getImage(logoTabletDark),
+      image: getImage(logoTabletDark)!,
     },
   ]);
 

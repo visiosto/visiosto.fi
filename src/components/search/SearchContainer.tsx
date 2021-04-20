@@ -36,21 +36,31 @@ const withSiteURL = function withSiteURLFromQueryData(WrappedComponent) {
   return WithSiteURL;
 };
 
-const propTypes = {
-  className: PropTypes.string,
-  locale: PropTypes.string.isRequired,
-  siteURL: PropTypes.string.isRequired,
+type State = {
+  pageList: Array<Object>;
+  search: JsSearch.Search;
+  searchResults: Array<Object>;
+  isLoading: boolean;
+  isError: boolean;
+  searchQuery: string;
+  hasFocus: boolean;
 };
 
-const defaultProps = { className: null };
+type Props = {
+  className?: string;
+  locale: string;
+  siteURL: string;
+}
 
-class SearchContainer extends React.Component {
+class SearchContainer extends React.Component<Props, State> {
+  rootRef: React.RefObject<HTMLInputElement>;
+
   constructor(props) {
     super(props);
 
     this.state = {
       pageList: [],
-      search: [],
+      search: null,
       searchResults: [],
       isLoading: true,
       isError: false,
@@ -144,7 +154,7 @@ class SearchContainer extends React.Component {
     const { search, isLoading, isError } = this.state;
 
     if (isLoading || isError) {
-      this.setState({ searchQuery: event.target.value, searchResults: '' });
+      this.setState({ searchQuery: event.target.value, searchResults: [] });
     } else {
       const queryResult = search.search(event.target.value);
       this.setState({ searchQuery: event.target.value, searchResults: queryResult });
@@ -156,7 +166,7 @@ class SearchContainer extends React.Component {
   }
 
   handleClickOutside(event) {
-    if (this.rootRef && !this.rootRef.current.contains(event.target)) {
+    if (this.rootRef && !this.rootRef.current!.contains(event.target)) {
       this.setState({ hasFocus: false });
     }
   }
@@ -217,8 +227,5 @@ class SearchContainer extends React.Component {
     }
   }
 }
-
-SearchContainer.propTypes = propTypes;
-SearchContainer.defaultProps = defaultProps;
 
 export default withSiteURL(SearchContainer);

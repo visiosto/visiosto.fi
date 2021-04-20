@@ -33,7 +33,7 @@ const Div = styled.div`
   }
 `;
 
-const createLocalization = function createLocalizationForProperty(list, key, property) {
+const createLocalization = function createLocalizationForProperty(list, key, property?) {
   return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
 };
 
@@ -71,7 +71,6 @@ function PriceList({ list, locale, localizations }) {
       />
       <Div>
         <Price
-          id="serverDomain"
           title={createLocalization(pricesLocalizations, 'serverDomain')}
           price={serverPrice.price + domainPrice.price}
           rate={serverPrice.rate}
@@ -90,7 +89,6 @@ function PriceList({ list, locale, localizations }) {
           return (
             <Price
               key={price.name}
-              id={price.name}
               title={createLocalization(additionalWorkLocalizations, price.name)}
               price={price.price}
               rate={price.rate}
@@ -108,7 +106,6 @@ function PriceList({ list, locale, localizations }) {
             return (
               <Price
                 key={price.name}
-                id={price.name}
                 title={createLocalization(additionalFeesLocalizations, price.name)}
                 extra={createLocalization(additionalFeesLocalizations, price.name, 'extra')}
                 price={price.price}
@@ -122,7 +119,6 @@ function PriceList({ list, locale, localizations }) {
             return (
               <Price
                 key={price.name}
-                id={price.name}
                 title={createLocalization(additionalFeesLocalizations, price.name)}
                 price={price.price}
                 rate={price.rate}

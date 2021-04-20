@@ -3,7 +3,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import AnchorLink from './AnchorLink';
 
 import createPagePath from '../../util/createPagePath';
 
@@ -78,13 +80,12 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   locale: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
   to: PropTypes.string.isRequired,
 };
 
-const defaultProps = { className: null, onClick: null };
+const defaultProps = { className: null };
 
-function LocalizedLink({ children, className, locale, onClick, to }) {
+function LocalizedAnchorLink({ children, className, locale, to }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -94,6 +95,15 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
             localePaths {
               en_GB
               fi
+            }
+          }
+        }
+        allContentfulId {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
             }
           }
         }
@@ -204,129 +214,175 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
   );
 
   const { defaultLocale, localePaths } = data.site.siteMetadata;
+  const [toLocation, hashedLocation] = to.split('#');
 
-  if (to === '/') {
+  const hashedEntryId = data.allContentfulId.edges.filter(
+    ({ node }) => node.slug === hashedLocation,
+  )[0].node.contentful_id;
+  const hashedDestination = data.allContentfulId.edges.filter(
+    ({ node }) => node.contentful_id === hashedEntryId && node.node_locale === locale,
+  )[0].node.slug;
+
+  if (toLocation === '/') {
     return (
-      <Link
+      <AnchorLink
         children={children}
         className={className}
-        onClick={onClick}
-        to={locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`}
+        to={`${
+          locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`
+        }#${hashedDestination}`}
       />
     );
-  } else if (to === '/blog') {
+  } else if (toLocation === '/blog') {
     const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     const pagePath =
       locale === defaultLocale
         ? `/${blogPath.slug}`
         : `/${localePaths[locale.replace('-', '_')]}/${blogPath.slug}`;
-    return <Link children={children} className={className} onClick={onClick} to={pagePath} />;
-  } else if (to.startsWith('/')) {
-    const pageSlug = to.substring(1);
+    return (
+      <AnchorLink
+        children={children}
+        className={className}
+        to={`${pagePath}#${hashedDestination}`}
+      />
+    );
+  } else if (toLocation.startsWith('/')) {
+    const pageSlug = toLocation.substring(1);
     const pagePath = createPathFromSlug(pageSlug, locale, data);
 
     if (pagePath) {
-      return <Link children={children} className={className} onClick={onClick} to={pagePath} />;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${pagePath}#${hashedDestination}`}
+        />
+      );
     } else {
-      return <Link children={children} className={className} onClick={onClick} />;
+      return <AnchorLink children={children} className={className} to={to} />;
     }
-  } else if (to === '404') {
-    const pagePath =
-      locale === defaultLocale ? '/404' : `/${localePaths[locale.replace('-', '_')]}/404`;
-    return <Link children={children} className={className} onClick={onClick} to={pagePath} />;
   } else {
     const node = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === to && node.node_locale === locale,
+      ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
     )[0].node;
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === to && node.node_locale === locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         const authorPath = data.authorPaths.edges.filter(
           ({ node }) => node.node_locale === locale,
         )[0].node;
 
         return (
-          <Link
+          <AnchorLink
             children={children}
             className={className}
-            onClick={onClick}
-            to={createPagePath(authorNode, locale, defaultLocale, localePaths, authorPath)}
+            to={`${createPagePath(
+              authorNode,
+              locale,
+              defaultLocale,
+              localePaths,
+              authorPath,
+            )}#${hashedDestination}`}
           />
         );
       }
       case 'ContentfulBlogPost': {
         const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === to && node.node_locale === locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
           .node;
         return (
-          <Link
+          <AnchorLink
             children={children}
             className={className}
-            onClick={onClick}
-            to={createPagePath(blogPostNode, locale, defaultLocale, localePaths, blogPath)}
+            to={`${createPagePath(
+              blogPostNode,
+              locale,
+              defaultLocale,
+              localePaths,
+              blogPath,
+            )}#${hashedDestination}`}
           />
         );
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === to && node.node_locale === locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         const categoryPath = data.categoryPaths.edges.filter(
           ({ node }) => node.node_locale === locale,
         )[0].node;
 
         return (
-          <Link
+          <AnchorLink
             children={children}
             className={className}
-            onClick={onClick}
-            to={createPagePath(categoryNode, locale, defaultLocale, localePaths, categoryPath)}
+            to={`${createPagePath(
+              categoryNode,
+              locale,
+              defaultLocale,
+              localePaths,
+              categoryPath,
+            )}#${hashedDestination}`}
           />
         );
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === to && node.node_locale === locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         return (
-          <Link
+          <AnchorLink
             children={children}
             className={className}
-            onClick={onClick}
-            to={createPagePath(pageNode, locale, defaultLocale, localePaths)}
+            to={`${createPagePath(
+              pageNode,
+              locale,
+              defaultLocale,
+              localePaths,
+            )}#${hashedDestination}`}
           />
         );
       }
       case 'ContentfulIndexPage': {
         const indexPath =
           locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
-        return <Link children={children} className={className} onClick={onClick} to={indexPath} />;
+        return (
+          <AnchorLink
+            children={children}
+            className={className}
+            to={`${indexPath}#${hashedDestination}`}
+          />
+        );
       }
       case 'ContentfulPath': {
         const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === to && node.node_locale === locale,
+          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
         )[0].node;
         return (
-          <Link
+          <AnchorLink
             children={children}
             className={className}
-            onClick={onClick}
-            to={createPagePath(pathNode, locale, defaultLocale, localePaths)}
+            to={`${createPagePath(
+              pathNode,
+              locale,
+              defaultLocale,
+              localePaths,
+            )}#${hashedDestination}`}
           />
         );
       }
       default:
-        break;
+        return null;
     }
   }
 }
 
-LocalizedLink.propTypes = propTypes;
-LocalizedLink.defaultProps = defaultProps;
+LocalizedAnchorLink.propTypes = propTypes;
+LocalizedAnchorLink.defaultProps = defaultProps;
 
-export default LocalizedLink;
+export default LocalizedAnchorLink;

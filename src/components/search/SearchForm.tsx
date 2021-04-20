@@ -50,7 +50,7 @@ const Input = styled.input`
   ::placeholder {
     color: var(--color-text-weak);
   }
-  ${({ hasFocus }) => (hasFocus ? open : closed)}
+  ${open}
 `;
 
 const Icon = styled(SearchIcon)`

@@ -2,10 +2,9 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
-import { injectIntl } from 'react-intl';
+import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
 import FormDiv from './FormDiv';
@@ -50,9 +49,59 @@ const PaperAirplane = styled(PaperAirplaneIcon)`
   ${iconStyle}
 `;
 
-const propTypes = { intl: PropTypes.object.isRequired, locale: PropTypes.string.isRequired };
+type Props = {
+  intl: IntlShape;
+  locale: string;
+};
 
-class RegisterBusinessForm extends React.Component {
+type Errors = {
+  businessID?: string;
+  businessName?: string;
+  addressLine1?: string;
+  postcode?: string;
+  postOffice?: string;
+  billingAddressLine1?: string;
+  billingPostcode?: string;
+  billingPostOffice?: string;
+  billingMethod?: string;
+  eInvoiceAddress?: string;
+  eInvoiceOperator?: string;
+  billingEmail?: string;
+  firstName?: string;
+  surname?: string;
+  tel?: string;
+  email?: string;
+  acceptTerms?: string;
+};
+
+type State = {
+  businessID?: string;
+  businessName?: string;
+  addressLine1?: string;
+  addressLine2?: string;
+  postcode?: string;
+  postOffice?: string;
+  isSameBillingAddress?: boolean;
+  billingAddressLine1?: string;
+  billingAddressLine2?: string;
+  billingPostcode?: string;
+  billingPostOffice?: string;
+  billingMethod?: string;
+  eInvoiceAddress?: string;
+  eInvoiceOperator?: string;
+  billingEmail?: string;
+  firstName?: string;
+  surname?: string;
+  tel?: string;
+  email?: string;
+  acceptTerms?: boolean;
+  currentPage?: number;
+  postStatus?: string;
+  errorMessage?: string;
+  errors?: Errors;
+};
+
+class RegisterBusinessForm extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
@@ -95,7 +144,7 @@ class RegisterBusinessForm extends React.Component {
 
   validatePageData() {
     const intl = createInternationalization(this.props.intl);
-    const errors = {};
+    const errors: Errors = {};
     let isValid = true;
 
     switch (this.state.currentPage) {
@@ -183,13 +232,13 @@ class RegisterBusinessForm extends React.Component {
           isValid = false;
           errors.surname = intl('clientRegisterBusinessFormErrorMissingSurname');
         }
-        if (!this.state.email) {
-          isValid = false;
-          errors.email = intl('clientRegisterBusinessFormErrorMissingEmail');
-        }
         if (!this.state.tel) {
           isValid = false;
           errors.tel = intl('clientRegisterBusinessFormErrorMissingTel');
+        }
+        if (!this.state.email) {
+          isValid = false;
+          errors.email = intl('clientRegisterBusinessFormErrorMissingEmail');
         }
         if (!this.state.acceptTerms) {
           isValid = false;
@@ -273,7 +322,7 @@ class RegisterBusinessForm extends React.Component {
     ) {
       this.setState({ currentPage: 2 });
     } else {
-      this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
+      this.setState((state, props) => ({ currentPage: state.currentPage! - 1 }));
     }
   }
 
@@ -288,7 +337,7 @@ class RegisterBusinessForm extends React.Component {
       ) {
         this.setState({ currentPage: 4 });
       } else {
-        this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
+        this.setState((state, props) => ({ currentPage: state.currentPage! + 1 }));
       }
     }
   }
@@ -315,7 +364,6 @@ class RegisterBusinessForm extends React.Component {
           action="/"
           method="POST"
           netlify-honeypot="bot-field"
-          netlify
           data-netlify="true"
         >
           {/* This input field is required by Netlify */}
@@ -335,9 +383,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="business-id"
                 className="error-message"
-                hidden={!this.state.errors.businessID}
+                hidden={!this.state.errors!.businessID}
               >
-                {this.state.errors.businessID}
+                {this.state.errors!.businessID}
               </label>
               <input
                 type="text"
@@ -354,9 +402,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="business-name"
                 className="error-message"
-                hidden={!this.state.errors.businessName}
+                hidden={!this.state.errors!.businessName}
               >
-                {this.state.errors.businessName}
+                {this.state.errors!.businessName}
               </label>
               <input
                 type="text"
@@ -376,9 +424,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="address-line-1"
                 className="error-message"
-                hidden={!this.state.errors.addressLine1}
+                hidden={!this.state.errors!.addressLine1}
               >
-                {this.state.errors.addressLine1}
+                {this.state.errors!.addressLine1}
               </label>
               <input
                 className="wider"
@@ -407,9 +455,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="postcode"
                 className="error-message"
-                hidden={!this.state.errors.postcode}
+                hidden={!this.state.errors!.postcode}
               >
-                {this.state.errors.postcode}
+                {this.state.errors!.postcode}
               </label>
               <input
                 type="text"
@@ -424,9 +472,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="post-office"
                 className="error-message"
-                hidden={!this.state.errors.postOffice}
+                hidden={!this.state.errors!.postOffice}
               >
-                {this.state.errors.postOffice}
+                {this.state.errors!.postOffice}
               </label>
               <input
                 type="text"
@@ -457,9 +505,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="billing-address-line-1"
                 className="error-message"
-                hidden={!this.state.errors.billingAddressLine1}
+                hidden={!this.state.errors!.billingAddressLine1}
               >
-                {this.state.errors.billingAddressLine1}
+                {this.state.errors!.billingAddressLine1}
               </label>
               <input
                 className="wider"
@@ -490,9 +538,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="billing-postcode"
                 className="error-message"
-                hidden={!this.state.errors.billingPostcode}
+                hidden={!this.state.errors!.billingPostcode}
               >
-                {this.state.errors.billingPostcode}
+                {this.state.errors!.billingPostcode}
               </label>
               <input
                 type="text"
@@ -509,9 +557,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="billing-post-office"
                 className="error-message"
-                hidden={!this.state.errors.billingPostOffice}
+                hidden={!this.state.errors!.billingPostOffice}
               >
-                {this.state.errors.billingPostOffice}
+                {this.state.errors!.billingPostOffice}
               </label>
               <input
                 type="text"
@@ -535,7 +583,7 @@ class RegisterBusinessForm extends React.Component {
                     </LocalizedLink>
                   ),
                 })}
-                errorMessage={this.state.errors.billingMethod}
+                errorMessage={this.state.errors!.billingMethod}
                 value={this.state.billingMethod}
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
@@ -555,6 +603,7 @@ class RegisterBusinessForm extends React.Component {
                     value: FORM_BILLING_PAPER,
                   },
                 ]}
+                name="billingMethod"
               />
             </FormDiv>
           </FormPage>
@@ -571,9 +620,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="e-invoice-address"
                 className="error-message"
-                hidden={!this.state.errors.eInvoiceAddress}
+                hidden={!this.state.errors!.eInvoiceAddress}
               >
-                {this.state.errors.eInvoiceAddress}
+                {this.state.errors!.eInvoiceAddress}
               </label>
               <input
                 className="medium"
@@ -591,9 +640,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="e-invoice-operator"
                 className="error-message"
-                hidden={!this.state.errors.eInvoiceOperator}
+                hidden={!this.state.errors!.eInvoiceOperator}
               >
-                {this.state.errors.eInvoiceOperator}
+                {this.state.errors!.eInvoiceOperator}
               </label>
               <input
                 className="medium"
@@ -611,9 +660,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="billing-email"
                 className="error-message"
-                hidden={!this.state.errors.billingEmail}
+                hidden={!this.state.errors!.billingEmail}
               >
-                {this.state.errors.billingEmail}
+                {this.state.errors!.billingEmail}
               </label>
               <input
                 className="medium"
@@ -636,9 +685,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="first-name"
                 className="error-message"
-                hidden={!this.state.errors.firstName}
+                hidden={!this.state.errors!.firstName}
               >
-                {this.state.errors.firstName}
+                {this.state.errors!.firstName}
               </label>
               <input
                 type="text"
@@ -653,9 +702,9 @@ class RegisterBusinessForm extends React.Component {
               <label
                 htmlFor="surname"
                 className="error-message"
-                hidden={!this.state.errors.surname}
+                hidden={!this.state.errors!.surname}
               >
-                {this.state.errors.surname}
+                {this.state.errors!.surname}
               </label>
               <input
                 type="text"
@@ -667,8 +716,8 @@ class RegisterBusinessForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="tel">{intl('clientRegisterBusinessFormTel')}</label>
-              <label htmlFor="tel" className="error-message" hidden={!this.state.errors.tel}>
-                {this.state.errors.tel}
+              <label htmlFor="tel" className="error-message" hidden={!this.state.errors!.tel}>
+                {this.state.errors!.tel}
               </label>
               <input
                 type="tel"
@@ -680,8 +729,8 @@ class RegisterBusinessForm extends React.Component {
             </FormDiv>
             <FormDiv>
               <label htmlFor="email">{intl('clientRegisterBusinessFormEmail')}</label>
-              <label htmlFor="email" className="error-message" hidden={!this.state.errors.email}>
-                {this.state.errors.email}
+              <label htmlFor="email" className="error-message" hidden={!this.state.errors!.email}>
+                {this.state.errors!.email}
               </label>
               <input
                 className="medium"
@@ -696,7 +745,7 @@ class RegisterBusinessForm extends React.Component {
               <SwitchCheckbox
                 id="accept-terms"
                 name="acceptTerms"
-                errorMessage={this.state.errors.acceptTerms}
+                errorMessage={this.state.errors!.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 checked={this.state.acceptTerms}
                 label={intl('clientRegisterBusinessFormAcceptTerms')}
@@ -748,7 +797,5 @@ class RegisterBusinessForm extends React.Component {
     );
   }
 }
-
-RegisterBusinessForm.propTypes = propTypes;
 
 export default injectIntl(RegisterBusinessForm);
