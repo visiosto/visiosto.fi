@@ -120,7 +120,8 @@ function Rule({ color, mode }) {
         <SchemedImage alt="" light={getImage(peachRule)!} dark={getImage(creamRule)!} />
       </Div>
     );
-  } else if (color === 'blue') {
+  }
+  if (color === 'blue') {
     return (
       <Div>
         <SchemedImage alt="" light={getImage(blueRule)!} dark={getImage(lightBlueRule)!} />

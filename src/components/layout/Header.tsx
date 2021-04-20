@@ -89,9 +89,9 @@ const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath
 
 const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage, locale, pageID) {
   if (!errorPage) {
-    const node = data.allContentfulEntry.edges.filter(
+    const { node } = data.allContentfulEntry.edges.filter(
       ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
-    )[0].node;
+    )[0];
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
@@ -120,7 +120,7 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
         const categoryPath = data.categoryPaths.edges.filter(
           ({ node }) => node.node_locale === locale,
         )[0].node;
-        const parentPath = categoryPath.parentPath;
+        const { parentPath } = categoryPath;
 
         return [parentPath, categoryPath, categoryNode];
       }

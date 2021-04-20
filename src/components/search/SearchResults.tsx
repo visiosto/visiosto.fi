@@ -58,7 +58,8 @@ function SearchResults({ error, loading, queryResults, searchResults, show }) {
         </Inner>
       </Div>
     );
-  } else if (error) {
+  }
+  if (error) {
     return (
       <Div hidden={!show}>
         <Inner>
@@ -66,7 +67,8 @@ function SearchResults({ error, loading, queryResults, searchResults, show }) {
         </Inner>
       </Div>
     );
-  } else if (searchResults.length > 0) {
+  }
+  if (searchResults.length > 0) {
     return (
       <Div hidden={!show}>
         <Inner>
@@ -74,15 +76,14 @@ function SearchResults({ error, loading, queryResults, searchResults, show }) {
         </Inner>
       </Div>
     );
-  } else {
-    return (
-      <Div hidden={!show}>
-        <Inner>
-          <div>{intl('searchNotFound')}</div>
-        </Inner>
-      </Div>
-    );
   }
+  return (
+    <Div hidden={!show}>
+      <Inner>
+        <div>{intl('searchNotFound')}</div>
+      </Inner>
+    </Div>
+  );
 }
 
 SearchResults.propTypes = propTypes;

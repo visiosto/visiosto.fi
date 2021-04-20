@@ -38,41 +38,38 @@ function SchemedImage({ alt, className, dark, light, objectFit, style }) {
           style={style}
         />
       );
-    } else {
-      return (
-        <GatsbyImage
-          className={className}
-          image={dark}
-          alt={alt}
-          objectFit={objectFit}
-          style={style}
-        />
-      );
     }
-  } else {
-    if (alt === '') {
-      return (
-        <GatsbyImage
-          className={className}
-          image={light}
-          alt=""
-          role="presentation"
-          objectFit={objectFit}
-          style={style}
-        />
-      );
-    } else {
-      return (
-        <GatsbyImage
-          className={className}
-          image={light}
-          alt={alt}
-          objectFit={objectFit}
-          style={style}
-        />
-      );
-    }
+    return (
+      <GatsbyImage
+        className={className}
+        image={dark}
+        alt={alt}
+        objectFit={objectFit}
+        style={style}
+      />
+    );
   }
+  if (alt === '') {
+    return (
+      <GatsbyImage
+        className={className}
+        image={light}
+        alt=""
+        role="presentation"
+        objectFit={objectFit}
+        style={style}
+      />
+    );
+  }
+  return (
+    <GatsbyImage
+      className={className}
+      image={light}
+      alt={alt}
+      objectFit={objectFit}
+      style={style}
+    />
+  );
 }
 
 SchemedImage.propTypes = propTypes;

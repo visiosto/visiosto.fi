@@ -88,21 +88,20 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
         <Icon />
       </Form>
     );
-  } else {
-    return (
-      <Form>
-        <Input
-          type="text"
-          placeholder={intl('searchPlaceholder')}
-          aria-label={intl('searchPlaceholder')}
-          onChange={searchData}
-          value={searchQuery}
-          onFocus={onFocus}
-        />
-        <Icon />
-      </Form>
-    );
   }
+  return (
+    <Form>
+      <Input
+        type="text"
+        placeholder={intl('searchPlaceholder')}
+        aria-label={intl('searchPlaceholder')}
+        onChange={searchData}
+        value={searchQuery}
+        onFocus={onFocus}
+      />
+      <Icon />
+    </Form>
+  );
 }
 
 SearchForm.propTypes = propTypes;

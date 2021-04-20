@@ -14,7 +14,7 @@ const Title = styled.h4`
 `;
 
 const createLocalization = function createLocalizationID(list, key, property?) {
-  return list.filter(({ id }) => id === key)[0][property ? property : 'name'];
+  return list.filter(({ id }) => id === key)[0][property || 'name'];
 };
 
 const createPrice = function createPriceFromData(price, locale, rate, localizations) {
@@ -23,12 +23,11 @@ const createPrice = function createPriceFromData(price, locale, rate, localizati
       style: 'currency',
       currency: 'EUR',
     })}/${createLocalization(localizations.rate, rate)}`;
-  } else {
-    return `${price.toLocaleString(locale, {
-      style: 'currency',
-      currency: 'EUR',
-    })}`;
   }
+  return `${price.toLocaleString(locale, {
+    style: 'currency',
+    currency: 'EUR',
+  })}`;
 };
 
 const propTypes = {
@@ -74,17 +73,17 @@ function Price({
         <div dangerouslySetInnerHTML={{ __html: `(${extra})` }} />
       </Div>
     );
-  } else if (extraPrices) {
+  }
+  if (extraPrices) {
     const reducedExtraPrices = extraPrices.reduce((accumulated, extraPrice) => {
       const entryPrice = createPrice(extraPrice.price, locale, extraPrice.rate, localizations);
       if (!accumulated) {
         return `${createLocalization(translations, extraPrice.name).toLowerCase()}: ${entryPrice}`;
-      } else {
-        return `${accumulated}; ${createLocalization(
-          translations,
-          extraPrice.name,
-        ).toLowerCase()}: ${entryPrice}`;
       }
+      return `${accumulated}; ${createLocalization(
+        translations,
+        extraPrice.name,
+      ).toLowerCase()}: ${entryPrice}`;
     }, '');
     return (
       <Div>
@@ -97,18 +96,17 @@ function Price({
         <div dangerouslySetInnerHTML={{ __html: `(${reducedExtraPrices})` }} />
       </Div>
     );
-  } else {
-    return (
-      <Div>
-        <Title>{title}</Title>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: createPrice(price, locale, rate, localizations),
-          }}
-        />
-      </Div>
-    );
   }
+  return (
+    <Div>
+      <Title>{title}</Title>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: createPrice(price, locale, rate, localizations),
+        }}
+      />
+    </Div>
+  );
 }
 
 Price.propTypes = propTypes;

@@ -114,25 +114,25 @@ function Page({ data, pageContext }) {
       <Cover title={page.storyTitle} imagesType="lines" rule={{ color: 'blue', mode: 3 }}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
       </Cover>
-      <Break color={'peach'} mode={1} />
+      <Break color="peach" mode={1} />
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
         <Cards>
-          <FeatureCard title={page.products[0].title} icon={<DeviceDesktopIcon size={'large'} />}>
+          <FeatureCard title={page.products[0].title} icon={<DeviceDesktopIcon size="large" />}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[0].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard title={page.products[1].title} icon={<PencilIcon size={'large'} />}>
+          <FeatureCard title={page.products[1].title} icon={<PencilIcon size="large" />}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[1].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard title={page.products[2].title} icon={<CalendarIcon size={'large'} />}>
+          <FeatureCard title={page.products[2].title} icon={<CalendarIcon size="large" />}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[2].description.childMarkdownRemark.html,
@@ -141,17 +141,17 @@ function Page({ data, pageContext }) {
           </FeatureCard>
         </Cards>
       </Section>
-      <Break color={'blue'} mode={1} />
+      <Break color="blue" mode={1} />
       <Section>
         <Icon>
-          <NorthStarIcon size={'large'} />
+          <NorthStarIcon size="large" />
         </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
       </Section>
-      <Break color={'peach'} mode={3} />
+      <Break color="peach" mode={3} />
       <Section lesserMargin>
         <Icon>
-          <PaperAirplaneIcon size={'large'} />
+          <PaperAirplaneIcon size="large" />
         </Icon>
         <H2 id={page.contactId.slug}>{page.contactTitle}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: page.contactBody.childMarkdownRemark.html }} />

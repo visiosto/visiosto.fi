@@ -19,7 +19,7 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
     const nodes = data.allContentfulAuthor.edges.filter(
       ({ node }) => node.contentful_id === nodeID && node.node_locale === locale,
     );
-    const node = nodes[0].node;
+    const { node } = nodes[0];
     const authorPath = data.authorPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
       .node;
     return createPagePath(node, locale, defaultLocale, localePaths, authorPath);
@@ -32,7 +32,7 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
     const nodes = data.allContentfulBlogPost.edges.filter(
       ({ node }) => node.contentful_id === nodeID && node.node_locale === locale,
     );
-    const node = nodes[0].node;
+    const { node } = nodes[0];
     const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     return createPagePath(node, locale, defaultLocale, localePaths, blogPath);
   }
@@ -44,7 +44,7 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
     const nodes = data.allContentfulCategory.edges.filter(
       ({ node }) => node.contentful_id === nodeID && node.node_locale === locale,
     );
-    const node = nodes[0].node;
+    const { node } = nodes[0];
     const categoryPath = data.categoryPaths.edges.filter(
       ({ node }) => node.node_locale === locale,
     )[0].node;
@@ -58,7 +58,7 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
     const nodes = data.allContentfulPage.edges.filter(
       ({ node }) => node.contentful_id === nodeID && node.node_locale === locale,
     );
-    const node = nodes[0].node;
+    const { node } = nodes[0];
     return createPagePath(node, locale, defaultLocale, localePaths);
   }
 
@@ -69,7 +69,7 @@ const createPathFromSlug = function createPathFromSlugForLocale(slug, locale, da
     const nodes = data.allContentfulPath.edges.filter(
       ({ node }) => node.contentful_id === nodeID && node.node_locale === locale,
     );
-    const node = nodes[0].node;
+    const { node } = nodes[0];
     return createPagePath(node, locale, defaultLocale, localePaths);
   }
 
@@ -233,7 +233,8 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
         }#${hashedDestination}`}
       />
     );
-  } else if (toLocation === '/blog') {
+  }
+  if (toLocation === '/blog') {
     const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     const pagePath =
       locale === defaultLocale
@@ -246,7 +247,8 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
         to={`${pagePath}#${hashedDestination}`}
       />
     );
-  } else if (toLocation.startsWith('/')) {
+  }
+  if (toLocation.startsWith('/')) {
     const pageSlug = toLocation.substring(1);
     const pagePath = createPathFromSlug(pageSlug, locale, data);
 
@@ -258,127 +260,124 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
           to={`${pagePath}#${hashedDestination}`}
         />
       );
-    } else {
-      return <AnchorLink children={children} className={className} to={to} />;
     }
-  } else {
-    const node = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-    )[0].node;
+    return <AnchorLink children={children} className={className} to={to} />;
+  }
+  const { node } = data.allContentfulEntry.edges.filter(
+    ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+  )[0];
 
-    switch (node.internal.type) {
-      case 'ContentfulAuthor': {
-        const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-        )[0].node;
-        const authorPath = data.authorPaths.edges.filter(
-          ({ node }) => node.node_locale === locale,
-        )[0].node;
+  switch (node.internal.type) {
+    case 'ContentfulAuthor': {
+      const authorNode = data.allContentfulAuthor.edges.filter(
+        ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+      )[0].node;
+      const authorPath = data.authorPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+        .node;
 
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${createPagePath(
-              authorNode,
-              locale,
-              defaultLocale,
-              localePaths,
-              authorPath,
-            )}#${hashedDestination}`}
-          />
-        );
-      }
-      case 'ContentfulBlogPost': {
-        const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-        )[0].node;
-        const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
-          .node;
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${createPagePath(
-              blogPostNode,
-              locale,
-              defaultLocale,
-              localePaths,
-              blogPath,
-            )}#${hashedDestination}`}
-          />
-        );
-      }
-      case 'ContentfulCategory': {
-        const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-        )[0].node;
-        const categoryPath = data.categoryPaths.edges.filter(
-          ({ node }) => node.node_locale === locale,
-        )[0].node;
-
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${createPagePath(
-              categoryNode,
-              locale,
-              defaultLocale,
-              localePaths,
-              categoryPath,
-            )}#${hashedDestination}`}
-          />
-        );
-      }
-      case 'ContentfulPage': {
-        const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-        )[0].node;
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${createPagePath(
-              pageNode,
-              locale,
-              defaultLocale,
-              localePaths,
-            )}#${hashedDestination}`}
-          />
-        );
-      }
-      case 'ContentfulIndexPage': {
-        const indexPath =
-          locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${indexPath}#${hashedDestination}`}
-          />
-        );
-      }
-      case 'ContentfulPath': {
-        const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
-        )[0].node;
-        return (
-          <AnchorLink
-            children={children}
-            className={className}
-            to={`${createPagePath(
-              pathNode,
-              locale,
-              defaultLocale,
-              localePaths,
-            )}#${hashedDestination}`}
-          />
-        );
-      }
-      default:
-        return null;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${createPagePath(
+            authorNode,
+            locale,
+            defaultLocale,
+            localePaths,
+            authorPath,
+          )}#${hashedDestination}`}
+        />
+      );
     }
+    case 'ContentfulBlogPost': {
+      const blogPostNode = data.allContentfulBlogPost.edges.filter(
+        ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+      )[0].node;
+      const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
+        .node;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${createPagePath(
+            blogPostNode,
+            locale,
+            defaultLocale,
+            localePaths,
+            blogPath,
+          )}#${hashedDestination}`}
+        />
+      );
+    }
+    case 'ContentfulCategory': {
+      const categoryNode = data.allContentfulCategory.edges.filter(
+        ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+      )[0].node;
+      const categoryPath = data.categoryPaths.edges.filter(
+        ({ node }) => node.node_locale === locale,
+      )[0].node;
+
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${createPagePath(
+            categoryNode,
+            locale,
+            defaultLocale,
+            localePaths,
+            categoryPath,
+          )}#${hashedDestination}`}
+        />
+      );
+    }
+    case 'ContentfulPage': {
+      const pageNode = data.allContentfulPage.edges.filter(
+        ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+      )[0].node;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${createPagePath(
+            pageNode,
+            locale,
+            defaultLocale,
+            localePaths,
+          )}#${hashedDestination}`}
+        />
+      );
+    }
+    case 'ContentfulIndexPage': {
+      const indexPath =
+        locale === defaultLocale ? '/' : `/${localePaths[locale.replace('-', '_')]}`;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${indexPath}#${hashedDestination}`}
+        />
+      );
+    }
+    case 'ContentfulPath': {
+      const pathNode = data.allContentfulPath.edges.filter(
+        ({ node }) => node.contentful_id === toLocation && node.node_locale === locale,
+      )[0].node;
+      return (
+        <AnchorLink
+          children={children}
+          className={className}
+          to={`${createPagePath(
+            pathNode,
+            locale,
+            defaultLocale,
+            localePaths,
+          )}#${hashedDestination}`}
+        />
+      );
+    }
+    default:
+      return null;
   }
 }
 

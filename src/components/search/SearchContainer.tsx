@@ -191,7 +191,8 @@ class SearchContainer extends React.Component<Props, State> {
           <SearchResults show={searchQuery.length > 0 && hasFocus} loading />
         </div>
       );
-    } else if (this.state.isError) {
+    }
+    if (this.state.isError) {
       return (
         <div
           ref={this.rootRef}
@@ -206,25 +207,24 @@ class SearchContainer extends React.Component<Props, State> {
           <SearchResults show={searchQuery.length > 0 && hasFocus} error />
         </div>
       );
-    } else {
-      return (
-        <div
-          ref={this.rootRef}
-          className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
-        >
-          <SearchForm
-            searchData={this.searchData}
-            searchQuery={searchQuery}
-            onFocus={() => this.setState({ hasFocus: true })}
-          />
-          <SearchResults
-            queryResults={queryResults}
-            show={queryResults && searchQuery.length > 0 && hasFocus}
-            searchResults={searchResults}
-          />
-        </div>
-      );
     }
+    return (
+      <div
+        ref={this.rootRef}
+        className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
+      >
+        <SearchForm
+          searchData={this.searchData}
+          searchQuery={searchQuery}
+          onFocus={() => this.setState({ hasFocus: true })}
+        />
+        <SearchResults
+          queryResults={queryResults}
+          show={queryResults && searchQuery.length > 0 && hasFocus}
+          searchResults={searchResults}
+        />
+      </div>
+    );
   }
 }
 
