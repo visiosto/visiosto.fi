@@ -1,5 +1,12 @@
 {
-  "include": ["./src/**/*", "./util/**/*", "./*", ".eslintrc.js"],
+  "include": [
+    "./src/**/*",
+    "./test/**/*",
+    "./util/**/*",
+    "./*",
+    "./__mocks__/**/*",
+    ".eslintrc.js"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
