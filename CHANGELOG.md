@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Project to use TypeScript.
 - ESLint to lint JSX files in addition to JS files.
 
+### Fixed
+
+- Order of the site URL redirects.
+
 ## [0.19.1] - 2021-04-11
 
 ### Fixed
