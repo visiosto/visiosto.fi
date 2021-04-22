@@ -212,7 +212,7 @@ export const pageQuery = graphql`
         job
         name
         profileImage {
-          gatsbyImageData(quality: 100, width: 200)
+          gatsbyImageData(quality: 100, width: 200, placeholder: BLURRED)
         }
       }
       description {
