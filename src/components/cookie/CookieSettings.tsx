@@ -2,8 +2,8 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import styled from 'styled-components';
 import Cookies from 'universal-cookie';
+import styled from 'styled-components';
 import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
@@ -11,6 +11,8 @@ import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
 import createInternationalization from '../../util/createInternationalization';
+import getCookie from '../../util/getCookie';
+import setCookie from '../../util/setCookie';
 
 import {
   COOKIES_ACCEPTED_COOKIE_NAME,
@@ -214,11 +216,9 @@ const handleAnalyticsToggle = function handleAnalyticsToggleAndCreateCookies() {
 
   expires.setMonth(new Date().getMonth() + 1);
 
-  const isDisabled =
-    cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === 'true' ||
-    cookies.get(DISABLE_ANALYTICS_COOKIE_NAME);
+  const isDisabled = getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) === 'true';
 
-  cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
+  setCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
 };
 
 type Props = {
@@ -239,9 +239,7 @@ class CookieSettings extends React.Component<Props, State> {
 
     this.state = {
       showBanner: false,
-      isAnalyticsEnabled:
-        !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
-        cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === 'false',
+      isAnalyticsEnabled: getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) === 'false',
     };
 
     this.handleCookieChange = this.handleCookieChange.bind(this);
@@ -254,9 +252,7 @@ class CookieSettings extends React.Component<Props, State> {
 
   componentDidMount() {
     this.setState({
-      showBanner:
-        !cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) ||
-        cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) === 'false',
+      showBanner: getCookie(cookies, COOKIES_ACCEPTED_COOKIE_NAME) === 'false',
     });
   }
 
@@ -298,8 +294,8 @@ class CookieSettings extends React.Component<Props, State> {
 
     expires.setMonth(new Date().getMonth() + 1);
 
-    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
-    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
+    setCookie(cookies, COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
+    setCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
 
     window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = false;
 
@@ -315,15 +311,14 @@ class CookieSettings extends React.Component<Props, State> {
 
     // The cookie that determines whether the tracking is disabled may not be
     // set if the user has not touched the toggle.
-    if (cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === undefined) {
-      cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
+    if (getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) === '') {
+      setCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME, false, { expires });
     }
 
-    cookies.set(COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
+    setCookie(cookies, COOKIES_ACCEPTED_COOKIE_NAME, true, { expires });
 
-    window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] = cookies.get(
-      DISABLE_ANALYTICS_COOKIE_NAME,
-    );
+    window[`ga-disable-${GOOGLE_ANALYTICS_TRACKING_ID}`] =
+      getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) === 'true';
 
     const { toggleSettings } = this.props;
 
