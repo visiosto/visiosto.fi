@@ -65,41 +65,10 @@ class ContactForm extends React.Component<Props, State> {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  validateFormData() {
-    const intl = createInternationalization(this.props.intl);
-    const errors: Errors = {};
-    let isValid = true;
-
-    if (!this.state.name) {
-      isValid = false;
-      errors.name = intl('contactFormErrorMissingName');
-    }
-
-    if (!this.state.email) {
-      if (!this.state.tel) {
-        isValid = false;
-        errors.tel = intl('contactFormErrorMissingEmailOrPhone');
-      }
-    }
-
-    if (!this.state.message) {
-      isValid = false;
-      errors.message = intl('contactFormErrorMissingMessage');
-    }
-
-    this.setState({ errors });
-
-    return isValid;
-  }
-
   handleSubmit(event) {
     if (this.validateFormData()) {
-      const formData = {
-        name: this.state.name,
-        email: this.state.email,
-        tel: this.state.tel,
-        message: this.state.message,
-      };
+      const { name, email, tel, message } = this.state;
+      const formData = { name, email, tel, message };
 
       fetch('/', {
         method: 'POST',
@@ -132,53 +101,77 @@ class ContactForm extends React.Component<Props, State> {
     this.setState({ [name]: value });
   }
 
+  validateFormData() {
+    const { intl: intlObject } = this.props;
+    const { name, tel, email, message } = this.state;
+    const intl = createInternationalization(intlObject);
+    const errors: Errors = {};
+    let isValid = true;
+
+    if (name === '') {
+      isValid = false;
+      errors.name = intl('contactFormErrorMissingName');
+    }
+
+    if (email === '') {
+      if (tel === '') {
+        isValid = false;
+        errors.tel = intl('contactFormErrorMissingEmailOrPhone');
+      }
+    }
+
+    if (message === '') {
+      isValid = false;
+      errors.message = intl('contactFormErrorMissingMessage');
+    }
+
+    this.setState({ errors });
+
+    return isValid;
+  }
+
   render() {
-    const intl = createInternationalization(this.props.intl);
-    const { locale } = this.props;
+    const { intl: intlObject, locale } = this.props;
+    const { email, errorMessage, errors, message, name, postStatus, tel } = this.state;
+    const intl = createInternationalization(intlObject);
 
     return (
       <FormContainer>
         <form
-          name={CONTACT_FORM_NAME}
-          onSubmit={this.handleSubmit}
           action="/"
-          method="POST"
-          netlify-honeypot="bot-field"
           data-netlify="true"
+          method="POST"
+          name={CONTACT_FORM_NAME}
+          netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
           {/* This input field is required by Netlify */}
-          <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
+          <input name="form-name" type="hidden" value={CONTACT_FORM_NAME} />
           <FormDiv hidden>
-            <label>{intl('contactFormHoneypot')}</label>
+            <label htmlFor="bot-field">{intl('contactFormHoneypot')}</label>
             <input name="bot-field" />
           </FormDiv>
           <FormDiv>
             <label htmlFor="name">{intl('contactFormName')}</label>
-            <label htmlFor="name" className="error-message" hidden={!this.state.errors!.name}>
-              {this.state.errors!.name}
+            <label className="error-message" hidden={!errors!.name} htmlFor="name">
+              {errors!.name}
             </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              onChange={this.handleChange}
-              value={this.state.name}
-            />
+            <input id="name" name="name" onChange={this.handleChange} type="text" value={name} />
           </FormDiv>
           <FormDiv>
             <p>{intl('contactFormEither')}</p>
           </FormDiv>
           <FormDiv>
             <label htmlFor="email">{intl('contactFormEmail')}</label>
-            <label htmlFor="email" className="error-message" hidden={!this.state.errors!.tel}>
-              {this.state.errors!.tel}
+            <label className="error-message" hidden={!errors!.tel} htmlFor="email">
+              {errors!.tel}
             </label>
             <input
-              type="email"
-              name="email"
               id="email"
+              name="email"
               onChange={this.handleChange}
-              value={this.state.email}
+              type="email"
+              value={email}
             />
           </FormDiv>
           <FormDiv>
@@ -186,34 +179,23 @@ class ContactForm extends React.Component<Props, State> {
           </FormDiv>
           <FormDiv>
             <label htmlFor="tel">{intl('contactFormTel')}</label>
-            <label htmlFor="tel" className="error-message" hidden={!this.state.errors!.tel}>
-              {this.state.errors!.tel}
+            <label className="error-message" hidden={!errors!.tel} htmlFor="tel">
+              {errors!.tel}
             </label>
-            <input
-              type="tel"
-              name="tel"
-              id="tel"
-              onChange={this.handleChange}
-              value={this.state.tel}
-            />
+            <input id="tel" name="tel" onChange={this.handleChange} type="tel" value={tel} />
           </FormDiv>
           <FormDiv>
             <label htmlFor="message">{intl('contactFormMessage')}</label>
-            <label htmlFor="message" className="error-message" hidden={!this.state.errors!.message}>
-              {this.state.errors!.message}
+            <label className="error-message" hidden={!errors!.message} htmlFor="message">
+              {errors!.message}
             </label>
-            <textarea
-              id="message"
-              name="message"
-              onChange={this.handleChange}
-              value={this.state.message}
-            />
+            <textarea id="message" name="message" onChange={this.handleChange} value={message} />
           </FormDiv>
           <FormDiv>
             <p>
               {intl('contactFormSendConsent', {
                 a: (...chunk) => (
-                  <LocalizedLink to="2B8WVOvBXdHmLHeBFx381E" locale={locale}>
+                  <LocalizedLink locale={locale} to="2B8WVOvBXdHmLHeBFx381E">
                     {chunk}
                   </LocalizedLink>
                 ),
@@ -227,16 +209,12 @@ class ContactForm extends React.Component<Props, State> {
               </button>
             </ButtonDiv>
           </FormDiv>
-          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_SUCCESS}>
+          <FormDiv hidden={postStatus !== FORM_POST_STATUS_SUCCESS}>
             <p>{intl('contactFormSuccess')}</p>
           </FormDiv>
-          <FormDiv hidden={this.state.postStatus !== FORM_POST_STATUS_ERROR}>
+          <FormDiv hidden={postStatus !== FORM_POST_STATUS_ERROR}>
             <p>{intl('contactFormError')}</p>
-            <p>
-              {this.state.errorMessage
-                ? this.state.errorMessage
-                : intl('contactFormErrorNoErrorMessage')}
-            </p>
+            <p>{errorMessage === '' ? intl('contactFormErrorNoErrorMessage') : errorMessage}</p>
           </FormDiv>
         </form>
       </FormContainer>

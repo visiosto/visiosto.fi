@@ -97,18 +97,13 @@ const Separator = styled.div`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const intl = createInternationalization(useIntl());
@@ -132,7 +127,7 @@ function Page({ data, pageContext }) {
           <Post key={post.contentful_id}>
             <PostHeader>
               <H2>
-                <Link to={post.contentful_id} locale={locale}>
+                <Link locale={locale} to={post.contentful_id}>
                   {post.title}
                 </Link>
               </H2>
@@ -150,7 +145,7 @@ function Page({ data, pageContext }) {
               <p>{post.body.childMarkdownRemark.excerpt}</p>
             </PostContent>
             <Center>
-              <LocalizedLinkButton to={post.contentful_id} locale={locale}>
+              <LocalizedLinkButton locale={locale} to={post.contentful_id}>
                 {intl('blogReadMore')}
               </LocalizedLinkButton>
             </Center>
@@ -165,27 +160,25 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function Category(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function Category({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 Category.propTypes = propTypes;
-Category.defaultProps = defaultProps;
 
 export default Category;
 
 export const pageQuery = graphql`
-  query CategoryQuery($pageID: String, $locale: String, $momentJsLocale: String) {
+  query CategoryQuery($pageID: String, $locale: String, $momentJSLocale: String) {
     site {
       siteMetadata {
         simpleLocales {
@@ -204,7 +197,7 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
-          date: date(formatString: "LL", locale: $momentJsLocale)
+          date: date(formatString: "LL", locale: $momentJSLocale)
           datetime: date
           slug
           node_locale

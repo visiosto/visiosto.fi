@@ -35,6 +35,7 @@ const propTypes = {
     email: PropTypes.string.isRequired,
     job: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     profileImage: PropTypes.object.isRequired,
   }).isRequired,
   children: PropTypes.node,

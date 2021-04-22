@@ -9,7 +9,7 @@ import CookieSettings from './CookieSettings';
 
 import createInternationalization from '../../util/createInternationalization';
 
-const Link = styled.span`
+const Span = styled.span`
   text-align: center;
   text-decoration: underline;
   color: var(--color-link);
@@ -63,16 +63,17 @@ class CookieNotice extends React.Component<Props, State> {
   }
 
   render() {
-    const intl = createInternationalization(this.props.intl);
-    const { locale } = this.props;
+    const { intl: intlObject, locale } = this.props;
+    const intl = createInternationalization(intlObject);
+    const { isOpen } = this.state;
 
     return (
       <>
-        <Link onClick={this.onLinkClick}>{intl('cookieSettingsLink')}</Link>
+        <Span onClick={this.onLinkClick}>{intl('cookieSettingsLink')}</Span>
         <Wrapper>
           <CookieSettings
             locale={locale}
-            settingsOpen={this.state.isOpen}
+            settingsOpen={isOpen}
             toggleSettings={this.handleSettingsToggle}
           />
         </Wrapper>

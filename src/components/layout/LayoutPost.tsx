@@ -60,34 +60,35 @@ const PostCategory = styled.span`
 
 const propTypes = {
   article: PropTypes.bool,
-  author: PropTypes.object,
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
-  post: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
+  post: PropTypes.shape({
+    author: PropTypes.shape({
+      contentful_id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      twitter: PropTypes.string,
+    }).isRequired,
+    category: PropTypes.shape({
+      contentful_id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    date: PropTypes.string.isRequired,
+    datetime: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const defaultProps = {
   article: false,
-  author: null,
   description: '',
   image: null,
 };
 
-function LayoutPost({
-  article,
-  author,
-  children,
-  description,
-  image,
-  locale,
-  pageID,
-  post,
-  title,
-}) {
+function LayoutPost({ article, children, description, image, locale, pageID, post }) {
   useColorScheme();
 
   const intl = createInternationalization(useIntl());
@@ -97,18 +98,18 @@ function LayoutPost({
       <GlobalStyle />
       <Head
         article={article}
-        author={author}
+        author={post.author}
         description={description}
         image={image}
         locale={locale}
         pageID={pageID}
-        title={title}
+        title={post.title}
       />
       <Header locale={locale} pageID={pageID} />
       <main>
         <section>
           <header>
-            <PageTitle>{title}</PageTitle>
+            <PageTitle>{post.title}</PageTitle>
             <PostMeta>
               <time dateTime={post.datetime}>{post.date}</time>
               <PostAuthor>

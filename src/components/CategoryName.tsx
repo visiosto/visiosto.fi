@@ -35,7 +35,7 @@ function CategoryName({ category, locale }) {
   const { contentful_id: categoryID, name } = category;
 
   return (
-    <Link to={categoryID} locale={locale}>
+    <Link locale={locale} to={categoryID}>
       {name}
     </Link>
   );

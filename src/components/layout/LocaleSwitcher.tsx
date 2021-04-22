@@ -24,7 +24,7 @@ function LocaleSwitcher({ locale, pageID }) {
         if (locale !== 'fi') {
           return (
             <>
-              <Link to="fi" pageID={pageID}>
+              <Link pageID={pageID} to="fi">
                 <Button>Suomeksi</Button>
               </Link>
               <br />
@@ -38,7 +38,7 @@ function LocaleSwitcher({ locale, pageID }) {
         if (locale !== 'en-GB') {
           return (
             <>
-              <Link to="en-GB" pageID={pageID}>
+              <Link pageID={pageID} to="en-GB">
                 <Button>In English</Button>
               </Link>
               <br />

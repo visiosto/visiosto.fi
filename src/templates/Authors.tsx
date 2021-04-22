@@ -131,18 +131,14 @@ const TwitterImage = styled(SocialMediaImage)`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    momentJSLocale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const intl = createInternationalization(useIntl());
@@ -168,7 +164,7 @@ function Page({ data, pageContext }) {
               <Image alt={author.name} image={getImage(author.profileImage)!} />
               <AuthorInfo>
                 <H2>
-                  <Link to={author.contentful_id} locale={locale}>
+                  <Link locale={locale} to={author.contentful_id}>
                     {author.name}
                   </Link>
                 </H2>
@@ -188,12 +184,14 @@ function Page({ data, pageContext }) {
                       >
                         <InstagramImage
                           alt={intl('footerInstagramImageText')}
-                          light={getImage(data.instagramColor)}
                           dark={getImage(data.instagram)}
+                          light={getImage(data.instagramColor)}
                         />
                       </a>
                     );
                   }
+
+                  return null;
                 })()}
                 {(() => {
                   if (author.facebook) {
@@ -205,12 +203,14 @@ function Page({ data, pageContext }) {
                       >
                         <SocialMediaImage
                           alt={intl('footerFacebookImageText')}
-                          light={getImage(data.facebookColor)}
                           dark={getImage(data.facebook)}
+                          light={getImage(data.facebookColor)}
                         />
                       </a>
                     );
                   }
+
+                  return null;
                 })()}
                 {(() => {
                   if (author.twitter) {
@@ -222,12 +222,14 @@ function Page({ data, pageContext }) {
                       >
                         <TwitterImage
                           alt={intl('footerTwitterImageText')}
-                          light={getImage(data.twitterColor)}
                           dark={getImage(data.twitter)}
+                          light={getImage(data.twitterColor)}
                         />
                       </a>
                     );
                   }
+
+                  return null;
                 })()}
                 {(() => {
                   if (author.linkedin) {
@@ -239,12 +241,14 @@ function Page({ data, pageContext }) {
                       >
                         <LinkedinImage
                           alt={intl('footerLinkedinImageText')}
-                          light={getImage(data.linkedinColor)}
                           dark={getImage(data.linkedin)}
+                          light={getImage(data.linkedinColor)}
                         />
                       </a>
                     );
                   }
+
+                  return null;
                 })()}
                 {(() => {
                   if (author.github) {
@@ -256,12 +260,14 @@ function Page({ data, pageContext }) {
                       >
                         <GithubImage
                           alt={intl('footerGithubImageText')}
-                          light={getImage(data.github)}
                           dark={getImage(data.github)}
+                          light={getImage(data.github)}
                         />
                       </a>
                     );
                   }
+
+                  return null;
                 })()}
               </SocialMediaDiv>
             </Author>
@@ -276,22 +282,20 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function Authors(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function Authors({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 Authors.propTypes = propTypes;
-Authors.defaultProps = defaultProps;
 
 export default Authors;
 

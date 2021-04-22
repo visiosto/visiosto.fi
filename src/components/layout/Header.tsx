@@ -90,35 +90,40 @@ const createBreadcrumbPath = function createBreadcrumbNodesPath(node, parentPath
 const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage, locale, pageID) {
   if (!errorPage) {
     const { node } = data.allContentfulEntry.edges.filter(
-      ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+      ({ node: entryNode }) =>
+        entryNode.contentful_id === pageID && entryNode.node_locale === locale,
     )[0];
 
     switch (node.internal.type) {
       case 'ContentfulAuthor': {
         const authorNode = data.allContentfulAuthor.edges.filter(
-          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
         )[0].node;
         const authorPath = data.authorPaths.edges.filter(
-          ({ node }) => node.node_locale === locale,
+          ({ node: entryNode }) => entryNode.node_locale === locale,
         )[0].node;
 
         return [authorPath, authorNode];
       }
       case 'ContentfulBlogPost': {
         const blogPostNode = data.allContentfulBlogPost.edges.filter(
-          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
         )[0].node;
-        const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0]
-          .node;
+        const blogPath = data.blogPaths.edges.filter(
+          ({ node: entryNode }) => entryNode.node_locale === locale,
+        )[0].node;
 
         return [blogPath, blogPostNode];
       }
       case 'ContentfulCategory': {
         const categoryNode = data.allContentfulCategory.edges.filter(
-          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
         )[0].node;
         const categoryPath = data.categoryPaths.edges.filter(
-          ({ node }) => node.node_locale === locale,
+          ({ node: entryNode }) => entryNode.node_locale === locale,
         )[0].node;
         const { parentPath } = categoryPath;
 
@@ -126,7 +131,8 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulPage': {
         const pageNode = data.allContentfulPage.edges.filter(
-          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pageNode);
       }
@@ -135,12 +141,14 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
       }
       case 'ContentfulPath': {
         const pathNode = data.allContentfulPath.edges.filter(
-          ({ node }) => node.contentful_id === pageID && node.node_locale === locale,
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
         )[0].node;
         return createBreadcrumbPath(pathNode);
       }
-      default:
+      default: {
         return null;
+      }
     }
   }
   return null;
@@ -333,8 +341,8 @@ function Header({ errorPage, home, locale, pageID }) {
 
           return <SiteTitle>{site.siteMetadata.title}</SiteTitle>;
         })()}
-        <LocalizedLink to="/" locale={locale}>
-          <Image alt={intl('headerLogoImageText')} light={logosLight} dark={logosDark} />
+        <LocalizedLink locale={locale} to="/">
+          <Image alt={intl('headerLogoImageText')} dark={logosDark} light={logosLight} />
         </LocalizedLink>
       </SiteBranding>
       <Navigation locale={locale} />
@@ -345,7 +353,7 @@ function Header({ errorPage, home, locale, pageID }) {
               const title = entry.name ? entry.name : entry.title;
               if (index === 0) {
                 return (
-                  <LocalizedLink to={entry.contentful_id} locale={locale}>
+                  <LocalizedLink locale={locale} to={entry.contentful_id}>
                     {title}
                   </LocalizedLink>
                 );
@@ -353,13 +361,15 @@ function Header({ errorPage, home, locale, pageID }) {
               return (
                 <>
                   <ChevronIcon />
-                  <LocalizedLink to={entry.contentful_id} locale={locale}>
+                  <LocalizedLink locale={locale} to={entry.contentful_id}>
                     {title}
                   </LocalizedLink>
                 </>
               );
             });
           }
+
+          return null;
         })()}
       </Breadcrumb>
     </HeaderElement>

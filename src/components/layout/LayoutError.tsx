@@ -35,6 +35,7 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
   errorCode: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
@@ -53,14 +54,14 @@ function LayoutError({ children, description, errorCode, image, locale, pageID, 
     <>
       <GlobalStyle />
       <Head
-        errorPage
         description={description}
         image={image}
         locale={locale}
         pageID={pageID}
         title={title}
+        errorPage
       />
-      <Header errorPage locale={locale} pageID={pageID} />
+      <Header locale={locale} pageID={pageID} errorPage />
       <main>
         <section>
           <header>

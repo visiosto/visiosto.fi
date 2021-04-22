@@ -42,18 +42,11 @@ const Div = styled.div`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ pageContext }) {
   const intl = createInternationalization(useIntl());
@@ -72,22 +65,21 @@ function Page({ pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function NotFound(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function NotFound({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
-NotFound.propTypes = propTypes;
-NotFound.defaultProps = defaultProps;
+// eslint-disable-next-line react/forbid-prop-types
+NotFound.propTypes = { data: PropTypes.object.isRequired, ...propTypes };
 
 export default NotFound;
 

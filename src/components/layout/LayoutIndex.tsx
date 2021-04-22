@@ -19,6 +19,7 @@ const PageTitle = styled.h2`
 const propTypes = {
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
@@ -37,14 +38,14 @@ function LayoutIndex({ children, description, image, locale, pageID, title }) {
     <>
       <GlobalStyle />
       <Head
-        home
         description={description}
         image={image}
         locale={locale}
         pageID={pageID}
         title={title}
+        home
       />
-      <Header home locale={locale} pageID={pageID} />
+      <Header locale={locale} pageID={pageID} home />
       <main>
         <section>
           <header>

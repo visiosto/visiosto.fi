@@ -209,6 +209,18 @@ const SwitchSpan = styled.span`
 
 const SettingButtons = styled.div``;
 
+const handleAnalyticsToggle = function handleAnalyticsToggleAndCreateCookies() {
+  const expires = new Date();
+
+  expires.setMonth(new Date().getMonth() + 1);
+
+  const isDisabled =
+    cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === 'true' ||
+    cookies.get(DISABLE_ANALYTICS_COOKIE_NAME);
+
+  cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
+};
+
 type Props = {
   intl: IntlShape;
   locale: string;
@@ -229,7 +241,7 @@ class CookieSettings extends React.Component<Props, State> {
       showBanner: false,
       isAnalyticsEnabled:
         !cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) ||
-        cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'false',
+        cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) === 'false',
     };
 
     this.handleCookieChange = this.handleCookieChange.bind(this);
@@ -237,7 +249,6 @@ class CookieSettings extends React.Component<Props, State> {
     this.handleClosingClick = this.handleClosingClick.bind(this);
     this.handleAcceptClick = this.handleAcceptClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
-    this.handleAnalyticsToggle = this.handleAnalyticsToggle.bind(this);
     this.handlePageChange = this.handlePageChange.bind(this);
   }
 
@@ -245,7 +256,7 @@ class CookieSettings extends React.Component<Props, State> {
     this.setState({
       showBanner:
         !cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) ||
-        cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) == 'false',
+        cookies.get(COOKIES_ACCEPTED_COOKIE_NAME) === 'false',
     });
   }
 
@@ -266,7 +277,9 @@ class CookieSettings extends React.Component<Props, State> {
   handleInfoClick() {
     document.body.classList.toggle('cookie-settings-open');
 
-    this.props.toggleSettings(true);
+    const { toggleSettings } = this.props;
+
+    toggleSettings(true);
 
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -275,7 +288,9 @@ class CookieSettings extends React.Component<Props, State> {
   handleClosingClick() {
     document.body.classList.toggle('cookie-settings-open');
 
-    this.props.toggleSettings(false);
+    const { toggleSettings } = this.props;
+
+    toggleSettings(false);
   }
 
   handleAcceptClick() {
@@ -310,29 +325,25 @@ class CookieSettings extends React.Component<Props, State> {
       DISABLE_ANALYTICS_COOKIE_NAME,
     );
 
-    this.props.toggleSettings(false);
+    const { toggleSettings } = this.props;
+
+    toggleSettings(false);
+
     this.setState({ showBanner: false });
-  }
-
-  handleAnalyticsToggle() {
-    const expires = new Date();
-
-    expires.setMonth(new Date().getMonth() + 1);
-
-    const isDisabled = cookies.get(DISABLE_ANALYTICS_COOKIE_NAME) == 'true';
-
-    cookies.set(DISABLE_ANALYTICS_COOKIE_NAME, !isDisabled, { expires });
   }
 
   handlePageChange() {
     document.body.classList.toggle('cookie-settings-open');
 
-    this.props.toggleSettings(false);
+    const { toggleSettings } = this.props;
+
+    toggleSettings(false);
   }
 
   render() {
-    const intl = createInternationalization(this.props.intl);
-    const { locale, settingsOpen } = this.props;
+    const { intl: intlObject, locale, settingsOpen } = this.props;
+    const { isAnalyticsEnabled, showBanner } = this.state;
+    const intl = createInternationalization(intlObject);
 
     if (settingsOpen) {
       return (
@@ -351,8 +362,13 @@ class CookieSettings extends React.Component<Props, State> {
                     <FeatureContainer>
                       <h4>{intl('cookieNoticeGoogleAnalytics')}</h4>
                       <WhatLink>
-                        <LocalizedAnchorLink to="/data-protection#google-analytics" locale={locale}>
-                          <span onClick={this.handlePageChange}>
+                        <LocalizedAnchorLink locale={locale} to="/data-protection#google-analytics">
+                          <span
+                            onClick={this.handlePageChange}
+                            onKeyPress={this.handlePageChange}
+                            role="button"
+                            tabIndex={0}
+                          >
                             {intl('cookieNoticeGoogleAnalyticsInfo')}
                           </span>
                         </LocalizedAnchorLink>
@@ -361,9 +377,9 @@ class CookieSettings extends React.Component<Props, State> {
                     <p>{intl('cookieNoticeAnonymizedTrackingDescription')}</p>
                     <SwitchLabel>
                       <SwitchInput
+                        checked={isAnalyticsEnabled}
+                        onChange={handleAnalyticsToggle}
                         type="checkbox"
-                        onChange={this.handleAnalyticsToggle}
-                        checked={this.state.isAnalyticsEnabled}
                       />
                       <SwitchSpan />
                     </SwitchLabel>
@@ -371,16 +387,16 @@ class CookieSettings extends React.Component<Props, State> {
                   <Section>
                     <p>
                       <LocalizedLink
-                        to="/data-protection"
                         locale={locale}
                         onClick={this.handlePageChange}
+                        to="/data-protection"
                       >
                         {intl('cookieNoticeDataProtection')}
                       </LocalizedLink>
                     </p>
                   </Section>
                   <SettingButtons>
-                    <Button onClick={this.handleSaveClick} color="green">
+                    <Button color="green" onClick={this.handleSaveClick}>
                       {intl('cookieNoticeSave')}
                     </Button>
                     <Button onClick={this.handleClosingClick}>{intl('cookieNoticeCancel')}</Button>
@@ -393,7 +409,7 @@ class CookieSettings extends React.Component<Props, State> {
       );
     }
 
-    if (!this.state.showBanner) {
+    if (!showBanner) {
       return null;
     }
 
@@ -404,7 +420,7 @@ class CookieSettings extends React.Component<Props, State> {
           <p>{intl('cookieNoticeDescription')}</p>
         </Text>
         <Buttons>
-          <Button onClick={this.handleAcceptClick} color="green">
+          <Button color="green" onClick={this.handleAcceptClick}>
             {intl('cookieNoticeAccept')}
           </Button>
           <Button onClick={this.handleInfoClick}>{intl('cookieNoticeReject')}</Button>

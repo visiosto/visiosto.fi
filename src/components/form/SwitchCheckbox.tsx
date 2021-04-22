@@ -72,10 +72,12 @@ function SwitchCheckbox({ checked, errorMessage, handleClick, id, label, name })
     <>
       <label htmlFor={id}>{label}</label>
       {errorMessage !== '' ? (
-        <label className={FORM_CLASS_ERROR_MESSAGE}>{errorMessage}</label>
+        <label className={FORM_CLASS_ERROR_MESSAGE} htmlFor={id}>
+          {errorMessage}
+        </label>
       ) : null}
       <SwitchInputSpan onClick={handleClick}>
-        <input key={Math.random()} type="checkbox" name={name} id={id} defaultChecked={checked} />
+        <input key={Math.random()} defaultChecked={checked} id={id} name={name} type="checkbox" />
         <SwitchSpan />
       </SwitchInputSpan>
     </>

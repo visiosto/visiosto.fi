@@ -15,7 +15,16 @@ import handleStrippedLinkClick from '../../util/anchor-link/handleStrippedLinkCl
 const propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  gatsbyLinkProps: PropTypes.object,
+  gatsbyLinkProps: PropTypes.shape({
+    activeClassName: PropTypes.string,
+    activeStyle: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    onClick: PropTypes.func,
+    partiallyActive: PropTypes.bool,
+    replace: PropTypes.bool,
+    // eslint-disable-next-line react/forbid-prop-types
+    state: PropTypes.object,
+    to: PropTypes.string,
+  }),
   onAnchorLinkClick: PropTypes.func,
   stripHash: PropTypes.bool,
   to: PropTypes.string.isRequired,
@@ -46,6 +55,8 @@ function AnchorLink({ children, className, gatsbyLinkProps, onAnchorLinkClick, s
     linkProps.className = className;
   }
 
+  // TODO See if the props should be set without spreading
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Link {...linkProps}>{children}</Link>;
 }
 

@@ -208,7 +208,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -232,7 +232,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -285,9 +285,9 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       component: path.resolve('src', 'templates', 'BlogPost.tsx'),
       context: {
         locale,
-        pageID,
-        momentJsLocale: locale.toLowerCase(),
         management,
+        pageID,
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -311,7 +311,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -340,7 +340,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -408,7 +408,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });

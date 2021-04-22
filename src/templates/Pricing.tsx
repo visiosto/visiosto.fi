@@ -49,18 +49,13 @@ const Separator = styled.div`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const { contentfulPage: page } = data;
@@ -81,11 +76,11 @@ function Page({ data, pageContext }) {
           return (
             <LocalizedAnchorLinkButton
               key={node.listType}
+              locale={locale}
               to={`${pageID}#${
                 localizations.listType.filter((localeNode) => localeNode.id === node.listType)[0]
                   .link
               }`}
-              locale={locale}
             >
               {localizations.listType.filter((listNode) => listNode.id === node.listType)[0].name}
             </LocalizedAnchorLinkButton>
@@ -98,7 +93,7 @@ function Page({ data, pageContext }) {
       {pricingList.map((list) => {
         return (
           <Fragment key={list.listType}>
-            <PriceList list={list} localizations={localizations} locale={locale} />
+            <PriceList list={list} locale={locale} localizations={localizations} />
             <Separator>
               <Rule color="blue" mode={3} />
             </Separator>
@@ -110,22 +105,20 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function Pricing(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function Pricing({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 Pricing.propTypes = propTypes;
-Pricing.defaultProps = defaultProps;
 
 export default Pricing;
 

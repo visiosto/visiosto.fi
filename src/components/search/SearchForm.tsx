@@ -24,14 +24,6 @@ const open = css`
   background: var(--color-background);
 `;
 
-const closed = css`
-  width: 10em;
-  cursor: text;
-  margin-left: -1.6em;
-  padding-left: 1.6em;
-  background: var(--color-background);
-`;
-
 // const closed = css`
 //   width: 0;
 //   background: transparent;
@@ -78,12 +70,12 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
     return (
       <Form>
         <Input
-          type="text"
-          placeholder={intl('searchPlaceholder')}
           aria-label={intl('searchPlaceholder')}
           onChange={searchData}
-          value={searchQuery}
           onFocus={onFocus}
+          placeholder={intl('searchPlaceholder')}
+          type="text"
+          value={searchQuery}
         />
         <Icon />
       </Form>
@@ -92,12 +84,12 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
   return (
     <Form>
       <Input
-        type="text"
-        placeholder={intl('searchPlaceholder')}
         aria-label={intl('searchPlaceholder')}
         onChange={searchData}
-        value={searchQuery}
         onFocus={onFocus}
+        placeholder={intl('searchPlaceholder')}
+        type="text"
+        value={searchQuery}
       />
       <Icon />
     </Form>

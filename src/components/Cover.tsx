@@ -320,10 +320,10 @@ function Cover({ children, imagesType, rule, title }) {
       </TopRuleWrapper>
       <Image
         alt=""
-        light={imagesTopLight}
         dark={imagesTopDark}
-        style={{ ...topStyles, ...imageStyles }}
+        light={imagesTopLight}
         objectFit="cover"
+        style={{ ...topStyles, ...imageStyles }}
       />
       <Inner>
         <header>
@@ -333,10 +333,10 @@ function Cover({ children, imagesType, rule, title }) {
       </Inner>
       <Image
         alt=""
-        light={imagesBottomLight}
         dark={imagesBottomDark}
-        style={{ ...bottomStyles, ...imageStyles }}
+        light={imagesBottomLight}
         objectFit="cover"
+        style={{ ...bottomStyles, ...imageStyles }}
       />
     </Section>
   );

@@ -33,9 +33,10 @@ const PageTitle = styled.h1`
 
 const propTypes = {
   article: PropTypes.bool,
-  author: PropTypes.object,
+  author: PropTypes.shape({ twitter: PropTypes.string }),
   children: PropTypes.node.isRequired,
   description: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,

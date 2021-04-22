@@ -24,11 +24,11 @@ function Intl({ children, locale }) {
 
   const { defaultLocale } = site.siteMetadata;
 
-  // eslint-disable-next-line global-require, no-undef
+  // eslint-disable-next-line global-require, no-undef, import/no-dynamic-require
   let messages = require(`../locales/${defaultLocale}`).locale;
 
   try {
-    // eslint-disable-next-line global-require, no-undef
+    // eslint-disable-next-line global-require, no-undef, import/no-dynamic-require
     messages = require(`../locales/${locale}`).locale;
   } catch (error) {
     // Do nothing and use the default.

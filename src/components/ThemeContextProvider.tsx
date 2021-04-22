@@ -12,7 +12,7 @@ import ThemeContext from './ThemeContext';
 import { INITIAL_COLOR_MODE_CSS_PROP } from '../constants';
 import { COLORS } from '../theme';
 
-const propTypes = { children: PropTypes.any.isRequired };
+const propTypes = { children: PropTypes.node.isRequired };
 
 function ThemeContextProvider({ children }) {
   // Use state in a function component as this is the way it was done in the original code.

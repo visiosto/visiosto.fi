@@ -16,7 +16,11 @@ const propTypes = {
 const defaultProps = { className: null };
 
 function LocaleLink({ children, className, pageID, to }) {
-  return <LocalizedLink children={children} className={className} to={pageID} locale={to} />;
+  return (
+    <LocalizedLink className={className} locale={to} to={pageID}>
+      {children}
+    </LocalizedLink>
+  );
 }
 
 LocaleLink.propTypes = propTypes;

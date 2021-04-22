@@ -23,18 +23,13 @@ const Div = styled.div`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const { contentfulPage: page } = data;
@@ -54,22 +49,20 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function ContentfulPage(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function ContentfulPage({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 ContentfulPage.propTypes = propTypes;
-ContentfulPage.defaultProps = defaultProps;
 
 export default ContentfulPage;
 

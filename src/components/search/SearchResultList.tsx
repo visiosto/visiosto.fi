@@ -32,7 +32,7 @@ const Item = styled.li`
   }
 `;
 
-const propTypes = { queryResults: PropTypes.array };
+const propTypes = { queryResults: PropTypes.arrayOf(PropTypes.object) };
 
 const defaultProps = { queryResults: [] };
 
@@ -50,6 +50,8 @@ function SearchResultList({ queryResults }) {
             </HitCount>
           );
         }
+
+        return null;
       })()}
       <div>
         <List>

@@ -117,14 +117,14 @@ function Rule({ color, mode }) {
   if (color === 'peach') {
     return (
       <Div>
-        <SchemedImage alt="" light={getImage(peachRule)!} dark={getImage(creamRule)!} />
+        <SchemedImage alt="" dark={getImage(creamRule)!} light={getImage(peachRule)!} />
       </Div>
     );
   }
   if (color === 'blue') {
     return (
       <Div>
-        <SchemedImage alt="" light={getImage(blueRule)!} dark={getImage(lightBlueRule)!} />
+        <SchemedImage alt="" dark={getImage(lightBlueRule)!} light={getImage(blueRule)!} />
       </Div>
     );
   }

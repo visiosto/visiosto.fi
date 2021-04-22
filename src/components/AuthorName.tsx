@@ -35,7 +35,7 @@ function AuthorName({ author, locale }) {
   const { contentful_id: authorID, name } = author;
 
   return (
-    <Link to={authorID} locale={locale}>
+    <Link locale={locale} to={authorID}>
       {name}
     </Link>
   );

@@ -20,7 +20,7 @@ const propTypes = {
 
 function LocalizedLinkButton({ children, locale, to }) {
   return (
-    <Link to={to} locale={locale}>
+    <Link locale={locale} to={to}>
       <Button>{children}</Button>
     </Link>
   );

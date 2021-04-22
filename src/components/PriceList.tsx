@@ -45,6 +45,8 @@ const propTypes = {
     prices: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   locale: PropTypes.string.isRequired,
+  // The localizations are got from a GraphQL query.
+  // eslint-disable-next-line react/forbid-prop-types
   localizations: PropTypes.object.isRequired,
 };
 
@@ -71,9 +73,6 @@ function PriceList({ list, locale, localizations }) {
       />
       <Div>
         <Price
-          title={createLocalization(pricesLocalizations, 'serverDomain')}
-          price={serverPrice.price + domainPrice.price}
-          rate={serverPrice.rate}
           extraPrices={[
             { name: serverPrice.name, price: serverPrice.price, rate: serverPrice.rate },
             { name: domainPrice.name, price: domainPrice.price, rate: domainPrice.rate },
@@ -81,6 +80,9 @@ function PriceList({ list, locale, localizations }) {
           locale={locale}
           localizations={localizations}
           localizationsList="prices"
+          price={serverPrice.price + domainPrice.price}
+          rate={serverPrice.rate}
+          title={createLocalization(pricesLocalizations, 'serverDomain')}
         />
       </Div>
       <h3>{createLocalization(additionalWorkLocalizations, 'title')}</h3>
@@ -89,12 +91,12 @@ function PriceList({ list, locale, localizations }) {
           return (
             <Price
               key={price.name}
-              title={createLocalization(additionalWorkLocalizations, price.name)}
-              price={price.price}
-              rate={price.rate}
               locale={locale}
               localizations={localizations}
               localizationsList="additionalWork"
+              price={price.price}
+              rate={price.rate}
+              title={createLocalization(additionalWorkLocalizations, price.name)}
             />
           );
         })}
@@ -106,25 +108,25 @@ function PriceList({ list, locale, localizations }) {
             return (
               <Price
                 key={price.name}
-                title={createLocalization(additionalFeesLocalizations, price.name)}
                 extra={createLocalization(additionalFeesLocalizations, price.name, 'extra')}
-                price={price.price}
-                rate={price.rate}
                 locale={locale}
                 localizations={localizations}
                 localizationsList="additionalFees"
+                price={price.price}
+                rate={price.rate}
+                title={createLocalization(additionalFeesLocalizations, price.name)}
               />
             );
           }
           return (
             <Price
               key={price.name}
-              title={createLocalization(additionalFeesLocalizations, price.name)}
-              price={price.price}
-              rate={price.rate}
               locale={locale}
               localizations={localizations}
               localizationsList="additionalFees"
+              price={price.price}
+              rate={price.rate}
+              title={createLocalization(additionalFeesLocalizations, price.name)}
             />
           );
         })}

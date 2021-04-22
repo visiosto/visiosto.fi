@@ -208,7 +208,7 @@ function Navigation({ locale }) {
               case 'ContentfulIndexPage':
                 return (
                   <Li key={link.contentful_id}>
-                    <Link to={link.contentful_id} locale={locale}>
+                    <Link locale={locale} to={link.contentful_id}>
                       {link.title}
                     </Link>
                   </Li>
@@ -216,7 +216,7 @@ function Navigation({ locale }) {
               case 'ContentfulId':
                 return (
                   <Li key={link.contentful_id}>
-                    <AnchorLink to={`/#${link.slug}`} locale={locale}>
+                    <AnchorLink locale={locale} to={`/#${link.slug}`}>
                       {link.title}
                     </AnchorLink>
                   </Li>
@@ -224,7 +224,7 @@ function Navigation({ locale }) {
               case 'ContentfulPath':
                 return (
                   <Li key={link.contentful_id}>
-                    <Link to={link.contentful_id} locale={locale}>
+                    <Link locale={locale} to={link.contentful_id}>
                       {link.title}
                     </Link>
                   </Li>

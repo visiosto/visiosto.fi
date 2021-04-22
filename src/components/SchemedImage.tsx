@@ -10,10 +10,14 @@ import ThemeContext from './ThemeContext';
 const propTypes = {
   alt: PropTypes.string,
   className: PropTypes.string,
+  // There is no need to define the shape for Gatsby images.
+  // eslint-disable-next-line react/forbid-prop-types
   dark: PropTypes.object.isRequired,
+  // There is no need to define the shape for Gatsby images.
+  // eslint-disable-next-line react/forbid-prop-types
   light: PropTypes.object.isRequired,
-  objectFit: PropTypes.string,
-  style: PropTypes.object,
+  objectFit: PropTypes.oneOf(['contain', 'cover', 'fill', 'none', 'scale-down']),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
 };
 
 const defaultProps = {
@@ -30,20 +34,20 @@ function SchemedImage({ alt, className, dark, light, objectFit, style }) {
     if (alt === '') {
       return (
         <GatsbyImage
+          alt=""
           className={className}
           image={dark}
-          alt=""
-          role="presentation"
           objectFit={objectFit}
+          role="presentation"
           style={style}
         />
       );
     }
     return (
       <GatsbyImage
+        alt={alt}
         className={className}
         image={dark}
-        alt={alt}
         objectFit={objectFit}
         style={style}
       />
@@ -52,20 +56,20 @@ function SchemedImage({ alt, className, dark, light, objectFit, style }) {
   if (alt === '') {
     return (
       <GatsbyImage
+        alt=""
         className={className}
         image={light}
-        alt=""
-        role="presentation"
         objectFit={objectFit}
+        role="presentation"
         style={style}
       />
     );
   }
   return (
     <GatsbyImage
+      alt={alt}
       className={className}
       image={light}
-      alt={alt}
       objectFit={objectFit}
       style={style}
     />

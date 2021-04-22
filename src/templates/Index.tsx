@@ -83,18 +83,13 @@ const H3 = styled.h3`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const { contentfulIndexPage: page } = data;
@@ -108,31 +103,31 @@ function Page({ data, pageContext }) {
       pageID={pageID}
       title={page.title}
     >
-      <Cover title={page.introTitle} imagesType="lens" rule={{ color: 'peach', mode: 3 }}>
+      <Cover imagesType="lens" rule={{ color: 'peach', mode: 3 }} title={page.introTitle}>
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </Cover>
-      <Cover title={page.storyTitle} imagesType="lines" rule={{ color: 'blue', mode: 3 }}>
+      <Cover imagesType="lines" rule={{ color: 'blue', mode: 3 }} title={page.storyTitle}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
       </Cover>
       <Break color="peach" mode={1} />
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
         <Cards>
-          <FeatureCard title={page.products[0].title} icon={<DeviceDesktopIcon size="large" />}>
+          <FeatureCard icon={<DeviceDesktopIcon size="large" />} title={page.products[0].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[0].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard title={page.products[1].title} icon={<PencilIcon size="large" />}>
+          <FeatureCard icon={<PencilIcon size="large" />} title={page.products[1].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[1].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard title={page.products[2].title} icon={<CalendarIcon size="large" />}>
+          <FeatureCard icon={<CalendarIcon size="large" />} title={page.products[2].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[2].description.childMarkdownRemark.html,
@@ -168,22 +163,20 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function Index(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function Index({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 Index.propTypes = propTypes;
-Index.defaultProps = defaultProps;
 
 export default Index;
 

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import ThemeContextProvider from './ThemeContextProvider';
 
-const propTypes = { children: PropTypes.any.isRequired };
+const propTypes = { children: PropTypes.node.isRequired };
 
 function App({ children }) {
   return <ThemeContextProvider>{children}</ThemeContextProvider>;

@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - All of the translations with the ending `ALT` to have the ending `Text`.
 - Project to use TypeScript.
+- ESLint to lint JSX files in addition to JS files.
 
 ## [0.19.1] - 2021-04-11
 

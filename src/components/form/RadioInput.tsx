@@ -42,12 +42,12 @@ function RadioInput({ description, errorMessage, handleChange, inputs, name, tit
       {inputs.map(({ id, label, value: inputValue }) => (
         <RadioDiv key={id}>
           <input
-            type="radio"
-            name={name}
-            id={`radio-${id}`}
-            value={inputValue}
             checked={value === inputValue}
+            id={`radio-${id}`}
+            name={name}
             onChange={() => handleChange(inputValue)}
+            type="radio"
+            value={inputValue}
           />
           <label htmlFor={`radio-${id}`}>{label}</label>
         </RadioDiv>

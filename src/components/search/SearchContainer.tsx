@@ -2,7 +2,6 @@
 // Licensed under the MIT License
 
 import React, { createRef } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { graphql, useStaticQuery } from 'gatsby';
 import * as JsSearch from 'js-search';
@@ -26,6 +25,7 @@ const withSiteURL = function withSiteURLFromQueryData(WrappedComponent) {
       `,
     );
 
+    // eslint-disable-next-line react/jsx-props-no-spreading
     return <WrappedComponent siteURL={data.site.siteMetadata.siteURL} {...props} />;
   }
 
@@ -71,7 +71,6 @@ class SearchContainer extends React.Component<Props, State> {
     this.rootRef = createRef();
     this.rebuildIndex = this.rebuildIndex.bind(this);
     this.searchData = this.searchData.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
@@ -113,6 +112,12 @@ class SearchContainer extends React.Component<Props, State> {
     events.forEach((event) => {
       document.removeEventListener(event, this.handleClickOutside);
     });
+  }
+
+  handleClickOutside(event) {
+    if (this.rootRef && !this.rootRef.current!.contains(event.target)) {
+      this.setState({ hasFocus: false });
+    }
   }
 
   /**
@@ -161,47 +166,37 @@ class SearchContainer extends React.Component<Props, State> {
     }
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
-  handleClickOutside(event) {
-    if (this.rootRef && !this.rootRef.current!.contains(event.target)) {
-      this.setState({ hasFocus: false });
-    }
-  }
-
   render() {
-    const { pageList, searchResults, searchQuery, hasFocus } = this.state;
-    const queryResults = searchQuery === '' ? pageList : searchResults;
     const { className } = this.props;
+    const { hasFocus, isError, isLoading, pageList, searchQuery, searchResults } = this.state;
+    const queryResults = searchQuery === '' ? pageList : searchResults;
 
-    if (this.state.isLoading) {
+    if (isLoading) {
       return (
         <div
           ref={this.rootRef}
           className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
         >
           <SearchForm
+            onFocus={() => this.setState({ hasFocus: true })}
             searchData={this.searchData}
             searchQuery={searchQuery}
-            onFocus={() => this.setState({ hasFocus: true })}
             loading
           />
           <SearchResults show={searchQuery.length > 0 && hasFocus} loading />
         </div>
       );
     }
-    if (this.state.isError) {
+    if (isError) {
       return (
         <div
           ref={this.rootRef}
           className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
         >
           <SearchForm
+            onFocus={() => this.setState({ hasFocus: true })}
             searchData={this.searchData}
             searchQuery={searchQuery}
-            onFocus={() => this.setState({ hasFocus: true })}
             error
           />
           <SearchResults show={searchQuery.length > 0 && hasFocus} error />
@@ -214,14 +209,14 @@ class SearchContainer extends React.Component<Props, State> {
         className={hasFocus || searchQuery.length > 0 ? `${className} focus` : className}
       >
         <SearchForm
+          onFocus={() => this.setState({ hasFocus: true })}
           searchData={this.searchData}
           searchQuery={searchQuery}
-          onFocus={() => this.setState({ hasFocus: true })}
         />
         <SearchResults
           queryResults={queryResults}
-          show={queryResults && searchQuery.length > 0 && hasFocus}
           searchResults={searchResults}
+          show={queryResults && searchQuery.length > 0 && hasFocus}
         />
       </div>
     );

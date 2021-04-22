@@ -12,10 +12,11 @@ import createLocaleURL from '../../util/createLocaleURL';
 
 const propTypes = {
   article: PropTypes.bool,
-  author: PropTypes.object,
+  author: PropTypes.shape({ twitter: PropTypes.string }),
   description: PropTypes.string,
   errorPage: PropTypes.bool,
   home: PropTypes.bool,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
@@ -173,19 +174,27 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
     : `${title} - ${siteMetadata.title}`;
   const pageDescription = description === '' ? intl('headDescription') : description;
 
+  // Use an anonymous function to resolve the lang attribute to make sure the value is valid.
+  const lang: string = (() => {
+    if (locale === 'en-GB') {
+      return 'en';
+    }
+
+    return 'fi';
+  })();
+
   return (
     <Helmet titleTemplate={titleTemplate}>
-      <html lang={`${siteMetadata.simpleLocales[locale.replace('-', '_')]}`} />
+      <html lang={lang} />
       <title>{title}</title>
 
-      <meta name="description" content={pageDescription} />
+      <meta content={pageDescription} name="description" />
 
-      <meta property="fb:app_id" content={siteMetadata.facebookAppID} />
+      <meta content={siteMetadata.facebookAppID} property="fb:app_id" />
 
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
+      <meta content={pageTitle} property="og:title" />
+      <meta content={pageDescription} property="og:description" />
       <meta
-        property="og:type"
         content={(() => {
           if (article) {
             return 'article';
@@ -195,67 +204,68 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
           }
           return 'website';
         })()}
+        property="og:type"
       />
-      <meta property="og:image" content={image ? image.file.url : `${baseURL}/thumbnail.png`} />
+      <meta content={image ? image.file.url : `${baseURL}/thumbnail.png`} property="og:image" />
       <meta
-        property="og:image:secure_url"
         content={image ? image.file.url : `${baseURL}/thumbnail.png`}
+        property="og:image:secure_url"
       />
-      <meta property="og:image:type" content={image ? image.file.contentType : 'image/png'} />
-      <meta property="og:image:alt" content={image ? image.description : intl('headOGImageText')} />
-      <meta property="og:site_name" content={siteMetadata.title} />
+      <meta content={image ? image.file.contentType : 'image/png'} property="og:image:type" />
+      <meta content={image ? image.description : intl('headOGImageText')} property="og:image:alt" />
+      <meta content={siteMetadata.title} property="og:site_name" />
       {(() => {
         if (errorPage) {
           const pagePath =
             locale === siteMetadata.defaultLocale
               ? '404'
               : `${siteMetadata.localePaths[locale.replace('-', '_')]}/404`;
-          return <meta property="og:url" content={`${baseURL}/${pagePath}`} />;
+          return <meta content={`${baseURL}/${pagePath}`} property="og:url" />;
         }
-        return <meta property="og:url" content={createLocaleURL(baseURL, pageID, locale, data)} />;
+        return <meta content={createLocaleURL(baseURL, pageID, locale, data)} property="og:url" />;
       })()}
-      <meta property="og:locale" content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')} />
+      <meta content={locale === 'fi' ? 'fi_FI' : locale.replace('-', '_')} property="og:locale" />
 
       {siteMetadata.locales
         .filter((listLocale) => listLocale !== locale)
         .map((listLocale) => (
           <meta
             key={listLocale}
-            property="og:locale:alternate"
             content={listLocale === 'fi' ? 'fi_FI' : listLocale.replace('-', '_')}
+            property="og:locale:alternate"
           />
         ))}
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={siteMetadata.twitterAuthor} />
+      <meta content="summary_large_image" name="twitter:card" />
+      <meta content={siteMetadata.twitterAuthor} name="twitter:site" />
       <meta
-        name="twitter:creator"
         content={author && author.twitter ? `@${author.twitter}` : siteMetadata.twitterAuthor}
+        name="twitter:creator"
       />
 
-      <link rel="stylesheet" href="https://use.typekit.net/wbu0jvl.css" />
+      <link href="https://use.typekit.net/wbu0jvl.css" rel="stylesheet" />
 
       {(() => {
         if (errorPage) {
           return siteMetadata.locales.map((listLocale) => (
             <link
-              rel="alternate"
+              key={listLocale}
               href={`${baseURL}/${
                 listLocale === siteMetadata.defaultLocale
                   ? '404'
                   : `${siteMetadata.localePaths[listLocale.replace('-', '_')]}/404`
               }`}
               hrefLang={siteMetadata.simpleLocales[listLocale.replace('-', '_')]}
-              key={listLocale}
+              rel="alternate"
             />
           ));
         }
         return siteMetadata.locales.map((listLocale) => (
           <link
-            rel="alternate"
+            key={listLocale}
             href={createLocaleURL(baseURL, pageID, listLocale, data)}
             hrefLang={siteMetadata.simpleLocales[listLocale.replace('-', '_')]}
-            key={listLocale}
+            rel="alternate"
           />
         ));
       })()}

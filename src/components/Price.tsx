@@ -40,6 +40,8 @@ const propTypes = {
     }),
   ),
   locale: PropTypes.string.isRequired,
+  // The localizations are got from a GraphQL query.
+  // eslint-disable-next-line react/forbid-prop-types
   localizations: PropTypes.object.isRequired,
   localizationsList: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,

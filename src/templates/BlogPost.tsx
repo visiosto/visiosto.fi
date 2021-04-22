@@ -74,18 +74,15 @@ const ArrowRight = styled(ArrowRightIcon)`
 `;
 
 const propTypes = {
-  children: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired,
-  pageContext: PropTypes.object.isRequired,
-  pageResources: PropTypes.object.isRequired,
-  params: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  uri: PropTypes.string.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string,
+    management: PropTypes.bool,
+    momentJSLocale: PropTypes.string,
+    pageID: PropTypes.string,
+  }).isRequired,
 };
-
-const defaultProps = { children: undefined };
 
 function Page({ data, pageContext }) {
   const { contentfulBlogPost: post, allContentfulBlogPost: posts } = data;
@@ -99,12 +96,10 @@ function Page({ data, pageContext }) {
 
   return (
     <LayoutPost
-      author={post.author}
       description={post.body.childMarkdownRemark.excerpt}
       locale={locale}
       pageID={pageID}
       post={post}
-      title={post.title}
     >
       <Separator>
         <Rule color="blue" mode={1} />
@@ -117,12 +112,14 @@ function Page({ data, pageContext }) {
               return (
                 <>
                   <ArrowLeft />
-                  <LocalizedLink to={previous.contentful_id} locale={locale}>
+                  <LocalizedLink locale={locale} to={previous.contentful_id}>
                     {previous.title}
                   </LocalizedLink>
                 </>
               );
             }
+
+            return null;
           })()}
         </Previous>
         <Next>
@@ -130,13 +127,15 @@ function Page({ data, pageContext }) {
             if (next) {
               return (
                 <>
-                  <LocalizedLink to={next.contentful_id} locale={locale}>
+                  <LocalizedLink locale={locale} to={next.contentful_id}>
                     {next.title}
                   </LocalizedLink>
                   <ArrowRight />
                 </>
               );
             }
+
+            return null;
           })()}
         </Next>
       </NavLinks>
@@ -145,22 +144,20 @@ function Page({ data, pageContext }) {
 }
 
 Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
 
-function BlogPost(props) {
-  const { simpleLocales } = props.data.site.siteMetadata;
-  const { locale } = props.pageContext;
+function BlogPost({ data, pageContext }) {
+  const { simpleLocales } = data.site.siteMetadata;
+  const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
       <Theme>
-        <Page {...props} />
+        <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
   );
 }
 
 BlogPost.propTypes = propTypes;
-BlogPost.defaultProps = defaultProps;
 
 export default BlogPost;
 
@@ -168,7 +165,7 @@ export const pageQuery = graphql`
   query BlogPostQuery(
     $pageID: String
     $locale: String
-    $momentJsLocale: String
+    $momentJSLocale: String
     $management: Boolean
   ) {
     site {
@@ -181,7 +178,7 @@ export const pageQuery = graphql`
     }
     contentfulBlogPost(contentful_id: { eq: $pageID }, node_locale: { eq: $locale }) {
       contentful_id
-      date: date(formatString: "LL", locale: $momentJsLocale)
+      date: date(formatString: "LL", locale: $momentJSLocale)
       datetime: date
       title
       author {

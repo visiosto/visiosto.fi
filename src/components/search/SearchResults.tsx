@@ -35,8 +35,8 @@ const Inner = styled.div`
 const propTypes = {
   error: PropTypes.bool,
   loading: PropTypes.bool,
-  queryResults: PropTypes.array,
-  searchResults: PropTypes.array,
+  queryResults: PropTypes.arrayOf(PropTypes.object),
+  searchResults: PropTypes.arrayOf(PropTypes.object),
   show: PropTypes.bool,
 };
 
