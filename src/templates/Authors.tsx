@@ -62,7 +62,7 @@ const Image = styled(GatsbyImage)`
   justify-self: center;
   align-self: center;
 
-  > * {
+  * {
     border-radius: 50%;
   }
 `;

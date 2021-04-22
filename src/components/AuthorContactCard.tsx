@@ -14,7 +14,7 @@ const ImageDiv = styled.div`
 `;
 
 const Image = styled(GatsbyImage)`
-  > * {
+  * {
     border-radius: 50%;
   }
 `;
