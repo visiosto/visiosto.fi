@@ -5,11 +5,13 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true,
   },
   extends: [
     'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
+    'plugin:jest/recommended',
     'plugin:prettier/recommended',
     'prettier',
   ],
@@ -22,7 +24,7 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', '@typescript-eslint'],
+  plugins: ['react', 'jest', 'prettier', '@typescript-eslint'],
   settings: {
     react: {
       version: 'detect',
