@@ -15,7 +15,7 @@ function Component() {
   return <div>{colorMode}</div>;
 }
 
-describe('Theme context provider component', () => {
+describe('Theme context component', () => {
   it('renders correctly', () => {
     const { container } = renderWithProviders(<Component />, 'fi');
 

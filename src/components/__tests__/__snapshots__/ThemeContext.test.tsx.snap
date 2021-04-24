@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Theme context provider component renders correctly 1`] = `
+exports[`Theme context component renders correctly 1`] = `
 <div>
   <div />
   ,
