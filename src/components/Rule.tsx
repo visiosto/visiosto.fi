@@ -107,7 +107,7 @@ const Div = styled.div`
   justify-content: center;
 `;
 
-const propTypes = { color: PropTypes.string, mode: PropTypes.number };
+const propTypes = { color: PropTypes.oneOf(['blue', 'peach']), mode: PropTypes.oneOf([1, 2, 3]) };
 
 const defaultProps = { color: 'blue', mode: 1 };
 
