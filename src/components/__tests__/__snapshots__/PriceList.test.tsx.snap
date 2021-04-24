@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price list component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-dkPtyc eYglTq"
+  >
+    <h2
+      id="kuluttajahinnasto"
+    >
+      Kuluttajahinnasto
+    </h2>
+    <div
+      class="sc-hKwCoD bjOaYL"
+    >
+      Kaikki hinnat sisältävät yleisen arvonlisäverokannan mukaisen arvonlisäveron (24 %).
+    </div>
+    <div
+      class="sc-hKwCoD bjOaYL"
+    >
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Palvelin ja verkkotunnus
+        </h4>
+        <div>
+          13,50 €/kk
+        </div>
+        <div>
+          (verkkotunnus: 10,50 €/kk; verkkotunnus: 3,00 €/kk)
+        </div>
+      </div>
+    </div>
+    <h3>
+      Lisätyöt
+    </h3>
+    <div
+      class="sc-hKwCoD bjOaYL"
+    >
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Ohjelmointilisätyö
+        </h4>
+        <div>
+          15,00 €/h
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Sisällönhallintalisätyö
+        </h4>
+        <div>
+          15,00 €/h
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Sisällöntuotantolisätyö
+        </h4>
+        <div>
+          15,00 €/h
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Muu lisätyö
+        </h4>
+        <div>
+          15,00 €/h
+        </div>
+      </div>
+    </div>
+    <h3>
+      Lisämaksut
+    </h3>
+    <div
+      class="sc-hKwCoD bjOaYL"
+    >
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Lasku paperilla
+        </h4>
+        <div>
+          2,00 €/lasku
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Maksumuistutus
+        </h4>
+        <div>
+          2,00 €/muistutus
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa bOHPht"
+      >
+        <h4
+          class="sc-gsDJrp gIYnqB"
+        >
+          Maksuhuomautus
+        </h4>
+        <div>
+          3,00 €/huomautus
+        </div>
+        <div>
+          (maksumuistutuksen lisämaksun lisäksi)
+        </div>
+      </div>
+    </div>
+  </div>
+  ,
+</div>
+`;

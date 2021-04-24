@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders green colours correctly 1`] = `
+<div>
+  <span
+    class="sc-bdvvaa sc-dkPtyc fSAtAE eppyMW"
+  >
+    Button
+  </span>
+  ,
+</div>
+`;
+
+exports[`Button component renders normal colours correctly 1`] = `
+<div>
+  <span
+    class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+  >
+    Button
+  </span>
+  ,
+</div>
+`;

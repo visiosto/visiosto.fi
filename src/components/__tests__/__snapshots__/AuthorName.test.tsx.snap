@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Author name component renders correctly 1`] = `
+<div>
+  <a
+    class="sc-bdvvaa dNmnLe"
+    href="/henkilo/antti-kivi"
+  >
+    Antti Kivi
+  </a>
+  ,
+</div>
+`;

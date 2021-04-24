@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category name component renders correctly 1`] = `
+<div>
+  <a
+    class="sc-bdvvaa dNmnLe"
+    href="/blogi/kategoria/yleinen"
+  >
+    Yleinen
+  </a>
+  ,
+</div>
+`;

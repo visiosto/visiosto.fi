@@ -1,0 +1,4 @@
+**/*.js.snap linguist-language=JavaScript
+**/*.jsx.snap linguist-language=JavaScript
+**/*.ts.snap linguist-language=TypeScript
+**/*.tsx.snap linguist-language=TypeScript
