@@ -149,9 +149,13 @@ const linkStyle = css`
   }
 `;
 
-const Link = styled(LocalizedLink)`${linkStyle}`;
+const Link = styled(LocalizedLink)`
+  ${linkStyle}
+`;
 
-const AnchorLink = styled(LocalizedAnchorLink)`${linkStyle}`;
+const AnchorLink = styled(LocalizedAnchorLink)`
+  ${linkStyle}
+`;
 
 const createBackgroundImage = function createSchemedBackgroundImage(imageDataLight, imageDataDark) {
   return (
@@ -162,8 +166,8 @@ const createBackgroundImage = function createSchemedBackgroundImage(imageDataLig
         loading="eager"
       />
     </ImageDiv>
-  )
-}
+  );
+};
 
 const propTypes = { locale: PropTypes.string.isRequired };
 
@@ -171,7 +175,9 @@ function Navigation({ locale }) {
   const data = useStaticQuery(
     graphql`
       query {
-        backgroundHoverLight1: file(relativePath: { eq: "navigation/background-hover-light-1.png" }) {
+        backgroundHoverLight1: file(
+          relativePath: { eq: "navigation/background-hover-light-1.png" }
+        ) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
@@ -181,7 +187,9 @@ function Navigation({ locale }) {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
         }
-        backgroundHoverLight2: file(relativePath: { eq: "navigation/background-hover-light-2.png" }) {
+        backgroundHoverLight2: file(
+          relativePath: { eq: "navigation/background-hover-light-2.png" }
+        ) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
@@ -191,7 +199,9 @@ function Navigation({ locale }) {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
         }
-        backgroundHoverLight3: file(relativePath: { eq: "navigation/background-hover-light-3.png" }) {
+        backgroundHoverLight3: file(
+          relativePath: { eq: "navigation/background-hover-light-3.png" }
+        ) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
@@ -201,7 +211,9 @@ function Navigation({ locale }) {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
         }
-        backgroundHoverLight4: file(relativePath: { eq: "navigation/background-hover-light-4.png" }) {
+        backgroundHoverLight4: file(
+          relativePath: { eq: "navigation/background-hover-light-4.png" }
+        ) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
@@ -264,7 +276,7 @@ function Navigation({ locale }) {
     image2: createBackgroundImage(backgroundHoverLight2!, backgroundHoverDark2!),
     image3: createBackgroundImage(backgroundHoverLight3!, backgroundHoverDark3!),
     image4: createBackgroundImage(backgroundHoverLight4!, backgroundHoverDark4!),
-  }
+  };
 
   return (
     <Nav>
