@@ -110,7 +110,7 @@ exports[`Post layout component renders correctly 1`] = `
           class="sc-gSQGeZ epnzvd"
         >
           <a
-            class="sc-jeqYYF kCLTqN"
+            class="sc-jeqYYF cjjTHs"
             href="/"
           >
             Etusivu
@@ -163,7 +163,7 @@ exports[`Post layout component renders correctly 1`] = `
           class="sc-gSQGeZ epnzvd"
         >
           <a
-            class="sc-eJwXpk jmieja"
+            class="sc-eJwXpk kjPffb"
             href="/#portfolio"
           >
             Portfolio
@@ -216,7 +216,7 @@ exports[`Post layout component renders correctly 1`] = `
           class="sc-gSQGeZ epnzvd"
         >
           <a
-            class="sc-eJwXpk jmieja"
+            class="sc-eJwXpk kjPffb"
             href="/#yhteystiedot"
           >
             Yhteystiedot
@@ -269,7 +269,7 @@ exports[`Post layout component renders correctly 1`] = `
           class="sc-gSQGeZ epnzvd"
         >
           <a
-            class="sc-jeqYYF kCLTqN"
+            class="sc-jeqYYF cjjTHs"
             href="/blogi"
           >
             Blogi

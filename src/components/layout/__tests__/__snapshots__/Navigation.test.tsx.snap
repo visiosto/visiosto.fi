@@ -28,7 +28,7 @@ exports[`Navigation component renders English correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-iCfLBT hICCgb"
+          class="sc-iCfLBT biHHMq"
           href="/en"
         >
           Front Page
@@ -81,7 +81,7 @@ exports[`Navigation component renders English correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-furvIG cNXxdQ"
+          class="sc-furvIG kKZtqh"
           href="/en#portfolio"
         >
           Portfolio
@@ -134,7 +134,7 @@ exports[`Navigation component renders English correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-furvIG cNXxdQ"
+          class="sc-furvIG kKZtqh"
           href="/en#contact"
         >
           Contact
@@ -187,7 +187,7 @@ exports[`Navigation component renders English correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-iCfLBT hICCgb"
+          class="sc-iCfLBT biHHMq"
           href="/en/blog"
         >
           Blog
@@ -270,7 +270,7 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-iCfLBT hICCgb"
+          class="sc-iCfLBT biHHMq"
           href="/"
         >
           Etusivu
@@ -323,7 +323,7 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-furvIG cNXxdQ"
+          class="sc-furvIG kKZtqh"
           href="/#portfolio"
         >
           Portfolio
@@ -376,7 +376,7 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-furvIG cNXxdQ"
+          class="sc-furvIG kKZtqh"
           href="/#yhteystiedot"
         >
           Yhteystiedot
@@ -429,7 +429,7 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         class="sc-eCImvq hSsQLl"
       >
         <a
-          class="sc-iCfLBT hICCgb"
+          class="sc-iCfLBT biHHMq"
           href="/blogi"
         >
           Blogi

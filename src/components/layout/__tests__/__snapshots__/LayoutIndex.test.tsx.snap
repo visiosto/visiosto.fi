@@ -109,7 +109,7 @@ exports[`Index layout component renders correctly 1`] = `
           class="sc-hUpaWb eWsVQB"
         >
           <a
-            class="sc-lbhJmS kZkGjP"
+            class="sc-lbhJmS jhDyji"
             href="/"
           >
             Etusivu
@@ -162,7 +162,7 @@ exports[`Index layout component renders correctly 1`] = `
           class="sc-hUpaWb eWsVQB"
         >
           <a
-            class="sc-iNGGwv fykzYr"
+            class="sc-iNGGwv emDgbu"
             href="/#portfolio"
           >
             Portfolio
@@ -215,7 +215,7 @@ exports[`Index layout component renders correctly 1`] = `
           class="sc-hUpaWb eWsVQB"
         >
           <a
-            class="sc-iNGGwv fykzYr"
+            class="sc-iNGGwv emDgbu"
             href="/#yhteystiedot"
           >
             Yhteystiedot
@@ -268,7 +268,7 @@ exports[`Index layout component renders correctly 1`] = `
           class="sc-hUpaWb eWsVQB"
         >
           <a
-            class="sc-lbhJmS kZkGjP"
+            class="sc-lbhJmS jhDyji"
             href="/blogi"
           >
             Blogi

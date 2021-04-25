@@ -120,9 +120,9 @@ const BackgroundImage = styled(SchemedImage)`
 
 const linkStyle = css`
   position: relative;
-  margin: 0 auto;
+  margin: 1rem auto;
   border-radius: ${(props) => props.theme.borders.commonRadius};
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   background: transparent;
   font-size: 1.1rem;
   font-weight: 400;
@@ -136,10 +136,17 @@ const linkStyle = css`
   &:hover,
   &:focus,
   &:active {
+    background: var(--color-background-weak);
     color: var(--color-text);
 
     div {
-      display: inline-block;
+      @media screen and (${(props) => props.theme.devices.tablet}) {
+        display: inline-block;
+      }
+    }
+
+    @media screen and (${(props) => props.theme.devices.tablet}) {
+      background: none;
     }
   }
 
