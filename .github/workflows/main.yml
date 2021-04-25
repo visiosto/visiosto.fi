@@ -143,6 +143,9 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
 
+    - name: Build
+      run: yarn build --verbose
+
     - name: Install Lighthouse
       run: npm install -g @lhci/cli@0.7.x
 
