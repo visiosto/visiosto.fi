@@ -109,7 +109,7 @@ exports[`Header component renders index page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-iCfLBT hICCgb"
+            class="sc-iCfLBT biHHMq"
             href="/"
           >
             Etusivu
@@ -162,7 +162,7 @@ exports[`Header component renders index page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-furvIG cNXxdQ"
+            class="sc-furvIG kKZtqh"
             href="/#portfolio"
           >
             Portfolio
@@ -215,7 +215,7 @@ exports[`Header component renders index page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-furvIG cNXxdQ"
+            class="sc-furvIG kKZtqh"
             href="/#yhteystiedot"
           >
             Yhteystiedot
@@ -268,7 +268,7 @@ exports[`Header component renders index page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-iCfLBT hICCgb"
+            class="sc-iCfLBT biHHMq"
             href="/undefined"
           >
             Blogi
@@ -437,7 +437,7 @@ exports[`Header component renders page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-iCfLBT hICCgb"
+            class="sc-iCfLBT biHHMq"
             href="/"
           >
             Etusivu
@@ -490,7 +490,7 @@ exports[`Header component renders page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-furvIG cNXxdQ"
+            class="sc-furvIG kKZtqh"
             href="/#portfolio"
           >
             Portfolio
@@ -543,7 +543,7 @@ exports[`Header component renders page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-furvIG cNXxdQ"
+            class="sc-furvIG kKZtqh"
             href="/#yhteystiedot"
           >
             Yhteystiedot
@@ -596,7 +596,7 @@ exports[`Header component renders page header correctly 1`] = `
           class="sc-eCImvq hSsQLl"
         >
           <a
-            class="sc-iCfLBT hICCgb"
+            class="sc-iCfLBT biHHMq"
             href="/undefined"
           >
             Blogi
