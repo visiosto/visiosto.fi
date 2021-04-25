@@ -165,18 +165,60 @@ const AnchorLink = styled(LocalizedAnchorLink)`
   }
 `;
 
+const createBackgroundImage = function createSchemedBackgroundImage(imageDataLight, imageDataDark) {
+  return (
+    <ImageDiv>
+      <BackgroundImage
+        dark={getImage(imageDataDark)!}
+        light={getImage(imageDataLight)!}
+        loading="eager"
+      />
+    </ImageDiv>
+  )
+}
+
 const propTypes = { locale: PropTypes.string.isRequired };
 
 function Navigation({ locale }) {
   const data = useStaticQuery(
     graphql`
       query {
-        backgroundHoverLight: file(relativePath: { eq: "navigation/background-hover-light.png" }) {
+        backgroundHoverLight1: file(relativePath: { eq: "navigation/background-hover-light-1.png" }) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
         }
-        backgroundHoverDark: file(relativePath: { eq: "navigation/background-hover-dark.png" }) {
+        backgroundHoverDark1: file(relativePath: { eq: "navigation/background-hover-dark-1.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverLight2: file(relativePath: { eq: "navigation/background-hover-light-2.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverDark2: file(relativePath: { eq: "navigation/background-hover-dark-2.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverLight3: file(relativePath: { eq: "navigation/background-hover-light-3.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverDark3: file(relativePath: { eq: "navigation/background-hover-dark-3.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverLight4: file(relativePath: { eq: "navigation/background-hover-light-4.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverDark4: file(relativePath: { eq: "navigation/background-hover-dark-4.png" }) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
           }
@@ -218,16 +260,23 @@ function Navigation({ locale }) {
 
   const [toggled, setToggled] = useState(false);
 
-  const { backgroundHoverLight, backgroundHoverDark } = data;
-  const background = (
-    <ImageDiv>
-      <BackgroundImage
-        dark={getImage(backgroundHoverDark)!}
-        light={getImage(backgroundHoverLight)!}
-        loading="eager"
-      />
-    </ImageDiv>
-  );
+  const {
+    backgroundHoverLight1,
+    backgroundHoverDark1,
+    backgroundHoverLight2,
+    backgroundHoverDark2,
+    backgroundHoverLight3,
+    backgroundHoverDark3,
+    backgroundHoverLight4,
+    backgroundHoverDark4,
+  } = data;
+
+  const backgrounds = {
+    image1: createBackgroundImage(backgroundHoverLight1!, backgroundHoverDark1!),
+    image2: createBackgroundImage(backgroundHoverLight2!, backgroundHoverDark2!),
+    image3: createBackgroundImage(backgroundHoverLight3!, backgroundHoverDark3!),
+    image4: createBackgroundImage(backgroundHoverLight4!, backgroundHoverDark4!),
+  }
 
   return (
     <Nav>
@@ -243,14 +292,14 @@ function Navigation({ locale }) {
       <Ul id="primary-menu" toggled={toggled}>
         {data.allContentfulMenu.edges
           .filter(({ node }) => node.node_locale === locale)[0]
-          .node.links.map((link) => {
+          .node.links.map((link, index) => {
             switch (link.internal.type) {
               case 'ContentfulIndexPage':
                 return (
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
-                      {background}
+                      {backgrounds[`image${++index}`]}
                     </Link>
                   </Li>
                 );
@@ -259,7 +308,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <AnchorLink locale={locale} to={`/#${link.slug}`}>
                       {link.title}
-                      {background}
+                      {backgrounds[`image${++index}`]}
                     </AnchorLink>
                   </Li>
                 );
@@ -268,7 +317,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
-                      {background}
+                      {backgrounds[`image${++index}`]}
                     </Link>
                   </Li>
                 );
