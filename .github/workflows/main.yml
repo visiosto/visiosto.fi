@@ -57,6 +57,9 @@ jobs:
     - name: Run checks
       run: yarn ci-check
 
+    - name: Run tests
+      run: yarn test
+
   build:
     name: Build
     runs-on: ubuntu-latest
