@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Unit tests for the utilities.
 - Multiple Node version to the main workflow.
 - Image as the hover background for the main navigation.
+- Inverted colour for every colour in the theme.
 
 ### Changed
 
