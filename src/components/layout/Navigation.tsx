@@ -96,6 +96,11 @@ const Ul = styled.ul<{ toggled: boolean }>`
 
 const Li = styled.li`
   position: relative;
+  margin: 2rem 0;
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 0;
+  }
 `;
 
 const ImageDiv = styled.div`
@@ -113,11 +118,11 @@ const BackgroundImage = styled(SchemedImage)`
   margin: -2.3rem 0 0;
 `;
 
-const Link = styled(LocalizedLink)`
+const linkStyle = css`
   position: relative;
   margin: 0 auto;
   border-radius: ${(props) => props.theme.borders.commonRadius};
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   background: transparent;
   font-size: 1.1rem;
   font-weight: 400;
@@ -137,33 +142,16 @@ const Link = styled(LocalizedLink)`
       display: inline-block;
     }
   }
-`;
 
-const AnchorLink = styled(LocalizedAnchorLink)`
-  position: relative;
-  margin: 0 auto;
-  border-radius: ${(props) => props.theme.borders.commonRadius};
-  padding: 1rem 3rem;
-  background: transparent;
-  font-size: 1.1rem;
-  font-weight: 400;
-  text-decoration: none;
-  color: var(--color-text);
-
-  &:visited {
-    color: var(--color-text);
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: var(--color-text);
-
-    div {
-      display: inline-block;
-    }
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 0 auto;
+    padding: 1rem 3rem;
   }
 `;
+
+const Link = styled(LocalizedLink)`${linkStyle}`;
+
+const AnchorLink = styled(LocalizedAnchorLink)`${linkStyle}`;
 
 const createBackgroundImage = function createSchemedBackgroundImage(imageDataLight, imageDataDark) {
   return (
