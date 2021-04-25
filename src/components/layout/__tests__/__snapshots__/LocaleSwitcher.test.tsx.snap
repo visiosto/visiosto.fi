@@ -7,7 +7,7 @@ exports[`Locale switcher component renders English index switcher correctly 1`] 
     href="/"
   >
     <span
-      class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
     >
       Suomeksi
     </span>
@@ -24,7 +24,7 @@ exports[`Locale switcher component renders Finnish index switcher correctly 1`] 
     href="/en"
   >
     <span
-      class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
     >
       In English
     </span>

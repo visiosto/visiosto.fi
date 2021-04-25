@@ -3,7 +3,7 @@
 exports[`Feature card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-hKwCoD iXBthp"
+    class="sc-hKwCoD iyPGml"
   >
     <div
       class="sc-eCImvq kHVCyU"
@@ -30,7 +30,7 @@ exports[`Feature card component renders correctly 1`] = `
     </h3>
     Some text here
     <span
-      class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
     >
       Click here
     </span>

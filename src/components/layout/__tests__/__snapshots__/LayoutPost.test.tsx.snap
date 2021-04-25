@@ -370,7 +370,7 @@ exports[`Post layout component renders correctly 1`] = `
             class="sc-dvQbkV enOMsj"
           >
             <a
-              class="sc-bdvvaa dNmnLe"
+              class="sc-bdvvaa kKoite"
               href="/henkilo/antti-kivi"
             >
               Antti Kivi
@@ -382,7 +382,7 @@ exports[`Post layout component renders correctly 1`] = `
             Kategoria:
              
             <a
-              class="sc-gsDJrp fTjLJA"
+              class="sc-gsDJrp igPdbA"
               href="/blogi/kategoria/yleinen"
             >
               Yleinen
@@ -401,14 +401,14 @@ exports[`Post layout component renders correctly 1`] = `
     class="sc-kLwgWK cXIdre"
   >
     <div
-      class="sc-bYoCmx dzZONB"
+      class="sc-bYoCmx dtDBON"
     >
       <form
         class="sc-fKVsgm iDnfrC"
       >
         <input
           aria-label="Haku"
-          class="sc-bBHwJV crnJOv"
+          class="sc-bBHwJV kMDheq"
           placeholder="Haku"
           type="text"
           value=""
@@ -434,7 +434,7 @@ exports[`Post layout component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-ezbkgU fLYoUp"
+          class="sc-ezbkgU cLgxIj"
         >
           <div>
             Hakemistoa ladataan
@@ -546,7 +546,7 @@ exports[`Post layout component renders correctly 1`] = `
         href="/en/blog/modern-marketing-agency-visiosto-makes-your-vision-come-true"
       >
         <span
-          class="sc-dkPtyc sc-hKwCoD gjvnYP ccjdrV"
+          class="sc-dkPtyc sc-hKwCoD RfKIA OoMAL"
         >
           In English
         </span>
@@ -846,7 +846,38 @@ exports[`Post layout component renders correctly 1`] = `
         </span>
         <div
           class="sc-dlVyqM ifcBiq"
-        />
+        >
+          <div
+            class="sc-jRQAMF dwTUvx"
+          >
+            <div
+              class="sc-gKckTs"
+            >
+              <h2
+                class="sc-iCfLBT dwlkFt"
+              >
+                Saisiko olla keksi?
+              </h2>
+              <p>
+                Sivustomme käyttää evästeitä. Käytämme evästeitä nähdäksemme mistä sisällöistä sivustomme käyttäjät ovat kiinnostuneita ja mahdollistaaksemme joitakin sivuston toiminnallisuuksia. Voit tutustua tarkemmin evästeiden sisältöön ja hallita asetuksiasi evästeasetus-sivulla.
+              </p>
+            </div>
+            <div
+              class="sc-furvIG eyxAUG"
+            >
+              <span
+                class="sc-dkPtyc sc-eCImvq RfKIA iNlNTr"
+              >
+                Kiitos, hyväksyn evästeet
+              </span>
+              <span
+                class="sc-dkPtyc sc-hKwCoD RfKIA OoMAL"
+              >
+                Tarkistan evästeet ja säädän niitä
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       <p
         class="sc-cNKpQo gFoGPB"

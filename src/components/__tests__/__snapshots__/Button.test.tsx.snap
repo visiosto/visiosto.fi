@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button component renders green colours correctly 1`] = `
+exports[`Button component renders accept colours correctly 1`] = `
 <div>
   <span
-    class="sc-bdvvaa sc-dkPtyc fSAtAE eppyMW"
+    class="sc-bdvvaa sc-dkPtyc cQWPbX bKKRMj"
   >
     Button
   </span>
@@ -14,7 +14,7 @@ exports[`Button component renders green colours correctly 1`] = `
 exports[`Button component renders normal colours correctly 1`] = `
 <div>
   <span
-    class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+    class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
   >
     Button
   </span>

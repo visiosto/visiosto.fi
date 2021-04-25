@@ -3,14 +3,14 @@
 exports[`Search component renders correctly 1`] = `
 <div>
   <div
-    class="sc-furvIG gmHxTO"
+    class="sc-furvIG jUQbBa"
   >
     <form
       class="sc-bdvvaa exMfau"
     >
       <input
         aria-label="Haku"
-        class="sc-gsDJrp ciocSU"
+        class="sc-gsDJrp bwpbNV"
         placeholder="Haku"
         type="text"
         value=""
@@ -36,7 +36,7 @@ exports[`Search component renders correctly 1`] = `
       hidden=""
     >
       <div
-        class="sc-iCfLBT dqZXdP"
+        class="sc-iCfLBT bRZKPF"
       >
         <div>
           Hakemistoa ladataan

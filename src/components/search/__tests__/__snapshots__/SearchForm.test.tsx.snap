@@ -7,7 +7,7 @@ exports[`Search form component renders correctly 1`] = `
   >
     <input
       aria-label="Haku"
-      class="sc-gsDJrp ciocSU"
+      class="sc-gsDJrp bwpbNV"
       placeholder="Haku"
       type="text"
       value="Searching"

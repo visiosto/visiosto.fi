@@ -6,14 +6,14 @@ exports[`Footer component renders correctly 1`] = `
     class="sc-ezbkgU gRrGll"
   >
     <div
-      class="sc-giYgFv bwgJGv"
+      class="sc-giYgFv KlUwD"
     >
       <form
         class="sc-dlVyqM gnFVnf"
       >
         <input
           aria-label="Haku"
-          class="sc-kfPtPH cjTyKN"
+          class="sc-kfPtPH bmpMBM"
           placeholder="Haku"
           type="text"
           value=""
@@ -39,7 +39,7 @@ exports[`Footer component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-iJKOzS hKtrST"
+          class="sc-iJKOzS bWLLPN"
         >
           <div>
             Hakemistoa ladataan
@@ -151,7 +151,7 @@ exports[`Footer component renders correctly 1`] = `
         href="/en"
       >
         <span
-          class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+          class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
         >
           In English
         </span>
@@ -451,7 +451,38 @@ exports[`Footer component renders correctly 1`] = `
         </span>
         <div
           class="sc-dJjZJu bwgHwY"
-        />
+        >
+          <div
+            class="sc-hKwCoD bYVIaK"
+          >
+            <div
+              class="sc-eCImvq"
+            >
+              <h2
+                class="sc-jRQAMF gdEmkI"
+              >
+                Saisiko olla keksi?
+              </h2>
+              <p>
+                Sivustomme käyttää evästeitä. Käytämme evästeitä nähdäksemme mistä sisällöistä sivustomme käyttäjät ovat kiinnostuneita ja mahdollistaaksemme joitakin sivuston toiminnallisuuksia. Voit tutustua tarkemmin evästeiden sisältöön ja hallita asetuksiasi evästeasetus-sivulla.
+              </p>
+            </div>
+            <div
+              class="sc-gKckTs fXhqHU"
+            >
+              <span
+                class="sc-bdvvaa sc-dkPtyc cQWPbX bKKRMj"
+              >
+                Kiitos, hyväksyn evästeet
+              </span>
+              <span
+                class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+              >
+                Tarkistan evästeet ja säädän niitä
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       <p
         class="sc-dPiKHq jkLreO"

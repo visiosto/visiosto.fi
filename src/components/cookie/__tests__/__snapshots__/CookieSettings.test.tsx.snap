@@ -2,6 +2,36 @@
 
 exports[`Cookie settings component renders correctly when closed 1`] = `
 <div>
+  <div
+    class="sc-hKwCoD bYVIaK"
+  >
+    <div
+      class="sc-eCImvq"
+    >
+      <h2
+        class="sc-jRQAMF gdEmkI"
+      >
+        Saisiko olla keksi?
+      </h2>
+      <p>
+        Sivustomme käyttää evästeitä. Käytämme evästeitä nähdäksemme mistä sisällöistä sivustomme käyttäjät ovat kiinnostuneita ja mahdollistaaksemme joitakin sivuston toiminnallisuuksia. Voit tutustua tarkemmin evästeiden sisältöön ja hallita asetuksiasi evästeasetus-sivulla.
+      </p>
+    </div>
+    <div
+      class="sc-gKckTs fXhqHU"
+    >
+      <span
+        class="sc-bdvvaa sc-dkPtyc cQWPbX bKKRMj"
+      >
+        Kiitos, hyväksyn evästeet
+      </span>
+      <span
+        class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      >
+        Tarkistan evästeet ja säädän niitä
+      </span>
+    </div>
+  </div>
   ,
 </div>
 `;
@@ -73,14 +103,14 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.
               </p>
               <label
-                class="sc-hBURRC lepqNC"
+                class="sc-hBURRC itOHsZ"
               >
                 <input
-                  class="sc-fotPbf irbmQb"
+                  class="sc-fotPbf eTdZOw"
                   type="checkbox"
                 />
                 <span
-                  class="sc-fFehDp iZdDdt"
+                  class="sc-fFehDp bTnMdZ"
                 />
               </label>
             </div>
@@ -99,12 +129,12 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               class="sc-bkkfTU"
             >
               <span
-                class="sc-bdvvaa sc-dkPtyc fSAtAE eppyMW"
+                class="sc-bdvvaa sc-dkPtyc cQWPbX bKKRMj"
               >
                 Tallenna ja sulje
               </span>
               <span
-                class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+                class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
               >
                 Peruuta
               </span>
