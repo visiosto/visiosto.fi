@@ -3,7 +3,7 @@
 
 import createLocaleURL from '../createLocaleURL';
 
-import entryIDs from '../../entryIDs';
+import { clientRegisterPrivacyPolicyPageID, indexPageID, managementPageID } from '../../entryIDs';
 import headQuery from '../../../test/data/headQuery';
 
 describe('function for creating localized URLs of pages', () => {
@@ -12,7 +12,6 @@ describe('function for creating localized URLs of pages', () => {
     site: { siteMetadata: { defaultLocale: 'fi', localePaths: { fi: '', en_GB: 'en' } } },
   };
   const baseURL = 'https://visiosto.fi';
-  const { clientRegisterPrivacyPolicyPageID, indexPageID, managementPageID } = entryIDs;
 
   it('creates Finnish index URL correctly', () => {
     expect(createLocaleURL(baseURL, indexPageID, 'fi', data)).toBe('https://visiosto.fi');

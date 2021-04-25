@@ -21,6 +21,8 @@ import {
   REGISTER_PERSON_FORM_NAME,
 } from '../../constants';
 
+import { clientRegisterPrivacyPolicyPageID } from '../../entryIDs';
+
 import createInternationalization from '../../util/createInternationalization';
 import encodeFormState from '../../util/encodeFormState';
 
@@ -606,7 +608,7 @@ class RegisterPersonForm extends React.Component<Props, State> {
               <p>
                 {intl('clientRegisterPersonFormPrivacyInfo', {
                   a: (...chunk) => (
-                    <LocalizedLink locale={locale} to="6a7fVb49Zf79FTetXflVFL">
+                    <LocalizedLink locale={locale} to={clientRegisterPrivacyPolicyPageID}>
                       {chunk}
                     </LocalizedLink>
                   ),

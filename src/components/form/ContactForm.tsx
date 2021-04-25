@@ -16,6 +16,8 @@ import {
   FORM_POST_STATUS_TIMEOUT,
 } from '../../constants';
 
+import { marketingRegisterPrivacyPolicyPageID } from '../../entryIDs';
+
 import createInternationalization from '../../util/createInternationalization';
 import encodeFormState from '../../util/encodeFormState';
 
@@ -195,7 +197,7 @@ class ContactForm extends React.Component<Props, State> {
             <p>
               {intl('contactFormSendConsent', {
                 a: (...chunk) => (
-                  <LocalizedLink locale={locale} to="2B8WVOvBXdHmLHeBFx381E">
+                  <LocalizedLink locale={locale} to={marketingRegisterPrivacyPolicyPageID}>
                     {chunk}
                   </LocalizedLink>
                 ),
