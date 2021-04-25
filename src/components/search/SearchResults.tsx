@@ -8,6 +8,8 @@ import { useIntl } from 'react-intl';
 
 import SearchResultList from './SearchResultList';
 
+import boxShadowStyle from '../../styles/boxShadowStyle';
+
 import createInternationalization from '../../util/createInternationalization';
 
 const Div = styled.div`
@@ -28,8 +30,9 @@ const Inner = styled.div`
   max-width: 30em;
   padding: 1em;
   border-radius: 0.25em;
-  box-shadow: var(--color-box-shadow);
   background: var(--color-background);
+
+  ${boxShadowStyle}
 `;
 
 const propTypes = {

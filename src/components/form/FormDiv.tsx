@@ -3,6 +3,11 @@
 
 import styled from 'styled-components';
 
+import boxShadowHoverStyle from '../../styles/boxShadowHoverStyle';
+import boxShadowStyle from '../../styles/boxShadowStyle';
+import buttonDefaultStyle from '../../styles/buttonDefaultStyle';
+import buttonStyle from '../../styles/buttonStyle';
+
 import { FORM_CLASS_ERROR_MESSAGE } from '../../constants';
 
 const FormDiv = styled.div`
@@ -35,14 +40,16 @@ const FormDiv = styled.div`
     border: none;
     border-radius: 0.25rem;
     padding: 0.4rem 1rem;
-    box-shadow: var(--color-box-shadow);
     transition: box-shadow 75ms ease-in;
     background: var(--color-background);
     color: var(--color-text);
 
+    ${boxShadowStyle}
+
     &:focus {
-      box-shadow: var(--color-box-shadow-hover);
       outline: none;
+
+      ${boxShadowHoverStyle}
     }
   }
 
@@ -52,24 +59,12 @@ const FormDiv = styled.div`
 
   input[type='submit'],
   button[type='submit'] {
-    display: inline-block;
-    border-style: none;
-    border-radius: 3rem;
-    border: 3px solid transparent;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
     box-shadow: none;
-    transition: all 100ms ease-in;
     background-color: var(--color-link);
-    background-clip: padding-box;
-    font-weight: 400;
-    text-align: center;
-    text-decoration: none;
     color: var(--color-text-button);
 
-    &:hover {
-      background-color: var(--color-link-hover);
-    }
+    ${buttonStyle}
+    ${buttonDefaultStyle}
   }
 
   label {
@@ -86,7 +81,8 @@ const FormDiv = styled.div`
   }
 
   .${FORM_CLASS_ERROR_MESSAGE} {
-    color: var(--color-text-error);
+    font-style: italic;
+    color: var(--color-text);
   }
 `;
 

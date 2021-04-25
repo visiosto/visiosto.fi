@@ -40,7 +40,7 @@ const Input = styled.input`
   border-radius: 2px;
   color: var(--color-text);
   ::placeholder {
-    color: var(--color-text-weak);
+    color: var(--color-text);
   }
   ${open}
 `;

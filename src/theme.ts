@@ -6,23 +6,15 @@ import './DefaultTheme';
 import { DefaultTheme } from 'styled-components';
 
 const colors = {
-  blue: '#23297a',
-  lightBlue: '#6dcff6',
+  stPatricksBlue: '#23297a',
+  skyBlue: '#6dcff6',
   peach: '#fbb496',
   cream: '#ffffe4',
+  green: '#8dd68d',
+  greenDark: '#116f11',
   black: '#3b4a57',
   white: '#ffffff',
-  linkBlue: '#0366d6',
-  linkBlueDark: '#00336e',
-  linkYellow: '#fabd46',
-  linkYellowDark: '#ba8d34',
-  buttonGreen: '#49e324',
-  buttonGreenDark: '#37aa1b',
-  errorRed: '#ffc7c7',
-  errorRedDark: '#a31212',
-  // white: '#f2f0eb',
-  shade: '#dde1e9',
-  shadeDark: '#2a2a2b',
+  lightGray: '#dde1e9',
   gray: '#f6f7f9',
 };
 
@@ -31,65 +23,29 @@ export const COLORS = {
     light: colors.white,
     dark: colors.black,
   },
+  'background-weak': {
+    light: colors.lightGray,
+    dark: colors.gray,
+  },
   text: {
     light: colors.black,
     dark: colors.white,
   },
-  'text-weak': {
-    light: colors.shade,
-    dark: colors.gray,
-  },
-  'text-button': {
-    light: colors.white,
-    dark: colors.black,
-  },
-  'text-button-green': {
+  'text-dark': {
     light: colors.black,
     dark: colors.black,
   },
-  'text-error': {
-    light: colors.errorRedDark,
-    dark: colors.errorRed,
-  },
   link: {
-    light: colors.linkBlue,
-    dark: colors.linkYellow,
+    light: colors.stPatricksBlue,
+    dark: colors.peach,
   },
   'link-hover': {
-    light: colors.linkBlueDark,
-    dark: colors.linkYellowDark,
-  },
-  'button-green': {
-    light: colors.buttonGreen,
-    dark: colors.buttonGreen,
-  },
-  'button-green-hover': {
-    light: colors.buttonGreenDark,
-    dark: colors.buttonGreenDark,
-  },
-  primary: {
-    light: colors.blue,
-    dark: colors.lightBlue,
-  },
-  secondary: {
-    light: colors.peach,
+    light: colors.skyBlue,
     dark: colors.cream,
   },
-  'background-hover': {
-    light: colors.shade,
-    dark: colors.shadeDark,
-  },
-  'box-shadow': {
-    light:
-      '0px 3px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 3px 8px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
-    dark:
-      '0px 3px 1px rgba(0, 0, 0, 0.10), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 3px 8px rgba(0, 0, 0, 0.14), 0px 15px 22px rgba(0, 0, 0, 0.12)',
-  },
-  'box-shadow-hover': {
-    light:
-      '0px 13px 11px rgba(0, 0, 0, 0.04), 0px 11px 11px rgba(0, 0, 0, 0.08), 0px 13px 18px rgba(0, 0, 0, 0.08), 0px 15px 22px rgba(0, 0, 0, 0.06)',
-    dark:
-      '0px 13px 11px rgba(0, 0, 0, 0.14), 0px 11px 11px rgba(0, 0, 0, 0.18), 0px 13px 18px rgba(0, 0, 0, 0.18), 0px 15px 22px rgba(0, 0, 0, 0.16)',
+  'link-accept': {
+    light: colors.greenDark,
+    dark: colors.green,
   },
 };
 

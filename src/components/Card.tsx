@@ -5,14 +5,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import boxShadowHoverStyle from '../styles/boxShadowHoverStyle';
+import boxShadowStyle from '../styles/boxShadowStyle';
+
 const Article = styled.article`
   border-radius: 0.5rem;
   padding: 2rem;
-  box-shadow: var(--color-box-shadow);
   transition: box-shadow 100ms ease-in;
 
+  ${boxShadowStyle}
+
   &:hover {
-    box-shadow: var(--color-box-shadow-hover);
+    ${boxShadowHoverStyle}
   }
 `;
 

@@ -89,7 +89,7 @@ const Link = styled(LocalizedLink)`
   &:focus,
   &:active {
     text-decoration: underline;
-    color: var(--color-link-text);
+    color: var(--color-link-hover);
   }
 `;
 

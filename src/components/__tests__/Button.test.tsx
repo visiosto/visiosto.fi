@@ -16,9 +16,9 @@ describe('Button component', () => {
     expect(getByText('Button')).toBeInTheDocument();
   });
 
-  it('renders green colours correctly', () => {
+  it('renders accept colours correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <Button color="green">Button</Button>,
+      <Button action="accept">Button</Button>,
       'fi',
     );
 

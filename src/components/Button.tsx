@@ -5,52 +5,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import buttonDefaultStyle from '../styles/buttonDefaultStyle';
+import buttonStyle from '../styles/buttonStyle';
+
 const Span = styled.span`
-  display: inline-block;
-  border-style: none;
-  border-radius: 3rem;
-  border: 3px solid transparent;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  transition: all 100ms ease-in;
-  background-clip: padding-box;
-  font-weight: 400;
-  text-align: center;
-  text-decoration: none;
+  ${buttonStyle}
 `;
 
-const SpanNormal = styled(Span)`
-  background-color: var(--color-link);
-  color: var(--color-text-button);
-
-  &:hover {
-    background-color: var(--color-link-hover);
-  }
+const SpanDefault = styled(Span)`
+  ${buttonDefaultStyle}
 `;
 
-const SpanGreen = styled(Span)`
-  background-color: var(--color-button-green);
-  color: var(--color-text-button-green);
+const SpanAccept = styled(Span)`
+  background-color: var(--color-link-accept);
+  color: var(--color-text-inverted);
 
   &:hover {
-    background-color: var(--color-button-green-hover);
+    background-color: var(--color-link-accept-inverted);
+    color: var(--color-text);
   }
 `;
 
 const propTypes = {
+  action: PropTypes.oneOf(['default', 'accept']),
   children: PropTypes.node.isRequired,
-  color: PropTypes.string,
   onClick: PropTypes.func,
 };
 
-const defaultProps = { color: '', onClick: null };
+const defaultProps = { action: 'default', onClick: null };
 
-function Button({ children, color, onClick }) {
-  if (color === 'green') {
-    return <SpanGreen onClick={onClick}>{children}</SpanGreen>;
+function Button({ action, children, onClick }) {
+  if (action === 'accept') {
+    return <SpanAccept onClick={onClick}>{children}</SpanAccept>;
   }
 
-  return <SpanNormal onClick={onClick}>{children}</SpanNormal>;
+  return <SpanDefault onClick={onClick}>{children}</SpanDefault>;
 }
 
 Button.propTypes = propTypes;

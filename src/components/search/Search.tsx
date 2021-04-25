@@ -7,16 +7,20 @@ import styled from 'styled-components';
 
 import SearchContainer from './SearchContainer';
 
+import boxShadowStyle from '../../styles/boxShadowStyle';
+import boxShadowHoverStyle from '../../styles/boxShadowHoverStyle';
+
 const Container = styled(SearchContainer)`
   display: inline-block;
   position: relative;
   margin: 0.6em 0;
   border-radius: 0.25rem;
-  box-shadow: var(--color-box-shadow);
   transition: box-shadow 75ms ease-in;
 
+  ${boxShadowStyle}
+
   &.focus {
-    box-shadow: var(--color-box-shadow-hover);
+    ${boxShadowHoverStyle}
   }
 `;
 

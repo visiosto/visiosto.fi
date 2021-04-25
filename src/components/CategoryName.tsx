@@ -7,20 +7,10 @@ import styled from 'styled-components';
 
 import LocalizedLink from './link/LocalizedLink';
 
+import blogMetaLinksStyle from '../styles/blogMetaLinksStyle';
+
 const Link = styled(LocalizedLink)`
-  text-decoration: none;
-  color: var(--color-text);
-
-  &:visited {
-    color: var(--color-text);
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-    color: var(--color-link-text);
-  }
+  ${blogMetaLinksStyle}
 `;
 
 const propTypes = {
