@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Unit tests for the components.
+- Unit tests for the utilities.
 
 ### Changed
 
