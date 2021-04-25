@@ -36,6 +36,7 @@ jobs:
       id: version
       uses: anttikivi/maintain-revision@v0.10.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
 
     - name: Get Yarn cache directory path
@@ -84,6 +85,7 @@ jobs:
       id: version
       uses: anttikivi/maintain-revision@v0.10.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
         upload: false
 
@@ -127,6 +129,7 @@ jobs:
       id: version
       uses: anttikivi/maintain-revision@v0.10.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
         upload: false
 
