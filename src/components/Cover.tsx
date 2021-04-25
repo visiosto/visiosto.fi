@@ -360,8 +360,8 @@ function Cover({ children, imagesType, rule, title }) {
         <Rule color={rule.color} mode={rule.mode} />
       </TopRuleWrapper>
       <ImageWrapper
-        top={topStyles.top !== undefined ? topStyles.top : undefined}
         right={topStyles.right !== undefined ? topStyles.right : undefined}
+        top={topStyles.top !== undefined ? topStyles.top : undefined}
       >
         <Image alt="" dark={imagesTopDark} light={imagesTopLight} objectFit="cover" />
       </ImageWrapper>
@@ -372,9 +372,9 @@ function Cover({ children, imagesType, rule, title }) {
         <Content>{children}</Content>
       </Inner>
       <ImageWrapper
-        right={bottomStyles.right !== undefined ? bottomStyles.right : undefined}
         bottom={bottomStyles.bottom !== undefined ? bottomStyles.bottom : undefined}
         left={bottomStyles.left !== undefined ? bottomStyles.left : undefined}
+        right={bottomStyles.right !== undefined ? bottomStyles.right : undefined}
       >
         <Image alt="" dark={imagesBottomDark} light={imagesBottomLight} objectFit="cover" />
       </ImageWrapper>
