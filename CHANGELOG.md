@@ -10,12 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Unit tests for the components.
 - Unit tests for the utilities.
+- Multiple Node version to the main workflow.
 
 ### Changed
 
 - All of the translations with the ending `ALT` to have the ending `Text`.
 - Project to use TypeScript.
 - ESLint to lint JSX files in addition to JS files.
+- Main workflow to be run in multiple different jobs.
 
 ### Fixed
 
