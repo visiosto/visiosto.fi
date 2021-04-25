@@ -4,13 +4,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
+import SchemedImage from '../SchemedImage';
 
 const Nav = styled.nav`
-  margin: 0 auto;
+  margin: 2rem auto;
 `;
 
 const Toggle = styled.div`
@@ -93,18 +95,29 @@ const Ul = styled.ul<{ toggled: boolean }>`
 `;
 
 const Li = styled.li`
-  margin: 2rem 1em;
+  position: relative;
+`;
 
-  @media screen and (${(props) => props.theme.devices.tablet}) {
-    margin: 1em;
-  }
+const ImageDiv = styled.div`
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+`;
+
+const BackgroundImage = styled(SchemedImage)`
+  position: relative;
+  left: -50%;
+  z-index: -1;
+  margin: -2.3rem 0 0;
 `;
 
 const Link = styled(LocalizedLink)`
   position: relative;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   border-radius: ${(props) => props.theme.borders.commonRadius};
-  padding: 0.7rem 1rem;
+  padding: 1rem 3rem;
   background: transparent;
   font-size: 1.1rem;
   font-weight: 400;
@@ -118,16 +131,19 @@ const Link = styled(LocalizedLink)`
   &:hover,
   &:focus,
   &:active {
-    background: var(--color-background-hover);
     color: var(--color-text);
+
+    div {
+      display: inline-block;
+    }
   }
 `;
 
 const AnchorLink = styled(LocalizedAnchorLink)`
   position: relative;
-  margin: 1rem auto 0;
+  margin: 0 auto;
   border-radius: ${(props) => props.theme.borders.commonRadius};
-  padding: 0.7rem 1rem;
+  padding: 1rem 3rem;
   background: transparent;
   font-size: 1.1rem;
   font-weight: 400;
@@ -141,8 +157,11 @@ const AnchorLink = styled(LocalizedAnchorLink)`
   &:hover,
   &:focus,
   &:active {
-    background: var(--color-background-hover);
     color: var(--color-text);
+
+    div {
+      display: inline-block;
+    }
   }
 `;
 
@@ -152,6 +171,16 @@ function Navigation({ locale }) {
   const data = useStaticQuery(
     graphql`
       query {
+        backgroundHoverLight: file(relativePath: { eq: "navigation/background-hover-light.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
+        backgroundHoverDark: file(relativePath: { eq: "navigation/background-hover-dark.png" }) {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150, placeholder: BLURRED, quality: 100)
+          }
+        }
         allContentfulMenu(filter: { contentful_id: { eq: "7oKEb5SnrTGF1vbDGwfBbr" } }) {
           edges {
             node {
@@ -189,6 +218,17 @@ function Navigation({ locale }) {
 
   const [toggled, setToggled] = useState(false);
 
+  const { backgroundHoverLight, backgroundHoverDark } = data;
+  const background = (
+    <ImageDiv>
+      <BackgroundImage
+        dark={getImage(backgroundHoverDark)!}
+        light={getImage(backgroundHoverLight)!}
+        loading="eager"
+      />
+    </ImageDiv>
+  );
+
   return (
     <Nav>
       <Toggle
@@ -210,6 +250,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
+                      {background}
                     </Link>
                   </Li>
                 );
@@ -218,6 +259,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <AnchorLink locale={locale} to={`/#${link.slug}`}>
                       {link.title}
+                      {background}
                     </AnchorLink>
                   </Li>
                 );
@@ -226,6 +268,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
+                      {background}
                     </Link>
                   </Li>
                 );
