@@ -10,7 +10,7 @@
     "dev": "gatsby develop",
     "format": "prettier --config .prettierrc.json --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "nit": "prettier --config .prettierrc.json --list-different \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "test": "yarn type-check && jest",
+    "test": "jest",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:css": "stylelint './src/**/*{.js,.jsx,.ts,.tsx}'",
     "type-check": "tsc",
