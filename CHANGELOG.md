@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.20.0] - 2021-04-25
+
+### Added
+
+- Unit tests for the components.
+- Unit tests for the utilities.
+- Multiple Node version to the main workflow.
+- Image as the hover background for the main navigation.
+- Inverted colour for every colour in the theme.
+- Common style files for some components.
+- Automatic inverted versions of the theme colours.
+
+### Changed
+
+- All of the translations with the ending `ALT` to have the ending `Text`.
+- Project to use TypeScript.
+- ESLint to lint JSX files in addition to JS files.
+- Main workflow to be run in multiple different jobs.
+- Links and elements to use the brand colours.
+- Button component to use prop `action` instead of `color` to determine the style of the button.
+
+### Removed
+
+- Unnecessary colours from the theme.
+
+### Fixed
+
+- Order of the site URL redirects.
+- Border radii of the images for Gatsby v3.3.
+- Cover images showing on small screens when they should be hidden.
+
 ## [0.19.1] - 2021-04-11
 
 ### Fixed
@@ -537,7 +568,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.19.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto.fi/compare/v0.20.0...HEAD
+[0.20.0]: https://github.com/visiosto/visiosto.fi/compare/v0.19.1...v0.20.0
 [0.19.1]: https://github.com/visiosto/visiosto.fi/compare/v0.19.0...v0.19.1
 [0.19.0]: https://github.com/visiosto/visiosto.fi/compare/v0.18.1...v0.19.0
 [0.18.1]: https://github.com/visiosto/visiosto.fi/compare/v0.18.0...v0.18.1

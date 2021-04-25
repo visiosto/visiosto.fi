@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search results component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-hKwCoD bpZeBV"
+  >
+    <div
+      class="sc-eCImvq btlBsi"
+    >
+      <div>
+        Ei tuloksia
+      </div>
+    </div>
+  </div>
+  ,
+</div>
+`;

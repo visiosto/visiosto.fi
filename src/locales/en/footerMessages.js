@@ -2,7 +2,7 @@
 // Licensed under the MIT License
 
 export default {
-  footerLogoALT: 'Visiosto Logo',
+  footerLogoImageText: 'Visiosto Logo',
   footerCompanyName: 'Visiosto oy',
   footerBusinessID: 'Finnish Business ID:',
   footerVatNumber: 'VAT number:',
@@ -12,11 +12,11 @@ export default {
   footerTermsOfUse: 'Terms of use',
   footerSocialMediaTitle: 'Social Media',
   footerHashtag: '&num;throughourlens',
-  footerFacebookALT: 'Facebook Logo',
-  footerGithubALT: 'GitHub Logo',
-  footerInstagramALT: 'Instagram Logo',
-  footerLinkedinALT: 'LinkedIn Logo',
-  footerTwitterALT: 'Twitter Logo',
+  footerFacebookImageText: 'Facebook Logo',
+  footerGithubImageText: 'GitHub Logo',
+  footerInstagramImageText: 'Instagram Logo',
+  footerLinkedinImageText: 'LinkedIn Logo',
+  footerTwitterImageText: 'Twitter Logo',
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
   footerMadeBy: 'The site is rendered through the lens of <a>Visiosto</a>',

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component renders correctly 1`] = `
+<div>
+  <article
+    class="sc-bdvvaa eedMoP"
+  >
+    Test text
+  </article>
+  ,
+</div>
+`;

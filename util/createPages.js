@@ -204,11 +204,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Author.jsx'),
+      component: path.resolve('src', 'templates', 'Author.tsx'),
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -228,11 +228,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Authors.jsx'),
+      component: path.resolve('src', 'templates', 'Authors.tsx'),
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -251,7 +251,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'ContentfulPage.jsx'),
+      component: path.resolve('src', 'templates', 'ContentfulPage.tsx'),
       context: {
         locale,
         pageID,
@@ -282,12 +282,12 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'BlogPost.jsx'),
+      component: path.resolve('src', 'templates', 'BlogPost.tsx'),
       context: {
         locale,
-        pageID,
-        momentJsLocale: locale.toLowerCase(),
         management,
+        pageID,
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -307,11 +307,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Blog.jsx'),
+      component: path.resolve('src', 'templates', 'Blog.tsx'),
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -336,11 +336,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Category.jsx'),
+      component: path.resolve('src', 'templates', 'Category.tsx'),
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -359,7 +359,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Categories.jsx'),
+      component: path.resolve('src', 'templates', 'Categories.tsx'),
       context: {
         locale,
         pageID,
@@ -381,7 +381,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Index.jsx'),
+      component: path.resolve('src', 'templates', 'Index.tsx'),
       context: {
         locale,
         pageID,
@@ -404,11 +404,11 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Management.jsx'),
+      component: path.resolve('src', 'templates', 'Management.tsx'),
       context: {
         locale,
         pageID,
-        momentJsLocale: locale.toLowerCase(),
+        momentJSLocale: locale.toLowerCase(),
       },
     });
   });
@@ -428,7 +428,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'Pricing.jsx'),
+      component: path.resolve('src', 'templates', 'Pricing.tsx'),
       context: {
         locale,
         pageID,
@@ -450,7 +450,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.tsx'),
       context: {
         locale,
         pageID,
@@ -473,7 +473,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'ClientRegister.jsx'),
+      component: path.resolve('src', 'templates', 'ClientRegister.tsx'),
       context: {
         locale,
         pageID,
@@ -494,7 +494,7 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
 
     createPage({
       path: pagePath,
-      component: path.resolve('src', 'templates', 'NotFound.jsx'),
+      component: path.resolve('src', 'templates', 'NotFound.tsx'),
       context: {
         locale,
         pageID: '404',
@@ -502,16 +502,15 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     });
   });
 
-  // Create the redirects for the 404 error pages.
-  createRedirect({
-    fromPath: '/en/*',
-    toPath: `/en/404`,
-    statusCode: 404,
-  });
-  createRedirect({
-    fromPath: '/*',
-    toPath: `/404`,
-    statusCode: 404,
+  // Create the redirects for all of the pages.
+
+  alternativeURLs.forEach((url) => {
+    createRedirect({
+      fromPath: `${url}/*`,
+      toPath: `${siteURL}/:splat`,
+      isPermanent: true,
+      force: true,
+    });
   });
 
   // Create the redirects for the URLs.
@@ -525,14 +524,15 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     });
   });
 
-  // Create the redirects for all of the pages.
-
-  alternativeURLs.forEach((url) => {
-    createRedirect({
-      fromPath: `${url}/*`,
-      toPath: `${siteURL}/:splat`,
-      isPermanent: true,
-      force: true,
-    });
+  // Create the redirects for the 404 error pages.
+  createRedirect({
+    fromPath: '/en/*',
+    toPath: `/en/404`,
+    statusCode: 404,
+  });
+  createRedirect({
+    fromPath: '/*',
+    toPath: `/404`,
+    statusCode: 404,
   });
 };

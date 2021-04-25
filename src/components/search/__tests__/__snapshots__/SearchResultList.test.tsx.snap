@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search result list component renders correctly 1`] = `
+<div>
+  <div>
+    <ul
+      class="sc-gsDJrp jVvgJR"
+    />
+  </div>
+  ,
+</div>
+`;

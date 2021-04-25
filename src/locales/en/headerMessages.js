@@ -2,5 +2,5 @@
 // Licensed under the MIT License
 
 export default {
-  headerLogoALT: 'Visiosto Logo',
+  headerLogoImageText: 'Visiosto Logo',
 };

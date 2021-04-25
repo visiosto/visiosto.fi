@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor link component renders correctly 1`] = `
+<div>
+  <a
+    href="/some-page#something"
+  >
+    A link
+  </a>
+  ,
+</div>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Locale switcher component renders English index switcher correctly 1`] = `
+<div>
+  <a
+    class="sc-hKwCoD kvbVor"
+    href="/"
+  >
+    <span
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+    >
+      Suomeksi
+    </span>
+  </a>
+  <br />
+  ,
+</div>
+`;
+
+exports[`Locale switcher component renders Finnish index switcher correctly 1`] = `
+<div>
+  <a
+    class="sc-hKwCoD kvbVor"
+    href="/en"
+  >
+    <span
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+    >
+      In English
+    </span>
+  </a>
+  <br />
+  ,
+</div>
+`;

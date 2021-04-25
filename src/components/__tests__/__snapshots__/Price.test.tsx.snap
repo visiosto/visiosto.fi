@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-bdvvaa bOHPht"
+  >
+    <h4
+      class="sc-gsDJrp gIYnqB"
+    >
+      Test title
+    </h4>
+    <div>
+      15,00 €/h
+    </div>
+  </div>
+  ,
+</div>
+`;

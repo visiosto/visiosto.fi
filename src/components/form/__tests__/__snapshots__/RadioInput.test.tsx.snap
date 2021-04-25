@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio input component renders correctly 1`] = `
+<div>
+  <h3>
+    Test input
+  </h3>
+  <p>
+    Test input description
+  </p>
+  <div
+    class="sc-bdvvaa jEnYZw"
+  >
+    <input
+      id="radio-id1"
+      name="testInput"
+      type="radio"
+      value="id1"
+    />
+    <label
+      for="radio-id1"
+    >
+      Option 1
+    </label>
+  </div>
+  <div
+    class="sc-bdvvaa jEnYZw"
+  >
+    <input
+      checked=""
+      id="radio-id2"
+      name="testInput"
+      type="radio"
+      value="id2"
+    />
+    <label
+      for="radio-id2"
+    >
+      Option 2
+    </label>
+  </div>
+  <div
+    class="sc-bdvvaa jEnYZw"
+  >
+    <input
+      id="radio-id3"
+      name="testInput"
+      type="radio"
+      value="id3"
+    />
+    <label
+      for="radio-id3"
+    >
+      Option 3
+    </label>
+  </div>
+  ,
+</div>
+`;

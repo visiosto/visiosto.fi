@@ -10,7 +10,7 @@ The released versions of the website are available on the [Releases page](https:
 
 ### Build
 
-Before building the website, please ensure that you have [Node.js](https://nodejs.org), [npm](https://npmjs.com), and [Yarn](https://yarnpkg.com) installed. Please note that this project uses the [Yarn Classic](https://classic.yarnpkg.com).
+Before building the website, please ensure that you have [Node.js](https://nodejs.org) and [Yarn](https://yarnpkg.com) installed. Please note that this project uses the [Yarn Classic](https://classic.yarnpkg.com).
 
 First, clone the GitHub repository of the website.
 

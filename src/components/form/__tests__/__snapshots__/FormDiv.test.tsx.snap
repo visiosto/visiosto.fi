@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form divider component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-bdvvaa ljWDsl"
+  >
+    Content
+  </div>
+  ,
+</div>
+`;

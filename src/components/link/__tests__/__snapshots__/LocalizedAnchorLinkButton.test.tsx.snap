@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Localized anchor link button component renders correctly 1`] = `
+<div>
+  <a
+    class="sc-hKwCoD kvbVor"
+    href="/kayttoehdot#portfolio"
+  >
+    <span
+      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+    >
+      A link
+    </span>
+  </a>
+  ,
+</div>
+`;
