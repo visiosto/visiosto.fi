@@ -20,6 +20,10 @@ jobs:
       CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 15.x]
+
     steps:
     - name: Check out the repository
       uses: actions/checkout@v2.3.4
@@ -27,7 +31,7 @@ jobs:
     - name: Set up Node.js environment
       uses: actions/setup-node@v2.1.5
       with:
-        node-version: 12.x
+        node-version: ${{ matrix.node-version }}
 
     - name: Determine the project’s version
       id: version
