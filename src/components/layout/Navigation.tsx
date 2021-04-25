@@ -299,7 +299,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
-                      {backgrounds[`image${++index}`]}
+                      {backgrounds[`image${index + 1}`]}
                     </Link>
                   </Li>
                 );
@@ -308,7 +308,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <AnchorLink locale={locale} to={`/#${link.slug}`}>
                       {link.title}
-                      {backgrounds[`image${++index}`]}
+                      {backgrounds[`image${index + 1}`]}
                     </AnchorLink>
                   </Li>
                 );
@@ -317,7 +317,7 @@ function Navigation({ locale }) {
                   <Li key={link.contentful_id}>
                     <Link locale={locale} to={link.contentful_id}>
                       {link.title}
-                      {backgrounds[`image${++index}`]}
+                      {backgrounds[`image${index + 1}`]}
                     </Link>
                   </Li>
                 );
