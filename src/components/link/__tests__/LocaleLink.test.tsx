@@ -14,7 +14,7 @@ describe('Locale link component', () => {
 
   it('renders Finnish correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <LocaleLink to="en-GB" pageID="3N71KokEFuP1VCArc8GpKw">
+      <LocaleLink pageID="3N71KokEFuP1VCArc8GpKw" to="en-GB">
         Linkki
       </LocaleLink>,
       'fi',
@@ -27,7 +27,7 @@ describe('Locale link component', () => {
 
   it('renders English correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <LocaleLink to="fi" pageID="3N71KokEFuP1VCArc8GpKw">
+      <LocaleLink pageID="3N71KokEFuP1VCArc8GpKw" to="fi">
         A link
       </LocaleLink>,
       'en',

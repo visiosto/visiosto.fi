@@ -14,7 +14,7 @@ describe('Localized anchor link component', () => {
 
   it('renders correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <LocalizedAnchorLink to="3N71KokEFuP1VCArc8GpKw#portfolio" locale="fi">
+      <LocalizedAnchorLink locale="fi" to="3N71KokEFuP1VCArc8GpKw#portfolio">
         A link
       </LocalizedAnchorLink>,
       'fi',

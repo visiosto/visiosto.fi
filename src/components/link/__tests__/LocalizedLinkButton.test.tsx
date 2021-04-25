@@ -14,7 +14,7 @@ describe('Localized link button component', () => {
 
   it('renders correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <LocalizedLinkButton to="3N71KokEFuP1VCArc8GpKw" locale="fi">
+      <LocalizedLinkButton locale="fi" to="3N71KokEFuP1VCArc8GpKw">
         A link
       </LocalizedLinkButton>,
       'fi',

@@ -4,7 +4,6 @@
 import '../../../../test/matchMedia';
 
 import React from 'react';
-import { screen } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 
 import LayoutIndex from '../LayoutIndex';
