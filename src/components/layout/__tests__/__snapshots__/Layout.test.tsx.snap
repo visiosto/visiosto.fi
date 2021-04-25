@@ -3,13 +3,13 @@
 exports[`Layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-lbhJmS krUTTP"
+    class="sc-jeqYYF ghDMeN"
   >
     <div
-      class="sc-eJwXpk ipGPmY"
+      class="sc-hiwReK fLDWWd"
     >
       <p
-        class="sc-jeqYYF bRZjKv"
+        class="sc-nVjpj bOCEgn"
         role="heading"
       >
         Visiosto
@@ -18,7 +18,7 @@ exports[`Layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-nVjpj daRPfx"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-ehCIER inPdqd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block;"
         >
@@ -71,7 +71,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png"
               data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/8e0ec/logo-light.png 75w,/static/52fd09904d7b4655c9853584e3d17a71/545e1/logo-light.png 151w,/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png 301w,/static/52fd09904d7b4655c9853584e3d17a71/23911/logo-light.png 602w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 301px) 301px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />
@@ -86,7 +85,7 @@ exports[`Layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-bBHHQT bWFrcb"
+      class="sc-bBHHQT dcUPSb"
     >
       <div
         aria-controls="primary-menu"
@@ -108,56 +107,228 @@ exports[`Layout component renders correctly 1`] = `
         id="primary-menu"
       >
         <li
-          class="sc-hUpaWb cvfhif"
+          class="sc-hUpaWb kBcccH"
         >
           <a
-            class="sc-jgrIVw sBtoQ"
+            class="sc-lbhJmS RatOj"
             href="/"
           >
             Etusivu
+            <div
+              class="sc-jgrIVw iQcucF"
+            >
+              <div
+                class="gatsby-image-wrapper sc-gSQGeZ HjqUl"
+                data-gatsby-image-wrapper=""
+                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  data-placeholder-image=""
+                  decoding="async"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                />
+                <picture>
+                  <source
+                    sizes="150px"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt=""
+                    data-gatsby-image-ssr=""
+                    data-main-image=""
+                    decoding="async"
+                    loading="eager"
+                    role="presentation"
+                    sizes="150px"
+                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  />
+                </picture>
+                <noscript />
+                <script
+                  type="module"
+                >
+                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+                </script>
+              </div>
+            </div>
           </a>
         </li>
         <li
-          class="sc-hUpaWb cvfhif"
+          class="sc-hUpaWb kBcccH"
         >
           <a
-            class="sc-gSQGeZ gPBYtC"
+            class="sc-iNGGwv hoEzxX"
             href="/#portfolio"
           >
             Portfolio
+            <div
+              class="sc-jgrIVw iQcucF"
+            >
+              <div
+                class="gatsby-image-wrapper sc-gSQGeZ HjqUl"
+                data-gatsby-image-wrapper=""
+                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  data-placeholder-image=""
+                  decoding="async"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                />
+                <picture>
+                  <source
+                    sizes="150px"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt=""
+                    data-gatsby-image-ssr=""
+                    data-main-image=""
+                    decoding="async"
+                    loading="eager"
+                    role="presentation"
+                    sizes="150px"
+                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  />
+                </picture>
+                <noscript />
+                <script
+                  type="module"
+                >
+                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+                </script>
+              </div>
+            </div>
           </a>
         </li>
         <li
-          class="sc-hUpaWb cvfhif"
+          class="sc-hUpaWb kBcccH"
         >
           <a
-            class="sc-gSQGeZ gPBYtC"
+            class="sc-iNGGwv hoEzxX"
             href="/#yhteystiedot"
           >
             Yhteystiedot
+            <div
+              class="sc-jgrIVw iQcucF"
+            >
+              <div
+                class="gatsby-image-wrapper sc-gSQGeZ HjqUl"
+                data-gatsby-image-wrapper=""
+                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  data-placeholder-image=""
+                  decoding="async"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                />
+                <picture>
+                  <source
+                    sizes="150px"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt=""
+                    data-gatsby-image-ssr=""
+                    data-main-image=""
+                    decoding="async"
+                    loading="eager"
+                    role="presentation"
+                    sizes="150px"
+                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  />
+                </picture>
+                <noscript />
+                <script
+                  type="module"
+                >
+                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+                </script>
+              </div>
+            </div>
           </a>
         </li>
         <li
-          class="sc-hUpaWb cvfhif"
+          class="sc-hUpaWb kBcccH"
         >
           <a
-            class="sc-jgrIVw sBtoQ"
+            class="sc-lbhJmS RatOj"
             href="/blogi"
           >
             Blogi
+            <div
+              class="sc-jgrIVw iQcucF"
+            >
+              <div
+                class="gatsby-image-wrapper sc-gSQGeZ HjqUl"
+                data-gatsby-image-wrapper=""
+                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  data-placeholder-image=""
+                  decoding="async"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                />
+                <picture>
+                  <source
+                    sizes="150px"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt=""
+                    data-gatsby-image-ssr=""
+                    data-main-image=""
+                    decoding="async"
+                    loading="eager"
+                    role="presentation"
+                    sizes="150px"
+                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  />
+                </picture>
+                <noscript />
+                <script
+                  type="module"
+                >
+                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+                </script>
+              </div>
+            </div>
           </a>
         </li>
       </ul>
     </nav>
     <div
-      class="sc-hiwReK hXaAtW"
+      class="sc-lcequs gkkEcZ"
     />
   </header>
   <main>
     <section>
       <header>
         <h1
-          class="sc-lcequs dhVFuZ"
+          class="sc-clIAKW fKQRzr"
         >
           Hallinto
         </h1>
@@ -254,7 +425,6 @@ exports[`Layout component renders correctly 1`] = `
             data-src="/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png"
             data-srcset="/static/12c8930996726e57eb384915656e7098/f31ef/logo-light.png 40w,/static/12c8930996726e57eb384915656e7098/1f8a1/logo-light.png 80w,/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png 160w,/static/12c8930996726e57eb384915656e7098/5f035/logo-light.png 320w"
             decoding="async"
-            loading="lazy"
             sizes="(min-width: 160px) 160px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
           />
@@ -380,7 +550,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/fafa030c53d0768359acf1f430c6aa52/914ee/instagram-color.png"
               data-srcset="/static/fafa030c53d0768359acf1f430c6aa52/22867/instagram-color.png 8w,/static/fafa030c53d0768359acf1f430c6aa52/fbc98/instagram-color.png 16w,/static/fafa030c53d0768359acf1f430c6aa52/914ee/instagram-color.png 32w,/static/fafa030c53d0768359acf1f430c6aa52/1c9ce/instagram-color.png 64w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 32px) 32px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />
@@ -432,7 +601,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/f407c31b217aac6e0cd4171092d53a8c/914ee/facebook-color.png"
               data-srcset="/static/f407c31b217aac6e0cd4171092d53a8c/22867/facebook-color.png 8w,/static/f407c31b217aac6e0cd4171092d53a8c/fbc98/facebook-color.png 16w,/static/f407c31b217aac6e0cd4171092d53a8c/914ee/facebook-color.png 32w,/static/f407c31b217aac6e0cd4171092d53a8c/1c9ce/facebook-color.png 64w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 32px) 32px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />
@@ -484,7 +652,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/fd7fe5d1dae728c6791714967c8731b8/914ee/twitter-color.png"
               data-srcset="/static/fd7fe5d1dae728c6791714967c8731b8/22867/twitter-color.png 8w,/static/fd7fe5d1dae728c6791714967c8731b8/fbc98/twitter-color.png 16w,/static/fd7fe5d1dae728c6791714967c8731b8/914ee/twitter-color.png 32w,/static/fd7fe5d1dae728c6791714967c8731b8/1c9ce/twitter-color.png 64w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 32px) 32px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />
@@ -536,7 +703,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/9c8e6a00a094c3d457443a762b3cfb86/914ee/linkedin-color.png"
               data-srcset="/static/9c8e6a00a094c3d457443a762b3cfb86/22867/linkedin-color.png 8w,/static/9c8e6a00a094c3d457443a762b3cfb86/fbc98/linkedin-color.png 16w,/static/9c8e6a00a094c3d457443a762b3cfb86/914ee/linkedin-color.png 32w,/static/9c8e6a00a094c3d457443a762b3cfb86/1c9ce/linkedin-color.png 64w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 32px) 32px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />
@@ -588,7 +754,6 @@ exports[`Layout component renders correctly 1`] = `
               data-src="/static/438c17272c5f0e9f4a6da34d3e4bc5bd/914ee/github.png"
               data-srcset="/static/438c17272c5f0e9f4a6da34d3e4bc5bd/22867/github.png 8w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/fbc98/github.png 16w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/914ee/github.png 32w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/1c9ce/github.png 64w"
               decoding="async"
-              loading="lazy"
               sizes="(min-width: 32px) 32px, 100vw"
               style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
             />

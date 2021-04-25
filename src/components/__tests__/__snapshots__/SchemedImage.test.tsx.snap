@@ -39,7 +39,6 @@ exports[`Schemed image component renders correctly 1`] = `
         data-src="/static/12c8930996726e57eb384915656e7098/614dc/logo-light.png"
         data-srcset="/static/12c8930996726e57eb384915656e7098/5861f/logo-light.png 50w,/static/12c8930996726e57eb384915656e7098/90cd3/logo-light.png 100w,/static/12c8930996726e57eb384915656e7098/614dc/logo-light.png 200w,/static/12c8930996726e57eb384915656e7098/5f2c3/logo-light.png 400w"
         decoding="async"
-        loading="lazy"
         sizes="(min-width: 200px) 200px, 100vw"
         style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
       />
@@ -94,7 +93,6 @@ exports[`Schemed image component renders presentation images correctly 1`] = `
         data-src="/static/12c8930996726e57eb384915656e7098/614dc/logo-light.png"
         data-srcset="/static/12c8930996726e57eb384915656e7098/5861f/logo-light.png 50w,/static/12c8930996726e57eb384915656e7098/90cd3/logo-light.png 100w,/static/12c8930996726e57eb384915656e7098/614dc/logo-light.png 200w,/static/12c8930996726e57eb384915656e7098/5f2c3/logo-light.png 400w"
         decoding="async"
-        loading="lazy"
         role="presentation"
         sizes="(min-width: 200px) 200px, 100vw"
         style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"

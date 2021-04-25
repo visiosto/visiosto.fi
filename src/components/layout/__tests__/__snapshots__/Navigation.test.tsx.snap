@@ -3,7 +3,7 @@
 exports[`Navigation component renders English correctly 1`] = `
 <div>
   <nav
-    class="sc-bdvvaa yANgY"
+    class="sc-bdvvaa jyBOZM"
   >
     <div
       aria-controls="primary-menu"
@@ -25,43 +25,215 @@ exports[`Navigation component renders English correctly 1`] = `
       id="primary-menu"
     >
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-jRQAMF eLvRAo"
+          class="sc-iCfLBT cWSJTj"
           href="/en"
         >
           Front Page
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-gKckTs eMLUZQ"
+          class="sc-furvIG YjrvE"
           href="/en#portfolio"
         >
           Portfolio
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-gKckTs eMLUZQ"
+          class="sc-furvIG YjrvE"
           href="/en#contact"
         >
           Contact
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-jRQAMF eLvRAo"
+          class="sc-iCfLBT cWSJTj"
           href="/en/blog"
         >
           Blog
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
     </ul>
@@ -73,7 +245,7 @@ exports[`Navigation component renders English correctly 1`] = `
 exports[`Navigation component renders Finnish correctly 1`] = `
 <div>
   <nav
-    class="sc-bdvvaa yANgY"
+    class="sc-bdvvaa jyBOZM"
   >
     <div
       aria-controls="primary-menu"
@@ -95,43 +267,215 @@ exports[`Navigation component renders Finnish correctly 1`] = `
       id="primary-menu"
     >
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-jRQAMF eLvRAo"
+          class="sc-iCfLBT cWSJTj"
           href="/"
         >
           Etusivu
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-gKckTs eMLUZQ"
+          class="sc-furvIG YjrvE"
           href="/#portfolio"
         >
           Portfolio
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-gKckTs eMLUZQ"
+          class="sc-furvIG YjrvE"
           href="/#yhteystiedot"
         >
           Yhteystiedot
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
       <li
-        class="sc-eCImvq hpiMMr"
+        class="sc-eCImvq cccDZP"
       >
         <a
-          class="sc-jRQAMF eLvRAo"
+          class="sc-iCfLBT cWSJTj"
           href="/blogi"
         >
           Blogi
+          <div
+            class="sc-jRQAMF fevepN"
+          >
+            <div
+              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              data-gatsby-image-wrapper=""
+              style="position: relative; overflow: hidden; width: 150px; height: 75px;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                data-placeholder-image=""
+                decoding="async"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
+                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+              />
+              <picture>
+                <source
+                  sizes="150px"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light.webp 300w"
+                  type="image/webp"
+                />
+                <img
+                  alt=""
+                  data-gatsby-image-ssr=""
+                  data-main-image=""
+                  decoding="async"
+                  loading="eager"
+                  role="presentation"
+                  sizes="150px"
+                  src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png"
+                  srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light.png 300w"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                />
+              </picture>
+              <noscript />
+              <script
+                type="module"
+              >
+                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+              </script>
+            </div>
+          </div>
         </a>
       </li>
     </ul>
