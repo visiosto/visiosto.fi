@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Rule from './Rule';
 import SchemedImage from './SchemedImage';
@@ -29,11 +29,57 @@ const TopRuleWrapper = styled.div`
   }
 `;
 
-const Image = styled(SchemedImage)`
+const ImageWrapper = styled.div<{ top?: number; right?: number; bottom?: number; left?: number }>`
   display: none;
+  position: absolute;
+  z-index: -1;
+
+  ${(props) => {
+    if (props.top !== undefined) {
+      return css`
+        top: ${props.top};
+      `;
+    }
+
+    return null;
+  }}
+
+  ${(props) => {
+    if (props.right !== undefined) {
+      return css`
+        right: ${props.right};
+      `;
+    }
+
+    return null;
+  }}
+  ${(props) => {
+    if (props.bottom !== undefined) {
+      return css`
+        bottom: ${props.bottom};
+      `;
+    }
+
+    return null;
+  }}
+
+  ${(props) => {
+    if (props.left !== undefined) {
+      return css`
+        left: ${props.left};
+      `;
+    }
+
+    return null;
+  }}
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     display: inline-block;
+  }
+`;
+
+const Image = styled(SchemedImage)`
+  @media screen and (${(props) => props.theme.devices.tablet}) {
     width: 400px;
     height: 400px;
   }
@@ -305,11 +351,6 @@ function Cover({ children, imagesType, rule, title }) {
     },
   ]);
 
-  const imageStyles = {
-    position: 'absolute',
-    zIndex: -1,
-  };
-
   const topStyles = useTopImageStyle(imagesType);
   const bottomStyles = useBottomImageStyle(imagesType);
 
@@ -318,26 +359,25 @@ function Cover({ children, imagesType, rule, title }) {
       <TopRuleWrapper>
         <Rule color={rule.color} mode={rule.mode} />
       </TopRuleWrapper>
-      <Image
-        alt=""
-        dark={imagesTopDark}
-        light={imagesTopLight}
-        objectFit="cover"
-        style={{ ...topStyles, ...imageStyles }}
-      />
+      <ImageWrapper
+        top={topStyles.top !== undefined ? topStyles.top : undefined}
+        right={topStyles.right !== undefined ? topStyles.right : undefined}
+      >
+        <Image alt="" dark={imagesTopDark} light={imagesTopLight} objectFit="cover" />
+      </ImageWrapper>
       <Inner>
         <header>
           <Title>{title}</Title>
         </header>
         <Content>{children}</Content>
       </Inner>
-      <Image
-        alt=""
-        dark={imagesBottomDark}
-        light={imagesBottomLight}
-        objectFit="cover"
-        style={{ ...bottomStyles, ...imageStyles }}
-      />
+      <ImageWrapper
+        right={bottomStyles.right !== undefined ? bottomStyles.right : undefined}
+        bottom={bottomStyles.bottom !== undefined ? bottomStyles.bottom : undefined}
+        left={bottomStyles.left !== undefined ? bottomStyles.left : undefined}
+      >
+        <Image alt="" dark={imagesBottomDark} light={imagesBottomLight} objectFit="cover" />
+      </ImageWrapper>
     </Section>
   );
 }

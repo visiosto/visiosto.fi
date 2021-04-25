@@ -33,6 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Order of the site URL redirects.
 - Border radii of the images for Gatsby v3.3.
+- Cover images showing on small screens when they should be hidden.
 
 ## [0.19.1] - 2021-04-11
 
