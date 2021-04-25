@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact form component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-gsDJrp cxYGuJ"
+  >
+    <form
+      action="/"
+      data-netlify="true"
+      method="POST"
+      name="Front page contact"
+      netlify-honeypot="bot-field"
+    >
+      <input
+        name="form-name"
+        type="hidden"
+        value="Front page contact"
+      />
+      <div
+        class="sc-bdvvaa hHlKll"
+        hidden=""
+      >
+        <label
+          for="bot-field"
+        >
+          Älä täytä, jos olet ihminen
+        </label>
+        <input
+          name="bot-field"
+        />
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <label
+          for="name"
+        >
+          Nimi
+        </label>
+        <label
+          class="error-message"
+          for="name"
+          hidden=""
+        />
+        <input
+          id="name"
+          name="name"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <p>
+          Ainakin joko
+        </p>
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <label
+          for="email"
+        >
+          sähköposti
+        </label>
+        <label
+          class="error-message"
+          for="email"
+          hidden=""
+        />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <p>
+          tai
+        </p>
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <label
+          for="tel"
+        >
+          puhelinnumero
+        </label>
+        <label
+          class="error-message"
+          for="tel"
+          hidden=""
+        />
+        <input
+          id="tel"
+          name="tel"
+          type="tel"
+          value=""
+        />
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <label
+          for="message"
+        >
+          Viestisi meille
+        </label>
+        <label
+          class="error-message"
+          for="message"
+          hidden=""
+        />
+        <textarea
+          id="message"
+          name="message"
+        />
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <p>
+          Lähettämällä tiedot hyväksyt henkilötietojesi käsittelyn rekisterin 
+          <a
+            href="/tietosuoja/markkinointirekisterin-tietosuojaseloste"
+          >
+            tietosuojaselosteen
+          </a>
+           mukaisesti
+        </p>
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+      >
+        <div
+          class="sc-dkPtyc"
+        >
+          <button
+            type="submit"
+          >
+            <svg
+              aria-hidden="true"
+              class="octicon octicon-paper-airplane"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"
+                fill-rule="evenodd"
+              />
+            </svg>
+             
+            Lähetä
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+        hidden=""
+      >
+        <p>
+          Lähetys onnistui. Kiitos viestistäsi!
+        </p>
+      </div>
+      <div
+        class="sc-bdvvaa hHlKll"
+        hidden=""
+      >
+        <p>
+          Lähetys epäonnistui. Virhe:
+        </p>
+        <p>
+          Ei erillistä virheviestiä.
+        </p>
+      </div>
+    </form>
+  </div>
+  ,
+</div>
+`;

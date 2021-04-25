@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation component renders English correctly 1`] = `
+<div>
+  <nav
+    class="sc-bdvvaa yANgY"
+  >
+    <div
+      aria-controls="primary-menu"
+      aria-expanded="false"
+      class="sc-gsDJrp ZGrYg"
+    >
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+    </div>
+    <ul
+      class="sc-hKwCoD cTPmWZ"
+      id="primary-menu"
+    >
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-jRQAMF eLvRAo"
+          href="/en"
+        >
+          Front Page
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-gKckTs eMLUZQ"
+          href="/en#portfolio"
+        >
+          Portfolio
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-gKckTs eMLUZQ"
+          href="/en#contact"
+        >
+          Contact
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-jRQAMF eLvRAo"
+          href="/en/blog"
+        >
+          Blog
+        </a>
+      </li>
+    </ul>
+  </nav>
+  ,
+</div>
+`;
+
+exports[`Navigation component renders Finnish correctly 1`] = `
+<div>
+  <nav
+    class="sc-bdvvaa yANgY"
+  >
+    <div
+      aria-controls="primary-menu"
+      aria-expanded="false"
+      class="sc-gsDJrp ZGrYg"
+    >
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+      <div
+        class="sc-dkPtyc bvXWki"
+      />
+    </div>
+    <ul
+      class="sc-hKwCoD cTPmWZ"
+      id="primary-menu"
+    >
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-jRQAMF eLvRAo"
+          href="/"
+        >
+          Etusivu
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-gKckTs eMLUZQ"
+          href="/#portfolio"
+        >
+          Portfolio
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-gKckTs eMLUZQ"
+          href="/#yhteystiedot"
+        >
+          Yhteystiedot
+        </a>
+      </li>
+      <li
+        class="sc-eCImvq hpiMMr"
+      >
+        <a
+          class="sc-jRQAMF eLvRAo"
+          href="/blogi"
+        >
+          Blogi
+        </a>
+      </li>
+    </ul>
+  </nav>
+  ,
+</div>
+`;

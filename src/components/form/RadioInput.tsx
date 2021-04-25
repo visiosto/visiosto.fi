@@ -16,7 +16,7 @@ const RadioDiv = styled.div`
 `;
 
 const propTypes = {
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   errorMessage: PropTypes.string,
   handleChange: PropTypes.func.isRequired,
   inputs: PropTypes.arrayOf(

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Locale link component renders English correctly 1`] = `
+<div>
+  <a
+    href="/kayttoehdot"
+  >
+    A link
+  </a>
+  ,
+</div>
+`;
+
+exports[`Locale link component renders Finnish correctly 1`] = `
+<div>
+  <a
+    href="/en/terms-of-use"
+  >
+    Linkki
+  </a>
+  ,
+</div>
+`;

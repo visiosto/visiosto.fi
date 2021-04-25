@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie notice component renders correctly 1`] = `
+<div>
+  <span
+    class="sc-ieebsP fuFnHv"
+  >
+    Evästeasetukset
+  </span>
+  <div
+    class="sc-dJjZJu bwgHwY"
+  />
+  ,
+</div>
+`;

@@ -1,0 +1,652 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client register business form component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-iCfLBT dsPXWT"
+  >
+    <form
+      action="/"
+      data-netlify="true"
+      method="POST"
+      name="Business data for client register"
+      netlify-honeypot="bot-field"
+    >
+      <input
+        name="form-name"
+        type="hidden"
+        value="Business data for client register"
+      />
+      <div
+        class="sc-hKwCoD iEtxhb"
+        hidden=""
+      >
+        <label
+          for="bot-field"
+        >
+          Älä täytä, jos olet ihminen
+        </label>
+        <input
+          name="bot-field"
+        />
+      </div>
+      <div
+        class="sc-furvIG"
+      >
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <h3>
+            Yrityksen tai yhteisön perustiedot
+          </h3>
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="business-id"
+          >
+            Y-tunnus
+          </label>
+          <label
+            class="error-message"
+            for="business-id"
+            hidden=""
+          />
+          <input
+            id="business-id"
+            name="businessID"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="business-name"
+          >
+            Yrityksen tai yhteisön nimi
+          </label>
+          <label
+            class="error-message"
+            for="business-name"
+            hidden=""
+          />
+          <input
+            id="business-name"
+            name="businessName"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <h4>
+            Yrityksen tai yhteisön rekisteröity osoite
+          </h4>
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="address-line-1"
+          >
+            Osoiterivi 1
+          </label>
+          <label
+            class="error-message"
+            for="address-line-1"
+            hidden=""
+          />
+          <input
+            class="wider"
+            id="address-line-1"
+            name="addressLine1"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="address-line-2"
+          >
+            Osoiterivi 2
+          </label>
+          <input
+            class="wider"
+            id="address-line-2"
+            name="addressLine2"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="postcode"
+          >
+            Postinumero
+          </label>
+          <label
+            class="error-message"
+            for="postcode"
+            hidden=""
+          />
+          <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="post-office"
+          >
+            Postitoimipaikka
+          </label>
+          <label
+            class="error-message"
+            for="post-office"
+            hidden=""
+          />
+          <input
+            id="post-office"
+            name="postOffice"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="same-billing-address"
+          >
+            Laskutusosoite on sama kuin yllä annettu osoite
+          </label>
+          <span
+            class="sc-jRQAMF iphmuR"
+          >
+            <input
+              id="same-billing-address"
+              name="isSameBillingAddress"
+              type="checkbox"
+            />
+            <span
+              class="sc-gKckTs fyLUGL"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-furvIG"
+        hidden=""
+      >
+        <h3>
+          Laskutusosoite
+        </h3>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="billing-address-line-1"
+          >
+            Osoiterivi 1
+          </label>
+          <label
+            class="error-message"
+            for="billing-address-line-1"
+            hidden=""
+          />
+          <input
+            class="wider"
+            id="billing-address-line-1"
+            name="billingAddressLine1"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="billing-address-line-2"
+          >
+            Osoiterivi 2
+          </label>
+          <input
+            class="wider"
+            id="billing-address-line-2"
+            name="billingAddressLine2"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="billing-postcode"
+          >
+            Postinumero
+          </label>
+          <label
+            class="error-message"
+            for="billing-postcode"
+            hidden=""
+          />
+          <input
+            id="billing-postcode"
+            name="billingPostcode"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="billing-post-office"
+          >
+            Postitoimipaikka
+          </label>
+          <label
+            class="error-message"
+            for="billing-post-office"
+            hidden=""
+          />
+          <input
+            id="billing-post-office"
+            name="billingPostOffice"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-furvIG"
+        hidden=""
+      >
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <h3>
+            Laskutustapa
+          </h3>
+          <p>
+            Huomaathan, että eri laskutustavoista voidaan periä 
+            <a
+              href="/hinnasto"
+            >
+              hinnaston
+            </a>
+             mukainen lisämaksu.
+          </p>
+          <div
+            class="sc-eCImvq emPcWr"
+          >
+            <input
+              id="radio-e-invoice"
+              name="billingMethod"
+              type="radio"
+              value="e-invoice"
+            />
+            <label
+              for="radio-e-invoice"
+            >
+              Verkkolasku
+            </label>
+          </div>
+          <div
+            class="sc-eCImvq emPcWr"
+          >
+            <input
+              id="radio-email"
+              name="billingMethod"
+              type="radio"
+              value="email"
+            />
+            <label
+              for="radio-email"
+            >
+              Sähköpostitse
+            </label>
+          </div>
+          <div
+            class="sc-eCImvq emPcWr"
+          >
+            <input
+              id="radio-paper"
+              name="billingMethod"
+              type="radio"
+              value="paper"
+            />
+            <label
+              for="radio-paper"
+            >
+              Postitse
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-furvIG"
+        hidden=""
+      >
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <h3>
+            Laskutustiedot
+          </h3>
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+          hidden=""
+        >
+          <label
+            for="e-invoice-address"
+          >
+            Verkkolaskuosoite
+          </label>
+          <label
+            class="error-message"
+            for="e-invoice-address"
+            hidden=""
+          />
+          <input
+            class="medium"
+            id="e-invoice-address"
+            name="eInvoiceAddress"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+          hidden=""
+        >
+          <label
+            for="e-invoice-operator"
+          >
+            Verkkolaskuoperaattori
+          </label>
+          <label
+            class="error-message"
+            for="e-invoice-operator"
+            hidden=""
+          />
+          <input
+            class="medium"
+            id="e-invoice-operator"
+            name="eInvoiceOperator"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+          hidden=""
+        >
+          <label
+            for="billing-email"
+          >
+            Laskujen sähköpostiosoite
+          </label>
+          <label
+            class="error-message"
+            for="billing-email"
+            hidden=""
+          />
+          <input
+            class="medium"
+            id="billing-email"
+            name="billingEmail"
+            type="email"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-furvIG"
+        hidden=""
+      >
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <h3>
+            Yhteyshenkilö
+          </h3>
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="first-name"
+          >
+            Etunimi
+          </label>
+          <label
+            class="error-message"
+            for="first-name"
+            hidden=""
+          />
+          <input
+            id="first-name"
+            name="firstName"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="surname"
+          >
+            Sukunimi
+          </label>
+          <label
+            class="error-message"
+            for="surname"
+            hidden=""
+          />
+          <input
+            id="surname"
+            name="surname"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="tel"
+          >
+            Puhelinnumero
+          </label>
+          <label
+            class="error-message"
+            for="tel"
+            hidden=""
+          />
+          <input
+            id="tel"
+            name="tel"
+            type="tel"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="email"
+          >
+            Sähköpostiosoite
+          </label>
+          <label
+            class="error-message"
+            for="email"
+            hidden=""
+          />
+          <input
+            class="medium"
+            id="email"
+            name="email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <label
+            for="accept-terms"
+          >
+            Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa
+          </label>
+          <span
+            class="sc-jRQAMF iphmuR"
+          >
+            <input
+              id="accept-terms"
+              name="acceptTerms"
+              type="checkbox"
+            />
+            <span
+              class="sc-gKckTs fyLUGL"
+            />
+          </span>
+        </div>
+        <div
+          class="sc-hKwCoD iEtxhb"
+        >
+          <p>
+            Rekisterin tietosuojaselosteeseen voit tutustua 
+            <a
+              href="/tietosuoja/asiakasrekisterin-tietosuojaseloste"
+            >
+              täällä
+            </a>
+          </p>
+        </div>
+      </div>
+      <div
+        class="sc-hKwCoD iEtxhb"
+      >
+        <div
+          class="sc-pVTma"
+          hidden=""
+        >
+          <span
+            class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+          >
+            <svg
+              aria-hidden="true"
+              class="sc-jrQzUz crdpBG"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"
+                fill-rule="evenodd"
+              />
+            </svg>
+             
+            <span>
+              Palaa
+            </span>
+          </span>
+        </div>
+        <div
+          class="sc-pVTma"
+        >
+          <span
+            class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+          >
+            <span>
+              Jatka
+            </span>
+             
+            <svg
+              aria-hidden="true"
+              class="sc-kDThTU NVOZg"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M13.22 19.03a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 10-1.06 1.06l4.97 4.97H3.75a.75.75 0 000 1.5h14.44l-4.97 4.97a.75.75 0 000 1.06z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="sc-pVTma"
+          hidden=""
+        >
+          <button
+            type="submit"
+          >
+            <svg
+              aria-hidden="true"
+              class="sc-iqsfdx ihzWr"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"
+                fill-rule="evenodd"
+              />
+            </svg>
+             
+            Lähetä
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-hKwCoD iEtxhb"
+        hidden=""
+      >
+        <p>
+          Lähetys onnistui. Kiitos!
+        </p>
+      </div>
+      <div
+        class="sc-hKwCoD iEtxhb"
+        hidden=""
+      >
+        <p>
+          Lähetys epäonnistui. Virhe:
+        </p>
+        <p>
+          Ei erillistä virheviestiä.
+        </p>
+      </div>
+    </form>
+  </div>
+  ,
+</div>
+`;

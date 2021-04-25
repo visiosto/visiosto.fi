@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders index page header correctly 1`] = `
+<div>
+  <header
+    class="sc-iCfLBT eQmwkX"
+  >
+    <div
+      class="sc-jrQzUz bsFxqL"
+    >
+      <h1
+        class="sc-furvIG eMnHDG"
+      >
+        Visiosto
+      </h1>
+      <a
+        href="/"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-kDThTU bfcJRf"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block;"
+        >
+          <div
+            style="max-width: 301px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='97' width='301' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <picture>
+            <source
+              media="(min-width: 48em)"
+              srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAACxKAAAsSgF3enRNAAABR0lEQVQY0y2QMUvQcRCG/wRKDoKkQUlD3Wt4T006JFI0qYNDuUVCIoVEYIOD1b1NJYlCEBluIeLaEPQtBL9F0Bdwi0D5/XM4OHiP5567TngksmaE55S1KEqRNa2sSy0TNSI8Fvim8KSoYVGTkTUmfFfpW8J3hG8I3+6UdV/USuBT4d89GM8K31N6VfiV8EfhL4E3hd8LHwp/Fd4WXo2sXVGbon51wguiToTPhP9F+kxZb4OaEH4j/EF4XfiT8GNRW5G1Jbwb1OveEi8H9Uz4oAHnhY8bMLL+9kBcwqMNFnhP+In+230T/ix6o3fKasteinoq/EL4qAvayV4W/nNh+SPwQ+GrwkuBnws/UnpfeEd4I/D3ZhzUvqilPsdrwj+76B/vGVEPLsLpSE8JN/sBUYNBDQpfiaxWrR+P9JDwtX4m67LwsPD1czX8iVX6VUraAAAAAElFTkSuQmCC"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              data-placeholder-image=""
+              decoding="async"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAACxKAAAsSgF3enRNAAABR0lEQVQY0y2QMUvQcRCG/wRKDoKkQUlD3Wt4T006JFI0qYNDuUVCIoVEYIOD1b1NJYlCEBluIeLaEPQtBL9F0Bdwi0D5/XM4OHiP5567TngksmaE55S1KEqRNa2sSy0TNSI8Fvim8KSoYVGTkTUmfFfpW8J3hG8I3+6UdV/USuBT4d89GM8K31N6VfiV8EfhL4E3hd8LHwp/Fd4WXo2sXVGbon51wguiToTPhP9F+kxZb4OaEH4j/EF4XfiT8GNRW5G1Jbwb1OveEi8H9Uz4oAHnhY8bMLL+9kBcwqMNFnhP+In+230T/ix6o3fKasteinoq/EL4qAvayV4W/nNh+SPwQ+GrwkuBnws/UnpfeEd4I/D3ZhzUvqilPsdrwj+76B/vGVEPLsLpSE8JN/sBUYNBDQpfiaxWrR+P9JDwtX4m67LwsPD1czX8iVX6VUraAAAAAElFTkSuQmCC"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+            />
+          </picture>
+          <picture>
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/f2944/logo-light.webp 75w,/static/52fd09904d7b4655c9853584e3d17a71/d962e/logo-light.webp 151w,/static/52fd09904d7b4655c9853584e3d17a71/3c7d6/logo-light.webp 301w,/static/52fd09904d7b4655c9853584e3d17a71/15842/logo-light.webp 602w"
+              media="(min-width: 48em)"
+              sizes="(min-width: 301px) 301px, 100vw"
+              type="image/webp"
+            />
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/8e0ec/logo-light.png 75w,/static/52fd09904d7b4655c9853584e3d17a71/545e1/logo-light.png 151w,/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png 301w,/static/52fd09904d7b4655c9853584e3d17a71/23911/logo-light.png 602w"
+              media="(min-width: 48em)"
+              sizes="(min-width: 301px) 301px, 100vw"
+            />
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/f2944/logo-light.webp 75w,/static/52fd09904d7b4655c9853584e3d17a71/d962e/logo-light.webp 151w,/static/52fd09904d7b4655c9853584e3d17a71/3c7d6/logo-light.webp 301w,/static/52fd09904d7b4655c9853584e3d17a71/15842/logo-light.webp 602w"
+              sizes="(min-width: 301px) 301px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Visioston logo"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png"
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/8e0ec/logo-light.png 75w,/static/52fd09904d7b4655c9853584e3d17a71/545e1/logo-light.png 151w,/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png 301w,/static/52fd09904d7b4655c9853584e3d17a71/23911/logo-light.png 602w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 301px) 301px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+          </script>
+        </div>
+      </a>
+    </div>
+    <nav
+      class="sc-bdvvaa yANgY"
+    >
+      <div
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        class="sc-gsDJrp ZGrYg"
+      >
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+      </div>
+      <ul
+        class="sc-hKwCoD cTPmWZ"
+        id="primary-menu"
+      >
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-jRQAMF eLvRAo"
+            href="/"
+          >
+            Etusivu
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-gKckTs eMLUZQ"
+            href="/#portfolio"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-gKckTs eMLUZQ"
+            href="/#yhteystiedot"
+          >
+            Yhteystiedot
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-jRQAMF eLvRAo"
+            href="/undefined"
+          >
+            Blogi
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="sc-iqsfdx lrtYF"
+    />
+  </header>
+  ,
+</div>
+`;
+
+exports[`Header component renders page header correctly 1`] = `
+<div>
+  <header
+    class="sc-iCfLBT eQmwkX"
+  >
+    <div
+      class="sc-jrQzUz bsFxqL"
+    >
+      <p
+        class="sc-pVTma kPOAOZ"
+        role="heading"
+      >
+        Visiosto
+      </p>
+      <a
+        href="/"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-kDThTU bfcJRf"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block;"
+        >
+          <div
+            style="max-width: 301px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='97' width='301' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <picture>
+            <source
+              media="(min-width: 48em)"
+              srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAACxKAAAsSgF3enRNAAABR0lEQVQY0y2QMUvQcRCG/wRKDoKkQUlD3Wt4T006JFI0qYNDuUVCIoVEYIOD1b1NJYlCEBluIeLaEPQtBL9F0Bdwi0D5/XM4OHiP5567TngksmaE55S1KEqRNa2sSy0TNSI8Fvim8KSoYVGTkTUmfFfpW8J3hG8I3+6UdV/USuBT4d89GM8K31N6VfiV8EfhL4E3hd8LHwp/Fd4WXo2sXVGbon51wguiToTPhP9F+kxZb4OaEH4j/EF4XfiT8GNRW5G1Jbwb1OveEi8H9Uz4oAHnhY8bMLL+9kBcwqMNFnhP+In+230T/ix6o3fKasteinoq/EL4qAvayV4W/nNh+SPwQ+GrwkuBnws/UnpfeEd4I/D3ZhzUvqilPsdrwj+76B/vGVEPLsLpSE8JN/sBUYNBDQpfiaxWrR+P9JDwtX4m67LwsPD1czX8iVX6VUraAAAAAElFTkSuQmCC"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              data-placeholder-image=""
+              decoding="async"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAACxKAAAsSgF3enRNAAABR0lEQVQY0y2QMUvQcRCG/wRKDoKkQUlD3Wt4T006JFI0qYNDuUVCIoVEYIOD1b1NJYlCEBluIeLaEPQtBL9F0Bdwi0D5/XM4OHiP5567TngksmaE55S1KEqRNa2sSy0TNSI8Fvim8KSoYVGTkTUmfFfpW8J3hG8I3+6UdV/USuBT4d89GM8K31N6VfiV8EfhL4E3hd8LHwp/Fd4WXo2sXVGbon51wguiToTPhP9F+kxZb4OaEH4j/EF4XfiT8GNRW5G1Jbwb1OveEi8H9Uz4oAHnhY8bMLL+9kBcwqMNFnhP+In+230T/ix6o3fKasteinoq/EL4qAvayV4W/nNh+SPwQ+GrwkuBnws/UnpfeEd4I/D3ZhzUvqilPsdrwj+76B/vGVEPLsLpSE8JN/sBUYNBDQpfiaxWrR+P9JDwtX4m67LwsPD1czX8iVX6VUraAAAAAElFTkSuQmCC"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+            />
+          </picture>
+          <picture>
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/f2944/logo-light.webp 75w,/static/52fd09904d7b4655c9853584e3d17a71/d962e/logo-light.webp 151w,/static/52fd09904d7b4655c9853584e3d17a71/3c7d6/logo-light.webp 301w,/static/52fd09904d7b4655c9853584e3d17a71/15842/logo-light.webp 602w"
+              media="(min-width: 48em)"
+              sizes="(min-width: 301px) 301px, 100vw"
+              type="image/webp"
+            />
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/8e0ec/logo-light.png 75w,/static/52fd09904d7b4655c9853584e3d17a71/545e1/logo-light.png 151w,/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png 301w,/static/52fd09904d7b4655c9853584e3d17a71/23911/logo-light.png 602w"
+              media="(min-width: 48em)"
+              sizes="(min-width: 301px) 301px, 100vw"
+            />
+            <source
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/f2944/logo-light.webp 75w,/static/52fd09904d7b4655c9853584e3d17a71/d962e/logo-light.webp 151w,/static/52fd09904d7b4655c9853584e3d17a71/3c7d6/logo-light.webp 301w,/static/52fd09904d7b4655c9853584e3d17a71/15842/logo-light.webp 602w"
+              sizes="(min-width: 301px) 301px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Visioston logo"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png"
+              data-srcset="/static/52fd09904d7b4655c9853584e3d17a71/8e0ec/logo-light.png 75w,/static/52fd09904d7b4655c9853584e3d17a71/545e1/logo-light.png 151w,/static/52fd09904d7b4655c9853584e3d17a71/501c7/logo-light.png 301w,/static/52fd09904d7b4655c9853584e3d17a71/23911/logo-light.png 602w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 301px) 301px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+          </script>
+        </div>
+      </a>
+    </div>
+    <nav
+      class="sc-bdvvaa yANgY"
+    >
+      <div
+        aria-controls="primary-menu"
+        aria-expanded="false"
+        class="sc-gsDJrp ZGrYg"
+      >
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+        <div
+          class="sc-dkPtyc bvXWki"
+        />
+      </div>
+      <ul
+        class="sc-hKwCoD cTPmWZ"
+        id="primary-menu"
+      >
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-jRQAMF eLvRAo"
+            href="/"
+          >
+            Etusivu
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-gKckTs eMLUZQ"
+            href="/#portfolio"
+          >
+            Portfolio
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-gKckTs eMLUZQ"
+            href="/#yhteystiedot"
+          >
+            Yhteystiedot
+          </a>
+        </li>
+        <li
+          class="sc-eCImvq hpiMMr"
+        >
+          <a
+            class="sc-jRQAMF eLvRAo"
+            href="/undefined"
+          >
+            Blogi
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="sc-iqsfdx lrtYF"
+    />
+  </header>
+  ,
+</div>
+`;

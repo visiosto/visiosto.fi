@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie settings component renders correctly when closed 1`] = `
+<div>
+  ,
+</div>
+`;
+
+exports[`Cookie settings component renders correctly when opened 1`] = `
+<div>
+  <div
+    class="sc-iCfLBT kHgDa-D"
+  >
+    <div
+      class="sc-furvIG gYJxvb"
+    >
+      <div
+        class="sc-pVTma eKQPeD"
+      >
+        <div
+          class="sc-jrQzUz jJkbxg"
+        >
+          <div
+            class="sc-kDThTU MXcXJ"
+          >
+            <h2
+              class="sc-iqsfdx gbczfp"
+            >
+              Asetukset
+            </h2>
+            <div
+              class="sc-crHlIS"
+            >
+              <h3
+                class="sc-egiSv kiWuRb"
+              >
+                Toiminnalliset evästeet
+              </h3>
+              <p>
+                Toiminnallisilla evästeillä mahdollistamme erilaisten sisältöjen ja toiminnallisuuksien (kuten karttapalveluiden ja kyselyiden lisäämisen helposti osaksi sivustoa). Toiminnallisia evästeitä ei voi laittaa pois päältä, sillä niitä tarvitaan sivuston toiminnan mahdollistamiseksi.
+              </p>
+            </div>
+            <div
+              class="sc-crHlIS"
+            >
+              <h3
+                class="sc-egiSv kiWuRb"
+              >
+                Anonymisoidut seurantaevästeet
+              </h3>
+              <div
+                class="sc-bqiQRQ dqFDQJ"
+              >
+                <h4>
+                  Google Analytics
+                </h4>
+                <span
+                  class="sc-ksdxAp hwvstC"
+                >
+                  <a
+                    href="/tietosuoja#google-analytics"
+                  >
+                    <span
+                      role="button"
+                      tabindex="0"
+                    >
+                      Mitä tämä tekee?
+                    </span>
+                  </a>
+                </span>
+              </div>
+              <p>
+                Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.
+              </p>
+              <label
+                class="sc-hBURRC lepqNC"
+              >
+                <input
+                  class="sc-fotPbf irbmQb"
+                  type="checkbox"
+                />
+                <span
+                  class="sc-fFehDp iZdDdt"
+                />
+              </label>
+            </div>
+            <div
+              class="sc-crHlIS"
+            >
+              <p>
+                <a
+                  href="/tietosuoja"
+                >
+                  Tietosuoja
+                </a>
+              </p>
+            </div>
+            <div
+              class="sc-bkkfTU"
+            >
+              <span
+                class="sc-bdvvaa sc-dkPtyc fSAtAE eppyMW"
+              >
+                Tallenna ja sulje
+              </span>
+              <span
+                class="sc-bdvvaa sc-gsDJrp fSAtAE gCuYrd"
+              >
+                Peruuta
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ,
+</div>
+`;

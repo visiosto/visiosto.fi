@@ -1,7 +1,7 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
@@ -339,7 +339,7 @@ function Header({ errorPage, home, locale, pageID }) {
             return <HomeTitle>{site.siteMetadata.title}</HomeTitle>;
           }
 
-          return <SiteTitle>{site.siteMetadata.title}</SiteTitle>;
+          return <SiteTitle role="heading">{site.siteMetadata.title}</SiteTitle>;
         })()}
         <LocalizedLink locale={locale} to="/">
           <Image alt={intl('headerLogoImageText')} dark={logosDark} light={logosLight} />
@@ -353,18 +353,18 @@ function Header({ errorPage, home, locale, pageID }) {
               const title = entry.name ? entry.name : entry.title;
               if (index === 0) {
                 return (
-                  <LocalizedLink locale={locale} to={entry.contentful_id}>
+                  <LocalizedLink key={entry.contentful_id} locale={locale} to={entry.contentful_id}>
                     {title}
                   </LocalizedLink>
                 );
               }
               return (
-                <>
+                <Fragment key={entry.contentful_id}>
                   <ChevronIcon />
                   <LocalizedLink locale={locale} to={entry.contentful_id}>
                     {title}
                   </LocalizedLink>
-                </>
+                </Fragment>
               );
             });
           }
