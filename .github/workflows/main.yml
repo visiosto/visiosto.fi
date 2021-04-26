@@ -34,7 +34,7 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
         bucket: 'visiosto-workflows'
         type: npm
@@ -83,7 +83,7 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
         bucket: 'visiosto-workflows'
         type: npm
@@ -127,7 +127,7 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
         bucket: 'visiosto-workflows'
         type: npm
