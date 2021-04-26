@@ -108,6 +108,12 @@ jobs:
     - name: Build
       run: yarn build --verbose
 
+    - name: Upload build artefacts
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: visiosto-fi-${{ steps.version.outputs.version }}
+        path: public/
+
   lighthouse:
     name: Lighthouse
     needs: [build, check]
