@@ -108,6 +108,47 @@ jobs:
     - name: Build
       run: yarn build --verbose
 
+  artefact:
+    name: Artefacts
+    needs: [build, check]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2.3.4
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 14.x
+
+    - name: Determine the project’s version
+      id: version
+      uses: anttikivi/maintain-revision@v0.12.1
+      with:
+        bucket: 'visiosto-workflows'
+        type: npm
+        upload: false
+
+    - name: Get Yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - name: Cache dependencies
+      uses: actions/cache@v2.1.5
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Build
+      run: yarn build --verbose
+
     - name: Upload build artefacts
       uses: actions/upload-artifact@v2.2.3
       with:
