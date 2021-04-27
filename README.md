@@ -1,6 +1,6 @@
 # Visiosto’s website
 
-![Main workflow](https://github.com/visiosto/visiosto-website/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2c66ee86-8bbe-473b-8599-57cceaf87eec/deploy-status)](https://app.netlify.com/sites/visiosto/deploys)
+![Main workflow](https://github.com/visiosto/visiosto-website/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/bcec4f6c-711a-42df-9aea-a655e7dd53b3/deploy-status)](https://app.netlify.com/sites/visiosto-website-main/deploys)
 
 This is [Visiosto’s](https://github.com/visiosto) website-in-progress.
 
