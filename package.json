@@ -1,5 +1,5 @@
 {
-  "name": "visiosto.fi",
+  "name": "visiosto-website",
   "private": true,
   "version": "0.21.0-dev",
   "description": "The website of Visiosto",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visiosto/visiosto.fi.git"
+    "url": "git+https://github.com/visiosto/visiosto-website.git"
   },
   "author": "Antti Kivi <antti.kivi@visiosto.fi>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/visiosto/visiosto.fi/issues"
+    "url": "https://github.com/visiosto/visiosto-website/issues"
   },
-  "homepage": "https://github.com/visiosto/visiosto.fi#readme",
+  "homepage": "https://github.com/visiosto/visiosto-website#readme",
   "dependencies": {
     "@primer/octicons-react": "^13.0.0",
     "@reach/router": "^1.3.4",
