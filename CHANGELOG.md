@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Made-by text in the footer.
 - Name of the project from `visiosto.fi` to `visiosto-website`.
+- Netlify site name from `visiosto` to `visiosto-website-main`.
 
 ## [0.20.1] - 2021-04-25
 

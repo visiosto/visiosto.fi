@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const path = require('path');
 
-const siteURL = 'https://visiosto.netlify.app';
+const siteURL = 'https://visiosto-website-main.netlify.app';
 
 module.exports = {
   siteMetadata: {
