@@ -1,12 +1,12 @@
 # Visiosto’s website
 
-![Main workflow](https://github.com/visiosto/visiosto.fi/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/2c66ee86-8bbe-473b-8599-57cceaf87eec/deploy-status)](https://app.netlify.com/sites/visiosto/deploys)
+![Main workflow](https://github.com/visiosto/visiosto-website/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/bcec4f6c-711a-42df-9aea-a655e7dd53b3/deploy-status)](https://app.netlify.com/sites/visiosto-website-main/deploys)
 
 This is [Visiosto’s](https://github.com/visiosto) website-in-progress.
 
 ## Install
 
-The released versions of the website are available on the [Releases page](https://github.com/visiosto/visiosto.fi/releases).
+The released versions of the website are available on the [Releases page](https://github.com/visiosto/visiosto-website/releases).
 
 ### Build
 
@@ -16,19 +16,19 @@ First, clone the GitHub repository of the website.
 
 **Via HTTPS:** If you’re checking out sources as read-only, HTTPS works best.
 
-    git clone https://github.com/visiosto/visiosto.fi.git
+    git clone https://github.com/visiosto/visiosto-website.git
 
 **Via SSH:** If you’re planning on regularly making direct commits, cloning over SSH may provide a better experience (it requires [uploading SSH keys to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/))
 
-    git clone git@github.com:visiosto/visiosto.fi.git
+    git clone git@github.com:visiosto/visiosto-website.git
 
 **Via GitHub CLI:** If you work chiefly with GitHub, using the official [GitHub CLI](https://cli.github.com) may provide the best experience.
 
-    gh repo clone visiosto/visiosto.fi
+    gh repo clone visiosto/visiosto-website
 
 After cloning the source, make sure to change to the cloned directory.
 
-    cd visiosto.fi
+    cd visiosto-website
 
 Then install the dependencies for the build.
 

@@ -1,7 +1,7 @@
 {
-  "name": "visiosto.fi",
+  "name": "visiosto-website",
   "private": true,
-  "version": "0.20.1",
+  "version": "0.21.0",
   "description": "The website of Visiosto",
   "scripts": {
     "build": "gatsby build",
@@ -20,14 +20,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visiosto/visiosto.fi.git"
+    "url": "git+https://github.com/visiosto/visiosto-website.git"
   },
   "author": "Antti Kivi <antti.kivi@visiosto.fi>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/visiosto/visiosto.fi/issues"
+    "url": "https://github.com/visiosto/visiosto-website/issues"
   },
-  "homepage": "https://github.com/visiosto/visiosto.fi#readme",
+  "homepage": "https://github.com/visiosto/visiosto-website#readme",
   "dependencies": {
     "@primer/octicons-react": "^13.0.0",
     "@reach/router": "^1.3.4",
@@ -56,17 +56,16 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-intl": "^5.13.2",
+    "react-intl": "^5.17.1",
     "react-is": "^17.0.1",
     "scroll-to-element": "^2.0.3",
     "styled-components": "^5.2.3",
     "terser": "4.8.0",
-    "typescript": "^4.2.4",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
-    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.5",
     "@types/jest": "^26.0.22",
@@ -81,13 +80,13 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-gatsby": "^1.2.0",
-    "eslint": "^7.21.0",
+    "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.2.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.2",
@@ -98,9 +97,10 @@
     "lodash": "^4.17.21",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "stylelint": "^13.11.0",
+    "stylelint": "^13.13.0",
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "^4.2.4"
   }
 }

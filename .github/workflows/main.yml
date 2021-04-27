@@ -34,8 +34,9 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
 
     - name: Get Yarn cache directory path
@@ -82,8 +83,9 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
         upload: false
 
@@ -106,6 +108,12 @@ jobs:
     - name: Build
       run: yarn build --verbose
 
+    - name: Upload build artefacts
+      uses: actions/upload-artifact@v2.2.3
+      with:
+        name: visiosto-website-${{ steps.version.outputs.version }}
+        path: public/
+
   lighthouse:
     name: Lighthouse
     needs: [build, check]
@@ -125,8 +133,9 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.10.1
+      uses: anttikivi/maintain-revision@v0.12.1
       with:
+        bucket: 'visiosto-workflows'
         type: npm
         upload: false
 

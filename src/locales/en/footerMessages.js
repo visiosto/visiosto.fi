@@ -19,5 +19,5 @@ export default {
   footerTwitterImageText: 'Twitter Logo',
   footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
-  footerMadeBy: 'The site is rendered through the lens of <a>Visiosto</a>',
+  footerMadeBy: 'This site is rendered through the lens of <a>Visiosto</a>',
 };

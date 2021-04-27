@@ -8,7 +8,7 @@ export default {
         'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',
       facebookAppID: '905927140206660',
       locales: ['fi', 'en-GB'],
-      siteURL: 'https://visiosto.netlify.app',
+      siteURL: 'https://visiosto-website-main.netlify.app',
       title: 'Visiosto',
       twitterAuthor: '@visiosto_oy',
       localePaths: {

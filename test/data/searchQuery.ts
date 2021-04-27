@@ -4,7 +4,7 @@
 export default {
   site: {
     siteMetadata: {
-      siteURL: 'https://visiosto.netlify.app',
+      siteURL: 'https://visiosto-website-main.netlify.app',
     },
   },
 };
