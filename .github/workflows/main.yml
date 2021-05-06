@@ -13,6 +13,7 @@ env:
   LOCAL_VERSION_NUMBER_FILE: build_version.txt
   CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
   CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+  REVISION_BUCKET_NAME: visiosto-workflows
 
 jobs:
   check:
@@ -34,10 +35,17 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.15.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v0.2.2
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
@@ -83,11 +91,18 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.15.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v0.2.2
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
@@ -124,11 +139,18 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.15.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v0.2.2
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
@@ -174,11 +196,18 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.15.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v0.2.2
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
