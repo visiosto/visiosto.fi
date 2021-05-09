@@ -8,6 +8,5 @@ exports[`Author name component renders correctly 1`] = `
   >
     Antti Kivi
   </a>
-  ,
 </div>
 `;

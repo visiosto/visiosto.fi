@@ -647,6 +647,5 @@ exports[`Client register business form component renders correctly 1`] = `
       </div>
     </form>
   </div>
-  ,
 </div>
 `;

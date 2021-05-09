@@ -859,6 +859,5 @@ exports[`Index layout component renders correctly 1`] = `
       </p>
     </div>
   </footer>
-  ,
 </div>
 `;

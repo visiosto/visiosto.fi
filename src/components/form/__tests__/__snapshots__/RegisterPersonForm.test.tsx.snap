@@ -498,6 +498,5 @@ exports[`Client register person form component renders correctly 1`] = `
       </div>
     </form>
   </div>
-  ,
 </div>
 `;

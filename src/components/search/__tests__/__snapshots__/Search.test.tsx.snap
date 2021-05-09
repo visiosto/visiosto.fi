@@ -44,6 +44,5 @@ exports[`Search component renders correctly 1`] = `
       </div>
     </div>
   </div>
-  ,
 </div>
 `;

@@ -12,6 +12,5 @@ exports[`Localized anchor link button component renders correctly 1`] = `
       A link
     </span>
   </a>
-  ,
 </div>
 `;

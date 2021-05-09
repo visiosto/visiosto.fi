@@ -238,7 +238,6 @@ exports[`Navigation component renders English correctly 1`] = `
       </li>
     </ul>
   </nav>
-  ,
 </div>
 `;
 
@@ -480,6 +479,5 @@ exports[`Navigation component renders Finnish correctly 1`] = `
       </li>
     </ul>
   </nav>
-  ,
 </div>
 `;

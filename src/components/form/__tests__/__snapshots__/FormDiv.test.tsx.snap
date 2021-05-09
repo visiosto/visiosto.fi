@@ -7,6 +7,5 @@ exports[`Form divider component renders correctly 1`] = `
   >
     Content
   </div>
-  ,
 </div>
 `;

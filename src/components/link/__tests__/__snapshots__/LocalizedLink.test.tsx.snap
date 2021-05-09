@@ -7,6 +7,5 @@ exports[`Localized link component renders correctly 1`] = `
   >
     A link
   </a>
-  ,
 </div>
 `;

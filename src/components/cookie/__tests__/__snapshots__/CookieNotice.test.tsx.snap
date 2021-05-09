@@ -41,6 +41,5 @@ exports[`Cookie notice component renders correctly 1`] = `
       </div>
     </div>
   </div>
-  ,
 </div>
 `;

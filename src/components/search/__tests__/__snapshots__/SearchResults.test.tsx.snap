@@ -13,6 +13,5 @@ exports[`Search results component renders correctly 1`] = `
       </div>
     </div>
   </div>
-  ,
 </div>
 `;

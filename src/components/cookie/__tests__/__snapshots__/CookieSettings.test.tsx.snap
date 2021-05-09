@@ -32,7 +32,6 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
       </span>
     </div>
   </div>
-  ,
 </div>
 `;
 
@@ -144,6 +143,5 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
       </div>
     </div>
   </div>
-  ,
 </div>
 `;

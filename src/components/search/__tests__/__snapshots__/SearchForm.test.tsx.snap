@@ -28,6 +28,5 @@ exports[`Search form component renders correctly 1`] = `
       />
     </svg>
   </form>
-  ,
 </div>
 `;

@@ -522,6 +522,5 @@ exports[`Footer component renders correctly 1`] = `
       </p>
     </div>
   </footer>
-  ,
 </div>
 `;

@@ -7,6 +7,5 @@ exports[`Card component renders correctly 1`] = `
   >
     Test text
   </article>
-  ,
 </div>
 `;

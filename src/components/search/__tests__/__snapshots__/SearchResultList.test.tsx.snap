@@ -7,6 +7,5 @@ exports[`Search result list component renders correctly 1`] = `
       class="sc-gsDJrp jVvgJR"
     />
   </div>
-  ,
 </div>
 `;

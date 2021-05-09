@@ -20,6 +20,5 @@ exports[`Switch checkbox component renders correctly 1`] = `
       class="sc-gsDJrp jUAYCE"
     />
   </span>
-  ,
 </div>
 `;

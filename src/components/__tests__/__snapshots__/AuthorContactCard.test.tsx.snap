@@ -79,6 +79,5 @@ exports[`Author contact card component renders correctly 1`] = `
     </div>
     Author
   </article>
-  ,
 </div>
 `;

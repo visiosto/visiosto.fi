@@ -8,6 +8,5 @@ exports[`Category name component renders correctly 1`] = `
   >
     Yleinen
   </a>
-  ,
 </div>
 `;

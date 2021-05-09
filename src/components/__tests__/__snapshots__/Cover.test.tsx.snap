@@ -208,7 +208,6 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -420,7 +419,6 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -632,7 +630,6 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -844,7 +841,6 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -1056,7 +1052,6 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -1268,7 +1263,6 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -1480,7 +1474,6 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -1692,7 +1685,6 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -1904,7 +1896,6 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -2116,7 +2107,6 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -2328,7 +2318,6 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
       </div>
     </div>
   </section>
-  ,
 </div>
 `;
 
@@ -2540,6 +2529,5 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
       </div>
     </div>
   </section>
-  ,
 </div>
 `;

@@ -185,6 +185,5 @@ exports[`Contact form component renders correctly 1`] = `
       </div>
     </form>
   </div>
-  ,
 </div>
 `;

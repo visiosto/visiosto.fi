@@ -35,6 +35,5 @@ exports[`Feature card component renders correctly 1`] = `
       Click here
     </span>
   </article>
-  ,
 </div>
 `;

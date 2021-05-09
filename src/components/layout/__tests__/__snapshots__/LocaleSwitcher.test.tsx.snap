@@ -13,7 +13,6 @@ exports[`Locale switcher component renders English index switcher correctly 1`] 
     </span>
   </a>
   <br />
-  ,
 </div>
 `;
 
@@ -30,6 +29,5 @@ exports[`Locale switcher component renders Finnish index switcher correctly 1`] 
     </span>
   </a>
   <br />
-  ,
 </div>
 `;

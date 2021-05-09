@@ -136,6 +136,5 @@ exports[`Price list component renders correctly 1`] = `
       </div>
     </div>
   </div>
-  ,
 </div>
 `;

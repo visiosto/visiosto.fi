@@ -54,6 +54,5 @@ exports[`Radio input component renders correctly 1`] = `
       Option 3
     </label>
   </div>
-  ,
 </div>
 `;
