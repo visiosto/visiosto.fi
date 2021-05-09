@@ -2,8 +2,7 @@
 // Licensed under the MIT License
 
 import { useContext } from 'react';
-
-import ThemeContext from '../components/ThemeContext';
+import { ThemeContext } from '@visiosto/components';
 
 export default function useColorScheme() {
   if (typeof window !== 'undefined') {

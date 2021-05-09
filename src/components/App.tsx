@@ -6,15 +6,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContextProvider } from '@visiosto/components';
 
-import ThemeContextProvider from './ThemeContextProvider';
+import { COLORS } from '../theme';
 
-// Sometimes the app's children seem to be something else than a React node in development mode.
-// eslint-disable-next-line react/forbid-prop-types
-const propTypes = { children: PropTypes.any.isRequired };
+const propTypes = { children: PropTypes.node.isRequired };
 
 function App({ children }) {
-  return <ThemeContextProvider>{children}</ThemeContextProvider>;
+  return <ThemeContextProvider colors={COLORS}>{children}</ThemeContextProvider>;
 }
 
 App.propTypes = propTypes;

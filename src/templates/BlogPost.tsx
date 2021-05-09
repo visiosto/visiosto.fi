@@ -6,12 +6,14 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { ArrowLeftIcon, ArrowRightIcon } from '@primer/octicons-react';
+import { Theme } from '@visiosto/components';
 
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
 import LocalizedLink from '../components/link/LocalizedLink';
 import Rule from '../components/Rule';
-import Theme from '../components/Theme';
+
+import theme from '../theme';
 
 const Separator = styled.div`
   margin: 3em 0;
@@ -150,7 +152,7 @@ function BlogPost({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme>
+      <Theme theme={theme}>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

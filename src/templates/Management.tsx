@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
+import { Theme } from '@visiosto/components';
 
 import AuthorName from '../components/AuthorName';
 import CategoryName from '../components/CategoryName';
@@ -14,9 +15,10 @@ import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
 import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
-import Theme from '../components/Theme';
 
 import createInternationalization from '../util/createInternationalization';
+
+import theme from '../theme';
 
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
@@ -191,7 +193,7 @@ function Management({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme>
+      <Theme theme={theme}>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

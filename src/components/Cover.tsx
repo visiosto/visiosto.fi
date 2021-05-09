@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
+import { SchemedImage } from '@visiosto/components';
 
 import Rule from './Rule';
-import SchemedImage from './SchemedImage';
 
 import theme from '../theme';
 

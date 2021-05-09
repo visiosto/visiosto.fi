@@ -6,13 +6,15 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
+import { Theme } from '@visiosto/components';
 
 import Intl from '../components/Intl';
 import LayoutError from '../components/layout/LayoutError';
 import Rule from '../components/Rule';
-import Theme from '../components/Theme';
 
 import createInternationalization from '../util/createInternationalization';
+
+import theme from '../theme';
 
 const Separator = styled.div`
   display: flex;
@@ -71,7 +73,7 @@ function NotFound({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme>
+      <Theme theme={theme}>
         <Page pageContext={pageContext} />
       </Theme>
     </Intl>

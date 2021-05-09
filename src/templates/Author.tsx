@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
+import { SchemedImage, Theme } from '@visiosto/components';
 
 import AuthorName from '../components/AuthorName';
 import CategoryName from '../components/CategoryName';
@@ -15,10 +16,10 @@ import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
 import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
-import SchemedImage from '../components/SchemedImage';
-import Theme from '../components/Theme';
 
 import createInternationalization from '../util/createInternationalization';
+
+import theme from '../theme';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -209,8 +210,8 @@ function Page({ data, pageContext }) {
               >
                 <InstagramImage
                   alt={intl('footerInstagramImageText')}
-                  dark={getImage(data.instagram)}
-                  light={getImage(data.instagramColor)}
+                  dark={getImage(data.instagram)!}
+                  light={getImage(data.instagramColor)!}
                 />
               </a>
             );
@@ -228,8 +229,8 @@ function Page({ data, pageContext }) {
               >
                 <SocialMediaImage
                   alt={intl('footerFacebookImageText')}
-                  dark={getImage(data.facebook)}
-                  light={getImage(data.facebookColor)}
+                  dark={getImage(data.facebook)!}
+                  light={getImage(data.facebookColor)!}
                 />
               </a>
             );
@@ -247,8 +248,8 @@ function Page({ data, pageContext }) {
               >
                 <TwitterImage
                   alt={intl('footerTwitterImageText')}
-                  dark={getImage(data.twitter)}
-                  light={getImage(data.twitterColor)}
+                  dark={getImage(data.twitter)!}
+                  light={getImage(data.twitterColor)!}
                 />
               </a>
             );
@@ -266,8 +267,8 @@ function Page({ data, pageContext }) {
               >
                 <LinkedinImage
                   alt={intl('footerLinkedinImageText')}
-                  dark={getImage(data.linkedin)}
-                  light={getImage(data.linkedinColor)}
+                  dark={getImage(data.linkedin)!}
+                  light={getImage(data.linkedinColor)!}
                 />
               </a>
             );
@@ -285,8 +286,8 @@ function Page({ data, pageContext }) {
               >
                 <GithubImage
                   alt={intl('footerGithubImageText')}
-                  dark={getImage(data.github)}
-                  light={getImage(data.github)}
+                  dark={getImage(data.github)!}
+                  light={getImage(data.github)!}
                 />
               </a>
             );
@@ -347,7 +348,7 @@ function Author({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme>
+      <Theme theme={theme}>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

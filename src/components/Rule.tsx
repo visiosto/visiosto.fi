@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-
-import SchemedImage from './SchemedImage';
+import { SchemedImage } from '@visiosto/components';
 
 const useRuleImages = function useRuleImageDataWithStaticQuery(ruleType) {
   const data = useStaticQuery(
