@@ -34,7 +34,7 @@
     "@visiosto/components": "^0.1.2",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.2.1",
+    "gatsby": "^3.4.2",
     "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-google-gtag": "^3.3.0",
     "gatsby-plugin-google-tagmanager": "^3.4.0",
