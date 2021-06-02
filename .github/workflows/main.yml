@@ -10,14 +10,34 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: us-east-1
+  REVISION_BUCKET_NAME: visiosto-workflows
   LOCAL_VERSION_NUMBER_FILE: build_version.txt
   CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
   CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-  REVISION_BUCKET_NAME: visiosto-workflows
 
 jobs:
+  version:
+    name: Read version
+
+    outputs:
+      revision-number: ${{ steps.version.outputs.revision-number }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2.3.4
+
+    - name: Determine the project’s version
+      id: version
+      uses: visiosto/maintain-revision@v0.16.0
+      with:
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
+        type: npm
+
   check:
     name: Check
+    needs: version
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,13 +55,15 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: visiosto/maintain-revision@v0.15.0
+      uses: visiosto/maintain-revision@v0.16.0
       with:
         bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
+        upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
 
     - name: Replace the project’s version
-      uses: visiosto/replace-value@v0.2.2
+      uses: visiosto/replace-value@v1.0.0
       with:
         file: package.json
         replaced: ${{ steps.version.outputs.package-version }}
@@ -74,6 +96,7 @@ jobs:
 
   build:
     name: Build
+    needs: version
     runs-on: ubuntu-latest
 
     strategy:
@@ -91,14 +114,15 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: visiosto/maintain-revision@v0.15.0
+      uses: visiosto/maintain-revision@v0.16.0
       with:
         bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
 
     - name: Replace the project’s version
-      uses: visiosto/replace-value@v0.2.2
+      uses: visiosto/replace-value@v1.0.0
       with:
         file: package.json
         replaced: ${{ steps.version.outputs.package-version }}
@@ -125,7 +149,7 @@ jobs:
 
   artefact:
     name: Artefacts
-    needs: [build, check]
+    needs: [version, build, check]
     runs-on: ubuntu-latest
 
     steps:
@@ -139,14 +163,15 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: visiosto/maintain-revision@v0.15.0
+      uses: visiosto/maintain-revision@v0.16.0
       with:
         bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
 
     - name: Replace the project’s version
-      uses: visiosto/replace-value@v0.2.2
+      uses: visiosto/replace-value@v1.0.0
       with:
         file: package.json
         replaced: ${{ steps.version.outputs.package-version }}
@@ -174,12 +199,12 @@ jobs:
     - name: Upload build artefacts
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: visiosto-website-${{ steps.version.outputs.version }}
+        name: visiosto-maintenance-website-${{ steps.version.outputs.version }}
         path: public/
 
   lighthouse:
     name: Lighthouse
-    needs: [build, check]
+    needs: [version, build, check]
     runs-on: ubuntu-latest
 
     env:
@@ -196,14 +221,15 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: visiosto/maintain-revision@v0.15.0
+      uses: visiosto/maintain-revision@v0.16.0
       with:
         bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
 
     - name: Replace the project’s version
-      uses: visiosto/replace-value@v0.2.2
+      uses: visiosto/replace-value@v1.0.0
       with:
         file: package.json
         replaced: ${{ steps.version.outputs.package-version }}
