@@ -5,12 +5,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Theme } from '@visiosto/components';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-
-import theme from '../theme';
+import Theme from '../components/Theme';
 
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
@@ -57,7 +55,7 @@ function ContentfulPage({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme theme={theme}>
+      <Theme>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

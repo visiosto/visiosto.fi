@@ -7,7 +7,6 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
-import { SchemedImage, Theme } from '@visiosto/components';
 
 import AuthorName from '../components/AuthorName';
 import CategoryName from '../components/CategoryName';
@@ -16,10 +15,10 @@ import Layout from '../components/layout/Layout';
 import LocalizedLink from '../components/link/LocalizedLink';
 import LocalizedLinkButton from '../components/link/LocalizedLinkButton';
 import Rule from '../components/Rule';
+import SchemedImage from '../components/SchemedImage';
+import Theme from '../components/Theme';
 
 import createInternationalization from '../util/createInternationalization';
-
-import theme from '../theme';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -348,7 +347,7 @@ function Author({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme theme={theme}>
+      <Theme>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

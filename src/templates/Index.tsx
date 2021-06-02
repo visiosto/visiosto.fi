@@ -12,7 +12,6 @@ import {
   PaperAirplaneIcon,
   PencilIcon,
 } from '@primer/octicons-react';
-import { Theme } from '@visiosto/components';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
@@ -21,8 +20,7 @@ import Cover from '../components/Cover';
 import FeatureCard from '../components/FeatureCard';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
-
-import theme from '../theme';
+import Theme from '../components/Theme';
 
 const H2 = styled.h2`
   font-size: 2.2rem;
@@ -171,7 +169,7 @@ function Index({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme theme={theme}>
+      <Theme>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

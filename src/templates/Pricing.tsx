@@ -5,15 +5,13 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Theme } from '@visiosto/components';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import LocalizedAnchorLinkButton from '../components/link/LocalizedAnchorLinkButton';
 import PriceList from '../components/PriceList';
 import Rule from '../components/Rule';
-
-import theme from '../theme';
+import Theme from '../components/Theme';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -113,7 +111,7 @@ function Pricing({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme theme={theme}>
+      <Theme>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>

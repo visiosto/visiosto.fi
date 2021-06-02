@@ -6,17 +6,15 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
-import { Theme } from '@visiosto/components';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import RegisterBusinessForm from '../components/form/RegisterBusinessForm';
 import RegisterPersonForm from '../components/form/RegisterPersonForm';
 import Rule from '../components/Rule';
+import Theme from '../components/Theme';
 
 import createInternationalization from '../util/createInternationalization';
-
-import theme from '../theme';
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -101,7 +99,7 @@ function ClientRegister({ data, pageContext }) {
   const { locale } = pageContext;
   return (
     <Intl locale={simpleLocales[locale.replace('-', '_')]}>
-      <Theme theme={theme}>
+      <Theme>
         <Page data={data} pageContext={pageContext} />
       </Theme>
     </Intl>
