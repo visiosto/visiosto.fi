@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/visiosto/visiosto-website#readme",
   "dependencies": {
-    "@primer/octicons-react": "^13.0.0",
+    "@primer/octicons-react": "^14.2.1",
     "@reach/router": "^1.3.4",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
