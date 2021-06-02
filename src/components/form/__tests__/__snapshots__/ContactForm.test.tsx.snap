@@ -150,7 +150,7 @@ exports[`Contact form component renders correctly 1`] = `
               fill="currentColor"
               height="24"
               role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
               viewBox="0 0 24 24"
               width="24"
             >
