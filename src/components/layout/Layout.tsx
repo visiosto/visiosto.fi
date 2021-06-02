@@ -10,7 +10,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import useColorScheme from '../../util/useColorScheme';
+import useColorSchemeListener from '../../util/useColorSchemeListener';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -51,7 +51,7 @@ const defaultProps = {
 };
 
 function Layout({ article, author, children, description, image, locale, pageID, title }) {
-  useColorScheme();
+  useColorSchemeListener();
 
   return (
     <>

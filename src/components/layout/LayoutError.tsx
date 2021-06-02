@@ -10,7 +10,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import useColorScheme from '../../util/useColorScheme';
+import useColorSchemeListener from '../../util/useColorSchemeListener';
 
 const ErrorCode = styled.h1`
   font-size: 3rem;
@@ -48,7 +48,7 @@ const defaultProps = {
 };
 
 function LayoutError({ children, description, errorCode, image, locale, pageID, title }) {
-  useColorScheme();
+  useColorSchemeListener();
 
   return (
     <>
