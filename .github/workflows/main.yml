@@ -74,7 +74,7 @@ jobs:
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -133,7 +133,7 @@ jobs:
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -182,7 +182,7 @@ jobs:
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -240,7 +240,7 @@ jobs:
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
