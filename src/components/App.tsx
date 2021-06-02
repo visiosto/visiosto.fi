@@ -6,14 +6,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContextProvider } from '@visiosto/components';
 
-import { COLORS } from '../theme';
+import ThemeContextProvider from './ThemeContextProvider';
 
 const propTypes = { children: PropTypes.node.isRequired };
 
 function App({ children }) {
-  return <ThemeContextProvider colors={COLORS}>{children}</ThemeContextProvider>;
+  return <ThemeContextProvider>{children}</ThemeContextProvider>;
 }
 
 App.propTypes = propTypes;
