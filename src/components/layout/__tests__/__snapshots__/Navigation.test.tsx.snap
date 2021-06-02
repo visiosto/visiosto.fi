@@ -3,40 +3,40 @@
 exports[`Navigation component renders English correctly 1`] = `
 <div>
   <nav
-    class="sc-bdvvaa jyBOZM"
+    class="sc-bdnxRM jdHmZT"
   >
     <div
       aria-controls="primary-menu"
       aria-expanded="false"
-      class="sc-gsDJrp ZGrYg"
+      class="sc-gtsrHT iyLpWA"
     >
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
     </div>
     <ul
-      class="sc-hKwCoD cTPmWZ"
+      class="sc-hKFxyN jSDNlB"
       id="primary-menu"
     >
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-iCfLBT biHHMq"
+          class="sc-iCoGMd gDYSwp"
           href="/en"
         >
           Front Page
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -78,18 +78,18 @@ exports[`Navigation component renders English correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-furvIG kKZtqh"
+          class="sc-fujyAs eejiCo"
           href="/en#portfolio"
         >
           Portfolio
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -131,18 +131,18 @@ exports[`Navigation component renders English correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-furvIG kKZtqh"
+          class="sc-fujyAs eejiCo"
           href="/en#contact"
         >
           Contact
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -184,18 +184,18 @@ exports[`Navigation component renders English correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-iCfLBT biHHMq"
+          class="sc-iCoGMd gDYSwp"
           href="/en/blog"
         >
           Blog
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -238,46 +238,47 @@ exports[`Navigation component renders English correctly 1`] = `
       </li>
     </ul>
   </nav>
+  ,
 </div>
 `;
 
 exports[`Navigation component renders Finnish correctly 1`] = `
 <div>
   <nav
-    class="sc-bdvvaa jyBOZM"
+    class="sc-bdnxRM jdHmZT"
   >
     <div
       aria-controls="primary-menu"
       aria-expanded="false"
-      class="sc-gsDJrp ZGrYg"
+      class="sc-gtsrHT iyLpWA"
     >
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
       <div
-        class="sc-dkPtyc bvXWki"
+        class="sc-dlnjwi fodIaX"
       />
     </div>
     <ul
-      class="sc-hKwCoD cTPmWZ"
+      class="sc-hKFxyN jSDNlB"
       id="primary-menu"
     >
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-iCfLBT biHHMq"
+          class="sc-iCoGMd gDYSwp"
           href="/"
         >
           Etusivu
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -319,18 +320,18 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-furvIG kKZtqh"
+          class="sc-fujyAs eejiCo"
           href="/#portfolio"
         >
           Portfolio
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -372,18 +373,18 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-furvIG kKZtqh"
+          class="sc-fujyAs eejiCo"
           href="/#yhteystiedot"
         >
           Yhteystiedot
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -425,18 +426,18 @@ exports[`Navigation component renders Finnish correctly 1`] = `
         </a>
       </li>
       <li
-        class="sc-eCImvq hSsQLl"
+        class="sc-eCApnc jNSuCc"
       >
         <a
-          class="sc-iCfLBT biHHMq"
+          class="sc-iCoGMd gDYSwp"
           href="/blogi"
         >
           Blogi
           <div
-            class="sc-jRQAMF fevepN"
+            class="sc-jSFjdj gIsZbL"
           >
             <div
-              class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+              class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 150px; height: 75px;"
             >
@@ -479,5 +480,6 @@ exports[`Navigation component renders Finnish correctly 1`] = `
       </li>
     </ul>
   </nav>
+  ,
 </div>
 `;

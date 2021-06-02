@@ -3,13 +3,13 @@
 exports[`Post layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-nVjpj bxwVcV"
+    class="sc-oeezt fNrji"
   >
     <div
-      class="sc-lcequs fNJPDa"
+      class="sc-lbVvki gTDZbJ"
     >
       <p
-        class="sc-ehCIER jUDzz"
+        class="sc-eirqVv grfKKq"
         role="heading"
       >
         Visiosto
@@ -18,9 +18,9 @@ exports[`Post layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-gGCCur jCSfIm"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-gGLxEB keXxAA"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 301px; display: block;"
@@ -85,40 +85,40 @@ exports[`Post layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-AjmZR eXHpYY"
+      class="sc-Arkif icTyjD"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-khQdMy ewxSvG"
+        class="sc-khIgEk kGUmRl"
       >
         <div
-          class="sc-hUpaWb eQGDUq"
+          class="sc-hTRkXV fEoLQW"
         />
         <div
-          class="sc-hUpaWb eQGDUq"
+          class="sc-hTRkXV fEoLQW"
         />
         <div
-          class="sc-hUpaWb eQGDUq"
+          class="sc-hTRkXV fEoLQW"
         />
       </div>
       <ul
-        class="sc-jgrIVw fULlsa"
+        class="sc-jgPyTC grxUuo"
         id="primary-menu"
       >
         <li
-          class="sc-gSQGeZ epnzvd"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-jeqYYF cjjTHs"
+            class="sc-jffHpj eDHKMC"
             href="/"
           >
             Etusivu
             <div
-              class="sc-lbhJmS hddYro"
+              class="sc-laZMeE eklqyO"
             >
               <div
-                class="gatsby-image-wrapper sc-iNGGwv degonu"
+                class="gatsby-image-wrapper sc-iNiQyp hSEgmA"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -160,18 +160,18 @@ exports[`Post layout component renders correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-gSQGeZ epnzvd"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-eJwXpk kjPffb"
+            class="sc-eJocfa gMafxm"
             href="/#portfolio"
           >
             Portfolio
             <div
-              class="sc-lbhJmS hddYro"
+              class="sc-laZMeE eklqyO"
             >
               <div
-                class="gatsby-image-wrapper sc-iNGGwv degonu"
+                class="gatsby-image-wrapper sc-iNiQyp hSEgmA"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -213,18 +213,18 @@ exports[`Post layout component renders correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-gSQGeZ epnzvd"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-eJwXpk kjPffb"
+            class="sc-eJocfa gMafxm"
             href="/#yhteystiedot"
           >
             Yhteystiedot
             <div
-              class="sc-lbhJmS hddYro"
+              class="sc-laZMeE eklqyO"
             >
               <div
-                class="gatsby-image-wrapper sc-iNGGwv degonu"
+                class="gatsby-image-wrapper sc-iNiQyp hSEgmA"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -266,18 +266,18 @@ exports[`Post layout component renders correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-gSQGeZ epnzvd"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-jeqYYF cjjTHs"
+            class="sc-jffHpj eDHKMC"
             href="/blogi"
           >
             Blogi
             <div
-              class="sc-lbhJmS hddYro"
+              class="sc-laZMeE eklqyO"
             >
               <div
-                class="gatsby-image-wrapper sc-iNGGwv degonu"
+                class="gatsby-image-wrapper sc-iNiQyp hSEgmA"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -321,7 +321,7 @@ exports[`Post layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-clIAKW jSIHlr"
+      class="sc-ckTSus cYspCn"
     >
       <a
         href="/blogi"
@@ -330,7 +330,7 @@ exports[`Post layout component renders correctly 1`] = `
       </a>
       <svg
         aria-hidden="true"
-        class="sc-faUofl bfgzsj"
+        class="sc-fbIWvP fwKHeO"
         fill="currentColor"
         height="16"
         role="img"
@@ -354,12 +354,12 @@ exports[`Post layout component renders correctly 1`] = `
     <section>
       <header>
         <h1
-          class="sc-GamvQ eFtswQ"
+          class="sc-FRrlG kdMIXn"
         >
           Moderni markkinointitoimisto Visiosto taittaa sinun visiosi
         </h1>
         <div
-          class="sc-fWCJfs kPJORd"
+          class="sc-fXazdy fGFdeO"
         >
           <time
             datetime="2020-01-01T00:00+02:00"
@@ -367,22 +367,22 @@ exports[`Post layout component renders correctly 1`] = `
             December 31, 2019
           </time>
           <span
-            class="sc-dvQbkV enOMsj"
+            class="sc-dvXYtj hNTYRg"
           >
             <a
-              class="sc-bdvvaa kKoite"
+              class="sc-bdnxRM dawLst"
               href="/henkilo/antti-kivi"
             >
               Antti Kivi
             </a>
           </span>
           <span
-            class="sc-TBWwm eQdpzs"
+            class="sc-TtZnY gPzETE"
           >
             Kategoria:
              
             <a
-              class="sc-gsDJrp igPdbA"
+              class="sc-gtsrHT hSRinM"
               href="/blogi/kategoria/yleinen"
             >
               Yleinen
@@ -398,24 +398,24 @@ exports[`Post layout component renders correctly 1`] = `
     </section>
   </main>
   <footer
-    class="sc-kLwgWK cXIdre"
+    class="sc-kLojOw iFlJTh"
   >
     <div
-      class="sc-bYoCmx dtDBON"
+      class="sc-bYwzuL hVwMG"
     >
       <form
-        class="sc-fKVsgm iDnfrC"
+        class="sc-fKgJPI jTkyUb"
       >
         <input
           aria-label="Haku"
-          class="sc-bBHwJV kMDheq"
+          class="sc-bCwfaz gVdYuk"
           placeholder="Haku"
           type="text"
           value=""
         />
         <svg
           aria-hidden="true"
-          class="sc-iwjezw fQRwBM"
+          class="sc-iwajpm dHmqme"
           fill="currentColor"
           height="16"
           role="img"
@@ -430,11 +430,11 @@ exports[`Post layout component renders correctly 1`] = `
         </svg>
       </form>
       <div
-        class="sc-giYgFv bLFdgV"
+        class="sc-giAqHp dkQfyJ"
         hidden=""
       >
         <div
-          class="sc-ezbkgU cLgxIj"
+          class="sc-ezzafa ksJAFy"
         >
           <div>
             Hakemistoa ladataan
@@ -443,12 +443,12 @@ exports[`Post layout component renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-ikJzcn sc-jJoQpE fbRBiM carMhE"
+      class="sc-iklJeh sc-jJMGnK kpxAUQ kidWOS"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hiCivh eQayxX"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hiKfDv LQxyK"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 160px; display: block;"
@@ -497,21 +497,21 @@ exports[`Post layout component renders correctly 1`] = `
         Visiosto oy
       </h2>
       <p
-        class="sc-gWXaA-D dnQiOs"
+        class="sc-gXfVKN fQpkbh"
       >
         Y-tunnus:
          
         3010084-6
       </p>
       <p
-        class="sc-gWXaA-D dnQiOs"
+        class="sc-gXfVKN fQpkbh"
       >
         ALV-numero:
          
         FI30100846
       </p>
       <p
-        class="sc-gWXaA-D dnQiOs"
+        class="sc-gXfVKN fQpkbh"
       >
         <a
           href="mailto:info@visiosto.fi"
@@ -520,7 +520,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-cCcYRi eRkaMs"
+        class="sc-cBoqAE jOpfwQ"
       >
         <a
           href="/hallinto"
@@ -529,7 +529,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-cidCJl dVQbGC"
+        class="sc-ciSkZP bPaRpH"
       >
         <a
           href="/hinnasto"
@@ -539,14 +539,14 @@ exports[`Post layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <a
-        class="sc-kfPtPH kREKBy"
+        class="sc-kfYoZR ckSjVy"
         href="/en/blog/modern-marketing-agency-visiosto-makes-your-vision-come-true"
       >
         <span
-          class="sc-dkPtyc sc-hKwCoD RfKIA OoMAL"
+          class="sc-dlnjwi sc-hKFxyN lhRFAR gsfPKz"
         >
           In English
         </span>
@@ -554,19 +554,19 @@ exports[`Post layout component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-jcFkyM ZRvak"
+      class="sc-jcwpoC dyPCBo"
     >
       Sosiaalisessa mediassa
     </h3>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         #linssimmeläpi
       </p>
     </div>
     <div
-      class="sc-ikJzcn sc-caiKgP fbRBiM jOsbJF"
+      class="sc-iklJeh sc-carFqZ kpxAUQ buCviZ"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -574,9 +574,9 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iUKrWq sc-efQUeY kpnShF UJJog"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-efHYUO entxOW gHJUtd"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 32px; display: block;"
@@ -625,9 +625,9 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iUKrWq kpnShF"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM entxOW"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 32px; display: block;"
@@ -676,9 +676,9 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iUKrWq sc-jObXwK kpnShF JkzSw"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-jNnpgg entxOW fXIyNb"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 32px; display: block;"
@@ -727,9 +727,9 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iUKrWq sc-cTApHj kpnShF ekEQVL"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-cTJkRt entxOW GjTXJ"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 32px; display: block;"
@@ -778,9 +778,9 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iUKrWq sc-iAKVOt kpnShF cOvHTa"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-iBzEeX entxOW ePeddL"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 32px; display: block;"
@@ -825,10 +825,10 @@ exports[`Post layout component renders correctly 1`] = `
       </a>
     </div>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <p
-        class="sc-dPiKHq bCKuna"
+        class="sc-dPaNzc cgppGB"
       >
         <a
           href="/tietosuoja"
@@ -837,24 +837,24 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-bBHHQT gaxbOs"
+        class="sc-bBjRSN ipBMGa"
       >
         <span
-          class="sc-hGPAah hNARSM"
+          class="sc-hHEiqL DFvqs"
         >
           Evästeasetukset
         </span>
         <div
-          class="sc-dlVyqM ifcBiq"
+          class="sc-dlMDgC hFzDAK"
         >
           <div
-            class="sc-jRQAMF dwTUvx"
+            class="sc-jSFjdj kTAvTn"
           >
             <div
-              class="sc-gKckTs"
+              class="sc-gKAaRy"
             >
               <h2
-                class="sc-iCfLBT dwlkFt"
+                class="sc-iCoGMd qJjFK"
               >
                 Saisiko olla keksi?
               </h2>
@@ -863,15 +863,15 @@ exports[`Post layout component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="sc-furvIG eyxAUG"
+              class="sc-fujyAs kRhpnD"
             >
               <span
-                class="sc-dkPtyc sc-eCImvq RfKIA iNlNTr"
+                class="sc-dlnjwi sc-eCApnc lhRFAR iVINoq"
               >
                 Kiitos, hyväksyn evästeet
               </span>
               <span
-                class="sc-dkPtyc sc-hKwCoD RfKIA OoMAL"
+                class="sc-dlnjwi sc-hKFxyN lhRFAR gsfPKz"
               >
                 Tarkistan evästeet ja säädän niitä
               </span>
@@ -880,7 +880,7 @@ exports[`Post layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-cNKpQo gFoGPB"
+        class="sc-cOifOu iCwPLO"
       >
         <a
           href="/kayttoehdot"
@@ -890,21 +890,21 @@ exports[`Post layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         Octicons © 2021 GitHub, Inc.
       </p>
     </div>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         © 2021 Visiosto oy
       </p>
     </div>
     <div
-      class="sc-ikJzcn fbRBiM"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         Tämä sivusto on tehty 
@@ -917,5 +917,6 @@ exports[`Post layout component renders correctly 1`] = `
       </p>
     </div>
   </footer>
+  ,
 </div>
 `;

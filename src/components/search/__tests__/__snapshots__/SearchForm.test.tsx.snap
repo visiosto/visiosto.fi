@@ -3,18 +3,18 @@
 exports[`Search form component renders correctly 1`] = `
 <div>
   <form
-    class="sc-bdvvaa exMfau"
+    class="sc-bdnxRM jJlkMx"
   >
     <input
       aria-label="Haku"
-      class="sc-gsDJrp bwpbNV"
+      class="sc-gtsrHT fdkMzR"
       placeholder="Haku"
       type="text"
       value="Searching"
     />
     <svg
       aria-hidden="true"
-      class="sc-dkPtyc jAXcvR"
+      class="sc-dlnjwi bFMtCU"
       fill="currentColor"
       height="16"
       role="img"
@@ -28,5 +28,6 @@ exports[`Search form component renders correctly 1`] = `
       />
     </svg>
   </form>
+  ,
 </div>
 `;

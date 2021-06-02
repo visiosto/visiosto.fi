@@ -3,10 +3,10 @@
 exports[`Feature card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-hKwCoD iyPGml"
+    class="sc-hKFxyN UHrbl"
   >
     <div
-      class="sc-eCImvq kHVCyU"
+      class="sc-eCApnc fLcWfp"
     >
       <svg
         aria-hidden="true"
@@ -24,16 +24,17 @@ exports[`Feature card component renders correctly 1`] = `
       </svg>
     </div>
     <h3
-      class="sc-jRQAMF deJfqT"
+      class="sc-jSFjdj XHvoF"
     >
       Test title
     </h3>
     Some text here
     <span
-      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
     >
       Click here
     </span>
   </article>
+  ,
 </div>
 `;

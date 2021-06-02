@@ -3,19 +3,21 @@
 exports[`Button component renders accept colours correctly 1`] = `
 <div>
   <span
-    class="sc-bdvvaa sc-dkPtyc cQWPbX bKKRMj"
+    class="sc-bdnxRM sc-dlnjwi eoyzcM fVmaTm"
   >
     Button
   </span>
+  ,
 </div>
 `;
 
 exports[`Button component renders normal colours correctly 1`] = `
 <div>
   <span
-    class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+    class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
   >
     Button
   </span>
+  ,
 </div>
 `;

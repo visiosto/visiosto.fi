@@ -3,9 +3,10 @@
 exports[`Form divider component renders correctly 1`] = `
 <div>
   <div
-    class="sc-bdvvaa ljWDsl"
+    class="sc-bdnxRM kEdutm"
   >
     Content
   </div>
+  ,
 </div>
 `;

@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
-import { SchemedImage } from '@visiosto/components';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
+import SchemedImage from '../SchemedImage';
 
 const Nav = styled.nav`
   margin: 2rem auto;

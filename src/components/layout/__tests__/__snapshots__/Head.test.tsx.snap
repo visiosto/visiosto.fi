@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Head component renders the tests correctly for English index page 1`] = `<div />`;
+exports[`Head component renders the tests correctly for English index page 1`] = `
+<div>
+  ,
+</div>
+`;
 
-exports[`Head component renders the tests correctly for Finnish index page 1`] = `<div />`;
+exports[`Head component renders the tests correctly for Finnish index page 1`] = `
+<div>
+  ,
+</div>
+`;

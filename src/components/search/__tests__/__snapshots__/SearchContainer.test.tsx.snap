@@ -4,18 +4,18 @@ exports[`Search container component renders correctly 1`] = `
 <div>
   <div>
     <form
-      class="sc-bdvvaa exMfau"
+      class="sc-bdnxRM jJlkMx"
     >
       <input
         aria-label="Haku"
-        class="sc-gsDJrp bwpbNV"
+        class="sc-gtsrHT fdkMzR"
         placeholder="Haku"
         type="text"
         value=""
       />
       <svg
         aria-hidden="true"
-        class="sc-dkPtyc jAXcvR"
+        class="sc-dlnjwi bFMtCU"
         fill="currentColor"
         height="16"
         role="img"
@@ -30,11 +30,11 @@ exports[`Search container component renders correctly 1`] = `
       </svg>
     </form>
     <div
-      class="sc-gKckTs bPNwau"
+      class="sc-gKAaRy jyuupg"
       hidden=""
     >
       <div
-        class="sc-iCfLBT bRZKPF"
+        class="sc-iCoGMd dyJRbi"
       >
         <div>
           Hakemistoa ladataan
@@ -42,5 +42,6 @@ exports[`Search container component renders correctly 1`] = `
       </div>
     </div>
   </div>
+  ,
 </div>
 `;

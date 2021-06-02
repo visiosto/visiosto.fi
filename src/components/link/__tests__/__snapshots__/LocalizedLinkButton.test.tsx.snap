@@ -3,14 +3,15 @@
 exports[`Localized link button component renders correctly 1`] = `
 <div>
   <a
-    class="sc-hKwCoD kvbVor"
+    class="sc-hKFxyN kCOJlb"
     href="/kayttoehdot"
   >
     <span
-      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
     >
       A link
     </span>
   </a>
+  ,
 </div>
 `;

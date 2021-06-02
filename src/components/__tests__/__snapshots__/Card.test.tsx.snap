@@ -3,9 +3,10 @@
 exports[`Card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-bdvvaa eedMoP"
+    class="sc-bdnxRM dVYokc"
   >
     Test text
   </article>
+  ,
 </div>
 `;

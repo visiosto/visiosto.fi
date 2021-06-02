@@ -7,12 +7,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
-import { SchemedImage } from '@visiosto/components';
 
 import CookieNotice from '../cookie/CookieNotice';
 import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
 import Search from '../search/Search';
+import SchemedImage from '../SchemedImage';
 
 import createInternationalization from '../../util/createInternationalization';
 

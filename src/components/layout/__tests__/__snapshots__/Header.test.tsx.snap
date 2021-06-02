@@ -3,13 +3,13 @@
 exports[`Header component renders index page header correctly 1`] = `
 <div>
   <header
-    class="sc-pVTma cVkYeH"
+    class="sc-pNWdM eBfxCT"
   >
     <div
-      class="sc-iqsfdx hRYeHe"
+      class="sc-iqAclL kfZGVf"
     >
       <h1
-        class="sc-jrQzUz kNyQmb"
+        class="sc-jrsJWt iFxBRH"
       >
         Visiosto
       </h1>
@@ -17,9 +17,9 @@ exports[`Header component renders index page header correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crHlIS bgpXpq"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crzoAE pmJyX"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 301px; display: block;"
@@ -84,40 +84,40 @@ exports[`Header component renders index page header correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-bdvvaa jyBOZM"
+      class="sc-bdnxRM jdHmZT"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-gsDJrp ZGrYg"
+        class="sc-gtsrHT iyLpWA"
       >
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
       </div>
       <ul
-        class="sc-hKwCoD cTPmWZ"
+        class="sc-hKFxyN jSDNlB"
         id="primary-menu"
       >
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCfLBT biHHMq"
+            class="sc-iCoGMd gDYSwp"
             href="/"
           >
             Etusivu
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -159,18 +159,18 @@ exports[`Header component renders index page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-furvIG kKZtqh"
+            class="sc-fujyAs eejiCo"
             href="/#portfolio"
           >
             Portfolio
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -212,18 +212,18 @@ exports[`Header component renders index page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-furvIG kKZtqh"
+            class="sc-fujyAs eejiCo"
             href="/#yhteystiedot"
           >
             Yhteystiedot
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -265,18 +265,18 @@ exports[`Header component renders index page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCfLBT biHHMq"
+            class="sc-iCoGMd gDYSwp"
             href="/undefined"
           >
             Blogi
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -320,22 +320,23 @@ exports[`Header component renders index page header correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-egiSv kRXYoq"
+      class="sc-dIsUp ieTnyV"
     />
   </header>
+  ,
 </div>
 `;
 
 exports[`Header component renders page header correctly 1`] = `
 <div>
   <header
-    class="sc-pVTma cVkYeH"
+    class="sc-pNWdM eBfxCT"
   >
     <div
-      class="sc-iqsfdx hRYeHe"
+      class="sc-iqAclL kfZGVf"
     >
       <p
-        class="sc-kDThTU hSNtXB"
+        class="sc-kEqXSa rznkI"
         role="heading"
       >
         Visiosto
@@ -344,9 +345,9 @@ exports[`Header component renders page header correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crHlIS bgpXpq"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crzoAE pmJyX"
           data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block;"
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
           <div
             style="max-width: 301px; display: block;"
@@ -411,40 +412,40 @@ exports[`Header component renders page header correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-bdvvaa jyBOZM"
+      class="sc-bdnxRM jdHmZT"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-gsDJrp ZGrYg"
+        class="sc-gtsrHT iyLpWA"
       >
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
         <div
-          class="sc-dkPtyc bvXWki"
+          class="sc-dlnjwi fodIaX"
         />
       </div>
       <ul
-        class="sc-hKwCoD cTPmWZ"
+        class="sc-hKFxyN jSDNlB"
         id="primary-menu"
       >
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCfLBT biHHMq"
+            class="sc-iCoGMd gDYSwp"
             href="/"
           >
             Etusivu
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -486,18 +487,18 @@ exports[`Header component renders page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-furvIG kKZtqh"
+            class="sc-fujyAs eejiCo"
             href="/#portfolio"
           >
             Portfolio
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -539,18 +540,18 @@ exports[`Header component renders page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-furvIG kKZtqh"
+            class="sc-fujyAs eejiCo"
             href="/#yhteystiedot"
           >
             Yhteystiedot
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -592,18 +593,18 @@ exports[`Header component renders page header correctly 1`] = `
           </a>
         </li>
         <li
-          class="sc-eCImvq hSsQLl"
+          class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCfLBT biHHMq"
+            class="sc-iCoGMd gDYSwp"
             href="/undefined"
           >
             Blogi
             <div
-              class="sc-jRQAMF fevepN"
+              class="sc-jSFjdj gIsZbL"
             >
               <div
-                class="gatsby-image-wrapper sc-gKckTs hlIWdb"
+                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 150px; height: 75px;"
               >
@@ -647,8 +648,9 @@ exports[`Header component renders page header correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-egiSv kRXYoq"
+      class="sc-dIsUp ieTnyV"
     />
   </header>
+  ,
 </div>
 `;

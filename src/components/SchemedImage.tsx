@@ -7,7 +7,7 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import ThemeContext from './ThemeContext';
 
 type SchemedImageProps = {
-  alt: string;
+  alt?: string;
   className?: string;
   dark: IGatsbyImageData;
   light: IGatsbyImageData;
@@ -51,7 +51,7 @@ function SchemedImage({
     }
     return (
       <GatsbyImage
-        alt={alt}
+        alt={alt!}
         className={className}
         image={dark}
         loading={loading}
@@ -75,7 +75,7 @@ function SchemedImage({
   }
   return (
     <GatsbyImage
-      alt={alt}
+      alt={alt!}
       className={className}
       image={light}
       loading={loading}

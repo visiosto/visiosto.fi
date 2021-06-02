@@ -8,10 +8,10 @@ import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { ChevronRightIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
-import { SchemedImage } from '@visiosto/components';
 
 import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
+import SchemedImage from '../SchemedImage';
 
 import createInternationalization from '../../util/createInternationalization';
 

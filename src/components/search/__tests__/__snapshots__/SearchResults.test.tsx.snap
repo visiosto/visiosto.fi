@@ -3,15 +3,16 @@
 exports[`Search results component renders correctly 1`] = `
 <div>
   <div
-    class="sc-hKwCoD bpZeBV"
+    class="sc-hKFxyN gJpoIx"
   >
     <div
-      class="sc-eCImvq btlBsi"
+      class="sc-eCApnc jSnimT"
     >
       <div>
         Ei tuloksia
       </div>
     </div>
   </div>
+  ,
 </div>
 `;

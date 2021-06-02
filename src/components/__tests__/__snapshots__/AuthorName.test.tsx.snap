@@ -3,10 +3,11 @@
 exports[`Author name component renders correctly 1`] = `
 <div>
   <a
-    class="sc-bdvvaa kKoite"
+    class="sc-bdnxRM dawLst"
     href="/henkilo/antti-kivi"
   >
     Antti Kivi
   </a>
+  ,
 </div>
 `;
