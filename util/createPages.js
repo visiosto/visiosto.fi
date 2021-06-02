@@ -173,13 +173,8 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     return;
   }
 
-  const {
-    alternativeURLs,
-    defaultLocale,
-    localePaths,
-    locales,
-    siteURL,
-  } = query.data.site.siteMetadata;
+  const { alternativeURLs, defaultLocale, localePaths, locales, siteURL } =
+    query.data.site.siteMetadata;
 
   // Create the author pages from Contentful.
 
