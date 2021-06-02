@@ -6,9 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
-### Changed
+### Added
 
-- To Visiosto’s component package for theme components and schemed image component.
+- Automatic inverted colours for each colour of the theme.
 
 ## [0.21.0] - 2021-04-27
 
