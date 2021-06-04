@@ -21,12 +21,12 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
       class="sc-gKAaRy hauOLa"
     >
       <span
-        class="sc-bdnxRM sc-dlnjwi eoyzcM fVmaTm"
+        class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
       >
         Kiitos, hyväksyn evästeet
       </span>
       <span
-        class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+        class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
       >
         Tarkistan evästeet ja säädän niitä
       </span>
@@ -110,7 +110,7 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                   type="checkbox"
                 />
                 <span
-                  class="sc-fFSPTT kDCWbJ"
+                  class="sc-fFSPTT cFpfaT"
                 />
               </label>
             </div>
@@ -129,12 +129,12 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               class="sc-bkbkJK"
             >
               <span
-                class="sc-bdnxRM sc-dlnjwi eoyzcM fVmaTm"
+                class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
               >
                 Tallenna ja sulje
               </span>
               <span
-                class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+                class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
               >
                 Peruuta
               </span>

@@ -29,12 +29,12 @@ exports[`Cookie notice component renders correctly 1`] = `
         class="sc-gKAaRy hauOLa"
       >
         <span
-          class="sc-bdnxRM sc-dlnjwi eoyzcM fVmaTm"
+          class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
         >
           Kiitos, hyväksyn evästeet
         </span>
         <span
-          class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+          class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
         >
           Tarkistan evästeet ja säädän niitä
         </span>

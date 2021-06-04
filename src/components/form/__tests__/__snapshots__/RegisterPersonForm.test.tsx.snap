@@ -18,7 +18,7 @@ exports[`Client register person form component renders correctly 1`] = `
         value="Personal data for client register"
       />
       <div
-        class="sc-hKFxyN Qmrjj"
+        class="sc-hKFxyN eAVPdq"
         hidden=""
       >
         <label
@@ -34,14 +34,14 @@ exports[`Client register person form component renders correctly 1`] = `
         class="sc-fujyAs"
       >
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <h3>
             Perustiedot
           </h3>
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="first-name"
@@ -61,7 +61,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="surname"
@@ -81,7 +81,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="tel"
@@ -101,7 +101,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="email"
@@ -125,7 +125,7 @@ exports[`Client register person form component renders correctly 1`] = `
           </p>
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="address-line-1"
@@ -146,7 +146,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="address-line-2"
@@ -162,7 +162,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="postcode"
@@ -182,7 +182,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="post-office"
@@ -202,7 +202,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="same-billing-address"
@@ -218,7 +218,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-gKAaRy kgmZeZ"
+              class="sc-gKAaRy cTDLrv"
             />
           </span>
         </div>
@@ -231,7 +231,7 @@ exports[`Client register person form component renders correctly 1`] = `
           Laskutusosoite
         </h3>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="billing-address-line-1"
@@ -252,7 +252,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="billing-address-line-2"
@@ -268,7 +268,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="billing-postcode"
@@ -288,7 +288,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="billing-post-office"
@@ -313,7 +313,7 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <h3>
             Maksutapa
@@ -359,7 +359,7 @@ exports[`Client register person form component renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <label
             for="accept-terms"
@@ -375,12 +375,12 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-gKAaRy kgmZeZ"
+              class="sc-gKAaRy cTDLrv"
             />
           </span>
         </div>
         <div
-          class="sc-hKFxyN Qmrjj"
+          class="sc-hKFxyN eAVPdq"
         >
           <p>
             Rekisterin tietosuojaselosteeseen voit tutustua 
@@ -393,14 +393,14 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKFxyN Qmrjj"
+        class="sc-hKFxyN eAVPdq"
       >
         <div
           class="sc-pNWdM"
           hidden=""
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
           >
             <svg
               aria-hidden="true"
@@ -427,7 +427,7 @@ exports[`Client register person form component renders correctly 1`] = `
           class="sc-pNWdM"
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
           >
             <span>
               Jatka
@@ -478,7 +478,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKFxyN Qmrjj"
+        class="sc-hKFxyN eAVPdq"
         hidden=""
       >
         <p>
@@ -486,7 +486,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-hKFxyN Qmrjj"
+        class="sc-hKFxyN eAVPdq"
         hidden=""
       >
         <p>
