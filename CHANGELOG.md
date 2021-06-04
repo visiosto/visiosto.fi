@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Automatic inverted colours for each colour of the theme.
 
+### Changed
+
+- Default Open Graph image of the site.
+
 ## [0.21.0] - 2021-04-27
 
 ### Changed
