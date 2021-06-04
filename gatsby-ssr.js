@@ -18,7 +18,7 @@ import { COLORS } from './src/theme';
 function setColorsByTheme() {
   const colors = '🌈';
   const colorModeKey = '🔑';
-  const colorModeCSSProp = '⚡️';
+  const colorModeCssProp = '⚡️';
 
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersDarkScheme = mediaQuery.matches;
@@ -36,11 +36,10 @@ function setColorsByTheme() {
     colorMode = prefersDarkScheme ? 'dark' : 'light';
   }
 
+  const root = document.documentElement;
   const invertedColorMode = colorMode === 'dark' ? 'light' : 'dark';
 
-  const root = document.documentElement;
-
-  root.style.setProperty(colorModeCSSProp, colorMode);
+  root.style.setProperty(colorModeCssProp, colorMode);
 
   Object.entries(colors).forEach(([name, colorByTheme]) => {
     const cssVarName = `--color-${name}`;
@@ -99,6 +98,6 @@ export const onRenderBody = function addColorThemeStylesOnRenderBody({
   setPreBodyComponents(<MagicScriptTag key="color-scheme-magic-script-tag" />);
 };
 
-export const wrapPageElement = function wrapPageElementWithAppComponent({ element }) {
+export const wrapRootElement = function wrapRootElementWithAppComponent({ element }) {
   return <App>{element}</App>;
 };

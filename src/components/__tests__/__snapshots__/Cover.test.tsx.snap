@@ -3,13 +3,13 @@
 exports[`Cover component renders lens image with first blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -52,12 +52,12 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -122,28 +122,28 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -215,13 +215,13 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
 exports[`Cover component renders lens image with first peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -264,12 +264,12 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -334,28 +334,28 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -427,13 +427,13 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
 exports[`Cover component renders lens image with second blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -476,12 +476,12 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -546,28 +546,28 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -639,13 +639,13 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
 exports[`Cover component renders lens image with second peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -688,12 +688,12 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -758,28 +758,28 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -851,13 +851,13 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
 exports[`Cover component renders lens image with third blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -900,12 +900,12 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -970,28 +970,28 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1063,13 +1063,13 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
 exports[`Cover component renders lens image with third peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -1112,12 +1112,12 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-hKwCoD hRawmn"
+      class="sc-hKFxyN hipnMH"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1182,28 +1182,28 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD jzvVok"
+      class="sc-hKFxyN byCEBk"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1275,13 +1275,13 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
 exports[`Cover component renders lines image with first blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -1324,12 +1324,12 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1394,28 +1394,28 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1487,13 +1487,13 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
 exports[`Cover component renders lines image with first peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -1536,12 +1536,12 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1606,28 +1606,28 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1699,13 +1699,13 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
 exports[`Cover component renders lines image with second blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -1748,12 +1748,12 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1818,28 +1818,28 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -1911,13 +1911,13 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
 exports[`Cover component renders lines image with second peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -1960,12 +1960,12 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -2030,28 +2030,28 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -2123,13 +2123,13 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
 exports[`Cover component renders lines image with third blue rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -2172,12 +2172,12 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -2242,28 +2242,28 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -2335,13 +2335,13 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
 exports[`Cover component renders lines image with third peach rule correctly 1`] = `
 <div>
   <section
-    class="sc-gsDJrp cHlKMl"
+    class="sc-gtsrHT gZGiLZ"
   >
     <div
-      class="sc-dkPtyc kcQCbo"
+      class="sc-dlnjwi lfRbcR"
     >
       <div
-        class="sc-bdvvaa kddHim"
+        class="sc-bdnxRM jNerll"
       >
         <div
           class="gatsby-image-wrapper"
@@ -2384,12 +2384,12 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-hKwCoD gJxkoE"
+      class="sc-hKFxyN emtIro"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"
@@ -2454,28 +2454,28 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
       </div>
     </div>
     <div
-      class="sc-jRQAMF eFckMd"
+      class="sc-jSFjdj bzSwKX"
     >
       <header>
         <h2
-          class="sc-gKckTs eSLUIh"
+          class="sc-gKAaRy gIBCuz"
         >
           Test title
         </h2>
       </header>
       <div
-        class="sc-iCfLBT dwyXuL"
+        class="sc-iCoGMd aPQEI"
       >
         Lot’s of text here
       </div>
     </div>
     <div
-      class="sc-hKwCoD cycjHL"
+      class="sc-hKFxyN doJsYv"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCImvq ioukxg"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eCApnc hNDyqV"
         data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block;"
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
           style="max-width: 300px; display: block;"

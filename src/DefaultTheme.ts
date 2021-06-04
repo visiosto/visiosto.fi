@@ -39,6 +39,7 @@ declare module 'styled-components' {
 
     borders: {
       commonRadius: string;
+      cardRadius: string;
     };
   }
 }

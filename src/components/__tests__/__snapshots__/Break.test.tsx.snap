@@ -3,7 +3,7 @@
 exports[`Break component renders correctly with first blue rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -45,7 +45,7 @@ exports[`Break component renders correctly with first blue rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;
@@ -53,7 +53,7 @@ exports[`Break component renders correctly with first blue rule 1`] = `
 exports[`Break component renders correctly with first peach rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -95,7 +95,7 @@ exports[`Break component renders correctly with first peach rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;
@@ -103,7 +103,7 @@ exports[`Break component renders correctly with first peach rule 1`] = `
 exports[`Break component renders correctly with second blue rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -145,7 +145,7 @@ exports[`Break component renders correctly with second blue rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;
@@ -153,7 +153,7 @@ exports[`Break component renders correctly with second blue rule 1`] = `
 exports[`Break component renders correctly with second peach rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -195,7 +195,7 @@ exports[`Break component renders correctly with second peach rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;
@@ -203,7 +203,7 @@ exports[`Break component renders correctly with second peach rule 1`] = `
 exports[`Break component renders correctly with third blue rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -245,7 +245,7 @@ exports[`Break component renders correctly with third blue rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;
@@ -253,7 +253,7 @@ exports[`Break component renders correctly with third blue rule 1`] = `
 exports[`Break component renders correctly with third peach rule 1`] = `
 <div>
   <div
-    class="sc-bdvvaa kddHim"
+    class="sc-bdnxRM jNerll"
   >
     <div
       class="gatsby-image-wrapper"
@@ -295,7 +295,7 @@ exports[`Break component renders correctly with third peach rule 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gsDJrp ewobxT"
+    class="sc-gtsrHT gMizgv"
   />
 </div>
 `;

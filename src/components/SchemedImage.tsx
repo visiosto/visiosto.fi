@@ -1,24 +1,19 @@
 // Copyright (c) 2021 Visiosto oy
 // Licensed under the MIT License
 
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import React, { CSSProperties, useContext } from 'react';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import ThemeContext from './ThemeContext';
 
-const propTypes = {
-  alt: PropTypes.string,
-  className: PropTypes.string,
-  // There is no need to define the shape for Gatsby images.
-  // eslint-disable-next-line react/forbid-prop-types
-  dark: PropTypes.object.isRequired,
-  // There is no need to define the shape for Gatsby images.
-  // eslint-disable-next-line react/forbid-prop-types
-  light: PropTypes.object.isRequired,
-  loading: PropTypes.oneOf(['eager', 'lazy']),
-  objectFit: PropTypes.oneOf(['contain', 'cover', 'fill', 'none', 'scale-down']),
-  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+type SchemedImageProps = {
+  alt?: string;
+  className?: string;
+  dark: IGatsbyImageData;
+  light: IGatsbyImageData;
+  loading?: 'eager' | 'lazy';
+  objectFit?: CSSProperties['objectFit'];
+  style?: object;
 };
 
 const defaultProps = {
@@ -29,7 +24,15 @@ const defaultProps = {
   style: null,
 };
 
-function SchemedImage({ alt, className, dark, light, loading, objectFit, style }) {
+function SchemedImage({
+  alt,
+  className,
+  dark,
+  light,
+  loading,
+  objectFit,
+  style,
+}: SchemedImageProps) {
   const { colorMode } = useContext(ThemeContext);
 
   if (colorMode === 'dark') {
@@ -48,7 +51,7 @@ function SchemedImage({ alt, className, dark, light, loading, objectFit, style }
     }
     return (
       <GatsbyImage
-        alt={alt}
+        alt={alt!}
         className={className}
         image={dark}
         loading={loading}
@@ -72,7 +75,7 @@ function SchemedImage({ alt, className, dark, light, loading, objectFit, style }
   }
   return (
     <GatsbyImage
-      alt={alt}
+      alt={alt!}
       className={className}
       image={light}
       loading={loading}
@@ -82,7 +85,6 @@ function SchemedImage({ alt, className, dark, light, loading, objectFit, style }
   );
 }
 
-SchemedImage.propTypes = propTypes;
 SchemedImage.defaultProps = defaultProps;
 
 export default SchemedImage;

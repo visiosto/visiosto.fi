@@ -10,7 +10,7 @@ import GlobalStyle from './GlobalStyle';
 import Head from './Head';
 import Header from './Header';
 
-import useColorScheme from '../../util/useColorScheme';
+import useColorSchemeListener from '../../util/useColorSchemeListener';
 
 const PageTitle = styled.h2`
   display: none;
@@ -32,7 +32,7 @@ const defaultProps = {
 };
 
 function LayoutIndex({ children, description, image, locale, pageID, title }) {
-  useColorScheme();
+  useColorSchemeListener();
 
   return (
     <>

@@ -8,7 +8,7 @@ exports[`Switch checkbox component renders correctly 1`] = `
     Switch checkbox
   </label>
   <span
-    class="sc-bdvvaa hImUPc"
+    class="sc-bdnxRM hFGCyD"
   >
     <input
       checked=""
@@ -17,7 +17,7 @@ exports[`Switch checkbox component renders correctly 1`] = `
       type="checkbox"
     />
     <span
-      class="sc-gsDJrp jUAYCE"
+      class="sc-gtsrHT gzBA-Dw"
     />
   </span>
   ,

@@ -24,8 +24,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/b7cf5eb032ad57e8117b84519b1204e2/antti-kivi.jpg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',
@@ -58,8 +57,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/7d28951662e6b976fb7dcffabefa66e5/gurmann-saini.jpeg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',
@@ -92,8 +90,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/5e507017ba482a95e34476c15c65a9cb/anssi-moilanen.jpg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',
@@ -132,8 +129,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/6UWV6r8NZA3qASbrZHPesu/0b585e8b9572c3758038ff00bf1fff0d/antti-kivi.jpg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',
@@ -166,8 +162,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/5ansxaePg8g3sybQuGYnQM/1a0de4c48846edbd6abef76319577941/gurmann-saini.jpeg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',
@@ -200,8 +195,7 @@ export default {
                       },
                     ],
                     fallback: {
-                      src:
-                        '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
+                      src: '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg',
                       srcSet:
                         '//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=50&h=50&fl=progressive&q=100&fm=jpg 50w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=100&h=100&fl=progressive&q=100&fm=jpg 100w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=200&h=200&fl=progressive&q=100&fm=jpg 200w,\n//images.ctfassets.net/tf6i3fn67b74/5jKTm7VG4Pd6uFPse8CPoW/ba29cc4a9cb2985d67a57a771c26440d/anssi-moilanen.jpg?w=400&h=400&fl=progressive&q=100&fm=jpg 400w',
                       sizes: '(min-width: 200px) 200px, 100vw',

@@ -3,7 +3,7 @@
 exports[`Contact form component renders correctly 1`] = `
 <div>
   <div
-    class="sc-gsDJrp cxYGuJ"
+    class="sc-gtsrHT rmySx"
   >
     <form
       action="/"
@@ -18,7 +18,7 @@ exports[`Contact form component renders correctly 1`] = `
         value="Front page contact"
       />
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
         hidden=""
       >
         <label
@@ -31,7 +31,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <label
           for="name"
@@ -51,14 +51,14 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <p>
           Ainakin joko
         </p>
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <label
           for="email"
@@ -78,14 +78,14 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <p>
           tai
         </p>
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <label
           for="tel"
@@ -105,7 +105,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <label
           for="message"
@@ -123,7 +123,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <p>
           Lähettämällä tiedot hyväksyt henkilötietojesi käsittelyn rekisterin 
@@ -136,10 +136,10 @@ exports[`Contact form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
       >
         <div
-          class="sc-dkPtyc"
+          class="sc-dlnjwi"
         >
           <button
             type="submit"
@@ -150,7 +150,7 @@ exports[`Contact form component renders correctly 1`] = `
               fill="currentColor"
               height="24"
               role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
               viewBox="0 0 24 24"
               width="24"
             >
@@ -165,7 +165,7 @@ exports[`Contact form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
         hidden=""
       >
         <p>
@@ -173,7 +173,7 @@ exports[`Contact form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-bdvvaa ljWDsl"
+        class="sc-bdnxRM kEdutm"
         hidden=""
       >
         <p>

@@ -209,8 +209,8 @@ function Page({ data, pageContext }) {
               >
                 <InstagramImage
                   alt={intl('footerInstagramImageText')}
-                  dark={getImage(data.instagram)}
-                  light={getImage(data.instagramColor)}
+                  dark={getImage(data.instagram)!}
+                  light={getImage(data.instagramColor)!}
                 />
               </a>
             );
@@ -228,8 +228,8 @@ function Page({ data, pageContext }) {
               >
                 <SocialMediaImage
                   alt={intl('footerFacebookImageText')}
-                  dark={getImage(data.facebook)}
-                  light={getImage(data.facebookColor)}
+                  dark={getImage(data.facebook)!}
+                  light={getImage(data.facebookColor)!}
                 />
               </a>
             );
@@ -247,8 +247,8 @@ function Page({ data, pageContext }) {
               >
                 <TwitterImage
                   alt={intl('footerTwitterImageText')}
-                  dark={getImage(data.twitter)}
-                  light={getImage(data.twitterColor)}
+                  dark={getImage(data.twitter)!}
+                  light={getImage(data.twitterColor)!}
                 />
               </a>
             );
@@ -266,8 +266,8 @@ function Page({ data, pageContext }) {
               >
                 <LinkedinImage
                   alt={intl('footerLinkedinImageText')}
-                  dark={getImage(data.linkedin)}
-                  light={getImage(data.linkedinColor)}
+                  dark={getImage(data.linkedin)!}
+                  light={getImage(data.linkedinColor)!}
                 />
               </a>
             );
@@ -285,8 +285,8 @@ function Page({ data, pageContext }) {
               >
                 <GithubImage
                   alt={intl('footerGithubImageText')}
-                  dark={getImage(data.github)}
-                  light={getImage(data.github)}
+                  dark={getImage(data.github)!}
+                  light={getImage(data.github)!}
                 />
               </a>
             );

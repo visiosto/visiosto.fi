@@ -3,10 +3,10 @@
 exports[`Feature card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-hKwCoD iyPGml"
+    class="sc-hKFxyN UHrbl"
   >
     <div
-      class="sc-eCImvq kHVCyU"
+      class="sc-eCApnc fLcWfp"
     >
       <svg
         aria-hidden="true"
@@ -14,7 +14,7 @@ exports[`Feature card component renders correctly 1`] = `
         fill="currentColor"
         height="16"
         role="img"
-        style="display: inline-block; user-select: none; vertical-align: text-bottom;"
+        style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
         viewBox="0 0 16 16"
         width="16"
       >
@@ -24,13 +24,13 @@ exports[`Feature card component renders correctly 1`] = `
       </svg>
     </div>
     <h3
-      class="sc-jRQAMF deJfqT"
+      class="sc-jSFjdj XHvoF"
     >
       Test title
     </h3>
     Some text here
     <span
-      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
     >
       Click here
     </span>

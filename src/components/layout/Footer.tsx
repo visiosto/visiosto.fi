@@ -11,8 +11,8 @@ import { useIntl } from 'react-intl';
 import CookieNotice from '../cookie/CookieNotice';
 import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
-import SchemedImage from '../SchemedImage';
 import Search from '../search/Search';
+import SchemedImage from '../SchemedImage';
 
 import createInternationalization from '../../util/createInternationalization';
 
@@ -222,8 +222,8 @@ function Footer({ locale, pageID }) {
       <CompanyDiv>
         <LogoImage
           alt={intl('footerLogoImageText')}
-          dark={getImage(data.logoDark)}
-          light={getImage(data.logoLight)}
+          dark={getImage(data.logoDark)!}
+          light={getImage(data.logoLight)!}
         />
         <h2>{intl('footerCompanyName')}</h2>
         <CompanyP>
@@ -257,36 +257,36 @@ function Footer({ locale, pageID }) {
         <a href={socialMedia.instagram} rel="noopener noreferrer" target="_blank">
           <InstagramImage
             alt={intl('footerInstagramImageText')}
-            dark={getImage(data.instagram)}
-            light={getImage(data.instagramColor)}
+            dark={getImage(data.instagram)!}
+            light={getImage(data.instagramColor)!}
           />
         </a>
         <a href={socialMedia.facebook} rel="noopener noreferrer" target="_blank">
           <SocialMediaImage
             alt={intl('footerFacebookImageText')}
-            dark={getImage(data.facebook)}
-            light={getImage(data.facebookColor)}
+            dark={getImage(data.facebook)!}
+            light={getImage(data.facebookColor)!}
           />
         </a>
         <a href={socialMedia.twitter} rel="noopener noreferrer" target="_blank">
           <TwitterImage
             alt={intl('footerTwitterImageText')}
-            dark={getImage(data.twitter)}
-            light={getImage(data.twitterColor)}
+            dark={getImage(data.twitter)!}
+            light={getImage(data.twitterColor)!}
           />
         </a>
         <a href={socialMedia.linkedin} rel="noopener noreferrer" target="_blank">
           <LinkedinImage
             alt={intl('footerLinkedinImageText')}
-            dark={getImage(data.linkedin)}
-            light={getImage(data.linkedinColor)}
+            dark={getImage(data.linkedin)!}
+            light={getImage(data.linkedinColor)!}
           />
         </a>
         <a href={socialMedia.github} rel="noopener noreferrer" target="_blank">
           <GithubImage
             alt={intl('footerGithubImageText')}
-            dark={getImage(data.github)}
-            light={getImage(data.github)}
+            dark={getImage(data.github)!}
+            light={getImage(data.github)!}
           />
         </a>
       </SocialMediaDiv>

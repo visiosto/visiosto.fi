@@ -754,8 +754,7 @@ export default {
         node: {
           contentful_id: '6yW5r8lvQRoGnhg6KYGquh',
           node_locale: 'fi',
-          slug:
-            'visioston-uudistettu-verkkosivusto-yhdistaa-raikkaan-suunnittelun-moderneihin-ominaisuuksiin',
+          slug: 'visioston-uudistettu-verkkosivusto-yhdistaa-raikkaan-suunnittelun-moderneihin-ominaisuuksiin',
         },
       },
       {

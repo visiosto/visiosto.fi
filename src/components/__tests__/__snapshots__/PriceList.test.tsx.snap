@@ -3,7 +3,7 @@
 exports[`Price list component renders correctly 1`] = `
 <div>
   <div
-    class="sc-dkPtyc eYglTq"
+    class="sc-dlnjwi kmNdCL"
   >
     <h2
       id="kuluttajahinnasto"
@@ -11,18 +11,18 @@ exports[`Price list component renders correctly 1`] = `
       Kuluttajahinnasto
     </h2>
     <div
-      class="sc-hKwCoD bjOaYL"
+      class="sc-hKFxyN boBYMH"
     >
       Kaikki hinnat sisältävät yleisen arvonlisäverokannan mukaisen arvonlisäveron (24 %).
     </div>
     <div
-      class="sc-hKwCoD bjOaYL"
+      class="sc-hKFxyN boBYMH"
     >
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Palvelin ja verkkotunnus
         </h4>
@@ -38,13 +38,13 @@ exports[`Price list component renders correctly 1`] = `
       Lisätyöt
     </h3>
     <div
-      class="sc-hKwCoD bjOaYL"
+      class="sc-hKFxyN boBYMH"
     >
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Ohjelmointilisätyö
         </h4>
@@ -53,10 +53,10 @@ exports[`Price list component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Sisällönhallintalisätyö
         </h4>
@@ -65,10 +65,10 @@ exports[`Price list component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Sisällöntuotantolisätyö
         </h4>
@@ -77,10 +77,10 @@ exports[`Price list component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Muu lisätyö
         </h4>
@@ -93,13 +93,13 @@ exports[`Price list component renders correctly 1`] = `
       Lisämaksut
     </h3>
     <div
-      class="sc-hKwCoD bjOaYL"
+      class="sc-hKFxyN boBYMH"
     >
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Lasku paperilla
         </h4>
@@ -108,10 +108,10 @@ exports[`Price list component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Maksumuistutus
         </h4>
@@ -120,10 +120,10 @@ exports[`Price list component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdvvaa bOHPht"
+        class="sc-bdnxRM iTzeGe"
       >
         <h4
-          class="sc-gsDJrp gIYnqB"
+          class="sc-gtsrHT bhddyp"
         >
           Maksuhuomautus
         </h4>

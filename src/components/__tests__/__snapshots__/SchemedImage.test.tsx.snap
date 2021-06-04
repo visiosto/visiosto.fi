@@ -5,7 +5,7 @@ exports[`Schemed image component renders correctly 1`] = `
   <div
     class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
     data-gatsby-image-wrapper=""
-    style="position: relative; overflow: hidden; display: inline-block;"
+    style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
   >
     <div
       style="max-width: 200px; display: block;"
@@ -59,7 +59,7 @@ exports[`Schemed image component renders presentation images correctly 1`] = `
   <div
     class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
     data-gatsby-image-wrapper=""
-    style="position: relative; overflow: hidden; display: inline-block;"
+    style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
   >
     <div
       style="max-width: 200px; display: block;"

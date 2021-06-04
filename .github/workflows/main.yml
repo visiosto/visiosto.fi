@@ -10,13 +10,34 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_DEFAULT_REGION: us-east-1
+  REVISION_BUCKET_NAME: visiosto-workflows
   LOCAL_VERSION_NUMBER_FILE: build_version.txt
   CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
   CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
 
 jobs:
+  version:
+    name: Read version
+
+    outputs:
+      revision-number: ${{ steps.version.outputs.revision-number }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2.3.4
+
+    - name: Determine the project’s version
+      id: version
+      uses: visiosto/maintain-revision@v0.16.0
+      with:
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
+        type: npm
+
   check:
     name: Check
+    needs: version
     runs-on: ubuntu-latest
 
     strategy:
@@ -34,17 +55,26 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.16.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
+        upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v1.0.0
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -66,6 +96,7 @@ jobs:
 
   build:
     name: Build
+    needs: version
     runs-on: ubuntu-latest
 
     strategy:
@@ -83,18 +114,75 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.16.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v1.0.0
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Build
+      run: yarn build --verbose
+
+  artefact:
+    name: Artefacts
+    needs: [version, build, check]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2.3.4
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 14.x
+
+    - name: Determine the project’s version
+      id: version
+      uses: visiosto/maintain-revision@v0.16.0
+      with:
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
+        type: npm
+        upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v1.0.0
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
+
+    - name: Get Yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - name: Cache dependencies
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -111,12 +199,12 @@ jobs:
     - name: Upload build artefacts
       uses: actions/upload-artifact@v2.2.3
       with:
-        name: visiosto-website-${{ steps.version.outputs.version }}
+        name: visiosto-maintenance-website-${{ steps.version.outputs.version }}
         path: public/
 
   lighthouse:
     name: Lighthouse
-    needs: [build, check]
+    needs: [version, build, check]
     runs-on: ubuntu-latest
 
     env:
@@ -133,18 +221,26 @@ jobs:
 
     - name: Determine the project’s version
       id: version
-      uses: anttikivi/maintain-revision@v0.12.1
+      uses: visiosto/maintain-revision@v0.16.0
       with:
-        bucket: 'visiosto-workflows'
+        bucket: ${{ env.REVISION_BUCKET_NAME }}
         type: npm
         upload: false
+        revision-number: ${{ needs.version.outputs.revision-number }}
+
+    - name: Replace the project’s version
+      uses: visiosto/replace-value@v1.0.0
+      with:
+        file: package.json
+        replaced: ${{ steps.version.outputs.package-version }}
+        value: ${{ steps.version.outputs.version }}
 
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
 
     - name: Cache dependencies
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       id: yarn-cache
       with:
         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}

@@ -40,7 +40,7 @@ export const onRouteUpdate = function checkScrollOnRouteUpdate(
 // Thanks to Joshua Comeau for the original code, licensed under MIT License:
 // https://github.com/joshwcomeau/dark-mode-minimal
 
-export const wrapRootElement = function wrapPageElementWithAppComponent({ element }) {
+export const wrapRootElement = function wrapRootElementWithAppComponent({ element }) {
   // eslint-disable-next-line react/jsx-filename-extension
   return <App>{element}</App>;
 };

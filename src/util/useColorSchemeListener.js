@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 import ThemeContext from '../components/ThemeContext';
 
-export default function useColorScheme() {
+export default function useColorSchemeListener() {
   if (typeof window !== 'undefined') {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { setColorMode } = useContext(ThemeContext);

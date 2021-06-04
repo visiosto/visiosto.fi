@@ -3,11 +3,11 @@
 exports[`Locale switcher component renders English index switcher correctly 1`] = `
 <div>
   <a
-    class="sc-hKwCoD kvbVor"
+    class="sc-hKFxyN kCOJlb"
     href="/"
   >
     <span
-      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
     >
       Suomeksi
     </span>
@@ -20,11 +20,11 @@ exports[`Locale switcher component renders English index switcher correctly 1`] 
 exports[`Locale switcher component renders Finnish index switcher correctly 1`] = `
 <div>
   <a
-    class="sc-hKwCoD kvbVor"
+    class="sc-hKFxyN kCOJlb"
     href="/en"
   >
     <span
-      class="sc-bdvvaa sc-gsDJrp cQWPbX dRoUMX"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
     >
       In English
     </span>

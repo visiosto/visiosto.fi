@@ -14,7 +14,7 @@ import Head from './Head';
 import Header from './Header';
 
 import createInternationalization from '../../util/createInternationalization';
-import useColorScheme from '../../util/useColorScheme';
+import useColorSchemeListener from '../../util/useColorSchemeListener';
 
 const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
@@ -89,7 +89,7 @@ const defaultProps = {
 };
 
 function LayoutPost({ article, children, description, image, locale, pageID, post }) {
-  useColorScheme();
+  useColorSchemeListener();
 
   const intl = createInternationalization(useIntl());
 

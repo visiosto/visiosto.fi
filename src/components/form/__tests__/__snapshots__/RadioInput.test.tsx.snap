@@ -9,7 +9,7 @@ exports[`Radio input component renders correctly 1`] = `
     Test input description
   </p>
   <div
-    class="sc-bdvvaa jEnYZw"
+    class="sc-bdnxRM kAtbqP"
   >
     <input
       id="radio-id1"
@@ -24,7 +24,7 @@ exports[`Radio input component renders correctly 1`] = `
     </label>
   </div>
   <div
-    class="sc-bdvvaa jEnYZw"
+    class="sc-bdnxRM kAtbqP"
   >
     <input
       checked=""
@@ -40,7 +40,7 @@ exports[`Radio input component renders correctly 1`] = `
     </label>
   </div>
   <div
-    class="sc-bdvvaa jEnYZw"
+    class="sc-bdnxRM kAtbqP"
   >
     <input
       id="radio-id3"
