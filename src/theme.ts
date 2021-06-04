@@ -6,6 +6,19 @@ import './DefaultTheme';
 import { DefaultTheme } from 'styled-components';
 
 const colors = {
+  blue: '#23297a',
+  turquoise: '#a4f1ff',
+  peach: '#fbb496',
+  brown: '#803512',
+  black: '#2b3741',
+  white: '#ffffff',
+  violet: '#f7c1fe',
+  purple: '#5e2966',
+  lime: '#7ffa7f',
+  green: '#0e660e',
+};
+
+const oldColors = {
   stPatricksBlue: '#23297a',
   skyBlue: '#6dcff6',
   peach: '#fbb496',
@@ -23,31 +36,58 @@ export const COLORS = {
     light: colors.white,
     dark: colors.black,
   },
-  'background-weak': {
-    light: colors.lightGray,
-    dark: colors.gray,
-  },
   text: {
     light: colors.black,
     dark: colors.white,
   },
-  'text-dark': {
-    light: colors.black,
-    dark: colors.black,
-  },
   link: {
-    light: colors.stPatricksBlue,
+    light: colors.blue,
     dark: colors.peach,
   },
   'link-hover': {
-    light: colors.skyBlue,
-    dark: colors.cream,
+    light: colors.turquoise,
+    dark: colors.brown,
   },
-  'link-accept': {
-    light: colors.greenDark,
-    dark: colors.green,
+  accept: {
+    light: colors.green,
+    dark: colors.lime,
+  },
+  error: {
+    light: colors.purple,
+    dark: colors.violet,
   },
 };
+
+// export const COLORS = {
+//   background: {
+//     light: colors.white,
+//     dark: colors.black,
+//   },
+//   'background-weak': {
+//     light: colors.lightGray,
+//     dark: colors.gray,
+//   },
+//   text: {
+//     light: colors.black,
+//     dark: colors.white,
+//   },
+//   'text-dark': {
+//     light: colors.black,
+//     dark: colors.black,
+//   },
+//   link: {
+//     light: colors.blue,
+//     dark: colors.peach,
+//   },
+//   'link-hover': {
+//     light: colors.skyBlue,
+//     dark: colors.cream,
+//   },
+//   'link-accept': {
+//     light: colors.greenDark,
+//     dark: colors.green,
+//   },
+// };
 
 const fonts = {
   heading: 'utopia-std, Times, "Times New Roman", serif',

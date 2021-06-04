@@ -17,11 +17,11 @@ const SpanDefault = styled(Span)`
 `;
 
 const SpanAccept = styled(Span)`
-  background-color: var(--color-link-accept);
+  background-color: var(--color-accept);
   color: var(--color-text-inverted);
 
   &:hover {
-    background-color: var(--color-link-accept-inverted);
+    background-color: var(--color-accept-inverted);
     color: var(--color-text);
   }
 `;

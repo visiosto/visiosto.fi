@@ -10,7 +10,7 @@ const buttonDefaultStyle = css`
   &:hover,
   &:focus {
     background-color: var(--color-link-hover);
-    color: var(--color-text-dark);
+    color: var(--color-text);
   }
 `;
 

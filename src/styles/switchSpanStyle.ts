@@ -10,8 +10,9 @@ const switchSpanStyle = css`
   left: 0;
   right: 0;
   bottom: 0;
+  border: 2px solid var(--color-text);
   border-radius: 34px;
-  background-color: var(--color-background-weak);
+  /* background-color: var(--color-background-weak); */
   transition: 0.4s;
 
   &::before {
@@ -21,6 +22,7 @@ const switchSpanStyle = css`
     width: 26px;
     left: 4px;
     bottom: 4px;
+    border: 2px solid var(--color-text);
     border-radius: 50%;
     background-color: var(--color-background);
     transition: 0.4s;
