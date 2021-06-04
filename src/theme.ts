@@ -16,12 +16,18 @@ const colors = {
   purple: '#5e2966',
   lime: '#7ffa7f',
   green: '#0e660e',
+  gray: '#BBBEC4',
+  lightGray: '#f6f7f9',
 };
 
 export const COLORS = {
   background: {
     light: colors.white,
     dark: colors.black,
+  },
+  'background-switch': {
+    light: colors.gray,
+    dark: colors.lightGray,
   },
   text: {
     light: colors.black,

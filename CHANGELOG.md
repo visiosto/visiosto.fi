@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Brand colours of the company.
 - Background images of the navigation to the new brand colours.
+- Background colours of the switch inputs.
 
 ## [0.22.0] - 2021-06-04
 
