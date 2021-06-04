@@ -4,12 +4,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, getSrc } from 'gatsby-plugin-image';
+import { getSrc } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
-// import SchemedImage from '../SchemedImage';
 
 const Nav = styled.nav`
   margin: 2rem auto;
@@ -103,21 +102,6 @@ const Li = styled.li`
   }
 `;
 
-// const ImageDiv = styled.div`
-//   display: none;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   pointer-events: none;
-// `;
-
-// const BackgroundImage = styled(SchemedImage)`
-//   position: relative;
-//   left: -50%;
-//   z-index: -1;
-//   margin: -2.3rem 0 0;
-// `;
-
 const linkStyle = css`
   position: relative;
   margin: 1rem auto;
@@ -170,18 +154,6 @@ const AnchorLink = styled(LocalizedAnchorLink)<{ backgroundImage: string }>`
     background-image: url(${(props) => props.backgroundImage});
   }
 `;
-
-// const createBackgroundImage = function createSchemedBackgroundImage(imageDataLight, imageDataDark) {
-//   return (
-//     <ImageDiv>
-//       <BackgroundImage
-//         dark={getImage(imageDataDark)!}
-//         light={getImage(imageDataLight)!}
-//         loading="eager"
-//       />
-//     </ImageDiv>
-//   );
-// };
 
 const propTypes = { locale: PropTypes.string.isRequired };
 

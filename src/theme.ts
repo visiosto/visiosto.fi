@@ -18,19 +18,6 @@ const colors = {
   green: '#0e660e',
 };
 
-const oldColors = {
-  stPatricksBlue: '#23297a',
-  skyBlue: '#6dcff6',
-  peach: '#fbb496',
-  cream: '#ffffe4',
-  green: '#8dd68d',
-  greenDark: '#116f11',
-  black: '#3b4a57',
-  white: '#ffffff',
-  lightGray: '#dde1e9',
-  gray: '#f6f7f9',
-};
-
 export const COLORS = {
   background: {
     light: colors.white,
@@ -57,37 +44,6 @@ export const COLORS = {
     dark: colors.violet,
   },
 };
-
-// export const COLORS = {
-//   background: {
-//     light: colors.white,
-//     dark: colors.black,
-//   },
-//   'background-weak': {
-//     light: colors.lightGray,
-//     dark: colors.gray,
-//   },
-//   text: {
-//     light: colors.black,
-//     dark: colors.white,
-//   },
-//   'text-dark': {
-//     light: colors.black,
-//     dark: colors.black,
-//   },
-//   link: {
-//     light: colors.blue,
-//     dark: colors.peach,
-//   },
-//   'link-hover': {
-//     light: colors.skyBlue,
-//     dark: colors.cream,
-//   },
-//   'link-accept': {
-//     light: colors.greenDark,
-//     dark: colors.green,
-//   },
-// };
 
 const fonts = {
   heading: 'utopia-std, Times, "Times New Roman", serif',
