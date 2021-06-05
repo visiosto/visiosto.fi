@@ -155,7 +155,7 @@ function Page({ data, pageContext }) {
       title={intl('authorsTitle')}
     >
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       <Div>
         {authors.map(({ node: author }) => (

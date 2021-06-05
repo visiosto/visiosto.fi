@@ -88,7 +88,7 @@ function Page({ data, pageContext }) {
         })}
       </Buttons>
       <Separator>
-        <Rule color="peach" mode={3} />
+        <Rule color="peach" mode={3} ignoreColorScheme />
       </Separator>
       {pricingList.map((list) => {
         return (

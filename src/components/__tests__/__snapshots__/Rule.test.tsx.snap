@@ -20,7 +20,7 @@ exports[`Rule component renders first blue correctly 1`] = `
       />
       <picture>
         <source
-          data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/9b70c/blue-rule-1.webp 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/d75ea/blue-rule-1.webp 500w"
+          data-srcset="/static/1de509923251b5393435bfacedc34cbe/9b70c/blue-1.webp 250w,/static/1de509923251b5393435bfacedc34cbe/d75ea/blue-1.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -28,8 +28,149 @@ exports[`Rule component renders first blue correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png"
-          data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/8861b/blue-rule-1.png 500w"
+          data-src="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png"
+          data-srcset="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png 250w,/static/1de509923251b5393435bfacedc34cbe/8861b/blue-1.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders first blue correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzElEQVQY002PoUqEURSELyqCPsKC5UyZwWAybjAazIJVEAwahZnmQ6xNEB/AZPQJNmwz2ZZ9AJPFsHLdXX/DYSYcmO9rkA9LnkC5hnIF+QbKOeRjKCMwe6C3QW9BaWBa0a33TQ7n1ssFlGXRS6hf1rnu9BeUOZQPKFMob1BeoDyDfoByW8oYylEfa1itjIu+g3Ja9FnRfeQe8iOUVygz0O9QFlA+S/nuAL8Q3EDkqRMPuMyfxkpl0PmntlP0LpT9kkeQC/QJ6EsoB/3nB3LSXCQp8/2tAAAAAElFTkSuQmCC"
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/1de509923251b5393435bfacedc34cbe/9b70c/blue-1.webp 250w,/static/1de509923251b5393435bfacedc34cbe/d75ea/blue-1.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png"
+          data-srcset="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png 250w,/static/1de509923251b5393435bfacedc34cbe/8861b/blue-1.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders first brown correctly 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQY0z1QMUpEURD7rJV2k0UQC1HYynJJDuAFtLaz1yMIiSA2FutBLDyDiGJrY+ciiHew8ct7rhYhwwyZSWYwa2gIsR7hOMStWU8hHiI8R3g0687CIsJJhFmaRk2HIULnvkcYWjENcRnhI8IY4tvCa4SlhTcT7xG+VrPRxBjhxayLEAdmzczasmrbwm7bemRhtOrT7A42m4OoJmYD1iJsRNiJcBhhYWHZD/yB1dnCebO8H+E+wmmz3yN0rv8Yv73+llXEmkSYRzizcBPhOsSVWXs/dORedQoqoV4AAAAASUVORK5CYII="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/9b70c/brown-1.webp 250w,/static/a29827978e12dcc7169cdaba13f36029/d75ea/brown-1.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png"
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png 250w,/static/a29827978e12dcc7169cdaba13f36029/8861b/brown-1.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders first brown correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQY0z1QMUpEURD7rJV2k0UQC1HYynJJDuAFtLaz1yMIiSA2FutBLDyDiGJrY+ciiHew8ct7rhYhwwyZSWYwa2gIsR7hOMStWU8hHiI8R3g0687CIsJJhFmaRk2HIULnvkcYWjENcRnhI8IY4tvCa4SlhTcT7xG+VrPRxBjhxayLEAdmzczasmrbwm7bemRhtOrT7A42m4OoJmYD1iJsRNiJcBhhYWHZD/yB1dnCebO8H+E+wmmz3yN0rv8Yv73+llXEmkSYRzizcBPhOsSVWXs/dORedQoqoV4AAAAASUVORK5CYII="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/9b70c/brown-1.webp 250w,/static/a29827978e12dcc7169cdaba13f36029/d75ea/brown-1.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png"
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png 250w,/static/a29827978e12dcc7169cdaba13f36029/8861b/brown-1.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -62,12 +203,12 @@ exports[`Rule component renders first peach correctly 1`] = `
         aria-hidden="true"
         data-placeholder-image=""
         decoding="async"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0UlEQVQY002QIU8DUAyEX7JkIQjcDGgCZpmaIcg5FAkEOzmFXlgyNzGJ6GVL9i96CUj+AxaHRmDvxMh7DDZR0157/a4oUcxWXSUulTEwcW7iqPb1OytNt9OKUczomLgwcaPEvRLXIjpVcGbiSYl3EVvvSsS3iBclZkrcKjE00TdxZWIqxoey6mLb9hKfYhwXZdx5f2gjYmHi2cSbMnww25tlO/JlYm3iUYxxNaoU9f1TE68mVg39DysrFk7EGJmYmFGNlsqYm3gQ0XND/4+sRfEDgWXV8xrexRQAAAAASUVORK5CYII="
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQY0z1QMUpEURD7rJV2k0UQC1HYynJJDuAFtLaz1yMIiSA2FutBLDyDiGJrY+ciiHew8ct7rhYhwwyZSWYwa2gIsR7hOMStWU8hHiI8R3g0687CIsJJhFmaRk2HIULnvkcYWjENcRnhI8IY4tvCa4SlhTcT7xG+VrPRxBjhxayLEAdmzczasmrbwm7bemRhtOrT7A42m4OoJmYD1iJsRNiJcBhhYWHZD/yB1dnCebO8H+E+wmmz3yN0rv8Yv73+llXEmkSYRzizcBPhOsSVWXs/dORedQoqoV4AAAAASUVORK5CYII="
         style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
       />
       <picture>
         <source
-          data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/9b70c/peach-rule-1.webp 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/d75ea/peach-rule-1.webp 500w"
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/9b70c/brown-1.webp 250w,/static/a29827978e12dcc7169cdaba13f36029/d75ea/brown-1.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -75,8 +216,8 @@ exports[`Rule component renders first peach correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png"
-          data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/8861b/peach-rule-1.png 500w"
+          data-src="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png"
+          data-srcset="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png 250w,/static/a29827978e12dcc7169cdaba13f36029/8861b/brown-1.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -94,6 +235,57 @@ exports[`Rule component renders first peach correctly 1`] = `
 </div>
 `;
 
+exports[`Rule component renders first peach correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQY011QvWoCYRA8UpguYGFlSsHCJxDtA8cFqwsYTO1LWPsGO6WEPEJ2wICF7+IjWO4Ul3x3l/OnGJZlZ3ZnNhMtC1omIuE5iFzEu9xKEWUQbyJeREyC9hSOh8SNht+h3uGW/Q+mIvYiKtGqpqIKtyqu+hYnEd/hthWxFrER8SniIKKfNhdXwi8RKxF5OF7DbSGiCMdHK9yJOIo43x1JRn5E9JLDsYiliIHa6N0LHLf9BY9BG8kxD2ImYljz/iL/AhBM05orEGIJAAAAAElFTkSuQmCC"
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/fcedeb136c77bc2dd90c4d93eaf5b939/9b70c/peach-1.webp 250w,/static/fcedeb136c77bc2dd90c4d93eaf5b939/d75ea/peach-1.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/fcedeb136c77bc2dd90c4d93eaf5b939/c6be9/peach-1.png"
+          data-srcset="/static/fcedeb136c77bc2dd90c4d93eaf5b939/c6be9/peach-1.png 250w,/static/fcedeb136c77bc2dd90c4d93eaf5b939/8861b/peach-1.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders first turquoise correctly 1`] = `<div />`;
+
+exports[`Rule component renders first turquoise correctly with colour scheme ignored 1`] = `<div />`;
+
 exports[`Rule component renders second blue correctly 1`] = `
 <div>
   <div
@@ -109,12 +301,12 @@ exports[`Rule component renders second blue correctly 1`] = `
         aria-hidden="true"
         data-placeholder-image=""
         decoding="async"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuUlEQVQY022QLQ5CMRCEKwGBxe8IOgKN4CfcAYPBcQIUOxJHQvIUnIAj4Ek4AGch4DCP9LUPhZg0mf2ys9MAKlj0kF5QfdABagRqCKpX/J+MiS189DmoE6g7qLVFhWQmYGqxMZ9G1aBqy3qDuoGqLPoK1BT0Jahd8evM+wdUmoc2uUIePEAdQD+COjfJUS+UkD+6gpohqptapuuD5YVjUBdQk1KlVGrUKV+wAbUHtQV9AWqQj8lsu/ALOt1cd5DIj28AAAAASUVORK5CYII="
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQY012QoUpFYRCE/2AwXY/BaxGE/UB2qsVg8CUE8REM2neiyXLBYFGDxSg+iq/gK4jBYFHOOb9wMQw7u8zOMtsiq5HVImsX+YL0LfID8j3yE+lHVJfIh8gbk15uITfSM5899pA3W2gSnCJ/IP+MiF5R/ev9jvyMfIe8Qr5GvkF+Qf5CPhnNzvvSZ2SdIW8jD8gL5K3Oj/vyG1l/5uv4Rn6NrJ3R8CiyrkgP9DhzjB5L67OJj4eWyPvIgXxA1tDf1n4B4mldOzXQFw0AAAAASUVORK5CYII="
         style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
       />
       <picture>
         <source
-          data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/9b70c/blue-rule-2.webp 250w,/static/076d5d41e1eea59ac5a66941adccd0af/d75ea/blue-rule-2.webp 500w"
+          data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/9b70c/blue-2.webp 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/d75ea/blue-2.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -122,8 +314,149 @@ exports[`Rule component renders second blue correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png"
-          data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png 250w,/static/076d5d41e1eea59ac5a66941adccd0af/8861b/blue-rule-2.png 500w"
+          data-src="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png"
+          data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/8861b/blue-2.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders second blue correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQY012QoUpFYRCE/2AwXY/BaxGE/UB2qsVg8CUE8REM2neiyXLBYFGDxSg+iq/gK4jBYFHOOb9wMQw7u8zOMtsiq5HVImsX+YL0LfID8j3yE+lHVJfIh8gbk15uITfSM5899pA3W2gSnCJ/IP+MiF5R/ev9jvyMfIe8Qr5GvkF+Qf5CPhnNzvvSZ2SdIW8jD8gL5K3Oj/vyG1l/5uv4Rn6NrJ3R8CiyrkgP9DhzjB5L67OJj4eWyPvIgXxA1tDf1n4B4mldOzXQFw0AAAAASUVORK5CYII="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/9b70c/blue-2.webp 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/d75ea/blue-2.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png"
+          data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/8861b/blue-2.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders second brown correctly 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVQY022PMQ5BYRCE/1ZUO6VOJF6hUewoRKN1AHEAlZIoFLITB1C5g07cRKlyByXVk/c8QigmM8km+80kEZkcFzmOIpYiBiLqQSQRKRzplf/p6+5IRegGcRWRy5EXHrR70E4i9kFsRUjEOtw2ooWIuYhpOEYi+lWJpog3qSdi/HxuCxEHEWfRbiXoA/ZflodbLrddWfNnklsKWgq3moiGiJYcWeHhaBdgEcNwm1RtZyJWIjoPXO9dht3la9QAAAAASUVORK5CYII="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/9b70c/brown-2.webp 250w,/static/9b0a207364bca618368aab12cb892a07/d75ea/brown-2.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png"
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png 250w,/static/9b0a207364bca618368aab12cb892a07/8861b/brown-2.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders second brown correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVQY022PMQ5BYRCE/1ZUO6VOJF6hUewoRKN1AHEAlZIoFLITB1C5g07cRKlyByXVk/c8QigmM8km+80kEZkcFzmOIpYiBiLqQSQRKRzplf/p6+5IRegGcRWRy5EXHrR70E4i9kFsRUjEOtw2ooWIuYhpOEYi+lWJpog3qSdi/HxuCxEHEWfRbiXoA/ZflodbLrddWfNnklsKWgq3moiGiJYcWeHhaBdgEcNwm1RtZyJWIjoPXO9dht3la9QAAAAASUVORK5CYII="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/9b70c/brown-2.webp 250w,/static/9b0a207364bca618368aab12cb892a07/d75ea/brown-2.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png"
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png 250w,/static/9b0a207364bca618368aab12cb892a07/8861b/brown-2.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -156,12 +489,12 @@ exports[`Rule component renders second peach correctly 1`] = `
         aria-hidden="true"
         data-placeholder-image=""
         decoding="async"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAy0lEQVQY002QrUpEcRTE/7LgBxajVfQZxGTZJ1DsRosPYLLpG5yJJrNlhm0bxOYDLBvEBxCxCIYZ5Mq698INP2Y4M+EwLUKLsNfrP2Y1D36lXN/GnRGnEe4jTKPaaObKIGbNzboJ69ysQ7O2Qkysmpi1adVOhO0I+yFOQlxGeIjQmdVZ+Ayx26w6jvBk4rcPuqz5ivAW4j3CR4RvCz8Z8qFLvES4i3BlVRu/fhThLMR1hLLq2aplhEWE1wjzCLMIj1bdRrgwcTBM4Z4/5BTVbZAgL/sAAAAASUVORK5CYII="
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVQY022PMQ5BYRCE/1ZUO6VOJF6hUewoRKN1AHEAlZIoFLITB1C5g07cRKlyByXVk/c8QigmM8km+80kEZkcFzmOIpYiBiLqQSQRKRzplf/p6+5IRegGcRWRy5EXHrR70E4i9kFsRUjEOtw2ooWIuYhpOEYi+lWJpog3qSdi/HxuCxEHEWfRbiXoA/ZflodbLrddWfNnklsKWgq3moiGiJYcWeHhaBdgEcNwm1RtZyJWIjoPXO9dht3la9QAAAAASUVORK5CYII="
         style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
       />
       <picture>
         <source
-          data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/9b70c/peach-rule-2.webp 250w,/static/a05e09cc31b2010761f6939e6b0ff437/d75ea/peach-rule-2.webp 500w"
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/9b70c/brown-2.webp 250w,/static/9b0a207364bca618368aab12cb892a07/d75ea/brown-2.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -169,8 +502,8 @@ exports[`Rule component renders second peach correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png"
-          data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png 250w,/static/a05e09cc31b2010761f6939e6b0ff437/8861b/peach-rule-2.png 500w"
+          data-src="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png"
+          data-srcset="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png 250w,/static/9b0a207364bca618368aab12cb892a07/8861b/brown-2.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -188,6 +521,57 @@ exports[`Rule component renders second peach correctly 1`] = `
 </div>
 `;
 
+exports[`Rule component renders second peach correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAw0lEQVQY03WQIU5EYRCDX4JAbQJBExyecAEIesXicCTrMDgsCgF+PgJy9bqpgSNwATjCXgAzFY/87+0DhWjapJO2ma6SrsRFZbxZPDi5tjiz4shi5mRnuEk6639Mfgtr4tOib6iMftJbbCw+LNYWzxavFi8WTxZ3FkuLK4vDIdCKrjIuK2NhxbGTc4sbi8dKVhbvFl8W32NB9JX0TkZuI/7KT1rYL4b54wum5SM3X+xaHJRivzL2totOS8wtbktxX2L2A14t05cBTZWTAAAAAElFTkSuQmCC"
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/b3f6f6317e5b20fa411661bbcf652f5a/9b70c/peach-2.webp 250w,/static/b3f6f6317e5b20fa411661bbcf652f5a/d75ea/peach-2.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/b3f6f6317e5b20fa411661bbcf652f5a/c6be9/peach-2.png"
+          data-srcset="/static/b3f6f6317e5b20fa411661bbcf652f5a/c6be9/peach-2.png 250w,/static/b3f6f6317e5b20fa411661bbcf652f5a/8861b/peach-2.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders second turquoise correctly 1`] = `<div />`;
+
+exports[`Rule component renders second turquoise correctly with colour scheme ignored 1`] = `<div />`;
+
 exports[`Rule component renders third blue correctly 1`] = `
 <div>
   <div
@@ -203,12 +587,12 @@ exports[`Rule component renders third blue correctly 1`] = `
         aria-hidden="true"
         data-placeholder-image=""
         decoding="async"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVQY012QvQqBcRTG32xKiZGiziOdZ5ZksSuDmcnuBs6zcBeY7FjdjtyETej1/hWGX+f7MwMjA7UENQGV/eD/eryxJFNsCmoERim3M3h0QT0TO1ALeAxBdcyjCqoCqmYeNVANMJrGaIEamMcajEeq7b8bWjFlDury1fhDnnz/95vHt30zjyuodrEhlU5QGa4eqBmoNagNqJMxzqCOOUYdQO3h2oJagRoXW6v+ec0LwR5dSqbEP8AAAAAASUVORK5CYII="
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVQY0y2PIU4FYQyEf7EQBCAhQf6foGMIHoFCcgg8AmQHxTm4wLsBCQmBcAQEBg0kvLwjkCXdXTGZtplOp63LDeUp8nWXj5j71pVtrmdMfbgRy3zhPtfHyAe1V6Jd5F/kEfmTyBvkM+RDwlvIQ6ErB8IDkTUr7COfIF91+R35u0zrynalQ3mHvCbKOEciizfIX4v4h5h4jbzpkX9LiLGXXv7o4Z22vDzHj9xDvkC+RX5A+YTyDfllQvgV+Rn5EXmFfE/kJfJ5V0Z5/AOdTl0uWlzeDAAAAABJRU5ErkJggg=="
         style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
       />
       <picture>
         <source
-          data-srcset="/static/d125696f24e25d41ca2493208bb215bf/9b70c/blue-rule-3.webp 250w,/static/d125696f24e25d41ca2493208bb215bf/d75ea/blue-rule-3.webp 500w"
+          data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/9b70c/blue-3.webp 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/d75ea/blue-3.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -216,8 +600,149 @@ exports[`Rule component renders third blue correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png"
-          data-srcset="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png 250w,/static/d125696f24e25d41ca2493208bb215bf/8861b/blue-rule-3.png 500w"
+          data-src="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png"
+          data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/8861b/blue-3.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders third blue correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVQY0y2PIU4FYQyEf7EQBCAhQf6foGMIHoFCcgg8AmQHxTm4wLsBCQmBcAQEBg0kvLwjkCXdXTGZtplOp63LDeUp8nWXj5j71pVtrmdMfbgRy3zhPtfHyAe1V6Jd5F/kEfmTyBvkM+RDwlvIQ6ErB8IDkTUr7COfIF91+R35u0zrynalQ3mHvCbKOEciizfIX4v4h5h4jbzpkX9LiLGXXv7o4Z22vDzHj9xDvkC+RX5A+YTyDfllQvgV+Rn5EXmFfE/kJfJ5V0Z5/AOdTl0uWlzeDAAAAABJRU5ErkJggg=="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/9b70c/blue-3.webp 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/d75ea/blue-3.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png"
+          data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/8861b/blue-3.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders third brown correctly 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY01WPO0qDURCFr4hY39OJgZAdWMzXB1uNloEQRLDXziLNnCKFjbUgZCfZQlbiIiL3/omP4mPOYd7FoWJ0Z/RidJXUc1PLgErS88Ux+CP5T//WNnGaaJehfcPoK0Mbo6eMitEoQ5dG40RhdJ3oxug20axFo6XRyui5DTwxOjOaGq0z6tb0wT8My+rg48Ax/0cn+iyHl/vZ/Y3op1/0zaFXow+jd6M30/2j0SKjLoweMurc6N7USev9BhkKXGU94ba6AAAAAElFTkSuQmCC"
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/9b70c/brown-3.webp 250w,/static/076c5d2854aa3b223395bd3815e3e58f/d75ea/brown-3.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png"
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png 250w,/static/076c5d2854aa3b223395bd3815e3e58f/8861b/brown-3.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders third brown correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY01WPO0qDURCFr4hY39OJgZAdWMzXB1uNloEQRLDXziLNnCKFjbUgZCfZQlbiIiL3/omP4mPOYd7FoWJ0Z/RidJXUc1PLgErS88Ux+CP5T//WNnGaaJehfcPoK0Mbo6eMitEoQ5dG40RhdJ3oxug20axFo6XRyui5DTwxOjOaGq0z6tb0wT8My+rg48Ax/0cn+iyHl/vZ/Y3op1/0zaFXow+jd6M30/2j0SKjLoweMurc6N7USev9BhkKXGU94ba6AAAAAElFTkSuQmCC"
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/9b70c/brown-3.webp 250w,/static/076c5d2854aa3b223395bd3815e3e58f/d75ea/brown-3.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png"
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png 250w,/static/076c5d2854aa3b223395bd3815e3e58f/8861b/brown-3.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -250,12 +775,12 @@ exports[`Rule component renders third peach correctly 1`] = `
         aria-hidden="true"
         data-placeholder-image=""
         decoding="async"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY022PoU7CcRSFf2wWZrEZaSSSRLUYSM5O1agVneI7mO7pPMM5Vavdx6Aa2M4JMP7C2Jjh27k74X73NgtjCx8RHiO8RJhbeIvwEOHOqomFgVknEVpYrUtVC9HN3vdEa2bNI6zDP7xNHcFam7W08BlhEaFCvFqYRriwcLoVmtXbG4cR7iNcRbiMcB3hNsJThFm3QPgO8eud5Ei8CuvHxNnh5P/g7rVD1w9xbmJk4SbCu1mLEF9WPZvVNs491NF9y0rtAAAAAElFTkSuQmCC"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY01WPO0qDURCFr4hY39OJgZAdWMzXB1uNloEQRLDXziLNnCKFjbUgZCfZQlbiIiL3/omP4mPOYd7FoWJ0Z/RidJXUc1PLgErS88Ux+CP5T//WNnGaaJehfcPoK0Mbo6eMitEoQ5dG40RhdJ3oxug20axFo6XRyui5DTwxOjOaGq0z6tb0wT8My+rg48Ax/0cn+iyHl/vZ/Y3op1/0zaFXow+jd6M30/2j0SKjLoweMurc6N7USev9BhkKXGU94ba6AAAAAElFTkSuQmCC"
         style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
       />
       <picture>
         <source
-          data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/9b70c/peach-rule-3.webp 250w,/static/56cc43c92f2405255f70b1c07e45a507/d75ea/peach-rule-3.webp 500w"
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/9b70c/brown-3.webp 250w,/static/076c5d2854aa3b223395bd3815e3e58f/d75ea/brown-3.webp 500w"
           sizes="250px"
           type="image/webp"
         />
@@ -263,8 +788,8 @@ exports[`Rule component renders third peach correctly 1`] = `
           alt=""
           data-gatsby-image-ssr=""
           data-main-image=""
-          data-src="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png"
-          data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png 250w,/static/56cc43c92f2405255f70b1c07e45a507/8861b/peach-rule-3.png 500w"
+          data-src="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png"
+          data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png 250w,/static/076c5d2854aa3b223395bd3815e3e58f/8861b/brown-3.png 500w"
           decoding="async"
           role="presentation"
           sizes="250px"
@@ -281,3 +806,54 @@ exports[`Rule component renders third peach correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`Rule component renders third peach correctly with colour scheme ignored 1`] = `
+<div>
+  <div
+    class="sc-bdnxRM jNerll"
+  >
+    <div
+      class="gatsby-image-wrapper"
+      data-gatsby-image-wrapper=""
+      style="position: relative; overflow: hidden; width: 250px; height: 50px;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        data-placeholder-image=""
+        decoding="async"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAwUlEQVQY021PMWoCARC8ELBIFSKmSJMXBMRK0Eqs8oSUsY2kTpHO3iLZAbUU/MBOLVj7kbxhpjjxvMsVSTHszA7L7BQmChNPIpZO3Nf6D1Sj1dHwaxOjRhfKihydKE38mNiK+BTxoYyZiakSQ2U8irgz0XOia+LBxNjE2qxuN2bcFM4q5U2MnRn72izFKJVRup6qdhfvPyhxMNFpq+RvhVsn+mIMnDFR4tXE3MTi/I0Y3ya+RKyUeBfxLMaLE1fntidP+NR1g6mnlgAAAABJRU5ErkJggg=="
+        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+      />
+      <picture>
+        <source
+          data-srcset="/static/abd550669be7a31c9beee2d7480a7a83/9b70c/peach-3.webp 250w,/static/abd550669be7a31c9beee2d7480a7a83/d75ea/peach-3.webp 500w"
+          sizes="250px"
+          type="image/webp"
+        />
+        <img
+          alt=""
+          data-gatsby-image-ssr=""
+          data-main-image=""
+          data-src="/static/abd550669be7a31c9beee2d7480a7a83/c6be9/peach-3.png"
+          data-srcset="/static/abd550669be7a31c9beee2d7480a7a83/c6be9/peach-3.png 250w,/static/abd550669be7a31c9beee2d7480a7a83/8861b/peach-3.png 500w"
+          decoding="async"
+          role="presentation"
+          sizes="250px"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+        />
+      </picture>
+      <noscript />
+      <script
+        type="module"
+      >
+        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+      </script>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rule component renders third turquoise correctly 1`] = `<div />`;
+
+exports[`Rule component renders third turquoise correctly with colour scheme ignored 1`] = `<div />`;

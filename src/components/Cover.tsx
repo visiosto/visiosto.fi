@@ -228,6 +228,7 @@ const propTypes = {
   imagesType: PropTypes.string.isRequired,
   rule: PropTypes.shape({
     color: PropTypes.string.isRequired,
+    ignoreColorScheme: PropTypes.bool,
     mode: PropTypes.number.isRequired,
   }).isRequired,
   title: PropTypes.string.isRequired,
@@ -243,7 +244,13 @@ function Cover({ children, imagesType, rule, title }) {
   return (
     <Section>
       <TopRuleWrapper>
-        <Rule color={rule.color} mode={rule.mode} />
+        {(() => {
+          if (rule.ignoreColorScheme) {
+            return <Rule color={rule.color} mode={rule.mode} ignoreColorScheme />;
+          }
+
+          return <Rule color={rule.color} mode={rule.mode} />;
+        })()}
       </TopRuleWrapper>
       <ImageWrapper
         right={topStyles.right !== undefined ? topStyles.right : undefined}
