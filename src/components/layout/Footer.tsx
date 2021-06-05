@@ -155,12 +155,12 @@ function Footer({ locale, pageID }) {
             }
           }
         }
-        logoLight: file(relativePath: { eq: "footer/logo-light.png" }) {
+        logoLight: file(relativePath: { eq: "footer/logo-blue.png" }) {
           childImageSharp {
             gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
-        logoDark: file(relativePath: { eq: "footer/logo-dark-2.png" }) {
+        logoDark: file(relativePath: { eq: "footer/logo-peach-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 160, placeholder: BLURRED)
           }
