@@ -208,7 +208,7 @@ class CookieSettings extends React.Component<Props, State> {
 
     this.state = {
       showBanner: false,
-      isAnalyticsEnabled: getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) === 'false',
+      isAnalyticsEnabled: getCookie(cookies, DISABLE_ANALYTICS_COOKIE_NAME) !== 'true',
     };
 
     this.handleCookieChange = this.handleCookieChange.bind(this);
