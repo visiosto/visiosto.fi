@@ -106,6 +106,7 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 class="sc-hBMUJo lmqveI"
               >
                 <input
+                  checked=""
                   class="sc-fnVZcZ iopyOW"
                   type="checkbox"
                 />
