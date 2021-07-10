@@ -220,11 +220,13 @@ function Footer({ locale, pageID }) {
     <FooterElement>
       <Search locale={locale} />
       <CompanyDiv>
-        <LogoImage
-          alt={intl('footerLogoImageText')}
-          dark={getImage(data.logoDark)!}
-          light={getImage(data.logoLight)!}
-        />
+        <LocalizedLink locale={locale} to="/">
+          <LogoImage
+            alt={intl('footerLogoImageText')}
+            dark={getImage(data.logoDark)!}
+            light={getImage(data.logoLight)!}
+          />
+        </LocalizedLink>
         <h2>{intl('footerCompanyName')}</h2>
         <CompanyP>
           {intl('footerBusinessID')} {businessID}
