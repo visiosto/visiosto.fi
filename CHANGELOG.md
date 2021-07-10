@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Link to the front page of the current locale to the logo in the footer.
+
 ### Changed
 
 - Brand colours of the company.
