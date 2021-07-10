@@ -8,6 +8,7 @@ export default {
   footerVatNumber: 'VAT number:',
   footerManagement: 'Management',
   footerPricing: 'Pricing',
+  footerOnlineStore: 'Online Store',
   footerDataProtection: 'Data protection',
   footerTermsOfUse: 'Terms of use',
   footerSocialMediaTitle: 'Social Media',
