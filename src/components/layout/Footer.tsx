@@ -61,6 +61,14 @@ const PricingP = styled.p`
   }
 `;
 
+const OnlineStoreP = styled.p`
+  margin: 2rem 0 1rem;
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 0;
+  }
+`;
+
 const SocialMediaTitle = styled.h3`
   margin: 2rem 0 0;
 
@@ -247,6 +255,11 @@ function Footer({ locale, pageID }) {
             {intl('footerPricing')}
           </LocalizedLink>
         </PricingP>
+        <OnlineStoreP>
+          <a href="https://reddyshop.co/visiosto" rel="noopener noreferrer" target="_blank">
+            {intl('footerOnlineStore')}
+          </a>
+        </OnlineStoreP>
       </CompanyDiv>
       <Div>
         <LocaleSwitcher locale={locale} pageID={pageID} />
