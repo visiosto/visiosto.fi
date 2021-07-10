@@ -316,7 +316,10 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
+          facebook
+          instagram
           job
+          linkedin
           name
           position
           slug

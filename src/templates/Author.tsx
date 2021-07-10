@@ -374,7 +374,10 @@ export const pageQuery = graphql`
           html
         }
       }
+      facebook
+      instagram
       job
+      linkedin
       name
       position
       twitter

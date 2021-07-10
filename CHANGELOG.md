@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Link to the front page of the current locale to the logo in the footer.
 - Link to the online store of the company to the footer.
+- LinkedIn, Facebook, and Instagram links to the author pages.
 
 ### Changed
 
