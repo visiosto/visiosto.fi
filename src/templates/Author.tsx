@@ -86,6 +86,10 @@ const TwitterImage = styled(SocialMediaImage)`
   }
 `;
 
+const TitleP = styled.p`
+  margin: 0.5rem 0 0;
+`;
+
 const H2 = styled.h2`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
   text-align: center;
@@ -297,9 +301,9 @@ function Page({ data, pageContext }) {
         })()}
       </SocialMediaDiv>
       <Div>
-        <p>{author.job}</p>
+        <TitleP>{author.job}</TitleP>
         {author.position.map((position) => (
-          <p key={position}>{position}</p>
+          <TitleP key={position}>{position}</TitleP>
         ))}
       </Div>
       <Div dangerouslySetInnerHTML={{ __html: author.description.childMarkdownRemark.html }} />
