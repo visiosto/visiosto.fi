@@ -361,7 +361,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-ciSkZP bPaRpH"
+        class="sc-ciSkZP bMCkWf"
       >
         <a
           href="/hinnasto"
@@ -370,7 +370,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-jcwpoC dfTObt"
+        class="sc-jcwpoC bFRcm"
       >
         <a
           href="https://reddyshop.co/visiosto"
@@ -680,7 +680,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-cOifOu iCwPLO"
+        class="sc-cOifOu eXZopZ"
       >
         <span
           class="sc-hHEiqL DFvqs"
@@ -723,7 +723,7 @@ exports[`Post layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-Arkif kqybok"
+        class="sc-Arkif hPwJZf"
       >
         <a
           href="/kayttoehdot"
