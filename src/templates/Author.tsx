@@ -260,7 +260,7 @@ function Page({ data, pageContext }) {
           if (author.linkedin) {
             return (
               <a
-                href={`https://linkedin.com/${author.linkedin}`}
+                href={`https://linkedin.com/in/${author.linkedin}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >

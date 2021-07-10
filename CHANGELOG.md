@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Google Analytics toggle in the cookie settings.
+- LinkedIn links in the author pages.
 
 ## [0.22.0] - 2021-06-04
 
