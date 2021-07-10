@@ -54,7 +54,7 @@ const ManagementP = styled.p`
 `;
 
 const PricingP = styled.p`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 0;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -62,7 +62,7 @@ const PricingP = styled.p`
 `;
 
 const OnlineStoreP = styled.p`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -123,7 +123,7 @@ const DataProtectionP = styled.p`
 `;
 
 const CookieSettings = styled.div`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -131,7 +131,7 @@ const CookieSettings = styled.div`
 `;
 
 const TermsOfUseP = styled.p`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;

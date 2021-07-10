@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Colours of the images in the cover components to the new brand colours.
 - Colours of the images in the rule components to the new brand colours.
 - Layout of the authors page.
+- Mobile margins of the footer links to be smaller.
 
 ### Fixed
 
