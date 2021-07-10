@@ -3,13 +3,13 @@
 exports[`Layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-laZMeE jLmgwF"
+    class="sc-iNiQyp iendsd"
   >
     <div
-      class="sc-eJocfa cjJQqp"
+      class="sc-oeezt dUYRzM"
     >
       <p
-        class="sc-jffHpj cLPDJl"
+        class="sc-eJocfa idIbMJ"
         role="heading"
       >
         Visiosto
@@ -18,7 +18,7 @@ exports[`Layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-oeezt iDoFlu"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hhIiOg rvkIb"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -85,62 +85,62 @@ exports[`Layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-bBjRSN kyuiAB"
+      class="sc-cOifOu fKvNYN"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-cOifOu fhFhb"
+        class="sc-Arkif gAiBVx"
       >
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
       </div>
       <ul
-        class="sc-khIgEk OcPxY"
+        class="sc-hTRkXV xosFA"
         id="primary-menu"
       >
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-jgPyTC ebzsTe"
+            class="sc-gSYDnn kjPPdM"
             href="/"
           >
             Etusivu
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-gSYDnn kjPPdM"
+            class="sc-laZMeE gPctwz"
             href="/#portfolio"
           >
             Portfolio
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-gSYDnn kjPPdM"
+            class="sc-laZMeE gPctwz"
             href="/#yhteystiedot"
           >
             Yhteystiedot
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-jgPyTC ebzsTe"
+            class="sc-gSYDnn kjPPdM"
             href="/blogi"
           >
             Blogi
@@ -149,14 +149,14 @@ exports[`Layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-hhIiOg jvUmha"
+      class="sc-eirqVv klAfEd"
     />
   </header>
   <main>
     <section>
       <header>
         <h1
-          class="sc-lbVvki cpBrDS"
+          class="sc-gGLxEB fsvsKp"
         >
           Hallinto
         </h1>
@@ -312,6 +312,17 @@ exports[`Layout component renders correctly 1`] = `
           Hinnasto
         </a>
       </p>
+      <p
+        class="sc-cBoqAE cfATGo"
+      >
+        <a
+          href="https://reddyshop.co/visiosto"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Verkkokauppa
+        </a>
+      </p>
     </div>
     <div
       class="sc-bYwzuL dBCgvG"
@@ -329,7 +340,7 @@ exports[`Layout component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-cBoqAE kVFQGZ"
+      class="sc-ciSkZP hueHuW"
     >
       Sosiaalisessa mediassa
     </h3>
@@ -341,7 +352,7 @@ exports[`Layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bYwzuL sc-ciSkZP dBCgvG eaTNjI"
+      class="sc-bYwzuL sc-jcwpoC dBCgvG ccQzeC"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -349,7 +360,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iTVJFM leJrwG kiJIBH"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iBzEeX bSEfTJ knLCbk"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -400,7 +411,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC leJrwG"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ bSEfTJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -451,7 +462,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-efHYUO leJrwG gHJUtd"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-cTJkRt bSEfTJ GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -502,7 +513,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iBzEeX leJrwG knLCbk"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-efHYUO bSEfTJ gHJUtd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -553,7 +564,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-carFqZ leJrwG fBVimv"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iTVJFM bSEfTJ jbfRaI"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -603,7 +614,7 @@ exports[`Layout component renders correctly 1`] = `
       class="sc-bYwzuL dBCgvG"
     >
       <p
-        class="sc-cTJkRt enkOPL"
+        class="sc-jNnpgg geTdwl"
       >
         <a
           href="/tietosuoja"
@@ -612,7 +623,7 @@ exports[`Layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-jNnpgg glXJvl"
+        class="sc-dPaNzc dTszhl"
       >
         <span
           class="sc-iemWCZ iYwZvO"
@@ -655,7 +666,7 @@ exports[`Layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-dPaNzc dTszhl"
+        class="sc-bBjRSN ipBMGa"
       >
         <a
           href="/kayttoehdot"

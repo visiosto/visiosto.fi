@@ -146,6 +146,17 @@ exports[`Footer component renders correctly 1`] = `
           Hinnasto
         </a>
       </p>
+      <p
+        class="sc-cBoqAE cfATGo"
+      >
+        <a
+          href="https://reddyshop.co/visiosto"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Verkkokauppa
+        </a>
+      </p>
     </div>
     <div
       class="sc-bYwzuL dBCgvG"
@@ -163,7 +174,7 @@ exports[`Footer component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-cBoqAE kVFQGZ"
+      class="sc-ciSkZP hueHuW"
     >
       Sosiaalisessa mediassa
     </h3>
@@ -175,7 +186,7 @@ exports[`Footer component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bYwzuL sc-ciSkZP dBCgvG eaTNjI"
+      class="sc-bYwzuL sc-jcwpoC dBCgvG ccQzeC"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -183,7 +194,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iTVJFM leJrwG kiJIBH"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iBzEeX bSEfTJ knLCbk"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -234,7 +245,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC leJrwG"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ bSEfTJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -285,7 +296,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-efHYUO leJrwG gHJUtd"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-cTJkRt bSEfTJ GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -336,7 +347,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iBzEeX leJrwG knLCbk"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-efHYUO bSEfTJ gHJUtd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -387,7 +398,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-carFqZ leJrwG fBVimv"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iTVJFM bSEfTJ jbfRaI"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -437,7 +448,7 @@ exports[`Footer component renders correctly 1`] = `
       class="sc-bYwzuL dBCgvG"
     >
       <p
-        class="sc-cTJkRt enkOPL"
+        class="sc-jNnpgg geTdwl"
       >
         <a
           href="/tietosuoja"
@@ -446,7 +457,7 @@ exports[`Footer component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-jNnpgg glXJvl"
+        class="sc-dPaNzc dTszhl"
       >
         <span
           class="sc-iemWCZ iYwZvO"
@@ -489,7 +500,7 @@ exports[`Footer component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-dPaNzc dTszhl"
+        class="sc-bBjRSN ipBMGa"
       >
         <a
           href="/kayttoehdot"
