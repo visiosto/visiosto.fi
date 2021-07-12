@@ -18,7 +18,7 @@ exports[`Client register business form component renders correctly 1`] = `
         value="Business data for client register"
       />
       <div
-        class="sc-hKFxyN eAVPdq"
+        class="sc-hKFxyN Sgviz"
         hidden=""
       >
         <label
@@ -34,14 +34,14 @@ exports[`Client register business form component renders correctly 1`] = `
         class="sc-fujyAs"
       >
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <h3>
             Yrityksen tai yhteisön perustiedot
           </h3>
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="business-id"
@@ -61,7 +61,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="business-name"
@@ -81,14 +81,14 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <h4>
             Yrityksen tai yhteisön rekisteröity osoite
           </h4>
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="address-line-1"
@@ -109,7 +109,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="address-line-2"
@@ -125,7 +125,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="postcode"
@@ -145,7 +145,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="post-office"
@@ -165,7 +165,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="same-billing-address"
@@ -194,7 +194,7 @@ exports[`Client register business form component renders correctly 1`] = `
           Laskutusosoite
         </h3>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="billing-address-line-1"
@@ -215,7 +215,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="billing-address-line-2"
@@ -231,7 +231,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="billing-postcode"
@@ -251,7 +251,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="billing-post-office"
@@ -276,7 +276,7 @@ exports[`Client register business form component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <h3>
             Laskutustapa
@@ -342,14 +342,14 @@ exports[`Client register business form component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <h3>
             Laskutustiedot
           </h3>
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
           hidden=""
         >
           <label
@@ -371,7 +371,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
           hidden=""
         >
           <label
@@ -393,7 +393,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
           hidden=""
         >
           <label
@@ -420,14 +420,14 @@ exports[`Client register business form component renders correctly 1`] = `
         hidden=""
       >
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <h3>
             Yhteyshenkilö
           </h3>
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="first-name"
@@ -447,7 +447,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="surname"
@@ -467,7 +467,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="tel"
@@ -487,7 +487,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="email"
@@ -508,7 +508,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <label
             for="accept-terms"
@@ -529,7 +529,7 @@ exports[`Client register business form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-hKFxyN eAVPdq"
+          class="sc-hKFxyN Sgviz"
         >
           <p>
             Rekisterin tietosuojaselosteeseen voit tutustua 
@@ -542,7 +542,7 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKFxyN eAVPdq"
+        class="sc-hKFxyN Sgviz"
       >
         <div
           class="sc-pNWdM"
@@ -627,7 +627,7 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKFxyN eAVPdq"
+        class="sc-hKFxyN Sgviz"
         hidden=""
       >
         <p>
@@ -635,7 +635,7 @@ exports[`Client register business form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-hKFxyN eAVPdq"
+        class="sc-hKFxyN Sgviz"
         hidden=""
       >
         <p>
