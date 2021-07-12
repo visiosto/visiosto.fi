@@ -46,6 +46,8 @@ const FormDiv = styled.div`
 
     ${boxShadowStyle}
 
+    appearance: none;
+
     &:focus {
       outline: none;
 
