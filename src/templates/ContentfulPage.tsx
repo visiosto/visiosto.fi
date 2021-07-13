@@ -13,6 +13,10 @@ import Theme from '../components/Theme';
 const Div = styled.div`
   margin: 1em ${(props) => props.theme.layout.marginMobile};
 
+  .centered {
+    text-align: center;
+  }
+
   @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 1em ${(props) => props.theme.layout.marginTablet};
   }
