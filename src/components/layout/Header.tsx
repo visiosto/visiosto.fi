@@ -179,22 +179,22 @@ function Header({ errorPage, home, locale, pageID }) {
             }
           }
         }
-        logoPhoneSLight: file(relativePath: { eq: "header/logo-light.png" }) {
+        logoPhoneSLight: file(relativePath: { eq: "header/logo-blue.png" }) {
           childImageSharp {
             gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
-        logoPhoneSDark: file(relativePath: { eq: "header/logo-dark.png" }) {
+        logoPhoneSDark: file(relativePath: { eq: "header/logo-peach.png" }) {
           childImageSharp {
             gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
-        logoTabletLight: file(relativePath: { eq: "header/logo-light.png" }) {
+        logoTabletLight: file(relativePath: { eq: "header/logo-blue.png" }) {
           childImageSharp {
             gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }
         }
-        logoTabletDark: file(relativePath: { eq: "header/logo-dark.png" }) {
+        logoTabletDark: file(relativePath: { eq: "header/logo-peach.png" }) {
           childImageSharp {
             gatsbyImageData(quality: 100, width: 301, placeholder: BLURRED)
           }

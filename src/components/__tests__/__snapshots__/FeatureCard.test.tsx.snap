@@ -30,7 +30,7 @@ exports[`Feature card component renders correctly 1`] = `
     </h3>
     Some text here
     <span
-      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
     >
       Click here
     </span>

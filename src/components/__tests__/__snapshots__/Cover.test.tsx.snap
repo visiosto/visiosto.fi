@@ -26,7 +26,7 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
           />
           <picture>
             <source
-              data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/9b70c/blue-rule-1.webp 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/d75ea/blue-rule-1.webp 500w"
+              data-srcset="/static/1de509923251b5393435bfacedc34cbe/9b70c/blue-1.webp 250w,/static/1de509923251b5393435bfacedc34cbe/d75ea/blue-1.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -34,8 +34,8 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png"
-              data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/8861b/blue-rule-1.png 500w"
+              data-src="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png"
+              data-srcset="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png 250w,/static/1de509923251b5393435bfacedc34cbe/8861b/blue-1.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -60,56 +60,39 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -146,56 +129,39 @@ exports[`Cover component renders lens image with first blue rule correctly 1`] =
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -233,12 +199,12 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0UlEQVQY002QIU8DUAyEX7JkIQjcDGgCZpmaIcg5FAkEOzmFXlgyNzGJ6GVL9i96CUj+AxaHRmDvxMh7DDZR0157/a4oUcxWXSUulTEwcW7iqPb1OytNt9OKUczomLgwcaPEvRLXIjpVcGbiSYl3EVvvSsS3iBclZkrcKjE00TdxZWIqxoey6mLb9hKfYhwXZdx5f2gjYmHi2cSbMnww25tlO/JlYm3iUYxxNaoU9f1TE68mVg39DysrFk7EGJmYmFGNlsqYm3gQ0XND/4+sRfEDgWXV8xrexRQAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQY0z1QMUpEURD7rJV2k0UQC1HYynJJDuAFtLaz1yMIiSA2FutBLDyDiGJrY+ciiHew8ct7rhYhwwyZSWYwa2gIsR7hOMStWU8hHiI8R3g0687CIsJJhFmaRk2HIULnvkcYWjENcRnhI8IY4tvCa4SlhTcT7xG+VrPRxBjhxayLEAdmzczasmrbwm7bemRhtOrT7A42m4OoJmYD1iJsRNiJcBhhYWHZD/yB1dnCebO8H+E+wmmz3yN0rv8Yv73+llXEmkSYRzizcBPhOsSVWXs/dORedQoqoV4AAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/9b70c/peach-rule-1.webp 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/d75ea/peach-rule-1.webp 500w"
+              data-srcset="/static/a29827978e12dcc7169cdaba13f36029/9b70c/brown-1.webp 250w,/static/a29827978e12dcc7169cdaba13f36029/d75ea/brown-1.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -246,8 +212,8 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png"
-              data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/8861b/peach-rule-1.png 500w"
+              data-src="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png"
+              data-srcset="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png 250w,/static/a29827978e12dcc7169cdaba13f36029/8861b/brown-1.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -272,56 +238,39 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -358,56 +307,39 @@ exports[`Cover component renders lens image with first peach rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -445,12 +377,12 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuUlEQVQY022QLQ5CMRCEKwGBxe8IOgKN4CfcAYPBcQIUOxJHQvIUnIAj4Ek4AGch4DCP9LUPhZg0mf2ys9MAKlj0kF5QfdABagRqCKpX/J+MiS189DmoE6g7qLVFhWQmYGqxMZ9G1aBqy3qDuoGqLPoK1BT0Jahd8evM+wdUmoc2uUIePEAdQD+COjfJUS+UkD+6gpohqptapuuD5YVjUBdQk1KlVGrUKV+wAbUHtQV9AWqQj8lsu/ALOt1cd5DIj28AAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQY012QoUpFYRCE/2AwXY/BaxGE/UB2qsVg8CUE8REM2neiyXLBYFGDxSg+iq/gK4jBYFHOOb9wMQw7u8zOMtsiq5HVImsX+YL0LfID8j3yE+lHVJfIh8gbk15uITfSM5899pA3W2gSnCJ/IP+MiF5R/ev9jvyMfIe8Qr5GvkF+Qf5CPhnNzvvSZ2SdIW8jD8gL5K3Oj/vyG1l/5uv4Rn6NrJ3R8CiyrkgP9DhzjB5L67OJj4eWyPvIgXxA1tDf1n4B4mldOzXQFw0AAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/9b70c/blue-rule-2.webp 250w,/static/076d5d41e1eea59ac5a66941adccd0af/d75ea/blue-rule-2.webp 500w"
+              data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/9b70c/blue-2.webp 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/d75ea/blue-2.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -458,8 +390,8 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png"
-              data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png 250w,/static/076d5d41e1eea59ac5a66941adccd0af/8861b/blue-rule-2.png 500w"
+              data-src="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png"
+              data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/8861b/blue-2.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -484,56 +416,39 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -570,56 +485,39 @@ exports[`Cover component renders lens image with second blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -657,12 +555,12 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAy0lEQVQY002QrUpEcRTE/7LgBxajVfQZxGTZJ1DsRosPYLLpG5yJJrNlhm0bxOYDLBvEBxCxCIYZ5Mq698INP2Y4M+EwLUKLsNfrP2Y1D36lXN/GnRGnEe4jTKPaaObKIGbNzboJ69ysQ7O2Qkysmpi1adVOhO0I+yFOQlxGeIjQmdVZ+Ayx26w6jvBk4rcPuqz5ivAW4j3CR4RvCz8Z8qFLvES4i3BlVRu/fhThLMR1hLLq2aplhEWE1wjzCLMIj1bdRrgwcTBM4Z4/5BTVbZAgL/sAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVQY022PMQ5BYRCE/1ZUO6VOJF6hUewoRKN1AHEAlZIoFLITB1C5g07cRKlyByXVk/c8QigmM8km+80kEZkcFzmOIpYiBiLqQSQRKRzplf/p6+5IRegGcRWRy5EXHrR70E4i9kFsRUjEOtw2ooWIuYhpOEYi+lWJpog3qSdi/HxuCxEHEWfRbiXoA/ZflodbLrddWfNnklsKWgq3moiGiJYcWeHhaBdgEcNwm1RtZyJWIjoPXO9dht3la9QAAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/9b70c/peach-rule-2.webp 250w,/static/a05e09cc31b2010761f6939e6b0ff437/d75ea/peach-rule-2.webp 500w"
+              data-srcset="/static/9b0a207364bca618368aab12cb892a07/9b70c/brown-2.webp 250w,/static/9b0a207364bca618368aab12cb892a07/d75ea/brown-2.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -670,8 +568,8 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png"
-              data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png 250w,/static/a05e09cc31b2010761f6939e6b0ff437/8861b/peach-rule-2.png 500w"
+              data-src="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png"
+              data-srcset="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png 250w,/static/9b0a207364bca618368aab12cb892a07/8861b/brown-2.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -696,56 +594,39 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -782,56 +663,39 @@ exports[`Cover component renders lens image with second peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -869,12 +733,12 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVQY012QvQqBcRTG32xKiZGiziOdZ5ZksSuDmcnuBs6zcBeY7FjdjtyETej1/hWGX+f7MwMjA7UENQGV/eD/eryxJFNsCmoERim3M3h0QT0TO1ALeAxBdcyjCqoCqmYeNVANMJrGaIEamMcajEeq7b8bWjFlDury1fhDnnz/95vHt30zjyuodrEhlU5QGa4eqBmoNagNqJMxzqCOOUYdQO3h2oJagRoXW6v+ec0LwR5dSqbEP8AAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVQY0y2PIU4FYQyEf7EQBCAhQf6foGMIHoFCcgg8AmQHxTm4wLsBCQmBcAQEBg0kvLwjkCXdXTGZtplOp63LDeUp8nWXj5j71pVtrmdMfbgRy3zhPtfHyAe1V6Jd5F/kEfmTyBvkM+RDwlvIQ6ErB8IDkTUr7COfIF91+R35u0zrynalQ3mHvCbKOEciizfIX4v4h5h4jbzpkX9LiLGXXv7o4Z22vDzHj9xDvkC+RX5A+YTyDfllQvgV+Rn5EXmFfE/kJfJ5V0Z5/AOdTl0uWlzeDAAAAABJRU5ErkJggg=="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/d125696f24e25d41ca2493208bb215bf/9b70c/blue-rule-3.webp 250w,/static/d125696f24e25d41ca2493208bb215bf/d75ea/blue-rule-3.webp 500w"
+              data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/9b70c/blue-3.webp 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/d75ea/blue-3.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -882,8 +746,8 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png"
-              data-srcset="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png 250w,/static/d125696f24e25d41ca2493208bb215bf/8861b/blue-rule-3.png 500w"
+              data-src="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png"
+              data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/8861b/blue-3.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -908,56 +772,39 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -994,56 +841,39 @@ exports[`Cover component renders lens image with third blue rule correctly 1`] =
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1081,12 +911,12 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY022PoU7CcRSFf2wWZrEZaSSSRLUYSM5O1agVneI7mO7pPMM5Vavdx6Aa2M4JMP7C2Jjh27k74X73NgtjCx8RHiO8RJhbeIvwEOHOqomFgVknEVpYrUtVC9HN3vdEa2bNI6zDP7xNHcFam7W08BlhEaFCvFqYRriwcLoVmtXbG4cR7iNcRbiMcB3hNsJThFm3QPgO8eud5Ei8CuvHxNnh5P/g7rVD1w9xbmJk4SbCu1mLEF9WPZvVNs491NF9y0rtAAAAAElFTkSuQmCC"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY01WPO0qDURCFr4hY39OJgZAdWMzXB1uNloEQRLDXziLNnCKFjbUgZCfZQlbiIiL3/omP4mPOYd7FoWJ0Z/RidJXUc1PLgErS88Ux+CP5T//WNnGaaJehfcPoK0Mbo6eMitEoQ5dG40RhdJ3oxug20axFo6XRyui5DTwxOjOaGq0z6tb0wT8My+rg48Ax/0cn+iyHl/vZ/Y3op1/0zaFXow+jd6M30/2j0SKjLoweMurc6N7USev9BhkKXGU94ba6AAAAAElFTkSuQmCC"
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/9b70c/peach-rule-3.webp 250w,/static/56cc43c92f2405255f70b1c07e45a507/d75ea/peach-rule-3.webp 500w"
+              data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/9b70c/brown-3.webp 250w,/static/076c5d2854aa3b223395bd3815e3e58f/d75ea/brown-3.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -1094,8 +924,8 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png"
-              data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png 250w,/static/56cc43c92f2405255f70b1c07e45a507/8861b/peach-rule-3.png 500w"
+              data-src="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png"
+              data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png 250w,/static/076c5d2854aa3b223395bd3815e3e58f/8861b/brown-3.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -1120,56 +950,39 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMUlEQVQY021Qv0uCURS9Ws0NUTiV3NuH71pjQYhQU/0LtTbUEKGExPcuGoEl5q/Ij8QtGkqltVzChpb2pqZaggL/BIkXT4skPXA4997h3MMBgN3RyFJytd3wnr7uKgnzfgEwtgfBkAZiAVIa0JKtSnfu3rmnA3DCsjztaHOfK5r6Qd5MBd0XJyw3xFIi1kIs+8TiopIYsTSJ5RyVjPdMhxgG0J0klsNaKm+Sm8dvAXSfZ8NiiIdQdbWDLDPIYlP7BgzT2xl4vSzPn8Wyppo4OUpvZWBxITlBLA6yjhLLCrFEkXUElY4jy/pPOp+tYQCPpyVoFYo75XjWtArFtetUDgA2+rr67etvt13afajhZ92DdsMLfdS8Zue2MmceqnCVyvlRaR+x+PuJSo/YZP0P/uMbPyV9+lohH9gAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVQ4y82RTUhUURTHz5sciIg0QqIIqnei3lV007JNGATltBD6hgohclGSINK8G/kxWQl+YHPfezoJhYLM+PxsZkQEg1SIVqZBi1CpRaU1k2Emyoxw4jkzWq7i1aIDP87lLn73/M8FgGI4n18FNNaSuxTUX9FI86Wyy9UAGWWw75AKyDggS/UEsqKuddm6W+0JICuHZ+5Cd9FoY8OLlX6DntXVD8GW0rzs3NunkPGTyLgLGS9ExktR4dXIuA8Z70SmDiDjw8jUCWT8riVFRZWA5fCrO/e76dppD9GAEXcdq6Dd6KYDWZxkRSWZJcBV+BoyU5eR8Y/I+BQyfjY5vQMuuqq2ApRk1954EJ7r0ujMicr7O/a6Cw9m8+vIeFGSc8j4UVlRD8uKKiPj6TJTNyPjTkxGXo2tqABEw9LDkhr40iHqZvyCaKwls+B4JaTvubW+I2tfG3YpJ8+pezklHG1skGixDb51aX0RU6wEymszAADy8yqcsqKmIeNpqKibrDgJVAkZl+QNH5UCej3V8L1HwEKvNhI1RTR0r9453twIH9rFLz+c4I/qk18Hopuw0KO9jphistvz0DH5RMBsQICt+tHbBPS8VZrv1qY+B8T4xKNyWA76INJhU0iDPqB3fsdcl3g/4/e+bOMeIHpj7dSmcMgH9LYtLWqKmVm/d7i+2AMABbD0VLcrbAaaeOyMmmIuYoqh9js1cMFVDvGwYU+40m8ADTZt+9qp0Xy3Zk63emG61SvFQjYntCaJh40ri306LQf1QNTUIGrq8BdC3aIqHjYoHjZKkg9ItiMvBQ2IhQwr4pFYSN9uTRYL6faFSUEq+m/YE64LHP9E+N/XT3GpY5qF/H6HAAAAAElFTkSuQmCC"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/d8057/tablet-up-left-light.webp 100w,/static/89f858106d55e4b2e0c3794aba8330f1/2e34e/tablet-up-left-light.webp 200w,/static/89f858106d55e4b2e0c3794aba8330f1/416c3/tablet-up-left-light.webp 400w,/static/89f858106d55e4b2e0c3794aba8330f1/c1587/tablet-up-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/403a6/phone-small-up-left-light.webp 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/94723/phone-small-up-left-light.webp 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/89bd1/phone-small-up-left-light.webp 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/745da/phone-small-up-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png"
-            data-srcset="/static/2c91a50abba5a6eee66f36d92c87c8b7/ed81f/phone-small-up-left-light.png 75w,/static/2c91a50abba5a6eee66f36d92c87c8b7/c1db7/phone-small-up-left-light.png 150w,/static/2c91a50abba5a6eee66f36d92c87c8b7/22008/phone-small-up-left-light.png 300w,/static/2c91a50abba5a6eee66f36d92c87c8b7/0cb8e/phone-small-up-left-light.png 600w"
+            data-src="/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png"
+            data-srcset="/static/89f858106d55e4b2e0c3794aba8330f1/15e42/tablet-up-left-light.png 100w,/static/89f858106d55e4b2e0c3794aba8330f1/5aead/tablet-up-left-light.png 200w,/static/89f858106d55e4b2e0c3794aba8330f1/d6138/tablet-up-left-light.png 400w,/static/89f858106d55e4b2e0c3794aba8330f1/b7804/tablet-up-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1206,56 +1019,39 @@ exports[`Cover component renders lens image with third peach rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABhklEQVQY02XQTSiDcRwH8C+PeTlwckWeeXk25qUV8rZ2sJJolJdIGGKxJCXP/9nYzCgXicdoxx3MwYEpSaIdbCRFOSusJOdh0k9EefnW9/qp7xf4EaXAwAsMWq0EXhChVDGoNQxFxRK0WitKS6yoKrdBX2nDyfJCLO278eKXc6N+eTHql7Ned1bwK0qV+AllqViMkM+QmjEBJI4BGAEwDMDyVRMAM87kBbxsy1vP2zJFtmQfHa/9Bdk3CKAHXOp4EmCOB1o5oJ4DjHFAAwc0cYBFQREv6MBtp3030bmn68qz+A+M+QTVLI0XxEu1hr3pKmyPtfqpu0aD/aatzhHuNk6HzS3O25F2Z3isc+ba3j975xqcJaNhag8YSv4F8oIY+/WdnhfEK02h5K0utx3W6CaDjQb7aWeDIzTQ7AyNdsycWk2u0GSfKzg/NPfU2zRN6dliQF0gpfyb/NFMQVTk5LGEshIrHjaWQLQJohCIgiAKgOgCRIR73xLoaLWFdleOidYVksmFd3cBm5hUlcxyAAAAAElFTkSuQmCC"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAClUlEQVQ4y92SXUgUURTH/7OIGkRIGBH4gXs15mZFPVVCPVQPvQVBvedD1KOQ6FyTDAlBK9rdmdnIyDJT2/ULd1Wshz7YPoggbIN0IyQyk/IjP7DYUU/MzG670FPTWwOHOZfL/d1zfvcA/9Xn5gqYLMC4FVIikmsHQFlBOuA3WBbW3r8BZVHIuCKnVfv3QPOQCU2AnzAuPri5kmWpcAhMOityy8qaW1YeMfMCpw6ZbPtisshhXKwyLvpNmNu6SHHWMrPaU7KYrPxgXAymHscR0HZlemNcLDAuhu0K7XFy9ijcdKZkMC4mGBev0mfTwdiI9NGJMC5mGVcyUyqEE4fCZYPFTcYFMS7yU7OY8GiEdSviITM0GGHNyn/2a1jq07DYq2GhR8VMUMWBstqMvGKrmkoTWLJNHMwtrEZN+cUMGtRTMBuoSUZYdwGHQB9vgUZbQM9vYGXAj8kOH6LNHgCnpJ27alDMxWETWFCiVO8vqwVRP+i+/w+g9Q9euAyiZxLRG4noC2isVXqqeqSTx+qlLW7F1XCmAUDFpvwSZZXvECHgqNlF6VyXmpmESQngXiOsty/2ao9ngurodMAXmw2q7+Z71PdLvdrYcp8WW+7TzDz2qc07PnLtKn3vVuM0pE/FQ5phhPXdSXcuG6x54yGdZrvUr5/bvWMTd72vJ9t90alO38h0QI3OdanR+W7VzN9+C/heRjxXxtvONVKsxROjYb8+HVBzYSTaNNuNh/R1KwNaNj30ZxP1SEA5gCwAJ0DUASKyAjjiui0asSGvqnVzUTVh/dmCzvNNIHoAGCE9DahhJayDhnRQ5DqI7oGm7oBeNGO81Ydg3SWcPl6PfXtqpZz8KsjbRcXWUtGNjZVYG9Rdgbom/ALBWnuywiFffgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/d8057/tablet-down-right-light.webp 100w,/static/71112d77abf9c35b0e5d56081b334b85/2e34e/tablet-down-right-light.webp 200w,/static/71112d77abf9c35b0e5d56081b334b85/416c3/tablet-down-right-light.webp 400w,/static/71112d77abf9c35b0e5d56081b334b85/c1587/tablet-down-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/403a6/phone-small-down-right-light.webp 75w,/static/c0ada0fe35908140801dafbef72d233d/94723/phone-small-down-right-light.webp 150w,/static/c0ada0fe35908140801dafbef72d233d/89bd1/phone-small-down-right-light.webp 300w,/static/c0ada0fe35908140801dafbef72d233d/745da/phone-small-down-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png"
-            data-srcset="/static/c0ada0fe35908140801dafbef72d233d/ed81f/phone-small-down-right-light.png 75w,/static/c0ada0fe35908140801dafbef72d233d/c1db7/phone-small-down-right-light.png 150w,/static/c0ada0fe35908140801dafbef72d233d/22008/phone-small-down-right-light.png 300w,/static/c0ada0fe35908140801dafbef72d233d/0cb8e/phone-small-down-right-light.png 600w"
+            data-src="/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png"
+            data-srcset="/static/71112d77abf9c35b0e5d56081b334b85/15e42/tablet-down-right-light.png 100w,/static/71112d77abf9c35b0e5d56081b334b85/5aead/tablet-down-right-light.png 200w,/static/71112d77abf9c35b0e5d56081b334b85/d6138/tablet-down-right-light.png 400w,/static/71112d77abf9c35b0e5d56081b334b85/b7804/tablet-down-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1298,7 +1094,7 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
           />
           <picture>
             <source
-              data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/9b70c/blue-rule-1.webp 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/d75ea/blue-rule-1.webp 500w"
+              data-srcset="/static/1de509923251b5393435bfacedc34cbe/9b70c/blue-1.webp 250w,/static/1de509923251b5393435bfacedc34cbe/d75ea/blue-1.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -1306,8 +1102,8 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png"
-              data-srcset="/static/67b0d08c3c2e833ca41507eb072dc0b7/c6be9/blue-rule-1.png 250w,/static/67b0d08c3c2e833ca41507eb072dc0b7/8861b/blue-rule-1.png 500w"
+              data-src="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png"
+              data-srcset="/static/1de509923251b5393435bfacedc34cbe/c6be9/blue-1.png 250w,/static/1de509923251b5393435bfacedc34cbe/8861b/blue-1.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -1332,56 +1128,39 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1418,56 +1197,39 @@ exports[`Cover component renders lines image with first blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1505,12 +1267,12 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0UlEQVQY002QIU8DUAyEX7JkIQjcDGgCZpmaIcg5FAkEOzmFXlgyNzGJ6GVL9i96CUj+AxaHRmDvxMh7DDZR0157/a4oUcxWXSUulTEwcW7iqPb1OytNt9OKUczomLgwcaPEvRLXIjpVcGbiSYl3EVvvSsS3iBclZkrcKjE00TdxZWIqxoey6mLb9hKfYhwXZdx5f2gjYmHi2cSbMnww25tlO/JlYm3iUYxxNaoU9f1TE68mVg39DysrFk7EGJmYmFGNlsqYm3gQ0XND/4+sRfEDgWXV8xrexRQAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1ElEQVQY0z1QMUpEURD7rJV2k0UQC1HYynJJDuAFtLaz1yMIiSA2FutBLDyDiGJrY+ciiHew8ct7rhYhwwyZSWYwa2gIsR7hOMStWU8hHiI8R3g0687CIsJJhFmaRk2HIULnvkcYWjENcRnhI8IY4tvCa4SlhTcT7xG+VrPRxBjhxayLEAdmzczasmrbwm7bemRhtOrT7A42m4OoJmYD1iJsRNiJcBhhYWHZD/yB1dnCebO8H+E+wmmz3yN0rv8Yv73+llXEmkSYRzizcBPhOsSVWXs/dORedQoqoV4AAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/9b70c/peach-rule-1.webp 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/d75ea/peach-rule-1.webp 500w"
+              data-srcset="/static/a29827978e12dcc7169cdaba13f36029/9b70c/brown-1.webp 250w,/static/a29827978e12dcc7169cdaba13f36029/d75ea/brown-1.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -1518,8 +1280,8 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png"
-              data-srcset="/static/26c5d56f5ffc25b93a3f32320c69d9ec/c6be9/peach-rule-1.png 250w,/static/26c5d56f5ffc25b93a3f32320c69d9ec/8861b/peach-rule-1.png 500w"
+              data-src="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png"
+              data-srcset="/static/a29827978e12dcc7169cdaba13f36029/c6be9/brown-1.png 250w,/static/a29827978e12dcc7169cdaba13f36029/8861b/brown-1.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -1544,56 +1306,39 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1630,56 +1375,39 @@ exports[`Cover component renders lines image with first peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1717,12 +1445,12 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuUlEQVQY022QLQ5CMRCEKwGBxe8IOgKN4CfcAYPBcQIUOxJHQvIUnIAj4Ek4AGch4DCP9LUPhZg0mf2ys9MAKlj0kF5QfdABagRqCKpX/J+MiS189DmoE6g7qLVFhWQmYGqxMZ9G1aBqy3qDuoGqLPoK1BT0Jahd8evM+wdUmoc2uUIePEAdQD+COjfJUS+UkD+6gpohqptapuuD5YVjUBdQk1KlVGrUKV+wAbUHtQV9AWqQj8lsu/ALOt1cd5DIj28AAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxUlEQVQY012QoUpFYRCE/2AwXY/BaxGE/UB2qsVg8CUE8REM2neiyXLBYFGDxSg+iq/gK4jBYFHOOb9wMQw7u8zOMtsiq5HVImsX+YL0LfID8j3yE+lHVJfIh8gbk15uITfSM5899pA3W2gSnCJ/IP+MiF5R/ev9jvyMfIe8Qr5GvkF+Qf5CPhnNzvvSZ2SdIW8jD8gL5K3Oj/vyG1l/5uv4Rn6NrJ3R8CiyrkgP9DhzjB5L67OJj4eWyPvIgXxA1tDf1n4B4mldOzXQFw0AAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/9b70c/blue-rule-2.webp 250w,/static/076d5d41e1eea59ac5a66941adccd0af/d75ea/blue-rule-2.webp 500w"
+              data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/9b70c/blue-2.webp 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/d75ea/blue-2.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -1730,8 +1458,8 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png"
-              data-srcset="/static/076d5d41e1eea59ac5a66941adccd0af/c6be9/blue-rule-2.png 250w,/static/076d5d41e1eea59ac5a66941adccd0af/8861b/blue-rule-2.png 500w"
+              data-src="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png"
+              data-srcset="/static/1a04ff402b51556e98fe3b24fb5b9e56/c6be9/blue-2.png 250w,/static/1a04ff402b51556e98fe3b24fb5b9e56/8861b/blue-2.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -1756,56 +1484,39 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1842,56 +1553,39 @@ exports[`Cover component renders lines image with second blue rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -1929,12 +1623,12 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAy0lEQVQY002QrUpEcRTE/7LgBxajVfQZxGTZJ1DsRosPYLLpG5yJJrNlhm0bxOYDLBvEBxCxCIYZ5Mq698INP2Y4M+EwLUKLsNfrP2Y1D36lXN/GnRGnEe4jTKPaaObKIGbNzboJ69ysQ7O2Qkysmpi1adVOhO0I+yFOQlxGeIjQmdVZ+Ayx26w6jvBk4rcPuqz5ivAW4j3CR4RvCz8Z8qFLvES4i3BlVRu/fhThLMR1hLLq2aplhEWE1wjzCLMIj1bdRrgwcTBM4Z4/5BTVbZAgL/sAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtklEQVQY022PMQ5BYRCE/1ZUO6VOJF6hUewoRKN1AHEAlZIoFLITB1C5g07cRKlyByXVk/c8QigmM8km+80kEZkcFzmOIpYiBiLqQSQRKRzplf/p6+5IRegGcRWRy5EXHrR70E4i9kFsRUjEOtw2ooWIuYhpOEYi+lWJpog3qSdi/HxuCxEHEWfRbiXoA/ZflodbLrddWfNnklsKWgq3moiGiJYcWeHhaBdgEcNwm1RtZyJWIjoPXO9dht3la9QAAAAASUVORK5CYII="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/9b70c/peach-rule-2.webp 250w,/static/a05e09cc31b2010761f6939e6b0ff437/d75ea/peach-rule-2.webp 500w"
+              data-srcset="/static/9b0a207364bca618368aab12cb892a07/9b70c/brown-2.webp 250w,/static/9b0a207364bca618368aab12cb892a07/d75ea/brown-2.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -1942,8 +1636,8 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png"
-              data-srcset="/static/a05e09cc31b2010761f6939e6b0ff437/c6be9/peach-rule-2.png 250w,/static/a05e09cc31b2010761f6939e6b0ff437/8861b/peach-rule-2.png 500w"
+              data-src="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png"
+              data-srcset="/static/9b0a207364bca618368aab12cb892a07/c6be9/brown-2.png 250w,/static/9b0a207364bca618368aab12cb892a07/8861b/brown-2.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -1968,56 +1662,39 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -2054,56 +1731,39 @@ exports[`Cover component renders lines image with second peach rule correctly 1`
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -2141,12 +1801,12 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVQY012QvQqBcRTG32xKiZGiziOdZ5ZksSuDmcnuBs6zcBeY7FjdjtyETej1/hWGX+f7MwMjA7UENQGV/eD/eryxJFNsCmoERim3M3h0QT0TO1ALeAxBdcyjCqoCqmYeNVANMJrGaIEamMcajEeq7b8bWjFlDury1fhDnnz/95vHt30zjyuodrEhlU5QGa4eqBmoNagNqJMxzqCOOUYdQO3h2oJagRoXW6v+ec0LwR5dSqbEP8AAAAAASUVORK5CYII="
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVQY0y2PIU4FYQyEf7EQBCAhQf6foGMIHoFCcgg8AmQHxTm4wLsBCQmBcAQEBg0kvLwjkCXdXTGZtplOp63LDeUp8nWXj5j71pVtrmdMfbgRy3zhPtfHyAe1V6Jd5F/kEfmTyBvkM+RDwlvIQ6ErB8IDkTUr7COfIF91+R35u0zrynalQ3mHvCbKOEciizfIX4v4h5h4jbzpkX9LiLGXXv7o4Z22vDzHj9xDvkC+RX5A+YTyDfllQvgV+Rn5EXmFfE/kJfJ5V0Z5/AOdTl0uWlzeDAAAAABJRU5ErkJggg=="
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/d125696f24e25d41ca2493208bb215bf/9b70c/blue-rule-3.webp 250w,/static/d125696f24e25d41ca2493208bb215bf/d75ea/blue-rule-3.webp 500w"
+              data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/9b70c/blue-3.webp 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/d75ea/blue-3.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -2154,8 +1814,8 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png"
-              data-srcset="/static/d125696f24e25d41ca2493208bb215bf/c6be9/blue-rule-3.png 250w,/static/d125696f24e25d41ca2493208bb215bf/8861b/blue-rule-3.png 500w"
+              data-src="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png"
+              data-srcset="/static/52ed421549fc9eb4d4860c7f46e25c0d/c6be9/blue-3.png 250w,/static/52ed421549fc9eb4d4860c7f46e25c0d/8861b/blue-3.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -2180,56 +1840,39 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -2266,56 +1909,39 @@ exports[`Cover component renders lines image with third blue rule correctly 1`] 
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -2353,12 +1979,12 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
             aria-hidden="true"
             data-placeholder-image=""
             decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY022PoU7CcRSFf2wWZrEZaSSSRLUYSM5O1agVneI7mO7pPMM5Vavdx6Aa2M4JMP7C2Jjh27k74X73NgtjCx8RHiO8RJhbeIvwEOHOqomFgVknEVpYrUtVC9HN3vdEa2bNI6zDP7xNHcFam7W08BlhEaFCvFqYRriwcLoVmtXbG4cR7iNcRbiMcB3hNsJThFm3QPgO8eud5Ei8CuvHxNnh5P/g7rVD1w9xbmJk4SbCu1mLEF9WPZvVNs491NF9y0rtAAAAAElFTkSuQmCC"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVQY01WPO0qDURCFr4hY39OJgZAdWMzXB1uNloEQRLDXziLNnCKFjbUgZCfZQlbiIiL3/omP4mPOYd7FoWJ0Z/RidJXUc1PLgErS88Ux+CP5T//WNnGaaJehfcPoK0Mbo6eMitEoQ5dG40RhdJ3oxug20axFo6XRyui5DTwxOjOaGq0z6tb0wT8My+rg48Ax/0cn+iyHl/vZ/Y3op1/0zaFXow+jd6M30/2j0SKjLoweMurc6N7USev9BhkKXGU94ba6AAAAAElFTkSuQmCC"
             style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
           <picture>
             <source
-              data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/9b70c/peach-rule-3.webp 250w,/static/56cc43c92f2405255f70b1c07e45a507/d75ea/peach-rule-3.webp 500w"
+              data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/9b70c/brown-3.webp 250w,/static/076c5d2854aa3b223395bd3815e3e58f/d75ea/brown-3.webp 500w"
               sizes="250px"
               type="image/webp"
             />
@@ -2366,8 +1992,8 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
               alt=""
               data-gatsby-image-ssr=""
               data-main-image=""
-              data-src="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png"
-              data-srcset="/static/56cc43c92f2405255f70b1c07e45a507/c6be9/peach-rule-3.png 250w,/static/56cc43c92f2405255f70b1c07e45a507/8861b/peach-rule-3.png 500w"
+              data-src="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png"
+              data-srcset="/static/076c5d2854aa3b223395bd3815e3e58f/c6be9/brown-3.png 250w,/static/076c5d2854aa3b223395bd3815e3e58f/8861b/brown-3.png 500w"
               decoding="async"
               role="presentation"
               sizes="250px"
@@ -2392,56 +2018,39 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVQY02WRvy6FQRDFd90rVCoVEsmcZk60Sok/Jb2SQnc1SnMiCok3UYhO4g2UXkCvVYpOPvbbb7n3KiYzmfnlnNnZBCpNxYJ55OmeeSQw0iwXG2CcgLoCdQlqCx4924BcxZqA1kEdgDoG4xDUGqhFUPvGuAf1BaozqkONT1DXcC3NOWsb1KN5NLADf+v3XqTMXM+gJqB2Qd2A+gD1Bmq5CnmsgLr9E9ETqAtQZ2CcG+MBrhdQd/DYsX8nEECtljqVoXmcDuu/grE3Bw+mMzcseVTONOSmkyro2jSPI7hG1T2yMcbGKPAYVG794ePay5JVk9wzP4LfyVd8O2fyOTAAAAAASUVORK5CYII="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPElEQVQ4y9VUIU4EQRDc2YWEQAiCgDnXZboEP8DzASyGX3RrnkEC6gyaMxiCwvMEDB5HSJbszOze7ZHA7LmbpE1nura6qnaqamsP6OsVhDbqTTpxWD0VvRLtwCJggwE49QoZjgCPQT+MwD1DtZA+Usg2s6rz0D1oLehPoF+tAIV0z4s1rJNudgH6M+jfotZC7VHUDiKwWsiM/wHUXqORGSeg30Ij24euHyXQgrWXog+rpfWjrjYHvQXtUpI0jagVOj2Ozg6SfrME6IvMMvQEijM5rMchPm+gvUN9Vxh1rCdlU9byKGqvoH+Bvr952JOrTR6+yVG6A/0c9DPQwkTAZfa6oIvaImvZ1Sfopxv93xKzlxwX2jXoH6C9QO1oImDUrnc/rBg0E/reZA1/59My2w1N+eN5CzmfW/Ay/wCGuJmYU2Vi8wAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/d8057/tablet-up-right-light.webp 100w,/static/cbe55397701d98350ccc85d7f0be6645/2e34e/tablet-up-right-light.webp 200w,/static/cbe55397701d98350ccc85d7f0be6645/416c3/tablet-up-right-light.webp 400w,/static/cbe55397701d98350ccc85d7f0be6645/c1587/tablet-up-right-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/403a6/phone-small-up-right-light.webp 75w,/static/328f1a2fa1ad95d13e4da2655732387e/94723/phone-small-up-right-light.webp 150w,/static/328f1a2fa1ad95d13e4da2655732387e/89bd1/phone-small-up-right-light.webp 300w,/static/328f1a2fa1ad95d13e4da2655732387e/745da/phone-small-up-right-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png"
-            data-srcset="/static/328f1a2fa1ad95d13e4da2655732387e/ed81f/phone-small-up-right-light.png 75w,/static/328f1a2fa1ad95d13e4da2655732387e/c1db7/phone-small-up-right-light.png 150w,/static/328f1a2fa1ad95d13e4da2655732387e/22008/phone-small-up-right-light.png 300w,/static/328f1a2fa1ad95d13e4da2655732387e/0cb8e/phone-small-up-right-light.png 600w"
+            data-src="/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png"
+            data-srcset="/static/cbe55397701d98350ccc85d7f0be6645/15e42/tablet-up-right-light.png 100w,/static/cbe55397701d98350ccc85d7f0be6645/5aead/tablet-up-right-light.png 200w,/static/cbe55397701d98350ccc85d7f0be6645/d6138/tablet-up-right-light.png 400w,/static/cbe55397701d98350ccc85d7f0be6645/b7804/tablet-up-right-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>
@@ -2478,56 +2087,39 @@ exports[`Cover component renders lines image with third peach rule correctly 1`]
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
         <div
-          style="max-width: 300px; display: block;"
+          style="max-width: 400px; display: block;"
         >
           <img
             alt=""
             aria-hidden="true"
             role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='90' width='300' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg height='400' width='400' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
             style="max-width: 100%; display: block; position: static;"
           />
         </div>
-        <picture>
-          <source
-            media="(min-width: 48em)"
-            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
-          />
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAElEQVQY001RMUoEQRCcu1MzMwWjC7pAuiJBxMwX+AHR1B8IYtfl5sbiA0wNxUjFTIxNzUQEzdWT6d293aCome6eaqaqgCrwKMmJKNacJ+YxAjWy2u+Q8ypZY95XQFl9Y4zSC3mcgLoBddDVrBVo+RTUA6hzuNYGS6agvkEd1tlu4w6oeQdz3cG1D2oDrjGoi2Ef1B+oFzAe4fEOxhyus16Q2oXr16hPUM8pykiA8dWw7kFtgjoGdQvGGzw+QL3CdWkeq+YpmN/ZBvXTbt8CNYVrBsY1GE/mujLGeu9zYgmuZWOMFxZxIZjFPaOO0A30pg99rEFNrAZVe94E0QVX8Q8Y+IETPyH4HgAAAABJRU5ErkJggg=="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-        </picture>
+        <img
+          alt=""
+          aria-hidden="true"
+          data-placeholder-image=""
+          decoding="async"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6ElEQVQ4y+2SMWoDQQxFd9ch6XICF0GfEH0HXLryIVKkSRtyBRf6dU4QfCG3vobJAVK6spnZ2dhFIGPX++HDIDQPIf2mGTVq1BUClW2MxsobjN96BaA0ezHVgurgMQHj5gStBqoxT9DoErB/9xOegdqh9q8sN6YPGXAL6tFcS1BvYKxAbYwxH8A1E3al+RXUzhgHUOf+BvVwCTD52TyD9qC+QK3g8WEeC1B3F+8Q1LpM83Laqf50DXAG1w9c236P0eXrpit7vnZOgnl9bJ7KdDt4TAugHfJn5fLVsj5/7+b6BON+yOW1OgI5+mZimksykgAAAABJRU5ErkJggg=="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
         <picture>
           <source
             data-srcset="/static/7dee23ecee38895f2753e1e03c366251/d8057/tablet-down-left-light.webp 100w,/static/7dee23ecee38895f2753e1e03c366251/2e34e/tablet-down-left-light.webp 200w,/static/7dee23ecee38895f2753e1e03c366251/416c3/tablet-down-left-light.webp 400w,/static/7dee23ecee38895f2753e1e03c366251/c1587/tablet-down-left-light.webp 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-            type="image/webp"
-          />
-          <source
-            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
-            media="(min-width: 48em)"
-            sizes="(min-width: 300px) 300px, 100vw"
-          />
-          <source
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/403a6/phone-small-down-left-light.webp 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/94723/phone-small-down-left-light.webp 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/89bd1/phone-small-down-left-light.webp 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/745da/phone-small-down-left-light.webp 600w"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             type="image/webp"
           />
           <img
             alt=""
             data-gatsby-image-ssr=""
             data-main-image=""
-            data-src="/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png"
-            data-srcset="/static/c648c61c6cfdd60eeb112de69afeda0c/ed81f/phone-small-down-left-light.png 75w,/static/c648c61c6cfdd60eeb112de69afeda0c/c1db7/phone-small-down-left-light.png 150w,/static/c648c61c6cfdd60eeb112de69afeda0c/22008/phone-small-down-left-light.png 300w,/static/c648c61c6cfdd60eeb112de69afeda0c/0cb8e/phone-small-down-left-light.png 600w"
+            data-src="/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png"
+            data-srcset="/static/7dee23ecee38895f2753e1e03c366251/15e42/tablet-down-left-light.png 100w,/static/7dee23ecee38895f2753e1e03c366251/5aead/tablet-down-left-light.png 200w,/static/7dee23ecee38895f2753e1e03c366251/d6138/tablet-down-left-light.png 400w,/static/7dee23ecee38895f2753e1e03c366251/b7804/tablet-down-left-light.png 800w"
             decoding="async"
             role="presentation"
-            sizes="(min-width: 300px) 300px, 100vw"
+            sizes="(min-width: 400px) 400px, 100vw"
             style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
           />
         </picture>

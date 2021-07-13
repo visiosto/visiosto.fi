@@ -7,7 +7,7 @@ exports[`Localized anchor link button component renders correctly 1`] = `
     href="/kayttoehdot#portfolio"
   >
     <span
-      class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+      class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
     >
       A link
     </span>

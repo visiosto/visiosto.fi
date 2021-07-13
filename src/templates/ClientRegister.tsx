@@ -80,7 +80,7 @@ function Page({ data, pageContext }) {
     <Layout locale={locale} pageID={pageID} title={page.title}>
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <Separator>
-        <Rule color="peach" mode={1} />
+        <Rule color="peach" mode={1} ignoreColorScheme />
       </Separator>
       <H2>{intl('clientRegisterFormTitle')}</H2>
       {clientType === 'business' ? (

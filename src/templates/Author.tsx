@@ -50,6 +50,7 @@ const Div = styled.div`
 
 const SocialMediaDiv = styled(Div)`
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
@@ -83,6 +84,10 @@ const TwitterImage = styled(SocialMediaImage)`
   @media screen and (prefers-color-scheme: dark) {
     filter: invert(100%);
   }
+`;
+
+const TitleP = styled.p`
+  margin: 0.5rem 0 0;
 `;
 
 const H2 = styled.h2`
@@ -260,7 +265,7 @@ function Page({ data, pageContext }) {
           if (author.linkedin) {
             return (
               <a
-                href={`https://linkedin.com/${author.linkedin}`}
+                href={`https://linkedin.com/in/${author.linkedin}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -296,9 +301,9 @@ function Page({ data, pageContext }) {
         })()}
       </SocialMediaDiv>
       <Div>
-        <p>{author.job}</p>
+        <TitleP>{author.job}</TitleP>
         {author.position.map((position) => (
-          <p key={position}>{position}</p>
+          <TitleP key={position}>{position}</TitleP>
         ))}
       </Div>
       <Div dangerouslySetInnerHTML={{ __html: author.description.childMarkdownRemark.html }} />
@@ -374,7 +379,10 @@ export const pageQuery = graphql`
           html
         }
       }
+      facebook
+      instagram
       job
+      linkedin
       name
       position
       twitter

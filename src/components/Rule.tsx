@@ -13,62 +13,62 @@ const useRuleImages = function useRuleImageDataWithStaticQuery(ruleType) {
   const data = useStaticQuery(
     graphql`
       {
-        blueRule1: file(relativePath: { eq: "rule/blue-rule-1.png" }) {
+        blueRule1: file(relativePath: { eq: "rule/blue-1.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        lightBlueRule1: file(relativePath: { eq: "rule/light-blue-rule-1.png" }) {
+        turquoiseRule1: file(relativePath: { eq: "rule/turquoise-1.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        peachRule1: file(relativePath: { eq: "rule/peach-rule-1.png" }) {
+        brownRule1: file(relativePath: { eq: "rule/brown-1.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        creamRule1: file(relativePath: { eq: "rule/cream-rule-1.png" }) {
+        peachRule1: file(relativePath: { eq: "rule/peach-1.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        blueRule2: file(relativePath: { eq: "rule/blue-rule-2.png" }) {
+        blueRule2: file(relativePath: { eq: "rule/blue-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        lightBlueRule2: file(relativePath: { eq: "rule/light-blue-rule-2.png" }) {
+        turquoiseRule2: file(relativePath: { eq: "rule/turquoise-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        peachRule2: file(relativePath: { eq: "rule/peach-rule-2.png" }) {
+        brownRule2: file(relativePath: { eq: "rule/brown-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        creamRule2: file(relativePath: { eq: "rule/cream-rule-2.png" }) {
+        peachRule2: file(relativePath: { eq: "rule/peach-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        blueRule3: file(relativePath: { eq: "rule/blue-rule-3.png" }) {
+        blueRule3: file(relativePath: { eq: "rule/blue-3.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        lightBlueRule3: file(relativePath: { eq: "rule/light-blue-rule-3.png" }) {
+        turquoiseRule3: file(relativePath: { eq: "rule/turquoise-3.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        peachRule3: file(relativePath: { eq: "rule/peach-rule-3.png" }) {
+        brownRule3: file(relativePath: { eq: "rule/brown-3.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
         }
-        creamRule3: file(relativePath: { eq: "rule/cream-rule-3.png" }) {
+        peachRule3: file(relativePath: { eq: "rule/peach-3.png" }) {
           childImageSharp {
             gatsbyImageData(width: 250, height: 50, layout: FIXED, placeholder: BLURRED)
           }
@@ -80,24 +80,24 @@ const useRuleImages = function useRuleImageDataWithStaticQuery(ruleType) {
     case 3:
       return {
         blueRule: data.blueRule3,
-        lightBlueRule: data.lightBlueRule3,
+        turquoiseRule: data.turquoiseRule3,
         peachRule: data.peachRule3,
-        creamRule: data.creamRule3,
+        brownRule: data.brownRule3,
       };
     case 2:
       return {
         blueRule: data.blueRule2,
-        lightBlueRule: data.lightBlueRule2,
+        turquoiseRule: data.turquoiseRule2,
         peachRule: data.peachRule2,
-        creamRule: data.creamRule2,
+        brownRule: data.brownRule2,
       };
     case 1:
     default:
       return {
         blueRule: data.blueRule1,
-        lightBlueRule: data.lightBlueRule1,
+        turquoiseRule: data.turquoiseRule1,
         peachRule: data.peachRule1,
-        creamRule: data.creamRule1,
+        brownRule: data.brownRule1,
       };
   }
 };
@@ -107,24 +107,77 @@ const Div = styled.div`
   justify-content: center;
 `;
 
-const propTypes = { color: PropTypes.oneOf(['blue', 'peach']), mode: PropTypes.oneOf([1, 2, 3]) };
+const propTypes = {
+  color: PropTypes.oneOf(['blue', 'turquoise', 'brown', 'peach']),
+  ignoreColorScheme: PropTypes.bool,
+  mode: PropTypes.oneOf([1, 2, 3]),
+};
 
-const defaultProps = { color: 'blue', mode: 1 };
+const defaultProps = { color: 'blue', ignoreColorScheme: false, mode: 1 };
 
-function Rule({ color, mode }) {
-  const { blueRule, lightBlueRule, peachRule, creamRule } = useRuleImages(mode);
+function Rule({ color, ignoreColorScheme, mode }) {
+  const { blueRule, turquoiseRule, brownRule, peachRule } = useRuleImages(mode);
 
-  if (color === 'peach') {
+  if (color === 'blue') {
+    if (ignoreColorScheme) {
+      return (
+        <Div>
+          <SchemedImage alt="" dark={getImage(blueRule)!} light={getImage(blueRule)!} />
+        </Div>
+      );
+    }
+
     return (
       <Div>
-        <SchemedImage alt="" dark={getImage(creamRule)!} light={getImage(peachRule)!} />
+        <SchemedImage alt="" dark={getImage(turquoiseRule)!} light={getImage(blueRule)!} />
       </Div>
     );
   }
-  if (color === 'blue') {
+
+  if (color === 'turqoise') {
+    if (ignoreColorScheme) {
+      return (
+        <Div>
+          <SchemedImage alt="" dark={getImage(turquoiseRule)!} light={getImage(turquoiseRule)!} />
+        </Div>
+      );
+    }
+
     return (
       <Div>
-        <SchemedImage alt="" dark={getImage(lightBlueRule)!} light={getImage(blueRule)!} />
+        <SchemedImage alt="" dark={getImage(turquoiseRule)!} light={getImage(blueRule)!} />
+      </Div>
+    );
+  }
+
+  if (color === 'brown') {
+    if (ignoreColorScheme) {
+      return (
+        <Div>
+          <SchemedImage alt="" dark={getImage(brownRule)!} light={getImage(brownRule)!} />
+        </Div>
+      );
+    }
+
+    return (
+      <Div>
+        <SchemedImage alt="" dark={getImage(peachRule)!} light={getImage(brownRule)!} />
+      </Div>
+    );
+  }
+
+  if (color === 'peach') {
+    if (ignoreColorScheme) {
+      return (
+        <Div>
+          <SchemedImage alt="" dark={getImage(peachRule)!} light={getImage(peachRule)!} />
+        </Div>
+      );
+    }
+
+    return (
+      <Div>
+        <SchemedImage alt="" dark={getImage(peachRule)!} light={getImage(brownRule)!} />
       </Div>
     );
   }

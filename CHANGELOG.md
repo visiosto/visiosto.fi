@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.23.0] - 2021-07-13
+
+### Added
+
+- Link to the front page of the current locale to the logo in the footer.
+- Link to the online store of the company to the footer.
+- LinkedIn, Facebook, and Instagram links to the author pages.
+
+### Changed
+
+- Brand colours of the company.
+- Background images of the navigation to the new brand colours.
+- Background colours of the switch inputs.
+- Colours of the images in the cover components to the new brand colours.
+- Colours of the images in the rule components to the new brand colours.
+- Layout of the authors page.
+- Mobile margins of the footer links to be smaller.
+
+### Fixed
+
+- Google Analytics toggle in the cookie settings.
+- LinkedIn links in the author pages.
+- Direction of the social media links on individual author pages.
+- Margins of the jobs and positions of individual author pages.
+
 ## [0.22.1] - 2021-07-12
 
 ### Fixed
@@ -598,7 +623,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.22.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.23.0...HEAD
+[0.23.0]: https://github.com/visiosto/visiosto-website/compare/v0.22.1...v0.23.0
 [0.22.1]: https://github.com/visiosto/visiosto-website/compare/v0.22.0...v0.22.1
 [0.22.0]: https://github.com/visiosto/visiosto-website/compare/v0.21.0...v0.22.0
 [0.21.0]: https://github.com/visiosto/visiosto-website/compare/v0.20.1...v0.21.0

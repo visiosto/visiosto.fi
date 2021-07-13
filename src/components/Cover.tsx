@@ -4,13 +4,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage, withArtDirection } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
 
 import Rule from './Rule';
 import SchemedImage from './SchemedImage';
-
-import theme from '../theme';
 
 const Section = styled.section`
   overflow: hidden;
@@ -116,111 +114,53 @@ const useCoverImages = function useCoverImagesQueryData(imagesType) {
   const data = useStaticQuery(
     graphql`
       {
-        lensTopPhoneSmallLight: file(
-          relativePath: { eq: "front-page/cover/phone-small-up-left-light.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
-        lensTopPhoneSmallDark: file(
-          relativePath: { eq: "front-page/cover/phone-small-up-left-dark.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
         lensTopTabletLight: file(
-          relativePath: { eq: "front-page/cover/tablet-up-left-light.png" }
+          relativePath: { eq: "front-page/cover/tablet-up-blue-peach.png" }
         ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
-        lensTopTabletDark: file(relativePath: { eq: "front-page/cover/tablet-up-left-dark.png" }) {
+        lensTopTabletDark: file(
+          relativePath: { eq: "front-page/cover/tablet-up-turquoise-peach.png" }
+        ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
-          }
-        }
-        lensBottomPhoneSmallLight: file(
-          relativePath: { eq: "front-page/cover/phone-small-down-right-light.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
-        lensBottomPhoneSmallDark: file(
-          relativePath: { eq: "front-page/cover/phone-small-down-right-dark.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         lensBottomTabletLight: file(
-          relativePath: { eq: "front-page/cover/tablet-down-right-light.png" }
+          relativePath: { eq: "front-page/cover/tablet-down-blue-peach.png" }
         ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
         lensBottomTabletDark: file(
-          relativePath: { eq: "front-page/cover/tablet-down-right-dark.png" }
+          relativePath: { eq: "front-page/cover/tablet-down-turquoise-peach.png" }
         ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
-        linesTopPhoneSmallLight: file(
-          relativePath: { eq: "front-page/story/phone-small-up-right-light.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
-        linesTopPhoneSmallDark: file(
-          relativePath: { eq: "front-page/story/phone-small-up-right-dark.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
-        linesTopTabletLight: file(
-          relativePath: { eq: "front-page/story/tablet-up-right-light.png" }
-        ) {
+        linesTopTabletLight: file(relativePath: { eq: "front-page/story/tablet-up-blue.png" }) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
-        linesTopTabletDark: file(
-          relativePath: { eq: "front-page/story/tablet-up-right-dark.png" }
-        ) {
+        linesTopTabletDark: file(relativePath: { eq: "front-page/story/tablet-up-turquoise.png" }) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
-          }
-        }
-        linesBottomPhoneSmallLight: file(
-          relativePath: { eq: "front-page/story/phone-small-down-left-light.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
-          }
-        }
-        linesBottomPhoneSmallDark: file(
-          relativePath: { eq: "front-page/story/phone-small-down-left-dark.png" }
-        ) {
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: BLURRED)
           }
         }
         linesBottomTabletLight: file(
-          relativePath: { eq: "front-page/story/tablet-down-left-light.png" }
+          relativePath: { eq: "front-page/story/tablet-down-blue.png" }
         ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
           }
         }
         linesBottomTabletDark: file(
-          relativePath: { eq: "front-page/story/tablet-down-left-dark.png" }
+          relativePath: { eq: "front-page/story/tablet-down-turquoise.png" }
         ) {
           childImageSharp {
             gatsbyImageData(width: 400, placeholder: BLURRED)
@@ -232,45 +172,25 @@ const useCoverImages = function useCoverImagesQueryData(imagesType) {
 
   switch (imagesType) {
     case 'lens': {
-      const {
-        lensTopPhoneSmallLight,
-        lensTopPhoneSmallDark,
-        lensTopTabletLight,
-        lensTopTabletDark,
-        lensBottomPhoneSmallLight,
-        lensBottomPhoneSmallDark,
-        lensBottomTabletLight,
-        lensBottomTabletDark,
-      } = data;
+      const { lensTopTabletLight, lensTopTabletDark, lensBottomTabletLight, lensBottomTabletDark } =
+        data;
       return {
-        topPhoneSmallLight: lensTopPhoneSmallLight,
-        topPhoneSmallDark: lensTopPhoneSmallDark,
         topTabletLight: lensTopTabletLight,
         topTabletDark: lensTopTabletDark,
-        bottomPhoneSmallLight: lensBottomPhoneSmallLight,
-        bottomPhoneSmallDark: lensBottomPhoneSmallDark,
         bottomTabletLight: lensBottomTabletLight,
         bottomTabletDark: lensBottomTabletDark,
       };
     }
     case 'lines': {
       const {
-        linesTopPhoneSmallLight,
-        linesTopPhoneSmallDark,
         linesTopTabletLight,
         linesTopTabletDark,
-        linesBottomPhoneSmallLight,
-        linesBottomPhoneSmallDark,
         linesBottomTabletLight,
         linesBottomTabletDark,
       } = data;
       return {
-        topPhoneSmallLight: linesTopPhoneSmallLight,
-        topPhoneSmallDark: linesTopPhoneSmallDark,
         topTabletLight: linesTopTabletLight,
         topTabletDark: linesTopTabletDark,
-        bottomPhoneSmallLight: linesBottomPhoneSmallLight,
-        bottomPhoneSmallDark: linesBottomPhoneSmallDark,
         bottomTabletLight: linesBottomTabletLight,
         bottomTabletDark: linesBottomTabletDark,
       };
@@ -308,48 +228,15 @@ const propTypes = {
   imagesType: PropTypes.string.isRequired,
   rule: PropTypes.shape({
     color: PropTypes.string.isRequired,
+    ignoreColorScheme: PropTypes.bool,
     mode: PropTypes.number.isRequired,
   }).isRequired,
   title: PropTypes.string.isRequired,
 };
 
 function Cover({ children, imagesType, rule, title }) {
-  const {
-    topPhoneSmallLight,
-    topPhoneSmallDark,
-    topTabletLight,
-    topTabletDark,
-    bottomPhoneSmallLight,
-    bottomPhoneSmallDark,
-    bottomTabletLight,
-    bottomTabletDark,
-  } = useCoverImages(imagesType);
-
-  const imagesTopLight = withArtDirection(getImage(topPhoneSmallLight)!, [
-    {
-      media: `(${theme.devices.tablet})`,
-      image: getImage(topTabletLight)!,
-    },
-  ]);
-  const imagesTopDark = withArtDirection(getImage(topPhoneSmallDark)!, [
-    {
-      media: `(${theme.devices.tablet})`,
-      image: getImage(topTabletDark)!,
-    },
-  ]);
-
-  const imagesBottomLight = withArtDirection(getImage(bottomPhoneSmallLight)!, [
-    {
-      media: `(${theme.devices.tablet})`,
-      image: getImage(bottomTabletLight)!,
-    },
-  ]);
-  const imagesBottomDark = withArtDirection(getImage(bottomPhoneSmallDark)!, [
-    {
-      media: `(${theme.devices.tablet})`,
-      image: getImage(bottomTabletDark)!,
-    },
-  ]);
+  const { topTabletLight, topTabletDark, bottomTabletLight, bottomTabletDark } =
+    useCoverImages(imagesType);
 
   const topStyles = useTopImageStyle(imagesType);
   const bottomStyles = useBottomImageStyle(imagesType);
@@ -357,13 +244,24 @@ function Cover({ children, imagesType, rule, title }) {
   return (
     <Section>
       <TopRuleWrapper>
-        <Rule color={rule.color} mode={rule.mode} />
+        {(() => {
+          if (rule.ignoreColorScheme) {
+            return <Rule color={rule.color} mode={rule.mode} ignoreColorScheme />;
+          }
+
+          return <Rule color={rule.color} mode={rule.mode} />;
+        })()}
       </TopRuleWrapper>
       <ImageWrapper
         right={topStyles.right !== undefined ? topStyles.right : undefined}
         top={topStyles.top !== undefined ? topStyles.top : undefined}
       >
-        <Image alt="" dark={imagesTopDark} light={imagesTopLight} objectFit="cover" />
+        <Image
+          alt=""
+          dark={getImage(topTabletDark)!}
+          light={getImage(topTabletLight)!}
+          objectFit="cover"
+        />
       </ImageWrapper>
       <Inner>
         <header>
@@ -376,7 +274,12 @@ function Cover({ children, imagesType, rule, title }) {
         left={bottomStyles.left !== undefined ? bottomStyles.left : undefined}
         right={bottomStyles.right !== undefined ? bottomStyles.right : undefined}
       >
-        <Image alt="" dark={imagesBottomDark} light={imagesBottomLight} objectFit="cover" />
+        <Image
+          alt=""
+          dark={getImage(bottomTabletDark)!}
+          light={getImage(bottomTabletLight)!}
+          objectFit="cover"
+        />
       </ImageWrapper>
     </Section>
   );

@@ -8,6 +8,7 @@ export default {
   footerVatNumber: 'ALV-numero:',
   footerManagement: 'Hallinto',
   footerPricing: 'Hinnasto',
+  footerOnlineStore: 'Verkkokauppa',
   footerDataProtection: 'Tietosuoja',
   footerTermsOfUse: 'Käyttöehdot',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',

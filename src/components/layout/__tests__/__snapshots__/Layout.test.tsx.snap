@@ -3,13 +3,13 @@
 exports[`Layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-jffHpj sUMAT"
+    class="sc-iNiQyp iendsd"
   >
     <div
-      class="sc-hhIiOg hAGexx"
+      class="sc-oeezt dUYRzM"
     >
       <p
-        class="sc-oeezt dbzNXk"
+        class="sc-eJocfa idIbMJ"
         role="heading"
       >
         Visiosto
@@ -18,7 +18,7 @@ exports[`Layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eirqVv iTAoZs"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hhIiOg rvkIb"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -85,250 +85,78 @@ exports[`Layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-bBjRSN kyuiAB"
+      class="sc-cOifOu fKvNYN"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-cOifOu fhFhb"
+        class="sc-Arkif gAiBVx"
       >
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
         <div
-          class="sc-Arkif ijVKiu"
+          class="sc-khIgEk bgomuq"
         />
       </div>
       <ul
-        class="sc-khIgEk OcPxY"
+        class="sc-hTRkXV xosFA"
         id="primary-menu"
       >
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-laZMeE dUWYfs"
+            class="sc-gSYDnn kjPPdM"
             href="/"
           >
             Etusivu
-            <div
-              class="sc-jgPyTC exOzxL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gSYDnn loBMnX"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light-1.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light-1.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light-1.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-iNiQyp kZnfCA"
+            class="sc-laZMeE gPctwz"
             href="/#portfolio"
           >
             Portfolio
-            <div
-              class="sc-jgPyTC exOzxL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gSYDnn loBMnX"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaklEQVQoz11Sq04EQRDcBwgI30CCQPEFJwkKh7gEc5J/wCEAg0GDJghICJaEDyBoEjBTSZfrdggSOA44Mj0zu3cnZrPpqa6unqoqUKtAq0BrQKuR/qsgXT2eNlDrVLdYb4J4rdx3J37q1Kx9s8R/jc01pB+QsFaVGsSHNPOEktWI7gTRDW8UbTti8YZhELsB7Qm0h0C9CLQhFhRGUVHFMmgXoE1BewZtMwEcvOoEovFuGiSdjJ2CehWoA4jjupUPMmASqLHhHbRriF6C9uJEtDFo346L5E6sP/nuA6KvoG1BksJ1iN5m0gj6BbVTEUTHnSKxc9BOQXtLGJ1A9C8P2nPCtLu7ezRLVFbMKqLSUTLOn2Ib9E2+Au0zDz4spjToozMA7RhidxC9B+0MtP1oEFKM2uz4GmiPmHtP240cxeG6ZLBEKHR57LO4kLkRaCdpqKtbCdmUTKAl3EuetzSgXSTyYM9kMeezy+E/7NRVa5TyOTAAAAAASUVORK5CYII="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/c2036/background-hover-light-2.webp 150w,/static/481b91191af955c7a2d8b2258ae98d84/77dc5/background-hover-light-2.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png 150w,/static/481b91191af955c7a2d8b2258ae98d84/42407/background-hover-light-2.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-iNiQyp kZnfCA"
+            class="sc-laZMeE gPctwz"
             href="/#yhteystiedot"
           >
             Yhteystiedot
-            <div
-              class="sc-jgPyTC exOzxL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gSYDnn loBMnX"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVQoz21Su0olQRS8L01MFhH9AhMjA8FwkwU/wMREQcHAzMBAMNhg8Q/M3WSjDfwA/8HIwOAUnDI6hYImiq/rle7pGWfgDhQz3X26Tp2a6oHRA9Uzr94tDMxjAKpfrSPX5LpSO/WBKyFd/JNgHutgzGaSbpM+GMNUa93GXfKycQBqAtckvY26AnVq1G+4lkHNti8Xwn57qlp9WmyZx4d5PINK+Mzk33gyjxtQ/+CxD2rVqJma2Krpho1SeKw0JB41yTuoN1Afrb0aY1DXoLaNmsuWtUeH64cxjkGdgfprjPs8dkU0NkYifgX1UhrVZwlJ+TmoQ1ALVgh7TZfqew3UBahHY0wSanVWkSV7XuFZaVv5XqWw8iJ5MDRPRueIpKgswrVp1BGoE2Ncgrrrkmflk2wN9bMQRqOu/LVB44m3opPzp3lj7BjjP1y3hezBPH514oMpucoqPasemceoa35usgRqF9RGOcsx+gJM/ETyfBmUmQAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/c2036/background-hover-light-3.webp 150w,/static/8b7a9249fe146349ae3379ea736b1d37/77dc5/background-hover-light-3.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png 150w,/static/8b7a9249fe146349ae3379ea736b1d37/42407/background-hover-light-3.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
-          class="sc-hTRkXV SzkcB"
+          class="sc-jgPyTC bbOXhF"
         >
           <a
-            class="sc-laZMeE dUWYfs"
+            class="sc-gSYDnn kjPPdM"
             href="/blogi"
           >
             Blogi
-            <div
-              class="sc-jgPyTC exOzxL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gSYDnn loBMnX"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQoz01SPYsUURCcnUMj0wMD5UwEDTczNDIxMzMUBDHQ3OB+wYGxoVwmYuxvMDAWpEu6si4UFBG8vd2Zk36vZ8+g6Zl63dVfNcA1GGOAx4j0VNpdUEfWv1eFDf09VuYxGHXVGGtQa+S/d7yTUQeVdBuu96B2oM6N8TzxDPyfuAjfweMCrr/mcb9jMebjQQU8NMYW1AWoqftwuF7AdaVIR1CvQL0B9bPFeIv/DOpRFltGWZvH1yLbGDUX6VQJj3M18FjB4yOo32AkvjPGWeW9LsK2l+MEjTqrwLmCdg13fat9PQH1wzyWKebq8gs8jpJraJWpW6C+V/JkjIVwvhxfmySyvrep8Cy4AXVieVzPDttu4maOYX282bwRnlfCYvXW1rBbCpnr1PqVx2xuKGlcN8avpZPye7O+hm0zj6lG3sL11hiHqRRzraxGHksOz/ZVe/Ino56C+gDqT3W/WB7wXqmja7Mkdakrb+K+A0ZK4ngJ6NfVjTyIebwE9QDUNet52cyeLAn/Ac60d+1M7zXvAAAAAElFTkSuQmCC"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/c2036/background-hover-light-4.webp 150w,/static/367341218f130dd858968d8b98b1e974/77dc5/background-hover-light-4.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png 150w,/static/367341218f130dd858968d8b98b1e974/42407/background-hover-light-4.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
       </ul>
     </nav>
     <div
-      class="sc-lbVvki fDBQtS"
+      class="sc-eirqVv klAfEd"
     />
   </header>
   <main>
     <section>
       <header>
         <h1
-          class="sc-ckTSus dyLlkT"
+          class="sc-gGLxEB fsvsKp"
         >
           Hallinto
         </h1>
@@ -388,54 +216,58 @@ exports[`Layout component renders correctly 1`] = `
     <div
       class="sc-bYwzuL sc-kLojOw dBCgvG jvKZKz"
     >
-      <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iklJeh kcSjBx"
-        data-gatsby-image-wrapper=""
-        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      <a
+        href="/"
       >
         <div
-          style="max-width: 160px; display: block;"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iklJeh kcSjBx"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
+          <div
+            style="max-width: 160px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='160' width='160' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
           <img
             alt=""
             aria-hidden="true"
-            role="presentation"
-            src="data:image/svg+xml;charset=utf-8,%3Csvg height='160' width='160' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
-            style="max-width: 100%; display: block; position: static;"
-          />
-        </div>
-        <img
-          alt=""
-          aria-hidden="true"
-          data-placeholder-image=""
-          decoding="async"
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAACxKAAAsSgF3enRNAAAENklEQVQ4y2VUW2xUVRS9LTUiQYkQhb7bs+fOnH2HllJSG6qo1KQ8RINGCGlaQcOjFSqEWnr3nulMS+fV8tZagsESbEgrJgrxR4Mx/PCrv/75wZfxx0/LTO8x+86doYkfZ+7JnH3W2Y+1lgXIVrAqn+5pGyBdBuS7gHwHNM+BpjlAXlCaFgE5CZrrJFZpqlDIFUqTBZotS2kfZFUAVgXIVwH5PiD3AXK1QrLKD8klpGZA/hSQHyik00ECsipkbymkyuDSekD+GZBHJKAEpDQ9A0gbAXkDaFpVAlDIq5WmG4D0tR8XPOq/qjRVBWAH5M8X6kYtvZmjtsMzIYd/tx1+HEL+G5DTtuNffHbFgylAvh7gVMqPrCuAfE4CXmpyrU3KHWwM01JdiEy9TWaTcv1vc4S+aYqQVQPuin5LdjQPmvpLGbYD0n15YWOzazXYNPjGq2OmqzNu9vckn+zZmSgMHJws7O1Oms1bYn/VgNtlrftMgPYAcpsMAjTVBhU+JweXALlf+tKyJebUhtyloUOTJnUiU/jybM7c5mkvO5gxUyezy693jZm6EC1JGwDZAPIjnx1+lTwFyIel3G+VphpJNxzlL6qVa3r3TTz5bvyCGe5LedMns97kiYw3fixjdnSNLUvpIWSjNHuAJKC7g9Lle124c8cfu6Yq2+HfasA1e7uThUfXrnjHPzhvrpzOmc/P5LyFxAVve2fcNIbJsx0uAHJeaR/wYgDYBEjzspkr8ohfBuTHjWEyHR3x5fjHaW/nawkzeTxjZodzZrg/Zdq2xkoD8pSmPPiZ0t0AcLXS/KNw6lbQ2PVK059STp1Nyx0dcW92eMoMHJg0l4ay5kxvyqQHMoaOpOXrNUWKgL6SitxcqzT9ICNfAF2mwEPbYcmi8F7PuF+m9PLchynz/q5xI30UsFvutHFaY/nmiN9PDipEhXxbkBcAKRIADoeKgE/2vZU0N0amvOTRtHd5KGuO7D9vhg5Neu7htHf1dM6Ltsa85ggt2w63FiXJB4TPUmockM8GBF1nO/yHTHp/T3LpfuqiJ6Bz7pQ30p/ypOzcJ1lvMXHhX2xh0xShmRfrRwMt803hpoBUi9AB+Xk5iES5vSFM/7Rvi5uJY5lC3zsTef4one/ekcjvejOR7393QjKVwfzatjW2RpSjkF8B5HsixxL6KaXppqQednw+YmOEHspEa0NkJGOZfkOYhNiFDQ2jovE1Itt623eZB6C5qyg95Iqgf18BUlaCQg5biaPpimhrrMd2eDoc5cUQ8rztsBttjbVYlWdLxiB3vwekU6pobat8H/OdozjpGaGB0tQQBAQeyP9fmjoB+RfQfKps0NovmZ9m6YNSLyD/FCjgbUBWoHktIK8DZAeQDwKyeOA90Lw9uFd2H6tkjmrlgabVgWPPAvK86B2QxfpvA/Jl0LS7nHnZdIvG+x8tXxbtjVsjWwAAAABJRU5ErkJggg=="
-          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-        />
-        <picture>
-          <source
-            data-srcset="/static/12c8930996726e57eb384915656e7098/e73fe/logo-light.webp 40w,/static/12c8930996726e57eb384915656e7098/61ca6/logo-light.webp 80w,/static/12c8930996726e57eb384915656e7098/60b4d/logo-light.webp 160w,/static/12c8930996726e57eb384915656e7098/5e011/logo-light.webp 320w"
-            sizes="(min-width: 160px) 160px, 100vw"
-            type="image/webp"
-          />
-          <img
-            alt="Visioston logo"
-            data-gatsby-image-ssr=""
-            data-main-image=""
-            data-src="/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png"
-            data-srcset="/static/12c8930996726e57eb384915656e7098/f31ef/logo-light.png 40w,/static/12c8930996726e57eb384915656e7098/1f8a1/logo-light.png 80w,/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png 160w,/static/12c8930996726e57eb384915656e7098/5f035/logo-light.png 320w"
+            data-placeholder-image=""
             decoding="async"
-            sizes="(min-width: 160px) 160px, 100vw"
-            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAACxKAAAsSgF3enRNAAAENklEQVQ4y2VUW2xUVRS9LTUiQYkQhb7bs+fOnH2HllJSG6qo1KQ8RINGCGlaQcOjFSqEWnr3nulMS+fV8tZagsESbEgrJgrxR4Mx/PCrv/75wZfxx0/LTO8x+86doYkfZ+7JnH3W2Y+1lgXIVrAqn+5pGyBdBuS7gHwHNM+BpjlAXlCaFgE5CZrrJFZpqlDIFUqTBZotS2kfZFUAVgXIVwH5PiD3AXK1QrLKD8klpGZA/hSQHyik00ECsipkbymkyuDSekD+GZBHJKAEpDQ9A0gbAXkDaFpVAlDIq5WmG4D0tR8XPOq/qjRVBWAH5M8X6kYtvZmjtsMzIYd/tx1+HEL+G5DTtuNffHbFgylAvh7gVMqPrCuAfE4CXmpyrU3KHWwM01JdiEy9TWaTcv1vc4S+aYqQVQPuin5LdjQPmvpLGbYD0n15YWOzazXYNPjGq2OmqzNu9vckn+zZmSgMHJws7O1Oms1bYn/VgNtlrftMgPYAcpsMAjTVBhU+JweXALlf+tKyJebUhtyloUOTJnUiU/jybM7c5mkvO5gxUyezy693jZm6EC1JGwDZAPIjnx1+lTwFyIel3G+VphpJNxzlL6qVa3r3TTz5bvyCGe5LedMns97kiYw3fixjdnSNLUvpIWSjNHuAJKC7g9Lle124c8cfu6Yq2+HfasA1e7uThUfXrnjHPzhvrpzOmc/P5LyFxAVve2fcNIbJsx0uAHJeaR/wYgDYBEjzspkr8ohfBuTHjWEyHR3x5fjHaW/nawkzeTxjZodzZrg/Zdq2xkoD8pSmPPiZ0t0AcLXS/KNw6lbQ2PVK059STp1Nyx0dcW92eMoMHJg0l4ay5kxvyqQHMoaOpOXrNUWKgL6SitxcqzT9ICNfAF2mwEPbYcmi8F7PuF+m9PLchynz/q5xI30UsFvutHFaY/nmiN9PDipEhXxbkBcAKRIADoeKgE/2vZU0N0amvOTRtHd5KGuO7D9vhg5Neu7htHf1dM6Ltsa85ggt2w63FiXJB4TPUmockM8GBF1nO/yHTHp/T3LpfuqiJ6Bz7pQ30p/ypOzcJ1lvMXHhX2xh0xShmRfrRwMt803hpoBUi9AB+Xk5iES5vSFM/7Rvi5uJY5lC3zsTef4one/ekcjvejOR7393QjKVwfzatjW2RpSjkF8B5HsixxL6KaXppqQednw+YmOEHspEa0NkJGOZfkOYhNiFDQ2jovE1Itt623eZB6C5qyg95Iqgf18BUlaCQg5biaPpimhrrMd2eDoc5cUQ8rztsBttjbVYlWdLxiB3vwekU6pobat8H/OdozjpGaGB0tQQBAQeyP9fmjoB+RfQfKps0NovmZ9m6YNSLyD/FCjgbUBWoHktIK8DZAeQDwKyeOA90Lw9uFd2H6tkjmrlgabVgWPPAvK86B2QxfpvA/Jl0LS7nHnZdIvG+x8tXxbtjVsjWwAAAABJRU5ErkJggg=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
           />
-        </picture>
-        <noscript />
-        <script
-          type="module"
-        >
-          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-        </script>
-      </div>
+          <picture>
+            <source
+              data-srcset="/static/12c8930996726e57eb384915656e7098/e73fe/logo-light.webp 40w,/static/12c8930996726e57eb384915656e7098/61ca6/logo-light.webp 80w,/static/12c8930996726e57eb384915656e7098/60b4d/logo-light.webp 160w,/static/12c8930996726e57eb384915656e7098/5e011/logo-light.webp 320w"
+              sizes="(min-width: 160px) 160px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Visioston logo"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png"
+              data-srcset="/static/12c8930996726e57eb384915656e7098/f31ef/logo-light.png 40w,/static/12c8930996726e57eb384915656e7098/1f8a1/logo-light.png 80w,/static/12c8930996726e57eb384915656e7098/e9a79/logo-light.png 160w,/static/12c8930996726e57eb384915656e7098/5f035/logo-light.png 320w"
+              decoding="async"
+              sizes="(min-width: 160px) 160px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
+          </script>
+        </div>
+      </a>
       <h2>
         Visiosto oy
       </h2>
@@ -472,12 +304,23 @@ exports[`Layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-gXfVKN jtlYbB"
+        class="sc-gXfVKN kLZkhl"
       >
         <a
           href="/hinnasto"
         >
           Hinnasto
+        </a>
+      </p>
+      <p
+        class="sc-cBoqAE eCrDjz"
+      >
+        <a
+          href="https://reddyshop.co/visiosto"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Verkkokauppa
         </a>
       </p>
     </div>
@@ -489,7 +332,7 @@ exports[`Layout component renders correctly 1`] = `
         href="/en/management"
       >
         <span
-          class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+          class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
         >
           In English
         </span>
@@ -497,7 +340,7 @@ exports[`Layout component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-cBoqAE kVFQGZ"
+      class="sc-ciSkZP hueHuW"
     >
       Sosiaalisessa mediassa
     </h3>
@@ -509,7 +352,7 @@ exports[`Layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bYwzuL sc-ciSkZP dBCgvG eaTNjI"
+      class="sc-bYwzuL sc-jcwpoC dBCgvG ccQzeC"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -517,7 +360,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iTVJFM leJrwG kiJIBH"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iBzEeX bSEfTJ knLCbk"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -568,7 +411,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC leJrwG"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ bSEfTJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -619,7 +462,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-efHYUO leJrwG gHJUtd"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-cTJkRt bSEfTJ GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -670,7 +513,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-iBzEeX leJrwG knLCbk"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-efHYUO bSEfTJ gHJUtd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -721,7 +564,7 @@ exports[`Layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jcwpoC sc-carFqZ leJrwG fBVimv"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iTVJFM bSEfTJ jbfRaI"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -771,7 +614,7 @@ exports[`Layout component renders correctly 1`] = `
       class="sc-bYwzuL dBCgvG"
     >
       <p
-        class="sc-cTJkRt enkOPL"
+        class="sc-jNnpgg geTdwl"
       >
         <a
           href="/tietosuoja"
@@ -780,7 +623,7 @@ exports[`Layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-jNnpgg glXJvl"
+        class="sc-dPaNzc PeCie"
       >
         <span
           class="sc-iemWCZ iYwZvO"
@@ -809,12 +652,12 @@ exports[`Layout component renders correctly 1`] = `
               class="sc-gKAaRy hauOLa"
             >
               <span
-                class="sc-bdnxRM sc-dlnjwi eoyzcM fVmaTm"
+                class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
               >
                 Kiitos, hyväksyn evästeet
               </span>
               <span
-                class="sc-bdnxRM sc-gtsrHT eoyzcM corHfP"
+                class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
               >
                 Tarkistan evästeet ja säädän niitä
               </span>
@@ -823,7 +666,7 @@ exports[`Layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-dPaNzc dTszhl"
+        class="sc-bBjRSN eLelkl"
       >
         <a
           href="/kayttoehdot"

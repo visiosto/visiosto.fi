@@ -3,13 +3,13 @@
 exports[`Header component renders index page header correctly 1`] = `
 <div>
   <header
-    class="sc-pNWdM eBfxCT"
+    class="sc-iCoGMd gbktkU"
   >
     <div
-      class="sc-iqAclL kfZGVf"
+      class="sc-jrsJWt fnYqdT"
     >
       <h1
-        class="sc-jrsJWt iFxBRH"
+        class="sc-fujyAs ctfqjj"
       >
         Visiosto
       </h1>
@@ -17,7 +17,7 @@ exports[`Header component renders index page header correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crzoAE pmJyX"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-kEqXSa EATcC"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -109,218 +109,46 @@ exports[`Header component renders index page header correctly 1`] = `
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCoGMd gDYSwp"
+            class="sc-jSFjdj bKklDm"
             href="/"
           >
             Etusivu
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light-1.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light-1.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light-1.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-fujyAs eejiCo"
+            class="sc-gKAaRy gcdywK"
             href="/#portfolio"
           >
             Portfolio
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaklEQVQoz11Sq04EQRDcBwgI30CCQPEFJwkKh7gEc5J/wCEAg0GDJghICJaEDyBoEjBTSZfrdggSOA44Mj0zu3cnZrPpqa6unqoqUKtAq0BrQKuR/qsgXT2eNlDrVLdYb4J4rdx3J37q1Kx9s8R/jc01pB+QsFaVGsSHNPOEktWI7gTRDW8UbTti8YZhELsB7Qm0h0C9CLQhFhRGUVHFMmgXoE1BewZtMwEcvOoEovFuGiSdjJ2CehWoA4jjupUPMmASqLHhHbRriF6C9uJEtDFo346L5E6sP/nuA6KvoG1BksJ1iN5m0gj6BbVTEUTHnSKxc9BOQXtLGJ1A9C8P2nPCtLu7ezRLVFbMKqLSUTLOn2Ib9E2+Au0zDz4spjToozMA7RhidxC9B+0MtP1oEFKM2uz4GmiPmHtP240cxeG6ZLBEKHR57LO4kLkRaCdpqKtbCdmUTKAl3EuetzSgXSTyYM9kMeezy+E/7NRVa5TyOTAAAAAASUVORK5CYII="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/c2036/background-hover-light-2.webp 150w,/static/481b91191af955c7a2d8b2258ae98d84/77dc5/background-hover-light-2.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png 150w,/static/481b91191af955c7a2d8b2258ae98d84/42407/background-hover-light-2.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-fujyAs eejiCo"
+            class="sc-gKAaRy gcdywK"
             href="/#yhteystiedot"
           >
             Yhteystiedot
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVQoz21Su0olQRS8L01MFhH9AhMjA8FwkwU/wMREQcHAzMBAMNhg8Q/M3WSjDfwA/8HIwOAUnDI6hYImiq/rle7pGWfgDhQz3X26Tp2a6oHRA9Uzr94tDMxjAKpfrSPX5LpSO/WBKyFd/JNgHutgzGaSbpM+GMNUa93GXfKycQBqAtckvY26AnVq1G+4lkHNti8Xwn57qlp9WmyZx4d5PINK+Mzk33gyjxtQ/+CxD2rVqJma2Krpho1SeKw0JB41yTuoN1Afrb0aY1DXoLaNmsuWtUeH64cxjkGdgfprjPs8dkU0NkYifgX1UhrVZwlJ+TmoQ1ALVgh7TZfqew3UBahHY0wSanVWkSV7XuFZaVv5XqWw8iJ5MDRPRueIpKgswrVp1BGoE2Ncgrrrkmflk2wN9bMQRqOu/LVB44m3opPzp3lj7BjjP1y3hezBPH514oMpucoqPasemceoa35usgRqF9RGOcsx+gJM/ETyfBmUmQAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/c2036/background-hover-light-3.webp 150w,/static/8b7a9249fe146349ae3379ea736b1d37/77dc5/background-hover-light-3.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png 150w,/static/8b7a9249fe146349ae3379ea736b1d37/42407/background-hover-light-3.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCoGMd gDYSwp"
+            class="sc-jSFjdj bKklDm"
             href="/undefined"
           >
             Blogi
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQoz01SPYsUURCcnUMj0wMD5UwEDTczNDIxMzMUBDHQ3OB+wYGxoVwmYuxvMDAWpEu6si4UFBG8vd2Zk36vZ8+g6Zl63dVfNcA1GGOAx4j0VNpdUEfWv1eFDf09VuYxGHXVGGtQa+S/d7yTUQeVdBuu96B2oM6N8TzxDPyfuAjfweMCrr/mcb9jMebjQQU8NMYW1AWoqftwuF7AdaVIR1CvQL0B9bPFeIv/DOpRFltGWZvH1yLbGDUX6VQJj3M18FjB4yOo32AkvjPGWeW9LsK2l+MEjTqrwLmCdg13fat9PQH1wzyWKebq8gs8jpJraJWpW6C+V/JkjIVwvhxfmySyvrep8Cy4AXVieVzPDttu4maOYX282bwRnlfCYvXW1rBbCpnr1PqVx2xuKGlcN8avpZPye7O+hm0zj6lG3sL11hiHqRRzraxGHksOz/ZVe/Ino56C+gDqT3W/WB7wXqmja7Mkdakrb+K+A0ZK4ngJ6NfVjTyIebwE9QDUNet52cyeLAn/Ac60d+1M7zXvAAAAAElFTkSuQmCC"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/c2036/background-hover-light-4.webp 150w,/static/367341218f130dd858968d8b98b1e974/77dc5/background-hover-light-4.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png 150w,/static/367341218f130dd858968d8b98b1e974/42407/background-hover-light-4.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
       </ul>
     </nav>
     <div
-      class="sc-dIsUp ieTnyV"
+      class="sc-iqAclL slTds"
     />
   </header>
   ,
@@ -330,13 +158,13 @@ exports[`Header component renders index page header correctly 1`] = `
 exports[`Header component renders page header correctly 1`] = `
 <div>
   <header
-    class="sc-pNWdM eBfxCT"
+    class="sc-iCoGMd gbktkU"
   >
     <div
-      class="sc-iqAclL kfZGVf"
+      class="sc-jrsJWt fnYqdT"
     >
       <p
-        class="sc-kEqXSa rznkI"
+        class="sc-pNWdM gPjDgN"
         role="heading"
       >
         Visiosto
@@ -345,7 +173,7 @@ exports[`Header component renders page header correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-crzoAE pmJyX"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-kEqXSa EATcC"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -437,218 +265,46 @@ exports[`Header component renders page header correctly 1`] = `
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCoGMd gDYSwp"
+            class="sc-jSFjdj bKklDm"
             href="/"
           >
             Etusivu
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz21TPUtdURC87/kwnRCwsDKxEGwUxPwAU0gCKfIfQiBdfoyVoFVQmxT5B1ZCEAlCqhQ7ZIc0O2lCSOPH0xfOnnPznpILw13O3ZnZ3bO3A9XBozOPDtSgoWso8RDUnHnMldgYmf8vp8YLNVaXh8ZIEZsmDm2W1H8rxoyRuTbNY8eoLVBvzHVhHm9BjRqhVJikJfNYS1fXvFFPQb0E9RrUezCOQH0xjyu4xqBuzWMCqseLvoJ3oD7D9d08zkEdgPoK6ldJNMYEroRNyXcN12Bcl1xjPCti86AuSmJx6x1TJIlxWyoBdQPqMgU8Be7QOM1grxTXWZ3hx3Z4ZR5jS9dsaWxVcGrkrdra7h9QZ3DtgnpeBevwj/uWZuYxmRG6MY+fcJ2AOoVr36htoxbN9Qh1/uUeBv0MP7Uh/zDqN6hv2Z7Hh3Yp6ygX5Pc2oW1Ivkf9uuUNg3oCahnUhnkYqENzvTKP1YfkrKTu5rBUVA2mJvfcGlbM4/F/3AdJ9P5HUCJXrgi15y8I/F7LzI8l7wAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/c2036/background-hover-light-1.webp 150w,/static/0fe6f1e02402de875c446de52d67ed29/77dc5/background-hover-light-1.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png"
-                    srcset="/static/0fe6f1e02402de875c446de52d67ed29/6bf3d/background-hover-light-1.png 150w,/static/0fe6f1e02402de875c446de52d67ed29/42407/background-hover-light-1.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-fujyAs eejiCo"
+            class="sc-gKAaRy gcdywK"
             href="/#portfolio"
           >
             Portfolio
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABaklEQVQoz11Sq04EQRDcBwgI30CCQPEFJwkKh7gEc5J/wCEAg0GDJghICJaEDyBoEjBTSZfrdggSOA44Mj0zu3cnZrPpqa6unqoqUKtAq0BrQKuR/qsgXT2eNlDrVLdYb4J4rdx3J37q1Kx9s8R/jc01pB+QsFaVGsSHNPOEktWI7gTRDW8UbTti8YZhELsB7Qm0h0C9CLQhFhRGUVHFMmgXoE1BewZtMwEcvOoEovFuGiSdjJ2CehWoA4jjupUPMmASqLHhHbRriF6C9uJEtDFo346L5E6sP/nuA6KvoG1BksJ1iN5m0gj6BbVTEUTHnSKxc9BOQXtLGJ1A9C8P2nPCtLu7ezRLVFbMKqLSUTLOn2Ib9E2+Au0zDz4spjToozMA7RhidxC9B+0MtP1oEFKM2uz4GmiPmHtP240cxeG6ZLBEKHR57LO4kLkRaCdpqKtbCdmUTKAl3EuetzSgXSTyYM9kMeezy+E/7NRVa5TyOTAAAAAASUVORK5CYII="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/c2036/background-hover-light-2.webp 150w,/static/481b91191af955c7a2d8b2258ae98d84/77dc5/background-hover-light-2.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png"
-                    srcset="/static/481b91191af955c7a2d8b2258ae98d84/6bf3d/background-hover-light-2.png 150w,/static/481b91191af955c7a2d8b2258ae98d84/42407/background-hover-light-2.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-fujyAs eejiCo"
+            class="sc-gKAaRy gcdywK"
             href="/#yhteystiedot"
           >
             Yhteystiedot
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVQoz21Su0olQRS8L01MFhH9AhMjA8FwkwU/wMREQcHAzMBAMNhg8Q/M3WSjDfwA/8HIwOAUnDI6hYImiq/rle7pGWfgDhQz3X26Tp2a6oHRA9Uzr94tDMxjAKpfrSPX5LpSO/WBKyFd/JNgHutgzGaSbpM+GMNUa93GXfKycQBqAtckvY26AnVq1G+4lkHNti8Xwn57qlp9WmyZx4d5PINK+Mzk33gyjxtQ/+CxD2rVqJma2Krpho1SeKw0JB41yTuoN1Afrb0aY1DXoLaNmsuWtUeH64cxjkGdgfprjPs8dkU0NkYifgX1UhrVZwlJ+TmoQ1ALVgh7TZfqew3UBahHY0wSanVWkSV7XuFZaVv5XqWw8iJ5MDRPRueIpKgswrVp1BGoE2Ncgrrrkmflk2wN9bMQRqOu/LVB44m3opPzp3lj7BjjP1y3hezBPH514oMpucoqPasemceoa35usgRqF9RGOcsx+gJM/ETyfBmUmQAAAABJRU5ErkJggg=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/c2036/background-hover-light-3.webp 150w,/static/8b7a9249fe146349ae3379ea736b1d37/77dc5/background-hover-light-3.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png"
-                    srcset="/static/8b7a9249fe146349ae3379ea736b1d37/6bf3d/background-hover-light-3.png 150w,/static/8b7a9249fe146349ae3379ea736b1d37/42407/background-hover-light-3.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
         <li
           class="sc-eCApnc jNSuCc"
         >
           <a
-            class="sc-iCoGMd gDYSwp"
+            class="sc-jSFjdj bKklDm"
             href="/undefined"
           >
             Blogi
-            <div
-              class="sc-jSFjdj gIsZbL"
-            >
-              <div
-                class="gatsby-image-wrapper sc-gKAaRy dzLZyR"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 150px; height: 75px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQoz01SPYsUURCcnUMj0wMD5UwEDTczNDIxMzMUBDHQ3OB+wYGxoVwmYuxvMDAWpEu6si4UFBG8vd2Zk36vZ8+g6Zl63dVfNcA1GGOAx4j0VNpdUEfWv1eFDf09VuYxGHXVGGtQa+S/d7yTUQeVdBuu96B2oM6N8TzxDPyfuAjfweMCrr/mcb9jMebjQQU8NMYW1AWoqftwuF7AdaVIR1CvQL0B9bPFeIv/DOpRFltGWZvH1yLbGDUX6VQJj3M18FjB4yOo32AkvjPGWeW9LsK2l+MEjTqrwLmCdg13fat9PQH1wzyWKebq8gs8jpJraJWpW6C+V/JkjIVwvhxfmySyvrep8Cy4AXVieVzPDttu4maOYX282bwRnlfCYvXW1rBbCpnr1PqVx2xuKGlcN8avpZPye7O+hm0zj6lG3sL11hiHqRRzraxGHksOz/ZVe/Ino56C+gDqT3W/WB7wXqmja7Mkdakrb+K+A0ZK4ngJ6NfVjTyIebwE9QDUNet52cyeLAn/Ac60d+1M7zXvAAAAAElFTkSuQmCC"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    sizes="150px"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/c2036/background-hover-light-4.webp 150w,/static/367341218f130dd858968d8b98b1e974/77dc5/background-hover-light-4.webp 300w"
-                    type="image/webp"
-                  />
-                  <img
-                    alt=""
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    decoding="async"
-                    loading="eager"
-                    role="presentation"
-                    sizes="150px"
-                    src="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png"
-                    srcset="/static/367341218f130dd858968d8b98b1e974/6bf3d/background-hover-light-4.png 150w,/static/367341218f130dd858968d8b98b1e974/42407/background-hover-light-4.png 300w"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-                </script>
-              </div>
-            </div>
           </a>
         </li>
       </ul>
     </nav>
     <div
-      class="sc-dIsUp ieTnyV"
+      class="sc-iqAclL slTds"
     />
   </header>
   ,

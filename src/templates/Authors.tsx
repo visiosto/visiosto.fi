@@ -33,6 +33,7 @@ const Separator = styled.div`
 
 const Div = styled.div`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
+  text-align: center;
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTablet};
@@ -44,18 +45,7 @@ const Div = styled.div`
 `;
 
 const Author = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
   text-align: center;
-
-  @media screen and (${(props) => props.theme.devices.mobileL}) {
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: left;
-  }
-
-  @media screen and (${(props) => props.theme.devices.tablet}) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 `;
 
 const Image = styled(GatsbyImage)`
@@ -69,10 +59,6 @@ const Image = styled(GatsbyImage)`
 
 const AuthorInfo = styled.div`
   margin: 0;
-
-  @media screen and (${(props) => props.theme.devices.mobileL}) {
-    margin: 0 0 0 4rem;
-  }
 `;
 
 const H2 = styled.h2``;
@@ -155,7 +141,7 @@ function Page({ data, pageContext }) {
       title={intl('authorsTitle')}
     >
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       <Div>
         {authors.map(({ node: author }) => (
@@ -235,7 +221,7 @@ function Page({ data, pageContext }) {
                   if (author.linkedin) {
                     return (
                       <a
-                        href={`https://linkedin.com/${author.linkedin}`}
+                        href={`https://linkedin.com/in/${author.linkedin}`}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
@@ -316,7 +302,10 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
+          facebook
+          instagram
           job
+          linkedin
           name
           position
           slug

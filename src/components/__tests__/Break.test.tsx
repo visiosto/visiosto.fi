@@ -12,38 +12,146 @@ import ruleQuery from '../../../test/data/ruleQuery';
 describe('Break component', () => {
   beforeAll(() => (useStaticQuery as jest.Mock).mockReturnValue(ruleQuery));
 
-  it('renders correctly with first blue rule', () => {
+  it('renders first blue correctly', () => {
     const { container } = render(<Break color="blue" mode={1} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with second blue rule', () => {
+  it('renders second blue correctly', () => {
     const { container } = render(<Break color="blue" mode={2} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with third blue rule', () => {
+  it('renders third blue correctly', () => {
     const { container } = render(<Break color="blue" mode={3} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with first peach rule', () => {
+  it('renders first blue correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="blue" mode={1} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second blue correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="blue" mode={2} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third blue correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="blue" mode={3} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first turquoise correctly', () => {
+    const { container } = render(<Break color="turquoise" mode={1} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second turquoise correctly', () => {
+    const { container } = render(<Break color="turquoise" mode={2} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third turquoise correctly', () => {
+    const { container } = render(<Break color="turquoise" mode={3} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first turquoise correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="turquoise" mode={1} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second turquoise correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="turquoise" mode={2} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third turquoise correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="turquoise" mode={3} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first brown correctly', () => {
+    const { container } = render(<Break color="brown" mode={1} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second brown correctly', () => {
+    const { container } = render(<Break color="brown" mode={2} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third brown correctly', () => {
+    const { container } = render(<Break color="brown" mode={3} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first brown correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="brown" mode={1} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second brown correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="brown" mode={2} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third brown correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="brown" mode={3} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first peach correctly', () => {
     const { container } = render(<Break color="peach" mode={1} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with second peach rule', () => {
+  it('renders second peach correctly', () => {
     const { container } = render(<Break color="peach" mode={2} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly with third peach rule', () => {
+  it('renders third peach correctly', () => {
     const { container } = render(<Break color="peach" mode={3} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders first peach correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="peach" mode={1} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders second peach correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="peach" mode={2} ignoreColorScheme />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it('renders third peach correctly with colour scheme ignored', () => {
+    const { container } = render(<Break color="peach" mode={3} ignoreColorScheme />);
 
     expect(container).toMatchSnapshot();
   });

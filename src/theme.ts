@@ -6,16 +6,18 @@ import './DefaultTheme';
 import { DefaultTheme } from 'styled-components';
 
 const colors = {
-  stPatricksBlue: '#23297a',
-  skyBlue: '#6dcff6',
+  blue: '#23297a',
+  turquoise: '#a4f1ff',
   peach: '#fbb496',
-  cream: '#ffffe4',
-  green: '#8dd68d',
-  greenDark: '#116f11',
-  black: '#3b4a57',
+  brown: '#803512',
+  black: '#2b3741',
   white: '#ffffff',
-  lightGray: '#dde1e9',
-  gray: '#f6f7f9',
+  violet: '#f7c1fe',
+  purple: '#5e2966',
+  lime: '#7ffa7f',
+  green: '#0e660e',
+  gray: '#BBBEC4',
+  lightGray: '#f6f7f9',
 };
 
 export const COLORS = {
@@ -23,29 +25,29 @@ export const COLORS = {
     light: colors.white,
     dark: colors.black,
   },
-  'background-weak': {
-    light: colors.lightGray,
-    dark: colors.gray,
+  'background-switch': {
+    light: colors.gray,
+    dark: colors.lightGray,
   },
   text: {
     light: colors.black,
     dark: colors.white,
   },
-  'text-dark': {
-    light: colors.black,
-    dark: colors.black,
-  },
   link: {
-    light: colors.stPatricksBlue,
+    light: colors.blue,
     dark: colors.peach,
   },
   'link-hover': {
-    light: colors.skyBlue,
-    dark: colors.cream,
+    light: colors.turquoise,
+    dark: colors.brown,
   },
-  'link-accept': {
-    light: colors.greenDark,
-    dark: colors.green,
+  accept: {
+    light: colors.green,
+    dark: colors.lime,
+  },
+  error: {
+    light: colors.purple,
+    dark: colors.violet,
   },
 };
 

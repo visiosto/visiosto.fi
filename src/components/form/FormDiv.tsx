@@ -62,8 +62,6 @@ const FormDiv = styled.div`
   input[type='submit'],
   button[type='submit'] {
     box-shadow: none;
-    background-color: var(--color-link);
-    color: var(--color-text-button);
 
     ${buttonStyle}
     ${buttonDefaultStyle}
@@ -84,7 +82,7 @@ const FormDiv = styled.div`
 
   .${FORM_CLASS_ERROR_MESSAGE} {
     font-style: italic;
-    color: var(--color-text);
+    color: var(--color-error);
   }
 `;
 

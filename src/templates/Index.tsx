@@ -109,7 +109,7 @@ function Page({ data, pageContext }) {
       <Cover imagesType="lines" rule={{ color: 'blue', mode: 3 }} title={page.storyTitle}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
       </Cover>
-      <Break color="peach" mode={1} />
+      <Break color="peach" mode={1} ignoreColorScheme />
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
         <Cards>
@@ -143,7 +143,7 @@ function Page({ data, pageContext }) {
         </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
       </Section>
-      <Break color="peach" mode={3} />
+      <Break color="peach" mode={3} ignoreColorScheme />
       <Section lesserMargin>
         <Icon>
           <PaperAirplaneIcon size="large" />

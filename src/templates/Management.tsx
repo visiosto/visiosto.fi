@@ -145,7 +145,7 @@ function Page({ data, pageContext }) {
       <Div dangerouslySetInnerHTML={{ __html: page.body.childMarkdownRemark.html }} />
       <H2>{intl('managementNewsTitle')}</H2>
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       {posts.edges.map(({ node: post }) => {
         return (

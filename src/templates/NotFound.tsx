@@ -55,7 +55,7 @@ function Page({ pageContext }) {
   return (
     <LayoutError errorCode="404" locale={locale} pageID={pageID} title={intl('notFoundTitle')}>
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       <Div>
         <p>{intl('notFoundContent')}</p>

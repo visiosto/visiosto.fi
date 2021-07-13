@@ -11,14 +11,18 @@ const Hr = styled.hr`
   visibility: hidden;
 `;
 
-const propTypes = { color: PropTypes.oneOf(['blue', 'peach']), mode: PropTypes.oneOf([1, 2, 3]) };
+const propTypes = {
+  color: PropTypes.oneOf(['blue', 'turquoise', 'brown', 'peach']),
+  ignoreColorScheme: PropTypes.bool,
+  mode: PropTypes.oneOf([1, 2, 3]),
+};
 
-const defaultProps = { color: 'blue', mode: 1 };
+const defaultProps = { color: 'blue', ignoreColorScheme: false, mode: 1 };
 
-function Break({ color, mode }) {
+function Break({ color, ignoreColorScheme, mode }) {
   return (
     <>
-      <Rule color={color} mode={mode} />
+      <Rule color={color} ignoreColorScheme={ignoreColorScheme} mode={mode} />
       <Hr />
     </>
   );

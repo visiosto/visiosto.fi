@@ -100,7 +100,7 @@ function Page({ data, pageContext }) {
       title={intl('categoriesTitle')}
     >
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       <Div>
         {categories.map(({ node: category }) => (

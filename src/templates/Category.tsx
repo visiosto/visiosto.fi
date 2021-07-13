@@ -120,7 +120,7 @@ function Page({ data, pageContext }) {
       title={`${intl('blogCategory')} ${category.name}`}
     >
       <Separator>
-        <Rule color="peach" mode={2} />
+        <Rule color="peach" mode={2} ignoreColorScheme />
       </Separator>
       {posts.map(({ node: post }) => {
         return (

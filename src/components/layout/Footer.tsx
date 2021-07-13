@@ -54,7 +54,15 @@ const ManagementP = styled.p`
 `;
 
 const PricingP = styled.p`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 0;
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 0;
+  }
+`;
+
+const OnlineStoreP = styled.p`
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -115,7 +123,7 @@ const DataProtectionP = styled.p`
 `;
 
 const CookieSettings = styled.div`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -123,7 +131,7 @@ const CookieSettings = styled.div`
 `;
 
 const TermsOfUseP = styled.p`
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 0;
@@ -155,12 +163,12 @@ function Footer({ locale, pageID }) {
             }
           }
         }
-        logoLight: file(relativePath: { eq: "footer/logo-light.png" }) {
+        logoLight: file(relativePath: { eq: "footer/logo-blue.png" }) {
           childImageSharp {
             gatsbyImageData(width: 160, placeholder: BLURRED)
           }
         }
-        logoDark: file(relativePath: { eq: "footer/logo-dark-2.png" }) {
+        logoDark: file(relativePath: { eq: "footer/logo-peach-2.png" }) {
           childImageSharp {
             gatsbyImageData(width: 160, placeholder: BLURRED)
           }
@@ -220,11 +228,13 @@ function Footer({ locale, pageID }) {
     <FooterElement>
       <Search locale={locale} />
       <CompanyDiv>
-        <LogoImage
-          alt={intl('footerLogoImageText')}
-          dark={getImage(data.logoDark)!}
-          light={getImage(data.logoLight)!}
-        />
+        <LocalizedLink locale={locale} to="/">
+          <LogoImage
+            alt={intl('footerLogoImageText')}
+            dark={getImage(data.logoDark)!}
+            light={getImage(data.logoLight)!}
+          />
+        </LocalizedLink>
         <h2>{intl('footerCompanyName')}</h2>
         <CompanyP>
           {intl('footerBusinessID')} {businessID}
@@ -245,6 +255,11 @@ function Footer({ locale, pageID }) {
             {intl('footerPricing')}
           </LocalizedLink>
         </PricingP>
+        <OnlineStoreP>
+          <a href="https://reddyshop.co/visiosto" rel="noopener noreferrer" target="_blank">
+            {intl('footerOnlineStore')}
+          </a>
+        </OnlineStoreP>
       </CompanyDiv>
       <Div>
         <LocaleSwitcher locale={locale} pageID={pageID} />
