@@ -103,7 +103,11 @@ function Page({ data, pageContext }) {
       pageID={pageID}
       title={page.title}
     >
-      <Cover imagesType="lens" rule={{ color: 'peach', mode: 3 }} title={page.introTitle}>
+      <Cover
+        imagesType="lens"
+        rule={{ color: 'peach', ignoreColorScheme: true, mode: 3 }}
+        title={page.introTitle}
+      >
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </Cover>
       <Cover imagesType="lines" rule={{ color: 'blue', mode: 3 }} title={page.storyTitle}>
