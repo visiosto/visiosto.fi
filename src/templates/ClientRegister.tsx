@@ -82,7 +82,13 @@ function Page({ data, pageContext }) {
       <Separator>
         <Rule color="peach" mode={1} ignoreColorScheme />
       </Separator>
-      <H2>{intl('clientRegisterFormTitle')}</H2>
+      <H2>
+        {intl(
+          clientType === 'business'
+            ? 'clientRegisterBusinessFormTitle'
+            : 'clientRegisterPersonFormTitle',
+        )}
+      </H2>
       {clientType === 'business' ? (
         <RegisterBusinessForm locale={locale} />
       ) : (
