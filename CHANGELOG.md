@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.23.3] - 2021-07-13
+
+### Fixed
+
+- Colour of the top rule of the first cover on the front page.
+
 ## [0.23.2] - 2021-07-13
 
 ### Added
@@ -635,7 +641,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.23.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.23.3...HEAD
+[0.23.3]: https://github.com/visiosto/visiosto-website/compare/v0.23.2...v0.23.3
 [0.23.2]: https://github.com/visiosto/visiosto-website/compare/v0.23.1...v0.23.2
 [0.23.1]: https://github.com/visiosto/visiosto-website/compare/v0.23.0...v0.23.1
 [0.23.0]: https://github.com/visiosto/visiosto-website/compare/v0.22.1...v0.23.0
