@@ -255,7 +255,7 @@ jobs:
       run: yarn build --verbose
 
     - name: Install Lighthouse
-      run: npm install -g @lhci/cli@0.7.x
+      run: npm install -g @lhci/cli@0.8.x
 
     - name: Run Lighthouse
       run: lhci autorun
