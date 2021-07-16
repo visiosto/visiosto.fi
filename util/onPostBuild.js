@@ -58,6 +58,17 @@ const createBlogPostContent = function createBlogPostContentFromHTMLAST(node) {
   return content.join(' ');
 };
 
+const createPortfolioReferenceContent = function createPortfolioReferenceContentFromHTMLAST(node) {
+  const content = [
+    'Portfolio:',
+    node.name,
+    node.subtitle,
+    createFromHTMLAST(node.description.childMarkdownRemark.htmlAst.children),
+  ];
+
+  return content.join(' ');
+};
+
 const createIndexPageEntry = function createIndexPageEntryFromHTMLAST(
   node,
   locale,
@@ -348,6 +359,34 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
             }
           }
         }
+        portfolioReferences: allContentfulPortfolioReference {
+          edges {
+            node {
+              slug
+              name
+              node_locale
+              subtitle
+              description {
+                childMarkdownRemark {
+                  excerpt(pruneLength: 500)
+                  htmlAst
+                }
+              }
+            }
+          }
+        }
+        portfolioPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              title
+            }
+          }
+        }
       }
     `,
   );
@@ -516,6 +555,35 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
             `${postNode.title} ${postNode.author.name} ${postNode.category.name} ${postNode.body.childMarkdownRemark.excerpt}`,
         )
         .join(' '),
+    };
+
+    searchData[locale].pages.push(page);
+  });
+
+  // Create portfolio page entries.
+
+  const { portfolioPaths } = query.data;
+
+  query.data.portfolioReferences.edges.forEach(({ node: referenceNode }) => {
+    const { description, node_locale: locale, contentful_id: id, name, slug } = referenceNode;
+    const { excerpt } = description.childMarkdownRemark;
+    reporter.verbose(
+      `Creating search index entry for the portfolio reference '${slug}' (locale: ${locale})`,
+    );
+    const portfolioPath = portfolioPaths.edges.filter(({ node: pathNode }) => {
+      return pathNode.node_locale === locale;
+    })[0].node.slug;
+    const pagePath =
+      locale === defaultLocale
+        ? `/${portfolioPath}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${portfolioPath}/${slug}`;
+
+    const page = {
+      slug: pagePath,
+      id,
+      name,
+      excerpt,
+      content: createPortfolioReferenceContent(referenceNode),
     };
 
     searchData[locale].pages.push(page);

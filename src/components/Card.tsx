@@ -8,9 +8,9 @@ import styled from 'styled-components';
 import boxShadowHoverStyle from '../styles/boxShadowHoverStyle';
 import boxShadowStyle from '../styles/boxShadowStyle';
 
-const Article = styled.article`
+const Article = styled.article<{ lesserPadding?: boolean }>`
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: ${(props) => (props.lesserPadding ? 0 : '2rem')};
   transition: box-shadow 100ms ease-in;
 
   ${boxShadowStyle}
@@ -20,12 +20,15 @@ const Article = styled.article`
   }
 `;
 
-const propTypes = { children: PropTypes.node.isRequired };
+const propTypes = { children: PropTypes.node.isRequired, lesserPadding: PropTypes.bool };
 
-function Card({ children }) {
-  return <Article>{children}</Article>;
+const defaultProps = { lesserPadding: false };
+
+function Card({ children, lesserPadding }) {
+  return <Article lesserPadding={lesserPadding}>{children}</Article>;
 }
 
 Card.propTypes = propTypes;
+Card.defaultProps = defaultProps;
 
 export default Card;

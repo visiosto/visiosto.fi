@@ -155,6 +155,26 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
             }
           }
         }
+        portfolioPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
+        portfolioReferences: allContentfulPortfolioReference {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
         pricingPages: allContentfulPage(filter: { slug: { regex: "/^hinnasto|pricing$/" } }) {
           edges {
             node {
@@ -404,6 +424,37 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         locale,
         pageID,
         momentJSLocale: locale.toLowerCase(),
+      },
+    });
+  });
+
+  // Create the portfolio pages from Contentful.
+
+  const { portfolioPaths } = query.data;
+
+  query.data.portfolioReferences.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const portfolioSlug = portfolioPaths.edges.filter(({ node: pathNode }) => {
+      return pathNode.node_locale === locale;
+    })[0].node.slug;
+
+    const pagePath =
+      locale === defaultLocale
+        ? `/${portfolioSlug}/${slug}`
+        : `/${localePaths[locale.replace('-', '_')]}/${portfolioSlug}/${slug}`;
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    createPage({
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'PortfolioReference.tsx'),
+      context: {
+        locale,
+        pageID,
       },
     });
   });

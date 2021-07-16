@@ -83,6 +83,7 @@ const SocialMediaTitle = styled.h3`
 
 const SocialMediaDiv = styled(Div)`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 `;

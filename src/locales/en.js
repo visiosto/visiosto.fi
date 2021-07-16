@@ -15,6 +15,7 @@ import headerMessages from './en/headerMessages';
 import headMessages from './en/headMessages';
 import managementMessages from './en/managementMessages';
 import notFoundMessages from './en/notFoundMessages';
+import portfolioMessages from './en/portfolioMessages';
 import searchMessages from './en/searchMessages';
 
 export const messages = {
@@ -30,6 +31,7 @@ export const messages = {
   ...headMessages,
   ...managementMessages,
   ...notFoundMessages,
+  ...portfolioMessages,
   ...searchMessages,
 };
 

@@ -20,6 +20,7 @@ import Cover from '../components/Cover';
 import FeatureCard from '../components/FeatureCard';
 import Intl from '../components/Intl';
 import LayoutIndex from '../components/layout/LayoutIndex';
+import PortfolioCard from '../components/PortfolioCard';
 import Theme from '../components/Theme';
 
 const H2 = styled.h2`
@@ -141,11 +142,19 @@ function Page({ data, pageContext }) {
         </Cards>
       </Section>
       <Break color="blue" mode={1} />
-      <Section>
+      <Section lesserMargin>
         <Icon>
           <NorthStarIcon size="large" />
         </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
+        <Centered
+          dangerouslySetInnerHTML={{ __html: page.portfolioBody.childMarkdownRemark.html }}
+        />
+        <Cards>
+          {page.portfolio.map((reference) => {
+            return <PortfolioCard key={reference.id} locale={locale} reference={reference} />;
+          })}
+        </Cards>
       </Section>
       <Break color="peach" mode={3} ignoreColorScheme />
       <Section lesserMargin>
@@ -230,6 +239,20 @@ export const pageQuery = graphql`
         }
       }
       introBody {
+        childMarkdownRemark {
+          html
+        }
+      }
+      portfolio {
+        contentful_id
+        id
+        name
+        subtitle
+        image {
+          gatsbyImageData(quality: 100, width: 500, placeholder: BLURRED)
+        }
+      }
+      portfolioBody {
         childMarkdownRemark {
           html
         }
