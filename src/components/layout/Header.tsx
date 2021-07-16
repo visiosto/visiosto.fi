@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { ChevronRightIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
+import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 import Navigation from './Navigation';
 import SchemedImage from '../SchemedImage';
@@ -16,6 +17,8 @@ import SchemedImage from '../SchemedImage';
 import createInternationalization from '../../util/createInternationalization';
 
 import theme from '../../theme';
+
+import { indexPageID, portfolioPathID } from '../../entryIDs';
 
 const HeaderElement = styled.header`
   margin: 2em 0;
@@ -146,6 +149,17 @@ const createBreadcrumb = function createBreadcrumbFromQueryData(data, errorPage,
         )[0].node;
         return createBreadcrumbPath(pathNode);
       }
+      case 'ContentfulPortfolioReference': {
+        const referenceNode = data.allContentfulPortfolioReference.edges.filter(
+          ({ node: entryNode }) =>
+            entryNode.contentful_id === pageID && entryNode.node_locale === locale,
+        )[0].node;
+        const portfolioPath = data.portfolioPaths.edges.filter(
+          ({ node: entryNode }) => entryNode.node_locale === locale,
+        )[0].node;
+
+        return [portfolioPath, referenceNode];
+      }
       default: {
         return null;
       }
@@ -271,6 +285,16 @@ function Header({ errorPage, home, locale, pageID }) {
             }
           }
         }
+        allContentfulPortfolioReference {
+          edges {
+            node {
+              contentful_id
+              name
+              node_locale
+              slug
+            }
+          }
+        }
         authorPaths: allContentfulPath(
           filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
         ) {
@@ -307,6 +331,18 @@ function Header({ errorPage, home, locale, pageID }) {
                   title
                 }
               }
+            }
+          }
+        }
+        portfolioPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              title
             }
           }
         }
@@ -352,12 +388,25 @@ function Header({ errorPage, home, locale, pageID }) {
             return breadcrumb.map((entry, index) => {
               const title = entry.name ? entry.name : entry.title;
               if (index === 0) {
+                if (entry.contentful_id === portfolioPathID) {
+                  return (
+                    <LocalizedAnchorLink
+                      key={entry.contentful_id}
+                      locale={locale}
+                      to={`${indexPageID}#portfolio`}
+                    >
+                      {title}
+                    </LocalizedAnchorLink>
+                  );
+                }
+
                 return (
                   <LocalizedLink key={entry.contentful_id} locale={locale} to={entry.contentful_id}>
                     {title}
                   </LocalizedLink>
                 );
               }
+
               return (
                 <Fragment key={entry.contentful_id}>
                   <ChevronIcon />
