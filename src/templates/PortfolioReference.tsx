@@ -6,10 +6,13 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
 import Theme from '../components/Theme';
+
+import createInternationalization from '../util/createInternationalization';
 
 const ImageDiv = styled.div`
   display: flex;
@@ -56,11 +59,13 @@ const propTypes = {
 };
 
 function Page({ data, pageContext }) {
+  const intl = createInternationalization(useIntl());
+
   const { contentfulPortfolioReference: reference } = data;
   const { locale, pageID } = pageContext;
 
   return (
-    <Layout locale={locale} pageID={pageID} title={reference.name}>
+    <Layout locale={locale} pageID={pageID} title={`${intl('portfolioTitle')} ${reference.name}`}>
       <Div>
         <TitleP>{reference.subtitle}</TitleP>
       </Div>
