@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Text body to the portfolio after the title of the portfolio section on the front page.
+- Portfolio card component to display portfolio entries.
+- Portfolio entries to the front page.
+- Property for using lesser paddings in the `Card` components.
+- Support for portfolio pages to the localized links.
 
 ### Fixed
 
