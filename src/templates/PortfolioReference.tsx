@@ -45,6 +45,7 @@ const Div = styled.div`
 const TitleP = styled.p`
   margin: 0.5rem 0 0;
   font-size: 1.2rem;
+  font-family: ${(props) => props.theme.fonts.code};
   text-transform: uppercase;
 `;
 
