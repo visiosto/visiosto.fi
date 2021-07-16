@@ -146,6 +146,7 @@ function Page({ data, pageContext }) {
           <NorthStarIcon size="large" />
         </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
+        <Centered dangerouslySetInnerHTML={{ __html: page.portfolioBody.childMarkdownRemark.html }} />
       </Section>
       <Break color="peach" mode={3} ignoreColorScheme />
       <Section lesserMargin>
@@ -230,6 +231,11 @@ export const pageQuery = graphql`
         }
       }
       introBody {
+        childMarkdownRemark {
+          html
+        }
+      }
+      portfolioBody {
         childMarkdownRemark {
           html
         }

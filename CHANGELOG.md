@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Added
+
+- Text body to the portfolio after the title of the portfolio section on the front page.
+
 ## [0.23.3] - 2021-07-13
 
 ### Fixed
