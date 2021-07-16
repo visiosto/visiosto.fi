@@ -178,6 +178,15 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
             }
           }
         }
+        allContentfulPortfolioReference {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
         authorPaths: allContentfulPath(
           filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
         ) {
@@ -212,6 +221,16 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
             }
           }
         }
+        portfolioPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
       }
     `,
   );
@@ -238,6 +257,7 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
       </AnchorLink>
     );
   }
+
   if (toLocation === '/blog') {
     const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     const pagePath =
@@ -250,6 +270,7 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
       </AnchorLink>
     );
   }
+
   if (toLocation.startsWith('/')) {
     const pageSlug = toLocation.substring(1);
     const pagePath = createPathFromSlug(pageSlug, locale, data);
@@ -267,6 +288,7 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
       </AnchorLink>
     );
   }
+
   const { node } = data.allContentfulEntry.edges.filter(
     ({ node: entryNode }) =>
       entryNode.contentful_id === toLocation && entryNode.node_locale === locale,
@@ -385,6 +407,30 @@ function LocalizedAnchorLink({ children, className, locale, to }) {
             locale,
             defaultLocale,
             localePaths,
+          )}#${hashedDestination}`}
+        >
+          {children}
+        </AnchorLink>
+      );
+    }
+    case 'ContentfulPortfolioReference': {
+      const referenceNode = data.allContentfulPortfolioReference.edges.filter(
+        ({ node: entryNode }) =>
+          entryNode.contentful_id === toLocation && entryNode.node_locale === locale,
+      )[0].node;
+      const portfolioPath = data.portfolioPaths.edges.filter(
+        ({ node: entryNode }) => entryNode.node_locale === locale,
+      )[0].node;
+
+      return (
+        <AnchorLink
+          className={className}
+          to={`${createPagePath(
+            referenceNode,
+            locale,
+            defaultLocale,
+            localePaths,
+            portfolioPath,
           )}#${hashedDestination}`}
         >
           {children}

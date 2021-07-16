@@ -168,6 +168,15 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
             }
           }
         }
+        allContentfulPortfolioReference {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+            }
+          }
+        }
         authorPaths: allContentfulPath(
           filter: { contentful_id: { eq: "4uEZ43he1uPiXUzzZUuedS" } }
         ) {
@@ -202,6 +211,16 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
             }
           }
         }
+        portfolioPaths: allContentfulPath(
+          filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
+        ) {
+          edges {
+            node {
+              node_locale
+              slug
+            }
+          }
+        }
       }
     `,
   );
@@ -219,6 +238,7 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
       </Link>
     );
   }
+
   if (to === '/blog') {
     const blogPath = data.blogPaths.edges.filter(({ node }) => node.node_locale === locale)[0].node;
     const pagePath =
@@ -231,6 +251,7 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
       </Link>
     );
   }
+
   if (to.startsWith('/')) {
     const pageSlug = to.substring(1);
     const pagePath = createPathFromSlug(pageSlug, locale, data);
@@ -248,6 +269,7 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
       </Link>
     );
   }
+
   if (to === '404') {
     const pagePath =
       locale === defaultLocale ? '/404' : `/${localePaths[locale.replace('-', '_')]}/404`;
@@ -347,6 +369,23 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
           className={className}
           onClick={onClick}
           to={createPagePath(pathNode, locale, defaultLocale, localePaths)}
+        >
+          {children}
+        </Link>
+      );
+    }
+    case 'ContentfulPortfolioReference': {
+      const referenceNode = data.allContentfulPortfolioReference.edges.filter(
+        ({ node: entryNode }) => entryNode.contentful_id === to && entryNode.node_locale === locale,
+      )[0].node;
+      const portfolioPath = data.portfolioPaths.edges.filter(
+        ({ node: entryNode }) => entryNode.node_locale === locale,
+      )[0].node;
+      return (
+        <Link
+          className={className}
+          onClick={onClick}
+          to={createPagePath(referenceNode, locale, defaultLocale, localePaths, portfolioPath)}
         >
           {children}
         </Link>
