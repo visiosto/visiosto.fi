@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Text body to the portfolio after the title of the portfolio section on the front page.
 
+### Fixed
+
+- Resizing of the social media icons in the footer on some smaller screens.
+
 ## [0.23.3] - 2021-07-13
 
 ### Fixed
