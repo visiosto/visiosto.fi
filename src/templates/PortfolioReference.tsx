@@ -9,7 +9,6 @@ import styled from 'styled-components';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
-import SchemedImage from '../components/SchemedImage';
 import Theme from '../components/Theme';
 
 const ImageDiv = styled.div`
