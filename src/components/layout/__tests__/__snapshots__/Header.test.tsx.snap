@@ -148,7 +148,7 @@ exports[`Header component renders index page header correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-iqAclL slTds"
+      class="sc-iqAclL ebLCXl"
     />
   </header>
   ,
@@ -304,7 +304,7 @@ exports[`Header component renders page header correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-iqAclL slTds"
+      class="sc-iqAclL ebLCXl"
     />
   </header>
   ,

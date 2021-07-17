@@ -7,7 +7,7 @@ export default {
   contactFormEither: 'At least either',
   contactFormEmail: 'Email',
   contactFormOr: 'or',
-  contactFormTel: 'Phone Number',
+  contactFormTel: 'phone number',
   contactFormMessage: 'Your message for us',
   contactFormSendConsent:
     'By sending this data you give your consent to process your personal data according to the register’s <a>privacy policy</a>',

@@ -35,6 +35,8 @@ declare module 'styled-components' {
       marginMobile: string;
       marginTablet: string;
       marginDesktop: string;
+      marginTitleMobile: string;
+      marginTitleTablet: string;
     };
 
     borders: {

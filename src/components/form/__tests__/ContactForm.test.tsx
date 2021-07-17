@@ -20,7 +20,7 @@ describe('Contact form component', () => {
     expect(container).toMatchSnapshot();
 
     expect(getByText('Nimi')).toBeInTheDocument();
-    expect(getByText('sähköposti')).toBeInTheDocument();
+    expect(getByText('Sähköposti')).toBeInTheDocument();
     expect(getByText('puhelinnumero')).toBeInTheDocument();
     expect(getByText('Viestisi meille')).toBeInTheDocument();
   });
@@ -31,8 +31,8 @@ describe('Contact form component', () => {
     userEvent.type(screen.getByLabelText('Nimi'), 'John Doe');
     expect(screen.getByLabelText('Nimi')).toHaveValue('John Doe');
 
-    userEvent.type(screen.getByLabelText('sähköposti'), 'john.doe@example.com');
-    expect(screen.getByLabelText('sähköposti')).toHaveValue('john.doe@example.com');
+    userEvent.type(screen.getByLabelText('Sähköposti'), 'john.doe@example.com');
+    expect(screen.getByLabelText('Sähköposti')).toHaveValue('john.doe@example.com');
 
     userEvent.type(screen.getByLabelText('puhelinnumero'), '123-456-7890');
     expect(screen.getByLabelText('puhelinnumero')).toHaveValue('123-456-7890');
@@ -50,8 +50,8 @@ describe('Contact form component', () => {
     userEvent.type(screen.getByLabelText('Nimi'), 'John Doe');
     expect(screen.getByLabelText('Nimi')).toHaveValue('John Doe');
 
-    userEvent.type(screen.getByLabelText('sähköposti'), 'john.doe@example.com');
-    expect(screen.getByLabelText('sähköposti')).toHaveValue('john.doe@example.com');
+    userEvent.type(screen.getByLabelText('Sähköposti'), 'john.doe@example.com');
+    expect(screen.getByLabelText('Sähköposti')).toHaveValue('john.doe@example.com');
 
     userEvent.type(screen.getByLabelText('puhelinnumero'), '123-456-7890');
     expect(screen.getByLabelText('puhelinnumero')).toHaveValue('123-456-7890');

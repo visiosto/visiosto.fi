@@ -17,6 +17,7 @@ import createInternationalization from '../util/createInternationalization';
 const ImageDiv = styled.div`
   display: flex;
   justify-content: center;
+  margin: 1rem;
 `;
 
 const Image = styled(GatsbyImage)`

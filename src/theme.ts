@@ -82,6 +82,8 @@ const layout = {
   marginMobile: '2em',
   marginTablet: '4em',
   marginDesktop: '16em',
+  marginTitleMobile: '0.5rem',
+  marginTitleTablet: '1rem',
 };
 
 const borders = {

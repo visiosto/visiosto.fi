@@ -365,7 +365,9 @@ class CookieSettings extends React.Component<Props, State> {
                     <Button action="accept" onClick={this.handleSaveClick}>
                       {intl('cookieNoticeSave')}
                     </Button>
-                    <Button onClick={this.handleClosingClick}>{intl('cookieNoticeCancel')}</Button>
+                    <Button action="cancel" onClick={this.handleClosingClick}>
+                      {intl('cookieNoticeCancel')}
+                    </Button>
                   </SettingButtons>
                 </Content>
               </SettingsContent>
@@ -389,7 +391,9 @@ class CookieSettings extends React.Component<Props, State> {
           <Button action="accept" onClick={this.handleAcceptClick}>
             {intl('cookieNoticeAccept')}
           </Button>
-          <Button onClick={this.handleInfoClick}>{intl('cookieNoticeReject')}</Button>
+          <Button action="cancel" onClick={this.handleInfoClick}>
+            {intl('cookieNoticeReject')}
+          </Button>
         </Buttons>
       </Div>
     );

@@ -92,14 +92,14 @@ const SocialMediaImage = styled(SchemedImage)`
   margin: 1rem;
 `;
 
-const GithubImage = styled(SocialMediaImage)`
-  filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg)
-    brightness(93%) contrast(88%);
+// const GithubImage = styled(SocialMediaImage)`
+//   filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(252%) hue-rotate(166deg)
+//     brightness(93%) contrast(88%);
 
-  @media screen and (prefers-color-scheme: dark) {
-    filter: brightness(0) saturate(100%) invert(100%);
-  }
-`;
+//   @media screen and (prefers-color-scheme: dark) {
+//     filter: brightness(0) saturate(100%) invert(100%);
+//   }
+// `;
 
 const InstagramImage = styled(SocialMediaImage)`
   @media screen and (prefers-color-scheme: dark) {
@@ -298,13 +298,13 @@ function Footer({ locale, pageID }) {
             light={getImage(data.linkedinColor)!}
           />
         </a>
-        <a href={socialMedia.github} rel="noopener noreferrer" target="_blank">
+        {/* <a href={socialMedia.github} rel="noopener noreferrer" target="_blank">
           <GithubImage
             alt={intl('footerGithubImageText')}
             dark={getImage(data.github)!}
             light={getImage(data.github)!}
           />
-        </a>
+        </a> */}
       </SocialMediaDiv>
       <Div>
         <DataProtectionP>

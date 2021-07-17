@@ -20,14 +20,37 @@ const SpanAccept = styled(Span)`
   background-color: var(--color-accept);
   color: var(--color-text-inverted);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--color-accept-inverted);
     color: var(--color-text);
   }
 `;
 
+const SpanCancel = styled(Span)`
+  background-color: var(--color-error);
+  color: var(--color-text-inverted);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-error-inverted);
+    color: var(--color-text);
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: var(--color-link);
+    color: var(--color-text-inverted);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-link-hover);
+      color: var(--color-text);
+    }
+  }
+`;
+
 const propTypes = {
-  action: PropTypes.oneOf(['default', 'accept']),
+  action: PropTypes.oneOf(['default', 'accept', 'cancel']),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
 };
@@ -37,6 +60,10 @@ const defaultProps = { action: 'default', onClick: null };
 function Button({ action, children, onClick }) {
   if (action === 'accept') {
     return <SpanAccept onClick={onClick}>{children}</SpanAccept>;
+  }
+
+  if (action === 'cancel') {
+    return <SpanCancel onClick={onClick}>{children}</SpanCancel>;
   }
 
   return <SpanDefault onClick={onClick}>{children}</SpanDefault>;

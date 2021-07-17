@@ -3,7 +3,7 @@
 exports[`Card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-bdnxRM kNmKnf"
+    class="sc-bdnxRM ejxjXN"
   >
     Test text
   </article>

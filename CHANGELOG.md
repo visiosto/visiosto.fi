@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.25.0] - 2021-07-17
+
+### Added
+
+- Property for centring text in the `Card` components.
+- Small margins for the sides of the breadcrumbs.
+- Margin around the pictures on the portfolio pages.
+
+### Changed
+
+- Story section on the front page to be hidden.
+- Margins of the page titles to be smaller on smaller screens.
+- Colour of the cancellation buttons of the cookie notice and settings.
+- Link to the company GitHub profile to be hidden.
+
+### Removed
+
+- Unnecessary text from the front page contact form.
+
 ## [0.24.2] - 2021-07-17
 
 ### Fixed
@@ -669,7 +688,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.24.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.25.0...HEAD
+[0.25.0]: https://github.com/visiosto/visiosto-website/compare/v0.24.2...v0.25.0
 [0.24.2]: https://github.com/visiosto/visiosto-website/compare/v0.24.1...v0.24.2
 [0.24.1]: https://github.com/visiosto/visiosto-website/compare/v0.24.0...v0.24.1
 [0.24.0]: https://github.com/visiosto/visiosto-website/compare/v0.23.3...v0.24.0

@@ -53,17 +53,10 @@ exports[`Contact form component renders correctly 1`] = `
       <div
         class="sc-bdnxRM eunCtq"
       >
-        <p>
-          Ainakin joko
-        </p>
-      </div>
-      <div
-        class="sc-bdnxRM eunCtq"
-      >
         <label
           for="email"
         >
-          sähköposti
+          Sähköposti
         </label>
         <label
           class="error-message"
