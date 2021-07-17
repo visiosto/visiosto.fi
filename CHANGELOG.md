@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.24.2] - 2021-07-17
+
+### Fixed
+
+- Replacement of the dashes in the titles as the build environment doesn’t support `replaceAll` function.
+
 ## [0.24.1] - 2021-07-16
 
 ### Changed
@@ -663,7 +669,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.24.1...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.24.2...HEAD
+[0.24.2]: https://github.com/visiosto/visiosto-website/compare/v0.24.1...v0.24.2
 [0.24.1]: https://github.com/visiosto/visiosto-website/compare/v0.24.0...v0.24.1
 [0.24.0]: https://github.com/visiosto/visiosto-website/compare/v0.23.3...v0.24.0
 [0.23.3]: https://github.com/visiosto/visiosto-website/compare/v0.23.2...v0.23.3
