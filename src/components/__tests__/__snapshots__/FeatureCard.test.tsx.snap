@@ -3,10 +3,10 @@
 exports[`Feature card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-hKFxyN HBDNI"
+    class="sc-eCApnc hWVQIg"
   >
     <div
-      class="sc-eCApnc fLcWfp"
+      class="sc-jSFjdj daZxok"
     >
       <svg
         aria-hidden="true"
@@ -24,7 +24,7 @@ exports[`Feature card component renders correctly 1`] = `
       </svg>
     </div>
     <h3
-      class="sc-jSFjdj XHvoF"
+      class="sc-gKAaRy cPstvh"
     >
       Test title
     </h3>

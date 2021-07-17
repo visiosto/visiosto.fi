@@ -3,24 +3,24 @@
 exports[`Footer component renders correctly 1`] = `
 <div>
   <footer
-    class="sc-ezzafa dlMbhg"
+    class="sc-bYwzuL dIDITQ"
   >
     <div
-      class="sc-giAqHp bnQIrD"
+      class="sc-ezzafa epCVna"
     >
       <form
-        class="sc-dlMDgC elyDZz"
+        class="sc-kfYoZR fhlAKJ"
       >
         <input
           aria-label="Haku"
-          class="sc-kfYoZR jNNmpw"
+          class="sc-fKgJPI uiPbK"
           placeholder="Haku"
           type="text"
           value=""
         />
         <svg
           aria-hidden="true"
-          class="sc-fKgJPI dJkwzX"
+          class="sc-bCwfaz iEsYTZ"
           fill="currentColor"
           height="16"
           role="img"
@@ -35,11 +35,11 @@ exports[`Footer component renders correctly 1`] = `
         </svg>
       </form>
       <div
-        class="sc-lmgQwP glPPeL"
+        class="sc-iJCRrE gluuoy"
         hidden=""
       >
         <div
-          class="sc-iJCRrE jAUOjo"
+          class="sc-giAqHp hmmUbT"
         >
           <div>
             Hakemistoa ladataan
@@ -48,13 +48,13 @@ exports[`Footer component renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-bYwzuL sc-kLojOw dBCgvG jvKZKz"
+      class="sc-kLojOw sc-iklJeh ccoPBf iMVOlo"
     >
       <a
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iklJeh kcSjBx"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jJMGnK fdRhhj"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -106,21 +106,21 @@ exports[`Footer component renders correctly 1`] = `
         Visiosto oy
       </h2>
       <p
-        class="sc-jJMGnK hsBURc"
+        class="sc-hiKfDv iHGEYN"
       >
         Y-tunnus:
          
         3010084-6
       </p>
       <p
-        class="sc-jJMGnK hsBURc"
+        class="sc-hiKfDv iHGEYN"
       >
         ALV-numero:
          
         FI30100846
       </p>
       <p
-        class="sc-jJMGnK hsBURc"
+        class="sc-hiKfDv iHGEYN"
       >
         <a
           href="mailto:info@visiosto.fi"
@@ -129,7 +129,7 @@ exports[`Footer component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-hiKfDv lA-Dmx"
+        class="sc-gXfVKN qOTNN"
       >
         <a
           href="/hallinto"
@@ -138,7 +138,7 @@ exports[`Footer component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-gXfVKN kLZkhl"
+        class="sc-cBoqAE icrWgo"
       >
         <a
           href="/hinnasto"
@@ -147,7 +147,7 @@ exports[`Footer component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-cBoqAE eCrDjz"
+        class="sc-ciSkZP iWIvyo"
       >
         <a
           href="https://reddyshop.co/visiosto"
@@ -159,10 +159,10 @@ exports[`Footer component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <a
-        class="sc-hHEiqL krfWdA"
+        class="sc-dlMDgC elyXpg"
         href="/en"
       >
         <span
@@ -174,19 +174,19 @@ exports[`Footer component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-ciSkZP hueHuW"
+      class="sc-jcwpoC dyPCBo"
     >
       Sosiaalisessa mediassa
     </h3>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <p>
         #linssimmeläpi
       </p>
     </div>
     <div
-      class="sc-bYwzuL sc-jcwpoC dBCgvG hCsVdb"
+      class="sc-kLojOw sc-carFqZ ccoPBf kWXKAQ"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -194,7 +194,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iBzEeX bSEfTJ knLCbk"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-efHYUO entxOW gHJUtd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -245,7 +245,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ bSEfTJ"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM entxOW"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -296,7 +296,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-cTJkRt bSEfTJ GjTXJ"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-jNnpgg entxOW fXIyNb"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -347,7 +347,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-efHYUO bSEfTJ gHJUtd"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-cTJkRt entxOW GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -398,7 +398,7 @@ exports[`Footer component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-carFqZ sc-iTVJFM bSEfTJ jbfRaI"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-iBzEeX entxOW ePeddL"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -445,10 +445,10 @@ exports[`Footer component renders correctly 1`] = `
       </a>
     </div>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <p
-        class="sc-jNnpgg geTdwl"
+        class="sc-dPaNzc cgppGB"
       >
         <a
           href="/tietosuoja"
@@ -457,24 +457,24 @@ exports[`Footer component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-dPaNzc PeCie"
+        class="sc-bBjRSN eLelkl"
       >
         <span
-          class="sc-iemWCZ iYwZvO"
+          class="sc-dIvrsQ gWvsKi"
         >
           Evästeasetukset
         </span>
         <div
-          class="sc-dIvrsQ hdguEA"
+          class="sc-hHEiqL esZeuy"
         >
           <div
-            class="sc-hKFxyN bFrGPC"
+            class="sc-eCApnc jRdEEO"
           >
             <div
-              class="sc-eCApnc"
+              class="sc-jSFjdj"
             >
               <h2
-                class="sc-jSFjdj hlpyXC"
+                class="sc-gKAaRy eFdRPO"
               >
                 Saisiko olla keksi?
               </h2>
@@ -483,15 +483,15 @@ exports[`Footer component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="sc-gKAaRy hauOLa"
+              class="sc-iCoGMd dzEEWi"
             >
               <span
-                class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
+                class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
               >
                 Kiitos, hyväksyn evästeet
               </span>
               <span
-                class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+                class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
               >
                 Tarkistan evästeet ja säädän niitä
               </span>
@@ -500,7 +500,7 @@ exports[`Footer component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-bBjRSN eLelkl"
+        class="sc-cOifOu eXZopZ"
       >
         <a
           href="/kayttoehdot"
@@ -510,21 +510,21 @@ exports[`Footer component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <p>
         Octicons © 2021 GitHub, Inc.
       </p>
     </div>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <p>
         © 2021 Visiosto oy
       </p>
     </div>
     <div
-      class="sc-bYwzuL dBCgvG"
+      class="sc-kLojOw ccoPBf"
     >
       <p>
         Tämä sivusto on tehty 

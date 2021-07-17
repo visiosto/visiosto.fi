@@ -3,21 +3,21 @@
 exports[`Cookie notice component renders correctly 1`] = `
 <div>
   <span
-    class="sc-iemWCZ iYwZvO"
+    class="sc-dIvrsQ gWvsKi"
   >
     Evästeasetukset
   </span>
   <div
-    class="sc-dIvrsQ hdguEA"
+    class="sc-hHEiqL esZeuy"
   >
     <div
-      class="sc-hKFxyN bFrGPC"
+      class="sc-eCApnc jRdEEO"
     >
       <div
-        class="sc-eCApnc"
+        class="sc-jSFjdj"
       >
         <h2
-          class="sc-jSFjdj hlpyXC"
+          class="sc-gKAaRy eFdRPO"
         >
           Saisiko olla keksi?
         </h2>
@@ -26,15 +26,15 @@ exports[`Cookie notice component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-gKAaRy hauOLa"
+        class="sc-iCoGMd dzEEWi"
       >
         <span
-          class="sc-bdnxRM sc-dlnjwi eoyzcM kgDKqq"
+          class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
         >
           Kiitos, hyväksyn evästeet
         </span>
         <span
-          class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+          class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
         >
           Tarkistan evästeet ja säädän niitä
         </span>
