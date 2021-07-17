@@ -12,7 +12,7 @@ const Article = styled.article<{ centered?: boolean; lesserPadding?: boolean }>`
   border-radius: 0.5rem;
   padding: ${(props) => (props.lesserPadding ? 0 : '2rem')};
   transition: box-shadow 100ms ease-in;
-  text-align: ${(props) => props.centered ? 'center' : 'left'};
+  text-align: ${(props) => (props.centered ? 'center' : 'left')};
 
   ${boxShadowStyle}
 
@@ -21,12 +21,20 @@ const Article = styled.article<{ centered?: boolean; lesserPadding?: boolean }>`
   }
 `;
 
-const propTypes = { centered: PropTypes.bool, children: PropTypes.node.isRequired, lesserPadding: PropTypes.bool };
+const propTypes = {
+  centered: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  lesserPadding: PropTypes.bool,
+};
 
 const defaultProps = { centered: false, lesserPadding: false };
 
 function Card({ centered, children, lesserPadding }) {
-  return <Article centered={centered} lesserPadding={lesserPadding}>{children}</Article>;
+  return (
+    <Article centered={centered} lesserPadding={lesserPadding}>
+      {children}
+    </Article>
+  );
 }
 
 Card.propTypes = propTypes;

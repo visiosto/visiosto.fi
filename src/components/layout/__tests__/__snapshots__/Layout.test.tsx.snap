@@ -149,14 +149,14 @@ exports[`Layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-eirqVv klAfEd"
+      class="sc-eirqVv iUrwPw"
     />
   </header>
   <main>
     <section>
       <header>
         <h1
-          class="sc-gGLxEB fsvsKp"
+          class="sc-gGLxEB frckLF"
         >
           Hallinto
         </h1>
