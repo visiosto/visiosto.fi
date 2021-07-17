@@ -566,7 +566,7 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
   const { portfolioPaths } = query.data;
 
   query.data.portfolioReferences.edges.forEach(({ node: referenceNode }) => {
-    const { description, node_locale: locale, contentful_id: id, name, slug } = referenceNode;
+    const { description, node_locale: locale, contentful_id: id, name: title, slug } = referenceNode;
     const { excerpt } = description.childMarkdownRemark;
     reporter.verbose(
       `Creating search index entry for the portfolio reference '${slug}' (locale: ${locale})`,
@@ -582,7 +582,7 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
     const page = {
       slug: pagePath,
       id,
-      name,
+      title,
       excerpt,
       content: createPortfolioReferenceContent(referenceNode),
     };
