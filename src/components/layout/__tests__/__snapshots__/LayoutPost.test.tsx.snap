@@ -3,13 +3,13 @@
 exports[`Post layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-oeezt fNrji"
+    class="sc-eJocfa iapggX"
   >
     <div
-      class="sc-lbVvki gTDZbJ"
+      class="sc-eirqVv iBOBty"
     >
       <p
-        class="sc-eirqVv grfKKq"
+        class="sc-hhIiOg bDpWON"
         role="heading"
       >
         Visiosto
@@ -18,7 +18,7 @@ exports[`Post layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-gGLxEB keXxAA"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-lbVvki hwBxX"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -85,62 +85,62 @@ exports[`Post layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-hTRkXV QxAqT"
+      class="sc-khIgEk eiXYfb"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-jgPyTC iLlIPJ"
+        class="sc-hTRkXV kVXIdZ"
       >
         <div
-          class="sc-gSYDnn cCvBbg"
+          class="sc-jgPyTC iGCBoO"
         />
         <div
-          class="sc-gSYDnn cCvBbg"
+          class="sc-jgPyTC iGCBoO"
         />
         <div
-          class="sc-gSYDnn cCvBbg"
+          class="sc-jgPyTC iGCBoO"
         />
       </div>
       <ul
-        class="sc-laZMeE ceHFpB"
+        class="sc-gSYDnn hjVOkC"
         id="primary-menu"
       >
         <li
-          class="sc-iNiQyp efPwcw"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-jffHpj evigZN"
+            class="sc-iNiQyp kgGJlb"
             href="/"
           >
             Etusivu
           </a>
         </li>
         <li
-          class="sc-iNiQyp efPwcw"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-eJocfa eESINZ"
+            class="sc-jffHpj evigZN"
             href="/#portfolio"
           >
             Portfolio
           </a>
         </li>
         <li
-          class="sc-iNiQyp efPwcw"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-eJocfa eESINZ"
+            class="sc-jffHpj evigZN"
             href="/#yhteystiedot"
           >
             Yhteystiedot
           </a>
         </li>
         <li
-          class="sc-iNiQyp efPwcw"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-jffHpj evigZN"
+            class="sc-iNiQyp kgGJlb"
             href="/blogi"
           >
             Blogi
@@ -149,7 +149,7 @@ exports[`Post layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-ckTSus bzceCC"
+      class="sc-gGLxEB gfxjNA"
     >
       <a
         href="/blogi"
@@ -158,7 +158,7 @@ exports[`Post layout component renders correctly 1`] = `
       </a>
       <svg
         aria-hidden="true"
-        class="sc-fbIWvP fwKHeO"
+        class="sc-ckTSus iRfXan"
         fill="currentColor"
         height="16"
         role="img"
@@ -182,12 +182,12 @@ exports[`Post layout component renders correctly 1`] = `
     <section>
       <header>
         <h1
-          class="sc-FRrlG iOJrGn"
+          class="sc-fbIWvP kcMbKS"
         >
           Moderni markkinointitoimisto Visiosto taittaa sinun visiosi
         </h1>
         <div
-          class="sc-fXazdy fGFdeO"
+          class="sc-FRrlG jGxDFH"
         >
           <time
             datetime="2020-01-01T00:00+02:00"
@@ -195,7 +195,7 @@ exports[`Post layout component renders correctly 1`] = `
             December 31, 2019
           </time>
           <span
-            class="sc-dvXYtj hNTYRg"
+            class="sc-fXazdy gNqExl"
           >
             <a
               class="sc-bdnxRM dawLst"
@@ -205,7 +205,7 @@ exports[`Post layout component renders correctly 1`] = `
             </a>
           </span>
           <span
-            class="sc-TtZnY gPzETE"
+            class="sc-dvXYtj hNTYRg"
           >
             Kategoria:
              
@@ -417,7 +417,7 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-jNnpgg iERbvU fXIyNb"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-cTJkRt iERbvU GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -519,7 +519,7 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-bBjRSN iERbvU jOCueI"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-dPaNzc iERbvU hdNLRj"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -570,7 +570,7 @@ exports[`Post layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-dPaNzc iERbvU hdNLRj"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-jNnpgg iERbvU fXIyNb"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -615,63 +615,12 @@ exports[`Post layout component renders correctly 1`] = `
           </script>
         </div>
       </a>
-      <a
-        href="https://github.com/visiosto"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-efHYUO sc-cTJkRt iERbvU cYacPu"
-          data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
-        >
-          <div
-            style="max-width: 32px; display: block;"
-          >
-            <img
-              alt=""
-              aria-hidden="true"
-              role="presentation"
-              src="data:image/svg+xml;charset=utf-8,%3Csvg height='32' width='32' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
-              style="max-width: 100%; display: block; position: static;"
-            />
-          </div>
-          <div
-            aria-hidden="true"
-            data-placeholder-image=""
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-          <picture>
-            <source
-              data-srcset="/static/438c17272c5f0e9f4a6da34d3e4bc5bd/5d252/github.webp 8w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/e789a/github.webp 16w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/ef6ff/github.webp 32w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/8257c/github.webp 64w"
-              sizes="(min-width: 32px) 32px, 100vw"
-              type="image/webp"
-            />
-            <img
-              alt="Githubin logo"
-              data-gatsby-image-ssr=""
-              data-main-image=""
-              data-src="/static/438c17272c5f0e9f4a6da34d3e4bc5bd/914ee/github.png"
-              data-srcset="/static/438c17272c5f0e9f4a6da34d3e4bc5bd/22867/github.png 8w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/fbc98/github.png 16w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/914ee/github.png 32w,/static/438c17272c5f0e9f4a6da34d3e4bc5bd/1c9ce/github.png 64w"
-              decoding="async"
-              sizes="(min-width: 32px) 32px, 100vw"
-              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-            />
-          </picture>
-          <noscript />
-          <script
-            type="module"
-          >
-            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1)}}
-          </script>
-        </div>
-      </a>
     </div>
     <div
       class="sc-jJMGnK jvMsZO"
     >
       <p
-        class="sc-cOifOu dkfXUO"
+        class="sc-bBjRSN fMRXDy"
       >
         <a
           href="/tietosuoja"
@@ -680,7 +629,7 @@ exports[`Post layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-Arkif hPwJZf"
+        class="sc-cOifOu eXZopZ"
       >
         <span
           class="sc-dlMDgC idqmco"
@@ -723,7 +672,7 @@ exports[`Post layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-khIgEk iNvihz"
+        class="sc-Arkif hPwJZf"
       >
         <a
           href="/kayttoehdot"

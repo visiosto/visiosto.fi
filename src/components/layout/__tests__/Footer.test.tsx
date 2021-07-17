@@ -29,7 +29,7 @@ describe('Footer component', () => {
     expect(getByAltText('Instagramin logo')).toBeInTheDocument();
     expect(getByAltText('Linkedinin logo')).toBeInTheDocument();
     expect(getByAltText('Twitterin logo')).toBeInTheDocument();
-    expect(getByAltText('Githubin logo')).toBeInTheDocument();
+    // expect(getByAltText('Githubin logo')).toBeInTheDocument();
     expect(getByAltText('Facebookin logo')).toBeInTheDocument();
   });
 });
