@@ -570,6 +570,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     });
   });
 
+  // Create redirects for the portfolio page.
+
+  createRedirect({
+    fromPath: `/en/portfolio`,
+    toPath: `/en#portfolio`,
+    isPermanent: true,
+    force: true,
+  });
+
+  createRedirect({
+    fromPath: `/portfolio`,
+    toPath: `/#portfolio`,
+    isPermanent: true,
+    force: true,
+  });
+
   // Create the redirects for the 404 error pages.
   createRedirect({
     fromPath: '/en/*',

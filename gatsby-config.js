@@ -5,14 +5,18 @@ require('dotenv').config();
 
 const path = require('path');
 
-const siteURL = 'https://visiosto-website-main.netlify.app';
+const siteURL = 'https://visiosto.fi';
 
 module.exports = {
   siteMetadata: {
     siteURL,
     // The wrong case of the constant must be included as some plugins depend on it.
     siteUrl: siteURL,
-    alternativeURLs: ['https://visiosto.fi', 'https://visiosto.com', 'https://visiosto.eu'],
+    alternativeURLs: [
+      'https://visiosto.com',
+      'https://visiosto.eu',
+      'https://visiosto-website-main.netlify.app',
+    ],
     title: 'Visiosto',
     description:
       'Pilvilinnojen maalauksen aika on ohi, me rakennamme sen, mitä toivot. Taitamme sinun visiosi – linssimme läpi.',

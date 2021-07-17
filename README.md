@@ -2,7 +2,7 @@
 
 ![Main workflow](https://github.com/visiosto/visiosto-website/workflows/Main%20workflow/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/bcec4f6c-711a-42df-9aea-a655e7dd53b3/deploy-status)](https://app.netlify.com/sites/visiosto-website-main/deploys)
 
-This is [Visiosto’s](https://github.com/visiosto) website-in-progress.
+This is [Visiosto’s](https://github.com/visiosto) website.
 
 ## Install
 
