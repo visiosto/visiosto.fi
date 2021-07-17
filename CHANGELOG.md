@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Property for centring text in the `Card` components.
 - Small margins for the sides of the breadcrumbs.
+- Margin around the pictures on the portfolio pages.
 
 ### Changed
 
