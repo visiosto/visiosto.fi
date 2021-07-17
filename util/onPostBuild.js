@@ -362,9 +362,10 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
         portfolioReferences: allContentfulPortfolioReference {
           edges {
             node {
-              slug
+              contentful_id
               name
               node_locale
+              slug
               subtitle
               description {
                 childMarkdownRemark {
