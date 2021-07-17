@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Story section on the front page to be hidden.
+- Margins of the page titles to be smaller on smaller screens.
 
 ### Removed
 

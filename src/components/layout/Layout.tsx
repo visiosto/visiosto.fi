@@ -13,7 +13,7 @@ import Header from './Header';
 import useColorSchemeListener from '../../util/useColorSchemeListener';
 
 const PageTitle = styled.h1`
-  margin: 2em ${(props) => props.theme.layout.marginMobile};
+  margin: 2em ${(props) => props.theme.layout.marginTitleMobile};
   font-size: 2rem;
   text-align: center;
   word-break: break-all;
@@ -21,7 +21,7 @@ const PageTitle = styled.h1`
   hyphens: auto;
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {
-    margin: 2em ${(props) => props.theme.layout.marginTablet};
+    margin: 2em ${(props) => props.theme.layout.marginTitleTablet};
     font-size: 3rem;
   }
 
