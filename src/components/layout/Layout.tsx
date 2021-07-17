@@ -63,7 +63,7 @@ function Layout({ article, author, children, description, image, locale, pageID,
         image={image}
         locale={locale}
         pageID={pageID}
-        title={title.replaceAll('–', '-')}
+        title={title.replace('–', '-')}
       />
       <Header locale={locale} pageID={pageID} />
       <main>
