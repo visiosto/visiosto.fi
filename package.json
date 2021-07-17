@@ -1,7 +1,7 @@
 {
   "name": "visiosto-website",
   "private": true,
-  "version": "0.26.1",
+  "version": "0.26.2",
   "description": "The website of Visiosto",
   "scripts": {
     "build": "gatsby build",
