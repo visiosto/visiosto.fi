@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Property for centring text in the `Card` components.
+
 ### Removed
 
 - Unnecessary text from the front page contact form.

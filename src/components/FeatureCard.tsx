@@ -29,7 +29,7 @@ const defaultProps = { button: null };
 
 function FeatureCard({ button, children, icon, title }) {
   return (
-    <Card>
+    <Card centered>
       <Icon>{icon}</Icon>
       <H3>{title}</H3>
       {children}
