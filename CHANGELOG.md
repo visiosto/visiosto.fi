@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Property for centring text in the `Card` components.
+- Small margins for the sides of the breadcrumbs.
 
 ### Changed
 

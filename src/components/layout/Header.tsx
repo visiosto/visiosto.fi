@@ -58,7 +58,7 @@ const Image = styled(SchemedImage)`
 `;
 
 const Breadcrumb = styled.div`
-  margin: 2rem 0;
+  margin: 2rem 0.5rem;
   text-align: center;
 `;
 
