@@ -149,7 +149,7 @@ exports[`Post layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-gGLxEB jJqMWx"
+      class="sc-gGLxEB gfxjNA"
     >
       <a
         href="/blogi"
@@ -182,7 +182,7 @@ exports[`Post layout component renders correctly 1`] = `
     <section>
       <header>
         <h1
-          class="sc-fbIWvP jmnwvm"
+          class="sc-fbIWvP kcMbKS"
         >
           Moderni markkinointitoimisto Visiosto taittaa sinun visiosi
         </h1>
