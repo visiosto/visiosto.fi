@@ -161,9 +161,6 @@ class ContactForm extends React.Component<Props, State> {
             <input id="name" name="name" onChange={this.handleChange} type="text" value={name} />
           </FormDiv>
           <FormDiv>
-            <p>{intl('contactFormEither')}</p>
-          </FormDiv>
-          <FormDiv>
             <label htmlFor="email">{intl('contactFormEmail')}</label>
             <label className="error-message" hidden={!errors!.tel} htmlFor="email">
               {errors!.tel}
