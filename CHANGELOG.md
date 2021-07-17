@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Redirect for the portfolio page URL.
+
 ### Changed
 
 - Site URL to `https://visiosto.fi`.
