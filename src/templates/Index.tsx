@@ -111,10 +111,10 @@ function Page({ data, pageContext }) {
       >
         <div dangerouslySetInnerHTML={{ __html: page.introBody.childMarkdownRemark.html }} />
       </Cover>
-      <Cover imagesType="lines" rule={{ color: 'blue', mode: 3 }} title={page.storyTitle}>
+      {/* <Cover imagesType="lines" rule={{ color: 'blue', mode: 3 }} title={page.storyTitle}>
         <div dangerouslySetInnerHTML={{ __html: page.storyBody.childMarkdownRemark.html }} />
       </Cover>
-      <Break color="peach" mode={1} ignoreColorScheme />
+      <Break color="peach" mode={1} ignoreColorScheme /> */}
       <Section lesserMargin>
         <H2>{page.productsTitle}</H2>
         <Cards>

@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Property for centring text in the `Card` components.
 
+### Changed
+
+- Story section on the front page to be hidden.
+
 ### Removed
 
 - Unnecessary text from the front page contact form.
