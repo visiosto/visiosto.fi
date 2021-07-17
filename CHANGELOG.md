@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Site URL to `https://visiosto.fi`.
+- `robots.txt` to allow all bots.
 
 ## [0.25.0] - 2021-07-17
 
