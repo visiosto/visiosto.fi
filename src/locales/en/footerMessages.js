@@ -10,6 +10,7 @@ export default {
   footerPricing: 'Pricing',
   footerOnlineStore: 'Online store',
   footerDataProtection: 'Data protection',
+  footerAccessibilityStatement: 'Accessibility Statement',
   footerTermsOfUse: 'Terms of use',
   footerSocialMediaTitle: 'Social Media',
   footerHashtag: '&num;throughourlens',

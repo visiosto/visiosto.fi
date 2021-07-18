@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Added
+
+- Link to the accessibility statement to the footer of the site.
+
 ## [0.26.2] - 2021-07-17
 
 ### Fixed
