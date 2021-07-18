@@ -457,6 +457,15 @@ exports[`Footer component renders correctly 1`] = `
           Käyttöehdot
         </a>
       </p>
+      <p
+        class="sc-cOifOu eXZopZ"
+      >
+        <a
+          href="/accessibility-statement"
+        >
+          Saavutettavuusseloste
+        </a>
+      </p>
     </div>
     <div
       class="sc-kLojOw ccoPBf"

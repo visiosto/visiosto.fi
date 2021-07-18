@@ -11,6 +11,7 @@ export default {
   footerOnlineStore: 'Verkkokauppa',
   footerDataProtection: 'Tietosuoja',
   footerTermsOfUse: 'Käyttöehdot',
+  footerAccessibilityStatement: 'Saavutettavuusseloste',
   footerSocialMediaTitle: 'Sosiaalisessa mediassa',
   footerHashtag: '&num;linssimmeläpi',
   footerFacebookImageText: 'Facebookin logo',

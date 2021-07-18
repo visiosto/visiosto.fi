@@ -139,6 +139,14 @@ const TermsOfUseP = styled.p`
   }
 `;
 
+const AccessibilityStatementP = styled.p`
+  margin: 1rem 0 1rem;
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    margin: 0;
+  }
+`;
+
 const propTypes = {
   locale: PropTypes.string.isRequired,
   pageID: PropTypes.string.isRequired,
@@ -320,6 +328,11 @@ function Footer({ locale, pageID }) {
             {intl('footerTermsOfUse')}
           </LocalizedLink>
         </TermsOfUseP>
+        <AccessibilityStatementP>
+          <LocalizedLink locale={locale} to="/accessibility-statement">
+            {intl('footerAccessibilityStatement')}
+          </LocalizedLink>
+        </AccessibilityStatementP>
       </Div>
       <Div>
         <p dangerouslySetInnerHTML={{ __html: intl('footerOcticons') }} />

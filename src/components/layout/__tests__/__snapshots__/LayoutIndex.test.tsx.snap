@@ -3,13 +3,13 @@
 exports[`Index layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-iNiQyp iendsd"
+    class="sc-jffHpj sUMAT"
   >
     <div
-      class="sc-oeezt dUYRzM"
+      class="sc-hhIiOg hAGexx"
     >
       <h1
-        class="sc-jffHpj cLPDJl"
+        class="sc-eJocfa idIbMJ"
       >
         Visiosto
       </h1>
@@ -17,7 +17,7 @@ exports[`Index layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hhIiOg rvkIb"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eirqVv iTAoZs"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -84,62 +84,62 @@ exports[`Index layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-cOifOu fKvNYN"
+      class="sc-Arkif icTyjD"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-Arkif gAiBVx"
+        class="sc-khIgEk kGUmRl"
       >
         <div
-          class="sc-khIgEk bgomuq"
+          class="sc-hTRkXV fEoLQW"
         />
         <div
-          class="sc-khIgEk bgomuq"
+          class="sc-hTRkXV fEoLQW"
         />
         <div
-          class="sc-khIgEk bgomuq"
+          class="sc-hTRkXV fEoLQW"
         />
       </div>
       <ul
-        class="sc-hTRkXV xosFA"
+        class="sc-jgPyTC grxUuo"
         id="primary-menu"
       >
         <li
-          class="sc-jgPyTC bbOXhF"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-gSYDnn kjPPdM"
+            class="sc-laZMeE gPctwz"
             href="/"
           >
             Etusivu
           </a>
         </li>
         <li
-          class="sc-jgPyTC bbOXhF"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-laZMeE gPctwz"
+            class="sc-iNiQyp kgGJlb"
             href="/#portfolio"
           >
             Portfolio
           </a>
         </li>
         <li
-          class="sc-jgPyTC bbOXhF"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-laZMeE gPctwz"
+            class="sc-iNiQyp kgGJlb"
             href="/#yhteystiedot"
           >
             Yhteystiedot
           </a>
         </li>
         <li
-          class="sc-jgPyTC bbOXhF"
+          class="sc-gSYDnn kKgpCH"
         >
           <a
-            class="sc-gSYDnn kjPPdM"
+            class="sc-laZMeE gPctwz"
             href="/blogi"
           >
             Blogi
@@ -148,14 +148,14 @@ exports[`Index layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-eirqVv iUrwPw"
+      class="sc-lbVvki kMeBVT"
     />
   </header>
   <main>
     <section>
       <header>
         <h2
-          class="sc-gGLxEB kHAZry"
+          class="sc-ckTSus bpkwmw"
         >
           Etusivu
         </h2>
@@ -620,6 +620,15 @@ exports[`Index layout component renders correctly 1`] = `
           href="/kayttoehdot"
         >
           Käyttöehdot
+        </a>
+      </p>
+      <p
+        class="sc-cOifOu eXZopZ"
+      >
+        <a
+          href="/accessibility-statement"
+        >
+          Saavutettavuusseloste
         </a>
       </p>
     </div>
