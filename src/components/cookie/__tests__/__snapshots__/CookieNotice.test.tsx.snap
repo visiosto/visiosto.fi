@@ -4,6 +4,7 @@ exports[`Cookie notice component renders correctly 1`] = `
 <div>
   <span
     class="sc-dIvrsQ gWvsKi"
+    tabindex="0"
   >
     Evästeasetukset
   </span>

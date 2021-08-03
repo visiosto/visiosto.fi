@@ -410,6 +410,7 @@ exports[`Footer component renders correctly 1`] = `
       >
         <span
           class="sc-dIvrsQ gWvsKi"
+          tabindex="0"
         >
           Evästeasetukset
         </span>

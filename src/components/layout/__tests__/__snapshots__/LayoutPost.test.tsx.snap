@@ -633,6 +633,7 @@ exports[`Post layout component renders correctly 1`] = `
       >
         <span
           class="sc-dlMDgC idqmco"
+          tabindex="0"
         >
           Evästeasetukset
         </span>
