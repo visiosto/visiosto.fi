@@ -69,7 +69,9 @@ class CookieNotice extends React.Component<Props, State> {
 
     return (
       <>
-        <Span onClick={this.onLinkClick}>{intl('cookieSettingsLink')}</Span>
+        <Span onClick={this.onLinkClick} tabIndex={0}>
+          {intl('cookieSettingsLink')}
+        </Span>
         <Wrapper>
           <CookieSettings
             locale={locale}
