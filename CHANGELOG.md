@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Sitemap address to the robots file.
 
+## [0.27.1] - 2021-08-03
+
+### Fixed
+
+- Cookie settings link not being accessible by pressing tab as it didn’t have a tab index.
+
 ## [0.27.0] - 2021-07-18
 
 ### Added
@@ -723,7 +729,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.27.0...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.27.1...HEAD
+[0.27.1]: https://github.com/visiosto/visiosto-website/compare/v0.27.0...v0.27.1
 [0.27.0]: https://github.com/visiosto/visiosto-website/compare/v0.26.2...v0.27.0
 [0.26.2]: https://github.com/visiosto/visiosto-website/compare/v0.26.1...v0.26.2
 [0.26.1]: https://github.com/visiosto/visiosto-website/compare/v0.26.0...v0.26.1
