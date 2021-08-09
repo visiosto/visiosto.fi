@@ -35,7 +35,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^3.4.2",
     "gatsby-plugin-catch-links": "^3.0.0",
-    "gatsby-plugin-google-gtag": "^3.3.0",
+    "gatsby-plugin-google-gtag": "^3.11.0",
     "gatsby-plugin-google-tagmanager": "^3.4.0",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-image": "^1.0.0",
