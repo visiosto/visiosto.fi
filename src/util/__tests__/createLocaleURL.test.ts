@@ -11,37 +11,37 @@ describe('function for creating localized URLs of pages', () => {
     ...headQuery,
     site: { siteMetadata: { defaultLocale: 'fi', localePaths: { fi: '', en_GB: 'en' } } },
   };
-  const baseURL = 'https://visiosto.fi';
+  const baseURL = 'https://www.visiosto.fi';
 
   it('creates Finnish index URL correctly', () => {
-    expect(createLocaleURL(baseURL, indexPageID, 'fi', data)).toBe('https://visiosto.fi');
+    expect(createLocaleURL(baseURL, indexPageID, 'fi', data)).toBe('https://www.visiosto.fi');
   });
 
   it('creates English index URL correctly', () => {
-    expect(createLocaleURL(baseURL, indexPageID, 'en-GB', data)).toBe('https://visiosto.fi/en');
+    expect(createLocaleURL(baseURL, indexPageID, 'en-GB', data)).toBe('https://www.visiosto.fi/en');
   });
 
   it('creates Finnish management page URL correctly', () => {
     expect(createLocaleURL(baseURL, managementPageID, 'fi', data)).toBe(
-      'https://visiosto.fi/hallinto',
+      'https://www.visiosto.fi/hallinto',
     );
   });
 
   it('creates English management page URL correctly', () => {
     expect(createLocaleURL(baseURL, managementPageID, 'en-GB', data)).toBe(
-      'https://visiosto.fi/en/management',
+      'https://www.visiosto.fi/en/management',
     );
   });
 
   it('creates Finnish client register privacy policy page URL correctly', () => {
     expect(createLocaleURL(baseURL, clientRegisterPrivacyPolicyPageID, 'fi', data)).toBe(
-      'https://visiosto.fi/tietosuoja/asiakasrekisterin-tietosuojaseloste',
+      'https://www.visiosto.fi/tietosuoja/asiakasrekisterin-tietosuojaseloste',
     );
   });
 
   it('creates English client register privacy policy page URL correctly', () => {
     expect(createLocaleURL(baseURL, clientRegisterPrivacyPolicyPageID, 'en-GB', data)).toBe(
-      'https://visiosto.fi/en/data-protection/client-register-privacy-policy',
+      'https://www.visiosto.fi/en/data-protection/client-register-privacy-policy',
     );
   });
 });
