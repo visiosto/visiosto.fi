@@ -243,6 +243,8 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         name="twitter:creator"
       />
 
+      <link href={createLocaleURL(baseURL, pageID, locale, data)} rel="canonical" />
+
       <link href="https://use.typekit.net/wbu0jvl.css" rel="stylesheet" />
 
       {(() => {
