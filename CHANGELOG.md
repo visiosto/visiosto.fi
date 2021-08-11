@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Sitemap address to the robots file.
+- Page with registration form for the server and domain service.
 
 ## [0.27.1] - 2021-08-03
 
