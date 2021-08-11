@@ -11,6 +11,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Sitemap address to the robots file.
 - Page with registration form for the server and domain service.
 
+## [0.27.3] - 2021-08-11
+
+### Added
+
+- Canonical URL link inside page `head` tags.
+
 ## [0.27.2] - 2021-08-11
 
 ### Changed
@@ -736,7 +742,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.27.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.27.3...HEAD
+[0.27.3]: https://github.com/visiosto/visiosto-website/compare/v0.27.2...v0.27.3
 [0.27.2]: https://github.com/visiosto/visiosto-website/compare/v0.27.1...v0.27.2
 [0.27.1]: https://github.com/visiosto/visiosto-website/compare/v0.27.0...v0.27.1
 [0.27.0]: https://github.com/visiosto/visiosto-website/compare/v0.26.2...v0.27.0
