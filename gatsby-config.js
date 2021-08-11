@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const path = require('path');
 
-const siteURL = 'https://visiosto.fi';
+const siteURL = 'https://www.visiosto.fi';
 
 module.exports = {
   siteMetadata: {
