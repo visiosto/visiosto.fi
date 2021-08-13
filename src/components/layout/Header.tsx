@@ -429,7 +429,7 @@ function Header({ errorPage, home, locale, pageID }) {
                   });
                 })()}
               </>
-            )
+            );
           } else {
             return null;
           }

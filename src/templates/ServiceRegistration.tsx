@@ -9,6 +9,7 @@ import { useIntl } from 'react-intl';
 
 import Intl from '../components/Intl';
 import Layout from '../components/layout/Layout';
+import PersonalServerDomainServiceRegistrationForm from '../components/form/PersonalServerDomainServiceRegistrationForm';
 import Rule from '../components/Rule';
 import Theme from '../components/Theme';
 
@@ -80,7 +81,8 @@ function Page({ data, pageContext }) {
       <Separator>
         <Rule color="peach" mode={1} ignoreColorScheme />
       </Separator>
-      <H2>Placeholder</H2>
+      <H2>{intl('serviceRegistrationPersonalServerDomainFormTitle')}</H2>
+      <PersonalServerDomainServiceRegistrationForm locale={locale} />
     </Layout>
   );
 }

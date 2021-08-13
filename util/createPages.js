@@ -155,6 +155,23 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
             }
           }
         }
+        personalServerDomainServiceRegistrationPages: allContentfulPage(
+          filter: { contentful_id: { eq: "2PFqJqgjBlLgDABN6Wxhis" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                slug
+                parentPath {
+                  slug
+                }
+              }
+            }
+          }
+        }
         portfolioPaths: allContentfulPath(
           filter: { contentful_id: { eq: "1tG1ohi0pFMwiZwtSoiAhm" } }
         ) {
@@ -524,6 +541,29 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         locale,
         pageID,
         clientType: 'person',
+      },
+    });
+  });
+
+  // Create the personal server and domain service registration page from Contentful.
+
+  query.data.personalServerDomainServiceRegistrationPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    createPage({
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'ServiceRegistration.tsx'),
+      context: {
+        locale,
+        pageID,
+        // clientType: 'person',
       },
     });
   });

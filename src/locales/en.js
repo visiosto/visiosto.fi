@@ -17,6 +17,7 @@ import managementMessages from './en/managementMessages';
 import notFoundMessages from './en/notFoundMessages';
 import portfolioMessages from './en/portfolioMessages';
 import searchMessages from './en/searchMessages';
+import serviceRegistrationPersonalServerDomainMessages from './en/serviceRegistrationPersonalServerDomainMessages';
 
 export const messages = {
   ...authorMessages,
@@ -33,6 +34,7 @@ export const messages = {
   ...notFoundMessages,
   ...portfolioMessages,
   ...searchMessages,
+  ...serviceRegistrationPersonalServerDomainMessages,
 };
 
 export const locale = defineMessages(messages);
