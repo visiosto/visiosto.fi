@@ -2273,10 +2273,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@primer/octicons-react@^14.2.1":
-  version "14.2.2"
-  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-14.2.2.tgz#f63f4258261f0f3dcbffd156171988749a29ec92"
-  integrity sha512-CB+D1cgWe1na0VPgt/Mg9Hrk6I3lcrJghz1eKQAiv1OPo19gQxR9GQ69ltMQ71HUKfy3af501hX5cxkVNF1kcQ==
+"@primer/octicons-react@^15.0.1":
+  version "15.0.1"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-15.0.1.tgz#06338e5f77ab99f6b61cacb975faeb7e920c6bb3"
+  integrity sha512-djNecGG6HAwjn64UCam2mz4o1M2KYUM490uNalH+o2PI4KI3xhs1JtXDP3h3Cn7h777lPS14Ic46TD+/p7ULxA==
 
 "@reach/router@^1.3.4":
   version "1.3.4"
