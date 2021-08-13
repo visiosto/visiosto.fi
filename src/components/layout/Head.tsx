@@ -254,7 +254,7 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         return <link href={createLocaleURL(baseURL, pageID, locale, data)} rel="canonical" />;
       })()}
 
-      <link href="https://use.typekit.net/wbu0jvl.css" rel="stylesheet" />
+      <link href="https://use.typekit.net/njo0slg.css" rel="stylesheet" />
 
       {(() => {
         if (errorPage) {
