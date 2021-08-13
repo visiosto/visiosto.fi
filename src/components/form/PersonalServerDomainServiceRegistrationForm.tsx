@@ -425,6 +425,10 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
         }
         break;
       }
+
+      default: {
+        break;
+      }
     }
 
     this.setState({ errors });

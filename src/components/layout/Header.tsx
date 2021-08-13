@@ -430,9 +430,8 @@ function Header({ errorPage, home, locale, pageID }) {
                 })()}
               </>
             );
-          } else {
-            return null;
           }
+          return null;
         })()}
         {/* {(() => {
           // if (breadcrumb && breadcrumb.length > 1) {
