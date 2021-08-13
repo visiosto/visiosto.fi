@@ -15,7 +15,10 @@ describe('Client register person form component', () => {
   beforeAll(() => (useStaticQuery as jest.Mock).mockReturnValue(localizedLinkQuery));
 
   it('renders correctly', () => {
-    const { container } = renderWithProviders(<PersonalServerDomainServiceRegistrationForm locale="fi" />, 'fi');
+    const { container } = renderWithProviders(
+      <PersonalServerDomainServiceRegistrationForm locale="fi" />,
+      'fi',
+    );
 
     expect(container).toMatchSnapshot();
   });
