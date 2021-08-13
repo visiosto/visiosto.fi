@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Sitemap address to the robots file.
-- Page with registration form for the server and domain service.
+- Page with registration form for the personal server and domain service.
 - Front page as the first breadcrumb in the site breadcrumbs.
 
 ### Changed
