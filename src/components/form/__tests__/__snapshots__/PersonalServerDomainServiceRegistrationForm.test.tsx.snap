@@ -1,0 +1,684 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client register person form component renders correctly 1`] = `
+<div>
+  <div
+    class="sc-fujyAs isvnWl"
+  >
+    <form
+      action="/"
+      data-netlify="true"
+      method="POST"
+      name="Registration for personal server and domain service"
+      netlify-honeypot="bot-field"
+    >
+      <input
+        name="form-name"
+        type="hidden"
+        value="Registration for personal server and domain service"
+      />
+      <div
+        class="sc-eCApnc jylwCj"
+        hidden=""
+      >
+        <label
+          for="bot-field"
+        >
+          serviceRegistrationPersonalServerDomainFormHoneypot
+        </label>
+        <input
+          name="bot-field"
+        />
+      </div>
+      <div
+        class="sc-pNWdM"
+      >
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <h3>
+            serviceRegistrationPersonalServerDomainFormBasicInfo
+          </h3>
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="first-name"
+          >
+            Etunimi
+          </label>
+          <label
+            class="error-message"
+            for="first-name"
+            hidden=""
+          />
+          <input
+            id="first-name"
+            name="firstName"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="surname"
+          >
+            Sukunimi
+          </label>
+          <label
+            class="error-message"
+            for="surname"
+            hidden=""
+          />
+          <input
+            id="surname"
+            name="surname"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="tel"
+          >
+            serviceRegistrationPersonalServerDomainFormTel
+          </label>
+          <label
+            class="error-message"
+            for="tel"
+            hidden=""
+          />
+          <input
+            id="tel"
+            name="tel"
+            type="tel"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="email"
+          >
+            serviceRegistrationPersonalServerDomainFormEmail
+          </label>
+          <label
+            class="error-message"
+            for="email"
+            hidden=""
+          />
+          <input
+            class="medium"
+            id="email"
+            name="email"
+            type="email"
+            value=""
+          />
+          <p>
+            serviceRegistrationPersonalServerDomainFormEmailForBilling
+          </p>
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="address-line-1"
+          >
+            serviceRegistrationPersonalServerDomainFormAddressLine1
+          </label>
+          <label
+            class="error-message"
+            for="address-line-1"
+            hidden=""
+          />
+          <input
+            class="wider"
+            id="address-line-1"
+            name="addressLine1"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="address-line-2"
+          >
+            serviceRegistrationPersonalServerDomainFormAddressLine2
+          </label>
+          <input
+            class="wider"
+            id="address-line-2"
+            name="addressLine2"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="postcode"
+          >
+            serviceRegistrationPersonalServerDomainFormPostcode
+          </label>
+          <label
+            class="error-message"
+            for="postcode"
+            hidden=""
+          />
+          <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="post-office"
+          >
+            serviceRegistrationPersonalServerDomainFormPostOffice
+          </label>
+          <label
+            class="error-message"
+            for="post-office"
+            hidden=""
+          />
+          <input
+            id="post-office"
+            name="postOffice"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="same-billing-address"
+          >
+            serviceRegistrationPersonalServerDomainFormSameBillingAddress
+          </label>
+          <span
+            class="sc-gKAaRy jrpTtP"
+          >
+            <input
+              id="same-billing-address"
+              name="isSameBillingAddress"
+              type="checkbox"
+            />
+            <span
+              class="sc-iCoGMd bZBmcn"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-pNWdM"
+        hidden=""
+      >
+        <h3>
+          serviceRegistrationPersonalServerDomainFormBillingAddress
+        </h3>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="billing-address-line-1"
+          >
+            serviceRegistrationPersonalServerDomainFormBillingAddressLine1
+          </label>
+          <label
+            class="error-message"
+            for="billing-address-line-1"
+            hidden=""
+          />
+          <input
+            class="wider"
+            id="billing-address-line-1"
+            name="billingAddressLine1"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="billing-address-line-2"
+          >
+            serviceRegistrationPersonalServerDomainFormBillingAddressLine2
+          </label>
+          <input
+            class="wider"
+            id="billing-address-line-2"
+            name="billingAddressLine2"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="billing-postcode"
+          >
+            serviceRegistrationPersonalServerDomainFormBillingPostcode
+          </label>
+          <label
+            class="error-message"
+            for="billing-postcode"
+            hidden=""
+          />
+          <input
+            id="billing-postcode"
+            name="billingPostcode"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="billing-post-office"
+          >
+            serviceRegistrationPersonalServerDomainFormBillingPostOffice
+          </label>
+          <label
+            class="error-message"
+            for="billing-post-office"
+            hidden=""
+          />
+          <input
+            id="billing-post-office"
+            name="billingPostOffice"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-pNWdM"
+        hidden=""
+      >
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <h3>
+            serviceRegistrationPersonalServerDomainFormBillingMethod
+          </h3>
+          <p>
+            serviceRegistrationPersonalServerDomainFormBillingMethodContent
+          </p>
+          <div
+            class="sc-jSFjdj hdvAlr"
+            hidden=""
+          >
+            <input
+              id="radio-credit-card"
+              name="billingMethod"
+              type="radio"
+              value="credit-card"
+            />
+            <label
+              for="radio-credit-card"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-email"
+              name="billingMethod"
+              type="radio"
+              value="email"
+            />
+            <label
+              for="radio-email"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingMethodEmail
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-paper"
+              name="billingMethod"
+              type="radio"
+              value="paper"
+            />
+            <label
+              for="radio-paper"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingMethodPaper
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-pNWdM"
+        hidden=""
+      >
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <h3>
+            serviceRegistrationPersonalServerDomainFormBillingPeriod
+          </h3>
+          <p>
+            serviceRegistrationPersonalServerDomainFormBillingPeriodContent
+          </p>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-one-month"
+              name="billingPeriod"
+              type="radio"
+              value="one-month"
+            />
+            <label
+              for="radio-one-month"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodOneMonth
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-two-months"
+              name="billingPeriod"
+              type="radio"
+              value="two-months"
+            />
+            <label
+              for="radio-two-months"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodTwoMonths
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-three-months"
+              name="billingPeriod"
+              type="radio"
+              value="three-months"
+            />
+            <label
+              for="radio-three-months"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodThreeMonths
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-four-months"
+              name="billingPeriod"
+              type="radio"
+              value="four-months"
+            />
+            <label
+              for="radio-four-months"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodFourMonths
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-six-months"
+              name="billingPeriod"
+              type="radio"
+              value="six-months"
+            />
+            <label
+              for="radio-six-months"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodSixMonths
+            </label>
+          </div>
+          <div
+            class="sc-jSFjdj hdvAlr"
+          >
+            <input
+              id="radio-one-year"
+              name="billingPeriod"
+              type="radio"
+              value="one-year"
+            />
+            <label
+              for="radio-one-year"
+            >
+              serviceRegistrationPersonalServerDomainFormBillingPeriodOneYear
+            </label>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-pNWdM"
+        hidden=""
+      >
+        <h3>
+          serviceRegistrationPersonalServerDomainFormDomainInformation
+        </h3>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="domain"
+          >
+            serviceRegistrationPersonalServerDomainFormDomain
+          </label>
+          <label
+            class="error-message"
+            for="domain"
+            hidden=""
+          />
+          <input
+            id="domain"
+            name="domain"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-pNWdM"
+        hidden=""
+      >
+        <h3>
+          serviceRegistrationPersonalServerDomainFormAcceptTerms
+        </h3>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="accept-privacy-policy"
+          >
+            serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicy
+          </label>
+          <span
+            class="sc-gKAaRy jrpTtP"
+          >
+            <input
+              id="accept-privacy-policy"
+              name="acceptPrivacyPolicy"
+              type="checkbox"
+            />
+            <span
+              class="sc-iCoGMd bZBmcn"
+            />
+          </span>
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="accept-additional-agreements"
+          >
+            serviceRegistrationPersonalServerDomainFormAcceptAdditionalAgreements
+          </label>
+          <span
+            class="sc-gKAaRy jrpTtP"
+          >
+            <input
+              id="accept-additional-agreements"
+              name="acceptAdditionalAgreements"
+              type="checkbox"
+            />
+            <span
+              class="sc-iCoGMd bZBmcn"
+            />
+          </span>
+        </div>
+        <div
+          class="sc-eCApnc jylwCj"
+        >
+          <label
+            for="accept-terms"
+          >
+            serviceRegistrationPersonalServerDomainFormAcceptTerms
+          </label>
+          <span
+            class="sc-gKAaRy jrpTtP"
+          >
+            <input
+              id="accept-terms"
+              name="acceptTerms"
+              type="checkbox"
+            />
+            <span
+              class="sc-iCoGMd bZBmcn"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-eCApnc jylwCj"
+      >
+        <div
+          class="sc-jrsJWt"
+          hidden=""
+        >
+          <span
+            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+          >
+            <svg
+              aria-hidden="true"
+              class="sc-kEqXSa hIueqN"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"
+                fill-rule="evenodd"
+              />
+            </svg>
+             
+            <span>
+              serviceRegistrationPersonalServerDomainFormPrevious
+            </span>
+          </span>
+        </div>
+        <div
+          class="sc-jrsJWt"
+        >
+          <span
+            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+          >
+            <span>
+              serviceRegistrationPersonalServerDomainFormNext
+            </span>
+             
+            <svg
+              aria-hidden="true"
+              class="sc-iqAclL ePdOMq"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M13.22 19.03a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 10-1.06 1.06l4.97 4.97H3.75a.75.75 0 000 1.5h14.44l-4.97 4.97a.75.75 0 000 1.06z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="sc-jrsJWt"
+          hidden=""
+        >
+          <button
+            type="submit"
+          >
+            <svg
+              aria-hidden="true"
+              class="sc-crzoAE fCoWvo"
+              fill="currentColor"
+              height="24"
+              role="img"
+              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"
+                fill-rule="evenodd"
+              />
+            </svg>
+             
+            serviceRegistrationPersonalServerDomainFormSend
+          </button>
+        </div>
+      </div>
+      <div
+        class="sc-eCApnc jylwCj"
+        hidden=""
+      >
+        <p>
+          serviceRegistrationPersonalServerDomainFormSuccess
+        </p>
+      </div>
+      <div
+        class="sc-eCApnc jylwCj"
+        hidden=""
+      >
+        <p>
+          serviceRegistrationPersonalServerDomainFormError
+        </p>
+        <p>
+          serviceRegistrationPersonalServerDomainFormErrorNoErrorMessage
+        </p>
+      </div>
+    </form>
+  </div>
+  ,
+</div>
+`;

@@ -3,4 +3,6 @@
 
 export default {
   serviceRegistrationPersonalServerDomainFormTitle: 'TODO',
+  serviceRegistrationPersonalServerDomainFormFirstName: 'First Name',
+  serviceRegistrationPersonalServerDomainFormSurname: 'Last Name',
 };
