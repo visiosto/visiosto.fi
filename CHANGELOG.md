@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Sitemap address to the robots file.
 - Page with registration form for the server and domain service.
 
+### Changed
+
+- Web font project to a smaller one for faster load times.
+
 ## [0.27.4] - 2021-08-11
 
 ### Fixed
