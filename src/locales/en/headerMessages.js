@@ -3,4 +3,5 @@
 
 export default {
   headerLogoImageText: 'Visiosto Logo',
+  headerIndexBreadcrumb: 'Visiosto',
 };
