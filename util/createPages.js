@@ -727,8 +727,8 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
       toPath: createPagePath(to, locale, defaultLocale, localePaths),
       isPermanent,
       force,
-    })
-  })
+    });
+  });
 
   // Create the redirects for the 404 error pages.
 
