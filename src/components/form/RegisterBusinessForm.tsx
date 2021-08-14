@@ -13,9 +13,9 @@ import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
 
 import {
-  FORM_BILLING_EMAIL,
-  FORM_BILLING_E_INVOICE,
-  FORM_BILLING_PAPER,
+  FORM_BILLING_METHOD_INVOICE_EMAIL,
+  FORM_BILLING_METHOD_INVOICE_E_INVOICE,
+  FORM_BILLING_METHOD_INVOICE_PAPER,
   FORM_POST_STATUS_ERROR,
   FORM_POST_STATUS_SUCCESS,
   FORM_POST_STATUS_TIMEOUT,
@@ -242,8 +242,8 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       this.setState({ currentPage: 0 });
     } else if (
       currentPage === 4 &&
-      billingMethod !== FORM_BILLING_E_INVOICE &&
-      billingMethod !== FORM_BILLING_EMAIL
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE &&
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL
     ) {
       this.setState({ currentPage: 2 });
     } else {
@@ -259,8 +259,8 @@ class RegisterBusinessForm extends React.Component<Props, State> {
         this.setState({ currentPage: 2 });
       } else if (
         currentPage === 2 &&
-        billingMethod !== FORM_BILLING_E_INVOICE &&
-        billingMethod !== FORM_BILLING_EMAIL
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE &&
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL
       ) {
         this.setState({ currentPage: 4 });
       } else {
@@ -350,7 +350,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
 
       case 3: {
         switch (billingMethod) {
-          case FORM_BILLING_E_INVOICE: {
+          case FORM_BILLING_METHOD_INVOICE_E_INVOICE: {
             if (eInvoiceAddress === '') {
               isValid = false;
               errors.eInvoiceAddress = intl(
@@ -366,7 +366,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             break;
           }
 
-          case FORM_BILLING_EMAIL: {
+          case FORM_BILLING_METHOD_INVOICE_EMAIL: {
             if (billingEmail === '') {
               isValid = false;
               errors.billingEmail = intl('clientRegisterBusinessFormErrorMissingBillingEmail');
@@ -663,19 +663,19 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
                   {
-                    id: FORM_BILLING_E_INVOICE,
+                    id: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
                     label: intl('clientRegisterBusinessFormBillingMethodEInvoice'),
-                    value: FORM_BILLING_E_INVOICE,
+                    value: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
                   },
                   {
-                    id: FORM_BILLING_EMAIL,
+                    id: FORM_BILLING_METHOD_INVOICE_EMAIL,
                     label: intl('clientRegisterBusinessFormBillingMethodEmail'),
-                    value: FORM_BILLING_EMAIL,
+                    value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
-                    id: FORM_BILLING_PAPER,
+                    id: FORM_BILLING_METHOD_INVOICE_PAPER,
                     label: intl('clientRegisterBusinessFormBillingMethodPaper'),
-                    value: FORM_BILLING_PAPER,
+                    value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}
                 name="billingMethod"
@@ -690,7 +690,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             <FormDiv>
               <h3>{intl('clientRegisterBusinessFormBillingInfo')}</h3>
             </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_E_INVOICE}>
+            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE}>
               <label htmlFor="e-invoice-address">
                 {intl('clientRegisterBusinessFormEInvoiceAddress')}
               </label>
@@ -710,7 +710,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 value={eInvoiceAddress}
               />
             </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_E_INVOICE}>
+            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE}>
               <label htmlFor="e-invoice-operator">
                 {intl('clientRegisterBusinessFormEInvoiceOperator')}
               </label>
@@ -730,7 +730,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 value={eInvoiceOperator}
               />
             </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_EMAIL}>
+            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL}>
               <label htmlFor="billing-email">
                 {intl('clientRegisterBusinessFormBillingEmail')}
               </label>

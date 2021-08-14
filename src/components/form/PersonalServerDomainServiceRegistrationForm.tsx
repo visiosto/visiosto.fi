@@ -13,9 +13,9 @@ import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
 
 import {
-  FORM_BILLING_CREDIT_CARD,
-  FORM_BILLING_EMAIL,
-  FORM_BILLING_PAPER,
+  FORM_BILLING_METHOD_CREDIT_CARD,
+  FORM_BILLING_METHOD_INVOICE_EMAIL,
+  FORM_BILLING_METHOD_INVOICE_PAPER,
   FORM_BILLING_PERIOD_ONE_MONTH,
   FORM_BILLING_PERIOD_TWO_MONTHS,
   FORM_BILLING_PERIOD_THREE_MONTHS,
@@ -268,8 +268,8 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
       this.setState({ currentPage: 0 });
     } else if (
       currentPage === 4 &&
-      billingMethod !== FORM_BILLING_EMAIL &&
-      billingMethod !== FORM_BILLING_PAPER
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL &&
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_PAPER
     ) {
       this.setState({ currentPage: 2 });
     } else {
@@ -285,8 +285,8 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
         this.setState({ currentPage: 2 });
       } else if (
         currentPage === 2 &&
-        billingMethod !== FORM_BILLING_EMAIL &&
-        billingMethod !== FORM_BILLING_PAPER
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL &&
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_PAPER
       ) {
         this.setState({ currentPage: 4 });
       } else {
@@ -721,21 +721,21 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                 inputs={[
                   {
                     hidden: true,
-                    id: FORM_BILLING_CREDIT_CARD,
+                    id: FORM_BILLING_METHOD_CREDIT_CARD,
                     label: intl(
                       'serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard',
                     ),
-                    value: FORM_BILLING_CREDIT_CARD,
+                    value: FORM_BILLING_METHOD_CREDIT_CARD,
                   },
                   {
-                    id: FORM_BILLING_EMAIL,
+                    id: FORM_BILLING_METHOD_INVOICE_EMAIL,
                     label: intl('serviceRegistrationPersonalServerDomainFormBillingMethodEmail'),
-                    value: FORM_BILLING_EMAIL,
+                    value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
-                    id: FORM_BILLING_PAPER,
+                    id: FORM_BILLING_METHOD_INVOICE_PAPER,
                     label: intl('serviceRegistrationPersonalServerDomainFormBillingMethodPaper'),
-                    value: FORM_BILLING_PAPER,
+                    value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}
                 name="billingMethod"
@@ -761,7 +761,7 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                     value: FORM_BILLING_PERIOD_ONE_MONTH,
                   },
                   {
-                    hidden: billingMethod === FORM_BILLING_CREDIT_CARD,
+                    hidden: billingMethod === FORM_BILLING_METHOD_CREDIT_CARD,
                     id: FORM_BILLING_PERIOD_TWO_MONTHS,
                     label: intl(
                       'serviceRegistrationPersonalServerDomainFormBillingPeriodTwoMonths',
@@ -776,7 +776,7 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                     value: FORM_BILLING_PERIOD_THREE_MONTHS,
                   },
                   {
-                    hidden: billingMethod === FORM_BILLING_CREDIT_CARD,
+                    hidden: billingMethod === FORM_BILLING_METHOD_CREDIT_CARD,
                     id: FORM_BILLING_PERIOD_FOUR_MONTHS,
                     label: intl(
                       'serviceRegistrationPersonalServerDomainFormBillingPeriodFourMonths',

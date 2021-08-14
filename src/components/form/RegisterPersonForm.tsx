@@ -13,8 +13,8 @@ import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
 
 import {
-  FORM_BILLING_EMAIL,
-  FORM_BILLING_PAPER,
+  FORM_BILLING_METHOD_INVOICE_EMAIL,
+  FORM_BILLING_METHOD_INVOICE_PAPER,
   FORM_POST_STATUS_ERROR,
   FORM_POST_STATUS_SUCCESS,
   FORM_POST_STATUS_TIMEOUT,
@@ -579,14 +579,14 @@ class RegisterPersonForm extends React.Component<Props, State> {
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
                   {
-                    id: FORM_BILLING_EMAIL,
+                    id: FORM_BILLING_METHOD_INVOICE_EMAIL,
                     label: intl('clientRegisterPersonFormBillingMethodEmail'),
-                    value: FORM_BILLING_EMAIL,
+                    value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
-                    id: FORM_BILLING_PAPER,
+                    id: FORM_BILLING_METHOD_INVOICE_PAPER,
                     label: intl('clientRegisterPersonFormBillingMethodPaper'),
-                    value: FORM_BILLING_PAPER,
+                    value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}
                 name="billingMethod"
