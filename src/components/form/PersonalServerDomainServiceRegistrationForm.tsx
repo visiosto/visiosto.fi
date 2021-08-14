@@ -28,6 +28,11 @@ import {
   SERVER_DOMAIN_SERVICE_REGISTRATION_FORM_NAME,
 } from '../../constants';
 
+import {
+  clientRegisterPrivacyPolicyPageID,
+  personalServerDomainServiceTermsPageID,
+} from '../../entryIDs';
+
 import createInternationalization from '../../util/createInternationalization';
 import encodeFormState from '../../util/encodeFormState';
 
@@ -756,6 +761,7 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                     value: FORM_BILLING_PERIOD_ONE_MONTH,
                   },
                   {
+                    hidden: billingMethod === FORM_BILLING_CREDIT_CARD,
                     id: FORM_BILLING_PERIOD_TWO_MONTHS,
                     label: intl(
                       'serviceRegistrationPersonalServerDomainFormBillingPeriodTwoMonths',
@@ -770,6 +776,7 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                     value: FORM_BILLING_PERIOD_THREE_MONTHS,
                   },
                   {
+                    hidden: billingMethod === FORM_BILLING_CREDIT_CARD,
                     id: FORM_BILLING_PERIOD_FOUR_MONTHS,
                     label: intl(
                       'serviceRegistrationPersonalServerDomainFormBillingPeriodFourMonths',
@@ -818,19 +825,30 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
 
           {/* The form page for accepting the terms */}
           <FormPage hidden={currentPage !== 5}>
-            <h3>{intl('serviceRegistrationPersonalServerDomainFormAcceptTerms')}</h3>
+            <h3>{intl('serviceRegistrationPersonalServerDomainFormAcceptTermsTitle')}</h3>
             <FormDiv>
               <SwitchCheckbox
                 checked={acceptPrivacyPolicy}
+                errorMessage={errors!.acceptPrivacyPolicy}
                 handleClick={this.handleAcceptPrivacyPolicyToggleClick}
                 id="accept-privacy-policy"
                 label={intl('serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicy')}
                 name="acceptPrivacyPolicy"
               />
+              <p>
+                {intl('serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicyContent', {
+                  a: (...chunk) => (
+                    <LocalizedLink locale={locale} to={clientRegisterPrivacyPolicyPageID}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
             </FormDiv>
             <FormDiv>
               <SwitchCheckbox
                 checked={acceptAdditionalAgreements}
+                errorMessage={errors!.acceptAdditionalAgreements}
                 handleClick={this.handleBillingAddressToggleClick}
                 id="accept-additional-agreements"
                 label={intl(
@@ -842,11 +860,21 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
             <FormDiv>
               <SwitchCheckbox
                 checked={acceptTerms}
+                errorMessage={errors!.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 id="accept-terms"
                 label={intl('serviceRegistrationPersonalServerDomainFormAcceptTerms')}
                 name="acceptTerms"
               />
+              <p>
+                {intl('serviceRegistrationPersonalServerDomainFormAcceptTermsContent', {
+                  a: (...chunk) => (
+                    <LocalizedLink locale={locale} to={personalServerDomainServiceTermsPageID}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
             </FormDiv>
           </FormPage>
 
@@ -857,13 +885,13 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                 <span>{intl('serviceRegistrationPersonalServerDomainFormPrevious')}</span>
               </Button>
             </ButtonDiv>
-            <ButtonDiv hidden={currentPage === 4}>
+            <ButtonDiv hidden={currentPage === 5}>
               <Button onClick={this.moveToNextPage}>
                 <span>{intl('serviceRegistrationPersonalServerDomainFormNext')}</span>{' '}
                 <ArrowRight size={24} />
               </Button>
             </ButtonDiv>
-            <ButtonDiv hidden={currentPage !== 4}>
+            <ButtonDiv hidden={currentPage !== 5}>
               <button type="submit">
                 <PaperAirplane size={24} />{' '}
                 {intl('serviceRegistrationPersonalServerDomainFormSend')}
