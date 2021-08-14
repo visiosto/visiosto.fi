@@ -145,9 +145,22 @@ function LocalizedLink({ children, className, locale, onClick, to }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }

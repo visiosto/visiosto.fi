@@ -52,9 +52,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -111,9 +124,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -128,9 +154,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -164,9 +203,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }

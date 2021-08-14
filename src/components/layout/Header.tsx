@@ -258,11 +258,27 @@ function Header({ errorPage, home, locale, pageID }) {
               node_locale
               title
               parentPath {
-                contentful_id
-                title
-                parentPath {
+                ... on ContentfulPage {
                   contentful_id
                   title
+                  parentPath {
+                    ... on ContentfulPage {
+                      contentful_id
+                      title
+                    }
+                    ... on ContentfulPath {
+                      contentful_id
+                      title
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  contentful_id
+                  title
+                  parentPath {
+                    contentful_id
+                    title
+                  }
                 }
               }
             }
