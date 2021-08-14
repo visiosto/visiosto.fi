@@ -24,7 +24,7 @@ exports[`Client register person form component renders correctly 1`] = `
         <label
           for="bot-field"
         >
-          serviceRegistrationPersonalServerDomainFormHoneypot
+          Älä täytä, jos olet ihminen
         </label>
         <input
           name="bot-field"
@@ -37,7 +37,7 @@ exports[`Client register person form component renders correctly 1`] = `
           class="sc-eCApnc jylwCj"
         >
           <h3>
-            serviceRegistrationPersonalServerDomainFormBasicInfo
+            Perustiedot
           </h3>
         </div>
         <div
@@ -86,7 +86,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="tel"
           >
-            serviceRegistrationPersonalServerDomainFormTel
+            Puhelinnumero
           </label>
           <label
             class="error-message"
@@ -106,7 +106,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="email"
           >
-            serviceRegistrationPersonalServerDomainFormEmail
+            Sähköpostiosoite
           </label>
           <label
             class="error-message"
@@ -121,7 +121,7 @@ exports[`Client register person form component renders correctly 1`] = `
             value=""
           />
           <p>
-            serviceRegistrationPersonalServerDomainFormEmailForBilling
+            Jos valitset maksutavaksi laskun sähköpostitse, myös laskut lähetetään yllä antamaasi sähköpostiosoitteeseen
           </p>
         </div>
         <div
@@ -130,7 +130,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="address-line-1"
           >
-            serviceRegistrationPersonalServerDomainFormAddressLine1
+            Osoiterivi 1
           </label>
           <label
             class="error-message"
@@ -151,7 +151,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="address-line-2"
           >
-            serviceRegistrationPersonalServerDomainFormAddressLine2
+            Osoiterivi 2
           </label>
           <input
             class="wider"
@@ -167,7 +167,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="postcode"
           >
-            serviceRegistrationPersonalServerDomainFormPostcode
+            Postinumero
           </label>
           <label
             class="error-message"
@@ -187,7 +187,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="post-office"
           >
-            serviceRegistrationPersonalServerDomainFormPostOffice
+            Postitoimipaikka
           </label>
           <label
             class="error-message"
@@ -207,7 +207,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="same-billing-address"
           >
-            serviceRegistrationPersonalServerDomainFormSameBillingAddress
+            Laskutusosoite on sama kuin yllä annettu osoite
           </label>
           <span
             class="sc-gKAaRy jrpTtP"
@@ -228,7 +228,7 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <h3>
-          serviceRegistrationPersonalServerDomainFormBillingAddress
+          Laskutusosoite
         </h3>
         <div
           class="sc-eCApnc jylwCj"
@@ -236,7 +236,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="billing-address-line-1"
           >
-            serviceRegistrationPersonalServerDomainFormBillingAddressLine1
+            Osoiterivi 1
           </label>
           <label
             class="error-message"
@@ -257,7 +257,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="billing-address-line-2"
           >
-            serviceRegistrationPersonalServerDomainFormBillingAddressLine2
+            Osoiterivi 2
           </label>
           <input
             class="wider"
@@ -273,7 +273,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="billing-postcode"
           >
-            serviceRegistrationPersonalServerDomainFormBillingPostcode
+            Postinumero
           </label>
           <label
             class="error-message"
@@ -293,7 +293,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="billing-post-office"
           >
-            serviceRegistrationPersonalServerDomainFormBillingPostOffice
+            Postitoimipaikka
           </label>
           <label
             class="error-message"
@@ -316,10 +316,16 @@ exports[`Client register person form component renders correctly 1`] = `
           class="sc-eCApnc jylwCj"
         >
           <h3>
-            serviceRegistrationPersonalServerDomainFormBillingMethod
+            Maksutapa
           </h3>
           <p>
-            serviceRegistrationPersonalServerDomainFormBillingMethodContent
+            Huomaathan, että eri maksutavoista voidaan periä 
+            <a
+              href="/hinnasto"
+            >
+              hinnaston
+            </a>
+             mukainen lisämaksu.
           </p>
           <div
             class="sc-jSFjdj hdvAlr"
@@ -334,7 +340,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-credit-card"
             >
-              serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard
+              Korttimaksu
             </label>
           </div>
           <div
@@ -349,7 +355,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-email"
             >
-              serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail
+              Lasku sähköpostitse
             </label>
           </div>
           <div
@@ -364,7 +370,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-paper"
             >
-              serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper
+              Lasku postitse
             </label>
           </div>
         </div>
@@ -377,10 +383,10 @@ exports[`Client register person form component renders correctly 1`] = `
           class="sc-eCApnc jylwCj"
         >
           <h3>
-            serviceRegistrationPersonalServerDomainFormBillingPeriod
+            Laskutusjakson pituus
           </h3>
           <p>
-            serviceRegistrationPersonalServerDomainFormBillingPeriodContent
+            Pituuden mukaan Visiosto määrittää sen, kuinka monen kuukauden tilausmaksut Visiosto laskuttaa kerralla ja kuinka usein ne laskutetaan.
           </p>
           <div
             class="sc-jSFjdj hdvAlr"
@@ -394,7 +400,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-one-month"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodOneMonth
+              Kuukausi
             </label>
           </div>
           <div
@@ -409,7 +415,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-two-months"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodTwoMonths
+              Kaksi kuukautta
             </label>
           </div>
           <div
@@ -424,7 +430,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-three-months"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodThreeMonths
+              Kolme kuukautta
             </label>
           </div>
           <div
@@ -439,7 +445,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-four-months"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodFourMonths
+              Neljä kuukautta
             </label>
           </div>
           <div
@@ -454,7 +460,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-six-months"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodSixMonths
+              Puoli vuotta
             </label>
           </div>
           <div
@@ -469,7 +475,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-one-year"
             >
-              serviceRegistrationPersonalServerDomainFormBillingPeriodOneYear
+              Vuosi
             </label>
           </div>
         </div>
@@ -479,7 +485,7 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <h3>
-          serviceRegistrationPersonalServerDomainFormDomainInformation
+          Verkkotunnus
         </h3>
         <div
           class="sc-eCApnc jylwCj"
@@ -487,7 +493,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="domain"
           >
-            serviceRegistrationPersonalServerDomainFormDomain
+            Anna verkkotunnus, joka liitetään tähän tilaukseen
           </label>
           <label
             class="error-message"
@@ -507,7 +513,7 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <h3>
-          serviceRegistrationPersonalServerDomainFormAcceptTerms
+          Ehtojen hyväksyminen
         </h3>
         <div
           class="sc-eCApnc jylwCj"
@@ -515,7 +521,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="accept-privacy-policy"
           >
-            serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicy
+            Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön ja tietosuojaselosteen puitteissa
           </label>
           <span
             class="sc-gKAaRy jrpTtP"
@@ -529,6 +535,14 @@ exports[`Client register person form component renders correctly 1`] = `
               class="sc-iCoGMd bZBmcn"
             />
           </span>
+          <p>
+            Voit tutustua asiakasrekisterin tietosuojaselosteeseen 
+            <a
+              href="/tietosuoja/asiakasrekisterin-tietosuojaseloste"
+            >
+              täällä
+            </a>
+          </p>
         </div>
         <div
           class="sc-eCApnc jylwCj"
@@ -536,7 +550,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="accept-additional-agreements"
           >
-            serviceRegistrationPersonalServerDomainFormAcceptAdditionalAgreements
+            Ymmärrän, että mahdollisista tarkennuksista palveluun ja sopimukseen voidaan sopia tämän lomakkeen ulkopuolella
           </label>
           <span
             class="sc-gKAaRy jrpTtP"
@@ -557,7 +571,7 @@ exports[`Client register person form component renders correctly 1`] = `
           <label
             for="accept-terms"
           >
-            serviceRegistrationPersonalServerDomainFormAcceptTerms
+            Hyväksyn palvelusopimuksen
           </label>
           <span
             class="sc-gKAaRy jrpTtP"
@@ -571,6 +585,14 @@ exports[`Client register person form component renders correctly 1`] = `
               class="sc-iCoGMd bZBmcn"
             />
           </span>
+          <p>
+            Voit tutustua palvelusopimukseen 
+            <a
+              href="/kayttoehdot/visioston-palvelin-ja-verkkotunnustilaussopimus"
+            >
+              täällä
+            </a>
+          </p>
         </div>
       </div>
       <div
@@ -598,9 +620,9 @@ exports[`Client register person form component renders correctly 1`] = `
                 fill-rule="evenodd"
               />
             </svg>
-
+             
             <span>
-              serviceRegistrationPersonalServerDomainFormPrevious
+              Palaa
             </span>
           </span>
         </div>
@@ -611,9 +633,9 @@ exports[`Client register person form component renders correctly 1`] = `
             class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
           >
             <span>
-              serviceRegistrationPersonalServerDomainFormNext
+              Jatka
             </span>
-
+             
             <svg
               aria-hidden="true"
               class="sc-iqAclL ePdOMq"
@@ -653,8 +675,8 @@ exports[`Client register person form component renders correctly 1`] = `
                 fill-rule="evenodd"
               />
             </svg>
-
-            serviceRegistrationPersonalServerDomainFormSend
+             
+            Lähetä
           </button>
         </div>
       </div>
@@ -663,7 +685,7 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <p>
-          serviceRegistrationPersonalServerDomainFormSuccess
+          Lähetys onnistui. Kiitos!
         </p>
       </div>
       <div
@@ -671,10 +693,10 @@ exports[`Client register person form component renders correctly 1`] = `
         hidden=""
       >
         <p>
-          serviceRegistrationPersonalServerDomainFormError
+          Lähetys epäonnistui. Virhe:
         </p>
         <p>
-          serviceRegistrationPersonalServerDomainFormErrorNoErrorMessage
+          Ei erillistä virheviestiä.
         </p>
       </div>
     </form>
