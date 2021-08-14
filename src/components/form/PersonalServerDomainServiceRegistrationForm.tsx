@@ -729,12 +729,16 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_EMAIL,
-                    label: intl('serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail'),
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail',
+                    ),
                     value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_PAPER,
-                    label: intl('serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper'),
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper',
+                    ),
                     value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}
