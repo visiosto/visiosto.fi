@@ -172,7 +172,7 @@ exports[`Layout component renders correctly 1`] = `
         />
       </svg>
       <a
-        href="/hallinto"
+        href="/tietosuoja"
       />
     </div>
   </header>
@@ -182,7 +182,7 @@ exports[`Layout component renders correctly 1`] = `
         <h1
           class="sc-ckTSus jfbvHv"
         >
-          Hallinto
+          Tietosuoja
         </h1>
       </header>
       <div>
@@ -353,7 +353,7 @@ exports[`Layout component renders correctly 1`] = `
     >
       <a
         class="sc-dlMDgC elyXpg"
-        href="/en/management"
+        href="/en/data-protection"
       >
         <span
           class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
