@@ -4,6 +4,7 @@
 export default {
   clientRegisterPersonFormTitle: 'Data for the Client Register',
   clientRegisterPersonFormHoneypot: 'Don’t fill this out if you’re a human',
+
   clientRegisterPersonFormBasicInfo: 'Basic Info',
   clientRegisterPersonFormFirstName: 'First Name',
   clientRegisterPersonFormSurname: 'Last Name',
@@ -17,26 +18,32 @@ export default {
   clientRegisterPersonFormPostcode: 'Postcode',
   clientRegisterPersonFormPostOffice: 'City',
   clientRegisterPersonFormSameBillingAddress: 'Is the billing address same as the address above?',
+
   clientRegisterPersonFormBillingAddress: 'Billing Address',
   clientRegisterPersonFormBillingAddressLine1: 'Address Line 1',
   clientRegisterPersonFormBillingAddressLine2: 'Address Line 2',
   clientRegisterPersonFormBillingPostcode: 'Postcode',
   clientRegisterPersonFormBillingPostOffice: 'City',
+
   clientRegisterPersonFormBillingMethod: 'Billing Method',
   clientRegisterPersonFormBillingMethodContent:
     'Please note that additional fees may apply according to our current <a>prices</a>.',
   clientRegisterPersonFormBillingMethodEmail: 'Invoice by email',
   clientRegisterPersonFormBillingMethodPaper: 'Invoice by mail',
+
   clientRegisterPersonFormAcceptTerms:
     'I give my consent for processing my personal data according to effective legislation',
   clientRegisterPersonFormPrivacyInfo:
     'You can find the privacy policy for the register <a>here</a>',
-  clientRegisterPersonFormPrevious: 'Return',
-  clientRegisterPersonFormNext: 'Continue',
+
+  clientRegisterPersonFormPrevious: 'Previous',
+  clientRegisterPersonFormNext: 'Next',
   clientRegisterPersonFormSend: 'Send',
+
   clientRegisterPersonFormSuccess: 'The form was successfully sent. Thank you!',
   clientRegisterPersonFormError: 'Sending failed. Error:',
   clientRegisterPersonFormErrorNoErrorMessage: 'No error message.',
+
   clientRegisterPersonFormErrorMissingFirstName: 'Please give your first name',
   clientRegisterPersonFormErrorMissingSurname: 'Please give your last name',
   clientRegisterPersonFormErrorMissingEmail: 'Please give your email address',
@@ -44,12 +51,15 @@ export default {
   clientRegisterPersonFormErrorMissingAddressLine1: 'Please give your address',
   clientRegisterPersonFormErrorMissingPostcode: 'Please give your postcode',
   clientRegisterPersonFormErrorMissingPostOffice: 'Please give your city',
+
   clientRegisterPersonFormErrorMissingBillingAddressLine1: 'Please give the billing address',
   clientRegisterPersonFormErrorMissingBillingPostcode:
     'Please give the postcode of the billing address',
   clientRegisterPersonFormErrorMissingBillingPostOffice:
     'Please give the city of the billing address',
+
   clientRegisterPersonFormErrorMissingBillingMethod: 'Please choose a billing method',
+
   clientRegisterPersonFormErrorTermsNotAccepted:
     'You must give your consent for processing personal data to send the form',
 };

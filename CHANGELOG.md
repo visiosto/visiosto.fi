@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Changed
 
 - Web font project to a smaller one for faster load times.
+- ‘Return’ and ‘Continue’ labels to ‘Previous’ and ‘Next’ for clarity.
 
 ## [0.27.4] - 2021-08-11
 
