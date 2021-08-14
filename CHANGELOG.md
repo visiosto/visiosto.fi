@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Page with registration form for the personal server and domain service.
 - Registration form component for the personal server and domain service.
 - Front page as the first breadcrumb in the site breadcrumbs.
+- Support for creating redirects from Contentful.
 
 ### Changed
 

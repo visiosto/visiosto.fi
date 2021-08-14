@@ -253,6 +253,46 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
             }
           }
         }
+        redirects: allContentfulRedirect {
+          edges {
+            node {
+              force
+              node_locale
+              permanent
+              from {
+                slug
+                parentPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
+                }
+              }
+              to {
+                slug
+                parentPath {
+                  ... on ContentfulPage {
+                    slug
+                    parentPath {
+                      ... on ContentfulPage {
+                        slug
+                      }
+                      ... on ContentfulPath {
+                        slug
+                      }
+                    }
+                  }
+                  ... on ContentfulPath {
+                    slug
+                    parentPath {
+                      slug
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     `,
   );
@@ -678,7 +718,20 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     force: true,
   });
 
+  // Create redirects from the Contentful data.
+
+  query.data.redirects.edges.forEach(({ node }) => {
+    const { force, from, node_locale: locale, permanent: isPermanent, to } = node;
+    createRedirect({
+      fromPath: createPagePath(from, locale, defaultLocale, localePaths),
+      toPath: createPagePath(to, locale, defaultLocale, localePaths),
+      isPermanent,
+      force,
+    })
+  })
+
   // Create the redirects for the 404 error pages.
+
   createRedirect({
     fromPath: '/en/*',
     toPath: `/en/404`,
