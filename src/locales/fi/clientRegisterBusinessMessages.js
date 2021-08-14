@@ -21,9 +21,9 @@ export default {
   clientRegisterBusinessFormBillingMethod: 'Laskutustapa',
   clientRegisterBusinessFormBillingMethodContent:
     'Huomaathan, että eri laskutustavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
-  clientRegisterBusinessFormBillingMethodEInvoice: 'Verkkolasku',
-  clientRegisterBusinessFormBillingMethodEmail: 'Sähköpostitse',
-  clientRegisterBusinessFormBillingMethodPaper: 'Postitse',
+  clientRegisterBusinessFormBillingMethodInvoiceEInvoice: 'Verkkolasku',
+  clientRegisterBusinessFormBillingMethodInvoiceEmail: 'Sähköpostitse',
+  clientRegisterBusinessFormBillingMethodInvoicePaper: 'Postitse',
   clientRegisterBusinessFormBillingInfo: 'Laskutustiedot',
   clientRegisterBusinessFormEInvoiceAddress: 'Verkkolaskuosoite',
   clientRegisterBusinessFormEInvoiceOperator: 'Verkkolaskuoperaattori',

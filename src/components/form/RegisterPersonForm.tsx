@@ -580,12 +580,12 @@ class RegisterPersonForm extends React.Component<Props, State> {
                 inputs={[
                   {
                     id: FORM_BILLING_METHOD_INVOICE_EMAIL,
-                    label: intl('clientRegisterPersonFormBillingMethodEmail'),
+                    label: intl('clientRegisterPersonFormBillingMethodInvoiceEmail'),
                     value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_PAPER,
-                    label: intl('clientRegisterPersonFormBillingMethodPaper'),
+                    label: intl('clientRegisterPersonFormBillingMethodInvoicePaper'),
                     value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}

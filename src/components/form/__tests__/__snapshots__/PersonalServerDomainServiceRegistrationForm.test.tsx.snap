@@ -349,7 +349,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-email"
             >
-              serviceRegistrationPersonalServerDomainFormBillingMethodEmail
+              serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail
             </label>
           </div>
           <div
@@ -364,7 +364,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <label
               for="radio-paper"
             >
-              serviceRegistrationPersonalServerDomainFormBillingMethodPaper
+              serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper
             </label>
           </div>
         </div>
@@ -598,7 +598,7 @@ exports[`Client register person form component renders correctly 1`] = `
                 fill-rule="evenodd"
               />
             </svg>
-             
+
             <span>
               serviceRegistrationPersonalServerDomainFormPrevious
             </span>
@@ -613,7 +613,7 @@ exports[`Client register person form component renders correctly 1`] = `
             <span>
               serviceRegistrationPersonalServerDomainFormNext
             </span>
-             
+
             <svg
               aria-hidden="true"
               class="sc-iqAclL ePdOMq"
@@ -653,7 +653,7 @@ exports[`Client register person form component renders correctly 1`] = `
                 fill-rule="evenodd"
               />
             </svg>
-             
+
             serviceRegistrationPersonalServerDomainFormSend
           </button>
         </div>

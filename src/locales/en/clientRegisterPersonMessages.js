@@ -28,8 +28,8 @@ export default {
   clientRegisterPersonFormBillingMethod: 'Billing Method',
   clientRegisterPersonFormBillingMethodContent:
     'Please note that additional fees may apply according to our current <a>prices</a>.',
-  clientRegisterPersonFormBillingMethodEmail: 'Invoice by email',
-  clientRegisterPersonFormBillingMethodPaper: 'Invoice by mail',
+  clientRegisterPersonFormBillingMethodInvoiceEmail: 'Invoice by email',
+  clientRegisterPersonFormBillingMethodInvoicePaper: 'Invoice by mail',
 
   clientRegisterPersonFormAcceptTerms:
     'I give my consent for processing my personal data according to effective legislation',

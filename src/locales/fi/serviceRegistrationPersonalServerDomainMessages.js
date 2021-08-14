@@ -30,8 +30,8 @@ export default {
   serviceRegistrationPersonalServerDomainFormBillingMethodContent:
     'Huomaathan, että eri maksutavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
   serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard: 'Korttimaksu',
-  serviceRegistrationPersonalServerDomainFormBillingMethodEmail: 'Lasku sähköpostitse',
-  serviceRegistrationPersonalServerDomainFormBillingMethodPaper: 'Lasku postitse',
+  serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail: 'Lasku sähköpostitse',
+  serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper: 'Lasku postitse',
 
   serviceRegistrationPersonalServerDomainFormBillingPeriod: 'Laskutusjakson pituus',
   serviceRegistrationPersonalServerDomainFormBillingPeriodContent:

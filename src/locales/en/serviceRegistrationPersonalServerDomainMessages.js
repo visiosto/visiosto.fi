@@ -31,8 +31,8 @@ export default {
   serviceRegistrationPersonalServerDomainFormBillingMethodContent:
     'Please note that additional fees may apply according to our current <a>prices</a>.',
   serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard: 'Card payment',
-  serviceRegistrationPersonalServerDomainFormBillingMethodEmail: 'Invoice by email',
-  serviceRegistrationPersonalServerDomainFormBillingMethodPaper: 'Invoice by paper',
+  serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail: 'Invoice by email',
+  serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper: 'Invoice by paper',
 
   serviceRegistrationPersonalServerDomainFormBillingPeriod: 'Length of the Billing Periods',
   serviceRegistrationPersonalServerDomainFormBillingPeriodContent:

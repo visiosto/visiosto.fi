@@ -664,17 +664,17 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 inputs={[
                   {
                     id: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
-                    label: intl('clientRegisterBusinessFormBillingMethodEInvoice'),
+                    label: intl('clientRegisterBusinessFormBillingMethodInvoiceEInvoice'),
                     value: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_EMAIL,
-                    label: intl('clientRegisterBusinessFormBillingMethodEmail'),
+                    label: intl('clientRegisterBusinessFormBillingMethodInvoiceEmail'),
                     value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_PAPER,
-                    label: intl('clientRegisterBusinessFormBillingMethodPaper'),
+                    label: intl('clientRegisterBusinessFormBillingMethodInvoicePaper'),
                     value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}

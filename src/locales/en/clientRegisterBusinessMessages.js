@@ -24,9 +24,9 @@ export default {
   clientRegisterBusinessFormBillingMethod: 'Billing Method',
   clientRegisterBusinessFormBillingMethodContent:
     'Please note that additional fees may apply according to our current <a>prices</a>.',
-  clientRegisterBusinessFormBillingMethodEInvoice: 'By electronic invoice',
-  clientRegisterBusinessFormBillingMethodEmail: 'By email',
-  clientRegisterBusinessFormBillingMethodPaper: 'By mail',
+  clientRegisterBusinessFormBillingMethodInvoiceEInvoice: 'By electronic invoice',
+  clientRegisterBusinessFormBillingMethodInvoiceEmail: 'By email',
+  clientRegisterBusinessFormBillingMethodInvoicePaper: 'By mail',
 
   clientRegisterBusinessFormBillingInfo: 'Billing Details',
   clientRegisterBusinessFormEInvoiceAddress: 'E-Invoice Address',
