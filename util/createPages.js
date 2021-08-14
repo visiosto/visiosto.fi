@@ -52,9 +52,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -111,9 +124,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -128,9 +154,22 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               node_locale
               slug
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }
@@ -152,6 +191,36 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               contentful_id
               node_locale
               slug
+            }
+          }
+        }
+        personalServerDomainServiceRegistrationPages: allContentfulPage(
+          filter: { contentful_id: { eq: "2PFqJqgjBlLgDABN6Wxhis" } }
+        ) {
+          edges {
+            node {
+              contentful_id
+              node_locale
+              slug
+              parentPath {
+                ... on ContentfulPage {
+                  slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
+                }
+              }
             }
           }
         }
@@ -181,6 +250,46 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
               contentful_id
               node_locale
               slug
+            }
+          }
+        }
+        redirects: allContentfulRedirect {
+          edges {
+            node {
+              force
+              node_locale
+              permanent
+              from {
+                slug
+                parentPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
+                }
+              }
+              to {
+                slug
+                parentPath {
+                  ... on ContentfulPage {
+                    slug
+                    parentPath {
+                      ... on ContentfulPage {
+                        slug
+                      }
+                      ... on ContentfulPath {
+                        slug
+                      }
+                    }
+                  }
+                  ... on ContentfulPath {
+                    slug
+                    parentPath {
+                      slug
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -528,6 +637,29 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     });
   });
 
+  // Create the personal server and domain service registration page from Contentful.
+
+  query.data.personalServerDomainServiceRegistrationPages.edges.forEach(({ node }) => {
+    // eslint-disable-next-line camelcase
+    const { contentful_id: pageID, node_locale: locale, slug } = node;
+
+    reporter.verbose(`Creating page for the base slug '${slug}'`);
+
+    const pagePath = createPagePath(node, locale, defaultLocale, localePaths);
+
+    reporter.verbose(`The path created is ${pagePath}`);
+
+    createPage({
+      path: pagePath,
+      component: path.resolve('src', 'templates', 'ServiceRegistration.tsx'),
+      context: {
+        locale,
+        pageID,
+        // clientType: 'person',
+      },
+    });
+  });
+
   // Create the 404 error pages.
 
   locales.forEach((locale) => {
@@ -586,7 +718,20 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     force: true,
   });
 
+  // Create redirects from the Contentful data.
+
+  query.data.redirects.edges.forEach(({ node }) => {
+    const { force, from, node_locale: locale, permanent: isPermanent, to } = node;
+    createRedirect({
+      fromPath: createPagePath(from, locale, defaultLocale, localePaths),
+      toPath: createPagePath(to, locale, defaultLocale, localePaths),
+      isPermanent,
+      force,
+    });
+  });
+
   // Create the redirects for the 404 error pages.
+
   createRedirect({
     fromPath: '/en/*',
     toPath: `/en/404`,

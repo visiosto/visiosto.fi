@@ -186,9 +186,22 @@ module.exports = async function onPostBuild({ graphql, reporter }) {
                 }
               }
               parentPath {
-                slug
-                parentPath {
+                ... on ContentfulPage {
                   slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                    }
+                    ... on ContentfulPath {
+                      slug
+                    }
+                  }
+                }
+                ... on ContentfulPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
                 }
               }
             }

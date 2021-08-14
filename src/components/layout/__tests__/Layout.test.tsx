@@ -16,7 +16,7 @@ describe('Layout component', () => {
 
   it('renders correctly', () => {
     const { container } = renderWithProviders(
-      <Layout locale="fi" pageID="3rPdaUCw3nKo73b5Z6thWW" title="Hallinto">
+      <Layout locale="fi" pageID="7yT76Msr4Ist4kaDUu82TQ" title="Tietosuoja">
         <p>Test content</p>
       </Layout>,
       'fi',

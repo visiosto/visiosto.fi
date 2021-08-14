@@ -21,6 +21,7 @@ const propTypes = {
   handleChange: PropTypes.func.isRequired,
   inputs: PropTypes.arrayOf(
     PropTypes.shape({
+      hidden: PropTypes.bool,
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
@@ -39,8 +40,8 @@ function RadioInput({ description, errorMessage, handleChange, inputs, name, tit
       {title !== '' ? <h3>{title}</h3> : null}
       {description !== '' ? <p>{description}</p> : null}
       {errorMessage !== '' ? <p className={FORM_CLASS_ERROR_MESSAGE}>{errorMessage}</p> : null}
-      {inputs.map(({ id, label, value: inputValue }) => (
-        <RadioDiv key={id}>
+      {inputs.map(({ id, label, value: inputValue, hidden = false }) => (
+        <RadioDiv key={id} hidden={hidden}>
           <input
             checked={value === inputValue}
             id={`radio-${id}`}

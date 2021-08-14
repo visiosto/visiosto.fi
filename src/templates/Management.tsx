@@ -149,7 +149,7 @@ function Page({ data, pageContext }) {
       </Separator>
       {posts.edges.map(({ node: post }) => {
         return (
-          <Post>
+          <Post key={post.contentful_id}>
             <PostHeader>
               <H3>
                 <Link locale={locale} to={post.contentful_id}>

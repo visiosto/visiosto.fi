@@ -25,8 +25,8 @@ export default {
   clientRegisterPersonFormBillingMethod: 'Maksutapa',
   clientRegisterPersonFormBillingMethodContent:
     'Huomaathan, että eri maksutavoista voidaan periä <a>hinnaston</a> mukainen lisämaksu.',
-  clientRegisterPersonFormBillingMethodEmail: 'Lasku sähköpostitse',
-  clientRegisterPersonFormBillingMethodPaper: 'Lasku postitse',
+  clientRegisterPersonFormBillingMethodInvoiceEmail: 'Lasku sähköpostitse',
+  clientRegisterPersonFormBillingMethodInvoicePaper: 'Lasku postitse',
   clientRegisterPersonFormAcceptTerms:
     'Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa',
   clientRegisterPersonFormPrivacyInfo:

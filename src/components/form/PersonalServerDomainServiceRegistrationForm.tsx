@@ -13,16 +13,25 @@ import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
 
 import {
+  FORM_BILLING_METHOD_CREDIT_CARD,
   FORM_BILLING_METHOD_INVOICE_EMAIL,
-  FORM_BILLING_METHOD_INVOICE_E_INVOICE,
   FORM_BILLING_METHOD_INVOICE_PAPER,
+  FORM_BILLING_PERIOD_ONE_MONTH,
+  FORM_BILLING_PERIOD_TWO_MONTHS,
+  FORM_BILLING_PERIOD_THREE_MONTHS,
+  FORM_BILLING_PERIOD_FOUR_MONTHS,
+  FORM_BILLING_PERIOD_SIX_MONTHS,
+  FORM_BILLING_PERIOD_ONE_YEAR,
   FORM_POST_STATUS_ERROR,
   FORM_POST_STATUS_SUCCESS,
   FORM_POST_STATUS_TIMEOUT,
-  REGISTER_BUSINESS_FORM_NAME,
+  SERVER_DOMAIN_SERVICE_REGISTRATION_FORM_NAME,
 } from '../../constants';
 
-import { clientRegisterPrivacyPolicyPageID } from '../../entryIDs';
+import {
+  clientRegisterPrivacyPolicyPageID,
+  personalServerDomainServiceTermsPageID,
+} from '../../entryIDs';
 
 import createInternationalization from '../../util/createInternationalization';
 import encodeFormState from '../../util/encodeFormState';
@@ -57,17 +66,16 @@ type Props = {
 };
 
 type Errors = {
+  acceptAdditionalAgreements?: string;
+  acceptPrivacyPolicy?: string;
   acceptTerms?: string;
   addressLine1?: string;
   billingAddressLine1?: string;
-  billingEmail?: string;
   billingMethod?: string;
+  billingPeriod?: string;
   billingPostcode?: string;
   billingPostOffice?: string;
-  businessID?: string;
-  businessName?: string;
-  eInvoiceAddress?: string;
-  eInvoiceOperator?: string;
+  domain?: string;
   email?: string;
   firstName?: string;
   postcode?: string;
@@ -77,20 +85,19 @@ type Errors = {
 };
 
 type State = {
+  acceptAdditionalAgreements?: boolean;
+  acceptPrivacyPolicy?: boolean;
   acceptTerms?: boolean;
   addressLine1?: string;
   addressLine2?: string;
   billingAddressLine1?: string;
   billingAddressLine2?: string;
-  billingEmail?: string;
   billingMethod?: string;
+  billingPeriod?: string;
   billingPostcode?: string;
   billingPostOffice?: string;
-  businessID?: string;
-  businessName?: string;
   currentPage?: number;
-  eInvoiceAddress?: string;
-  eInvoiceOperator?: string;
+  domain?: string;
   email?: string;
   errorMessage?: string;
   errors?: Errors;
@@ -103,25 +110,24 @@ type State = {
   tel?: string;
 };
 
-class RegisterBusinessForm extends React.Component<Props, State> {
+class PersonalServerDomainServiceRegistrationForm extends React.Component<Props, State> {
   constructor(props) {
     super(props);
 
     this.state = {
+      acceptAdditionalAgreements: false,
+      acceptPrivacyPolicy: false,
       acceptTerms: false,
       addressLine1: '',
       addressLine2: '',
       billingAddressLine1: '',
       billingAddressLine2: '',
-      billingEmail: '',
       billingMethod: '',
+      billingPeriod: '',
       billingPostcode: '',
       billingPostOffice: '',
-      businessID: '',
-      businessName: '',
       currentPage: 0,
-      eInvoiceAddress: '',
-      eInvoiceOperator: '',
+      domain: '',
       email: '',
       errorMessage: '',
       errors: {},
@@ -134,11 +140,16 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       tel: '',
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
+    this.handleAcceptAdditionalAgreementsToggleClick =
+      this.handleAcceptAdditionalAgreementsToggleClick.bind(this);
+    this.handleAcceptPrivacyPolicyToggleClick =
+      this.handleAcceptPrivacyPolicyToggleClick.bind(this);
     this.handleAcceptTermsToggleClick = this.handleAcceptTermsToggleClick.bind(this);
+    this.handleBillingAddressToggleClick = this.handleBillingAddressToggleClick.bind(this);
     this.handleBillingMethodClick = this.handleBillingMethodClick.bind(this);
+    this.handleBillingPeriodClick = this.handleBillingPeriodClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.moveToPreviousPage = this.moveToPreviousPage.bind(this);
     this.moveToNextPage = this.moveToNextPage.bind(this);
     this.validatePageData = this.validatePageData.bind(this);
@@ -147,19 +158,18 @@ class RegisterBusinessForm extends React.Component<Props, State> {
   handleSubmit(event) {
     if (this.validatePageData()) {
       const {
+        acceptAdditionalAgreements,
+        acceptPrivacyPolicy,
         acceptTerms,
         addressLine1,
         addressLine2,
         billingAddressLine1,
         billingAddressLine2,
-        billingEmail,
         billingMethod,
+        billingPeriod,
         billingPostcode,
         billingPostOffice,
-        businessID,
-        businessName,
-        eInvoiceAddress,
-        eInvoiceOperator,
+        domain,
         email,
         firstName,
         isSameBillingAddress,
@@ -170,19 +180,18 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       } = this.state;
 
       const formData = {
+        acceptAdditionalAgreements,
+        acceptPrivacyPolicy,
         acceptTerms,
         addressLine1,
         addressLine2,
         billingAddressLine1,
         billingAddressLine2,
-        billingEmail,
         billingMethod,
+        billingPeriod,
         billingPostcode,
         billingPostOffice,
-        businessID,
-        businessName,
-        eInvoiceAddress,
-        eInvoiceOperator,
+        domain,
         email,
         firstName,
         isSameBillingAddress,
@@ -195,7 +204,10 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encodeFormState({ 'form-name': REGISTER_BUSINESS_FORM_NAME, ...formData }),
+        body: encodeFormState({
+          'form-name': SERVER_DOMAIN_SERVICE_REGISTRATION_FORM_NAME,
+          ...formData,
+        }),
       })
         .then(() =>
           this.setState({ postStatus: FORM_POST_STATUS_SUCCESS }, () =>
@@ -215,16 +227,28 @@ class RegisterBusinessForm extends React.Component<Props, State> {
     event.preventDefault();
   }
 
-  handleBillingAddressToggleClick() {
-    this.setState((state) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  handleAcceptAdditionalAgreementsToggleClick() {
+    this.setState((state) => ({ acceptAdditionalAgreements: !state.acceptAdditionalAgreements }));
+  }
+
+  handleAcceptPrivacyPolicyToggleClick() {
+    this.setState((state) => ({ acceptPrivacyPolicy: !state.acceptPrivacyPolicy }));
   }
 
   handleAcceptTermsToggleClick() {
     this.setState((state) => ({ acceptTerms: !state.acceptTerms }));
   }
 
+  handleBillingAddressToggleClick() {
+    this.setState((state) => ({ isSameBillingAddress: !state.isSameBillingAddress }));
+  }
+
   handleBillingMethodClick(value) {
     this.setState({ billingMethod: value });
+  }
+
+  handleBillingPeriodClick(value) {
+    this.setState({ billingPeriod: value });
   }
 
   handleChange(event) {
@@ -232,7 +256,9 @@ class RegisterBusinessForm extends React.Component<Props, State> {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
 
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value,
+    });
   }
 
   moveToPreviousPage() {
@@ -242,8 +268,8 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       this.setState({ currentPage: 0 });
     } else if (
       currentPage === 4 &&
-      billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE &&
-      billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL &&
+      billingMethod !== FORM_BILLING_METHOD_INVOICE_PAPER
     ) {
       this.setState({ currentPage: 2 });
     } else {
@@ -259,8 +285,8 @@ class RegisterBusinessForm extends React.Component<Props, State> {
         this.setState({ currentPage: 2 });
       } else if (
         currentPage === 2 &&
-        billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE &&
-        billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL &&
+        billingMethod !== FORM_BILLING_METHOD_INVOICE_PAPER
       ) {
         this.setState({ currentPage: 4 });
       } else {
@@ -272,18 +298,17 @@ class RegisterBusinessForm extends React.Component<Props, State> {
   validatePageData() {
     const { intl: intlObject } = this.props;
     const {
+      acceptAdditionalAgreements,
+      acceptPrivacyPolicy,
       acceptTerms,
       addressLine1,
       billingAddressLine1,
-      billingEmail,
       billingMethod,
+      billingPeriod,
       billingPostcode,
       billingPostOffice,
-      businessID,
-      businessName,
       currentPage,
-      eInvoiceAddress,
-      eInvoiceOperator,
+      domain,
       email,
       firstName,
       postcode,
@@ -297,25 +322,39 @@ class RegisterBusinessForm extends React.Component<Props, State> {
 
     switch (currentPage) {
       case 0: {
-        if (businessID === '') {
+        if (firstName === '') {
           isValid = false;
-          errors.businessID = intl('clientRegisterBusinessFormErrorMissingBusinessID');
+          errors.firstName = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingFirstName',
+          );
         }
-        if (businessName === '') {
+        if (surname === '') {
           isValid = false;
-          errors.businessName = intl('clientRegisterBusinessFormErrorMissingBusinessName');
+          errors.surname = intl('serviceRegistrationPersonalServerDomainFormErrorMissingSurname');
+        }
+        if (tel === '') {
+          isValid = false;
+          errors.tel = intl('serviceRegistrationPersonalServerDomainFormErrorMissingTel');
+        }
+        if (email === '') {
+          isValid = false;
+          errors.email = intl('serviceRegistrationPersonalServerDomainFormErrorMissingEmail');
         }
         if (addressLine1 === '') {
           isValid = false;
-          errors.addressLine1 = intl('clientRegisterBusinessFormErrorMissingAddressLine1');
+          errors.addressLine1 = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingAddressLine1',
+          );
         }
         if (postcode === '') {
           isValid = false;
-          errors.postcode = intl('clientRegisterBusinessFormErrorMissingPostcode');
+          errors.postcode = intl('serviceRegistrationPersonalServerDomainFormErrorMissingPostcode');
         }
         if (postOffice === '') {
           isValid = false;
-          errors.postOffice = intl('clientRegisterBusinessFormErrorMissingPostOffice');
+          errors.postOffice = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingPostOffice',
+          );
         }
         break;
       }
@@ -324,17 +363,19 @@ class RegisterBusinessForm extends React.Component<Props, State> {
         if (billingAddressLine1 === '') {
           isValid = false;
           errors.billingAddressLine1 = intl(
-            'clientRegisterBusinessFormErrorMissingBillingAddressLine1',
+            'serviceRegistrationPersonalServerDomainFormErrorMissingBillingAddressLine1',
           );
         }
         if (billingPostcode === '') {
           isValid = false;
-          errors.billingPostcode = intl('clientRegisterBusinessFormErrorMissingBillingPostcode');
+          errors.billingPostcode = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingBillingPostcode',
+          );
         }
         if (billingPostOffice === '') {
           isValid = false;
           errors.billingPostOffice = intl(
-            'clientRegisterBusinessFormErrorMissingBillingPostOffice',
+            'serviceRegistrationPersonalServerDomainFormErrorMissingBillingPostOffice',
           );
         }
         break;
@@ -343,64 +384,49 @@ class RegisterBusinessForm extends React.Component<Props, State> {
       case 2: {
         if (billingMethod === '') {
           isValid = false;
-          errors.billingMethod = intl('clientRegisterBusinessFormErrorMissingBillingMethod');
+          errors.billingMethod = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingBillingMethod',
+          );
         }
         break;
       }
 
       case 3: {
-        switch (billingMethod) {
-          case FORM_BILLING_METHOD_INVOICE_E_INVOICE: {
-            if (eInvoiceAddress === '') {
-              isValid = false;
-              errors.eInvoiceAddress = intl(
-                'clientRegisterBusinessFormErrorMissingEInvoiceAddress',
-              );
-            }
-            if (eInvoiceOperator === '') {
-              isValid = false;
-              errors.eInvoiceOperator = intl(
-                'clientRegisterBusinessFormErrorMissingEInvoiceOperator',
-              );
-            }
-            break;
-          }
-
-          case FORM_BILLING_METHOD_INVOICE_EMAIL: {
-            if (billingEmail === '') {
-              isValid = false;
-              errors.billingEmail = intl('clientRegisterBusinessFormErrorMissingBillingEmail');
-            }
-            break;
-          }
-
-          default: {
-            break;
-          }
+        if (billingPeriod === '') {
+          isValid = false;
+          errors.billingPeriod = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorMissingBillingPeriod',
+          );
         }
         break;
       }
 
       case 4: {
-        if (firstName === '') {
+        if (domain === '') {
           isValid = false;
-          errors.firstName = intl('clientRegisterBusinessFormErrorMissingFirstName');
+          errors.domain = intl('serviceRegistrationPersonalServerDomainFormErrorMissingDomain');
         }
-        if (surname === '') {
+        break;
+      }
+
+      case 5: {
+        if (!acceptPrivacyPolicy) {
           isValid = false;
-          errors.surname = intl('clientRegisterBusinessFormErrorMissingSurname');
+          errors.acceptPrivacyPolicy = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorPrivacyPolicyNotAccepted',
+          );
         }
-        if (tel === '') {
+        if (!acceptAdditionalAgreements) {
           isValid = false;
-          errors.tel = intl('clientRegisterBusinessFormErrorMissingTel');
-        }
-        if (email === '') {
-          isValid = false;
-          errors.email = intl('clientRegisterBusinessFormErrorMissingEmail');
+          errors.acceptAdditionalAgreements = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorAdditionalAgreementsNotAccepted',
+          );
         }
         if (!acceptTerms) {
           isValid = false;
-          errors.acceptTerms = intl('clientRegisterBusinessFormErrorTermsNotAccepted');
+          errors.acceptTerms = intl(
+            'serviceRegistrationPersonalServerDomainFormErrorTermsNotAccepted',
+          );
         }
         break;
       }
@@ -418,20 +444,19 @@ class RegisterBusinessForm extends React.Component<Props, State> {
   render() {
     const { intl: intlObject, locale } = this.props;
     const {
+      acceptAdditionalAgreements,
+      acceptPrivacyPolicy,
       acceptTerms,
       addressLine1,
       addressLine2,
       billingAddressLine1,
       billingAddressLine2,
-      billingEmail,
       billingMethod,
+      billingPeriod,
       billingPostcode,
       billingPostOffice,
-      businessID,
-      businessName,
       currentPage,
-      eInvoiceAddress,
-      eInvoiceOperator,
+      domain,
       email,
       errorMessage,
       errors,
@@ -451,60 +476,85 @@ class RegisterBusinessForm extends React.Component<Props, State> {
           action="/"
           data-netlify="true"
           method="POST"
-          name={REGISTER_BUSINESS_FORM_NAME}
+          name={SERVER_DOMAIN_SERVICE_REGISTRATION_FORM_NAME}
           netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
         >
           {/* This input field is required by Netlify */}
-          <input name="form-name" type="hidden" value={REGISTER_BUSINESS_FORM_NAME} />
+          <input
+            name="form-name"
+            type="hidden"
+            value={SERVER_DOMAIN_SERVICE_REGISTRATION_FORM_NAME}
+          />
           <FormDiv hidden>
-            <label htmlFor="bot-field">{intl('clientRegisterBusinessFormHoneypot')}</label>
+            <label htmlFor="bot-field">
+              {intl('serviceRegistrationPersonalServerDomainFormHoneypot')}
+            </label>
             <input name="bot-field" />
           </FormDiv>
 
           {/* The client's basic information */}
           <FormPage hidden={currentPage !== 0}>
             <FormDiv>
-              <h3>{intl('clientRegisterBusinessFormBasicInfo')}</h3>
+              <h3>{intl('serviceRegistrationPersonalServerDomainFormBasicInfo')}</h3>
             </FormDiv>
             <FormDiv>
-              <label htmlFor="business-id">{intl('clientRegisterBusinessFormBusinessID')}</label>
-              <label className="error-message" hidden={!errors!.businessID} htmlFor="business-id">
-                {errors!.businessID}
+              <label htmlFor="first-name">
+                {intl('serviceRegistrationPersonalServerDomainFormFirstName')}
+              </label>
+              <label className="error-message" hidden={!errors!.firstName} htmlFor="first-name">
+                {errors!.firstName}
               </label>
               <input
-                id="business-id"
-                name="businessID"
+                id="first-name"
+                name="firstName"
                 onChange={this.handleChange}
                 type="text"
-                value={businessID}
+                value={firstName}
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="business-name">
-                {intl('clientRegisterBusinessFormBusinessName')}
+              <label htmlFor="surname">
+                {intl('serviceRegistrationPersonalServerDomainFormSurname')}
               </label>
-              <label
-                className="error-message"
-                hidden={!errors!.businessName}
-                htmlFor="business-name"
-              >
-                {errors!.businessName}
+              <label className="error-message" hidden={!errors!.surname} htmlFor="surname">
+                {errors!.surname}
               </label>
               <input
-                id="business-name"
-                name="businessName"
+                id="surname"
+                name="surname"
                 onChange={this.handleChange}
                 type="text"
-                value={businessName}
+                value={surname}
               />
             </FormDiv>
             <FormDiv>
-              <h4>{intl('clientRegisterBusinessFormAddress')}</h4>
+              <label htmlFor="tel">{intl('serviceRegistrationPersonalServerDomainFormTel')}</label>
+              <label className="error-message" hidden={!errors!.tel} htmlFor="tel">
+                {errors!.tel}
+              </label>
+              <input id="tel" name="tel" onChange={this.handleChange} type="tel" value={tel} />
+            </FormDiv>
+            <FormDiv>
+              <label htmlFor="email">
+                {intl('serviceRegistrationPersonalServerDomainFormEmail')}
+              </label>
+              <label className="error-message" hidden={!errors!.email} htmlFor="email">
+                {errors!.email}
+              </label>
+              <input
+                className="medium"
+                id="email"
+                name="email"
+                onChange={this.handleChange}
+                type="email"
+                value={email}
+              />
+              <p>{intl('serviceRegistrationPersonalServerDomainFormEmailForBilling')}</p>
             </FormDiv>
             <FormDiv>
               <label htmlFor="address-line-1">
-                {intl('clientRegisterBusinessFormAddressLine1')}
+                {intl('serviceRegistrationPersonalServerDomainFormAddressLine1')}
               </label>
               <label
                 className="error-message"
@@ -524,7 +574,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             </FormDiv>
             <FormDiv>
               <label htmlFor="address-line-2">
-                {intl('clientRegisterBusinessFormAddressLine2')}
+                {intl('serviceRegistrationPersonalServerDomainFormAddressLine2')}
               </label>
               <input
                 className="wider"
@@ -536,7 +586,9 @@ class RegisterBusinessForm extends React.Component<Props, State> {
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="postcode">{intl('clientRegisterBusinessFormPostcode')}</label>
+              <label htmlFor="postcode">
+                {intl('serviceRegistrationPersonalServerDomainFormPostcode')}
+              </label>
               <label className="error-message" hidden={!errors!.postcode} htmlFor="postcode">
                 {errors!.postcode}
               </label>
@@ -549,7 +601,9 @@ class RegisterBusinessForm extends React.Component<Props, State> {
               />
             </FormDiv>
             <FormDiv>
-              <label htmlFor="post-office">{intl('clientRegisterBusinessFormPostOffice')}</label>
+              <label htmlFor="post-office">
+                {intl('serviceRegistrationPersonalServerDomainFormPostOffice')}
+              </label>
               <label className="error-message" hidden={!errors!.postOffice} htmlFor="post-office">
                 {errors!.postOffice}
               </label>
@@ -566,7 +620,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 checked={isSameBillingAddress}
                 handleClick={this.handleBillingAddressToggleClick}
                 id="same-billing-address"
-                label={intl('clientRegisterBusinessFormSameBillingAddress')}
+                label={intl('serviceRegistrationPersonalServerDomainFormSameBillingAddress')}
                 name="isSameBillingAddress"
               />
             </FormDiv>
@@ -574,10 +628,10 @@ class RegisterBusinessForm extends React.Component<Props, State> {
 
           {/* The form page for giving the possible billing address */}
           <FormPage hidden={currentPage !== 1}>
-            <h3>{intl('clientRegisterBusinessFormBillingAddress')}</h3>
+            <h3>{intl('serviceRegistrationPersonalServerDomainFormBillingAddress')}</h3>
             <FormDiv>
               <label htmlFor="billing-address-line-1">
-                {intl('clientRegisterBusinessFormBillingAddressLine1')}
+                {intl('serviceRegistrationPersonalServerDomainFormBillingAddressLine1')}
               </label>
               <label
                 className="error-message"
@@ -597,7 +651,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             </FormDiv>
             <FormDiv>
               <label htmlFor="billing-address-line-2">
-                {intl('clientRegisterBusinessFormBillingAddressLine2')}
+                {intl('serviceRegistrationPersonalServerDomainFormBillingAddressLine2')}
               </label>
               <input
                 className="wider"
@@ -610,7 +664,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             </FormDiv>
             <FormDiv>
               <label htmlFor="billing-postcode">
-                {intl('clientRegisterBusinessFormBillingPostcode')}
+                {intl('serviceRegistrationPersonalServerDomainFormBillingPostcode')}
               </label>
               <label
                 className="error-message"
@@ -629,7 +683,7 @@ class RegisterBusinessForm extends React.Component<Props, State> {
             </FormDiv>
             <FormDiv>
               <label htmlFor="billing-post-office">
-                {intl('clientRegisterBusinessFormBillingPostOffice')}
+                {intl('serviceRegistrationPersonalServerDomainFormBillingPostOffice')}
               </label>
               <label
                 className="error-message"
@@ -652,156 +706,159 @@ class RegisterBusinessForm extends React.Component<Props, State> {
           <FormPage hidden={currentPage !== 2}>
             <FormDiv>
               <RadioInput
-                description={intl('clientRegisterBusinessFormBillingMethodContent', {
-                  a: (...chunk) => (
-                    <LocalizedLink locale={locale} to="/pricing">
-                      {chunk}
-                    </LocalizedLink>
-                  ),
-                })}
+                description={intl(
+                  'serviceRegistrationPersonalServerDomainFormBillingMethodContent',
+                  {
+                    a: (...chunk) => (
+                      <LocalizedLink locale={locale} to="/pricing">
+                        {chunk}
+                      </LocalizedLink>
+                    ),
+                  },
+                )}
                 errorMessage={errors!.billingMethod}
                 handleChange={this.handleBillingMethodClick}
                 inputs={[
                   {
-                    id: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
-                    label: intl('clientRegisterBusinessFormBillingMethodInvoiceEInvoice'),
-                    value: FORM_BILLING_METHOD_INVOICE_E_INVOICE,
+                    hidden: true,
+                    id: FORM_BILLING_METHOD_CREDIT_CARD,
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingMethodCreditCard',
+                    ),
+                    value: FORM_BILLING_METHOD_CREDIT_CARD,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_EMAIL,
-                    label: intl('clientRegisterBusinessFormBillingMethodInvoiceEmail'),
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingMethodInvoiceEmail',
+                    ),
                     value: FORM_BILLING_METHOD_INVOICE_EMAIL,
                   },
                   {
                     id: FORM_BILLING_METHOD_INVOICE_PAPER,
-                    label: intl('clientRegisterBusinessFormBillingMethodInvoicePaper'),
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingMethodInvoicePaper',
+                    ),
                     value: FORM_BILLING_METHOD_INVOICE_PAPER,
                   },
                 ]}
                 name="billingMethod"
-                title={intl('clientRegisterBusinessFormBillingMethod')}
+                title={intl('serviceRegistrationPersonalServerDomainFormBillingMethod')}
                 value={billingMethod}
               />
             </FormDiv>
           </FormPage>
 
-          {/* The billing information: either e-invoice info or email for billing */}
+          {/* The form page for selecting the billing period */}
           <FormPage hidden={currentPage !== 3}>
             <FormDiv>
-              <h3>{intl('clientRegisterBusinessFormBillingInfo')}</h3>
-            </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE}>
-              <label htmlFor="e-invoice-address">
-                {intl('clientRegisterBusinessFormEInvoiceAddress')}
-              </label>
-              <label
-                className="error-message"
-                hidden={!errors!.eInvoiceAddress}
-                htmlFor="e-invoice-address"
-              >
-                {errors!.eInvoiceAddress}
-              </label>
-              <input
-                className="medium"
-                id="e-invoice-address"
-                name="eInvoiceAddress"
-                onChange={this.handleChange}
-                type="text"
-                value={eInvoiceAddress}
-              />
-            </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_E_INVOICE}>
-              <label htmlFor="e-invoice-operator">
-                {intl('clientRegisterBusinessFormEInvoiceOperator')}
-              </label>
-              <label
-                className="error-message"
-                hidden={!errors!.eInvoiceOperator}
-                htmlFor="e-invoice-operator"
-              >
-                {errors!.eInvoiceOperator}
-              </label>
-              <input
-                className="medium"
-                id="e-invoice-operator"
-                name="eInvoiceOperator"
-                onChange={this.handleChange}
-                type="text"
-                value={eInvoiceOperator}
-              />
-            </FormDiv>
-            <FormDiv hidden={billingMethod !== FORM_BILLING_METHOD_INVOICE_EMAIL}>
-              <label htmlFor="billing-email">
-                {intl('clientRegisterBusinessFormBillingEmail')}
-              </label>
-              <label
-                className="error-message"
-                hidden={!errors!.billingEmail}
-                htmlFor="billing-email"
-              >
-                {errors!.billingEmail}
-              </label>
-              <input
-                className="medium"
-                id="billing-email"
-                name="billingEmail"
-                onChange={this.handleChange}
-                type="email"
-                value={billingEmail}
+              <RadioInput
+                description={intl(
+                  'serviceRegistrationPersonalServerDomainFormBillingPeriodContent',
+                )}
+                errorMessage={errors!.billingPeriod}
+                handleChange={this.handleBillingPeriodClick}
+                inputs={[
+                  {
+                    id: FORM_BILLING_PERIOD_ONE_MONTH,
+                    label: intl('serviceRegistrationPersonalServerDomainFormBillingPeriodOneMonth'),
+                    value: FORM_BILLING_PERIOD_ONE_MONTH,
+                  },
+                  {
+                    hidden: billingMethod === FORM_BILLING_METHOD_CREDIT_CARD,
+                    id: FORM_BILLING_PERIOD_TWO_MONTHS,
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingPeriodTwoMonths',
+                    ),
+                    value: FORM_BILLING_PERIOD_TWO_MONTHS,
+                  },
+                  {
+                    id: FORM_BILLING_PERIOD_THREE_MONTHS,
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingPeriodThreeMonths',
+                    ),
+                    value: FORM_BILLING_PERIOD_THREE_MONTHS,
+                  },
+                  {
+                    hidden: billingMethod === FORM_BILLING_METHOD_CREDIT_CARD,
+                    id: FORM_BILLING_PERIOD_FOUR_MONTHS,
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingPeriodFourMonths',
+                    ),
+                    value: FORM_BILLING_PERIOD_FOUR_MONTHS,
+                  },
+                  {
+                    id: FORM_BILLING_PERIOD_SIX_MONTHS,
+                    label: intl(
+                      'serviceRegistrationPersonalServerDomainFormBillingPeriodSixMonths',
+                    ),
+                    value: FORM_BILLING_PERIOD_SIX_MONTHS,
+                  },
+                  {
+                    id: FORM_BILLING_PERIOD_ONE_YEAR,
+                    label: intl('serviceRegistrationPersonalServerDomainFormBillingPeriodOneYear'),
+                    value: FORM_BILLING_PERIOD_ONE_YEAR,
+                  },
+                ]}
+                name="billingPeriod"
+                title={intl('serviceRegistrationPersonalServerDomainFormBillingPeriod')}
+                value={billingPeriod}
               />
             </FormDiv>
           </FormPage>
 
-          {/* The client's contact person's information */}
+          {/* The form page for giving the domain information */}
           <FormPage hidden={currentPage !== 4}>
+            <h3>{intl('serviceRegistrationPersonalServerDomainFormDomainInformation')}</h3>
             <FormDiv>
-              <h3>{intl('clientRegisterBusinessFormContactPerson')}</h3>
-            </FormDiv>
-            <FormDiv>
-              <label htmlFor="first-name">{intl('clientRegisterBusinessFormFirstName')}</label>
-              <label className="error-message" hidden={!errors!.firstName} htmlFor="first-name">
-                {errors!.firstName}
+              <label htmlFor="domain">
+                {intl('serviceRegistrationPersonalServerDomainFormDomain')}
+              </label>
+              <label className="error-message" hidden={!errors!.domain} htmlFor="domain">
+                {errors!.domain}
               </label>
               <input
-                id="first-name"
-                name="firstName"
+                id="domain"
+                name="domain"
                 onChange={this.handleChange}
                 type="text"
-                value={firstName}
+                value={domain}
               />
             </FormDiv>
+          </FormPage>
+
+          {/* The form page for accepting the terms */}
+          <FormPage hidden={currentPage !== 5}>
+            <h3>{intl('serviceRegistrationPersonalServerDomainFormAcceptTermsTitle')}</h3>
             <FormDiv>
-              <label htmlFor="surname">{intl('clientRegisterBusinessFormSurname')}</label>
-              <label className="error-message" hidden={!errors!.surname} htmlFor="surname">
-                {errors!.surname}
-              </label>
-              <input
-                id="surname"
-                name="surname"
-                onChange={this.handleChange}
-                type="text"
-                value={surname}
+              <SwitchCheckbox
+                checked={acceptPrivacyPolicy}
+                errorMessage={errors!.acceptPrivacyPolicy}
+                handleClick={this.handleAcceptPrivacyPolicyToggleClick}
+                id="accept-privacy-policy"
+                label={intl('serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicy')}
+                name="acceptPrivacyPolicy"
               />
+              <p>
+                {intl('serviceRegistrationPersonalServerDomainFormAcceptPrivacyPolicyContent', {
+                  a: (...chunk) => (
+                    <LocalizedLink locale={locale} to={clientRegisterPrivacyPolicyPageID}>
+                      {chunk}
+                    </LocalizedLink>
+                  ),
+                })}
+              </p>
             </FormDiv>
             <FormDiv>
-              <label htmlFor="tel">{intl('clientRegisterBusinessFormTel')}</label>
-              <label className="error-message" hidden={!errors!.tel} htmlFor="tel">
-                {errors!.tel}
-              </label>
-              <input id="tel" name="tel" onChange={this.handleChange} type="tel" value={tel} />
-            </FormDiv>
-            <FormDiv>
-              <label htmlFor="email">{intl('clientRegisterBusinessFormEmail')}</label>
-              <label className="error-message" hidden={!errors!.email} htmlFor="email">
-                {errors!.email}
-              </label>
-              <input
-                className="medium"
-                id="email"
-                name="email"
-                onChange={this.handleChange}
-                type="email"
-                value={email}
+              <SwitchCheckbox
+                checked={acceptAdditionalAgreements}
+                errorMessage={errors!.acceptAdditionalAgreements}
+                handleClick={this.handleBillingAddressToggleClick}
+                id="accept-additional-agreements"
+                label={intl(
+                  'serviceRegistrationPersonalServerDomainFormAcceptAdditionalAgreements',
+                )}
+                name="acceptAdditionalAgreements"
               />
             </FormDiv>
             <FormDiv>
@@ -810,15 +867,13 @@ class RegisterBusinessForm extends React.Component<Props, State> {
                 errorMessage={errors!.acceptTerms}
                 handleClick={this.handleAcceptTermsToggleClick}
                 id="accept-terms"
-                label={intl('clientRegisterBusinessFormAcceptTerms')}
+                label={intl('serviceRegistrationPersonalServerDomainFormAcceptTerms')}
                 name="acceptTerms"
               />
-            </FormDiv>
-            <FormDiv>
               <p>
-                {intl('clientRegisterBusinessFormPrivacyInfo', {
+                {intl('serviceRegistrationPersonalServerDomainFormAcceptTermsContent', {
                   a: (...chunk) => (
-                    <LocalizedLink locale={locale} to={clientRegisterPrivacyPolicyPageID}>
+                    <LocalizedLink locale={locale} to={personalServerDomainServiceTermsPageID}>
                       {chunk}
                     </LocalizedLink>
                   ),
@@ -830,28 +885,31 @@ class RegisterBusinessForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv hidden={currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <ArrowLeft size={24} /> <span>{intl('clientRegisterBusinessFormPrevious')}</span>
+                <ArrowLeft size={24} />{' '}
+                <span>{intl('serviceRegistrationPersonalServerDomainFormPrevious')}</span>
               </Button>
             </ButtonDiv>
-            <ButtonDiv hidden={currentPage === 4}>
+            <ButtonDiv hidden={currentPage === 5}>
               <Button onClick={this.moveToNextPage}>
-                <span>{intl('clientRegisterBusinessFormNext')}</span> <ArrowRight size={24} />
+                <span>{intl('serviceRegistrationPersonalServerDomainFormNext')}</span>{' '}
+                <ArrowRight size={24} />
               </Button>
             </ButtonDiv>
-            <ButtonDiv hidden={currentPage !== 4}>
+            <ButtonDiv hidden={currentPage !== 5}>
               <button type="submit">
-                <PaperAirplane size={24} /> {intl('clientRegisterBusinessFormSend')}
+                <PaperAirplane size={24} />{' '}
+                {intl('serviceRegistrationPersonalServerDomainFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
           <FormDiv hidden={postStatus !== FORM_POST_STATUS_SUCCESS}>
-            <p>{intl('clientRegisterBusinessFormSuccess')}</p>
+            <p>{intl('serviceRegistrationPersonalServerDomainFormSuccess')}</p>
           </FormDiv>
           <FormDiv hidden={postStatus !== FORM_POST_STATUS_ERROR}>
-            <p>{intl('clientRegisterBusinessFormError')}</p>
+            <p>{intl('serviceRegistrationPersonalServerDomainFormError')}</p>
             <p>
               {errorMessage === ''
-                ? intl('clientRegisterBusinessFormErrorNoErrorMessage')
+                ? intl('serviceRegistrationPersonalServerDomainFormErrorNoErrorMessage')
                 : errorMessage}
             </p>
           </FormDiv>
@@ -861,4 +919,4 @@ class RegisterBusinessForm extends React.Component<Props, State> {
   }
 }
 
-export default injectIntl(RegisterBusinessForm);
+export default injectIntl(PersonalServerDomainServiceRegistrationForm);
