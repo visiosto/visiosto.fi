@@ -269,24 +269,35 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
                 }
               }
               to {
-                slug
-                parentPath {
-                  ... on ContentfulPage {
-                    slug
-                    parentPath {
-                      ... on ContentfulPage {
-                        slug
+                ... on ContentfulId {
+                  slug
+                  internal {
+                    type
+                  }
+                }
+                ... on ContentfulPage {
+                  slug
+                  parentPath {
+                    ... on ContentfulPage {
+                      slug
+                      parentPath {
+                        ... on ContentfulPage {
+                          slug
+                        }
+                        ... on ContentfulPath {
+                          slug
+                        }
                       }
-                      ... on ContentfulPath {
+                    }
+                    ... on ContentfulPath {
+                      slug
+                      parentPath {
                         slug
                       }
                     }
                   }
-                  ... on ContentfulPath {
-                    slug
-                    parentPath {
-                      slug
-                    }
+                  internal {
+                    type
                   }
                 }
               }
@@ -702,32 +713,39 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
     });
   });
 
-  // Create redirects for the portfolio page.
-
-  createRedirect({
-    fromPath: `/en/portfolio`,
-    toPath: `/en#portfolio`,
-    isPermanent: true,
-    force: true,
-  });
-
-  createRedirect({
-    fromPath: `/portfolio`,
-    toPath: `/#portfolio`,
-    isPermanent: true,
-    force: true,
-  });
-
   // Create redirects from the Contentful data.
 
   query.data.redirects.edges.forEach(({ node }) => {
     const { force, from, node_locale: locale, permanent: isPermanent, to } = node;
-    createRedirect({
-      fromPath: createPagePath(from, locale, defaultLocale, localePaths),
-      toPath: createPagePath(to, locale, defaultLocale, localePaths),
-      isPermanent,
-      force,
-    });
+
+    switch (to.internal.type) {
+      case 'ContentfulId': {
+        createRedirect({
+          fromPath: createPagePath(from, locale, defaultLocale, localePaths),
+          toPath:
+            defaultLocale === locale
+              ? `/#${to.slug}`
+              : `/${localePaths[locale.replace('-', '_')]}#${to.slug}`,
+          isPermanent,
+          force,
+        });
+        break;
+      }
+
+      case 'ContentfulPage': {
+        createRedirect({
+          fromPath: createPagePath(from, locale, defaultLocale, localePaths),
+          toPath: createPagePath(to, locale, defaultLocale, localePaths),
+          isPermanent,
+          force,
+        });
+        break;
+      }
+
+      default: {
+        break;
+      }
+    }
   });
 
   // Create the redirects for the 404 error pages.
