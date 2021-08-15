@@ -116,7 +116,7 @@ function Page({ data, pageContext }) {
       </Cover>
       <Break color="peach" mode={1} ignoreColorScheme /> */}
       <Section lesserMargin>
-        <H2>{page.productsTitle}</H2>
+        <H2 id={page.servicesId.slug}>{page.productsTitle}</H2>
         <Cards>
           <FeatureCard icon={<DeviceDesktopIcon size="large" />} title={page.products[0].title}>
             <div
@@ -267,6 +267,9 @@ export const pageQuery = graphql`
             html
           }
         }
+      }
+      servicesId {
+        slug
       }
       storyBody {
         childMarkdownRemark {

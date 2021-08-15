@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Support for creating redirects to IDs on front page in Contentful.
+- ID for the services section of the front page.
 
 ## [0.28.0] - 2021-08-14
 
