@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [0.29.0] - 2021-08-16
+
+### Added
+
+- Support for creating redirects to IDs on front page in Contentful.
+- ID for the services section of the front page.
+
 ## [0.28.0] - 2021-08-14
 
 ### Added
@@ -756,7 +763,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.28.0...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.29.0...HEAD
+[0.29.0]: https://github.com/visiosto/visiosto-website/compare/v0.28.0...v0.29.0
 [0.28.0]: https://github.com/visiosto/visiosto-website/compare/v0.27.4...v0.28.0
 [0.27.4]: https://github.com/visiosto/visiosto-website/compare/v0.27.3...v0.27.4
 [0.27.3]: https://github.com/visiosto/visiosto-website/compare/v0.27.2...v0.27.3
