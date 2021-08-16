@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
+import Icon from '../Icon';
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
 import LocalizedLink from '../link/LocalizedLink';
 
@@ -363,10 +364,10 @@ class CookieSettings extends React.Component<Props, State> {
                   </Section>
                   <SettingButtons>
                     <Button action="accept" onClick={this.handleSaveClick}>
-                      {intl('cookieNoticeSave')}
+                      <Icon icon="done" /> {intl('cookieNoticeSave')}
                     </Button>
                     <Button action="cancel" onClick={this.handleClosingClick}>
-                      {intl('cookieNoticeCancel')}
+                      <Icon icon="cancel" /> {intl('cookieNoticeCancel')}
                     </Button>
                   </SettingButtons>
                 </Content>
@@ -389,10 +390,10 @@ class CookieSettings extends React.Component<Props, State> {
         </Text>
         <Buttons>
           <Button action="accept" onClick={this.handleAcceptClick}>
-            {intl('cookieNoticeAccept')}
+            <Icon icon="check" /> {intl('cookieNoticeAccept')}
           </Button>
           <Button action="cancel" onClick={this.handleInfoClick}>
-            {intl('cookieNoticeReject')}
+            <Icon icon="tune" /> {intl('cookieNoticeReject')}
           </Button>
         </Buttons>
       </Div>
