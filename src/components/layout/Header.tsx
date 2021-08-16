@@ -449,44 +449,6 @@ function Header({ errorPage, home, locale, pageID }) {
           }
           return null;
         })()}
-        {/* {(() => {
-          // if (breadcrumb && breadcrumb.length > 1) {
-          if (breadcrumb) {
-            return breadcrumb.map((entry, index) => {
-              const title = entry.name ? entry.name : entry.title;
-              if (index === 0) {
-                if (entry.contentful_id === portfolioPathID) {
-                  return (
-                    <LocalizedAnchorLink
-                      key={entry.contentful_id}
-                      locale={locale}
-                      to={`${indexPageID}#portfolio`}
-                    >
-                      {title}
-                    </LocalizedAnchorLink>
-                  );
-                }
-
-                return (
-                  <LocalizedLink key={entry.contentful_id} locale={locale} to={entry.contentful_id}>
-                    {title}
-                  </LocalizedLink>
-                );
-              }
-
-              return (
-                <Fragment key={entry.contentful_id}>
-                  <ChevronIcon />
-                  <LocalizedLink locale={locale} to={entry.contentful_id}>
-                    {title}
-                  </LocalizedLink>
-                </Fragment>
-              );
-            });
-          }
-
-          return null;
-        })()} */}
       </Breadcrumb>
     </HeaderElement>
   );
