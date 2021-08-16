@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Fixed
+
+- Not being able to toggle the checkbox for the additional agreements in the personal server and domain service registration.
+
 ## [0.29.1] - 2021-08-16
 
 ### Fixed

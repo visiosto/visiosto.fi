@@ -853,7 +853,7 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
               <SwitchCheckbox
                 checked={acceptAdditionalAgreements}
                 errorMessage={errors!.acceptAdditionalAgreements}
-                handleClick={this.handleBillingAddressToggleClick}
+                handleClick={this.handleAcceptAdditionalAgreementsToggleClick}
                 id="accept-additional-agreements"
                 label={intl(
                   'serviceRegistrationPersonalServerDomainFormAcceptAdditionalAgreements',
