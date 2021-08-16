@@ -47,15 +47,17 @@ const Separator = styled.div`
 
 const H2 = styled.h2`
   margin: 2em ${(props) => props.theme.layout.marginMobile};
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   text-align: center;
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
+    font-size: 2rem;
   }
 
   @media screen and (${(props) => props.theme.devices.tablet}) {
     margin: 3em ${(props) => props.theme.layout.marginTablet};
+    font-size: 2rem;
   }
 `;
 

@@ -34,7 +34,15 @@ const PostHeader = styled.header``;
 
 const H2 = styled.h2`
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.6rem;
+
+  @media screen and (${(props) => props.theme.devices.mobileL}) {
+    font-size: 2rem;
+  }
+
+  @media screen and (${(props) => props.theme.devices.tablet}) {
+    font-size: 2rem;
+  }
 `;
 
 const Link = styled(LocalizedLink)`
