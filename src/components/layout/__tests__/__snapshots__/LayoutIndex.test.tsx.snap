@@ -3,13 +3,13 @@
 exports[`Index layout component renders correctly 1`] = `
 <div>
   <header
-    class="sc-jffHpj sUMAT"
+    class="sc-eJocfa iapggX"
   >
     <div
-      class="sc-hhIiOg hAGexx"
+      class="sc-eirqVv iBOBty"
     >
       <h1
-        class="sc-eJocfa idIbMJ"
+        class="sc-oeezt dbzNXk"
       >
         Visiosto
       </h1>
@@ -17,7 +17,7 @@ exports[`Index layout component renders correctly 1`] = `
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-eirqVv iTAoZs"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-lbVvki hwBxX"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -84,62 +84,62 @@ exports[`Index layout component renders correctly 1`] = `
       </a>
     </div>
     <nav
-      class="sc-Arkif icTyjD"
+      class="sc-khIgEk eiXYfb"
     >
       <div
         aria-controls="primary-menu"
         aria-expanded="false"
-        class="sc-khIgEk kGUmRl"
+        class="sc-hTRkXV kVXIdZ"
       >
         <div
-          class="sc-hTRkXV fEoLQW"
+          class="sc-jgPyTC iGCBoO"
         />
         <div
-          class="sc-hTRkXV fEoLQW"
+          class="sc-jgPyTC iGCBoO"
         />
         <div
-          class="sc-hTRkXV fEoLQW"
+          class="sc-jgPyTC iGCBoO"
         />
       </div>
       <ul
-        class="sc-jgPyTC grxUuo"
+        class="sc-gSYDnn hjVOkC"
         id="primary-menu"
       >
         <li
-          class="sc-gSYDnn kKgpCH"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-laZMeE gPctwz"
+            class="sc-iNiQyp kgGJlb"
             href="/"
           >
             Etusivu
           </a>
         </li>
         <li
-          class="sc-gSYDnn kKgpCH"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-iNiQyp kgGJlb"
+            class="sc-jffHpj evigZN"
             href="/#portfolio"
           >
             Portfolio
           </a>
         </li>
         <li
-          class="sc-gSYDnn kKgpCH"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-iNiQyp kgGJlb"
+            class="sc-jffHpj evigZN"
             href="/#yhteystiedot"
           >
             Yhteystiedot
           </a>
         </li>
         <li
-          class="sc-gSYDnn kKgpCH"
+          class="sc-laZMeE jNFHXU"
         >
           <a
-            class="sc-laZMeE gPctwz"
+            class="sc-iNiQyp kgGJlb"
             href="/blogi"
           >
             Blogi
@@ -148,14 +148,14 @@ exports[`Index layout component renders correctly 1`] = `
       </ul>
     </nav>
     <div
-      class="sc-lbVvki kMeBVT"
+      class="sc-gGLxEB gfxjNA"
     />
   </header>
   <main>
     <section>
       <header>
         <h2
-          class="sc-ckTSus bpkwmw"
+          class="sc-fbIWvP jraOxN"
         >
           Etusivu
         </h2>
@@ -168,24 +168,24 @@ exports[`Index layout component renders correctly 1`] = `
     </section>
   </main>
   <footer
-    class="sc-bYwzuL dIDITQ"
+    class="sc-kLojOw iFlJTh"
   >
     <div
-      class="sc-ezzafa epCVna"
+      class="sc-bYwzuL hVwMG"
     >
       <form
-        class="sc-kfYoZR fhlAKJ"
+        class="sc-fKgJPI jTkyUb"
       >
         <input
           aria-label="Haku"
-          class="sc-fKgJPI uiPbK"
+          class="sc-bCwfaz gVdYuk"
           placeholder="Haku"
           type="text"
           value=""
         />
         <svg
           aria-hidden="true"
-          class="sc-bCwfaz iEsYTZ"
+          class="sc-iwajpm dHmqme"
           fill="currentColor"
           height="16"
           role="img"
@@ -200,11 +200,11 @@ exports[`Index layout component renders correctly 1`] = `
         </svg>
       </form>
       <div
-        class="sc-iJCRrE gluuoy"
+        class="sc-giAqHp dkQfyJ"
         hidden=""
       >
         <div
-          class="sc-giAqHp hmmUbT"
+          class="sc-ezzafa ksJAFy"
         >
           <div>
             Hakemistoa ladataan
@@ -213,13 +213,13 @@ exports[`Index layout component renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-kLojOw sc-iklJeh ccoPBf iMVOlo"
+      class="sc-iklJeh sc-jJMGnK kpxAUQ kidWOS"
     >
       <a
         href="/"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-jJMGnK fdRhhj"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-hiKfDv LQxyK"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -271,21 +271,21 @@ exports[`Index layout component renders correctly 1`] = `
         Visiosto oy
       </h2>
       <p
-        class="sc-hiKfDv iHGEYN"
+        class="sc-gXfVKN fQpkbh"
       >
         Y-tunnus:
          
         3010084-6
       </p>
       <p
-        class="sc-hiKfDv iHGEYN"
+        class="sc-gXfVKN fQpkbh"
       >
         ALV-numero:
          
         FI30100846
       </p>
       <p
-        class="sc-hiKfDv iHGEYN"
+        class="sc-gXfVKN fQpkbh"
       >
         <a
           href="mailto:info@visiosto.fi"
@@ -294,7 +294,7 @@ exports[`Index layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-gXfVKN qOTNN"
+        class="sc-cBoqAE jOpfwQ"
       >
         <a
           href="/hallinto"
@@ -303,7 +303,7 @@ exports[`Index layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-cBoqAE icrWgo"
+        class="sc-ciSkZP bMCkWf"
       >
         <a
           href="/hinnasto"
@@ -312,7 +312,7 @@ exports[`Index layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-ciSkZP iWIvyo"
+        class="sc-jcwpoC bFRcm"
       >
         <a
           href="https://reddyshop.co/visiosto"
@@ -324,10 +324,10 @@ exports[`Index layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <a
-        class="sc-dlMDgC elyXpg"
+        class="sc-kfYoZR ckSjVy"
         href="/en"
       >
         <span
@@ -339,19 +339,19 @@ exports[`Index layout component renders correctly 1`] = `
       <br />
     </div>
     <h3
-      class="sc-jcwpoC dyPCBo"
+      class="sc-carFqZ hQcTZP"
     >
       Sosiaalisessa mediassa
     </h3>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         #linssimmeläpi
       </p>
     </div>
     <div
-      class="sc-kLojOw sc-carFqZ ccoPBf kWXKAQ"
+      class="sc-iklJeh sc-iTVJFM kpxAUQ jyyZHb"
     >
       <a
         href="https://instagram.com/visiosto"
@@ -359,7 +359,7 @@ exports[`Index layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-iBzEeX entxOW knLCbk"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iBzEeX sc-efHYUO jSWPLp gHJUtd"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -410,7 +410,7 @@ exports[`Index layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM entxOW"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iBzEeX jSWPLp"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -461,7 +461,7 @@ exports[`Index layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-cTJkRt entxOW GjTXJ"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iBzEeX sc-jNnpgg jSWPLp fXIyNb"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -512,7 +512,7 @@ exports[`Index layout component renders correctly 1`] = `
         target="_blank"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iTVJFM sc-efHYUO entxOW gHJUtd"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-iBzEeX sc-cTJkRt jSWPLp GjTXJ"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -559,10 +559,10 @@ exports[`Index layout component renders correctly 1`] = `
       </a>
     </div>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <p
-        class="sc-jNnpgg geTdwl"
+        class="sc-dPaNzc cgppGB"
       >
         <a
           href="/tietosuoja"
@@ -571,25 +571,25 @@ exports[`Index layout component renders correctly 1`] = `
         </a>
       </p>
       <div
-        class="sc-dPaNzc PeCie"
+        class="sc-bBjRSN eLelkl"
       >
         <span
-          class="sc-dIvrsQ gWvsKi"
+          class="sc-hHEiqL DFvqs"
           tabindex="0"
         >
           Evästeasetukset
         </span>
         <div
-          class="sc-hHEiqL esZeuy"
+          class="sc-dlMDgC hFzDAK"
         >
           <div
-            class="sc-eCApnc jRdEEO"
+            class="sc-jSFjdj kTAvTn"
           >
             <div
-              class="sc-jSFjdj"
+              class="sc-gKAaRy"
             >
               <h2
-                class="sc-gKAaRy eFdRPO"
+                class="sc-iCoGMd qJjFK"
               >
                 Saisiko olla keksi?
               </h2>
@@ -598,16 +598,30 @@ exports[`Index layout component renders correctly 1`] = `
               </p>
             </div>
             <div
-              class="sc-iCoGMd dzEEWi"
+              class="sc-fujyAs kRhpnD"
             >
               <span
                 class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
               >
+                <span
+                  class="sc-eCApnc XgquJ material-icons md-24"
+                  size="24"
+                >
+                  check
+                </span>
+                 
                 Kiitos, hyväksyn evästeet
               </span>
               <span
                 class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
               >
+                <span
+                  class="sc-eCApnc XgquJ material-icons md-24"
+                  size="24"
+                >
+                  tune
+                </span>
+                 
                 Tarkistan evästeet ja säädän niitä
               </span>
             </div>
@@ -615,7 +629,7 @@ exports[`Index layout component renders correctly 1`] = `
         </div>
       </div>
       <p
-        class="sc-bBjRSN eLelkl"
+        class="sc-cOifOu eXZopZ"
       >
         <a
           href="/kayttoehdot"
@@ -624,7 +638,7 @@ exports[`Index layout component renders correctly 1`] = `
         </a>
       </p>
       <p
-        class="sc-cOifOu eXZopZ"
+        class="sc-Arkif hPwJZf"
       >
         <a
           href="/accessibility-statement"
@@ -634,21 +648,21 @@ exports[`Index layout component renders correctly 1`] = `
       </p>
     </div>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         Octicons © 2021 GitHub, Inc.
       </p>
     </div>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         © 2021 Visiosto oy
       </p>
     </div>
     <div
-      class="sc-kLojOw ccoPBf"
+      class="sc-iklJeh kpxAUQ"
     >
       <p>
         Tämä sivusto on tehty 

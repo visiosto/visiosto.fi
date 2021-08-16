@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component renders correctly 1`] = `
+<div>
+  <span
+    class="sc-bdnxRM iEZrFk material-icons md-24"
+    size="24"
+  >
+    tune
+  </span>
+  ,
+</div>
+`;
