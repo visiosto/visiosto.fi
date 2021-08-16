@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Fixed
 
 - Automatic hyphenation of the site in Safari.
+- Lower-level headings being larger than some higher-level headings on form pages and on the blog page.
 
 ## [0.29.0] - 2021-08-16
 
