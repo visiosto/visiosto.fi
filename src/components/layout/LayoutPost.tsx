@@ -20,9 +20,6 @@ const PageTitle = styled.h1`
   margin: 2em ${(props) => props.theme.layout.marginTitleMobile};
   font-size: 2rem;
   text-align: center;
-  word-break: break-all;
-  word-break: break-word;
-  hyphens: auto;
 
   @media screen and (${(props) => props.theme.devices.mobileL}) {
     margin: 2em ${(props) => props.theme.layout.marginTitleTablet};
