@@ -269,6 +269,8 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
 
       <link href="https://use.typekit.net/njo0slg.css" rel="stylesheet" />
 
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
       {(() => {
         if (errorPage) {
           return siteMetadata.locales.map((listLocale) => (
