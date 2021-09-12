@@ -156,8 +156,7 @@ exports[`Layout component renders correctly 1`] = `
       >
         Visiosto
       </a>
-       
-      /
+       /
        
       <a
         href="/tietosuoja"

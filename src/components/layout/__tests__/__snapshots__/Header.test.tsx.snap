@@ -311,8 +311,7 @@ exports[`Header component renders page header correctly 1`] = `
       >
         Visiosto
       </a>
-       
-      /
+       /
        
       <a
         href="/undefined"
