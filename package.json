@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/visiosto/visiosto-website#readme",
   "dependencies": {
-    "@primer/octicons-react": "^15.0.1",
     "@reach/router": "^1.3.4",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
@@ -44,7 +43,7 @@
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-sitemap": "^4.0.0",
-    "gatsby-plugin-styled-components": "^4.3.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
     "gatsby-source-contentful": "^5.2.1",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-json": "^3.3.0",
