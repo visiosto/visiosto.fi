@@ -143,9 +143,6 @@ function Page({ data, pageContext }) {
       </Section>
       <Break color="blue" mode={1} />
       <Section lesserMargin>
-        <Icon>
-          <NorthStarIcon size="large" />
-        </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
         <Centered
           dangerouslySetInnerHTML={{ __html: page.portfolioBody.childMarkdownRemark.html }}
@@ -158,9 +155,6 @@ function Page({ data, pageContext }) {
       </Section>
       <Break color="peach" mode={3} ignoreColorScheme />
       <Section lesserMargin>
-        <Icon>
-          <PaperAirplaneIcon size="large" />
-        </Icon>
         <H2 id={page.contactId.slug}>{page.contactTitle}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: page.contactBody.childMarkdownRemark.html }} />
         <Cards>

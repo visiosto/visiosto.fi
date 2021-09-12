@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Icons on the site to be Material icons.
 
+### Removed
+
+- Octicons from the site.
+
 ## [0.29.2] - 2021-08-16
 
 ### Fixed
