@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Material icon component.
 - Icons to cookie settings.
 
+### Changed
+
+- Icons on the site to be Material icons.
+
 ## [0.29.2] - 2021-08-16
 
 ### Fixed
