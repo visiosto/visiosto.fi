@@ -3,62 +3,62 @@
 exports[`Navigation component renders English correctly 1`] = `
 <div>
   <nav
-    class="sc-bdnxRM jdHmZT"
+    class="sc-bdfBQB gNgBQE"
   >
     <div
       aria-controls="primary-menu"
       aria-expanded="false"
-      class="sc-gtsrHT iyLpWA"
+      class="sc-gsTEea cbmXIS"
     >
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
     </div>
     <ul
-      class="sc-hKFxyN jSDNlB"
+      class="sc-hKgJUU jdxjcQ"
       id="primary-menu"
     >
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-jSFjdj bKklDm"
+          class="sc-jSgvzq kPPAlD"
           href="/en"
         >
           Front Page
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-gKAaRy gcdywK"
+          class="sc-gKseQn bSKLbB"
           href="/en#portfolio"
         >
           Portfolio
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-gKAaRy gcdywK"
+          class="sc-gKseQn bSKLbB"
           href="/en#contact"
         >
           Contact
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-jSFjdj bKklDm"
+          class="sc-jSgvzq kPPAlD"
           href="/en/blog"
         >
           Blog
@@ -73,62 +73,62 @@ exports[`Navigation component renders English correctly 1`] = `
 exports[`Navigation component renders Finnish correctly 1`] = `
 <div>
   <nav
-    class="sc-bdnxRM jdHmZT"
+    class="sc-bdfBQB gNgBQE"
   >
     <div
       aria-controls="primary-menu"
       aria-expanded="false"
-      class="sc-gtsrHT iyLpWA"
+      class="sc-gsTEea cbmXIS"
     >
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
       <div
-        class="sc-dlnjwi fodIaX"
+        class="sc-dlfnuX eWZRzl"
       />
     </div>
     <ul
-      class="sc-hKFxyN jSDNlB"
+      class="sc-hKgJUU jdxjcQ"
       id="primary-menu"
     >
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-jSFjdj bKklDm"
+          class="sc-jSgvzq kPPAlD"
           href="/"
         >
           Etusivu
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-gKAaRy gcdywK"
+          class="sc-gKseQn bSKLbB"
           href="/#portfolio"
         >
           Portfolio
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-gKAaRy gcdywK"
+          class="sc-gKseQn bSKLbB"
           href="/#yhteystiedot"
         >
           Yhteystiedot
         </a>
       </li>
       <li
-        class="sc-eCApnc jNSuCc"
+        class="sc-eCstlR cjNYiw"
       >
         <a
-          class="sc-jSFjdj bKklDm"
+          class="sc-jSgvzq kPPAlD"
           href="/blogi"
         >
           Blogi

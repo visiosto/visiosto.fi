@@ -3,7 +3,7 @@
 exports[`Contact form component renders correctly 1`] = `
 <div>
   <div
-    class="sc-dlnjwi iVCkmR"
+    class="sc-dlfnuX duFhTr"
   >
     <form
       action="/"
@@ -18,7 +18,7 @@ exports[`Contact form component renders correctly 1`] = `
         value="Front page contact"
       />
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
         hidden=""
       >
         <label
@@ -31,7 +31,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <label
           for="name"
@@ -51,7 +51,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <label
           for="email"
@@ -71,14 +71,14 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <p>
           tai
         </p>
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <label
           for="tel"
@@ -98,7 +98,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <label
           for="message"
@@ -116,7 +116,7 @@ exports[`Contact form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <p>
           Lähettämällä tiedot hyväksyt henkilötietojesi käsittelyn rekisterin 
@@ -129,16 +129,16 @@ exports[`Contact form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
       >
         <div
-          class="sc-hKFxyN"
+          class="sc-hKgJUU"
         >
           <button
             type="submit"
           >
             <span
-              class="sc-gtsrHT kddRtQ material-icons md-24"
+              class="sc-gsTEea enevHu material-icons md-24"
               size="24"
             >
               send
@@ -149,7 +149,7 @@ exports[`Contact form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
         hidden=""
       >
         <p>
@@ -157,7 +157,7 @@ exports[`Contact form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-bdnxRM eunCtq"
+        class="sc-bdfBQB dXKFlh"
         hidden=""
       >
         <p>

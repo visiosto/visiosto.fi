@@ -3,11 +3,11 @@
 exports[`Localized anchor link button component renders correctly 1`] = `
 <div>
   <a
-    class="sc-eCApnc gfBiZH"
+    class="sc-eCstlR jRFHTL"
     href="/kayttoehdot#portfolio"
   >
     <span
-      class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+      class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
     >
       A link
     </span>

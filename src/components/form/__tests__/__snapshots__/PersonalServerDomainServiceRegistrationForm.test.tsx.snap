@@ -3,7 +3,7 @@
 exports[`Client register person form component renders correctly 1`] = `
 <div>
   <div
-    class="sc-pNWdM jgGxEH"
+    class="sc-pGacB idCWtJ"
   >
     <form
       action="/"
@@ -18,7 +18,7 @@ exports[`Client register person form component renders correctly 1`] = `
         value="Registration for personal server and domain service"
       />
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <label
@@ -31,17 +31,17 @@ exports[`Client register person form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Perustiedot
           </h3>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="first-name"
@@ -61,7 +61,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="surname"
@@ -81,7 +81,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="tel"
@@ -101,7 +101,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="email"
@@ -125,7 +125,7 @@ exports[`Client register person form component renders correctly 1`] = `
           </p>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="address-line-1"
@@ -146,7 +146,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="address-line-2"
@@ -162,7 +162,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="postcode"
@@ -182,7 +182,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="post-office"
@@ -202,7 +202,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="same-billing-address"
@@ -210,7 +210,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Laskutusosoite on sama kuin yllä annettu osoite
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="same-billing-address"
@@ -218,20 +218,20 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <h3>
           Laskutusosoite
         </h3>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-address-line-1"
@@ -252,7 +252,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-address-line-2"
@@ -268,7 +268,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-postcode"
@@ -288,7 +288,7 @@ exports[`Client register person form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-post-office"
@@ -309,11 +309,11 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Maksutapa
@@ -328,7 +328,7 @@ exports[`Client register person form component renders correctly 1`] = `
              mukainen lisämaksu.
           </p>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
             hidden=""
           >
             <input
@@ -344,7 +344,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-email"
@@ -359,7 +359,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-paper"
@@ -376,11 +376,11 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Laskutusjakson pituus
@@ -389,7 +389,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Pituuden mukaan Visiosto määrittää sen, kuinka monen kuukauden tilausmaksut Visiosto laskuttaa kerralla ja kuinka usein ne laskutetaan.
           </p>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-one-month"
@@ -404,7 +404,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-two-months"
@@ -419,7 +419,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-three-months"
@@ -434,7 +434,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-four-months"
@@ -449,7 +449,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-six-months"
@@ -464,7 +464,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-one-year"
@@ -481,14 +481,14 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <h3>
           Verkkotunnus
         </h3>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="domain"
@@ -509,14 +509,14 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <h3>
           Ehtojen hyväksyminen
         </h3>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="accept-privacy-policy"
@@ -524,7 +524,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön ja tietosuojaselosteen puitteissa
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="accept-privacy-policy"
@@ -532,7 +532,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
           <p>
@@ -545,7 +545,7 @@ exports[`Client register person form component renders correctly 1`] = `
           </p>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="accept-additional-agreements"
@@ -553,7 +553,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Ymmärrän, että mahdollisista tarkennuksista palveluun ja sopimukseen voidaan sopia tämän lomakkeen ulkopuolella
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="accept-additional-agreements"
@@ -561,12 +561,12 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="accept-terms"
@@ -574,7 +574,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Hyväksyn palvelusopimuksen
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="accept-terms"
@@ -582,7 +582,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
           <p>
@@ -596,17 +596,17 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
       >
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
           hidden=""
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+            class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
           >
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               arrow_back
@@ -618,17 +618,17 @@ exports[`Client register person form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+            class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
           >
             <span>
               Jatka
             </span>
              
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               arrow_forward
@@ -636,14 +636,14 @@ exports[`Client register person form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
           hidden=""
         >
           <button
             type="submit"
           >
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               send
@@ -654,7 +654,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <p>
@@ -662,7 +662,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <p>

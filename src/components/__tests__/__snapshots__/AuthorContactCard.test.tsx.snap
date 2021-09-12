@@ -3,13 +3,13 @@
 exports[`Author contact card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-bdnxRM ejxjXN"
+    class="sc-bdfBQB iCupBi"
   >
     <div
-      class="sc-gtsrHT jMpFrY"
+      class="sc-gsTEea bdKoIW"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-dlnjwi fyOROi"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-dlfnuX ioOIgU"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -59,12 +59,12 @@ exports[`Author contact card component renders correctly 1`] = `
       </div>
     </div>
     <h3
-      class="sc-hKFxyN jGXkpQ"
+      class="sc-hKgJUU cuXRrp"
     >
       Antti Kivi
     </h3>
     <div
-      class="sc-eCApnc fLcWfp"
+      class="sc-eCstlR iiaHfJ"
     >
       <p>
         Kehittäjä

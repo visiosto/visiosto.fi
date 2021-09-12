@@ -3,7 +3,7 @@
 exports[`Client register business form component renders correctly 1`] = `
 <div>
   <div
-    class="sc-pNWdM jgGxEH"
+    class="sc-pGacB idCWtJ"
   >
     <form
       action="/"
@@ -18,7 +18,7 @@ exports[`Client register business form component renders correctly 1`] = `
         value="Business data for client register"
       />
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <label
@@ -31,17 +31,17 @@ exports[`Client register business form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Yrityksen tai yhteisön perustiedot
           </h3>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="business-id"
@@ -61,7 +61,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="business-name"
@@ -81,14 +81,14 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h4>
             Yrityksen tai yhteisön rekisteröity osoite
           </h4>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="address-line-1"
@@ -109,7 +109,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="address-line-2"
@@ -125,7 +125,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="postcode"
@@ -145,7 +145,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="post-office"
@@ -165,7 +165,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="same-billing-address"
@@ -173,7 +173,7 @@ exports[`Client register business form component renders correctly 1`] = `
             Laskutusosoite on sama kuin yllä annettu osoite
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="same-billing-address"
@@ -181,20 +181,20 @@ exports[`Client register business form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <h3>
           Laskutusosoite
         </h3>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-address-line-1"
@@ -215,7 +215,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-address-line-2"
@@ -231,7 +231,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-postcode"
@@ -251,7 +251,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="billing-post-office"
@@ -272,11 +272,11 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Laskutustapa
@@ -291,7 +291,7 @@ exports[`Client register business form component renders correctly 1`] = `
              mukainen lisämaksu.
           </p>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-e-invoice"
@@ -306,7 +306,7 @@ exports[`Client register business form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-email"
@@ -321,7 +321,7 @@ exports[`Client register business form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-gKAaRy iPLCYP"
+            class="sc-gKseQn dTFpCs"
           >
             <input
               id="radio-paper"
@@ -338,18 +338,18 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Laskutustiedot
           </h3>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
           hidden=""
         >
           <label
@@ -371,7 +371,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
           hidden=""
         >
           <label
@@ -393,7 +393,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
           hidden=""
         >
           <label
@@ -416,18 +416,18 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-jrsJWt"
+        class="sc-jrAFXE"
         hidden=""
       >
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <h3>
             Yhteyshenkilö
           </h3>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="first-name"
@@ -447,7 +447,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="surname"
@@ -467,7 +467,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="tel"
@@ -487,7 +487,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="email"
@@ -508,7 +508,7 @@ exports[`Client register business form component renders correctly 1`] = `
           />
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <label
             for="accept-terms"
@@ -516,7 +516,7 @@ exports[`Client register business form component renders correctly 1`] = `
             Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön puitteissa
           </label>
           <span
-            class="sc-iCoGMd dgMbGP"
+            class="sc-iBPTik ecFxow"
           >
             <input
               id="accept-terms"
@@ -524,12 +524,12 @@ exports[`Client register business form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-fujyAs kwLFq"
+              class="sc-fubCzh etDGbl"
             />
           </span>
         </div>
         <div
-          class="sc-eCApnc jylwCj"
+          class="sc-eCstlR hrMzaT"
         >
           <p>
             Rekisterin tietosuojaselosteeseen voit tutustua 
@@ -542,17 +542,17 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
       >
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
           hidden=""
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+            class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
           >
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               arrow_back
@@ -564,17 +564,17 @@ exports[`Client register business form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
         >
           <span
-            class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+            class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
           >
             <span>
               Jatka
             </span>
              
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               arrow_forward
@@ -582,14 +582,14 @@ exports[`Client register business form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-kEqXSa"
+          class="sc-kEjbQP"
           hidden=""
         >
           <button
             type="submit"
           >
             <span
-              class="sc-jSFjdj ejAeMl material-icons md-24"
+              class="sc-jSgvzq LKMKQ material-icons md-24"
               size="24"
             >
               send
@@ -600,7 +600,7 @@ exports[`Client register business form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <p>
@@ -608,7 +608,7 @@ exports[`Client register business form component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-eCApnc jylwCj"
+        class="sc-eCstlR hrMzaT"
         hidden=""
       >
         <p>

@@ -3,22 +3,22 @@
 exports[`Cookie notice component renders correctly 1`] = `
 <div>
   <span
-    class="sc-hHEiqL DFvqs"
+    class="sc-hHfuMS ebeyrl"
     tabindex="0"
   >
     Evästeasetukset
   </span>
   <div
-    class="sc-dlMDgC hFzDAK"
+    class="sc-dmlqKv cEJYcP"
   >
     <div
-      class="sc-jSFjdj kTAvTn"
+      class="sc-jSgvzq iFRBey"
     >
       <div
-        class="sc-gKAaRy"
+        class="sc-gKseQn"
       >
         <h2
-          class="sc-iCoGMd qJjFK"
+          class="sc-iBPTik gWamCx"
         >
           Saisiko olla keksi?
         </h2>
@@ -27,13 +27,13 @@ exports[`Cookie notice component renders correctly 1`] = `
         </p>
       </div>
       <div
-        class="sc-fujyAs kRhpnD"
+        class="sc-fubCzh bRtoGc"
       >
         <span
-          class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
+          class="sc-bdfBQB sc-dlfnuX dYkFUz hVijAa"
         >
           <span
-            class="sc-eCApnc cVkgPU material-icons md-24"
+            class="sc-eCstlR belRIU material-icons md-24"
             size="24"
           >
             check
@@ -42,10 +42,10 @@ exports[`Cookie notice component renders correctly 1`] = `
           Kiitos, hyväksyn evästeet
         </span>
         <span
-          class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
+          class="sc-bdfBQB sc-hKgJUU dYkFUz heBABp"
         >
           <span
-            class="sc-eCApnc cVkgPU material-icons md-24"
+            class="sc-eCstlR belRIU material-icons md-24"
             size="24"
           >
             tune

@@ -3,17 +3,17 @@
 exports[`Search form component renders correctly 1`] = `
 <div>
   <form
-    class="sc-gtsrHT fVqWTQ"
+    class="sc-gsTEea eqnqBK"
   >
     <input
       aria-label="Haku"
-      class="sc-dlnjwi bcgZLV"
+      class="sc-dlfnuX jPKnFH"
       placeholder="Haku"
       type="text"
       value="Searching"
     />
     <span
-      class="sc-bdnxRM cVbxgV material-icons md-24 sc-hKFxyN bVsOxz"
+      class="sc-bdfBQB ymbXe material-icons md-24 sc-hKgJUU ecKfoy"
       size="24"
     >
       search

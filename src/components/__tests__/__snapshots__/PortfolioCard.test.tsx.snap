@@ -3,13 +3,13 @@
 exports[`Portfolio reference card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-bdnxRM hCgmGZ"
+    class="sc-bdfBQB fRhpRG"
   >
     <div
-      class="sc-gtsrHT jMpFrY"
+      class="sc-gsTEea bdKoIW"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-dlnjwi ftAhAr"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained sc-dlfnuX zzCbJ"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -56,12 +56,12 @@ exports[`Portfolio reference card component renders correctly 1`] = `
       </div>
     </div>
     <h3
-      class="sc-hKFxyN jGXkpQ"
+      class="sc-hKgJUU cuXRrp"
     >
       Aatu Itkonen
     </h3>
     <div
-      class="sc-eCApnc gLSaYg"
+      class="sc-eCstlR ldgRoc"
     >
       <p>
         Verkkosivusto ja visuaalinen ilme

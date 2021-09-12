@@ -3,22 +3,22 @@
 exports[`Feature card component renders correctly 1`] = `
 <div>
   <article
-    class="sc-eCApnc hWVQIg"
+    class="sc-eCstlR cHNdFU"
   >
     <span
-      class="sc-jSFjdj McSLI material-icons md-64"
+      class="sc-jSgvzq leGIVt material-icons md-64"
       size="64"
     >
       auto_awesome
     </span>
     <h3
-      class="sc-gKAaRy cPstvh"
+      class="sc-gKseQn jRpBIa"
     >
       Test title
     </h3>
     Some text here
     <span
-      class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
+      class="sc-bdfBQB sc-gsTEea dYkFUz jefdCI"
     >
       Click here
     </span>

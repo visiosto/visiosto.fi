@@ -3,7 +3,7 @@
 exports[`Break component renders first blue correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -45,7 +45,7 @@ exports[`Break component renders first blue correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -53,7 +53,7 @@ exports[`Break component renders first blue correctly 1`] = `
 exports[`Break component renders first blue correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -95,7 +95,7 @@ exports[`Break component renders first blue correctly with colour scheme ignored
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -103,7 +103,7 @@ exports[`Break component renders first blue correctly with colour scheme ignored
 exports[`Break component renders first brown correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -145,7 +145,7 @@ exports[`Break component renders first brown correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -153,7 +153,7 @@ exports[`Break component renders first brown correctly 1`] = `
 exports[`Break component renders first brown correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -195,7 +195,7 @@ exports[`Break component renders first brown correctly with colour scheme ignore
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -203,7 +203,7 @@ exports[`Break component renders first brown correctly with colour scheme ignore
 exports[`Break component renders first peach correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -245,7 +245,7 @@ exports[`Break component renders first peach correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -253,7 +253,7 @@ exports[`Break component renders first peach correctly 1`] = `
 exports[`Break component renders first peach correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -295,7 +295,7 @@ exports[`Break component renders first peach correctly with colour scheme ignore
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -303,7 +303,7 @@ exports[`Break component renders first peach correctly with colour scheme ignore
 exports[`Break component renders first turquoise correctly 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -311,7 +311,7 @@ exports[`Break component renders first turquoise correctly 1`] = `
 exports[`Break component renders first turquoise correctly with colour scheme ignored 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -319,7 +319,7 @@ exports[`Break component renders first turquoise correctly with colour scheme ig
 exports[`Break component renders second blue correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -361,7 +361,7 @@ exports[`Break component renders second blue correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -369,7 +369,7 @@ exports[`Break component renders second blue correctly 1`] = `
 exports[`Break component renders second blue correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -411,7 +411,7 @@ exports[`Break component renders second blue correctly with colour scheme ignore
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -419,7 +419,7 @@ exports[`Break component renders second blue correctly with colour scheme ignore
 exports[`Break component renders second brown correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -461,7 +461,7 @@ exports[`Break component renders second brown correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -469,7 +469,7 @@ exports[`Break component renders second brown correctly 1`] = `
 exports[`Break component renders second brown correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -511,7 +511,7 @@ exports[`Break component renders second brown correctly with colour scheme ignor
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -519,7 +519,7 @@ exports[`Break component renders second brown correctly with colour scheme ignor
 exports[`Break component renders second peach correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -561,7 +561,7 @@ exports[`Break component renders second peach correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -569,7 +569,7 @@ exports[`Break component renders second peach correctly 1`] = `
 exports[`Break component renders second peach correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -611,7 +611,7 @@ exports[`Break component renders second peach correctly with colour scheme ignor
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -619,7 +619,7 @@ exports[`Break component renders second peach correctly with colour scheme ignor
 exports[`Break component renders second turquoise correctly 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -627,7 +627,7 @@ exports[`Break component renders second turquoise correctly 1`] = `
 exports[`Break component renders second turquoise correctly with colour scheme ignored 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -635,7 +635,7 @@ exports[`Break component renders second turquoise correctly with colour scheme i
 exports[`Break component renders third blue correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -677,7 +677,7 @@ exports[`Break component renders third blue correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -685,7 +685,7 @@ exports[`Break component renders third blue correctly 1`] = `
 exports[`Break component renders third blue correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -727,7 +727,7 @@ exports[`Break component renders third blue correctly with colour scheme ignored
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -735,7 +735,7 @@ exports[`Break component renders third blue correctly with colour scheme ignored
 exports[`Break component renders third brown correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -777,7 +777,7 @@ exports[`Break component renders third brown correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -785,7 +785,7 @@ exports[`Break component renders third brown correctly 1`] = `
 exports[`Break component renders third brown correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -827,7 +827,7 @@ exports[`Break component renders third brown correctly with colour scheme ignore
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -835,7 +835,7 @@ exports[`Break component renders third brown correctly with colour scheme ignore
 exports[`Break component renders third peach correctly 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -877,7 +877,7 @@ exports[`Break component renders third peach correctly 1`] = `
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -885,7 +885,7 @@ exports[`Break component renders third peach correctly 1`] = `
 exports[`Break component renders third peach correctly with colour scheme ignored 1`] = `
 <div>
   <div
-    class="sc-bdnxRM jNerll"
+    class="sc-bdfBQB gjRZwa"
   >
     <div
       class="gatsby-image-wrapper"
@@ -927,7 +927,7 @@ exports[`Break component renders third peach correctly with colour scheme ignore
     </div>
   </div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -935,7 +935,7 @@ exports[`Break component renders third peach correctly with colour scheme ignore
 exports[`Break component renders third turquoise correctly 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;
@@ -943,7 +943,7 @@ exports[`Break component renders third turquoise correctly 1`] = `
 exports[`Break component renders third turquoise correctly with colour scheme ignored 1`] = `
 <div>
   <hr
-    class="sc-gtsrHT gMizgv"
+    class="sc-gsTEea jzvdCt"
   />
 </div>
 `;

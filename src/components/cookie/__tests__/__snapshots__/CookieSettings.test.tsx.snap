@@ -3,13 +3,13 @@
 exports[`Cookie settings component renders correctly when closed 1`] = `
 <div>
   <div
-    class="sc-jSFjdj kTAvTn"
+    class="sc-jSgvzq iFRBey"
   >
     <div
-      class="sc-gKAaRy"
+      class="sc-gKseQn"
     >
       <h2
-        class="sc-iCoGMd qJjFK"
+        class="sc-iBPTik gWamCx"
       >
         Saisiko olla keksi?
       </h2>
@@ -18,13 +18,13 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
       </p>
     </div>
     <div
-      class="sc-fujyAs kRhpnD"
+      class="sc-fubCzh bRtoGc"
     >
       <span
-        class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
+        class="sc-bdfBQB sc-dlfnuX dYkFUz hVijAa"
       >
         <span
-          class="sc-eCApnc cVkgPU material-icons md-24"
+          class="sc-eCstlR belRIU material-icons md-24"
           size="24"
         >
           check
@@ -33,10 +33,10 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
         Kiitos, hyväksyn evästeet
       </span>
       <span
-        class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
+        class="sc-bdfBQB sc-hKgJUU dYkFUz heBABp"
       >
         <span
-          class="sc-eCApnc cVkgPU material-icons md-24"
+          class="sc-eCstlR belRIU material-icons md-24"
           size="24"
         >
           tune
@@ -53,30 +53,30 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
 exports[`Cookie settings component renders correctly when opened 1`] = `
 <div>
   <div
-    class="sc-pNWdM blMKuP"
+    class="sc-pGacB ceHUqp"
   >
     <div
-      class="sc-jrsJWt bvsIsK"
+      class="sc-jrAFXE hjInrj"
     >
       <div
-        class="sc-kEqXSa kMNTjq"
+        class="sc-kEjbQP ktVHUF"
       >
         <div
-          class="sc-iqAclL dPndXI"
+          class="sc-iqHYmW TIjFY"
         >
           <div
-            class="sc-crzoAE kObDdB"
+            class="sc-crrszt fdUsQq"
           >
             <h2
-              class="sc-dIsUp ipckuB"
+              class="sc-dQoVA jYNyta"
             >
               Asetukset
             </h2>
             <div
-              class="sc-bqGGPW"
+              class="sc-bqyKOL"
             >
               <h3
-                class="sc-ksluID koPtAL"
+                class="sc-kstqJO eXxiEW"
               >
                 Toiminnalliset evästeet
               </h3>
@@ -85,21 +85,21 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               </p>
             </div>
             <div
-              class="sc-bqGGPW"
+              class="sc-bqyKOL"
             >
               <h3
-                class="sc-ksluID koPtAL"
+                class="sc-kstqJO eXxiEW"
               >
                 Anonymisoidut seurantaevästeet
               </h3>
               <div
-                class="sc-hBMUJo hDhsnI"
+                class="sc-hBEYId gdBVrN"
               >
                 <h4>
                   Google Analytics
                 </h4>
                 <span
-                  class="sc-fnVZcZ kONgAk"
+                  class="sc-fodVek iPliUJ"
                 >
                   <a
                     href="/tietosuoja#google-analytics"
@@ -117,20 +117,20 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.
               </p>
               <label
-                class="sc-fFSPTT eLSKeM"
+                class="sc-fFucqa lhBSaY"
               >
                 <input
                   checked=""
-                  class="sc-bkbkJK eyLAha"
+                  class="sc-bkzYnD gDVnBG"
                   type="checkbox"
                 />
                 <span
-                  class="sc-iemWCZ ephykP"
+                  class="sc-idOiZg bYcGhD"
                 />
               </label>
             </div>
             <div
-              class="sc-bqGGPW"
+              class="sc-bqyKOL"
             >
               <p>
                 <a
@@ -141,13 +141,13 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               </p>
             </div>
             <div
-              class="sc-dIvrsQ"
+              class="sc-dIUeWJ"
             >
               <span
-                class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
+                class="sc-bdfBQB sc-dlfnuX dYkFUz hVijAa"
               >
                 <span
-                  class="sc-eCApnc cVkgPU material-icons md-24"
+                  class="sc-eCstlR belRIU material-icons md-24"
                   size="24"
                 >
                   done
@@ -156,10 +156,10 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 Tallenna ja sulje
               </span>
               <span
-                class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
+                class="sc-bdfBQB sc-hKgJUU dYkFUz heBABp"
               >
                 <span
-                  class="sc-eCApnc cVkgPU material-icons md-24"
+                  class="sc-eCstlR belRIU material-icons md-24"
                   size="24"
                 >
                   cancel
