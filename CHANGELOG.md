@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Added
+
+- Icon indicating that the online store link opens in a new tab.
+
 ### Changed
 
 - Icon names for Material icons to be in their on file.

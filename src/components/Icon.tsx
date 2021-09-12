@@ -9,6 +9,13 @@ import icons from '../icons';
 
 const Span = styled.span<{ size: number }>`
   ${(props) => {
+    if (props.size === 18) {
+      return css`
+        margin: 0;
+        vertical-align: -5px;
+      `;
+    }
+
     if (props.size === 24) {
       return css`
         margin: 0;

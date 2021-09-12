@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { useIntl } from 'react-intl';
 
 import CookieNotice from '../cookie/CookieNotice';
+import Icon from '../Icon';
 import LocaleSwitcher from './LocaleSwitcher';
 import LocalizedLink from '../link/LocalizedLink';
 import Search from '../search/Search';
@@ -266,7 +267,7 @@ function Footer({ locale, pageID }) {
         </PricingP>
         <OnlineStoreP>
           <a href="https://reddyshop.co/visiosto" rel="noopener noreferrer" target="_blank">
-            {intl('footerOnlineStore')}
+            {intl('footerOnlineStore')}{' '}<Icon icon="open_in_new" size={18} />
           </a>
         </OnlineStoreP>
       </CompanyDiv>
