@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 ### Added
 
 - Icon indicating that the online store link opens in a new tab.
+- Support for creating redirects to external sites from Contentful data.
 
 ### Changed
 

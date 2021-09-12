@@ -175,6 +175,25 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
             }
           }
         }
+        externalRedirects: allContentfulExternalRedirect {
+          edges {
+            node {
+              force
+              node_locale
+              permanent
+              from {
+                slug
+                parentPath {
+                  slug
+                  parentPath {
+                    slug
+                  }
+                }
+              }
+              to
+            }
+          }
+        }
         indexPages: allContentfulIndexPage(
           filter: { contentful_id: { eq: "rXFgpak6HKjCuUXjFo9KW" } }
         ) {
@@ -746,6 +765,19 @@ module.exports = async function createPages({ actions, graphql, reporter }) {
         break;
       }
     }
+  });
+
+  // Create external redirects from the Contentful data.
+
+  query.data.externalRedirects.edges.forEach(({ node }) => {
+    const { force, from, node_locale: locale, permanent: isPermanent, to } = node;
+
+    createRedirect({
+      fromPath: createPagePath(from, locale, defaultLocale, localePaths),
+      toPath: to,
+      isPermanent,
+      force,
+    });
   });
 
   // Create the redirects for the 404 error pages.

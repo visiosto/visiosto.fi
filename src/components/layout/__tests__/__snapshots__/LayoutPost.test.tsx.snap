@@ -363,6 +363,13 @@ exports[`Post layout component renders correctly 1`] = `
           target="_blank"
         >
           Verkkokauppa
+           
+          <span
+            class="sc-gKAaRy elqPi material-icons md-18"
+            size="18"
+          >
+            open_in_new
+          </span>
         </a>
       </p>
     </div>
