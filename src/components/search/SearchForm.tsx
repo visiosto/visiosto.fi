@@ -7,6 +7,8 @@ import styled, { css } from 'styled-components';
 import { SearchIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
+import Icon from '../Icon';
+
 import createInternationalization from '../../util/createInternationalization';
 
 const Form = styled.form`
@@ -45,12 +47,16 @@ const Input = styled.input`
   ${open}
 `;
 
-const Icon = styled(SearchIcon)`
-  width: 1em;
-  height: auto;
-  margin: 0.3em;
-  color: var(--color-text);
-  pointer-events: none;
+// const Icon = styled(SearchIcon)`
+//   width: 1em;
+//   height: auto;
+//   margin: 0.3em;
+//   color: var(--color-text);
+//   pointer-events: none;
+// `;
+
+const MaterialIcon = styled(Icon)`
+  margin: 0 6px;
 `;
 
 const propTypes = {
@@ -77,7 +83,7 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
           type="text"
           value={searchQuery}
         />
-        <Icon />
+        <MaterialIcon icon="search" />
       </Form>
     );
   }
@@ -91,7 +97,7 @@ function SearchForm({ error, loading, onFocus, searchData, searchQuery }) {
         type="text"
         value={searchQuery}
       />
-      <Icon />
+      <MaterialIcon icon="search" />
     </Form>
   );
 }
