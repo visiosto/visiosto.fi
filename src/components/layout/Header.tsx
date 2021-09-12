@@ -405,8 +405,7 @@ function Header({ errorPage, home, locale, pageID }) {
                 <LocalizedLink locale={locale} to="/">
                   {intl('headerIndexBreadcrumb')}
                 </LocalizedLink>
-                {/* <ChevronIcon /> */}
-                {' '}/{' '}
+                {/* <ChevronIcon /> */} /{' '}
                 {(() => {
                   return breadcrumb.map((entry, index) => {
                     const title = entry.name ? entry.name : entry.title;
@@ -436,8 +435,7 @@ function Header({ errorPage, home, locale, pageID }) {
 
                     return (
                       <Fragment key={entry.contentful_id}>
-                        {/* <ChevronIcon /> */}
-                        {' '}/{' '}
+                        {/* <ChevronIcon /> */} /{' '}
                         <LocalizedLink locale={locale} to={entry.contentful_id}>
                           {title}
                         </LocalizedLink>
