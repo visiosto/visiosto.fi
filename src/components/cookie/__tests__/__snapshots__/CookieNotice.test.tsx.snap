@@ -33,7 +33,7 @@ exports[`Cookie notice component renders correctly 1`] = `
           class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
         >
           <span
-            class="sc-eCApnc XgquJ material-icons md-24"
+            class="sc-eCApnc cVkgPU material-icons md-24"
             size="24"
           >
             check
@@ -45,7 +45,7 @@ exports[`Cookie notice component renders correctly 1`] = `
           class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
         >
           <span
-            class="sc-eCApnc XgquJ material-icons md-24"
+            class="sc-eCApnc cVkgPU material-icons md-24"
             size="24"
           >
             tune

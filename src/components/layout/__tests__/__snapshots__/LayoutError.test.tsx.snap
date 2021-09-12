@@ -156,12 +156,12 @@ exports[`Error layout component renders correctly 1`] = `
     <section>
       <header>
         <h1
-          class="sc-fbIWvP bZUIsi"
+          class="sc-ckTSus hFRJDr"
         >
           404
         </h1>
         <h2
-          class="sc-FRrlG kGiKoe"
+          class="sc-fbIWvP kEZWuD"
         >
           Ei löydy
         </h2>
@@ -189,21 +189,12 @@ exports[`Error layout component renders correctly 1`] = `
           type="text"
           value=""
         />
-        <svg
-          aria-hidden="true"
-          class="sc-iwajpm dHmqme"
-          fill="currentColor"
-          height="16"
-          role="img"
-          style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-          viewBox="0 0 16 16"
-          width="16"
+        <span
+          class="sc-eCApnc cVkgPU material-icons md-24 sc-iwajpm hlGfNl"
+          size="24"
         >
-          <path
-            d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"
-            fill-rule="evenodd"
-          />
-        </svg>
+          search
+        </span>
       </form>
       <div
         class="sc-giAqHp dkQfyJ"
@@ -610,7 +601,7 @@ exports[`Error layout component renders correctly 1`] = `
                 class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
               >
                 <span
-                  class="sc-eCApnc XgquJ material-icons md-24"
+                  class="sc-eCApnc cVkgPU material-icons md-24"
                   size="24"
                 >
                   check
@@ -622,7 +613,7 @@ exports[`Error layout component renders correctly 1`] = `
                 class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
               >
                 <span
-                  class="sc-eCApnc XgquJ material-icons md-24"
+                  class="sc-eCApnc cVkgPU material-icons md-24"
                   size="24"
                 >
                   tune
@@ -651,13 +642,6 @@ exports[`Error layout component renders correctly 1`] = `
         >
           Saavutettavuusseloste
         </a>
-      </p>
-    </div>
-    <div
-      class="sc-iklJeh kpxAUQ"
-    >
-      <p>
-        Octicons © 2021 GitHub, Inc.
       </p>
     </div>
     <div

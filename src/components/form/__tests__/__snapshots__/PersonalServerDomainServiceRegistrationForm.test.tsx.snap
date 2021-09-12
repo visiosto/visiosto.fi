@@ -3,7 +3,7 @@
 exports[`Client register person form component renders correctly 1`] = `
 <div>
   <div
-    class="sc-fujyAs isvnWl"
+    class="sc-pNWdM jgGxEH"
   >
     <form
       action="/"
@@ -31,7 +31,7 @@ exports[`Client register person form component renders correctly 1`] = `
         />
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
       >
         <div
           class="sc-eCApnc jylwCj"
@@ -210,7 +210,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Laskutusosoite on sama kuin yllä annettu osoite
           </label>
           <span
-            class="sc-gKAaRy jrpTtP"
+            class="sc-iCoGMd dgMbGP"
           >
             <input
               id="same-billing-address"
@@ -218,13 +218,13 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-iCoGMd bZBmcn"
+              class="sc-fujyAs kwLFq"
             />
           </span>
         </div>
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
         hidden=""
       >
         <h3>
@@ -309,7 +309,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
         hidden=""
       >
         <div
@@ -328,7 +328,7 @@ exports[`Client register person form component renders correctly 1`] = `
              mukainen lisämaksu.
           </p>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
             hidden=""
           >
             <input
@@ -344,7 +344,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-email"
@@ -359,7 +359,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-paper"
@@ -376,7 +376,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
         hidden=""
       >
         <div
@@ -389,7 +389,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Pituuden mukaan Visiosto määrittää sen, kuinka monen kuukauden tilausmaksut Visiosto laskuttaa kerralla ja kuinka usein ne laskutetaan.
           </p>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-one-month"
@@ -404,7 +404,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-two-months"
@@ -419,7 +419,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-three-months"
@@ -434,7 +434,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-four-months"
@@ -449,7 +449,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-six-months"
@@ -464,7 +464,7 @@ exports[`Client register person form component renders correctly 1`] = `
             </label>
           </div>
           <div
-            class="sc-jSFjdj hdvAlr"
+            class="sc-gKAaRy iPLCYP"
           >
             <input
               id="radio-one-year"
@@ -481,7 +481,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
         hidden=""
       >
         <h3>
@@ -509,7 +509,7 @@ exports[`Client register person form component renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="sc-pNWdM"
+        class="sc-jrsJWt"
         hidden=""
       >
         <h3>
@@ -524,7 +524,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Annan suostumukseni tietojeni käsittelyyn voimassa olevan lainsäädännön ja tietosuojaselosteen puitteissa
           </label>
           <span
-            class="sc-gKAaRy jrpTtP"
+            class="sc-iCoGMd dgMbGP"
           >
             <input
               id="accept-privacy-policy"
@@ -532,7 +532,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-iCoGMd bZBmcn"
+              class="sc-fujyAs kwLFq"
             />
           </span>
           <p>
@@ -553,7 +553,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Ymmärrän, että mahdollisista tarkennuksista palveluun ja sopimukseen voidaan sopia tämän lomakkeen ulkopuolella
           </label>
           <span
-            class="sc-gKAaRy jrpTtP"
+            class="sc-iCoGMd dgMbGP"
           >
             <input
               id="accept-additional-agreements"
@@ -561,7 +561,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-iCoGMd bZBmcn"
+              class="sc-fujyAs kwLFq"
             />
           </span>
         </div>
@@ -574,7 +574,7 @@ exports[`Client register person form component renders correctly 1`] = `
             Hyväksyn palvelusopimuksen
           </label>
           <span
-            class="sc-gKAaRy jrpTtP"
+            class="sc-iCoGMd dgMbGP"
           >
             <input
               id="accept-terms"
@@ -582,7 +582,7 @@ exports[`Client register person form component renders correctly 1`] = `
               type="checkbox"
             />
             <span
-              class="sc-iCoGMd bZBmcn"
+              class="sc-fujyAs kwLFq"
             />
           </span>
           <p>
@@ -599,27 +599,18 @@ exports[`Client register person form component renders correctly 1`] = `
         class="sc-eCApnc jylwCj"
       >
         <div
-          class="sc-jrsJWt"
+          class="sc-kEqXSa"
           hidden=""
         >
           <span
             class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
           >
-            <svg
-              aria-hidden="true"
-              class="sc-kEqXSa hIueqN"
-              fill="currentColor"
-              height="24"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 24 24"
-              width="24"
+            <span
+              class="sc-jSFjdj ejAeMl material-icons md-24"
+              size="24"
             >
-              <path
-                d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"
-                fill-rule="evenodd"
-              />
-            </svg>
+              arrow_back
+            </span>
              
             <span>
               Palaa
@@ -627,7 +618,7 @@ exports[`Client register person form component renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="sc-jrsJWt"
+          class="sc-kEqXSa"
         >
           <span
             class="sc-bdnxRM sc-gtsrHT eoyzcM fTsZmm"
@@ -636,45 +627,27 @@ exports[`Client register person form component renders correctly 1`] = `
               Jatka
             </span>
              
-            <svg
-              aria-hidden="true"
-              class="sc-iqAclL ePdOMq"
-              fill="currentColor"
-              height="24"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 24 24"
-              width="24"
+            <span
+              class="sc-jSFjdj ejAeMl material-icons md-24"
+              size="24"
             >
-              <path
-                d="M13.22 19.03a.75.75 0 001.06 0l6.25-6.25a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 10-1.06 1.06l4.97 4.97H3.75a.75.75 0 000 1.5h14.44l-4.97 4.97a.75.75 0 000 1.06z"
-                fill-rule="evenodd"
-              />
-            </svg>
+              arrow_forward
+            </span>
           </span>
         </div>
         <div
-          class="sc-jrsJWt"
+          class="sc-kEqXSa"
           hidden=""
         >
           <button
             type="submit"
           >
-            <svg
-              aria-hidden="true"
-              class="sc-crzoAE fCoWvo"
-              fill="currentColor"
-              height="24"
-              role="img"
-              style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"
-              viewBox="0 0 24 24"
-              width="24"
+            <span
+              class="sc-jSFjdj ejAeMl material-icons md-24"
+              size="24"
             >
-              <path
-                d="M1.513 1.96a1.374 1.374 0 011.499-.21l19.335 9.215a1.146 1.146 0 010 2.07L3.012 22.25a1.374 1.374 0 01-1.947-1.46L2.49 12 1.065 3.21a1.374 1.374 0 01.448-1.25zm2.375 10.79l-1.304 8.042L21.031 12 2.584 3.208l1.304 8.042h7.362a.75.75 0 010 1.5H3.888z"
-                fill-rule="evenodd"
-              />
-            </svg>
+              send
+            </span>
              
             Lähetä
           </button>

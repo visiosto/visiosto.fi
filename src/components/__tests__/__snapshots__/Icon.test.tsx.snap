@@ -3,7 +3,7 @@
 exports[`Icon component renders correctly 1`] = `
 <div>
   <span
-    class="sc-bdnxRM iEZrFk material-icons md-24"
+    class="sc-bdnxRM cVbxgV material-icons md-24"
     size="24"
   >
     tune

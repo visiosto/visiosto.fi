@@ -24,7 +24,7 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
         class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
       >
         <span
-          class="sc-eCApnc XgquJ material-icons md-24"
+          class="sc-eCApnc cVkgPU material-icons md-24"
           size="24"
         >
           check
@@ -36,7 +36,7 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
         class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
       >
         <span
-          class="sc-eCApnc XgquJ material-icons md-24"
+          class="sc-eCApnc cVkgPU material-icons md-24"
           size="24"
         >
           tune
@@ -147,7 +147,7 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
               >
                 <span
-                  class="sc-eCApnc XgquJ material-icons md-24"
+                  class="sc-eCApnc cVkgPU material-icons md-24"
                   size="24"
                 >
                   done
@@ -159,7 +159,7 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
               >
                 <span
-                  class="sc-eCApnc XgquJ material-icons md-24"
+                  class="sc-eCApnc cVkgPU material-icons md-24"
                   size="24"
                 >
                   cancel
