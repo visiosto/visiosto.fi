@@ -118,21 +118,21 @@ function Page({ data, pageContext }) {
       <Section lesserMargin>
         <H2 id={page.servicesId.slug}>{page.productsTitle}</H2>
         <Cards>
-          <FeatureCard icon={<DeviceDesktopIcon size="large" />} title={page.products[0].title}>
+          <FeatureCard icon="public" title={page.products[0].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[0].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard icon={<PencilIcon size="large" />} title={page.products[1].title}>
+          <FeatureCard icon="auto_awesome" title={page.products[1].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[1].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard icon={<CalendarIcon size="large" />} title={page.products[2].title}>
+          <FeatureCard icon="event" title={page.products[2].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[2].description.childMarkdownRemark.html,

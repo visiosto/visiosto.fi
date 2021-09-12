@@ -6,10 +6,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Card from './Card';
+import Icon from './Icon';
 
-const Icon = styled.div`
-  text-align: center;
-`;
+// const Icon = styled.div`
+//   text-align: center;
+// `;
 
 const H3 = styled.h3`
   clear: none;
@@ -21,7 +22,7 @@ const H3 = styled.h3`
 const propTypes = {
   button: PropTypes.element,
   children: PropTypes.node.isRequired,
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
@@ -30,7 +31,7 @@ const defaultProps = { button: null };
 function FeatureCard({ button, children, icon, title }) {
   return (
     <Card centered>
-      <Icon>{icon}</Icon>
+      <Icon icon={icon} size={64} />
       <H3>{title}</H3>
       {children}
       {button}

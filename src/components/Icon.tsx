@@ -20,8 +20,20 @@ const Span = styled.span<{ size: number }>`
 
 const propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.oneOf(['arrow_back', 'arrow_forward', 'cancel', 'check', 'done', 'search', 'send', 'tune']).isRequired,
-  size: PropTypes.oneOf([18, 24, 36, 48]),
+  icon: PropTypes.oneOf([
+    'arrow_back',
+    'arrow_forward',
+    'auto_awesome',
+    'cancel',
+    'check',
+    'done',
+    'event',
+    'public',
+    'search',
+    'send',
+    'tune',
+  ]).isRequired,
+  size: PropTypes.oneOf([18, 24, 36, 48, 64]),
 };
 
 const defaultProps = { className: undefined, size: 24 };

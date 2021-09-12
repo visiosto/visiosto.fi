@@ -621,17 +621,17 @@ class RegisterPersonForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv hidden={currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <Icon icon="arrow_back" />{' '}<span>{intl('clientRegisterPersonFormPrevious')}</span>
+                <Icon icon="arrow_back" /> <span>{intl('clientRegisterPersonFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage === 2}>
               <Button onClick={this.moveToNextPage}>
-                <span>{intl('clientRegisterPersonFormNext')}</span>{' '}<Icon icon="arrow_forward" />
+                <span>{intl('clientRegisterPersonFormNext')}</span> <Icon icon="arrow_forward" />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage !== 2}>
               <button type="submit">
-                <Icon icon="send" />{' '}{intl('clientRegisterPersonFormSend')}
+                <Icon icon="send" /> {intl('clientRegisterPersonFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>

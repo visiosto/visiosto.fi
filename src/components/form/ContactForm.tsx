@@ -205,7 +205,7 @@ class ContactForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv>
               <button type="submit">
-                <Icon icon="send" />{' '}{intl('contactFormSend')}
+                <Icon icon="send" /> {intl('contactFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>

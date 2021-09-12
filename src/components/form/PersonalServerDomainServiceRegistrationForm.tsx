@@ -874,17 +874,19 @@ class PersonalServerDomainServiceRegistrationForm extends React.Component<Props,
           <FormDiv>
             <ButtonDiv hidden={currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <Icon icon="arrow_back" />{' '}<span>{intl('serviceRegistrationPersonalServerDomainFormPrevious')}</span>
+                <Icon icon="arrow_back" />{' '}
+                <span>{intl('serviceRegistrationPersonalServerDomainFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage === 5}>
               <Button onClick={this.moveToNextPage}>
-                <span>{intl('serviceRegistrationPersonalServerDomainFormNext')}</span>{' '}<Icon icon="arrow_forward" />
+                <span>{intl('serviceRegistrationPersonalServerDomainFormNext')}</span>{' '}
+                <Icon icon="arrow_forward" />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage !== 5}>
               <button type="submit">
-                <Icon icon="send" />{' '}{intl('serviceRegistrationPersonalServerDomainFormSend')}
+                <Icon icon="send" /> {intl('serviceRegistrationPersonalServerDomainFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>

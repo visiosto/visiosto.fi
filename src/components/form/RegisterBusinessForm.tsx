@@ -831,17 +831,17 @@ class RegisterBusinessForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv hidden={currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <Icon icon="arrow_back" />{' '}<span>{intl('clientRegisterBusinessFormPrevious')}</span>
+                <Icon icon="arrow_back" /> <span>{intl('clientRegisterBusinessFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage === 4}>
               <Button onClick={this.moveToNextPage}>
-                <span>{intl('clientRegisterBusinessFormNext')}</span>{' '}<Icon icon="arrow_forward" />
+                <span>{intl('clientRegisterBusinessFormNext')}</span> <Icon icon="arrow_forward" />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage !== 4}>
               <button type="submit">
-                <Icon icon="send" />{' '}{intl('clientRegisterBusinessFormSend')}
+                <Icon icon="send" /> {intl('clientRegisterBusinessFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
