@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage, withArtDirection } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { ChevronRightIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
 import LocalizedAnchorLink from '../link/LocalizedAnchorLink';
@@ -62,9 +61,9 @@ const Breadcrumb = styled.div`
   text-align: center;
 `;
 
-const ChevronIcon = styled(ChevronRightIcon)`
-  margin: 0 0 0.1rem;
-`;
+// const ChevronIcon = styled(ChevronRightIcon)`
+//   margin: 0 0 0.1rem;
+// `;
 
 const createPath = function createPathEntryForNode(pathNode) {
   if (pathNode.parentPath) {
@@ -406,7 +405,8 @@ function Header({ errorPage, home, locale, pageID }) {
                 <LocalizedLink locale={locale} to="/">
                   {intl('headerIndexBreadcrumb')}
                 </LocalizedLink>
-                <ChevronIcon />
+                {/* <ChevronIcon /> */}
+                {' '}/{' '}
                 {(() => {
                   return breadcrumb.map((entry, index) => {
                     const title = entry.name ? entry.name : entry.title;
@@ -436,7 +436,8 @@ function Header({ errorPage, home, locale, pageID }) {
 
                     return (
                       <Fragment key={entry.contentful_id}>
-                        <ChevronIcon />
+                        {/* <ChevronIcon /> */}
+                        {' '}/{' '}
                         <LocalizedLink locale={locale} to={entry.contentful_id}>
                           {title}
                         </LocalizedLink>

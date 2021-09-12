@@ -28,6 +28,8 @@ const propTypes = {
     'check',
     'done',
     'event',
+    'navigate_before',
+    'navigate_next',
     'public',
     'search',
     'send',

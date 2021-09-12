@@ -5,8 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { ArrowLeftIcon, ArrowRightIcon } from '@primer/octicons-react';
 
+import Icon from '../components/Icon';
 import Intl from '../components/Intl';
 import LayoutPost from '../components/layout/LayoutPost';
 import LocalizedLink from '../components/link/LocalizedLink';
@@ -61,14 +61,6 @@ const Next = styled.div`
   text-align: end;
 `;
 
-const ArrowLeft = styled(ArrowLeftIcon)`
-  margin: 0 0.2rem 0.1rem 0;
-`;
-
-const ArrowRight = styled(ArrowRightIcon)`
-  margin: 0 0 0.1rem 0.2rem;
-`;
-
 const propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
@@ -107,7 +99,7 @@ function Page({ data, pageContext }) {
             if (previous) {
               return (
                 <>
-                  <ArrowLeft />
+                  <Icon icon="navigate_before" />
                   <LocalizedLink locale={locale} to={previous.contentful_id}>
                     {previous.title}
                   </LocalizedLink>
@@ -126,7 +118,7 @@ function Page({ data, pageContext }) {
                   <LocalizedLink locale={locale} to={next.contentful_id}>
                     {next.title}
                   </LocalizedLink>
-                  <ArrowRight />
+                  <Icon icon="navigate_next" />
                 </>
               );
             }
