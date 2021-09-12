@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/visiosto/visiosto-website#readme",
   "dependencies": {
-    "@primer/octicons-react": "^15.0.1",
     "@reach/router": "^1.3.4",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
@@ -69,7 +68,7 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.5",
     "@types/jest": "^26.0.22",
-    "@types/node": "^16.3.1",
+    "@types/node": "^16.9.1",
     "@types/prop-types": "^15.7.3",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
