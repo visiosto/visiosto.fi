@@ -1,7 +1,7 @@
 {
   "name": "visiosto-website",
   "private": true,
-  "version": "0.30.0-dev",
+  "version": "0.31.0-dev",
   "description": "The website of Visiosto",
   "scripts": {
     "build": "gatsby build",
@@ -81,7 +81,7 @@
     "babel-preset-gatsby": "^1.2.0",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1",
