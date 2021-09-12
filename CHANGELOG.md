@@ -19,6 +19,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 - Octicons from the site.
 
+### Fixed
+
+- Name of the default social media image in the `head`.
+
 ## [0.29.2] - 2021-08-16
 
 ### Fixed
