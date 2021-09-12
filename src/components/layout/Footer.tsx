@@ -335,9 +335,6 @@ function Footer({ locale, pageID }) {
         </AccessibilityStatementP>
       </Div>
       <Div>
-        <p dangerouslySetInnerHTML={{ __html: intl('footerOcticons') }} />
-      </Div>
-      <Div>
         <p dangerouslySetInnerHTML={{ __html: intl('footerCopyright') }} />
       </Div>
       <Div>

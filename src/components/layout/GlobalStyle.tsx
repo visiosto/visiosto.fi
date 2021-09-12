@@ -52,6 +52,22 @@ const GlobalStyle = createGlobalStyle`
       color: var(--color-link-hover);
     }
   }
+
+  .material-icons.md-18 {
+    font-size: 18px;
+  }
+
+  .material-icons.md-36 {
+    font-size: 36px;
+  }
+
+  .material-icons.md-48 {
+    font-size: 48px;
+  }
+
+  .material-icons.md-64 {
+    font-size: 64px;
+  }
 `;
 
 export default GlobalStyle;

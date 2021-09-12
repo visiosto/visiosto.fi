@@ -19,7 +19,6 @@ export default {
   footerInstagramImageText: 'Instagram Logo',
   footerLinkedinImageText: 'LinkedIn Logo',
   footerTwitterImageText: 'Twitter Logo',
-  footerOcticons: 'Octicons&nbsp;&copy;&nbsp;2021&nbsp;GitHub,&nbsp;Inc.',
   footerCopyright: '&copy;&nbsp;2021&nbsp;Visiosto&nbsp;oy',
   footerMadeBy: 'This site is rendered through the lens of <a>Visiosto</a>',
 };

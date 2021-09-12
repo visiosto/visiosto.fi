@@ -3,10 +3,10 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { IntlShape, injectIntl } from 'react-intl';
 
 import FormDiv from './FormDiv';
+import Icon from '../Icon';
 import LocalizedLink from '../link/LocalizedLink';
 
 import {
@@ -204,7 +204,7 @@ class ContactForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv>
               <button type="submit">
-                <PaperAirplaneIcon size={24} /> {intl('contactFormSend')}
+                <Icon icon="send" /> {intl('contactFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>

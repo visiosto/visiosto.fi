@@ -5,13 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import {
-  CalendarIcon,
-  DeviceDesktopIcon,
-  NorthStarIcon,
-  PaperAirplaneIcon,
-  PencilIcon,
-} from '@primer/octicons-react';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
@@ -60,10 +53,6 @@ const Cards = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
   }
-`;
-
-const Icon = styled.div`
-  text-align: center;
 `;
 
 const Centered = styled.div`
@@ -118,21 +107,21 @@ function Page({ data, pageContext }) {
       <Section lesserMargin>
         <H2 id={page.servicesId.slug}>{page.productsTitle}</H2>
         <Cards>
-          <FeatureCard icon={<DeviceDesktopIcon size="large" />} title={page.products[0].title}>
+          <FeatureCard icon="public" title={page.products[0].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[0].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard icon={<PencilIcon size="large" />} title={page.products[1].title}>
+          <FeatureCard icon="auto_awesome" title={page.products[1].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[1].description.childMarkdownRemark.html,
               }}
             />
           </FeatureCard>
-          <FeatureCard icon={<CalendarIcon size="large" />} title={page.products[2].title}>
+          <FeatureCard icon="event" title={page.products[2].title}>
             <div
               dangerouslySetInnerHTML={{
                 __html: page.products[2].description.childMarkdownRemark.html,
@@ -143,9 +132,6 @@ function Page({ data, pageContext }) {
       </Section>
       <Break color="blue" mode={1} />
       <Section lesserMargin>
-        <Icon>
-          <NorthStarIcon size="large" />
-        </Icon>
         <H2 id={page.portfolioId.slug}>{page.portfolioTitle}</H2>
         <Centered
           dangerouslySetInnerHTML={{ __html: page.portfolioBody.childMarkdownRemark.html }}
@@ -158,9 +144,6 @@ function Page({ data, pageContext }) {
       </Section>
       <Break color="peach" mode={3} ignoreColorScheme />
       <Section lesserMargin>
-        <Icon>
-          <PaperAirplaneIcon size="large" />
-        </Icon>
         <H2 id={page.contactId.slug}>{page.contactTitle}</H2>
         <Centered dangerouslySetInnerHTML={{ __html: page.contactBody.childMarkdownRemark.html }} />
         <Cards>

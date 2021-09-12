@@ -3,13 +3,13 @@
 exports[`Cookie settings component renders correctly when closed 1`] = `
 <div>
   <div
-    class="sc-eCApnc jRdEEO"
+    class="sc-jSFjdj kTAvTn"
   >
     <div
-      class="sc-jSFjdj"
+      class="sc-gKAaRy"
     >
       <h2
-        class="sc-gKAaRy eFdRPO"
+        class="sc-iCoGMd qJjFK"
       >
         Saisiko olla keksi?
       </h2>
@@ -18,16 +18,30 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
       </p>
     </div>
     <div
-      class="sc-iCoGMd dzEEWi"
+      class="sc-fujyAs kRhpnD"
     >
       <span
         class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
       >
+        <span
+          class="sc-eCApnc cVkgPU material-icons md-24"
+          size="24"
+        >
+          check
+        </span>
+         
         Kiitos, hyväksyn evästeet
       </span>
       <span
         class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
       >
+        <span
+          class="sc-eCApnc cVkgPU material-icons md-24"
+          size="24"
+        >
+          tune
+        </span>
+         
         Tarkistan evästeet ja säädän niitä
       </span>
     </div>
@@ -39,30 +53,30 @@ exports[`Cookie settings component renders correctly when closed 1`] = `
 exports[`Cookie settings component renders correctly when opened 1`] = `
 <div>
   <div
-    class="sc-fujyAs cRpBIZ"
+    class="sc-pNWdM blMKuP"
   >
     <div
-      class="sc-pNWdM hTuiWo"
+      class="sc-jrsJWt bvsIsK"
     >
       <div
-        class="sc-jrsJWt ksZtph"
+        class="sc-kEqXSa kMNTjq"
       >
         <div
-          class="sc-kEqXSa fDuyCz"
+          class="sc-iqAclL dPndXI"
         >
           <div
-            class="sc-iqAclL sudZr"
+            class="sc-crzoAE kObDdB"
           >
             <h2
-              class="sc-crzoAE euTdOG"
+              class="sc-dIsUp ipckuB"
             >
               Asetukset
             </h2>
             <div
-              class="sc-dIsUp"
+              class="sc-bqGGPW"
             >
               <h3
-                class="sc-bqGGPW gntPvr"
+                class="sc-ksluID koPtAL"
               >
                 Toiminnalliset evästeet
               </h3>
@@ -71,21 +85,21 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               </p>
             </div>
             <div
-              class="sc-dIsUp"
+              class="sc-bqGGPW"
             >
               <h3
-                class="sc-bqGGPW gntPvr"
+                class="sc-ksluID koPtAL"
               >
                 Anonymisoidut seurantaevästeet
               </h3>
               <div
-                class="sc-ksluID keAsAv"
+                class="sc-hBMUJo hDhsnI"
               >
                 <h4>
                   Google Analytics
                 </h4>
                 <span
-                  class="sc-hBMUJo gfPVRS"
+                  class="sc-fnVZcZ kONgAk"
                 >
                   <a
                     href="/tietosuoja#google-analytics"
@@ -103,20 +117,20 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
                 Seurantaevästeiden avulla seuraamme mitkä sisällöt kävijöitämme kiinnostavat ja missä meillä on syytä petrata. Emme voi tunnistaa sinua evästeiden avulla.
               </p>
               <label
-                class="sc-fnVZcZ eUfvkq"
+                class="sc-fFSPTT eLSKeM"
               >
                 <input
                   checked=""
-                  class="sc-fFSPTT KJqRs"
+                  class="sc-bkbkJK eyLAha"
                   type="checkbox"
                 />
                 <span
-                  class="sc-bkbkJK bCPaiF"
+                  class="sc-iemWCZ ephykP"
                 />
               </label>
             </div>
             <div
-              class="sc-dIsUp"
+              class="sc-bqGGPW"
             >
               <p>
                 <a
@@ -127,16 +141,30 @@ exports[`Cookie settings component renders correctly when opened 1`] = `
               </p>
             </div>
             <div
-              class="sc-iemWCZ"
+              class="sc-dIvrsQ"
             >
               <span
                 class="sc-bdnxRM sc-dlnjwi eoyzcM hsTqCw"
               >
+                <span
+                  class="sc-eCApnc cVkgPU material-icons md-24"
+                  size="24"
+                >
+                  done
+                </span>
+                 
                 Tallenna ja sulje
               </span>
               <span
                 class="sc-bdnxRM sc-hKFxyN eoyzcM eFNvmU"
               >
+                <span
+                  class="sc-eCApnc cVkgPU material-icons md-24"
+                  size="24"
+                >
+                  cancel
+                </span>
+                 
                 Peruuta
               </span>
             </div>

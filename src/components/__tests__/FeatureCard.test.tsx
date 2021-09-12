@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { screen } from '@testing-library/react';
-import { NorthStarIcon } from '@primer/octicons-react';
 
 import Button from '../Button';
 import FeatureCard from '../FeatureCard';
@@ -13,7 +12,7 @@ import renderWithProviders from '../../../test/renderWithProviders';
 describe('Feature card component', () => {
   it('renders correctly', () => {
     const { container, getByText } = renderWithProviders(
-      <FeatureCard button={<Button>Click here</Button>} icon={<NorthStarIcon />} title="Test title">
+      <FeatureCard button={<Button>Click here</Button>} icon="auto_awesome" title="Test title">
         Some text here
       </FeatureCard>,
       'fi',

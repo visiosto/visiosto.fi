@@ -219,9 +219,12 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         })()}
         property="og:type"
       />
-      <meta content={image ? image.file.url : `${baseURL}/thumbnail.png`} property="og:image" />
       <meta
-        content={image ? image.file.url : `${baseURL}/thumbnail.png`}
+        content={image ? image.file.url : `${baseURL}/social-media-image.png`}
+        property="og:image"
+      />
+      <meta
+        content={image ? image.file.url : `${baseURL}/social-media-image.png`}
         property="og:image:secure_url"
       />
       <meta content={image ? image.file.contentType : 'image/png'} property="og:image:type" />
@@ -268,6 +271,8 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
       })()}
 
       <link href="https://use.typekit.net/njo0slg.css" rel="stylesheet" />
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
       {(() => {
         if (errorPage) {
