@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
-## [Unreleased]
+## [0.30.0] - 2021-09-12
 
 ### Added
 
@@ -795,7 +795,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 - Support for internationalizing pages.
 - Both light and dark themes for the site.
 
-[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.29.2...HEAD
+[unreleased]: https://github.com/visiosto/visiosto-website/compare/v0.30.0...HEAD
+[0.30.0]: https://github.com/visiosto/visiosto-website/compare/v0.29.2...v0.30.0
 [0.29.2]: https://github.com/visiosto/visiosto-website/compare/v0.29.1...v0.29.2
 [0.29.1]: https://github.com/visiosto/visiosto-website/compare/v0.29.0...v0.29.1
 [0.29.0]: https://github.com/visiosto/visiosto-website/compare/v0.28.0...v0.29.0
