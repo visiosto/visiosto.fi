@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import { SearchIcon } from '@primer/octicons-react';
 import { useIntl } from 'react-intl';
 
 import Icon from '../Icon';
@@ -46,14 +45,6 @@ const Input = styled.input`
   }
   ${open}
 `;
-
-// const Icon = styled(SearchIcon)`
-//   width: 1em;
-//   height: auto;
-//   margin: 0.3em;
-//   color: var(--color-text);
-//   pointer-events: none;
-// `;
 
 const MaterialIcon = styled(Icon)`
   margin: 0 6px;

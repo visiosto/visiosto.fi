@@ -3,7 +3,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { PaperAirplaneIcon } from '@primer/octicons-react';
 import { IntlShape, injectIntl } from 'react-intl';
 
 import FormDiv from './FormDiv';

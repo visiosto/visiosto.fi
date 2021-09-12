@@ -219,7 +219,10 @@ function Head({ article, author, description, errorPage, home, image, locale, pa
         })()}
         property="og:type"
       />
-      <meta content={image ? image.file.url : `${baseURL}/social-media-image.png`} property="og:image" />
+      <meta
+        content={image ? image.file.url : `${baseURL}/social-media-image.png`}
+        property="og:image"
+      />
       <meta
         content={image ? image.file.url : `${baseURL}/social-media-image.png`}
         property="og:image:secure_url"

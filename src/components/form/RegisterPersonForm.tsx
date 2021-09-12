@@ -2,8 +2,7 @@
 // Licensed under the MIT License
 
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { ArrowLeftIcon, ArrowRightIcon, PaperAirplaneIcon } from '@primer/octicons-react';
+import styled from 'styled-components';
 import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
@@ -34,22 +33,6 @@ const FormContainer = styled.div`
 const FormPage = styled.div``;
 
 const ButtonDiv = styled.div``;
-
-const iconStyle = css`
-  margin: 0;
-`;
-
-const ArrowLeft = styled(ArrowLeftIcon)`
-  ${iconStyle}
-`;
-
-const ArrowRight = styled(ArrowRightIcon)`
-  ${iconStyle}
-`;
-
-const PaperAirplane = styled(PaperAirplaneIcon)`
-  ${iconStyle}
-`;
 
 type Props = {
   intl: IntlShape;

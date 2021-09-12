@@ -5,13 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import {
-  CalendarIcon,
-  DeviceDesktopIcon,
-  NorthStarIcon,
-  PaperAirplaneIcon,
-  PencilIcon,
-} from '@primer/octicons-react';
 
 import AuthorContactCard from '../components/AuthorContactCard';
 import Break from '../components/Break';
@@ -60,10 +53,6 @@ const Cards = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
   }
-`;
-
-const Icon = styled.div`
-  text-align: center;
 `;
 
 const Centered = styled.div`
