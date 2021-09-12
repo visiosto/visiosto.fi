@@ -267,7 +267,7 @@ function Footer({ locale, pageID }) {
         </PricingP>
         <OnlineStoreP>
           <a href="https://reddyshop.co/visiosto" rel="noopener noreferrer" target="_blank">
-            {intl('footerOnlineStore')}{' '}<Icon icon="open_in_new" size={18} />
+            {intl('footerOnlineStore')} <Icon icon="open_in_new" size={18} />
           </a>
         </OnlineStoreP>
       </CompanyDiv>
