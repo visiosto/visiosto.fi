@@ -5,6 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
+import icons from '../icons';
+
 const Span = styled.span<{ size: number }>`
   ${(props) => {
     if (props.size === 24) {
@@ -20,21 +22,7 @@ const Span = styled.span<{ size: number }>`
 
 const propTypes = {
   className: PropTypes.string,
-  icon: PropTypes.oneOf([
-    'arrow_back',
-    'arrow_forward',
-    'auto_awesome',
-    'cancel',
-    'check',
-    'done',
-    'event',
-    'navigate_before',
-    'navigate_next',
-    'public',
-    'search',
-    'send',
-    'tune',
-  ]).isRequired,
+  icon: PropTypes.oneOf(icons).isRequired,
   size: PropTypes.oneOf([18, 24, 36, 48, 64]),
 };
 

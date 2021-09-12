@@ -8,9 +8,7 @@ import styled from 'styled-components';
 import Card from './Card';
 import Icon from './Icon';
 
-// const Icon = styled.div`
-//   text-align: center;
-// `;
+import icons from '../icons';
 
 const H3 = styled.h3`
   clear: none;
@@ -22,7 +20,7 @@ const H3 = styled.h3`
 const propTypes = {
   button: PropTypes.element,
   children: PropTypes.node.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.oneOf(icons).isRequired,
   title: PropTypes.string.isRequired,
 };
 
