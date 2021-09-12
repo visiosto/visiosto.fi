@@ -9,7 +9,7 @@ const Span = styled.span<{ size: number }>`
   ${(props) => {
     if (props.size === 24) {
       return css`
-        margin: 0 0 0 -4px;
+        margin: 0 -4px;
         vertical-align: -6px;
       `;
     }
@@ -19,7 +19,7 @@ const Span = styled.span<{ size: number }>`
 `;
 
 const propTypes = {
-  icon: PropTypes.oneOf(['cancel', 'check', 'done', 'tune']).isRequired,
+  icon: PropTypes.oneOf(['arrow_back', 'arrow_forward', 'cancel', 'check', 'done', 'send', 'tune']).isRequired,
   size: PropTypes.oneOf([18, 24, 36, 48]),
 };
 

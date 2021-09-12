@@ -8,6 +8,7 @@ import { IntlShape, injectIntl } from 'react-intl';
 
 import Button from '../Button';
 import FormDiv from './FormDiv';
+import Icon from '../Icon';
 import LocalizedLink from '../link/LocalizedLink';
 import RadioInput from './RadioInput';
 import SwitchCheckbox from './SwitchCheckbox';
@@ -830,17 +831,17 @@ class RegisterBusinessForm extends React.Component<Props, State> {
           <FormDiv>
             <ButtonDiv hidden={currentPage === 0}>
               <Button onClick={this.moveToPreviousPage}>
-                <ArrowLeft size={24} /> <span>{intl('clientRegisterBusinessFormPrevious')}</span>
+                <Icon icon="arrow_back" />{' '}<span>{intl('clientRegisterBusinessFormPrevious')}</span>
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage === 4}>
               <Button onClick={this.moveToNextPage}>
-                <span>{intl('clientRegisterBusinessFormNext')}</span> <ArrowRight size={24} />
+                <span>{intl('clientRegisterBusinessFormNext')}</span>{' '}<Icon icon="arrow_forward" />
               </Button>
             </ButtonDiv>
             <ButtonDiv hidden={currentPage !== 4}>
               <button type="submit">
-                <PaperAirplane size={24} /> {intl('clientRegisterBusinessFormSend')}
+                <Icon icon="send" />{' '}{intl('clientRegisterBusinessFormSend')}
               </button>
             </ButtonDiv>
           </FormDiv>
