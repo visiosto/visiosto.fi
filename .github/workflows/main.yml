@@ -199,7 +199,7 @@ jobs:
     - name: Upload build artefacts
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: visiosto-maintenance-website-${{ steps.version.outputs.version }}
+        name: visiosto-website-${{ steps.version.outputs.version }}
         path: public/
 
   lighthouse:
