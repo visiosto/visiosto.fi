@@ -59,7 +59,7 @@
     "react-is": "^17.0.1",
     "scroll-to-element": "^2.0.3",
     "styled-components": "^5.2.3",
-    "terser": "4.8.0",
+    "terser": "5.8.0",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
